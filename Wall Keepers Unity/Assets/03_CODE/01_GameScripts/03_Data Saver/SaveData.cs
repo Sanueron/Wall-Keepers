@@ -26,7 +26,7 @@ public class SaveData : MonoBehaviour
         LoadAndAssignData();
 
         // Only for testing
-        PlayerData.i_mana = 100000;
+        //PlayerData.i_mana = 100000;
     }
     #endregion
 
