@@ -10,27 +10,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67a28c5053d354cbc9b5d80ae0aaa875, type: 3}
-  m_Name: FireWall
+  m_Name: S2_RockWall
   m_EditorClassIdentifier: 
-  i_id: 4
-  i_spellStarsTier: 1
-  i_mana_cost: 2
-  f_dmg: 150
+  i_id: 5
+  i_spellStarsTier: 2
+  i_mana_cost: 3
+  f_dmg: 10
   f_duration: 1
   f_projectileSpeed: 1
-  f_resistance: 0
-  _card_Sprite: {fileID: 21300000, guid: 7f6c26aa08505064a9f0f8076d600c91, type: 3}
-  _onField_Sprite: {fileID: -410415777, guid: 54cb26720ff3c534ebf0e913b2bc6fbd, type: 3}
-  castClip: {fileID: 8300000, guid: 8568d1eb29ed6ac4cbedf726b6456353, type: 3}
+  f_resistance: 450
+  _card_Sprite: {fileID: 21300000, guid: b24b76436b1924e4f856e0c27ddf7465, type: 3}
+  _onField_Sprite: {fileID: -531373202, guid: bec6e802947a54c4fb54f1f70570468f, type: 3}
+  castClip: {fileID: 8300000, guid: 917dcc575159fa84cbe47a21cbdc4e73, type: 3}
   impactClip: {fileID: 0}
-  i_starLevel: 1
-  f_repeatingDmgCoolDown: 1
+  i_starLevel: 2
+  f_repeatingDmgCoolDown: 0
   e_CastingType: 2
   e_Effect: 2
-  e_Element: 1
+  e_Element: 2
   e_2Element: 0
-  Description: Creates a fire wall that deals damage over time to enemies inside
-    it.
+  Description: Pulls up rocks from the ground blocking enemies movement.
   f_attackInterval: 0
   b_isMerged: 0
   fusionSprite1: {fileID: 0}

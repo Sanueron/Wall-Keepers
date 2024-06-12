@@ -10,26 +10,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67a28c5053d354cbc9b5d80ae0aaa875, type: 3}
-  m_Name: Tornado
+  m_Name: S1_FireWall
   m_EditorClassIdentifier: 
-  i_id: 6
-  i_spellStarsTier: 2
-  i_mana_cost: 1
-  f_dmg: 0
-  f_duration: 3
+  i_id: 4
+  i_spellStarsTier: 1
+  i_mana_cost: 2
+  f_dmg: 150
+  f_duration: 1
   f_projectileSpeed: 1
   f_resistance: 0
-  _card_Sprite: {fileID: 21300000, guid: ab3451163fe3ccd4882b5e3cf3879839, type: 3}
-  _onField_Sprite: {fileID: 625868452, guid: 37bfc545a7cd3c548934d2b3224935d6, type: 3}
-  castClip: {fileID: 8300000, guid: 2b1df6e9228a48e46804c2ab22c37c9f, type: 3}
+  _card_Sprite: {fileID: 21300000, guid: 7f6c26aa08505064a9f0f8076d600c91, type: 3}
+  _onField_Sprite: {fileID: -410415777, guid: 54cb26720ff3c534ebf0e913b2bc6fbd, type: 3}
+  castClip: {fileID: 8300000, guid: 8568d1eb29ed6ac4cbedf726b6456353, type: 3}
   impactClip: {fileID: 0}
-  i_starLevel: 2
-  f_repeatingDmgCoolDown: 0
+  i_starLevel: 1
+  f_repeatingDmgCoolDown: 1
   e_CastingType: 2
   e_Effect: 2
-  e_Element: 4
+  e_Element: 1
   e_2Element: 0
-  Description: Pulls enemies in area to its center.
+  Description: Creates a fire wall that deals damage over time to enemies inside
+    it.
   f_attackInterval: 0
   b_isMerged: 0
   fusionSprite1: {fileID: 0}
