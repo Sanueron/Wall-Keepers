@@ -1981,8 +1981,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1322436665}
-        m_TargetAssemblyTypeName: ScenesTransitionsManager, Assembly-CSharp
+      - m_Target: {fileID: 1110287861}
+        m_TargetAssemblyTypeName: ScenesLoader, Assembly-CSharp
         m_MethodName: SetNextSceneToLoad
         m_Mode: 3
         m_Arguments:
@@ -1993,9 +1993,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1322436665}
-        m_TargetAssemblyTypeName: ScenesTransitionsManager, Assembly-CSharp
-        m_MethodName: ShowScenesTransitionCanvas
+      - m_Target: {fileID: 1110287861}
+        m_TargetAssemblyTypeName: ScenesLoader, Assembly-CSharp
+        m_MethodName: SceneTransitionAnimation
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2682,6 +2682,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 5128637226699368448, guid: 98b95b568d02aa54696d5bc64a78cbd6, type: 3}
   m_PrefabInstance: {fileID: 1110287859}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1110287861 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8998099665148255738, guid: 98b95b568d02aa54696d5bc64a78cbd6, type: 3}
+  m_PrefabInstance: {fileID: 1110287859}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f34644ab35bcd5b45a4de89ab31bbf2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1119392437
 GameObject:
   m_ObjectHideFlags: 0
@@ -2972,8 +2983,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1322436665}
-        m_TargetAssemblyTypeName: ScenesTransitionsManager, Assembly-CSharp
+      - m_Target: {fileID: 1110287861}
+        m_TargetAssemblyTypeName: ScenesLoader, Assembly-CSharp
         m_MethodName: SetNextSceneToLoad
         m_Mode: 3
         m_Arguments:
@@ -2984,9 +2995,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1322436665}
-        m_TargetAssemblyTypeName: ScenesTransitionsManager, Assembly-CSharp
-        m_MethodName: ShowScenesTransitionCanvas
+      - m_Target: {fileID: 1110287861}
+        m_TargetAssemblyTypeName: ScenesLoader, Assembly-CSharp
+        m_MethodName: SceneTransitionAnimation
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3205,8 +3216,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1322436665}
-        m_TargetAssemblyTypeName: ScenesTransitionsManager, Assembly-CSharp
+      - m_Target: {fileID: 1110287861}
+        m_TargetAssemblyTypeName: ScenesLoader, Assembly-CSharp
         m_MethodName: SetNextSceneToLoad
         m_Mode: 3
         m_Arguments:
@@ -3217,9 +3228,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1322436665}
-        m_TargetAssemblyTypeName: ScenesTransitionsManager, Assembly-CSharp
-        m_MethodName: ShowScenesTransitionCanvas
+      - m_Target: {fileID: 1110287861}
+        m_TargetAssemblyTypeName: ScenesLoader, Assembly-CSharp
+        m_MethodName: SceneTransitionAnimation
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3625,17 +3636,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5bb2329247045434fbbe4e7d91acff4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1322436665 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7175154249638191538, guid: 98b95b568d02aa54696d5bc64a78cbd6, type: 3}
-  m_PrefabInstance: {fileID: 1110287859}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6456fb014738e0449b10a0d101b1d823, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1383684074
