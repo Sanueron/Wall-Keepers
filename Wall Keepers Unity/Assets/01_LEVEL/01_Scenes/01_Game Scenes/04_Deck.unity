@@ -6573,9 +6573,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1608042777}
     m_Modifications:
+    - target: {fileID: 1208051427448736382, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
+      propertyPath: spellBaseData
+      value: 
+      objectReference: {fileID: 11400000, guid: 528fb03b778ef634bacd6d056b3505f1, type: 2}
+    - target: {fileID: 1370452447835895853, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7f6c26aa08505064a9f0f8076d600c91, type: 3}
     - target: {fileID: 2953748825001162203, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_Name
-      value: Spell Card (1)
+      value: S1_Fire Wall
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_Pivot.x
