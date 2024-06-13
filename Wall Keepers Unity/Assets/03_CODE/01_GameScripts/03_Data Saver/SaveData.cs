@@ -86,13 +86,16 @@ public class Container
     #region Player Data Container
     public int i_mana= 0;
     public int i_keys = 0;
+    // Spells Data
     public bool[] b_spellCardObtained = new bool[100];
     public int[] i_spell_Cards_Obtained = new int[100];
     public int[] i_spell_Card_Level = new int[100];
     public  int[] i_awakening_Card_Level = new int[100];
+    // Deck
     public GameObject[] deck_GameObjects = new GameObject[8];
     public int[] i_CardSlotNumber = new int[8];
     public bool b_isDeckFull;
+    //
     public int i_totalCardsInDeck;
     public int i_maxRound;
     public bool b_firstDataSave;
