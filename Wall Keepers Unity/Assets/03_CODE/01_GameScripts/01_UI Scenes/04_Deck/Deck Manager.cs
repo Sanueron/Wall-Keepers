@@ -32,7 +32,8 @@ public class DeckManager : MonoBehaviour
     [SerializeField] private GameObject go_spellDamageStats;
     [SerializeField] private GameObject go_spellResistanceStats, go_spellSpeedStats, go_spellDurationStats;
     [SerializeField]
-    private TextMeshProUGUI tmp_spellStar, tmp_spellLevel, tmp_damageAlone, tmp_damageWithImprovement, tmp_damageImprovement,
+    private TextMeshProUGUI tmp_spellStar, tmp_spellLevel, tmp_spellAwkLevel,
+        tmp_damageAlone, tmp_damageWithImprovement, tmp_damageImprovement,
         tmp_resistanceAlone, tmp_resistanceWithImprovement, tmp_resistanceImprovement,
         tmp_speedAlone, tmp_speedWithImprovement, tmp_speedImprovement,
         tmp_durationAlone, tmp_durationWithImprovement, tmp_durationImprovement;
@@ -168,7 +169,9 @@ public class DeckManager : MonoBehaviour
         // Get Spell Level
         int spellID = spellInfo.i_id;
         int i_spellLevel = PlayerData.i_spell_Card_Level[spellID];
+        tmp_spellLevel.text = i_spellLevel.ToString();
         int i_spellAwakeningLvl = PlayerData.i_awakening_Card_Level[spellID];
+        tmp_spellAwkLevel.text = i_spellAwakeningLvl.ToString();
 
         #region Assign Spell Stats
         int spellStar = spellInfo.i_spellStarsTier;
@@ -206,7 +209,7 @@ public class DeckManager : MonoBehaviour
         // Level Up items
         int i_cardsInStock = PlayerData.i_spell_Cards_Obtained[spellID];
         tmp_cardsInStock.text = i_cardsInStock.ToString();
-        tmp_cardsUntilNextLevel.text = i_spellCardsCost.ToString();
+        tmp_cardsUntilNextLevel.text = "/"+ i_spellCardsCost.ToString();
         // Awakening items
         int i_elementalRunesInStock = PlayerData.i_elementalRunesInStock[spellInfo.requiredElementalRune.i_runeID];
         tmp_elementalRunesRequiredInStock.text = i_elementalRunesInStock.ToString();
@@ -363,6 +366,10 @@ public class DeckManager : MonoBehaviour
             }
         }
 
+        animator_SpellInfoPanel.SetTrigger(i_animatorTriggerVar);
+    }
+    public void HideSpellInfoPanel()
+    {
         animator_SpellInfoPanel.SetTrigger(i_animatorTriggerVar);
     }
     #endregion

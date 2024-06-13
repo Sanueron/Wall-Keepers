@@ -263,9 +263,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1608042777}
     m_Modifications:
+    - target: {fileID: 1208051427448736382, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
+      propertyPath: spellBaseData
+      value: 
+      objectReference: {fileID: 11400000, guid: 5449f8d0136ee7b47b6698149c5f5297, type: 2}
+    - target: {fileID: 1370452447835895853, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 379d0eea71138634ab2e317abbe903ed, type: 3}
     - target: {fileID: 2953748825001162203, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_Name
-      value: Spell Card (7)
+      value: S4_Lighting
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_Pivot.x
@@ -847,6 +855,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spell Card (18)
       objectReference: {fileID: 0}
+    - target: {fileID: 2953748825001162203, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -861,7 +873,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_AnchorMin.x
@@ -869,15 +881,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 275
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_LocalPosition.x
@@ -909,11 +921,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 565
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -1337.5
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -942,6 +954,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6195423186402858997, guid: 5c73cbc1d1341764eaa53d5ca8be37c1, type: 3}
   m_PrefabInstance: {fileID: 6674327000805360216}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &198118378 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5532742918792855092, guid: 933be60a9c6e9eb4f996877c05c589ce, type: 3}
+  m_PrefabInstance: {fileID: 327769527}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bb2329247045434fbbe4e7d91acff4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &208771989
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -950,9 +973,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1608042777}
     m_Modifications:
+    - target: {fileID: 1208051427448736382, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
+      propertyPath: spellBaseData
+      value: 
+      objectReference: {fileID: 11400000, guid: 3d1e0af4a247bd843a7015d0a121f956, type: 2}
+    - target: {fileID: 1370452447835895853, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ab3451163fe3ccd4882b5e3cf3879839, type: 3}
     - target: {fileID: 2953748825001162203, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_Name
-      value: Spell Card (6)
+      value: S2_Tornado
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_Pivot.x
@@ -1056,6 +1087,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spell Card (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 2953748825001162203, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1070,7 +1105,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_AnchorMin.x
@@ -1078,15 +1113,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 275
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1118,11 +1153,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 565
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -1037.5
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1242,6 +1277,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spell Card (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 2953748825001162203, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1256,7 +1295,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_AnchorMin.x
@@ -1264,15 +1303,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 275
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1304,11 +1343,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 340
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -1337.5
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2559,9 +2598,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1608042777}
     m_Modifications:
+    - target: {fileID: 1208051427448736382, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
+      propertyPath: spellBaseData
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f44eb88455fe6545ab8bb150c45d638, type: 2}
+    - target: {fileID: 1370452447835895853, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b24b76436b1924e4f856e0c27ddf7465, type: 3}
     - target: {fileID: 2953748825001162203, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_Name
-      value: Spell Card (5)
+      value: S2_Rock Wall
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_Pivot.x
@@ -3536,9 +3583,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1608042777}
     m_Modifications:
+    - target: {fileID: 1208051427448736382, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
+      propertyPath: spellBaseData
+      value: 
+      objectReference: {fileID: 11400000, guid: ac1f51fdb6b24d346b1dbf9269a0ef71, type: 2}
+    - target: {fileID: 1370452447835895853, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 56e43086f278d9c45b61663d5a1f7345, type: 3}
     - target: {fileID: 2953748825001162203, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_Name
-      value: Spell Card (2)
+      value: S1_Rock Ball
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_Pivot.x
@@ -3638,9 +3693,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1608042777}
     m_Modifications:
+    - target: {fileID: 1208051427448736382, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
+      propertyPath: spellBaseData
+      value: 
+      objectReference: {fileID: 11400000, guid: ddcb41f80aec763419fec5ac480f8314, type: 2}
+    - target: {fileID: 1370452447835895853, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e532fb3743b17cd448dbbde580d4ac71, type: 3}
     - target: {fileID: 2953748825001162203, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_Name
-      value: Spell Card (3)
+      value: S1_Water Ball
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_Pivot.x
@@ -3921,6 +3984,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 64372909}
+  - {fileID: 1119088948}
   m_Father: {fileID: 400799618}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -4003,6 +4067,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spell Card (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 2953748825001162203, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4017,7 +4085,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_AnchorMin.x
@@ -4025,15 +4093,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 275
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4065,11 +4133,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 790
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -1337.5
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4110,6 +4178,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spell Card (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 2953748825001162203, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4124,7 +4196,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_AnchorMin.x
@@ -4132,15 +4204,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 275
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4172,11 +4244,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 115
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -1337.5
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4233,6 +4305,162 @@ Transform:
   - {fileID: 1251221869}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1119088947
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1119088948}
+  - component: {fileID: 1119088951}
+  - component: {fileID: 1119088950}
+  - component: {fileID: 1119088949}
+  m_Layer: 5
+  m_Name: Main Menu Button
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1119088948
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1119088947}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1029049728}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 125, y: -125}
+  m_SizeDelta: {x: 250, y: 250}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1119088949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1119088947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1119088950}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 198118378}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: PlaySFxOneTime
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: d6b949c39c04b47468ec0c41da9ca25e, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1670754480}
+        m_TargetAssemblyTypeName: ScenesLoader, Assembly-CSharp
+        m_MethodName: SetNextSceneToLoad
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1670754480}
+        m_TargetAssemblyTypeName: ScenesLoader, Assembly-CSharp
+        m_MethodName: SceneTransitionAnimation
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1119088950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1119088947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: d0c49aad8f252454898b96a10e9dbe08, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1119088951
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1119088947}
+  m_CullTransparentMesh: 1
 --- !u!1001 &1132067617
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4244,6 +4472,10 @@ PrefabInstance:
     - target: {fileID: 2953748825001162203, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_Name
       value: Spell Card (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2953748825001162203, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_Pivot.x
@@ -4259,7 +4491,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_AnchorMin.x
@@ -4267,15 +4499,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 275
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4307,11 +4539,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 565
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -737.5
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4824,6 +5056,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spell Card (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 2953748825001162203, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4838,7 +5074,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_AnchorMin.x
@@ -4846,15 +5082,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 275
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4886,11 +5122,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 790
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -737.5
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5435,9 +5671,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1608042777}
     m_Modifications:
+    - target: {fileID: 1208051427448736382, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
+      propertyPath: spellBaseData
+      value: 
+      objectReference: {fileID: 11400000, guid: 9cd07bb43a8f8ce419479b4cd6d3dbef, type: 2}
+    - target: {fileID: 1370452447835895853, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 09369eac6d36dfd40b47a18c5a0170cc, type: 3}
     - target: {fileID: 2953748825001162203, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_Name
-      value: Spell Card (4)
+      value: S1_Wind Arrow
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_Pivot.x
@@ -5688,6 +5932,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spell Card (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 2953748825001162203, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -5702,7 +5950,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_AnchorMin.x
@@ -5710,15 +5958,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 275
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5750,11 +5998,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 340
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -1037.5
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -5857,6 +6105,7 @@ GameObject:
   - component: {fileID: 1600878362}
   - component: {fileID: 1600878364}
   - component: {fileID: 1600878363}
+  - component: {fileID: 1600878365}
   m_Layer: 5
   m_Name: Close Button
   m_TagString: Untagged
@@ -5921,6 +6170,74 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1600878361}
   m_CullTransparentMesh: 1
+--- !u!114 &1600878365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600878361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1600878363}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1869218643}
+        m_TargetAssemblyTypeName: DeckManager, Assembly-CSharp
+        m_MethodName: HideSpellInfoPanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1602814624 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2080284447457104900, guid: 5c73cbc1d1341764eaa53d5ca8be37c1, type: 3}
@@ -6280,6 +6597,17 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 10, y: -10}
   m_UseGraphicAlpha: 1
+--- !u!114 &1670754480 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8998099665148255738, guid: 98b95b568d02aa54696d5bc64a78cbd6, type: 3}
+  m_PrefabInstance: {fileID: 88844521}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f34644ab35bcd5b45a4de89ab31bbf2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1681223989
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6748,7 +7076,7 @@ GameObject:
   - component: {fileID: 1820514674}
   - component: {fileID: 1820514676}
   m_Layer: 5
-  m_Name: Spell Panel
+  m_Name: Spell Info Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6979,6 +7307,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spell Card (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 2953748825001162203, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -6993,7 +7325,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_AnchorMin.x
@@ -7001,15 +7333,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 275
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7041,11 +7373,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 790
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -1037.5
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -7081,6 +7413,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spell Card (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 2953748825001162203, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -7095,7 +7431,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_AnchorMin.x
@@ -7103,15 +7439,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 275
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7143,11 +7479,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 115
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -1037.5
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -7351,6 +7687,7 @@ MonoBehaviour:
   go_spellDurationStats: {fileID: 1046964854}
   tmp_spellStar: {fileID: 1770369466}
   tmp_spellLevel: {fileID: 2137049184}
+  tmp_spellAwkLevel: {fileID: 1489088951}
   tmp_damageAlone: {fileID: 2016604755}
   tmp_damageWithImprovement: {fileID: 1361413231}
   tmp_damageImprovement: {fileID: 690762990}
@@ -8172,7 +8509,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -531}
+  m_AnchoredPosition: {x: 0, y: -575}
   m_SizeDelta: {x: 1080, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2095615446
@@ -8300,6 +8637,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spell Card (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 2953748825001162203, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -8314,7 +8655,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_AnchorMin.x
@@ -8322,15 +8663,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 275
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8362,11 +8703,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 340
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -737.5
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -8402,6 +8743,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spell Card (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 2953748825001162203, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -8416,7 +8761,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_AnchorMin.x
@@ -8424,15 +8769,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 275
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8464,11 +8809,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 115
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -737.5
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
