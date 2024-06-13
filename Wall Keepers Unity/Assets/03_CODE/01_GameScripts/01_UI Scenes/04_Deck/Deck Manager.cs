@@ -41,18 +41,49 @@ public class DeckManager : MonoBehaviour
     #endregion
 
     #region Deck Slots Control
-    internal void AssignNextEmptyDeckSlot()
+    internal void AssignNextEmptyDeckSlot(Sprite spr_spellCard, ScripteableCard spellData, GameObject spellPrefab)
     {
         for (int i = 0; i < deckSlots_array.Length; i++)
         {
             if (deckSlots_array[i].GetSlotSpellInfo() == null)
             {
                 // Assign Spell Card
+                deckSlots_array[i].img_spellInSlotVisual.sprite = spr_spellCard;
                 // Assign Spell Data
+                deckSlots_array[i].SetSpellInfo(spellData);
                 // Assign Spell Prefab
+                deckSlots_array[i].spellPrefab = spellPrefab;
+                PlayerData.deck_GameObjects[deckSlots_array[i].i_deckSlotIndex] = deckSlots_array[i].spellPrefab;
+                break;
             }
         }
 
+        // Check if deck full
+        PlayerData.b_isDeckFull = true; // Make true and then check if any slot is empty, if so make false
+        for (int i = 0; i < deckSlots_array.Length; i++)
+        {
+            if (deckSlots_array[i].GetSlotSpellInfo() == null)
+            {
+                PlayerData.b_isDeckFull = false;
+                break;
+            }
+        }
     } 
+
+    internal bool CheckIfSpellAlreadyInDeck(ScripteableCard spellData)
+    {
+        for (int i = 0; i < deckSlots_array.Length; i++)
+        {
+            if (deckSlots_array[i].GetSlotSpellInfo() != null)
+            {
+                if(deckSlots_array[i].GetSlotSpellInfo() == spellData)
+                {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
     #endregion
 }

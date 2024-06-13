@@ -6,7 +6,7 @@ public class DeckSlot : BaseSlot
 {
     [Header("Deck Slot")]
     [SerializeField] Sprite spr_deckSlot_default;
-    [SerializeField] private int i_deckSlotIndex;
+    [SerializeField] internal int i_deckSlotIndex;
 
     #region Local Methods
     public void CheckIfDeckSlotFilledAndCheckIfShowOrHideButtons()
@@ -27,6 +27,9 @@ public class DeckSlot : BaseSlot
         // Empty slot
         spellPrefab = null;
         spellBaseData = null;
+
+        // Hide Buttons
+        HideButtons();
     }
     #endregion
 }

@@ -11,20 +11,24 @@ public class BaseSlot : MonoBehaviour
     #region Slots Common Variables
     // Spell Data
     [SerializeField] protected ScripteableCard spellBaseData;
-    [SerializeField] protected GameObject spellPrefab;
+    [SerializeField] internal GameObject spellPrefab;
 
     // Slot Spell Art
-    [SerializeField] protected Image img_spellInSlotVisual;
+    [SerializeField] internal Image img_spellInSlotVisual;
 
     // Slot Buttons
-    [SerializeField] protected Button button_addOrRemoveSpellToFromDeck;
-    [SerializeField] protected Button button_showSpellInfo;
+    [SerializeField] internal Button button_addOrRemoveSpellToFromDeck;
+    [SerializeField] internal Button button_showSpellInfo;
     #endregion
 
     #region Access methods
     internal ScripteableCard GetSlotSpellInfo()
     {
         return spellBaseData;
+    }
+    internal void SetSpellInfo(ScripteableCard spellBaseData)
+    {
+        this.spellBaseData = spellBaseData;
     }
     #endregion
 

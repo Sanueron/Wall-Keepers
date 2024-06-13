@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class SpellSlot : BaseSlot
 {
+    #region Deck interaction methods
     public void BlockUseButtonIfDeckSlotsComplete()
     {
         button_addOrRemoveSpellToFromDeck.interactable = true;
@@ -14,6 +15,19 @@ public class SpellSlot : BaseSlot
         {
             button_addOrRemoveSpellToFromDeck.interactable = false;
         }
+        if(DeckManager.instance.CheckIfSpellAlreadyInDeck(GetSlotSpellInfo())) // Check if this spell is already in deck
+        {
+            // Already in deck. Bloc Use button
+            button_addOrRemoveSpellToFromDeck.interactable = false;
+        }
     }
+
+    public void AddSpellToDeck()
+    {
+        DeckManager.instance.AssignNextEmptyDeckSlot(GetSlotSpellInfo()._card_Sprite, GetSlotSpellInfo(), spellPrefab);
+        // Block button to avoid adding same spell multiple times
+        button_addOrRemoveSpellToFromDeck.interactable = false;
+    }
+    #endregion
 
 }
