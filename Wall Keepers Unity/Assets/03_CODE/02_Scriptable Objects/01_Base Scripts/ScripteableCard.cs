@@ -5,6 +5,8 @@ public class ScripteableCard : ScriptableObject
 {
     [Header("Base Info and Stats")]
     public int i_id;
+    public enum SpellType { Normal, Fusion };
+    public SpellType e_spellType;
     public int i_spellStarsTier;
     public int i_mana_cost;
     public float f_dmg;
