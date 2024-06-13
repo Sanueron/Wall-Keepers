@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 6cea3146e56eb944ebbad4c85d820b77
+guid: a40cd00b2bf8ee844b6d5996a55ef347
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1493812640381492122
-    second: Extra Button_green_0
+      213: -655665956813211270
+    second: Add to Deck Button_yellow_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -98,14 +98,14 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
-    maxTextureSize: 2048
+    maxTextureSize: 512
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 47
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
-    overridden: 0
+    overridden: 1
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
@@ -152,7 +152,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Extra Button_green_0
+      name: Add to Deck Button_yellow_0
       rect:
         serializedVersion: 2
         x: 0
@@ -166,8 +166,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a9b5dee8ea61bb410800000000000000
-      internalID: 1493812640381492122
+      spriteID: a79f4d0494b96e6f0800000000000000
+      internalID: -655665956813211270
       vertices: []
       indices: 
       edges: []
@@ -182,7 +182,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Add to Deck Button_yellow_0: -655665956813211270
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
