@@ -13,14 +13,17 @@ MonoBehaviour:
   m_Name: S1_Wind Arrow
   m_EditorClassIdentifier: 
   i_id: 7
+  e_spellType: 0
   i_spellStarsTier: 1
   i_mana_cost: 1
   f_dmg: 250
   f_duration: 1
   f_projectileSpeed: 7
   f_resistance: 0
+  requiredElementalRune: {fileID: 11400000, guid: b1f41260bc5382245be7bf31f10bb7ea, type: 2}
   _card_Sprite: {fileID: 21300000, guid: 09369eac6d36dfd40b47a18c5a0170cc, type: 3}
   _onField_Sprite: {fileID: -929732055, guid: ecd1c017eb982bd419a1619bff630c29, type: 3}
+  spellPrefab: {fileID: 0}
   castClip: {fileID: 8300000, guid: 993d8429039484c409b86e6ab4bb4a79, type: 3}
   impactClip: {fileID: 8300000, guid: d072348a9df3e714b8b0e37f720442f3, type: 3}
   i_starLevel: 1

@@ -13,14 +13,17 @@ MonoBehaviour:
   m_Name: S3_Tornado
   m_EditorClassIdentifier: 
   i_id: 6
+  e_spellType: 0
   i_spellStarsTier: 2
   i_mana_cost: 1
   f_dmg: 0
   f_duration: 3
   f_projectileSpeed: 1
   f_resistance: 0
+  requiredElementalRune: {fileID: 11400000, guid: b1f41260bc5382245be7bf31f10bb7ea, type: 2}
   _card_Sprite: {fileID: 21300000, guid: ab3451163fe3ccd4882b5e3cf3879839, type: 3}
   _onField_Sprite: {fileID: 625868452, guid: 37bfc545a7cd3c548934d2b3224935d6, type: 3}
+  spellPrefab: {fileID: 0}
   castClip: {fileID: 8300000, guid: 2b1df6e9228a48e46804c2ab22c37c9f, type: 3}
   impactClip: {fileID: 0}
   i_starLevel: 2

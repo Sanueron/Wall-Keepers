@@ -13,14 +13,17 @@ MonoBehaviour:
   m_Name: S1_WaterBall
   m_EditorClassIdentifier: 
   i_id: 3
+  e_spellType: 0
   i_spellStarsTier: 1
   i_mana_cost: 2
   f_dmg: 300
   f_duration: 1
   f_projectileSpeed: 3
   f_resistance: 0
+  requiredElementalRune: {fileID: 11400000, guid: fed4aaf3e278ee447868e6cf2800cc52, type: 2}
   _card_Sprite: {fileID: 21300000, guid: e532fb3743b17cd448dbbde580d4ac71, type: 3}
   _onField_Sprite: {fileID: 1010123252, guid: 7ca17a4c9d7a26b48a46f09c234335b2, type: 3}
+  spellPrefab: {fileID: 0}
   castClip: {fileID: 8300000, guid: 77f0ac2484477f349ba897bd8cc34fa5, type: 3}
   impactClip: {fileID: 8300000, guid: 3c2d3732bf1ad2340a58165a00830c56, type: 3}
   i_starLevel: 1

@@ -23,6 +23,8 @@ public class DeckManager : MonoBehaviour
 
     #region Spell Info Panel
     [Header("Spell Info Panel Variables")]
+    [SerializeField] Animator animator_SpellInfoPanel;
+    private int i_animatorTriggerVar = Animator.StringToHash("Fade");
     [SerializeField] private Image img_selectedSpellCard;
     [SerializeField] private Image img_smallCard_RequiredCostInFillBar;
     [SerializeField] private TextMeshProUGUI tmp_spellDescription;
@@ -34,8 +36,20 @@ public class DeckManager : MonoBehaviour
         tmp_resistanceAlone, tmp_resistanceWithImprovement, tmp_resistanceImprovement,
         tmp_speedAlone, tmp_speedWithImprovement, tmp_speedImprovement,
         tmp_durationAlone, tmp_durationWithImprovement, tmp_durationImprovement;
-    [Header("Spell Level Up and Awakening")]
+    [Header("Spell Level Up")]
     [SerializeField] private GameObject go_levelUpItems;
+    [SerializeField] private Image img_cardsRequiredFillBar;
+    [SerializeField] private TextMeshProUGUI tmp_cardsInStock, tmp_cardsUntilNextLevel;
+
+    [Header("Spell Awakening")]
+    [SerializeField] private GameObject go_awakenItems;
+    [SerializeField] private Image img_elementalRuneRequiredIcon;
+    [SerializeField] private TextMeshProUGUI tmp_elementalRunesRequiredInStock, tmp_elementalRunesRequired;
+
+    [Header("Mana Energy Cost for lvl up or awakening and button")]
+    [SerializeField] private TextMeshProUGUI tmp_manaEnergyCost;
+    [SerializeField] private TextMeshProUGUI tmp_lvlUpOrAwakentext;
+    [SerializeField] private Button button_levelUpOrAwaken;
     #endregion
 
     #region Spell level Up and Awaken Variables
@@ -158,6 +172,7 @@ public class DeckManager : MonoBehaviour
 
         #region Assign Spell Stats
         int spellStar = spellInfo.i_spellStarsTier;
+        tmp_spellStar.text = spellStar.ToString();
         float f_damage = spellInfo.f_dmg + 
             SpellsData.f_damageIncreaseByLevel * i_spellLevel +
             SpellsData.f_damageIncreaseByAwakening*i_spellAwakeningLvl;
@@ -170,10 +185,12 @@ public class DeckManager : MonoBehaviour
         float f_duration = spellInfo.f_duration +
             SpellsData.f_durationIncreaseByLevel * i_spellLevel +
             SpellsData.f_damageIncreaseByAwakening * i_spellAwakeningLvl;
+        // Update Text stats visuals
+        UpdateStats(f_damage, f_resistance, f_speed, f_duration);
         #endregion
 
         // Disactive not applicable stats (if base stat is 0 disactivate)
-        if(f_damage > 0) { go_spellDamageStats.SetActive(true); } else {  go_spellDamageStats.SetActive(false);}
+        if (f_damage > 0) { go_spellDamageStats.SetActive(true); } else {  go_spellDamageStats.SetActive(false);}
         if(f_resistance > 0) { go_spellResistanceStats.SetActive(true); } else { go_spellResistanceStats.SetActive(false); }
         if(f_speed > 0) { go_spellSpeedStats.SetActive(true);} else {  go_spellSpeedStats.SetActive(false); }
         if(f_duration > 0) { go_spellDurationStats.SetActive(true); } else { go_spellDurationStats.SetActive(false); }
@@ -184,64 +201,245 @@ public class DeckManager : MonoBehaviour
         i_spellCardsCost = SpellsData.i_spell_Cards_Cost_Increase_Per_Level + SpellsData.i_spell_Cards_Cost_Increase_Per_Level * i_spellLevel;
         i_elementalRunesCost = SpellsData.i_elemetalRunes_Cost_Increase_Per_Level+ 
             i_spellAwakeningLvl * SpellsData.i_elemetalRunes_Cost_Increase_Per_Level;
+        // Mana Cost
+        tmp_manaEnergyCost.text = i_manaEnergyCost.ToString();
+        // Level Up items
+        int i_cardsInStock = PlayerData.i_spell_Cards_Obtained[spellID];
+        tmp_cardsInStock.text = i_cardsInStock.ToString();
+        tmp_cardsUntilNextLevel.text = i_spellCardsCost.ToString();
+        // Awakening items
+        int i_elementalRunesInStock = PlayerData.i_elementalRunesInStock[spellInfo.requiredElementalRune.i_runeID];
+        tmp_elementalRunesRequiredInStock.text = i_elementalRunesInStock.ToString();
+        tmp_elementalRunesRequired.text = i_elementalRunesCost.ToString();
+        img_elementalRuneRequiredIcon.sprite = spellInfo.requiredElementalRune.spr_runeIcon;
 
+        button_levelUpOrAwaken.interactable = false;
         // Check if spell ready for Awakening - Level Cap reached and Awakening level not increased yet
         // At level 10 - Awk level 1 and so on
+        tmp_lvlUpOrAwakentext.text = "Awaken"; // changed later if level up instead
+        bool b_awakeningReady = false;
         if (i_spellLevel == 10)
         {
             if(i_spellAwakeningLvl == 0)
             {
                 // Show Awakening options
+                go_levelUpItems.SetActive(false);
+                go_awakenItems.SetActive(true);
+                if (i_elementalRunesInStock >= i_elementalRunesCost)
+                {
+                    if (PlayerData.i_mana >= i_manaEnergyCost)
+                    {
+                        button_levelUpOrAwaken.interactable = true;
+                        UpdateStatsImprovement(SpellsData.f_damageIncreaseByAwakening, SpellsData.f_resistanceIncreaseByAwakening,
+                                SpellsData.f_speedIncreaseByAwakening, SpellsData.f_durationIncreaseByAwakening);
+                        ShowStatsWithImprovement();
+                    }
+                    else { ShowStatsAlone(); }
+                }
+                else { ShowStatsAlone(); }
             }
+            else { b_awakeningReady = false; }
         }
         else if (i_spellLevel == 20)
         {
             if (i_spellAwakeningLvl == 1)
             {
                 // Show Awakening options
+                go_levelUpItems.SetActive(false);
+                go_awakenItems.SetActive(true);
+                if (i_elementalRunesInStock >= i_elementalRunesCost)
+                {
+                    if (PlayerData.i_mana >= i_manaEnergyCost)
+                    {
+                        button_levelUpOrAwaken.interactable = true;
+                        UpdateStatsImprovement(SpellsData.f_damageIncreaseByAwakening, SpellsData.f_resistanceIncreaseByAwakening,
+                        SpellsData.f_speedIncreaseByAwakening, SpellsData.f_durationIncreaseByAwakening);
+                        ShowStatsWithImprovement();
+                    }
+                    else { ShowStatsAlone(); }
+                }
+                else { ShowStatsAlone(); }
             }
+            else { b_awakeningReady = false; }
         }
         else if(i_spellLevel == 30)
         {
             if (i_spellAwakeningLvl == 2)
             {
                 // Show Awakening options
+                go_levelUpItems.SetActive(false);
+                go_awakenItems.SetActive(true);
+                if (i_elementalRunesInStock >= i_elementalRunesCost)
+                {
+                    if (PlayerData.i_mana >= i_manaEnergyCost)
+                    {
+                        button_levelUpOrAwaken.interactable = true;
+                        UpdateStatsImprovement(SpellsData.f_damageIncreaseByAwakening, SpellsData.f_resistanceIncreaseByAwakening,
+                        SpellsData.f_speedIncreaseByAwakening, SpellsData.f_durationIncreaseByAwakening);
+                        ShowStatsWithImprovement();
+                    }
+                    else { ShowStatsAlone(); }
+                }
+                else { ShowStatsAlone(); }
             }
+            else { b_awakeningReady = false; }
         }
         else if (i_spellLevel == 40)
         {
             if (i_spellAwakeningLvl == 3)
             {
                 // Show Awakening options
+                go_levelUpItems.SetActive(false);
+                go_awakenItems.SetActive(true);
+                if (i_elementalRunesInStock >= i_elementalRunesCost)
+                {
+                    if (PlayerData.i_mana >= i_manaEnergyCost)
+                    {
+                        button_levelUpOrAwaken.interactable = true;
+                        UpdateStatsImprovement(SpellsData.f_damageIncreaseByAwakening, SpellsData.f_resistanceIncreaseByAwakening,
+                        SpellsData.f_speedIncreaseByAwakening, SpellsData.f_durationIncreaseByAwakening);
+                        ShowStatsWithImprovement();
+                    }
+                    else { ShowStatsAlone(); }
+                }
+                else { ShowStatsAlone(); }
             }
+            else { b_awakeningReady = false; }
         }
         else if (i_spellLevel == 50)
         {
             if (i_spellAwakeningLvl == 4)
             {
                 // Show Awakening options
+                go_levelUpItems.SetActive(false);
+                go_awakenItems.SetActive(true);
+                if(i_elementalRunesInStock >= i_elementalRunesCost)
+                {
+                    if(PlayerData.i_mana >= i_manaEnergyCost)
+                    {
+                        button_levelUpOrAwaken.interactable = true;
+                        UpdateStatsImprovement(SpellsData.f_damageIncreaseByAwakening, SpellsData.f_resistanceIncreaseByAwakening,
+                        SpellsData.f_speedIncreaseByAwakening, SpellsData.f_durationIncreaseByAwakening);
+                        ShowStatsWithImprovement();
+                    }
+                    else { ShowStatsAlone(); }
+                }
+                else { ShowStatsAlone(); }
             }
+            else { b_awakeningReady = false; }
         }
-        else // Spell Not ready for Awakening Show Level Up options
+        if (!b_awakeningReady) // Spell Not ready for Awakening Show Level Up options
         {
+            go_awakenItems.SetActive(false);
             // Check if Spell is fusion or not and Show level up buttons
             switch (spellInfo.e_spellType)
             {
                 case ScripteableCard.SpellType.Normal:
-                    // Get Spells of this type in stock
-                    // Get Spells required for next Level
-                    // Assign Spell Card to Spell Required icon in bar
+                    tmp_lvlUpOrAwakentext.text = "Level Up";
+                    go_levelUpItems.SetActive(true);
                     img_smallCard_RequiredCostInFillBar.sprite = spellInfo._card_Sprite;
-                    // Show Spell Fill bar
-
+                    // Show Spell Card Required Fill bar
+                    img_cardsRequiredFillBar.fillAmount = GetFillBarValue(i_cardsInStock, i_spellCardsCost);
                     // Check if enough for Level Up
+                    if (i_cardsInStock >= i_spellCardsCost)
+                    {
+                        if (PlayerData.i_mana >= i_manaEnergyCost)
+                        {
+                            button_levelUpOrAwaken.interactable = true;
+                            UpdateStatsImprovement(SpellsData.f_damageIncreaseByLevel, SpellsData.f_resistanceIncreaseByLevel,
+                                SpellsData.f_speedIncreaseByLevel, SpellsData.f_durationIncreaseByLevel);
+                            ShowStatsWithImprovement();
+                        }
+                        else
+                        {
+                            ShowStatsAlone();
+                        }
+                    }
                     break;
                 case ScripteableCard.SpellType.Fusion:
+                    go_levelUpItems.SetActive(false);
+                    go_awakenItems.SetActive(false);
                     break;
             }
-            // Set Mana Energy Cost for level Up and Check if enough for level up
         }
-        // Update text variables
+
+        animator_SpellInfoPanel.SetTrigger(i_animatorTriggerVar);
+    }
+    #endregion
+
+    #region Helper methods
+    private float GetFillBarValue(float f_numberOfCards, int i_cardsUntilNextImprovement)
+    {
+        float fillBarValue = (float)f_numberOfCards / i_cardsUntilNextImprovement;
+        if (f_numberOfCards >= i_cardsUntilNextImprovement)
+        {
+            fillBarValue = 1f;
+        }
+        return fillBarValue;
+    }
+    private void UpdateStats(float f_damage, float f_resistance, float f_speed, float f_duration)
+    {
+        // Damage
+        tmp_damageAlone.text = f_damage.ToString();
+        tmp_damageWithImprovement.text = f_damage.ToString();
+        // Resistance
+        tmp_resistanceAlone.text = f_resistance.ToString();
+        tmp_resistanceWithImprovement.text = f_resistance.ToString() ;
+        // Speed
+        tmp_speedAlone.text = f_speed.ToString();
+        tmp_speedWithImprovement.text = f_speed.ToString();
+        //Duration
+        tmp_durationAlone.text = f_duration.ToString();
+        tmp_durationWithImprovement.text = f_duration.ToString();
+    }
+    private void UpdateStatsImprovement(float f_damageImprove, float f_resistanceImprove, float f_speedImprove, float f_durationImprove)
+    {
+        // Damage
+        tmp_damageImprovement.text = f_damageImprove.ToString();
+        // Resistance
+        tmp_resistanceImprovement.text = f_resistanceImprove.ToString();
+        // Speed
+        tmp_speedImprovement.text = f_speedImprove.ToString();
+        // Duration
+        tmp_durationImprovement.text = f_durationImprove.ToString();
+    }
+    private void ShowStatsAlone()
+    {
+        // Damage
+        tmp_damageAlone.gameObject.SetActive(true);
+        tmp_damageWithImprovement.gameObject.SetActive(false);
+        tmp_damageImprovement.gameObject.SetActive(false);
+        // Resistance
+        tmp_resistanceAlone.gameObject.SetActive(true);
+        tmp_resistanceWithImprovement.gameObject.SetActive(false);
+        tmp_resistanceImprovement.gameObject.SetActive(false);
+        // Speed
+        tmp_speedAlone.gameObject.SetActive(true);
+        tmp_speedWithImprovement.gameObject.SetActive(false);
+        tmp_speedImprovement.gameObject.SetActive(false);
+        //Duration
+        tmp_durationAlone.gameObject.SetActive(true);
+        tmp_durationWithImprovement.gameObject.SetActive(false);
+        tmp_durationImprovement.gameObject.SetActive(false);
+    }
+    private void ShowStatsWithImprovement()
+    {
+        // Damage
+        tmp_damageAlone.gameObject.SetActive(false);
+        tmp_damageWithImprovement.gameObject.SetActive(true);
+        tmp_damageImprovement.gameObject.SetActive(true);
+        // Resistance
+        tmp_resistanceAlone.gameObject.SetActive(false);
+        tmp_resistanceWithImprovement.gameObject.SetActive(true);
+        tmp_resistanceImprovement.gameObject.SetActive(true);
+        // Speed
+        tmp_speedAlone.gameObject.SetActive(false);
+        tmp_speedWithImprovement.gameObject.SetActive(true);
+        tmp_speedImprovement.gameObject.SetActive(true);
+        //Duration
+        tmp_durationAlone.gameObject.SetActive(false);
+        tmp_durationWithImprovement.gameObject.SetActive(true);
+        tmp_durationImprovement.gameObject.SetActive(true);
     }
     #endregion
 }

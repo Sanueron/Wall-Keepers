@@ -14,6 +14,9 @@ public class ScripteableCard : ScriptableObject
     public float f_projectileSpeed;
     public float f_resistance;
 
+    [Header("Elemental Rune ID ")]
+    public ElementalRunes_SO requiredElementalRune;
+
     [Header("Spell Art and Prefab")]
     public Sprite _card_Sprite;
     public Sprite _onField_Sprite;// QUE ES MEJOR COJER EL SPRITE DE AQUI O EN SPELLCARD QUE EN FUNCION DEL TIPO DE CARTA COJA UNO U OTRO ?

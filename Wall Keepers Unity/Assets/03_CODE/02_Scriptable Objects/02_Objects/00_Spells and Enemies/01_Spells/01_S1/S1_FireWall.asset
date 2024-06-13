@@ -13,14 +13,17 @@ MonoBehaviour:
   m_Name: S1_FireWall
   m_EditorClassIdentifier: 
   i_id: 4
+  e_spellType: 0
   i_spellStarsTier: 1
   i_mana_cost: 2
   f_dmg: 150
   f_duration: 1
   f_projectileSpeed: 1
   f_resistance: 0
+  requiredElementalRune: {fileID: 11400000, guid: b5ee84b6f16ee1644953e2c67339c918, type: 2}
   _card_Sprite: {fileID: 21300000, guid: 7f6c26aa08505064a9f0f8076d600c91, type: 3}
   _onField_Sprite: {fileID: -410415777, guid: 54cb26720ff3c534ebf0e913b2bc6fbd, type: 3}
+  spellPrefab: {fileID: 0}
   castClip: {fileID: 8300000, guid: 8568d1eb29ed6ac4cbedf726b6456353, type: 3}
   impactClip: {fileID: 0}
   i_starLevel: 1

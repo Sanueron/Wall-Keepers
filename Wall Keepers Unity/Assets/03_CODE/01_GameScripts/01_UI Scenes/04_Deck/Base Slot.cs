@@ -37,6 +37,7 @@ public class BaseSlot : MonoBehaviour
     {
         DeckManager.instance.OnSelectedSlotChanged += DeckManager_OnSelectedSlotChanged;
     }
+    #endregion
 
     #region Events Methods
     private void DeckManager_OnSelectedSlotChanged(object sender, EventArgs e)
@@ -82,6 +83,12 @@ public class BaseSlot : MonoBehaviour
     }
     #endregion
 
-
+    #region Panels Methods
+    public void ShowSpellInfoPanel()
+    {
+        DeckManager.instance.OpenSpellInfoPanel(spellBaseData);
+    }
     #endregion
+
+
 }

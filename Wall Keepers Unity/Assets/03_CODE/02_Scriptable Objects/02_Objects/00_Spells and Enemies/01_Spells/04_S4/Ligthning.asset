@@ -13,14 +13,17 @@ MonoBehaviour:
   m_Name: Ligthning
   m_EditorClassIdentifier: 
   i_id: 8
+  e_spellType: 0
   i_spellStarsTier: 4
   i_mana_cost: 4
   f_dmg: 700
   f_duration: 3
   f_projectileSpeed: 1
   f_resistance: 0
+  requiredElementalRune: {fileID: 11400000, guid: dea30c48ba8a65b458abab783486f147, type: 2}
   _card_Sprite: {fileID: 21300000, guid: 379d0eea71138634ab2e317abbe903ed, type: 3}
   _onField_Sprite: {fileID: -1423547225, guid: 9641dc86ca04a5540bafa8aa1e9d96f7, type: 3}
+  spellPrefab: {fileID: 0}
   castClip: {fileID: 8300000, guid: 42cc79a4862bb9a46923d599104e367e, type: 3}
   impactClip: {fileID: 8300000, guid: 42cc79a4862bb9a46923d599104e367e, type: 3}
   i_starLevel: 4
