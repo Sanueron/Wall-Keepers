@@ -44,6 +44,17 @@ public class DeckManager : MonoBehaviour
     }
     #endregion
 
+    #region Unselect Selected Slot
+    public void UnselectSlot()
+    {
+        if(currentSelectedSlot != null)
+        {
+            currentSelectedSlot.HideButtons();
+            currentSelectedSlot = null;
+        }
+    }
+    #endregion
+
     #region Deck Slots Control
     private void AssignSpellsInDeckAtStart()
     {
