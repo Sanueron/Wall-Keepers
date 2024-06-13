@@ -20,6 +20,7 @@ public class DeckSlot : BaseSlot
     {
         // Remove from saved data
         PlayerData.deck_GameObjects[i_deckSlotIndex] = null;
+        PlayerData.spellsInDeckData[i_deckSlotIndex] = null;
         // Mark deck as not complete
         PlayerData.b_isDeckFull = false;
         // Back to default sprite
@@ -30,6 +31,9 @@ public class DeckSlot : BaseSlot
 
         // Hide Buttons
         HideButtons();
+
+        // Save data
+        SaveData.instance.AssignDataAndSave();
     }
     #endregion
 }

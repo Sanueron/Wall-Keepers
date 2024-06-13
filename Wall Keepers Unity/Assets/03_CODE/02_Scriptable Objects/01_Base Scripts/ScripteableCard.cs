@@ -3,6 +3,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "CardStats", menuName = "ScriptableObjects/CardStats", order = 1)]
 public class ScripteableCard : ScriptableObject
 {
+    [Header("Base Info and Stats")]
     public int i_id;
     public int i_spellStarsTier;
     public int i_mana_cost;
@@ -10,11 +11,17 @@ public class ScripteableCard : ScriptableObject
     public float f_duration;  
     public float f_projectileSpeed;
     public float f_resistance;
+
+    [Header("Spell Art and Prefab")]
     public Sprite _card_Sprite;
     public Sprite _onField_Sprite;// QUE ES MEJOR COJER EL SPRITE DE AQUI O EN SPELLCARD QUE EN FUNCION DEL TIPO DE CARTA COJA UNO U OTRO ?
+    [SerializeField] internal GameObject spellPrefab;
+
+    [Header("SFxs")]
     public AudioClip castClip;
     public AudioClip impactClip;
     public int i_starLevel = 1;
+    
     [Header("Lake")]
     public float f_repeatingDmgCoolDown;//LakeLifeTime
     public enum castingType {None, Projectile, Instant, AllMap };

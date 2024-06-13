@@ -93,6 +93,7 @@ public class Container
     public  int[] i_awakening_Card_Level = new int[100];
     // Deck
     public GameObject[] deck_GameObjects = new GameObject[8];
+    public ScripteableCard[] spellsInDeckData = new ScripteableCard[8];
     public int[] i_CardSlotNumber = new int[8];
     public bool b_isDeckFull;
     //
@@ -134,6 +135,7 @@ public class Container
 
         #region Deck
         deck_GameObjects = PlayerData.deck_GameObjects;
+        spellsInDeckData = PlayerData.spellsInDeckData;
         b_isDeckFull = PlayerData.b_isDeckFull;
         #endregion
 
@@ -168,6 +170,7 @@ public class Container
 
         #region Deck
         PlayerData.deck_GameObjects = deck_GameObjects;
+        PlayerData.spellsInDeckData = spellsInDeckData;
         PlayerData.b_isDeckFull = b_isDeckFull;
         #endregion
 

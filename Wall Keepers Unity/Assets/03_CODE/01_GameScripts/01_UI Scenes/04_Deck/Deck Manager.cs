@@ -32,6 +32,10 @@ public class DeckManager : MonoBehaviour
         }
         instance = this; // Equal the instance to this script
     }
+    private void Start()
+    {
+        AssignSpellsInDeckAtStart();
+    }
 
     #region Events
     internal void FireEventOnSlotSelectedChanged()
@@ -41,6 +45,19 @@ public class DeckManager : MonoBehaviour
     #endregion
 
     #region Deck Slots Control
+    private void AssignSpellsInDeckAtStart()
+    {
+        // Assign saved Spells in deck to their current slots
+        for (int i = 0; i < deckSlots_array.Length; i++)
+        {
+            if(PlayerData.spellsInDeckData[deckSlots_array[i].i_deckSlotIndex] != null)
+            {
+                deckSlots_array[i].SetSpellInfo(PlayerData.spellsInDeckData[deckSlots_array[i].i_deckSlotIndex]);
+                deckSlots_array[i].spellPrefab = PlayerData.spellsInDeckData[deckSlots_array[i].i_deckSlotIndex].spellPrefab;
+                deckSlots_array[i].img_spellInSlotVisual.sprite = PlayerData.spellsInDeckData[deckSlots_array[i].i_deckSlotIndex]._card_Sprite;
+            }
+        }
+    }
     internal void AssignNextEmptyDeckSlot(Sprite spr_spellCard, ScripteableCard spellData, GameObject spellPrefab)
     {
         for (int i = 0; i < deckSlots_array.Length; i++)
@@ -54,6 +71,7 @@ public class DeckManager : MonoBehaviour
                 // Assign Spell Prefab
                 deckSlots_array[i].spellPrefab = spellPrefab;
                 PlayerData.deck_GameObjects[deckSlots_array[i].i_deckSlotIndex] = deckSlots_array[i].spellPrefab;
+                PlayerData.spellsInDeckData[deckSlots_array[i].i_deckSlotIndex] = spellData;
                 break;
             }
         }
@@ -68,6 +86,9 @@ public class DeckManager : MonoBehaviour
                 break;
             }
         }
+
+        // Save data
+        SaveData.instance.AssignDataAndSave();
     } 
 
     internal bool CheckIfSpellAlreadyInDeck(ScripteableCard spellData)
