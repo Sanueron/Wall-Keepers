@@ -125,13 +125,17 @@ public class Container
         i_keys = PlayerData.i_keys;
         b_spellCardObtained = PlayerData.b_spellCardObtained;
         i_spell_Cards_Obtained = PlayerData.i_spell_Cards_Obtained;
-        //deck_GameObjects = PlayerData.deck_GameObjects;
         i_spell_Card_Level = PlayerData.i_spell_Card_Level;
         i_awakening_Card_Level = PlayerData.i_awakening_Card_Level;
         i_CardSlotNumber = PlayerData.i_CardSlotNumber;
         i_maxRound = PlayerData.i_maxRound;
         b_firstDataSave = PlayerData.b_firstDataSave;
         b_CanAwake = PlayerData.b_canAwake;
+
+        #region Deck
+        deck_GameObjects = PlayerData.deck_GameObjects;
+        b_isDeckFull = PlayerData.b_isDeckFull;
+        #endregion
 
         #region Elemental Runes
         i_elementalRunesInStock = PlayerData.i_elementalRunesInStock;
@@ -161,6 +165,11 @@ public class Container
         PlayerData.i_CardSlotNumber = i_CardSlotNumber;
         PlayerData.b_firstDataSave= b_firstDataSave;
         PlayerData.b_canAwake = b_CanAwake;
+
+        #region Deck
+        PlayerData.deck_GameObjects = deck_GameObjects;
+        PlayerData.b_isDeckFull = b_isDeckFull;
+        #endregion
 
         #region Elemental Runes
         PlayerData.i_elementalRunesInStock = i_elementalRunesInStock;

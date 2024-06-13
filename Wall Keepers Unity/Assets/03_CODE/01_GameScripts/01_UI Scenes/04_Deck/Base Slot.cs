@@ -37,10 +37,8 @@ public class BaseSlot : MonoBehaviour
     #region Events Methods
     private void DeckManager_OnSelectedSlotChanged(object sender, EventArgs e)
     {
-        print("Event method");
         if(DeckManager.instance.currentSelectedSlot != this)
         {
-            print("Not this");
             HideButtons();
         }
     }

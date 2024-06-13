@@ -11,7 +11,11 @@ public static class PlayerData
     internal static int[] i_spell_Card_Level = new int[100];
     internal static int[] i_awakening_Card_Level = new int[100];
     internal static bool[] b_canAwake = new bool[100];
+    // Deck
+    internal static GameObject[] deck_GameObjects = new GameObject[8];
     internal static int[] i_CardSlotNumber = new int[8];
+    internal static bool b_isDeckFull;
+    // Scores
     internal static int i_maxRound;
 
     internal static bool b_firstDataSave;

@@ -15,6 +15,8 @@ public class DeckManager : MonoBehaviour
 
     #region Deck Main Variables
     internal BaseSlot currentSelectedSlot; // To know which slot is currently selected
+    [Header("Deck Slots")]
+    [SerializeField] internal DeckSlot[] deckSlots_array = new DeckSlot[8];
     #endregion
 
 
@@ -31,14 +33,26 @@ public class DeckManager : MonoBehaviour
         instance = this; // Equal the instance to this script
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    #region Events
     internal void FireEventOnSlotSelectedChanged()
     {
         OnSelectedSlotChanged?.Invoke(this, EventArgs.Empty);
     }
+    #endregion
+
+    #region Deck Slots Control
+    internal void AssignNextEmptyDeckSlot()
+    {
+        for (int i = 0; i < deckSlots_array.Length; i++)
+        {
+            if (deckSlots_array[i].GetSlotSpellInfo() == null)
+            {
+                // Assign Spell Card
+                // Assign Spell Data
+                // Assign Spell Prefab
+            }
+        }
+
+    } 
+    #endregion
 }
