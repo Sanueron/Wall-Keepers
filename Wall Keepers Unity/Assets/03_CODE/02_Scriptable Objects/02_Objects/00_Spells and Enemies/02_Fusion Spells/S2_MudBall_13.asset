@@ -10,20 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67a28c5053d354cbc9b5d80ae0aaa875, type: 3}
-  m_Name: MudBall
+  m_Name: S2_MudBall_13
   m_EditorClassIdentifier: 
-  i_id: 20
+  i_id: 13
+  e_spellType: 1
+  i_spellStarsTier: 2
   i_mana_cost: 2
   f_dmg: 300
   f_duration: 20
   f_projectileSpeed: 3
   f_resistance: 0
+  requiredElementalRune: {fileID: 11400000, guid: fed4aaf3e278ee447868e6cf2800cc52, type: 2}
   _card_Sprite: {fileID: 21300000, guid: 9ec7f95bc6c2e4641ba647264480ac04, type: 3}
   _onField_Sprite: {fileID: -216997052, guid: 8770b5af2c619364b9bcad49416ec46b, type: 3}
+  spellPrefab: {fileID: 0}
   castClip: {fileID: 8300000, guid: f290d89f6a37c7a4c89db7b41dc627d2, type: 3}
   impactClip: {fileID: 8300000, guid: 007b853fea379b34c8a399e20987d432, type: 3}
   i_starLevel: 2
-  f_SlowDown: 2
   f_repeatingDmgCoolDown: 0
   e_CastingType: 1
   e_Effect: 3
@@ -38,3 +41,5 @@ MonoBehaviour:
   fusionSprite3: {fileID: 0}
   fusionSprite4: {fileID: 0}
   fusionSprite5: {fileID: 0}
+  b_canAwake: 0
+  i_awakenLevel: 1

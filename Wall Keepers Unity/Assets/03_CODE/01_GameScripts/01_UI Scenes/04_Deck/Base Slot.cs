@@ -72,7 +72,10 @@ public class BaseSlot : MonoBehaviour
         // Mark Slot as Current Selected
         DeckManager.instance.currentSelectedSlot = this;
         // Show Buttons
-        button_addOrRemoveSpellToFromDeck.gameObject.SetActive(true);
+        if(spellBaseData.e_spellType == ScripteableCard.SpellType.Normal)
+        {
+            button_addOrRemoveSpellToFromDeck.gameObject.SetActive(true);
+        }
         button_showSpellInfo.gameObject.SetActive(true);
     }
     public void HideButtons()

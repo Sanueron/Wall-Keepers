@@ -10,29 +10,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67a28c5053d354cbc9b5d80ae0aaa875, type: 3}
-  m_Name: S3_Tornado
+  m_Name: S3_FireExplosion_09
   m_EditorClassIdentifier: 
-  i_id: 6
+  i_id: 9
   e_spellType: 0
-  i_spellStarsTier: 2
-  i_mana_cost: 1
-  f_dmg: 0
+  i_spellStarsTier: 4
+  i_mana_cost: 4
+  f_dmg: 700
   f_duration: 3
   f_projectileSpeed: 1
   f_resistance: 0
-  requiredElementalRune: {fileID: 11400000, guid: b1f41260bc5382245be7bf31f10bb7ea, type: 2}
-  _card_Sprite: {fileID: 21300000, guid: ab3451163fe3ccd4882b5e3cf3879839, type: 3}
-  _onField_Sprite: {fileID: 625868452, guid: 37bfc545a7cd3c548934d2b3224935d6, type: 3}
+  requiredElementalRune: {fileID: 0}
+  _card_Sprite: {fileID: 21300000, guid: 379d0eea71138634ab2e317abbe903ed, type: 3}
+  _onField_Sprite: {fileID: -1423547225, guid: 9641dc86ca04a5540bafa8aa1e9d96f7, type: 3}
   spellPrefab: {fileID: 0}
-  castClip: {fileID: 8300000, guid: 2b1df6e9228a48e46804c2ab22c37c9f, type: 3}
-  impactClip: {fileID: 0}
-  i_starLevel: 2
+  castClip: {fileID: 8300000, guid: 42cc79a4862bb9a46923d599104e367e, type: 3}
+  impactClip: {fileID: 8300000, guid: 42cc79a4862bb9a46923d599104e367e, type: 3}
+  i_starLevel: 4
   f_repeatingDmgCoolDown: 0
   e_CastingType: 2
   e_Effect: 2
-  e_Element: 4
+  e_Element: 5
   e_2Element: 0
-  Description: Pulls enemies in area to its center.
+  Description: Casts a lighting in the target area that deals impact damage to enemies
+    in area.
   f_attackInterval: 0
   b_isMerged: 0
   fusionSprite1: {fileID: 0}

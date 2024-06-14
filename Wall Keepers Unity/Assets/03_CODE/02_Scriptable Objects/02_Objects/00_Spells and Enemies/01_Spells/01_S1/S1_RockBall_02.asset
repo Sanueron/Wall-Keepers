@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67a28c5053d354cbc9b5d80ae0aaa875, type: 3}
-  m_Name: S1_RockBall
+  m_Name: S1_RockBall_02
   m_EditorClassIdentifier: 
   i_id: 2
   e_spellType: 0
