@@ -2004,7 +2004,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 554208886}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1986191347}
+        m_TargetAssemblyTypeName: ImproveCardManager, Assembly-CSharp
+        m_MethodName: LevelUpSpell
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &571564046
 GameObject:
   m_ObjectHideFlags: 0
@@ -2219,6 +2243,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1964478719}
     m_Modifications:
+    - target: {fileID: 1653610555989130384, guid: df28576e060fa244dbdad371ed85a550, type: 3}
+      propertyPath: m_Name
+      value: Can Improve Stats Display
+      objectReference: {fileID: 0}
+    - target: {fileID: 1653610555989130384, guid: df28576e060fa244dbdad371ed85a550, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2892382192244479456, guid: df28576e060fa244dbdad371ed85a550, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -2306,6 +2338,14 @@ PrefabInstance:
     - target: {fileID: 5603975708285477417, guid: df28576e060fa244dbdad371ed85a550, type: 3}
       propertyPath: m_Name
       value: Speed Stat
+      objectReference: {fileID: 0}
+    - target: {fileID: 6290784863832947552, guid: df28576e060fa244dbdad371ed85a550, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7868657981340484212, guid: df28576e060fa244dbdad371ed85a550, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3389,6 +3429,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1964478719}
     m_Modifications:
+    - target: {fileID: 1653610555989130384, guid: df28576e060fa244dbdad371ed85a550, type: 3}
+      propertyPath: m_Name
+      value: Can Improve Stats Display
+      objectReference: {fileID: 0}
+    - target: {fileID: 1653610555989130384, guid: df28576e060fa244dbdad371ed85a550, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2892382192244479456, guid: df28576e060fa244dbdad371ed85a550, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -3476,6 +3524,14 @@ PrefabInstance:
     - target: {fileID: 5603975708285477417, guid: df28576e060fa244dbdad371ed85a550, type: 3}
       propertyPath: m_Name
       value: Duration Stat
+      objectReference: {fileID: 0}
+    - target: {fileID: 6290784863832947552, guid: df28576e060fa244dbdad371ed85a550, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7868657981340484212, guid: df28576e060fa244dbdad371ed85a550, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4304,6 +4360,7 @@ Transform:
   - {fileID: 1869218642}
   - {fileID: 1986191346}
   - {fileID: 1251221869}
+  - {fileID: 1794231591}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1119088947
@@ -6693,6 +6750,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1964478719}
     m_Modifications:
+    - target: {fileID: 1653610555989130384, guid: df28576e060fa244dbdad371ed85a550, type: 3}
+      propertyPath: m_Name
+      value: 'Can Improve Stats Display '
+      objectReference: {fileID: 0}
+    - target: {fileID: 1653610555989130384, guid: df28576e060fa244dbdad371ed85a550, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2892382192244479456, guid: df28576e060fa244dbdad371ed85a550, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -6784,6 +6849,14 @@ PrefabInstance:
     - target: {fileID: 5603975708285477417, guid: df28576e060fa244dbdad371ed85a550, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6290784863832947552, guid: df28576e060fa244dbdad371ed85a550, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7868657981340484212, guid: df28576e060fa244dbdad371ed85a550, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7003,6 +7076,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1772320970}
   m_CullTransparentMesh: 1
+--- !u!1 &1794231590
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1794231591}
+  - component: {fileID: 1794231592}
+  m_Layer: 0
+  m_Name: TESTER
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1794231591
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1794231590}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1111235978}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1794231592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1794231590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8847c6982439f8643a3a82f3c6cc3e12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1798071642
 GameObject:
   m_ObjectHideFlags: 0
@@ -8430,7 +8547,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator_lvlUPEffect: {fileID: 1798071646}
-  go_actionsBlockPanel: {fileID: 0}
+  go_actionsBlockPanel: {fileID: 1282910849}
 --- !u!114 &2016604755 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6928885976363382605, guid: df28576e060fa244dbdad371ed85a550, type: 3}
@@ -9509,10 +9626,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1964478719}
     m_Modifications:
+    - target: {fileID: 1653610555989130384, guid: df28576e060fa244dbdad371ed85a550, type: 3}
+      propertyPath: m_Name
+      value: 'Can Improve Stats Display '
+      objectReference: {fileID: 0}
+    - target: {fileID: 1653610555989130384, guid: df28576e060fa244dbdad371ed85a550, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2892382192244479456, guid: df28576e060fa244dbdad371ed85a550, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 4908cdd9b5ec06c46a50c8fdbccc9fd5, type: 3}
+    - target: {fileID: 4268381593548188776, guid: df28576e060fa244dbdad371ed85a550, type: 3}
+      propertyPath: m_text
+      value: +2
+      objectReference: {fileID: 0}
     - target: {fileID: 5224316025803076806, guid: df28576e060fa244dbdad371ed85a550, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -9596,6 +9725,14 @@ PrefabInstance:
     - target: {fileID: 5603975708285477417, guid: df28576e060fa244dbdad371ed85a550, type: 3}
       propertyPath: m_Name
       value: Damage Stat
+      objectReference: {fileID: 0}
+    - target: {fileID: 6290784863832947552, guid: df28576e060fa244dbdad371ed85a550, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7868657981340484212, guid: df28576e060fa244dbdad371ed85a550, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

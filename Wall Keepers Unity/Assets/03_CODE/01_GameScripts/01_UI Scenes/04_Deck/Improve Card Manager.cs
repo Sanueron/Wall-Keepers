@@ -96,6 +96,7 @@ public class ImproveCardManager : MonoBehaviour
     private void GetSpellCurrentStats()
     {
         f_currentDamage = DeckManager.instance.f_damage;
+        print("Current damage is "+ f_currentDamage);
         f_currentResistance = DeckManager.instance.f_resistance;
         f_currentSpeed = DeckManager.instance.f_speed;
         f_currentDuration = DeckManager.instance.f_duration;
@@ -117,19 +118,64 @@ public class ImproveCardManager : MonoBehaviour
     {
         DeckManager.instance.ShowStatsAlone();
         // Play increase effect
-        StartCoroutine(SumUp(newDamage, f_currentDamage, DeckManager.instance.tmp_damageAlone));
-        StartCoroutine(SumUp(newResistance, f_currentResistance, DeckManager.instance.tmp_resistanceAlone));
-        StartCoroutine(SumUp(newSpeed, f_currentSpeed, DeckManager.instance.tmp_speedAlone));
-        StartCoroutine(SumUp(newDuration, f_currentDuration, DeckManager.instance.tmp_durationAlone));
+        print("f_currentDamage is " + f_currentDamage);
+        float f_currentDamageBeforeImprovement = f_currentDamage - SpellsData.f_damageIncreaseByLevel;
+        print("adjusted f_currentDamage is " + f_currentDamageBeforeImprovement);
+
+        StartCoroutine(DamageSumUp(newDamage, f_currentDamageBeforeImprovement));
     }
     private void ShowSpellCardsReduceEffect()
     {
+        StartCoroutine(CardsFillReduce(PlayerData.i_spell_Cards_Obtained[i_spellID], i_spellID));
+    }
+    #region Sum Up and Reduce visual methods
+    IEnumerator DamageSumUp(float targetValue, float f_statValueShown)
+    {
+        float f_duration = 1f;
+        var rate = Mathf.Abs(targetValue - f_statValueShown) / f_duration;
+        while (f_statValueShown != targetValue)
+        {
+            f_statValueShown = Mathf.MoveTowards(f_statValueShown, targetValue, rate * Time.deltaTime);
+            DeckManager.instance.tmp_damageAlone.text = ((int)f_statValueShown).ToString();
+            yield return null;
+        }
+    }
+    IEnumerator CardsFillReduce(float targetValue, int i_spellID)
+    {
+        GetNumberOfCardsForNextImprovement(i_spellID);
+        float f_duration = 1f;
+        float i_cardsInStock = DeckManager.instance.i_cardsInStock;
+        var rate = Mathf.Abs(targetValue - i_cardsInStock) / f_duration;
+        while (i_cardsInStock != targetValue)
+        {
+            i_cardsInStock = Mathf.MoveTowards(i_cardsInStock, targetValue, rate * Time.deltaTime);
+            DeckManager.instance.tmp_cardsInStock.text = ((int)i_cardsInStock).ToString();
+            DeckManager.instance.img_cardsRequiredFillBar.fillAmount = GetFillBarValue(i_cardsInStock);
+            yield return null;
+        }
+
         // After Effects are played show new costs and update buttons
         // Check if Next is Lvl Up or Awaken and if Conditions are met
         UpdateNewCostAndButtons(i_spellID);
 
         // Disactivate Block Action Panel
         go_actionsBlockPanel.SetActive(false);
+        print("Effect ended");
+    }
+    private float GetFillBarValue(float i_cardsInStock)
+    {
+        float fillBarValue = (float)i_cardsInStock / DeckManager.instance.i_spellCardsCost;
+        if (i_cardsInStock >= DeckManager.instance.i_spellCardsCost)
+        {
+            fillBarValue = 1f;
+        }
+        return fillBarValue;
+    }
+    private void GetNumberOfCardsForNextImprovement(int i_spellID)
+    {
+        // Get How many cards the spells needs for next improvement
+        DeckManager.instance.i_spellCardsCost = SpellsData.i_spell_Cards_Cost_Increase_Per_Level +
+            SpellsData.i_spell_Cards_Cost_Increase_Per_Level * PlayerData.i_spell_Card_Level[i_spellID];
     }
     private void UpdateNewCostAndButtons(int i_spellID)
     {
@@ -137,18 +183,6 @@ public class ImproveCardManager : MonoBehaviour
         DeckManager.instance.UpdateSpellLvlUPOrAwakenCosts(i_spellID, DeckManager.instance.currentSelectedSlot.GetSlotSpellInfo());
         // Update buttons, check if next lvl up or awaken and if possible
         DeckManager.instance.UpdateButtons(i_spellID, DeckManager.instance.currentSelectedSlot.GetSlotSpellInfo());
-    }
-    #region Sum Up and Reduce visual methods
-    IEnumerator SumUp(float targetValue, float f_statValue, TextMeshProUGUI tmp_statText)
-    {
-        float f_duration = 1f;
-        var rate = Mathf.Abs(targetValue - f_statValue) / f_duration;
-        while (f_statValue != targetValue)
-        {
-            f_statValue = Mathf.MoveTowards(f_statValue, targetValue, rate * Time.deltaTime);
-            tmp_statText.text = ((int)f_statValue).ToString();
-            yield return null;
-        }
     }
 
     #endregion

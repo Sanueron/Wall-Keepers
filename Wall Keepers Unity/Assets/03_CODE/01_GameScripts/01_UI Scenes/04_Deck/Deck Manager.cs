@@ -42,8 +42,8 @@ public class DeckManager : MonoBehaviour
         tmp_durationAlone, tmp_durationWithImprovement, tmp_durationImprovement;
     [Header("Spell Level Up")]
     [SerializeField] private GameObject go_levelUpItems;
-    [SerializeField] private Image img_cardsRequiredFillBar;
-    [SerializeField] private TextMeshProUGUI tmp_cardsInStock, tmp_cardsUntilNextLevel;
+    [SerializeField] internal Image img_cardsRequiredFillBar;
+    [SerializeField] internal TextMeshProUGUI tmp_cardsInStock, tmp_cardsUntilNextLevel;
 
     [Header("Spell Awakening")]
     [SerializeField] private GameObject go_awakenItems;
@@ -362,11 +362,16 @@ public class DeckManager : MonoBehaviour
                             UpdateStatsImprovement(SpellsData.f_damageIncreaseByLevel, SpellsData.f_resistanceIncreaseByLevel,
                                 SpellsData.f_speedIncreaseByLevel, SpellsData.f_durationIncreaseByLevel);
                             ShowStatsWithImprovement();
+                            print("Enseña stats con mejora disponible");
                         }
                         else
                         {
                             ShowStatsAlone();
                         }
+                    }
+                    else
+                    {
+                        ShowStatsAlone();
                     }
                     break;
                 case ScripteableCard.SpellType.Fusion:
@@ -639,6 +644,10 @@ public class DeckManager : MonoBehaviour
                         {
                             ShowStatsAlone();
                         }
+                    }
+                    else
+                    {
+                        ShowStatsAlone();
                     }
                     break;
                 case ScripteableCard.SpellType.Fusion:
