@@ -91,12 +91,14 @@ public class ImproveCardManager : MonoBehaviour
         DeckManager.instance.tmp_playerManaEnergy.text = PlayerData.i_mana.ToString();
 
         // Reduce Number of Elemental Runes in Stock
-
+        ScripteableCard spellInfo = DeckManager.instance.currentSelectedSlot.GetSlotSpellInfo();
+        PlayerData.i_elementalRunesInStock[spellInfo.requiredElementalRune.i_runeID] -= DeckManager.instance.i_elementalRunesCost;
+        float newElementalRunesInStock = PlayerData.i_elementalRunesInStock[spellInfo.requiredElementalRune.i_runeID];
+        ShowElementalRunesReduceEffect(newElementalRunesInStock, i_spellID);
     }
     private void GetSpellCurrentStats()
     {
         f_currentDamage = DeckManager.instance.f_damage;
-        print("Current damage is "+ f_currentDamage);
         f_currentResistance = DeckManager.instance.f_resistance;
         f_currentSpeed = DeckManager.instance.f_speed;
         f_currentDuration = DeckManager.instance.f_duration;
@@ -127,9 +129,9 @@ public class ImproveCardManager : MonoBehaviour
     {
         StartCoroutine(CardsFillReduce(PlayerData.i_spell_Cards_Obtained[i_spellID], i_spellID));
     }
-    private void ShowElementalRunesReduceEffect()
+    private void ShowElementalRunesReduceEffect(float targetValue, int i_spellId)
     {
-        StartCoroutine(ElemetalRunesReduceEffect(1,1));
+        StartCoroutine(ElemetalRunesReduceEffect(targetValue, i_spellId));
     }
     
     IEnumerator DamageSumUp(float targetValue, float f_statValueShown)
