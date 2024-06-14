@@ -1895,7 +1895,7 @@ GameObject:
   - component: {fileID: 554208886}
   - component: {fileID: 554208888}
   m_Layer: 5
-  m_Name: Lvl Up Button
+  m_Name: Lvl Up/Awaken Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2020,6 +2020,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1986191347}
         m_TargetAssemblyTypeName: ImproveCardManager, Assembly-CSharp
         m_MethodName: LevelUpSpell
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1251221870}
+        m_TargetAssemblyTypeName: SaveData, Assembly-CSharp
+        m_MethodName: AssignDataAndSave
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5000,6 +5012,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6867609712026494180, guid: a403a9f65ed299a478143dc2de63555a, type: 3}
   m_PrefabInstance: {fileID: 1251221868}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1251221870 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7591720780387718440, guid: a403a9f65ed299a478143dc2de63555a, type: 3}
+  m_PrefabInstance: {fileID: 1251221868}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa6bf928af36dfb46b6eb8940786c53c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1255556322 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6928885976363382605, guid: df28576e060fa244dbdad371ed85a550, type: 3}
