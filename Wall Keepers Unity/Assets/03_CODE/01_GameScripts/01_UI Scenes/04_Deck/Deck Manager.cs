@@ -47,19 +47,21 @@ public class DeckManager : MonoBehaviour
 
     [Header("Spell Awakening")]
     [SerializeField] private GameObject go_awakenItems;
+    [SerializeField] private Button awakenButton;
     [SerializeField] private Image img_elementalRuneRequiredIcon;
-    [SerializeField] private TextMeshProUGUI tmp_elementalRunesRequiredInStock, tmp_elementalRunesRequired;
+    [SerializeField] internal TextMeshProUGUI tmp_elementalRunesRequiredInStock, tmp_elementalRunesRequired;
 
     [Header("Mana Energy Cost for lvl up or awakening and button")]
     [SerializeField] private TextMeshProUGUI tmp_manaEnergyCost;
+    [SerializeField] private TextMeshProUGUI tmp_manaEnergyCostInAwakenButton;
     [SerializeField] private TextMeshProUGUI tmp_lvlUpOrAwakentext;
-    [SerializeField] private Button button_levelUpOrAwaken;
+    [SerializeField] private Button button_levelUp;
     #endregion
 
     #region Spell level Up and Awaken Variables
     internal int i_manaEnergyCost;
     internal int i_spellCardsCost;
-    internal int i_elementalRunesCost;
+    internal int i_elementalRunesCost, i_elementalRunesInStock;
     internal int i_cardsInStock;
     #endregion
 
@@ -205,17 +207,19 @@ public class DeckManager : MonoBehaviour
             i_spellAwakeningLvl * SpellsData.i_elemetalRunes_Cost_Increase_Per_Level;
         // Mana Cost
         tmp_manaEnergyCost.text = i_manaEnergyCost.ToString();
+        tmp_manaEnergyCostInAwakenButton.text  = i_manaEnergyCost.ToString();
         // Level Up items
         i_cardsInStock = PlayerData.i_spell_Cards_Obtained[spellID];
         tmp_cardsInStock.text = i_cardsInStock.ToString();
         tmp_cardsUntilNextLevel.text = "/"+ i_spellCardsCost.ToString();
         // Awakening items
-        int i_elementalRunesInStock = PlayerData.i_elementalRunesInStock[spellInfo.requiredElementalRune.i_runeID];
+        i_elementalRunesInStock = PlayerData.i_elementalRunesInStock[spellInfo.requiredElementalRune.i_runeID];
         tmp_elementalRunesRequiredInStock.text = i_elementalRunesInStock.ToString();
         tmp_elementalRunesRequired.text = "/" + i_elementalRunesCost.ToString();
         img_elementalRuneRequiredIcon.sprite = spellInfo.requiredElementalRune.spr_runeIcon;
 
-        button_levelUpOrAwaken.interactable = false;
+        button_levelUp.interactable = false;
+        awakenButton.interactable = false;
         // Check if spell ready for Awakening - Level Cap reached and Awakening level not increased yet
         // At level 10 - Awk level 1 and so on
         tmp_lvlUpOrAwakentext.text = "Awaken"; // changed later if level up instead
@@ -227,11 +231,12 @@ public class DeckManager : MonoBehaviour
                 // Show Awakening options
                 go_levelUpItems.SetActive(false);
                 go_awakenItems.SetActive(true);
+                awakenButton.gameObject.SetActive(true);
                 if (i_elementalRunesInStock >= i_elementalRunesCost)
                 {
                     if (PlayerData.i_mana >= i_manaEnergyCost)
                     {
-                        button_levelUpOrAwaken.interactable = true;
+                        awakenButton.interactable = true;
                         UpdateStatsImprovement(SpellsData.f_damageIncreaseByAwakening, SpellsData.f_resistanceIncreaseByAwakening,
                                 SpellsData.f_speedIncreaseByAwakening, SpellsData.f_durationIncreaseByAwakening);
                         ShowStatsWithImprovement();
@@ -249,11 +254,12 @@ public class DeckManager : MonoBehaviour
                 // Show Awakening options
                 go_levelUpItems.SetActive(false);
                 go_awakenItems.SetActive(true);
+                awakenButton.gameObject.SetActive(true);
                 if (i_elementalRunesInStock >= i_elementalRunesCost)
                 {
                     if (PlayerData.i_mana >= i_manaEnergyCost)
                     {
-                        button_levelUpOrAwaken.interactable = true;
+                        awakenButton.interactable = true;
                         UpdateStatsImprovement(SpellsData.f_damageIncreaseByAwakening, SpellsData.f_resistanceIncreaseByAwakening,
                         SpellsData.f_speedIncreaseByAwakening, SpellsData.f_durationIncreaseByAwakening);
                         ShowStatsWithImprovement();
@@ -271,11 +277,12 @@ public class DeckManager : MonoBehaviour
                 // Show Awakening options
                 go_levelUpItems.SetActive(false);
                 go_awakenItems.SetActive(true);
+                awakenButton.gameObject.SetActive(true);
                 if (i_elementalRunesInStock >= i_elementalRunesCost)
                 {
                     if (PlayerData.i_mana >= i_manaEnergyCost)
                     {
-                        button_levelUpOrAwaken.interactable = true;
+                        awakenButton.interactable = true;
                         UpdateStatsImprovement(SpellsData.f_damageIncreaseByAwakening, SpellsData.f_resistanceIncreaseByAwakening,
                         SpellsData.f_speedIncreaseByAwakening, SpellsData.f_durationIncreaseByAwakening);
                         ShowStatsWithImprovement();
@@ -293,11 +300,12 @@ public class DeckManager : MonoBehaviour
                 // Show Awakening options
                 go_levelUpItems.SetActive(false);
                 go_awakenItems.SetActive(true);
+                awakenButton.gameObject.SetActive(true);
                 if (i_elementalRunesInStock >= i_elementalRunesCost)
                 {
                     if (PlayerData.i_mana >= i_manaEnergyCost)
                     {
-                        button_levelUpOrAwaken.interactable = true;
+                        awakenButton.interactable = true;
                         UpdateStatsImprovement(SpellsData.f_damageIncreaseByAwakening, SpellsData.f_resistanceIncreaseByAwakening,
                         SpellsData.f_speedIncreaseByAwakening, SpellsData.f_durationIncreaseByAwakening);
                         ShowStatsWithImprovement();
@@ -315,11 +323,12 @@ public class DeckManager : MonoBehaviour
                 // Show Awakening options
                 go_levelUpItems.SetActive(false);
                 go_awakenItems.SetActive(true);
-                if(i_elementalRunesInStock >= i_elementalRunesCost)
+                awakenButton.gameObject.SetActive(true);
+                if (i_elementalRunesInStock >= i_elementalRunesCost)
                 {
                     if(PlayerData.i_mana >= i_manaEnergyCost)
                     {
-                        button_levelUpOrAwaken.interactable = true;
+                        awakenButton.interactable = true;
                         UpdateStatsImprovement(SpellsData.f_damageIncreaseByAwakening, SpellsData.f_resistanceIncreaseByAwakening,
                         SpellsData.f_speedIncreaseByAwakening, SpellsData.f_durationIncreaseByAwakening);
                         ShowStatsWithImprovement();
@@ -334,6 +343,7 @@ public class DeckManager : MonoBehaviour
         if (!b_awakeningReady) // Spell Not ready for Awakening Show Level Up options
         {
             go_awakenItems.SetActive(false);
+            awakenButton.gameObject.SetActive(false);
             // Check if Spell is fusion or not and Show level up buttons
             switch (spellInfo.e_spellType)
             {
@@ -348,7 +358,7 @@ public class DeckManager : MonoBehaviour
                     {
                         if (PlayerData.i_mana >= i_manaEnergyCost)
                         {
-                            button_levelUpOrAwaken.interactable = true;
+                            button_levelUp.interactable = true;
                             UpdateStatsImprovement(SpellsData.f_damageIncreaseByLevel, SpellsData.f_resistanceIncreaseByLevel,
                                 SpellsData.f_speedIncreaseByLevel, SpellsData.f_durationIncreaseByLevel);
                             ShowStatsWithImprovement();
@@ -486,6 +496,7 @@ public class DeckManager : MonoBehaviour
             i_spellAwakeningLvl * SpellsData.i_elemetalRunes_Cost_Increase_Per_Level;
         // Mana Cost
         tmp_manaEnergyCost.text = i_manaEnergyCost.ToString();
+        tmp_manaEnergyCostInAwakenButton.text = i_manaEnergyCost.ToString();
         // Level Up items
         int i_cardsInStock = PlayerData.i_spell_Cards_Obtained[i_spellID];
         tmp_cardsInStock.text = i_cardsInStock.ToString();
@@ -508,7 +519,7 @@ public class DeckManager : MonoBehaviour
         // For Awakening
         int i_elementalRunesInStock = PlayerData.i_elementalRunesInStock[spellInfo.requiredElementalRune.i_runeID];
 
-        button_levelUpOrAwaken.interactable = false;
+        button_levelUp.interactable = false;
         // Check if spell ready for Awakening - Level Cap reached and Awakening level not increased yet
         // At level 10 - Awk level 1 and so on
         tmp_lvlUpOrAwakentext.text = "Awaken"; // changed later if level up instead
@@ -520,11 +531,12 @@ public class DeckManager : MonoBehaviour
                 // Show Awakening options
                 go_levelUpItems.SetActive(false);
                 go_awakenItems.SetActive(true);
+                awakenButton.gameObject.SetActive(true);
                 if (i_elementalRunesInStock >= i_elementalRunesCost)
                 {
                     if (PlayerData.i_mana >= i_manaEnergyCost)
                     {
-                        button_levelUpOrAwaken.interactable = true;
+                        awakenButton.interactable = true;
                         UpdateStatsImprovement(SpellsData.f_damageIncreaseByAwakening, SpellsData.f_resistanceIncreaseByAwakening,
                                 SpellsData.f_speedIncreaseByAwakening, SpellsData.f_durationIncreaseByAwakening);
                         ShowStatsWithImprovement();
@@ -542,11 +554,12 @@ public class DeckManager : MonoBehaviour
                 // Show Awakening options
                 go_levelUpItems.SetActive(false);
                 go_awakenItems.SetActive(true);
+                awakenButton.gameObject.SetActive(true);
                 if (i_elementalRunesInStock >= i_elementalRunesCost)
                 {
                     if (PlayerData.i_mana >= i_manaEnergyCost)
                     {
-                        button_levelUpOrAwaken.interactable = true;
+                        awakenButton.interactable = true;
                         UpdateStatsImprovement(SpellsData.f_damageIncreaseByAwakening, SpellsData.f_resistanceIncreaseByAwakening,
                         SpellsData.f_speedIncreaseByAwakening, SpellsData.f_durationIncreaseByAwakening);
                         ShowStatsWithImprovement();
@@ -564,11 +577,12 @@ public class DeckManager : MonoBehaviour
                 // Show Awakening options
                 go_levelUpItems.SetActive(false);
                 go_awakenItems.SetActive(true);
+                awakenButton.gameObject.SetActive(true);
                 if (i_elementalRunesInStock >= i_elementalRunesCost)
                 {
                     if (PlayerData.i_mana >= i_manaEnergyCost)
                     {
-                        button_levelUpOrAwaken.interactable = true;
+                        awakenButton.interactable = true;
                         UpdateStatsImprovement(SpellsData.f_damageIncreaseByAwakening, SpellsData.f_resistanceIncreaseByAwakening,
                         SpellsData.f_speedIncreaseByAwakening, SpellsData.f_durationIncreaseByAwakening);
                         ShowStatsWithImprovement();
@@ -586,11 +600,12 @@ public class DeckManager : MonoBehaviour
                 // Show Awakening options
                 go_levelUpItems.SetActive(false);
                 go_awakenItems.SetActive(true);
+                awakenButton.gameObject.SetActive(true);
                 if (i_elementalRunesInStock >= i_elementalRunesCost)
                 {
                     if (PlayerData.i_mana >= i_manaEnergyCost)
                     {
-                        button_levelUpOrAwaken.interactable = true;
+                        awakenButton.interactable = true;
                         UpdateStatsImprovement(SpellsData.f_damageIncreaseByAwakening, SpellsData.f_resistanceIncreaseByAwakening,
                         SpellsData.f_speedIncreaseByAwakening, SpellsData.f_durationIncreaseByAwakening);
                         ShowStatsWithImprovement();
@@ -608,11 +623,12 @@ public class DeckManager : MonoBehaviour
                 // Show Awakening options
                 go_levelUpItems.SetActive(false);
                 go_awakenItems.SetActive(true);
+                awakenButton.gameObject.SetActive(true);
                 if (i_elementalRunesInStock >= i_elementalRunesCost)
                 {
                     if (PlayerData.i_mana >= i_manaEnergyCost)
                     {
-                        button_levelUpOrAwaken.interactable = true;
+                        awakenButton.interactable = true;
                         UpdateStatsImprovement(SpellsData.f_damageIncreaseByAwakening, SpellsData.f_resistanceIncreaseByAwakening,
                         SpellsData.f_speedIncreaseByAwakening, SpellsData.f_durationIncreaseByAwakening);
                         ShowStatsWithImprovement();
@@ -627,6 +643,7 @@ public class DeckManager : MonoBehaviour
         if (!b_awakeningReady) // Spell Not ready for Awakening Show Level Up options
         {
             go_awakenItems.SetActive(false);
+            awakenButton.gameObject.SetActive(false);
             // Check if Spell is fusion or not and Show level up buttons
             switch (spellInfo.e_spellType)
             {
@@ -641,7 +658,7 @@ public class DeckManager : MonoBehaviour
                     {
                         if (PlayerData.i_mana >= i_manaEnergyCost)
                         {
-                            button_levelUpOrAwaken.interactable = true;
+                            button_levelUp.interactable = true;
                             UpdateStatsImprovement(SpellsData.f_damageIncreaseByLevel, SpellsData.f_resistanceIncreaseByLevel,
                                 SpellsData.f_speedIncreaseByLevel, SpellsData.f_durationIncreaseByLevel);
                             ShowStatsWithImprovement();

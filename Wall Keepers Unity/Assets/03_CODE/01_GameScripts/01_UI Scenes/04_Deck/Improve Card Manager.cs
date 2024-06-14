@@ -114,21 +114,24 @@ public class ImproveCardManager : MonoBehaviour
             case ScripteableCard.element.Electric: i_elementID = 5; break;
         }
     }
+
+    #region Sum Up and Reduce visual methods
     private void ShowStatsAndIncreaseEffect(float newDamage, float newResistance, float newSpeed, float newDuration)
     {
         DeckManager.instance.ShowStatsAlone();
         // Play increase effect
-        print("f_currentDamage is " + f_currentDamage);
         float f_currentDamageBeforeImprovement = f_currentDamage - SpellsData.f_damageIncreaseByLevel;
-        print("adjusted f_currentDamage is " + f_currentDamageBeforeImprovement);
-
         StartCoroutine(DamageSumUp(newDamage, f_currentDamageBeforeImprovement));
     }
     private void ShowSpellCardsReduceEffect()
     {
         StartCoroutine(CardsFillReduce(PlayerData.i_spell_Cards_Obtained[i_spellID], i_spellID));
     }
-    #region Sum Up and Reduce visual methods
+    private void ShowElementalRunesReduceEffect()
+    {
+        StartCoroutine(ElemetalRunesReduceEffect(1,1));
+    }
+    
     IEnumerator DamageSumUp(float targetValue, float f_statValueShown)
     {
         float f_duration = 1f;
@@ -161,7 +164,27 @@ public class ImproveCardManager : MonoBehaviour
 
         // Disactivate Block Action Panel
         go_actionsBlockPanel.SetActive(false);
-        print("Effect ended");
+    }
+    IEnumerator ElemetalRunesReduceEffect(float targetValue, int i_spellID)
+    {
+        GetNumberOfCardsForNextImprovement(i_spellID);
+        float f_duration = 1f;
+        float i_elemetalRunesInStock = DeckManager.instance.i_elementalRunesInStock;
+        var rate = Mathf.Abs(targetValue - i_elemetalRunesInStock) / f_duration;
+        while (i_elemetalRunesInStock != targetValue)
+        {
+            i_elemetalRunesInStock = Mathf.MoveTowards(i_elemetalRunesInStock, targetValue, rate * Time.deltaTime);
+            DeckManager.instance.tmp_elementalRunesRequiredInStock.text = ((int)i_elemetalRunesInStock).ToString();
+            yield return null;
+        }
+
+        // After Effects are played show new costs and update buttons
+        // Check if Next is Lvl Up or Awaken and if Conditions are met
+        UpdateNewCostAndButtons(i_spellID);
+        UpdateSpellStats();
+
+        // Disactivate Block Action Panel
+        go_actionsBlockPanel.SetActive(false);
     }
     private float GetFillBarValue(float i_cardsInStock)
     {
@@ -172,12 +195,16 @@ public class ImproveCardManager : MonoBehaviour
         }
         return fillBarValue;
     }
+    
     private void GetNumberOfCardsForNextImprovement(int i_spellID)
     {
         // Get How many cards the spells needs for next improvement
         DeckManager.instance.i_spellCardsCost = SpellsData.i_spell_Cards_Cost_Increase_Per_Level +
             SpellsData.i_spell_Cards_Cost_Increase_Per_Level * PlayerData.i_spell_Card_Level[i_spellID];
     }
+    #endregion
+
+    #region Update Spell Info Panel Buttons and Stats
     private void UpdateNewCostAndButtons(int i_spellID)
     {
         // Set New Costs for improvement
@@ -189,6 +216,5 @@ public class ImproveCardManager : MonoBehaviour
     {
         DeckManager.instance.UpdateStats(DeckManager.instance.currentSelectedSlot.GetSlotSpellInfo());
     }
-
     #endregion
 }
