@@ -184,6 +184,10 @@ public class ImproveCardManager : MonoBehaviour
         // Update buttons, check if next lvl up or awaken and if possible
         DeckManager.instance.UpdateButtons(i_spellID, DeckManager.instance.currentSelectedSlot.GetSlotSpellInfo());
     }
+    private void UpdateSpellStats()
+    {
+        //DeckManager.instance.UpdateStats();
+    }
 
     #endregion
 }
