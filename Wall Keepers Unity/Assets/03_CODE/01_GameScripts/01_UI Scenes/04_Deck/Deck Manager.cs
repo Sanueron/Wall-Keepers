@@ -375,8 +375,20 @@ public class DeckManager : MonoBehaviour
                     }
                     break;
                 case ScripteableCard.SpellType.Fusion:
+                    tmp_lvlUpOrAwakentext.text = "Level Up";
                     go_levelUpItems.SetActive(false);
                     go_awakenItems.SetActive(false);
+                    if (PlayerData.i_mana >= i_manaEnergyCost)
+                    {
+                        button_levelUp.interactable = true;
+                        UpdateStatsImprovement(SpellsData.f_damageIncreaseByLevel, SpellsData.f_resistanceIncreaseByLevel,
+                            SpellsData.f_speedIncreaseByLevel, SpellsData.f_durationIncreaseByLevel);
+                        ShowStatsWithImprovement();
+                    }
+                    else
+                    {
+                        ShowStatsAlone();
+                    }
                     break;
             }
         }
@@ -689,8 +701,20 @@ public class DeckManager : MonoBehaviour
                     }
                     break;
                 case ScripteableCard.SpellType.Fusion:
+                    tmp_lvlUpOrAwakentext.text = "Level Up";
                     go_levelUpItems.SetActive(false);
                     go_awakenItems.SetActive(false);
+                    if (PlayerData.i_mana >= i_manaEnergyCost)
+                    {
+                        button_levelUp.interactable = true;
+                        UpdateStatsImprovement(SpellsData.f_damageIncreaseByLevel, SpellsData.f_resistanceIncreaseByLevel,
+                            SpellsData.f_speedIncreaseByLevel, SpellsData.f_durationIncreaseByLevel);
+                        ShowStatsWithImprovement();
+                    }
+                    else
+                    {
+                        ShowStatsAlone();
+                    }
                     break;
             }
         }
