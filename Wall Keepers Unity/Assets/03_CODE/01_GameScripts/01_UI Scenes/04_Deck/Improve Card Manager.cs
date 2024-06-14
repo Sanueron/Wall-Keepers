@@ -157,6 +157,7 @@ public class ImproveCardManager : MonoBehaviour
         // After Effects are played show new costs and update buttons
         // Check if Next is Lvl Up or Awaken and if Conditions are met
         UpdateNewCostAndButtons(i_spellID);
+        UpdateSpellStats();
 
         // Disactivate Block Action Panel
         go_actionsBlockPanel.SetActive(false);
@@ -186,7 +187,7 @@ public class ImproveCardManager : MonoBehaviour
     }
     private void UpdateSpellStats()
     {
-        //DeckManager.instance.UpdateStats();
+        DeckManager.instance.UpdateStats(DeckManager.instance.currentSelectedSlot.GetSlotSpellInfo());
     }
 
     #endregion

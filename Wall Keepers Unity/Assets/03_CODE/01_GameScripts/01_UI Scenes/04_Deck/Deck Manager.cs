@@ -186,20 +186,9 @@ public class DeckManager : MonoBehaviour
         #region Assign Spell Stats
         int spellStar = spellInfo.i_spellStarsTier;
         tmp_spellStar.text = spellStar.ToString();
-        f_damage = spellInfo.f_dmg + 
-            SpellsData.f_damageIncreaseByLevel * i_spellLevel +
-            SpellsData.f_damageIncreaseByAwakening*i_spellAwakeningLvl;
-        f_resistance = spellInfo.f_resistance + 
-            SpellsData.f_resistanceIncreaseByLevel * i_spellLevel +
-            SpellsData.f_resistanceIncreaseByAwakening * i_spellAwakeningLvl;
-        f_speed = spellInfo.f_projectileSpeed +
-            SpellsData.f_speedIncreaseByLevel* i_spellLevel +
-            SpellsData.f_speedIncreaseByAwakening * i_spellAwakeningLvl; // if 0 is instant casting
-        f_duration = spellInfo.f_duration +
-            SpellsData.f_durationIncreaseByLevel * i_spellLevel +
-            SpellsData.f_damageIncreaseByAwakening * i_spellAwakeningLvl;
-        // Update Text stats visuals
-        UpdateStats(f_damage, f_resistance, f_speed, f_duration);
+        
+        // Update stats and stats visuals
+        UpdateStats(spellInfo);
         #endregion
 
         // Disactive not applicable stats (if base stat is 0 disactivate)
@@ -223,14 +212,14 @@ public class DeckManager : MonoBehaviour
         // Awakening items
         int i_elementalRunesInStock = PlayerData.i_elementalRunesInStock[spellInfo.requiredElementalRune.i_runeID];
         tmp_elementalRunesRequiredInStock.text = i_elementalRunesInStock.ToString();
-        tmp_elementalRunesRequired.text = i_elementalRunesCost.ToString();
+        tmp_elementalRunesRequired.text = "/" + i_elementalRunesCost.ToString();
         img_elementalRuneRequiredIcon.sprite = spellInfo.requiredElementalRune.spr_runeIcon;
 
         button_levelUpOrAwaken.interactable = false;
         // Check if spell ready for Awakening - Level Cap reached and Awakening level not increased yet
         // At level 10 - Awk level 1 and so on
         tmp_lvlUpOrAwakentext.text = "Awaken"; // changed later if level up instead
-        bool b_awakeningReady = false;
+        bool b_awakeningReady = true;
         if (i_spellLevel == 10)
         {
             if(i_spellAwakeningLvl == 0)
@@ -399,8 +388,24 @@ public class DeckManager : MonoBehaviour
         }
         return fillBarValue;
     }
-    internal void UpdateStats(float f_damage, float f_resistance, float f_speed, float f_duration)
+    internal void UpdateStats(ScripteableCard spellInfo)
     {
+        int i_spellLevel = PlayerData.i_spell_Card_Level[spellInfo.i_id];
+        int i_spellAwakeningLvl = PlayerData.i_awakening_Card_Level[spellInfo.i_id];
+
+        f_damage = spellInfo.f_dmg +
+            SpellsData.f_damageIncreaseByLevel * i_spellLevel +
+            SpellsData.f_damageIncreaseByAwakening * i_spellAwakeningLvl;
+        f_resistance = spellInfo.f_resistance +
+            SpellsData.f_resistanceIncreaseByLevel * i_spellLevel +
+            SpellsData.f_resistanceIncreaseByAwakening * i_spellAwakeningLvl;
+        f_speed = spellInfo.f_projectileSpeed +
+            SpellsData.f_speedIncreaseByLevel * i_spellLevel +
+            SpellsData.f_speedIncreaseByAwakening * i_spellAwakeningLvl; // if 0 is instant casting
+        f_duration = spellInfo.f_duration +
+            SpellsData.f_durationIncreaseByLevel * i_spellLevel +
+            SpellsData.f_damageIncreaseByAwakening * i_spellAwakeningLvl;
+
         // Damage
         tmp_damageAlone.text = f_damage.ToString();
         tmp_damageWithImprovement.text = f_damage.ToString();
@@ -487,7 +492,7 @@ public class DeckManager : MonoBehaviour
         // Awakening items
         int i_elementalRunesInStock = PlayerData.i_elementalRunesInStock[spellInfo.requiredElementalRune.i_runeID];
         tmp_elementalRunesRequiredInStock.text = i_elementalRunesInStock.ToString();
-        tmp_elementalRunesRequired.text = i_elementalRunesCost.ToString();
+        tmp_elementalRunesRequired.text = "/" + i_elementalRunesCost.ToString();
         img_elementalRuneRequiredIcon.sprite = spellInfo.requiredElementalRune.spr_runeIcon;
 
     }
@@ -507,7 +512,7 @@ public class DeckManager : MonoBehaviour
         // Check if spell ready for Awakening - Level Cap reached and Awakening level not increased yet
         // At level 10 - Awk level 1 and so on
         tmp_lvlUpOrAwakentext.text = "Awaken"; // changed later if level up instead
-        bool b_awakeningReady = false;
+        bool b_awakeningReady = true;
         if (i_spellLevel == 10)
         {
             if (i_spellAwakeningLvl == 0)
