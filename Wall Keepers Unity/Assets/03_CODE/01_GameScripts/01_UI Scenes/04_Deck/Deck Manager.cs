@@ -19,6 +19,9 @@ public class DeckManager : MonoBehaviour
     internal BaseSlot currentSelectedSlot; // To know which slot is currently selected
     [Header("Deck Slots")]
     [SerializeField] internal DeckSlot[] deckSlots_array = new DeckSlot[8];
+
+    [Header("Player Currencies")]
+    [SerializeField] internal TextMeshProUGUI tmp_playerManaEnergy;
     #endregion
 
     #region Spell Info Panel
@@ -59,7 +62,7 @@ public class DeckManager : MonoBehaviour
     int i_elementalRunesCost;
     #endregion
 
-    // Start is called before the first frame update
+    #region Unity Life Cycle
     void Awake()
     {
         // Implement Singleton Pattern
@@ -73,8 +76,10 @@ public class DeckManager : MonoBehaviour
     }
     private void Start()
     {
+        tmp_playerManaEnergy.text = PlayerData.i_mana.ToString();
         AssignSpellsInDeckAtStart();
     }
+    #endregion
 
     #region Events
     internal void FireEventOnSlotSelectedChanged()

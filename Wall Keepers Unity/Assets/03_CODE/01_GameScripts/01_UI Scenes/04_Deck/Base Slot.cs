@@ -44,14 +44,17 @@ public class BaseSlot : MonoBehaviour
     {
         if(DeckManager.instance.currentSelectedSlot != this)
         {
+            //Debug.Log("Hides Buttons");
             HideButtons();
         }
+        else { Debug.Log("Dont hide "+ gameObject.name); }
     }
     #endregion
 
     #region Buttons Methods
     public void CheckIfShowOrHideButtons()
     {
+        DeckManager.instance.currentSelectedSlot = this;
         DeckManager.instance.FireEventOnSlotSelectedChanged();
 
         if (button_addOrRemoveSpellToFromDeck.gameObject.activeSelf) // Button already active

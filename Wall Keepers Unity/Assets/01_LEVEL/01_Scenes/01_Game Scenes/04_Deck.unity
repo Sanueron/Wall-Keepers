@@ -7668,6 +7668,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6f34426d94ef5c4dbbf1a976fa42aca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSelectedSlot: {fileID: 0}
   deckSlots_array:
   - {fileID: 1602814624}
   - {fileID: 1177638534}
@@ -7677,6 +7678,7 @@ MonoBehaviour:
   - {fileID: 331851802}
   - {fileID: 2056013919}
   - {fileID: 1918767794}
+  tmp_playerManaEnergy: {fileID: 1809967598}
   animator_SpellInfoPanel: {fileID: 1820514677}
   img_selectedSpellCard: {fileID: 1646792973}
   img_smallCard_RequiredCostInFillBar: {fileID: 1399766355}
