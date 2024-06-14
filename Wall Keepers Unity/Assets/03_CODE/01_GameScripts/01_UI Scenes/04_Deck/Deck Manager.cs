@@ -403,19 +403,34 @@ public class DeckManager : MonoBehaviour
     {
         int i_spellLevel = PlayerData.i_spell_Card_Level[spellInfo.i_id];
         int i_spellAwakeningLvl = PlayerData.i_awakening_Card_Level[spellInfo.i_id];
-
-        f_damage = spellInfo.f_dmg +
-            SpellsData.f_damageIncreaseByLevel * i_spellLevel +
-            SpellsData.f_damageIncreaseByAwakening * i_spellAwakeningLvl;
-        f_resistance = spellInfo.f_resistance +
-            SpellsData.f_resistanceIncreaseByLevel * i_spellLevel +
-            SpellsData.f_resistanceIncreaseByAwakening * i_spellAwakeningLvl;
-        f_speed = spellInfo.f_projectileSpeed +
-            SpellsData.f_speedIncreaseByLevel * i_spellLevel +
-            SpellsData.f_speedIncreaseByAwakening * i_spellAwakeningLvl; // if 0 is instant casting
-        f_duration = spellInfo.f_duration +
-            SpellsData.f_durationIncreaseByLevel * i_spellLevel +
-            SpellsData.f_damageIncreaseByAwakening * i_spellAwakeningLvl;
+        f_damage = spellInfo.f_dmg;
+        if (f_damage > 0)
+        {
+            f_damage = spellInfo.f_dmg +
+                SpellsData.f_damageIncreaseByLevel * i_spellLevel +
+                SpellsData.f_damageIncreaseByAwakening * i_spellAwakeningLvl;
+        }
+        f_resistance = spellInfo.f_resistance;
+        if(f_resistance > 0)
+        {
+            f_resistance = spellInfo.f_resistance +
+                SpellsData.f_resistanceIncreaseByLevel * i_spellLevel +
+                SpellsData.f_resistanceIncreaseByAwakening * i_spellAwakeningLvl;
+        }
+        f_speed = spellInfo.f_projectileSpeed;
+        if(f_speed > 0)
+        {
+            f_speed = spellInfo.f_projectileSpeed +
+                SpellsData.f_speedIncreaseByLevel * i_spellLevel +
+                SpellsData.f_speedIncreaseByAwakening * i_spellAwakeningLvl; // if 0 is instant casting
+        }
+        f_duration = spellInfo.f_duration;
+        if(f_duration > 0)
+        {
+            f_duration = spellInfo.f_duration +
+                SpellsData.f_durationIncreaseByLevel * i_spellLevel +
+                SpellsData.f_damageIncreaseByAwakening * i_spellAwakeningLvl;
+        }
 
         // Damage
         tmp_damageAlone.text = f_damage.ToString();
@@ -433,13 +448,13 @@ public class DeckManager : MonoBehaviour
     private void UpdateStatsImprovement(float f_damageImprove, float f_resistanceImprove, float f_speedImprove, float f_durationImprove)
     {
         // Damage
-        tmp_damageImprovement.text = f_damageImprove.ToString();
+        tmp_damageImprovement.text = "+" + f_damageImprove.ToString();
         // Resistance
-        tmp_resistanceImprovement.text = f_resistanceImprove.ToString();
+        tmp_resistanceImprovement.text = "+" + f_resistanceImprove.ToString();
         // Speed
-        tmp_speedImprovement.text = f_speedImprove.ToString();
+        tmp_speedImprovement.text = "+" + f_speedImprove.ToString();
         // Duration
-        tmp_durationImprovement.text = f_durationImprove.ToString();
+        tmp_durationImprovement.text = "+" + f_durationImprove.ToString();
     }
     internal void ShowStatsAlone()
     {

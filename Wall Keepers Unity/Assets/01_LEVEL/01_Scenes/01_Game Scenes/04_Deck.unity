@@ -9778,6 +9778,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stars Tier
       objectReference: {fileID: 0}
+    - target: {fileID: 5804391086294917539, guid: 14a65a79cf760f04c866c13f1d15cd7f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 95e476503a116224e82cc25014baf742, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 7952326412818041043, guid: 14a65a79cf760f04c866c13f1d15cd7f, type: 3}
@@ -9986,22 +9990,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1964478719}
     m_Modifications:
-    - target: {fileID: 1653610555989130384, guid: df28576e060fa244dbdad371ed85a550, type: 3}
-      propertyPath: m_Name
-      value: 'Can Improve Stats Display '
-      objectReference: {fileID: 0}
-    - target: {fileID: 1653610555989130384, guid: df28576e060fa244dbdad371ed85a550, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2892382192244479456, guid: df28576e060fa244dbdad371ed85a550, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 4908cdd9b5ec06c46a50c8fdbccc9fd5, type: 3}
-    - target: {fileID: 4268381593548188776, guid: df28576e060fa244dbdad371ed85a550, type: 3}
-      propertyPath: m_text
-      value: +2
-      objectReference: {fileID: 0}
     - target: {fileID: 5224316025803076806, guid: df28576e060fa244dbdad371ed85a550, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -10085,14 +10073,6 @@ PrefabInstance:
     - target: {fileID: 5603975708285477417, guid: df28576e060fa244dbdad371ed85a550, type: 3}
       propertyPath: m_Name
       value: Damage Stat
-      objectReference: {fileID: 0}
-    - target: {fileID: 6290784863832947552, guid: df28576e060fa244dbdad371ed85a550, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7868657981340484212, guid: df28576e060fa244dbdad371ed85a550, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
