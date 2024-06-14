@@ -4302,8 +4302,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1869218642}
-  - {fileID: 1251221869}
   - {fileID: 1986191346}
+  - {fileID: 1251221869}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1119088947
@@ -6938,6 +6938,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1798071643}
   - component: {fileID: 1798071645}
+  - component: {fileID: 1798071646}
   - component: {fileID: 1798071644}
   m_Layer: 5
   m_Name: Level Up Animation
@@ -7003,6 +7004,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1798071642}
   m_CullTransparentMesh: 1
+--- !u!95 &1798071646
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1798071642}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5c62831c1da808749a7a7228dd26fc77, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1809967596
 GameObject:
   m_ObjectHideFlags: 0
@@ -7229,7 +7252,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1820514672}
   m_Enabled: 1
-  m_Alpha: 0
+  m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
@@ -8295,6 +8318,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1986191346}
+  - component: {fileID: 1986191347}
   m_Layer: 0
   m_Name: Improve Card Manager
   m_TagString: Untagged
@@ -8317,6 +8341,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1111235978}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1986191347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1986191345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4351e3feb25a886478cd69375c3db860, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator_lvlUPEffect: {fileID: 1798071646}
 --- !u!114 &2016604755 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6928885976363382605, guid: df28576e060fa244dbdad371ed85a550, type: 3}

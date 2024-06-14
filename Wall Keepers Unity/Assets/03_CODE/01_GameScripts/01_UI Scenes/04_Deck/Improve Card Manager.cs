@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class ImproveCardManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    // Two functions: 1 for Level Up, 2 For Awakening lvl up
 
-    // Update is called once per frame
-    void Update()
+    [Header("Spell Level Up Animation")]
+    [SerializeField] private Animator animator_lvlUPEffect;
+    private int i_animatorIntVariable = Animator.StringToHash("ElementID");
+
+    public void LevelUpSpell()
     {
-        
+        // Play Animation Effect
+
+        // Play SFXs
+
+        // Show Stats increase
+
+        // Reduce Card Mana Energy
+
+        // Reduce Number of Cards in Stock
     }
 }
