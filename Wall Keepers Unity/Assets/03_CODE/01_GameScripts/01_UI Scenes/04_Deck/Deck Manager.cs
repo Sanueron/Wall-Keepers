@@ -330,6 +330,7 @@ public class DeckManager : MonoBehaviour
             }
             else { b_awakeningReady = false; }
         }
+        else { b_awakeningReady = false; }
         if (!b_awakeningReady) // Spell Not ready for Awakening Show Level Up options
         {
             go_awakenItems.SetActive(false);
@@ -494,7 +495,6 @@ public class DeckManager : MonoBehaviour
         tmp_elementalRunesRequiredInStock.text = i_elementalRunesInStock.ToString();
         tmp_elementalRunesRequired.text = "/" + i_elementalRunesCost.ToString();
         img_elementalRuneRequiredIcon.sprite = spellInfo.requiredElementalRune.spr_runeIcon;
-
     }
     internal void UpdateButtons(int i_spellID, ScripteableCard spellInfo)
     {
@@ -623,6 +623,7 @@ public class DeckManager : MonoBehaviour
             }
             else { b_awakeningReady = false; }
         }
+        else { b_awakeningReady = false; }
         if (!b_awakeningReady) // Spell Not ready for Awakening Show Level Up options
         {
             go_awakenItems.SetActive(false);
