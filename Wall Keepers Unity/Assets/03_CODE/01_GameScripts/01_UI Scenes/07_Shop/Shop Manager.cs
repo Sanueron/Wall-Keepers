@@ -45,10 +45,12 @@ public class ShopManager : MonoBehaviour
 
     [Header("Spells to buy Info and Variables")]
     [SerializeField] private List<ShopBuyableSpells> allBuyableSpellsDataObjects = new List<ShopBuyableSpells>(); // All spells data objects
+    private ShopBuyableSpells[] arrayOf_displayedShopBuyableSpells = new ShopBuyableSpells[3]; // All spells data objects
     [SerializeField] private List<BuyableItemManager> buyableSpells = new List<BuyableItemManager>(); // Spells shown today in the shop
     [SerializeField] private TextMeshProUGUI[] tmp_spellReward = new TextMeshProUGUI[3]; // New or x14
     [Header("Elemental Runes")]
     [SerializeField] private List<ElementalRunes_SO> buyableElementalRunes_List = new List<ElementalRunes_SO>();
+    private ElementalRunes_SO[] arrayOf_buyableElementalRunesDisplayed = new ElementalRunes_SO[3];
     [SerializeField] private List<BuyableItemManager> buyableERunes = new List<BuyableItemManager>();
     #endregion
 
@@ -87,7 +89,7 @@ public class ShopManager : MonoBehaviour
         else // Not new day
         {
             CheckShopItemsState();
-            CheckRunesPurchaseLeft();
+            AssignAlreadyDisplayedElementalRunes();
         }
     }
     private void RefreshShopItems()
@@ -112,16 +114,17 @@ public class ShopManager : MonoBehaviour
         for(int i = 0; i < i_spellsDisplayed; i++)
         {
             int i_randomNumber = UnityEngine.Random.Range(0, allBuyableSpellsDataObjects.Count); // Get random spell
-            PlayerData.shopBuyableSpells[i] = allBuyableSpellsDataObjects[i_randomNumber]; // Assign displayed spell to list
+            PlayerData.shopBuyableSpells[i] = i_randomNumber; // Assign displayed spell to list
+            arrayOf_displayedShopBuyableSpells[i] = allBuyableSpellsDataObjects[i_randomNumber]; // Assign to Local List
             allBuyableSpellsDataObjects.RemoveAt(i_randomNumber); // remove to avoid repeating
         }
 
-        AssignDataOfSpellsDisplayedInShop(); // Show Spells Displayed Data (Card art and cost)
+        AssignDataOfNewSpellsDisplayedInShop(); // Show Spells Displayed Data (Card art and cost)
     }
     private void CheckShopItemsState()
     {
         // Get spells displayed
-        AssignDataOfSpellsDisplayedInShop();
+        AssignDataOfAlreadyDisplayedSpellSInShop();
 
         // Check which spells are already bought
         for (int i = 0; i < PlayerData.b_spellBoughtAlready.Length; i++) // Mark spells as not bought already
@@ -132,14 +135,35 @@ public class ShopManager : MonoBehaviour
             }
         }
     }
-    private void AssignDataOfSpellsDisplayedInShop()
+    private void AssignDataOfNewSpellsDisplayedInShop()
     {
         // Assign spells displayed info to Buyable items
         for (int i = 0; i < PlayerData.shopBuyableSpells.Length; i++)
         {
-            buyableSpells[i].spellBuyableData = PlayerData.shopBuyableSpells[i]; // Assign spell data for Buy method
-            buyableSpells[i].SetSpellCard(PlayerData.shopBuyableSpells[i].GetSpellCadrArt()); // Assign Spell Card
-            buyableSpells[i].SetItemPrice(PlayerData.shopBuyableSpells[i].GetSpellCost()); // Get Spell Cost
+            buyableSpells[i].spellBuyableData = arrayOf_displayedShopBuyableSpells[i]; // Assign spell data for Buy method
+            buyableSpells[i].SetSpellCard(arrayOf_displayedShopBuyableSpells[i].GetSpellCadrArt()); // Assign Spell Card
+            buyableSpells[i].SetItemPrice(arrayOf_displayedShopBuyableSpells[i].GetSpellCost()); // Get Spell Cost
+            if (!PlayerData.b_spellCardObtained[buyableSpells[i].spellBuyableData.GetSpellID()])
+            {
+                tmp_spellReward[i].text = "NEW";
+            }
+            else
+            {
+                tmp_spellReward[i].text = "x14";
+            }
+        }
+    }
+    private void AssignDataOfAlreadyDisplayedSpellSInShop()
+    {
+        // Assign spells displayed info to Buyable items
+        for (int i = 0; i < PlayerData.shopBuyableSpells.Length; i++)
+        {
+            // Get Data Saved 
+            arrayOf_displayedShopBuyableSpells[i] = allBuyableSpellsDataObjects[PlayerData.shopBuyableSpells[i]];
+
+            buyableSpells[i].spellBuyableData = arrayOf_displayedShopBuyableSpells[i]; // Assign spell data for Buy method
+            buyableSpells[i].SetSpellCard(arrayOf_displayedShopBuyableSpells[i].GetSpellCadrArt()); // Assign Spell Card
+            buyableSpells[i].SetItemPrice(arrayOf_displayedShopBuyableSpells[i].GetSpellCost()); // Get Spell Cost
             if (!PlayerData.b_spellCardObtained[buyableSpells[i].spellBuyableData.GetSpellID()])
             {
                 tmp_spellReward[i].text = "NEW";
@@ -166,12 +190,33 @@ public class ShopManager : MonoBehaviour
         for (int i = 0; i < i_spellsDisplayed; i++)
         {
             int i_randomNumber = UnityEngine.Random.Range(0, buyableElementalRunes_List.Count); // Get random rune
-            PlayerData.shopBuyableERunes[i] = buyableElementalRunes_List[i_randomNumber]; // Assign displayed rune to list
+            PlayerData.shopBuyableERunes[i] = i_randomNumber; // Assign displayed rune to list
+            arrayOf_buyableElementalRunesDisplayed[i] = buyableElementalRunes_List[i_randomNumber];
             buyableElementalRunes_List.RemoveAt(i_randomNumber); // remove to avoid repeating
             buyableERunes[i].UpdateRunePurchasesLeft(); // Update Text showing purchases left
         }
 
-        AssignDisplayedElementalRunes();
+        AssignNewDisplayedElementalRunes();
+    }
+    private void AssignAlreadyDisplayedElementalRunes()
+    {
+        for (int i = 0; i < buyableERunes.Count; i++)
+        {
+            arrayOf_buyableElementalRunesDisplayed[i] = buyableElementalRunes_List[PlayerData.shopBuyableERunes[i]];
+            buyableERunes[i].elementalRuneData = arrayOf_buyableElementalRunesDisplayed[i];
+            buyableERunes[i].UpdateRunePurchasesLeft(); // Update Text showing purchases left
+        }
+
+        // Check if number of purchases is bigger than 0, if not, activate Block Purchase GameObject
+        for (int i = 0; i < PlayerData.i_elementalRunesPurchasesLeftInShop.Length; i++)
+        {
+            buyableERunes[i].UpdateRunePurchasesLeft(); // Update Text showing purchases left
+
+            if (PlayerData.i_elementalRunesPurchasesLeftInShop[i] <= 0) // If no more purhcases left
+            {
+                buyableERunes[i].BlockERunePurchase(); // Block purchases activating go
+            }
+        }
     }
     internal void CheckRunesPurchaseLeft()
     {
@@ -186,14 +231,14 @@ public class ShopManager : MonoBehaviour
             }
         }
 
-        AssignDisplayedElementalRunes();
+        AssignNewDisplayedElementalRunes();
     }
-    private void AssignDisplayedElementalRunes()
+    private void AssignNewDisplayedElementalRunes()
     {
         // Assign Displayed E rune SO data and Sprite icon
         for (int i = 0; i < buyableERunes.Count; i++)
         {
-            buyableERunes[i].elementalRuneData = PlayerData.shopBuyableERunes[i];
+            buyableERunes[i].elementalRuneData = arrayOf_buyableElementalRunesDisplayed[i];
             buyableERunes[i].SetElementalRuneIcon(buyableERunes[i].elementalRuneData.spr_runeIcon);
         }
     }

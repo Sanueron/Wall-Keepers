@@ -29,8 +29,8 @@ public static class PlayerData
     #region Shop Data
     // Spells available in shop
     internal static bool[] b_spellBoughtAlready = new bool[3];
-    internal static ShopBuyableSpells[] shopBuyableSpells = new ShopBuyableSpells[3];
-    internal static ElementalRunes_SO[] shopBuyableERunes = new ElementalRunes_SO[3];
+    internal static int[] shopBuyableSpells = new int[3];
+    internal static int[] shopBuyableERunes = new int[3];
     internal static int[] i_elementalRunesPurchasesLeftInShop = new int[3];
     #endregion
 

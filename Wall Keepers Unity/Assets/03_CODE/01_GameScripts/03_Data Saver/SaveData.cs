@@ -108,8 +108,8 @@ public class Container
 
     #region Shop Data
     public bool[] b_spellBoughtAlready = new bool[3];
-    public ShopBuyableSpells[] shopBuyableSpells = new ShopBuyableSpells[3];
-    public ElementalRunes_SO[] shopBuyableERunes = new ElementalRunes_SO[3];
+    public int[] shopBuyableSpells = new int[3];
+    public int[] shopBuyableERunes = new int[3];
     public int[] i_elementalRunesPurchasesLeftInShop = new int[3];
 
     #endregion
