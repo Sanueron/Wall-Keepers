@@ -27,6 +27,8 @@ MonoBehaviour:
   castClip: {fileID: 8300000, guid: f290d89f6a37c7a4c89db7b41dc627d2, type: 3}
   impactClip: {fileID: 8300000, guid: 007b853fea379b34c8a399e20987d432, type: 3}
   i_starLevel: 2
+  spr_spellRequiredCard_1: {fileID: 21300000, guid: 56e43086f278d9c45b61663d5a1f7345, type: 3}
+  spr_spellRequiredCard_2: {fileID: 21300000, guid: e532fb3743b17cd448dbbde580d4ac71, type: 3}
   f_repeatingDmgCoolDown: 0
   e_CastingType: 1
   e_Effect: 3
