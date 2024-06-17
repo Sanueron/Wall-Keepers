@@ -29,6 +29,8 @@ MonoBehaviour:
   i_starLevel: 4
   spr_spellRequiredCard_1: {fileID: 21300000, guid: 7f6c26aa08505064a9f0f8076d600c91, type: 3}
   spr_spellRequiredCard_2: {fileID: 21300000, guid: ab3451163fe3ccd4882b5e3cf3879839, type: 3}
+  i_spellRequired_1_Id: 4
+  i_spellRequired_2_Id: 6
   f_repeatingDmgCoolDown: 0
   e_CastingType: 2
   e_Effect: 2
