@@ -85,7 +85,7 @@ public class ImproveCardManager : MonoBehaviour
         // Play SFXs
 
         // Show Stats increase
-        ShowStatsAndIncreaseEffect(newDamage, newResistance, newSpeed, newDuration);
+        ShowStatsAndIncreaseEffectForAwakening(newDamage, newResistance, newSpeed, newDuration);
         // Reduce Player Mana Energy
         PlayerData.i_mana -= DeckManager.instance.i_manaEnergyCost;
         DeckManager.instance.tmp_playerManaEnergy.text = PlayerData.i_mana.ToString();
@@ -122,8 +122,35 @@ public class ImproveCardManager : MonoBehaviour
     {
         DeckManager.instance.ShowStatsAlone();
         // Play increase effect
+        // Damage
         float f_currentDamageBeforeImprovement = f_currentDamage - SpellsData.f_damageIncreaseByLevel;
         StartCoroutine(DamageSumUp(newDamage, f_currentDamageBeforeImprovement));
+        // Resistance 
+        float f_currentResistanceBeforeImprovement = f_currentResistance - SpellsData.f_resistanceIncreaseByLevel;
+        StartCoroutine(ResistanceSumUp(newResistance, f_currentResistanceBeforeImprovement));
+        // Speed
+        float f_currentSpeedBeforeImprovement = f_currentSpeed - SpellsData.f_speedIncreaseByLevel;
+        StartCoroutine(SpeedSumUp(newSpeed, f_currentSpeedBeforeImprovement));
+        // Duration
+        float f_currentDurationBeforeImprovement = f_currentDuration - SpellsData.f_durationIncreaseByLevel;
+        StartCoroutine(DurationSumUp(newDuration, f_currentDurationBeforeImprovement));
+    }
+    private void ShowStatsAndIncreaseEffectForAwakening(float newDamage, float newResistance, float newSpeed, float newDuration)
+    {
+        DeckManager.instance.ShowStatsAlone();
+        // Play increase effect
+        // Damage
+        float f_currentDamageBeforeImprovement = f_currentDamage - SpellsData.f_damageIncreaseByAwakening;
+        StartCoroutine(DamageSumUp(newDamage, f_currentDamageBeforeImprovement));
+        // Resistance 
+        float f_currentResistanceBeforeImprovement = f_currentResistance - SpellsData.f_resistanceIncreaseByAwakening;
+        StartCoroutine(ResistanceSumUp(newResistance, f_currentResistanceBeforeImprovement));
+        // Speed
+        float f_currentSpeedBeforeImprovement = f_currentSpeed - SpellsData.f_speedIncreaseByAwakening;
+        StartCoroutine(SpeedSumUp(newSpeed, f_currentSpeedBeforeImprovement));
+        // Duration
+        float f_currentDurationBeforeImprovement = f_currentDuration - SpellsData.f_durationIncreaseByAwakening;
+        StartCoroutine(DurationSumUp(newDuration, f_currentDurationBeforeImprovement));
     }
     private void ShowSpellCardsReduceEffect()
     {
@@ -133,7 +160,8 @@ public class ImproveCardManager : MonoBehaviour
     {
         StartCoroutine(ElemetalRunesReduceEffect(targetValue, i_spellId));
     }
-    
+
+    #region Stats Increase Effects (Visual for lvl up or awakening)
     IEnumerator DamageSumUp(float targetValue, float f_statValueShown)
     {
         float f_duration = 1f;
@@ -145,6 +173,42 @@ public class ImproveCardManager : MonoBehaviour
             yield return null;
         }
     }
+    IEnumerator ResistanceSumUp(float targetValue, float f_statValueShown)
+    {
+        float f_duration = 1f;
+        var rate = Mathf.Abs(targetValue - f_statValueShown) / f_duration;
+        while (f_statValueShown != targetValue)
+        {
+            f_statValueShown = Mathf.MoveTowards(f_statValueShown, targetValue, rate * Time.deltaTime);
+            DeckManager.instance.tmp_resistanceAlone.text = ((int)f_statValueShown).ToString();
+            yield return null;
+        }
+    }
+    IEnumerator SpeedSumUp(float targetValue, float f_statValueShown)
+    {
+        float f_duration = 1f;
+        var rate = Mathf.Abs(targetValue - f_statValueShown) / f_duration;
+        while (f_statValueShown != targetValue)
+        {
+            f_statValueShown = Mathf.MoveTowards(f_statValueShown, targetValue, rate * Time.deltaTime);
+            DeckManager.instance.tmp_speedAlone.text = f_statValueShown.ToString();
+            yield return null;
+        }
+    }
+    IEnumerator DurationSumUp(float targetValue, float f_statValueShown)
+    {
+        float f_duration = 1f;
+        var rate = Mathf.Abs(targetValue - f_statValueShown) / f_duration;
+        while (f_statValueShown != targetValue)
+        {
+            f_statValueShown = Mathf.MoveTowards(f_statValueShown, targetValue, rate * Time.deltaTime);
+            DeckManager.instance.tmp_durationAlone.text = f_statValueShown.ToString();
+            yield return null;
+        }
+    }
+    #endregion
+
+    #region Other Visual Effects
     IEnumerator CardsFillReduce(float targetValue, int i_spellID)
     {
         GetNumberOfCardsForNextImprovement(i_spellID);
@@ -204,6 +268,8 @@ public class ImproveCardManager : MonoBehaviour
         DeckManager.instance.i_spellCardsCost = SpellsData.i_spell_Cards_Cost_Increase_Per_Level +
             SpellsData.i_spell_Cards_Cost_Increase_Per_Level * PlayerData.i_spell_Card_Level[i_spellID];
     }
+    #endregion
+
     #endregion
 
     #region Update Spell Info Panel Buttons and Stats
