@@ -141,14 +141,14 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: iPhone
-    maxTextureSize: 2048
+    maxTextureSize: 512
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 50
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
-    overridden: 0
+    overridden: 1
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
@@ -185,10 +185,10 @@ TextureImporter:
       name: Fire Can Merge_0
       rect:
         serializedVersion: 2
-        x: 49
-        y: 614
-        width: 777
-        height: 529
+        x: 46
+        y: 67
+        width: 782
+        height: 1081
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,10 +206,10 @@ TextureImporter:
       name: Fire Can Merge_1
       rect:
         serializedVersion: 2
-        x: 949
-        y: 736
-        width: 777
-        height: 407
+        x: 942
+        y: 71
+        width: 788
+        height: 1079
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -227,10 +227,10 @@ TextureImporter:
       name: Fire Can Merge_2
       rect:
         serializedVersion: 2
-        x: 1849
-        y: 614
-        width: 777
-        height: 529
+        x: 1844
+        y: 69
+        width: 784
+        height: 1081
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -248,10 +248,10 @@ TextureImporter:
       name: Fire Can Merge_3
       rect:
         serializedVersion: 2
-        x: 2749
-        y: 736
-        width: 777
-        height: 407
+        x: 2743
+        y: 71
+        width: 786
+        height: 1075
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -265,157 +265,10 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: Fire Can Merge_4
-      rect:
-        serializedVersion: 2
-        x: 74
-        y: 74
-        width: 752
-        height: 506
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2618a2dbba84eb8a0800000000000000
-      internalID: -6287508127312346782
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Fire Can Merge_5
-      rect:
-        serializedVersion: 2
-        x: 974
-        y: 74
-        width: 752
-        height: 527
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 70ff3792e600deb10800000000000000
-      internalID: 2012265081646350087
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Fire Can Merge_6
-      rect:
-        serializedVersion: 2
-        x: 1874
-        y: 74
-        width: 106
-        height: 554
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 89a5cdc6ae984c060800000000000000
-      internalID: 6972849763018103448
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Fire Can Merge_7
-      rect:
-        serializedVersion: 2
-        x: 2465
-        y: 477
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 178f9714181aba650800000000000000
-      internalID: 6245262884800690289
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Fire Can Merge_8
-      rect:
-        serializedVersion: 2
-        x: 2774
-        y: 74
-        width: 752
-        height: 527
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4fbdbd74cce5f09b0800000000000000
-      internalID: -5111762820570293260
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Fire Can Merge_9
-      rect:
-        serializedVersion: 2
-        x: 2473
-        y: 217
-        width: 153
-        height: 225
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9c3914110746a0440800000000000000
-      internalID: 4902841576834831305
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Fire Can Merge_10
-      rect:
-        serializedVersion: 2
-        x: 2139
-        y: 74
-        width: 487
-        height: 113
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 141383b7216d4d750800000000000000
-      internalID: 6328918751227425089
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: d8915eb15849fe64bbdf6ae0c5b5b51f
     internalID: 0
     vertices: []
     indices: 
@@ -425,15 +278,8 @@ TextureImporter:
     nameFileIdTable:
       Fire Can Merge_0: 1308116741173784569
       Fire Can Merge_1: -3315503741896369220
-      Fire Can Merge_10: 6328918751227425089
       Fire Can Merge_2: 1396046646919152073
       Fire Can Merge_3: -4267489550638085353
-      Fire Can Merge_4: -6287508127312346782
-      Fire Can Merge_5: 2012265081646350087
-      Fire Can Merge_6: 6972849763018103448
-      Fire Can Merge_7: 6245262884800690289
-      Fire Can Merge_8: -5111762820570293260
-      Fire Can Merge_9: 4902841576834831305
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
