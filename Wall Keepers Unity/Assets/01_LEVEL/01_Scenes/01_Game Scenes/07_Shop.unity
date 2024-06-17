@@ -3832,7 +3832,7 @@ MonoBehaviour:
     m_Left: 25
     m_Right: 25
     m_Top: 75
-    m_Bottom: 25
+    m_Bottom: 40
   m_ChildAlignment: 4
   m_StartCorner: 0
   m_StartAxis: 0
