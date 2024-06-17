@@ -242,6 +242,7 @@ MonoBehaviour:
   img_spellInSlotVisual: {fileID: 1370452447835895853}
   button_addOrRemoveSpellToFromDeck: {fileID: 6981958879269610247}
   button_showSpellInfo: {fileID: 1761800416536344406}
+  button_card: {fileID: 8875287535886220322}
 --- !u!1 &6247706782917021792
 GameObject:
   m_ObjectHideFlags: 0

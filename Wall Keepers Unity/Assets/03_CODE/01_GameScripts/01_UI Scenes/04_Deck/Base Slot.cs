@@ -19,6 +19,7 @@ public class BaseSlot : MonoBehaviour
     // Slot Buttons
     [SerializeField] internal Button button_addOrRemoveSpellToFromDeck;
     [SerializeField] internal Button button_showSpellInfo;
+    [SerializeField] internal Button button_card;
     #endregion
 
     #region Access methods
