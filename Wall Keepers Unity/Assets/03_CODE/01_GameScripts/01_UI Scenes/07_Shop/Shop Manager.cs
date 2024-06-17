@@ -114,9 +114,17 @@ public class ShopManager : MonoBehaviour
         for(int i = 0; i < i_spellsDisplayed; i++)
         {
             int i_randomNumber = UnityEngine.Random.Range(0, allBuyableSpellsDataObjects.Count); // Get random spell
+            // To avoid Repeating
+            if(i > 0)
+            {
+                while (i_randomNumber == PlayerData.shopBuyableSpells[i - 1])
+                {
+                    i_randomNumber = UnityEngine.Random.Range(0, allBuyableSpellsDataObjects.Count);
+                }
+            }
             PlayerData.shopBuyableSpells[i] = i_randomNumber; // Assign displayed spell to list
             arrayOf_displayedShopBuyableSpells[i] = allBuyableSpellsDataObjects[i_randomNumber]; // Assign to Local List
-            allBuyableSpellsDataObjects.RemoveAt(i_randomNumber); // remove to avoid repeating
+            //allBuyableSpellsDataObjects.RemoveAt(i_randomNumber); // remove to avoid repeating
         }
 
         AssignDataOfNewSpellsDisplayedInShop(); // Show Spells Displayed Data (Card art and cost)
@@ -192,7 +200,7 @@ public class ShopManager : MonoBehaviour
             int i_randomNumber = UnityEngine.Random.Range(0, buyableElementalRunes_List.Count); // Get random rune
             PlayerData.shopBuyableERunes[i] = i_randomNumber; // Assign displayed rune to list
             arrayOf_buyableElementalRunesDisplayed[i] = buyableElementalRunes_List[i_randomNumber];
-            buyableElementalRunes_List.RemoveAt(i_randomNumber); // remove to avoid repeating
+            //buyableElementalRunes_List.RemoveAt(i_randomNumber); // remove to avoid repeating
             buyableERunes[i].UpdateRunePurchasesLeft(); // Update Text showing purchases left
         }
 
