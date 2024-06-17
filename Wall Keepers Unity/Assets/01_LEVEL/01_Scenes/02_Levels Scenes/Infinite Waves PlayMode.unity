@@ -681,53 +681,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 866669145}
     m_Modifications:
-    - target: {fileID: 1950793901351558668, guid: 9e6ef41941f72d7468b6e6f96ef660cc, type: 3}
-      propertyPath: m_Color.b
-      value: 0.4245283
-      objectReference: {fileID: 0}
-    - target: {fileID: 1950793901351558668, guid: 9e6ef41941f72d7468b6e6f96ef660cc, type: 3}
-      propertyPath: m_Color.g
-      value: 0.4245283
-      objectReference: {fileID: 0}
-    - target: {fileID: 1950793901351558668, guid: 9e6ef41941f72d7468b6e6f96ef660cc, type: 3}
-      propertyPath: m_Color.r
-      value: 0.4245283
-      objectReference: {fileID: 0}
     - target: {fileID: 3780210090962384443, guid: 9e6ef41941f72d7468b6e6f96ef660cc, type: 3}
       propertyPath: m_Name
       value: The Wall
-      objectReference: {fileID: 0}
-    - target: {fileID: 4677640745242351401, guid: 9e6ef41941f72d7468b6e6f96ef660cc, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 13.744462
-      objectReference: {fileID: 0}
-    - target: {fileID: 4677640745242351401, guid: 9e6ef41941f72d7468b6e6f96ef660cc, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 5.432224
-      objectReference: {fileID: 0}
-    - target: {fileID: 4677640745242351401, guid: 9e6ef41941f72d7468b6e6f96ef660cc, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4677640745242351401, guid: 9e6ef41941f72d7468b6e6f96ef660cc, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -10.0947
-      objectReference: {fileID: 0}
-    - target: {fileID: 5783479812833526079, guid: 9e6ef41941f72d7468b6e6f96ef660cc, type: 3}
-      propertyPath: m_Color.b
-      value: 0.33490568
-      objectReference: {fileID: 0}
-    - target: {fileID: 5783479812833526079, guid: 9e6ef41941f72d7468b6e6f96ef660cc, type: 3}
-      propertyPath: m_Color.g
-      value: 0.33490568
-      objectReference: {fileID: 0}
-    - target: {fileID: 5783479812833526079, guid: 9e6ef41941f72d7468b6e6f96ef660cc, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5944224377005262244, guid: 9e6ef41941f72d7468b6e6f96ef660cc, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -13.56
       objectReference: {fileID: 0}
     - target: {fileID: 6082695396767411833, guid: 9e6ef41941f72d7468b6e6f96ef660cc, type: 3}
       propertyPath: m_LocalPosition.x
