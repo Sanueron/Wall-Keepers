@@ -275,6 +275,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: S4_Lighting
       objectReference: {fileID: 0}
+    - target: {fileID: 6981958879269610247, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 198118378}
+    - target: {fileID: 6981958879269610247, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaySFxOneTime
+      objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -480,6 +488,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8194926508630272057, guid: 317e09ca32a50414b80d9163a1c29963, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 198118378}
+    - target: {fileID: 8194926508630272057, guid: 317e09ca32a50414b80d9163a1c29963, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaySFxOneTime
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -596,6 +612,14 @@ PrefabInstance:
     - target: {fileID: 6195423186402858997, guid: 5c73cbc1d1341764eaa53d5ca8be37c1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8462169284654279628, guid: 5c73cbc1d1341764eaa53d5ca8be37c1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 198118378}
+    - target: {fileID: 8462169284654279628, guid: 5c73cbc1d1341764eaa53d5ca8be37c1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaySFxOneTime
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1325,6 +1349,14 @@ PrefabInstance:
     - target: {fileID: 2953748825001162203, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_Name
       value: S2_Tornado
+      objectReference: {fileID: 0}
+    - target: {fileID: 6981958879269610247, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 198118378}
+    - target: {fileID: 6981958879269610247, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaySFxOneTime
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_Pivot.x
@@ -2103,6 +2135,14 @@ PrefabInstance:
     - target: {fileID: 7070191687551399331, guid: 317e09ca32a50414b80d9163a1c29963, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8194926508630272057, guid: 317e09ca32a50414b80d9163a1c29963, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 198118378}
+    - target: {fileID: 8194926508630272057, guid: 317e09ca32a50414b80d9163a1c29963, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaySFxOneTime
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3294,6 +3334,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: S2_Rock Wall
       objectReference: {fileID: 0}
+    - target: {fileID: 6981958879269610247, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 198118378}
+    - target: {fileID: 6981958879269610247, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaySFxOneTime
+      objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4187,6 +4235,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: S1_Rock Ball
       objectReference: {fileID: 0}
+    - target: {fileID: 6981958879269610247, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 198118378}
+    - target: {fileID: 6981958879269610247, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaySFxOneTime
+      objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -4307,6 +4363,14 @@ PrefabInstance:
     - target: {fileID: 2953748825001162203, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_Name
       value: S1_Water Ball
+      objectReference: {fileID: 0}
+    - target: {fileID: 6981958879269610247, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 198118378}
+    - target: {fileID: 6981958879269610247, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaySFxOneTime
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_Pivot.x
@@ -5296,6 +5360,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8462169284654279628, guid: 5c73cbc1d1341764eaa53d5ca8be37c1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 198118378}
+    - target: {fileID: 8462169284654279628, guid: 5c73cbc1d1341764eaa53d5ca8be37c1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaySFxOneTime
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6214,6 +6286,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8194926508630272057, guid: 317e09ca32a50414b80d9163a1c29963, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 198118378}
+    - target: {fileID: 8194926508630272057, guid: 317e09ca32a50414b80d9163a1c29963, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaySFxOneTime
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6597,6 +6677,14 @@ PrefabInstance:
     - target: {fileID: 2953748825001162203, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_Name
       value: S1_Wind Arrow
+      objectReference: {fileID: 0}
+    - target: {fileID: 6981958879269610247, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 198118378}
+    - target: {fileID: 6981958879269610247, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaySFxOneTime
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_Pivot.x
@@ -7350,7 +7438,7 @@ MonoBehaviour:
         m_MethodName: PlaySFxOneTime
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgument: {fileID: 8300000, guid: 39a9a29aa8ead314a841edbf5fa2f5ef, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -8825,6 +8913,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8462169284654279628, guid: 5c73cbc1d1341764eaa53d5ca8be37c1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 198118378}
+    - target: {fileID: 8462169284654279628, guid: 5c73cbc1d1341764eaa53d5ca8be37c1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaySFxOneTime
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9153,6 +9249,14 @@ PrefabInstance:
     - target: {fileID: 6195423186402858997, guid: 5c73cbc1d1341764eaa53d5ca8be37c1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8462169284654279628, guid: 5c73cbc1d1341764eaa53d5ca8be37c1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 198118378}
+    - target: {fileID: 8462169284654279628, guid: 5c73cbc1d1341764eaa53d5ca8be37c1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaySFxOneTime
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9635,6 +9739,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8462169284654279628, guid: 5c73cbc1d1341764eaa53d5ca8be37c1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 198118378}
+    - target: {fileID: 8462169284654279628, guid: 5c73cbc1d1341764eaa53d5ca8be37c1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaySFxOneTime
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9756,6 +9868,14 @@ PrefabInstance:
     - target: {fileID: 6195423186402858997, guid: 5c73cbc1d1341764eaa53d5ca8be37c1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8462169284654279628, guid: 5c73cbc1d1341764eaa53d5ca8be37c1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 198118378}
+    - target: {fileID: 8462169284654279628, guid: 5c73cbc1d1341764eaa53d5ca8be37c1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaySFxOneTime
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9934,6 +10054,14 @@ PrefabInstance:
     - target: {fileID: 2953748825001162203, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_Name
       value: S1_Fire Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 6981958879269610247, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 198118378}
+    - target: {fileID: 6981958879269610247, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaySFxOneTime
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_Pivot.x
@@ -10188,6 +10316,14 @@ PrefabInstance:
     - target: {fileID: 6195423186402858997, guid: 5c73cbc1d1341764eaa53d5ca8be37c1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8462169284654279628, guid: 5c73cbc1d1341764eaa53d5ca8be37c1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 198118378}
+    - target: {fileID: 8462169284654279628, guid: 5c73cbc1d1341764eaa53d5ca8be37c1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaySFxOneTime
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11119,6 +11255,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8462169284654279628, guid: 5c73cbc1d1341764eaa53d5ca8be37c1, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 198118378}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11136,6 +11276,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: S1_Fire Ball
       objectReference: {fileID: 0}
+    - target: {fileID: 6981958879269610247, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 198118378}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
