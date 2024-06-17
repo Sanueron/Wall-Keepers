@@ -12,8 +12,10 @@ public class ImproveCardManager : MonoBehaviour
     // Elements ID are: 1-Fire/ 2-Water/ 3-Earth/ 4-Wind/ 5-Lighting
     private int i_animatorIntVariable = Animator.StringToHash("ElementID");
     int i_elementID;
+    [Header("Block Actions Panel")]
+    [SerializeField] List<AudioClip> listOf_elementsAudioClip = new List<AudioClip>();
 
-    [Header("Spell Level Up Animation")]
+    [Header("Block Actions Panel")]
     [SerializeField] private GameObject go_actionsBlockPanel;
     #region Locally Stored variables
     int i_spellID;
@@ -46,6 +48,7 @@ public class ImproveCardManager : MonoBehaviour
         i_elementID = 0;
         animator_lvlUPEffect.SetInteger(i_animatorIntVariable, 0); // Set to 0 to avoid animation looping
         // Play SFXs
+        AudioManager.instance.PlaySFxOneTime(listOf_elementsAudioClip[i_elementID]);
 
         // Show Stats increase
         ShowStatsAndIncreaseEffect(newDamage, newResistance, newSpeed, newDuration);
@@ -83,6 +86,7 @@ public class ImproveCardManager : MonoBehaviour
         i_elementID = 0;
         animator_lvlUPEffect.SetInteger(i_animatorIntVariable, 0); // Set to 0 to avoid animation looping
         // Play SFXs
+        AudioManager.instance.PlaySFxOneTime(listOf_elementsAudioClip[i_elementID]);
 
         // Show Stats increase
         ShowStatsAndIncreaseEffectForAwakening(newDamage, newResistance, newSpeed, newDuration);

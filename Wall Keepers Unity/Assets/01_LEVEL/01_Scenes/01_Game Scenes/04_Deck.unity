@@ -10985,6 +10985,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator_lvlUPEffect: {fileID: 1798071646}
+  listOf_elementsAudioClip:
+  - {fileID: 0}
+  - {fileID: 8300000, guid: 75fc791c48557f6428e07ec13b8ab381, type: 3}
+  - {fileID: 8300000, guid: 89e43e7520a5047df8404057af3aeb12, type: 3}
+  - {fileID: 8300000, guid: f7e26080fc6ad4873b7f74327b2f3742, type: 3}
+  - {fileID: 8300000, guid: f4b91ece8e32746a0a8691497f37e9bd, type: 3}
+  - {fileID: 8300000, guid: 42cc79a4862bb9a46923d599104e367e, type: 3}
   go_actionsBlockPanel: {fileID: 1282910849}
 --- !u!114 &2016604755 stripped
 MonoBehaviour:
