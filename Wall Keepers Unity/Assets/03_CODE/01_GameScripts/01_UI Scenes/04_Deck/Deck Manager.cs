@@ -56,6 +56,10 @@ public class DeckManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI tmp_manaEnergyCostInAwakenButton;
     [SerializeField] private TextMeshProUGUI tmp_lvlUpOrAwakentext;
     [SerializeField] private Button button_levelUp;
+
+    [Header("Fusion Spells Special items")]
+    [SerializeField] private GameObject go_fusionSpellsSpecialItems;
+    [SerializeField] private Image img_spellRequired_1, img_spellRequired_2;
     #endregion
 
     #region Spell level Up and Awaken Variables
@@ -220,6 +224,8 @@ public class DeckManager : MonoBehaviour
 
         button_levelUp.interactable = false;
         awakenButton.interactable = false;
+        go_fusionSpellsSpecialItems.SetActive(false); // Set Off Fusion Spells Items by dafault
+
         // Check if spell ready for Awakening - Level Cap reached and Awakening level not increased yet
         // At level 10 - Awk level 1 and so on
         tmp_lvlUpOrAwakentext.text = "Awaken"; // changed later if level up instead
@@ -376,6 +382,10 @@ public class DeckManager : MonoBehaviour
                     break;
                 case ScripteableCard.SpellType.Fusion:
                     tmp_lvlUpOrAwakentext.text = "Level Up";
+                    // Assign Required Cards for fusion spell Sprites
+                    img_spellRequired_1.sprite = spellInfo.spr_spellRequiredCard_1;
+                    img_spellRequired_2.sprite = spellInfo.spr_spellRequiredCard_2;
+                    go_fusionSpellsSpecialItems.SetActive(true); // Activate Fusion Special Items
                     go_levelUpItems.SetActive(false);
                     go_awakenItems.SetActive(false);
                     if (PlayerData.i_mana >= i_manaEnergyCost)

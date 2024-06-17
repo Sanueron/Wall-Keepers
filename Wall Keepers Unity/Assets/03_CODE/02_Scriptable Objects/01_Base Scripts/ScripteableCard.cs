@@ -26,7 +26,12 @@ public class ScripteableCard : ScriptableObject
     public AudioClip castClip;
     public AudioClip impactClip;
     public int i_starLevel = 1;
-    
+
+    [Header("Fusion Cards Only")]
+    public Sprite spr_spellRequiredCard_1;
+    public Sprite spr_spellRequiredCard_2;
+
+    #region Delete
     [Header("Lake")]
     public float f_repeatingDmgCoolDown;//LakeLifeTime
     public enum castingType {None, Projectile, Instant, AllMap };
@@ -50,6 +55,6 @@ public class ScripteableCard : ScriptableObject
     public Sprite fusionSprite5;
     public bool b_canAwake;
     public int i_awakenLevel = 1;
-
+    #endregion
 
 }
