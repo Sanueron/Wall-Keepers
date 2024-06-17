@@ -28,8 +28,9 @@ public class ScripteableCard : ScriptableObject
     public int i_starLevel = 1;
 
     [Header("Fusion Cards Only")]
-    public Sprite spr_spellRequiredCard_1;
-    public Sprite spr_spellRequiredCard_2;
+    [SerializeField] internal Sprite spr_spellRequiredCard_1;
+    [SerializeField] internal Sprite spr_spellRequiredCard_2;
+    [SerializeField] internal int i_spellRequired_1_Id, i_spellRequired_2_Id;
 
     #region Delete
     [Header("Lake")]
