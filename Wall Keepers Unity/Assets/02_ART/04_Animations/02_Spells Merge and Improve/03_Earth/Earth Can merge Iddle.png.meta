@@ -254,7 +254,11 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Earth Can merge Iddle_0: -6948152810505427676
+      Earth Can merge Iddle_1: 902135967808715343
+      Earth Can merge Iddle_2: 2053175983356153332
+      Earth Can merge Iddle_3: 5565236336689394507
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

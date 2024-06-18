@@ -182,7 +182,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Selected Spell Background_0: -137088104084287937
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

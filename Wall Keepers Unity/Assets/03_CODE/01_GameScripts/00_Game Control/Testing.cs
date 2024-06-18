@@ -13,6 +13,19 @@ public class Testing : MonoBehaviour
         //PlayerData.i_spell_Card_Level[1] = 9;
         //PlayerData.i_elementalRunesInStock[0] = 5;
         //print(PlayerData.i_lastDayLogInShop);
+
+
+    }
+
+    public void SmallEnemyHit()
+    {
+        WallManager.instance.ReceiveHit(200f);
+
+    }
+
+    public void BigEnemyHit()
+    {
+        WallManager.instance.ReceiveHit(600f);
     }
 
 }

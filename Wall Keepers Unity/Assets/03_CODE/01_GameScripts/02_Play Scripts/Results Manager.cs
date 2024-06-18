@@ -7,12 +7,17 @@ public class ResultsManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        WallManager.e_OnWallDestroyed += WallManager_e_OnWallDestroyed;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void WallManager_e_OnWallDestroyed(object sender, System.EventArgs e)
     {
-        
+
+        //Show results 
+
+        Debug.Log("finish");
+
     }
+
+   
 }
