@@ -114,17 +114,9 @@ public class ShopManager : MonoBehaviour
         for(int i = 0; i < i_spellsDisplayed; i++)
         {
             int i_randomNumber = UnityEngine.Random.Range(0, allBuyableSpellsDataObjects.Count); // Get random spell
-            // To avoid Repeating
-            if(i > 0)
-            {
-                while (i_randomNumber == PlayerData.shopBuyableSpells[i - 1])
-                {
-                    i_randomNumber = UnityEngine.Random.Range(0, allBuyableSpellsDataObjects.Count);
-                }
-            }
             PlayerData.shopBuyableSpells[i] = i_randomNumber; // Assign displayed spell to list
             arrayOf_displayedShopBuyableSpells[i] = allBuyableSpellsDataObjects[i_randomNumber]; // Assign to Local List
-            //allBuyableSpellsDataObjects.RemoveAt(i_randomNumber); // remove to avoid repeating
+            allBuyableSpellsDataObjects.RemoveAt(i_randomNumber); // remove to avoid repeating
         }
 
         AssignDataOfNewSpellsDisplayedInShop(); // Show Spells Displayed Data (Card art and cost)
@@ -168,6 +160,7 @@ public class ShopManager : MonoBehaviour
         {
             // Get Data Saved 
             arrayOf_displayedShopBuyableSpells[i] = allBuyableSpellsDataObjects[PlayerData.shopBuyableSpells[i]];
+            allBuyableSpellsDataObjects.RemoveAt(PlayerData.shopBuyableSpells[i]);
 
             buyableSpells[i].spellBuyableData = arrayOf_displayedShopBuyableSpells[i]; // Assign spell data for Buy method
             buyableSpells[i].SetSpellCard(arrayOf_displayedShopBuyableSpells[i].GetSpellCadrArt()); // Assign Spell Card
@@ -194,13 +187,14 @@ public class ShopManager : MonoBehaviour
         }
 
         // Get 3 random Elemental Runes from the list of All elemental Runes
-        int i_spellsDisplayed = 3;
-        for (int i = 0; i < i_spellsDisplayed; i++)
+        int i_runesDisplayed = 3;
+        for (int i = 0; i < i_runesDisplayed; i++)
         {
             int i_randomNumber = UnityEngine.Random.Range(0, buyableElementalRunes_List.Count); // Get random rune
             PlayerData.shopBuyableERunes[i] = i_randomNumber; // Assign displayed rune to list
             arrayOf_buyableElementalRunesDisplayed[i] = buyableElementalRunes_List[i_randomNumber];
-            //buyableElementalRunes_List.RemoveAt(i_randomNumber); // remove to avoid repeating
+            buyableElementalRunes_List.RemoveAt(i_randomNumber); // remove to avoid repeating
+
             buyableERunes[i].UpdateRunePurchasesLeft(); // Update Text showing purchases left
         }
 
@@ -208,18 +202,25 @@ public class ShopManager : MonoBehaviour
     }
     private void AssignAlreadyDisplayedElementalRunes()
     {
-        for (int i = 0; i < buyableERunes.Count; i++)
+        // Get saved Elemental Runes from the list of All elemental Runes
+        int i_runesDisplayed = 3;
+        for (int i = 0; i < i_runesDisplayed; i++)
         {
             arrayOf_buyableElementalRunesDisplayed[i] = buyableElementalRunes_List[PlayerData.shopBuyableERunes[i]];
-            buyableERunes[i].elementalRuneData = arrayOf_buyableElementalRunesDisplayed[i];
+            buyableElementalRunes_List.RemoveAt(PlayerData.shopBuyableERunes[i]); // remove to avoid repeating
             buyableERunes[i].UpdateRunePurchasesLeft(); // Update Text showing purchases left
+        }
+
+        // Assign Displayed E rune SO data and Sprite icon
+        for (int i = 0; i < buyableERunes.Count; i++)
+        {
+            buyableERunes[i].elementalRuneData = arrayOf_buyableElementalRunesDisplayed[i];
+            buyableERunes[i].SetElementalRuneIcon(buyableERunes[i].elementalRuneData.spr_runeIcon);
         }
 
         // Check if number of purchases is bigger than 0, if not, activate Block Purchase GameObject
         for (int i = 0; i < PlayerData.i_elementalRunesPurchasesLeftInShop.Length; i++)
         {
-            buyableERunes[i].UpdateRunePurchasesLeft(); // Update Text showing purchases left
-
             if (PlayerData.i_elementalRunesPurchasesLeftInShop[i] <= 0) // If no more purhcases left
             {
                 buyableERunes[i].BlockERunePurchase(); // Block purchases activating go
