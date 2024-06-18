@@ -161,7 +161,7 @@ public class ActionsManager : MonoBehaviour
     {
         b_busy = true; // Prevent player from dragging cards or doing other actions
         b_showingCardInfo = true;
-        //SelectedCardUIMenu.instance.ShowSelectedCardInfoMenu(selectedCard);
+        //MenuManager.instance.ShowSelectedCardInfoMenu(selectedCard);
     }
     #endregion
 
