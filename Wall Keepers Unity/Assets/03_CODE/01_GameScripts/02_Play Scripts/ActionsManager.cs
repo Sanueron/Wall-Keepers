@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class ActionsManager : MonoBehaviour
 {
     #region Actions control Variables 
     [SerializeField] internal bool b_busy; // Check if any action on going, can't do other actions while busy is true
     internal bool b_showingCardInfo; // Used to know if Card info is been shown and then in Card Manager when card return to target position don't set busy back to fals
-    private bool b_draggingCard;
+    [SerializeField]private bool b_draggingCard;
     private float f_timer = 0;
     private bool b_timerIsOn;
     public bool GetIsDragging()
@@ -21,13 +22,17 @@ public class ActionsManager : MonoBehaviour
     private Vector2 v2_screenPosition;
     private Vector3 v3_worldPosition;
     [SerializeField] private SpellCard_Manager selectedSpell;
-    private int i_sortingOrder_WhenDragging = 100, i_defaultSortingOrder = 0;
+    private int i_sortingOrder_WhenDragging = 90, i_defaultSortingOrder = 70;
+
+    [SerializeField]LayerMask spellCards_LayerMask; 
     #endregion
 
 
     #region Unity Life Cycle
     private void Update()
     {
+       
+      
         if (b_draggingCard) // if action is card dragging 
         {
             // Check if player stops draggind and tries to drop card
@@ -46,13 +51,17 @@ public class ActionsManager : MonoBehaviour
 
         if (Input.touchCount > 0) // input for mobile
         {
+          
             v2_screenPosition = Input.GetTouch(0).position;
+          
+
             // If no other action ongoing or dragging any card, check if player trying to drag a card.
             GetWorldPositionBasedOnScreenTouchPosition();
             CheckIfTryingToDragCard();
         }
         else if (Input.GetMouseButton(0)) // Input for computers
         {
+
             Vector3 mousePosition = Input.mousePosition;
             v2_screenPosition = new Vector2(mousePosition.x, mousePosition.y);
             // If no other action ongoing or dragging any card, check if player trying to drag a card.
@@ -67,17 +76,18 @@ public class ActionsManager : MonoBehaviour
     {
         b_busy = true;
         b_draggingCard = true;
-        v3_cardInitialPosition = selectedSpell.transform.position;
         // Place card above the others
-        //selectedSpell.GetCardVisuals().SetCardSortingOrder(i_sortingOrder_WhenDragging);
+        SetCardSortingOrder(i_sortingOrder_WhenDragging, selectedSpell);
 
     }
+    //CardMovement
     private void CardDragging()
     {
         selectedSpell.transform.position = new Vector2(v3_worldPosition.x, v3_worldPosition.y);
     }
     private void DropCard()
     {
+
         b_busy = false;
         b_draggingCard = false;
 
@@ -91,22 +101,25 @@ public class ActionsManager : MonoBehaviour
         b_timerIsOn = false;
         f_timer = 0;
 
-        // Place card back to default sorting order
-        if (0 >= 0)
+
+        print("CardDroped");
+        StartCoroutine(ReturnToHandPosition(selectedSpell));
+       
+
+        if (selectedSpell.transform.position.y>= -6.2f)// Place 
         {
-            // Check if enough Madness Energy to cast
-            if (0 >= 0) // selectedSpell.MadnessEnergyCost()
+            // Check if enough Mana to cast
+            if (ManaManager.instance.GetCurrentMana()> selectedSpell.GetCardData().i_mana_cost) // selectedSpell.MadnessEnergyCost()
             {
                 // PlayersManager.instance.ReducePlayerMadnessEnergy(i_playerTeam, selectedSpell.MadnessEnergyCost());
-                print("Reduce mana");
+                ManaManager.instance.ReduceCurrentMana(selectedSpell.GetCardData().i_mana_cost);
                 // Cast spell in world position
-
-                // PlayersManager.instance.RemoveCardFromHand(selectedSpell);
+                print("CastSpell");
                 // Entra un nuevo hechizo del deck
             }
             else
             {
-                Debug.Log("Return to hand - Show message - Not enough madness energy");
+                Debug.Log("Return to hand - Show message - Not enough Mana");
                 //selectedSpell.MoveToPositionInHand(v3_cardInitialPosition, transform.rotation);
                 //castSlots[0].StopCanCastAnim();
             }
@@ -117,18 +130,48 @@ public class ActionsManager : MonoBehaviour
             // Return card to initial position
             //selectedCard.transform.position = cardInitialPosition;
             Debug.Log("Return to hand - Show message - Can't cast in here");
-            //selectedSpell.MoveToPositionInHand(v3_cardInitialPosition, transform.rotation);
+            //selectedSpell.MoveToPositionInHand();
         }
-        
+
         //selectedSpell.GetCardVisuals().SetCardSortingOrder(i_defaultSortingOrder);
+
 
         selectedSpell = null;
     }
+
+    //A method to return the card to its slot
+    private IEnumerator ReturnToHandPosition( SpellCard_Manager selectedSpell)
+    {
+
+        print("dale");
+        Vector3 startPosition = selectedSpell.transform.position;
+        float elapsedTime = 0;
+
+        while (elapsedTime < 0.3f)
+        {
+            selectedSpell.transform.position = Vector3.Lerp(startPosition, selectedSpell.v3_cardInitialPosition, elapsedTime / 0.3f);
+            elapsedTime += Time.deltaTime;
+            yield return null; 
+        }
+
+        transform.position = selectedSpell.v3_cardInitialPosition;
+        SetCardSortingOrder(i_defaultSortingOrder, selectedSpell);
+      
+    }
+    private void SetCardSortingOrder(int sortingOrder, SpellCard_Manager selectedSpell)
+    {
+        selectedSpell.GetComponent<Renderer>().sortingOrder = sortingOrder;
+
+    }
+    //Get the SpriteRenderer from selectedSpell
+   
+
     #endregion
 
     #region Additional Methods 
     private void GetWorldPositionBasedOnScreenTouchPosition()
     {
+
         v3_worldPosition = Camera.main.ScreenToWorldPoint(v2_screenPosition);
     }
     private void CheckIfTryingToDragCard()
@@ -139,9 +182,11 @@ public class ActionsManager : MonoBehaviour
         }
         else // Check if trying to drag card
         {
-            RaycastHit2D hit = Physics2D.Raycast(v3_worldPosition, Vector2.zero); // draw raycast
+            RaycastHit2D hit = Physics2D.Raycast(v3_worldPosition, Vector2.zero, 1000f,spellCards_LayerMask); // draw raycast
+
             if (hit.collider != null) // Raycast hits collider
             {
+                 
                 SpellCard_Manager spellCardInHand = hit.transform.GetComponent<SpellCard_Manager>();
                 if (spellCardInHand != null) // If collider hitted is Spell Card
                 {
