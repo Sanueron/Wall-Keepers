@@ -103,7 +103,7 @@ public class ActionsManager : MonoBehaviour
 
 
         print("CardDroped");
-        StartCoroutine(ReturnToHandPosition(selectedSpell));
+      
        
 
         if (selectedSpell.transform.position.y>= -6.2f)// Place 
@@ -115,13 +115,13 @@ public class ActionsManager : MonoBehaviour
                 ManaManager.instance.ReduceCurrentMana(selectedSpell.GetCardData().i_mana_cost);
                 // Cast spell in world position
                 print("CastSpell");
+                //PlayModeDeck.instance.GetSpellBackToDeck(selectedSpell);
                 // Entra un nuevo hechizo del deck
             }
             else
             {
                 Debug.Log("Return to hand - Show message - Not enough Mana");
-                //selectedSpell.MoveToPositionInHand(v3_cardInitialPosition, transform.rotation);
-                //castSlots[0].StopCanCastAnim();
+                StartCoroutine(ReturnToHandPosition(selectedSpell));
             }
 
         }
@@ -130,7 +130,7 @@ public class ActionsManager : MonoBehaviour
             // Return card to initial position
             //selectedCard.transform.position = cardInitialPosition;
             Debug.Log("Return to hand - Show message - Can't cast in here");
-            //selectedSpell.MoveToPositionInHand();
+            StartCoroutine(ReturnToHandPosition(selectedSpell));
         }
 
         //selectedSpell.GetCardVisuals().SetCardSortingOrder(i_defaultSortingOrder);

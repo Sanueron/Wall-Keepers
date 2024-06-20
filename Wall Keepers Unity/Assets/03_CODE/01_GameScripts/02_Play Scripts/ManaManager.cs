@@ -11,7 +11,8 @@ public class ManaManager : MonoBehaviour
     public static ManaManager instance { get; private set; } // Can be read by all scripts but only modified by this
     [SerializeField] private int i_currentManaValue;
     private int i_MaxManaValue = 10;
-    [SerializeField] private Image img_manaBar;
+    [SerializeField] private Image img_manaBarFront;
+    [SerializeField] private Image img_manaBarBack;
     [SerializeField] private float f_manaIncreaseSpeed;
     [SerializeField] private TextMeshProUGUI manaTMP;
     #endregion
@@ -69,14 +70,26 @@ public class ManaManager : MonoBehaviour
         }
         return fillBarValue;
     }
+
     //Update ManaBar
     private void UpdateManaBar()
     {
-        img_manaBar.fillAmount = GetManaBarFillValue();
+        StartCoroutine(LerpLifeBar());
         manaTMP.text = i_currentManaValue.ToString();
-    }
 
-  
+    }
+    //Smoothly ManaBar Increase & Decrease 
+    private IEnumerator LerpLifeBar()
+    {
+        float elapsedTime = 0;
+        while (elapsedTime < f_manaIncreaseSpeed)
+        {
+            img_manaBarFront.fillAmount = Mathf.Lerp(img_manaBarFront.fillAmount, GetManaBarFillValue(), elapsedTime / f_manaIncreaseSpeed);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+    }
     public int GetCurrentMana()
     {
         return i_currentManaValue;

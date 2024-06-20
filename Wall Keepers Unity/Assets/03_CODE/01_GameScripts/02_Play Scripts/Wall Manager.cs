@@ -13,6 +13,7 @@ public class WallManager : MonoBehaviour
     float f_MaxWallLife = 1000f;
     public static WallManager instance { get; private set; } // Can be read by all scripts but only modified by this
     public static event EventHandler e_OnWallDestroyed;
+    [SerializeField] private float f_lifeBar_SpeedDecrease;
     #endregion
     #region Unity Life Cycle
     private void Awake()
@@ -41,13 +42,26 @@ public class WallManager : MonoBehaviour
     {
 
         f_wallLife -= EnemyDmg;
-       img_wallLifeBar.fillAmount = GetHpFillBarValue();
+        // img_wallLifeBar.fillAmount = GetHpFillBarValue();
+        StartCoroutine(DecreaseLifeBar());
 
         if (f_wallLife <= 0)
         {
         
             e_OnWallDestroyed?.Invoke(this, EventArgs.Empty);
         }
+    }
+    //To Lerp lifeBar value 
+    private IEnumerator DecreaseLifeBar()
+    {
+        float elapsedTime = 0;
+        while (elapsedTime < f_lifeBar_SpeedDecrease)
+        {
+            img_wallLifeBar.fillAmount = Mathf.Lerp(img_wallLifeBar.fillAmount, GetHpFillBarValue(), elapsedTime / f_lifeBar_SpeedDecrease);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
     }
     //Get LifeBarValue normalized 
     private float GetHpFillBarValue()
@@ -59,5 +73,7 @@ public class WallManager : MonoBehaviour
         }
         return fillBarValue;
     }
+
+
     #endregion
 }
