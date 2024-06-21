@@ -13,6 +13,7 @@ public static class PlayerData
     internal static bool[] b_canAwake = new bool[100];
     // Deck
     internal static GameObject[] deck_GameObjects = new GameObject[8];
+    internal static GameObject[] go_spellsIndeck = new GameObject[8];
     internal static ScripteableCard[] spellsInDeckData = new ScripteableCard[8];
     internal static int[] i_CardSlotNumber = new int[8];
     internal static bool b_isDeckFull;

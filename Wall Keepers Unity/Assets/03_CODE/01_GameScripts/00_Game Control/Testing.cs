@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Testing : MonoBehaviour
 {
+    public List<GameObject> testSpell;
     // Start is called before the first frame update
     void Awake()
     {
@@ -13,7 +14,8 @@ public class Testing : MonoBehaviour
         //PlayerData.i_spell_Card_Level[1] = 9;
         //PlayerData.i_elementalRunesInStock[0] = 5;
         //print(PlayerData.i_lastDayLogInShop);
-
+       
+        TestDeck();
 
     }
 
@@ -27,5 +29,22 @@ public class Testing : MonoBehaviour
     {
         WallManager.instance.ReceiveHit(600f);
     }
+
+    public void TestDeck()
+    {
+
+        for (int i = 0; i < PlayerData.go_spellsIndeck.Length; i++)
+        {
+         
+            PlayerData.go_spellsIndeck[i] = testSpell[i];
+
+        }
+       
+
+
+    }
+
+
+
 
 }

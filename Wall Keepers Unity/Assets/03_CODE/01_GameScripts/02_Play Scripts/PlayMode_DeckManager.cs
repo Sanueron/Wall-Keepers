@@ -1,19 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
-public class PlayModeDeck : MonoBehaviour
+public class PlayMode_DeckManager : MonoBehaviour
 {
     #region Variables
     //Deck cards --> Player's cards 
     //Hand cards --> Playable cards
 
-    [SerializeField] private List<GameObject> cards_InHand_GameObjects;
-    [SerializeField] private List<GameObject> cards_NotInHand_GameObjects;
-    [SerializeField] private  List<GameObject> allCardsList_GameObjects;
-    [SerializeField] private List<Transform> handPositions_Transform;
-    public static PlayModeDeck instance { get; private set; }
+    [SerializeField] private List<GameObject> cards_InHand_GameObjects = new List<GameObject>();
+    [SerializeField] private List<GameObject> cards_NotInHand_GameObjects =new List<GameObject>();
+    [SerializeField] private List<Transform> handPositions_Transform = new List<Transform>();
+    [SerializeField] private Transform deckPosition_Transform;
+    private Vector3 v3_lastcardPosition;
+
+    public static PlayMode_DeckManager instance { get; private set; }
     #endregion
 
     #region Unity Life Cycle
@@ -27,15 +29,12 @@ public class PlayModeDeck : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-
-        ProvisionalSaveCards();
-        GetDeck();
-
+        instance = this;
 
     }
     private void Start()
     {
-
+        GetDeck();
         GetFirstHand();
 
     }
@@ -43,20 +42,7 @@ public class PlayModeDeck : MonoBehaviour
 
     #region Deck Methods
     //Delete when the DeckScene its ready 
-    private void ProvisionalSaveCards()
-    {
-
-        for (int i = 0; i < PlayerData.i_CardSlotNumber.Length; ++i)
-        {
-
-            PlayerData.i_CardSlotNumber[i] = Random.Range(1, 6);
-
-
-        }
-        SaveData.instance.AssignDataAndSave();
-
-    }
-
+ 
     //Generate cards Pool from player's deck 
     private void GetDeck()
     {
@@ -70,14 +56,15 @@ public class PlayModeDeck : MonoBehaviour
 
                     if (r <= 0)
                     {
-                        GameObject obj = Instantiate(allCardsList_GameObjects[PlayerData.i_CardSlotNumber[i]], gameObject.transform);
+                        print("i" + PlayerData.i_CardSlotNumber[i]);
+                        GameObject obj = Instantiate(PlayerData.go_spellsIndeck[i], deckPosition_Transform.transform);
                         obj.name = obj.name + r;
                         obj.SetActive(false);
                         cards_NotInHand_GameObjects.Add(obj);
                     }
                     else
                     {
-                        GameObject obj = Instantiate(allCardsList_GameObjects[PlayerData.i_CardSlotNumber[i]], gameObject.transform);
+                        GameObject obj = Instantiate(PlayerData.go_spellsIndeck[i], deckPosition_Transform.transform);
                         obj.name = obj.name + r;
                         obj.SetActive(false);
                         if (r >= 2)
@@ -115,19 +102,32 @@ public class PlayModeDeck : MonoBehaviour
             cards_InHand_GameObjects[i].gameObject.transform.position = handPositions_Transform[i].position;
 
         }
-       
+
 
 
     }
     //Still working......
-    public void GetSpellBackToDeck(SpellCard_Manager  card)
+    public void GetSpellBackToDeck(SpellCard_Manager card, Vector3 previousPosition)
     {
+        print(previousPosition);
         int cardListIndex = cards_InHand_GameObjects.IndexOf(card.gameObject);
-        cards_NotInHand_GameObjects.Add(cards_InHand_GameObjects[cardListIndex]);  
+        cards_InHand_GameObjects[cardListIndex].SetActive(false);   
+        cards_NotInHand_GameObjects.Add(cards_InHand_GameObjects[cardListIndex]);
         cards_InHand_GameObjects.RemoveAt(cardListIndex);
-
+        GetSpellToHand(previousPosition);
+    }
+    private void GetSpellToHand( Vector3 peviousPosition)
+    {
+       
+          int randomIndex = Random.Range(0, cards_NotInHand_GameObjects.Count);
+          cards_NotInHand_GameObjects[randomIndex].SetActive(true);
+         
+          cards_NotInHand_GameObjects[randomIndex].transform.position = peviousPosition;
+          cards_NotInHand_GameObjects[randomIndex].GetComponent<SpellCard_Manager>().v3_cardInitialPosition = peviousPosition;
+          //Cambiar de lista 
+           cards_InHand_GameObjects.Add(cards_NotInHand_GameObjects[randomIndex]);
+           cards_NotInHand_GameObjects.RemoveAt(randomIndex);
 
     }
-
     #endregion
 }

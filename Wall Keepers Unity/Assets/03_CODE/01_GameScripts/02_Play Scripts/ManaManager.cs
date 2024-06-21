@@ -84,7 +84,18 @@ public class ManaManager : MonoBehaviour
         float elapsedTime = 0;
         while (elapsedTime < f_manaIncreaseSpeed)
         {
-            img_manaBarFront.fillAmount = Mathf.Lerp(img_manaBarFront.fillAmount, GetManaBarFillValue(), elapsedTime / f_manaIncreaseSpeed);
+            img_manaBarBack.fillAmount = Mathf.Lerp(img_manaBarBack.fillAmount, GetManaBarFillValue(), elapsedTime / f_manaIncreaseSpeed);
+            if (img_manaBarBack.fillAmount < 1)
+            {
+                img_manaBarFront.fillAmount = Mathf.Lerp(img_manaBarFront.fillAmount, GetManaBarFillValue() - 0.1f, elapsedTime / f_manaIncreaseSpeed);
+
+            }
+            else
+            {
+                print("nopasa");
+                img_manaBarFront.fillAmount = 1;
+            }
+            
             elapsedTime += Time.deltaTime;
             yield return null;
         }

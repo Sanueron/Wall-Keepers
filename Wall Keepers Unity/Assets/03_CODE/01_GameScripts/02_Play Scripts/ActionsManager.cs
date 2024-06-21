@@ -1,3 +1,4 @@
+using Cinemachine.Utility;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,18 +17,14 @@ public class ActionsManager : MonoBehaviour
         return b_draggingCard;
     }
     #endregion
-
     #region Drag Variables
     private Vector3 v3_cardInitialPosition;
     private Vector2 v2_screenPosition;
     private Vector3 v3_worldPosition;
     [SerializeField] private SpellCard_Manager selectedSpell;
     private int i_sortingOrder_WhenDragging = 90, i_defaultSortingOrder = 70;
-
     [SerializeField]LayerMask spellCards_LayerMask; 
     #endregion
-
-
     #region Unity Life Cycle
     private void Update()
     {
@@ -70,7 +67,6 @@ public class ActionsManager : MonoBehaviour
         }
     }
     #endregion
-
     #region Drag Cards Methods
     private void InitCardDrag()
     {
@@ -87,10 +83,8 @@ public class ActionsManager : MonoBehaviour
     }
     private void DropCard()
     {
-
         b_busy = false;
         b_draggingCard = false;
-
         float f_timeLimitForShowingCardInfoPanel = .2f;
         if (f_timer < f_timeLimitForShowingCardInfoPanel)
         {
@@ -100,23 +94,25 @@ public class ActionsManager : MonoBehaviour
         }
         b_timerIsOn = false;
         f_timer = 0;
-
-
         print("CardDroped");
-      
-       
-
-        if (selectedSpell.transform.position.y>= -6.2f)// Place 
+        if (selectedSpell.transform.position.y>= -6.2f)//  Battlefield collider 
         {
             // Check if enough Mana to cast
             if (ManaManager.instance.GetCurrentMana()> selectedSpell.GetCardData().i_mana_cost) // selectedSpell.MadnessEnergyCost()
             {
-                // PlayersManager.instance.ReducePlayerMadnessEnergy(i_playerTeam, selectedSpell.MadnessEnergyCost());
-                ManaManager.instance.ReduceCurrentMana(selectedSpell.GetCardData().i_mana_cost);
-                // Cast spell in world position
                 print("CastSpell");
-                //PlayModeDeck.instance.GetSpellBackToDeck(selectedSpell);
+                ManaManager.instance.ReduceCurrentMana(selectedSpell.GetCardData().i_mana_cost);
+                print("Carta hace effecto"+ selectedSpell.name);
+                print(PlayMode_DeckManager.instance.name);
+                PlayMode_DeckManager.instance.GetSpellBackToDeck(selectedSpell, selectedSpell.v3_cardInitialPosition);
+                /*
+                
+               
+                // Cast spell in world position
+              
+                PlayModeDeck.instance.GetSpellBackToDeck(selectedSpell);
                 // Entra un nuevo hechizo del deck
+                */
             }
             else
             {
@@ -164,10 +160,7 @@ public class ActionsManager : MonoBehaviour
 
     }
     //Get the SpriteRenderer from selectedSpell
-   
-
     #endregion
-
     #region Additional Methods 
     private void GetWorldPositionBasedOnScreenTouchPosition()
     {
