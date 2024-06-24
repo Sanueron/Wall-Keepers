@@ -56,7 +56,6 @@ public class PlayMode_DeckManager : MonoBehaviour
 
                     if (r <= 0)
                     {
-                        print("i" + PlayerData.i_CardSlotNumber[i]);
                         GameObject obj = Instantiate(PlayerData.go_spellsIndeck[i], deckPosition_Transform.transform);
                         obj.name = obj.name + r;
                         obj.SetActive(false);
@@ -109,9 +108,8 @@ public class PlayMode_DeckManager : MonoBehaviour
     //Still working......
     public void GetSpellBackToDeck(SpellCard_Manager card, Vector3 previousPosition)
     {
-        print(previousPosition);
         int cardListIndex = cards_InHand_GameObjects.IndexOf(card.gameObject);
-        cards_InHand_GameObjects[cardListIndex].SetActive(false);   
+        //cards_InHand_GameObjects[cardListIndex].SetActive(false);   
         cards_NotInHand_GameObjects.Add(cards_InHand_GameObjects[cardListIndex]);
         cards_InHand_GameObjects.RemoveAt(cardListIndex);
         GetSpellToHand(previousPosition);

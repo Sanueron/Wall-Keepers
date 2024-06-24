@@ -21,9 +21,11 @@ public class ActionsManager : MonoBehaviour
     private Vector3 v3_cardInitialPosition;
     private Vector2 v2_screenPosition;
     private Vector3 v3_worldPosition;
+    [SerializeField] Vector3 v3_projectailCast_Area;
     [SerializeField] private SpellCard_Manager selectedSpell;
     private int i_sortingOrder_WhenDragging = 90, i_defaultSortingOrder = 70;
-    [SerializeField]LayerMask spellCards_LayerMask; 
+    [SerializeField]LayerMask spellCards_LayerMask;
+    [SerializeField] List<GameObject> effectList_GameObject = new List<GameObject>();
     #endregion
     #region Unity Life Cycle
     private void Update()
@@ -35,7 +37,6 @@ public class ActionsManager : MonoBehaviour
             // Check if player stops draggind and tries to drop card
             if (Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Ended || Input.GetMouseButtonUp(0))
             {
-                Debug.Log("Drops Card");
                 DropCard();
                 return;
             }
@@ -100,19 +101,13 @@ public class ActionsManager : MonoBehaviour
             // Check if enough Mana to cast
             if (ManaManager.instance.GetCurrentMana()> selectedSpell.GetCardData().i_mana_cost) // selectedSpell.MadnessEnergyCost()
             {
-                print("CastSpell");
+                //Reduce Mana 
                 ManaManager.instance.ReduceCurrentMana(selectedSpell.GetCardData().i_mana_cost);
-                print("Carta hace effecto"+ selectedSpell.name);
-                print(PlayMode_DeckManager.instance.name);
+                //Active Effect
+                selectedSpell.ActiveEffect(selectedSpell.v3_cardInitialPosition, selectedSpell.transform.position);
+                //Reset card 
                 PlayMode_DeckManager.instance.GetSpellBackToDeck(selectedSpell, selectedSpell.v3_cardInitialPosition);
-                /*
-                
                
-                // Cast spell in world position
-              
-                PlayModeDeck.instance.GetSpellBackToDeck(selectedSpell);
-                // Entra un nuevo hechizo del deck
-                */
             }
             else
             {

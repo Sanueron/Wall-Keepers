@@ -92,7 +92,6 @@ public class ManaManager : MonoBehaviour
             }
             else
             {
-                print("nopasa");
                 img_manaBarFront.fillAmount = 1;
             }
             
