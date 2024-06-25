@@ -38,15 +38,6 @@ public class Testing : MonoBehaviour
             PlayerData.go_spellsIndeck[i] = testSpell[i];
 
         }
-        //_deckManager.cards_NotInHand_GameObjects = testSpell;
-        /*
-        for (int i = 0; i < PlayerData.go_spellsIndeck.Length; i++)
-        {
-         
-            PlayerData.go_spellsIndeck[i] = testSpell[i];
-
-        }
-       */
 
 
     }
