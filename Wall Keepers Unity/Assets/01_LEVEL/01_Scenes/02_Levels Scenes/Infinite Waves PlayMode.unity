@@ -411,10 +411,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   b_busy: 0
   b_draggingCard: 0
+  v3_projectailCast_Area: {x: 0, y: 0, z: 0}
   selectedSpell: {fileID: 0}
   spellCards_LayerMask:
     serializedVersion: 2
     m_Bits: 256
+  effectList_GameObject: []
 --- !u!1 &286717472
 GameObject:
   m_ObjectHideFlags: 0
@@ -1589,6 +1591,10 @@ PrefabInstance:
       propertyPath: testSpell
       value: 
       objectReference: {fileID: 1753346450388262725, guid: 67ceb0b7fd70e9d4d819f80244d628a8, type: 3}
+    - target: {fileID: 5385874556896161994, guid: 71f24c3a9548cd8459c88d9a3e793d44, type: 3}
+      propertyPath: _deckManager
+      value: 
+      objectReference: {fileID: 518008021}
     - target: {fileID: 5385874556896161994, guid: 71f24c3a9548cd8459c88d9a3e793d44, type: 3}
       propertyPath: testSpell.Array.size
       value: 8

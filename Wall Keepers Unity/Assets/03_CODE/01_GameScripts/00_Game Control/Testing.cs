@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Testing : MonoBehaviour
 {
+    [SerializeField] PlayMode_DeckManager _deckManager;
     public List<GameObject> testSpell;
     // Start is called before the first frame update
     void Awake()
@@ -32,14 +33,20 @@ public class Testing : MonoBehaviour
 
     public void TestDeck()
     {
+        for (int i = 0; i < PlayerData.go_spellsIndeck.Length; i++)
+        {
+            PlayerData.go_spellsIndeck[i] = testSpell[i];
 
+        }
+        //_deckManager.cards_NotInHand_GameObjects = testSpell;
+        /*
         for (int i = 0; i < PlayerData.go_spellsIndeck.Length; i++)
         {
          
             PlayerData.go_spellsIndeck[i] = testSpell[i];
 
         }
-       
+       */
 
 
     }
