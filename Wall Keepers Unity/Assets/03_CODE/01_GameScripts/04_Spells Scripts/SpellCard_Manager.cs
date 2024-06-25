@@ -17,13 +17,16 @@ public class SpellCard_Manager : MonoBehaviour
 
     #region Spell Effect variables
     [Header("Spell effect")]
-    [SerializeField] internal List<BaseSpellsEffects> listOf_spellEffects = new List<BaseSpellsEffects>();
+    [SerializeField] internal BaseSpellsEffects spellEffectPrefab;
+    internal List<BaseSpellsEffects> listOf_spellEffects = new List<BaseSpellsEffects>();
+    [SerializeField] internal int i_numberOfSpellEffectsInStock;
     #endregion
 
     private void Start()
     {
         InitializedCard();
         SetSpellInitialStats();
+        InitializeSpellEffectsPrefabs();
     }
     private void InitializedCard()
     {
@@ -65,18 +68,35 @@ public class SpellCard_Manager : MonoBehaviour
     #endregion
 
     #region Spell Effects
+    private void InitializeSpellEffectsPrefabs()
+    {
+        
+        for (int i = 0; i < i_numberOfSpellEffectsInStock; i++)
+        {
+            Instantiate(spellEffectPrefab, transform);
+            listOf_spellEffects.Add(spellEffectPrefab);
+        }
+
+        // initialize Stats
+        foreach(BaseSpellsEffects spellsEffects in listOf_spellEffects)
+        {
+            // Pass to spell effect spells stats updated with level and awakening level
+            spellsEffects.SetSpellStatsInSpellEffect(f_damage, f_resistance, f_speed, f_duration);
+            spellsEffects.gameObject.SetActive(false);
+        }
+    }
     internal void ActivateSpellEffect()
     {
         // Take first spell effect in list which is not active already
         for (int i = 0; i < listOf_spellEffects.Count; i++)
         {
             // Check if spell effect is not still active in battlefield
-            if (!listOf_spellEffects[i].GetSpellEffectActiveState())
+            if (!listOf_spellEffects[i].b_spellEffectActiveInBattlefield)
             {
-                // Pass to spell effect spells stats updated with level and awakening level
-                listOf_spellEffects[i].SetSpellStatsInSpellEffect(f_damage, f_resistance, f_speed, f_duration);
                 // Activate Spell effect
                 listOf_spellEffects[i].ActivateEffect(v3_cardInitialPosition, transform.position);
+                // Set spell state to active
+                listOf_spellEffects[i].b_spellEffectActiveInBattlefield = true;
                 // Stop loop to activate effect once
                 break;
             }

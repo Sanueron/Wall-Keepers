@@ -5,9 +5,8 @@ using UnityEngine;
 public class BaseSpellsEffects : MonoBehaviour
 {
     #region Local Stats variables
-    private bool b_spellEffectActiveInBattlefield = false;
-    public bool GetSpellEffectActiveState() { return b_spellEffectActiveInBattlefield; }
-    private float f_damage, f_resistance, f_speed, f_duration;
+    internal bool b_spellEffectActiveInBattlefield = false;
+    protected float f_damage, f_resistance, f_speed, f_duration;
     #endregion
 
     #region Local Common Methods

@@ -7,7 +7,6 @@ public class Projectile : BaseSpellsEffects
     #region Variables
     private Vector3 v3_endPosition;
     private Vector3 v3_startPosition;
-    [SerializeField] private ScripteableCard card_Data;
     private Animator _spell_Animator;
     private float journeyLength;
     private bool b_finishAnimation;
@@ -18,7 +17,10 @@ public class Projectile : BaseSpellsEffects
     #region Unity Life Cycle
     private void FixedUpdate()
     {
-        ProjectailMovement();
+        if (b_spellEffectActiveInBattlefield)
+        {
+            ProjectailMovement();
+        }
     }
     #endregion
 
@@ -44,7 +46,7 @@ public class Projectile : BaseSpellsEffects
         // Increment the elapsed time
         elapsedTime += Time.deltaTime;
         // Calculate the percentage of elapsed time
-        float t = elapsedTime / card_Data.f_projectileSpeed;
+        float t = elapsedTime / f_speed;
 
         transform.position = Vector3.Lerp(v3_startPosition, v3_endPosition, t);
         if (transform.position.y >= v3_endPosition.y)

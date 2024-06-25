@@ -106,6 +106,7 @@ public class PlayMode_DeckManager : MonoBehaviour
             cards_NotInHand_GameObjects.RemoveAt(randomIndex);
 
             cards_InHand_GameObjects[i].SetActive(true);
+            print(cards_InHand_GameObjects[i].activeSelf);
             cards_InHand_GameObjects[i].gameObject.transform.position = handPositions_Transform[i].position;
         }
     }
