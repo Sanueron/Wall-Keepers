@@ -57,7 +57,8 @@ public class Projectile : BaseSpellsEffects
     // When everything is finished, the card is disabled
     private void Explosion()
     {
-        transform.parent.GetComponentInChildren<SpellCard_Manager>().DisableCard(); // No entiendo esto
+        //transform.parent.GetComponentInChildren<SpellCard_Manager>().DisableCard(); // No entiendo esto
+        print("Explota proyectil");
     }
     #endregion
 }

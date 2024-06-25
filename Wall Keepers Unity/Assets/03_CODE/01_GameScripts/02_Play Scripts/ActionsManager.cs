@@ -105,6 +105,7 @@ public class ActionsManager : MonoBehaviour
                 ManaManager.instance.ReduceCurrentMana(selectedSpell.GetCardData().i_mana_cost);
                 //Active Effect
                 //selectedSpell.ActiveEffect(selectedSpell.v3_cardInitialPosition, selectedSpell.transform.position);
+                print("Aquí tiramos effecto de hechizo");
                 selectedSpell.ActivateSpellEffect();
                 //Reset card 
                 PlayMode_DeckManager.instance.GetSpellBackToDeck(selectedSpell, selectedSpell.v3_cardInitialPosition);
