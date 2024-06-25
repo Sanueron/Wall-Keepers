@@ -92,18 +92,13 @@ public class PlayMode_DeckManager : MonoBehaviour
     {
         for (int i = 0; i < 5; ++i)
         {
-
             int randomIndex = Random.Range(0, cards_NotInHand_GameObjects.Count);
             cards_InHand_GameObjects.Add(cards_NotInHand_GameObjects[randomIndex]);
             cards_NotInHand_GameObjects.RemoveAt(randomIndex);
 
             cards_InHand_GameObjects[i].SetActive(true);
             cards_InHand_GameObjects[i].gameObject.transform.position = handPositions_Transform[i].position;
-
         }
-
-
-
     }
     //Still working......
     public void GetSpellBackToDeck(SpellCard_Manager card, Vector3 previousPosition)

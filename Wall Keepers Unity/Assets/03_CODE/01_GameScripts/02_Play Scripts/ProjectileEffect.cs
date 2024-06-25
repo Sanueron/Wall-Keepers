@@ -5,6 +5,7 @@ using static ScripteableCard;
 
 public class ProjectileEffect : MonoBehaviour 
 {
+
     #region Variables
     private Vector3 v3_endPosition;
     private Vector3 v3_startPosition;
@@ -15,12 +16,14 @@ public class ProjectileEffect : MonoBehaviour
     private WaitForSeconds lakeLifeTime_WFS;
     private float elapsedTime = 0f;
     #endregion
+
     #region Unity Life Cycle
     private void FixedUpdate()
     {
         ProjectailMovement();
     }
     #endregion
+
     #region Projectile Methods
     // Method to save the target position
     public void CastBall(Vector3 starPosition, Vector3 target)
@@ -46,7 +49,7 @@ public class ProjectileEffect : MonoBehaviour
     // When everything is finished, the card is disabled
     private void Explosion()
     {
-        transform.parent.GetComponentInChildren<SpellCard_Manager>().DisableCard();
+        transform.parent.GetComponentInChildren<SpellCard_Manager>().DisableCard(); // No entiendo esto
     }
     #endregion
 
