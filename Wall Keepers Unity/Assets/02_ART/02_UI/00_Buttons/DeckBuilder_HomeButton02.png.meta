@@ -182,7 +182,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      DeckBuilder_HomeButton02_0: 8188966384059558026
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

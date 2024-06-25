@@ -12,6 +12,7 @@ public class Projectile : BaseSpellsEffects
     private bool b_finishAnimation;
     private WaitForSeconds lakeLifeTime_WFS;
     private float elapsedTime = 0f;
+    [SerializeField] private Vector3 v3_Projectail_Cast_Position;
     #endregion
 
     #region Unity Life Cycle
@@ -42,22 +43,33 @@ public class Projectile : BaseSpellsEffects
     }
     private void ProjectailMovement()
     {
-
+        print("Start: " + v3_startPosition + "//" + "End: " + v3_endPosition);
         // Increment the elapsed time
         elapsedTime += Time.deltaTime;
         // Calculate the percentage of elapsed time
         float t = elapsedTime / f_speed;
 
         transform.position = Vector3.Lerp(v3_startPosition, v3_endPosition, t);
-        if (transform.position.y >= v3_endPosition.y)
+        if (transform.position == v3_endPosition)
         {
-            Explosion();
+            //if it is a fused card Start Couroutine to wait until the area effect 
+            if (b_mergedCard)
+            {
+                StartCoroutine(CastInBattlefield());
+            }
+            else
+            {
+                Explosion();
+            }
+ 
         }
     }
     // When everything is finished, the card is disabled
     private void Explosion()
     {
         print("Explota proyectil");
+        ResetEffect();
+       
     }
     #endregion
 }

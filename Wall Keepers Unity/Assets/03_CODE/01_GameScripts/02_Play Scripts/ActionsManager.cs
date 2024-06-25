@@ -7,6 +7,7 @@ using UnityEngine.UIElements;
 public class ActionsManager : MonoBehaviour
 {
     #region Actions control Variables 
+    [SerializeField] private Transform transform_Projectail_Cast_Position;
     [SerializeField] internal bool b_busy; // Check if any action on going, can't do other actions while busy is true
     internal bool b_showingCardInfo; // Used to know if Card info is been shown and then in Card Manager when card return to target position don't set busy back to fals
     [SerializeField]private bool b_draggingCard;
@@ -75,6 +76,7 @@ public class ActionsManager : MonoBehaviour
         b_draggingCard = true;
         // Place card above the others
         SetCardSortingOrder(i_sortingOrder_WhenDragging, selectedSpell);
+        selectedSpell.transform_Projectail_Cast_Position = transform_Projectail_Cast_Position;
 
     }
     //CardMovement

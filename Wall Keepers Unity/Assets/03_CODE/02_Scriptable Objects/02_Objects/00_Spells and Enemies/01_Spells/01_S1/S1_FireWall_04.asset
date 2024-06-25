@@ -17,7 +17,7 @@ MonoBehaviour:
   i_spellStarsTier: 1
   i_mana_cost: 2
   f_dmg: 150
-  f_duration: 1
+  f_duration: 0.3
   f_projectileSpeed: 1
   f_resistance: 0
   requiredElementalRune: {fileID: 11400000, guid: b5ee84b6f16ee1644953e2c67339c918, type: 2}
@@ -27,6 +27,10 @@ MonoBehaviour:
   castClip: {fileID: 8300000, guid: 8568d1eb29ed6ac4cbedf726b6456353, type: 3}
   impactClip: {fileID: 0}
   i_starLevel: 1
+  spr_spellRequiredCard_1: {fileID: 0}
+  spr_spellRequiredCard_2: {fileID: 0}
+  i_spellRequired_1_Id: 0
+  i_spellRequired_2_Id: 0
   f_repeatingDmgCoolDown: 1
   e_CastingType: 2
   e_Effect: 2

@@ -60,6 +60,22 @@ PrefabInstance:
       propertyPath: card_Data
       value: 
       objectReference: {fileID: 11400000, guid: 9cd07bb43a8f8ce419479b4cd6d3dbef, type: 2}
+    - target: {fileID: 4257493173228200327, guid: 693b018ee78c884418c8725b7170f77b, type: 3}
+      propertyPath: spellBaseData
+      value: 
+      objectReference: {fileID: 11400000, guid: 9cd07bb43a8f8ce419479b4cd6d3dbef, type: 2}
+    - target: {fileID: 4257493173228200327, guid: 693b018ee78c884418c8725b7170f77b, type: 3}
+      propertyPath: spellEffectPrefab
+      value: 
+      objectReference: {fileID: 8528019506986214660, guid: 308f6e3862f2c20448cfd58839c9e5c7, type: 3}
+    - target: {fileID: 4257493173228200327, guid: 693b018ee78c884418c8725b7170f77b, type: 3}
+      propertyPath: _spellEffect_GameObject
+      value: 
+      objectReference: {fileID: 7496801940804510461, guid: 308f6e3862f2c20448cfd58839c9e5c7, type: 3}
+    - target: {fileID: 4257493173228200327, guid: 693b018ee78c884418c8725b7170f77b, type: 3}
+      propertyPath: i_numberOfSpellEffectsInStock
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7630918611897523993, guid: 693b018ee78c884418c8725b7170f77b, type: 3}
       propertyPath: m_Sprite
       value: 

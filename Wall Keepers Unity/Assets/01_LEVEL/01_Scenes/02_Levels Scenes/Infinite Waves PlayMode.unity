@@ -365,6 +365,37 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8365141139628199885, guid: 762e06ae707bc6c42a7abfadfa822d1b, type: 3}
   m_PrefabInstance: {fileID: 5866766328939344020}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &181383131
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 181383132}
+  m_Layer: 0
+  m_Name: ProjectailCastPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &181383132
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 181383131}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -8.68, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 866669145}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &278950677
 GameObject:
   m_ObjectHideFlags: 0
@@ -409,6 +440,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d08ebeff4d2d5b47bcafa09f40bf5cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  transform_Projectail_Cast_Position: {fileID: 181383132}
   b_busy: 0
   b_draggingCard: 0
   v3_projectailCast_Area: {x: 0, y: 0, z: 0}
@@ -491,7 +523,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 110
+  m_SortingOrder: 80
   m_Sprite: {fileID: -344667516, guid: 12c49c904a2bdc644a1c2dded960ea2d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -970,6 +1002,7 @@ Transform:
   - {fileID: 303356376}
   - {fileID: 84587141}
   - {fileID: 921787168}
+  - {fileID: 181383132}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &921787168 stripped
@@ -1148,7 +1181,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 110
+  m_SortingOrder: 80
   m_Sprite: {fileID: -344667516, guid: 12c49c904a2bdc644a1c2dded960ea2d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
@@ -1454,7 +1487,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1483613031
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1606,31 +1639,31 @@ PrefabInstance:
     - target: {fileID: 5385874556896161994, guid: 71f24c3a9548cd8459c88d9a3e793d44, type: 3}
       propertyPath: 'testSpell.Array.data[1]'
       value: 
-      objectReference: {fileID: 7232053285638771279, guid: f0e456f09ed238c47be7a2a6367601d7, type: 3}
+      objectReference: {fileID: 2281120582499952988, guid: 32e6cea71a439c84282b4e21652c8bc4, type: 3}
     - target: {fileID: 5385874556896161994, guid: 71f24c3a9548cd8459c88d9a3e793d44, type: 3}
       propertyPath: 'testSpell.Array.data[2]'
       value: 
-      objectReference: {fileID: 7232053285638771279, guid: f0e456f09ed238c47be7a2a6367601d7, type: 3}
+      objectReference: {fileID: 1753346450388262725, guid: 67ceb0b7fd70e9d4d819f80244d628a8, type: 3}
     - target: {fileID: 5385874556896161994, guid: 71f24c3a9548cd8459c88d9a3e793d44, type: 3}
       propertyPath: 'testSpell.Array.data[3]'
       value: 
-      objectReference: {fileID: 7232053285638771279, guid: f0e456f09ed238c47be7a2a6367601d7, type: 3}
+      objectReference: {fileID: 6162980890195160768, guid: 4ad41361dc484e446a783549e188f7d6, type: 3}
     - target: {fileID: 5385874556896161994, guid: 71f24c3a9548cd8459c88d9a3e793d44, type: 3}
       propertyPath: 'testSpell.Array.data[4]'
       value: 
-      objectReference: {fileID: 7232053285638771279, guid: f0e456f09ed238c47be7a2a6367601d7, type: 3}
+      objectReference: {fileID: 2281120582499952988, guid: 32e6cea71a439c84282b4e21652c8bc4, type: 3}
     - target: {fileID: 5385874556896161994, guid: 71f24c3a9548cd8459c88d9a3e793d44, type: 3}
       propertyPath: 'testSpell.Array.data[5]'
       value: 
-      objectReference: {fileID: 7232053285638771279, guid: f0e456f09ed238c47be7a2a6367601d7, type: 3}
+      objectReference: {fileID: 1118882952174717138, guid: dca42d3b935f370448c5b490db7b5df2, type: 3}
     - target: {fileID: 5385874556896161994, guid: 71f24c3a9548cd8459c88d9a3e793d44, type: 3}
       propertyPath: 'testSpell.Array.data[6]'
       value: 
-      objectReference: {fileID: 7232053285638771279, guid: f0e456f09ed238c47be7a2a6367601d7, type: 3}
+      objectReference: {fileID: 6162980890195160768, guid: 4ad41361dc484e446a783549e188f7d6, type: 3}
     - target: {fileID: 5385874556896161994, guid: 71f24c3a9548cd8459c88d9a3e793d44, type: 3}
       propertyPath: 'testSpell.Array.data[7]'
       value: 
-      objectReference: {fileID: 7232053285638771279, guid: f0e456f09ed238c47be7a2a6367601d7, type: 3}
+      objectReference: {fileID: 1118882952174717138, guid: dca42d3b935f370448c5b490db7b5df2, type: 3}
     - target: {fileID: 6155179278143719763, guid: 71f24c3a9548cd8459c88d9a3e793d44, type: 3}
       propertyPath: m_Name
       value: TESTER

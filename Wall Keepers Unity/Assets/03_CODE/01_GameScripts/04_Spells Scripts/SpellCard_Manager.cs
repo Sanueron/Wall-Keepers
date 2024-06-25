@@ -6,13 +6,16 @@ using UnityEngine;
 
 public class SpellCard_Manager : MonoBehaviour
 {
+    #region Spells variables
     public Vector3 v3_cardInitialPosition;
     [SerializeField] private ScripteableCard spellBaseData;
     [SerializeField] private GameObject _spellEffect_GameObject;
+    #endregion
 
     #region Spell Stats variables
     private int i_spellLevel, i_spellAwakeningLvl;
     private float f_damage, f_resistance, f_speed, f_duration;
+    private bool b_merged;
     #endregion
 
     #region Spell Effect variables
@@ -20,19 +23,17 @@ public class SpellCard_Manager : MonoBehaviour
     [SerializeField] internal BaseSpellsEffects spellEffectPrefab;
     [SerializeField] internal List<BaseSpellsEffects> listOf_spellEffects = new List<BaseSpellsEffects>();
     [SerializeField] internal int i_numberOfSpellEffectsInStock;
+    [SerializeField] public Transform transform_Projectail_Cast_Position;
     #endregion
 
+    #region Unity Life Cycle
     private void Start()
     {
         InitializedCard();
         SetSpellInitialStats();
         InitializeSpellEffectsPrefabs();
     }
-    private void InitializedCard()
-    {
-        v3_cardInitialPosition = transform.position;
-        gameObject.GetComponent<SpriteRenderer>().sprite = spellBaseData._card_Sprite;
-    }
+    #endregion
 
     #region Spell Base Data and Stats
     public ScripteableCard GetCardData()
@@ -63,6 +64,9 @@ public class SpellCard_Manager : MonoBehaviour
         f_duration = spellBaseData.f_duration +
                 SpellsData.f_durationIncreaseByLevel * i_spellLevel +
                 SpellsData.f_damageIncreaseByAwakening * i_spellAwakeningLvl;
+        // If is a fused card
+        b_merged = spellBaseData.b_isMerged;
+        
         #endregion
     }
     #endregion
@@ -81,7 +85,7 @@ public class SpellCard_Manager : MonoBehaviour
         foreach(BaseSpellsEffects spellsEffects in listOf_spellEffects)
         {
             // Pass to spell effect spells stats updated with level and awakening level
-            spellsEffects.SetSpellStatsInSpellEffect(transform, f_damage, f_resistance, f_speed, f_duration);
+            spellsEffects.SetSpellStatsInSpellEffect(transform, f_damage, f_resistance, f_speed, f_duration, b_merged);
             spellsEffects.gameObject.SetActive(false);
         }
     }
@@ -93,31 +97,45 @@ public class SpellCard_Manager : MonoBehaviour
             // Check if spell effect is not still active in battlefield
             if (!listOf_spellEffects[i].b_spellEffectActiveInBattlefield)
             {
+                print("Active");
                 // Activate effect
                 listOf_spellEffects[i].gameObject.SetActive(true);
                 // Activate Spell effect
-                listOf_spellEffects[i].ActivateEffect(v3_cardInitialPosition, transform.position);
+                listOf_spellEffects[i].ActivateEffect(transform_Projectail_Cast_Position.position, transform.position);
                 // Set spell state to active
                 listOf_spellEffects[i].b_spellEffectActiveInBattlefield = true;
                 // Stop loop to activate effect once
                 break;
             }
+            else
+            {
+                Debug.Log("No lo coge");
+            }
         }
     }
-    #endregion
 
     public void ActiveEffect(Vector3 starPosition, Vector3 target)
     {
         // Esto sólo funcionará para los proyectiles, ¿Que pasa para el resto de las cartas? No es modular
-        ProjectileEffect effect_script = _spellEffect_GameObject.GetComponent<ProjectileEffect>(); 
+        ProjectileEffect effect_script = _spellEffect_GameObject.GetComponent<ProjectileEffect>();
 
         effect_script.CastBall(starPosition, target);
         _spellEffect_GameObject.SetActive(true);
+    }
+
+
+    #endregion
+
+    #region Disable & Initialize 
+    private void InitializedCard()
+    {
+        v3_cardInitialPosition = transform.position;
+        gameObject.GetComponent<SpriteRenderer>().sprite = spellBaseData._card_Sprite;
     }
 
     public void DisableCard()
     {
         gameObject.SetActive(false);    
     }
-
+    #endregion
 }
