@@ -113,24 +113,23 @@ public class PlayMode_DeckManager : MonoBehaviour
     public void GetSpellBackToDeck(SpellCard_Manager card, Vector3 previousPosition)
     {
         int cardListIndex = cards_InHand_GameObjects.IndexOf(card.gameObject);
-        //cards_InHand_GameObjects[cardListIndex].SetActive(false);   
-        //cards_InHand_GameObjects.RemoveAt(cardListIndex);
         cards_InHand_GameObjects.Remove(card.gameObject);
         cards_NotInHand_GameObjects.Add(card.gameObject);
         card.gameObject.SetActive(false);
-        //GetSpellToHand(previousPosition);
+        GetSpellToHand(previousPosition);
     }
     private void GetSpellToHand( Vector3 peviousPosition)
     {
        
-          int randomIndex = Random.Range(0, cards_NotInHand_GameObjects.Count);
-          cards_NotInHand_GameObjects[randomIndex].SetActive(true);
+        int randomIndex = Random.Range(0, cards_NotInHand_GameObjects.Count);
+        cards_NotInHand_GameObjects[randomIndex].SetActive(true);
          
-          cards_NotInHand_GameObjects[randomIndex].transform.position = peviousPosition;
-          cards_NotInHand_GameObjects[randomIndex].GetComponent<SpellCard_Manager>().v3_cardInitialPosition = peviousPosition;
-          //Cambiar de lista 
-           cards_InHand_GameObjects.Add(cards_NotInHand_GameObjects[randomIndex]);
-           cards_NotInHand_GameObjects.RemoveAt(randomIndex);
+        cards_NotInHand_GameObjects[randomIndex].transform.position = peviousPosition;
+        print("Hacer efecto de moverse desde la posicion del deck a la posicion en la mano");
+        cards_NotInHand_GameObjects[randomIndex].GetComponent<SpellCard_Manager>().v3_cardInitialPosition = peviousPosition;
+        //Cambiar de lista 
+        cards_InHand_GameObjects.Add(cards_NotInHand_GameObjects[randomIndex]);
+        cards_NotInHand_GameObjects.RemoveAt(randomIndex);
 
     }
     #endregion
