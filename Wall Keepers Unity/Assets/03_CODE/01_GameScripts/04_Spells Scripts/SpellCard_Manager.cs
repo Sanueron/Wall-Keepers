@@ -18,7 +18,7 @@ public class SpellCard_Manager : MonoBehaviour
     #region Spell Effect variables
     [Header("Spell effect")]
     [SerializeField] internal BaseSpellsEffects spellEffectPrefab;
-    internal List<BaseSpellsEffects> listOf_spellEffects = new List<BaseSpellsEffects>();
+    [SerializeField] internal List<BaseSpellsEffects> listOf_spellEffects = new List<BaseSpellsEffects>();
     [SerializeField] internal int i_numberOfSpellEffectsInStock;
     #endregion
 
@@ -73,15 +73,15 @@ public class SpellCard_Manager : MonoBehaviour
         
         for (int i = 0; i < i_numberOfSpellEffectsInStock; i++)
         {
-            Instantiate(spellEffectPrefab, transform);
-            listOf_spellEffects.Add(spellEffectPrefab);
+            BaseSpellsEffects spellEffect = Instantiate(spellEffectPrefab, transform);
+            listOf_spellEffects.Add(spellEffect);
         }
 
         // initialize Stats
         foreach(BaseSpellsEffects spellsEffects in listOf_spellEffects)
         {
             // Pass to spell effect spells stats updated with level and awakening level
-            spellsEffects.SetSpellStatsInSpellEffect(f_damage, f_resistance, f_speed, f_duration);
+            spellsEffects.SetSpellStatsInSpellEffect(transform, f_damage, f_resistance, f_speed, f_duration);
             spellsEffects.gameObject.SetActive(false);
         }
     }
@@ -93,6 +93,8 @@ public class SpellCard_Manager : MonoBehaviour
             // Check if spell effect is not still active in battlefield
             if (!listOf_spellEffects[i].b_spellEffectActiveInBattlefield)
             {
+                // Activate effect
+                listOf_spellEffects[i].gameObject.SetActive(true);
                 // Activate Spell effect
                 listOf_spellEffects[i].ActivateEffect(v3_cardInitialPosition, transform.position);
                 // Set spell state to active

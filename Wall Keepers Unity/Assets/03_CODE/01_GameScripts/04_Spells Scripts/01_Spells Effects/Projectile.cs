@@ -36,9 +36,9 @@ public class Projectile : BaseSpellsEffects
     // Method to save the target position
     public void CastBall(Vector3 starPosition, Vector3 target)
     {
+        transform.parent = null;
         v3_startPosition = starPosition;
         v3_endPosition = target;
-
     }
     private void ProjectailMovement()
     {
@@ -57,7 +57,6 @@ public class Projectile : BaseSpellsEffects
     // When everything is finished, the card is disabled
     private void Explosion()
     {
-        //transform.parent.GetComponentInChildren<SpellCard_Manager>().DisableCard(); // No entiendo esto
         print("Explota proyectil");
     }
     #endregion

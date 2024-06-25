@@ -62,7 +62,7 @@ PrefabInstance:
       objectReference: {fileID: 4922561199960939552, guid: 182684af1d394a145b4950cf66025457, type: 3}
     - target: {fileID: 4257493173228200327, guid: 693b018ee78c884418c8725b7170f77b, type: 3}
       propertyPath: i_numberOfSpellEffectsInStock
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4257493173228200327, guid: 693b018ee78c884418c8725b7170f77b, type: 3}
       propertyPath: listOf_spellEffects.Array.size
