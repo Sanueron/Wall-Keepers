@@ -98,7 +98,7 @@ public class ActionsManager : MonoBehaviour
         b_timerIsOn = false;
         f_timer = 0;
         print("CardDroped");
-        if (selectedSpell.transform.position.y>= -6.2f)//  Battlefield collider 
+        if (selectedSpell.b_onBattlefield)//  Battlefield collider 
         {
             // Check if enough Mana to cast
             if (ManaManager.instance.GetCurrentMana()> selectedSpell.GetCardData().i_mana_cost) // selectedSpell.MadnessEnergyCost()
@@ -110,7 +110,7 @@ public class ActionsManager : MonoBehaviour
                 print("Aquí tiramos effecto de hechizo");
                 selectedSpell.ActivateSpellEffect();
                 //Reset card 
-                PlayMode_DeckManager.instance.GetSpellBackToDeck(selectedSpell, selectedSpell.v3_cardInitialPosition);
+                PlayMode_DeckManager.instance.GetSpellBackToDeck(selectedSpell, selectedSpell.v3_currentPosition);// current position is his position in Hand
                
             }
             else
@@ -144,12 +144,12 @@ public class ActionsManager : MonoBehaviour
 
         while (elapsedTime < 0.3f)
         {
-            selectedSpell.transform.position = Vector3.Lerp(startPosition, selectedSpell.v3_cardInitialPosition, elapsedTime / 0.3f);
+            selectedSpell.transform.position = Vector3.Lerp(startPosition, selectedSpell.v3_currentPosition, elapsedTime / 0.3f);
             elapsedTime += Time.deltaTime;
             yield return null; 
         }
 
-        transform.position = selectedSpell.v3_cardInitialPosition;
+        transform.position = selectedSpell.v3_currentPosition;
         SetCardSortingOrder(i_defaultSortingOrder, selectedSpell);
       
     }

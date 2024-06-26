@@ -7,9 +7,12 @@ using UnityEngine;
 public class SpellCard_Manager : MonoBehaviour
 {
     #region Spells variables
-    public Vector3 v3_cardInitialPosition;
+    public Vector3 v3_currentPosition;
     [SerializeField] private ScripteableCard spellBaseData;
     [SerializeField] private GameObject _spellEffect_GameObject;
+    public bool b_onBattlefield;
+    [SerializeField] private Sprite _targetSprite;
+    private SpriteRenderer _card_SpriteRenderer;
     #endregion
 
     #region Spell Stats variables
@@ -38,7 +41,7 @@ public class SpellCard_Manager : MonoBehaviour
     #region Spell Base Data and Stats
     public ScripteableCard GetCardData()
     {
-        return spellBaseData;   
+        return spellBaseData;
     }
     private void SetSpellInitialStats()
     {
@@ -66,7 +69,7 @@ public class SpellCard_Manager : MonoBehaviour
                 SpellsData.f_damageIncreaseByAwakening * i_spellAwakeningLvl;
         // If is a fused card
         b_merged = spellBaseData.b_isMerged;
-        
+
         #endregion
     }
     #endregion
@@ -74,7 +77,7 @@ public class SpellCard_Manager : MonoBehaviour
     #region Spell Effects
     private void InitializeSpellEffectsPrefabs()
     {
-        
+
         for (int i = 0; i < i_numberOfSpellEffectsInStock; i++)
         {
             BaseSpellsEffects spellEffect = Instantiate(spellEffectPrefab, transform);
@@ -82,7 +85,7 @@ public class SpellCard_Manager : MonoBehaviour
         }
 
         // initialize Stats
-        foreach(BaseSpellsEffects spellsEffects in listOf_spellEffects)
+        foreach (BaseSpellsEffects spellsEffects in listOf_spellEffects)
         {
             // Pass to spell effect spells stats updated with level and awakening level
             spellsEffects.SetSpellStatsInSpellEffect(transform, f_damage, f_resistance, f_speed, f_duration, b_merged);
@@ -98,12 +101,13 @@ public class SpellCard_Manager : MonoBehaviour
             if (!listOf_spellEffects[i].b_spellEffectActiveInBattlefield)
             {
                 print("Active");
-                // Activate effect
-                listOf_spellEffects[i].gameObject.SetActive(true);
+
                 // Activate Spell effect
                 listOf_spellEffects[i].ActivateEffect(transform_Projectail_Cast_Position.position, transform.position);
                 // Set spell state to active
                 listOf_spellEffects[i].b_spellEffectActiveInBattlefield = true;
+                // Activate effect
+                listOf_spellEffects[i].gameObject.SetActive(true);
                 // Stop loop to activate effect once
                 break;
             }
@@ -114,28 +118,39 @@ public class SpellCard_Manager : MonoBehaviour
         }
     }
 
-    public void ActiveEffect(Vector3 starPosition, Vector3 target)
-    {
-        // Esto sólo funcionará para los proyectiles, ¿Que pasa para el resto de las cartas? No es modular
-        ProjectileEffect effect_script = _spellEffect_GameObject.GetComponent<ProjectileEffect>();
-
-        effect_script.CastBall(starPosition, target);
-        _spellEffect_GameObject.SetActive(true);
-    }
-
-
     #endregion
 
     #region Disable & Initialize 
     private void InitializedCard()
     {
-        v3_cardInitialPosition = transform.position;
+        _card_SpriteRenderer = GetComponent<SpriteRenderer>();  
         gameObject.GetComponent<SpriteRenderer>().sprite = spellBaseData._card_Sprite;
     }
 
     public void DisableCard()
     {
-        gameObject.SetActive(false);    
+        gameObject.SetActive(false);
     }
     #endregion
+
+   
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == 9)
+        {
+            b_onBattlefield = true;
+            _card_SpriteRenderer.sprite = spellBaseData._onField_Sprite;
+            print("STAY");
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == 9)
+        {
+            _card_SpriteRenderer.sprite = spellBaseData._card_Sprite;
+            b_onBattlefield = false;
+        }
+    }
 }
+
+

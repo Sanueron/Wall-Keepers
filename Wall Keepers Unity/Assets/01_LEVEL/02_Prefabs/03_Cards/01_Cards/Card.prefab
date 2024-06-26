@@ -100,8 +100,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf9786ee79fa8f04bb0bc3a7ad70062d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  v3_cardInitialPosition: {x: 0, y: 0, z: 0}
-  card_Data: {fileID: 11400000, guid: ae21289ad7e55024c8506cb1aa404486, type: 2}
+  v3_currentPosition: {x: 0, y: 0, z: 0}
+  spellBaseData: {fileID: 0}
+  _spellEffect_GameObject: {fileID: 0}
+  spellEffectPrefab: {fileID: 0}
+  listOf_spellEffects: []
+  i_numberOfSpellEffectsInStock: 0
+  transform_Projectail_Cast_Position: {fileID: 0}
 --- !u!61 &24460214465607094
 BoxCollider2D:
   m_ObjectHideFlags: 0

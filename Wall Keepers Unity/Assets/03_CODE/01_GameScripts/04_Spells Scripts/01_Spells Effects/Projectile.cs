@@ -7,18 +7,22 @@ public class Projectile : BaseSpellsEffects
     #region Variables
     private Vector3 v3_endPosition;
     private Vector3 v3_startPosition;
-    private Animator _spell_Animator;
-    private float journeyLength;
-    private bool b_finishAnimation;
-    private WaitForSeconds lakeLifeTime_WFS;
     private float elapsedTime = 0f;
     [SerializeField] private Vector3 v3_Projectail_Cast_Position;
+    private bool b_startMovement;
+    private Quaternion InitialRotation;
+    private bool b_finishAnimation;
+
     #endregion
 
     #region Unity Life Cycle
+    private void Awake()
+    {
+        InitialRotation = transform.rotation;
+    }
     private void FixedUpdate()
     {
-        if (b_spellEffectActiveInBattlefield)
+        if (b_spellEffectActiveInBattlefield&&b_startMovement)
         {
             ProjectailMovement();
         }
@@ -37,39 +41,71 @@ public class Projectile : BaseSpellsEffects
     // Method to save the target position
     public void CastBall(Vector3 starPosition, Vector3 target)
     {
+       
         transform.parent = null;
+       transform.position = starPosition;
         v3_startPosition = starPosition;
         v3_endPosition = target;
+        print("InitialPos" + transform.position);
+        print("EndPos" + v3_endPosition);
     }
     private void ProjectailMovement()
     {
-        print("Start: " + v3_startPosition + "//" + "End: " + v3_endPosition);
         // Increment the elapsed time
         elapsedTime += Time.deltaTime;
         // Calculate the percentage of elapsed time
         float t = elapsedTime / f_speed;
+        if (v3_endPosition.y <= 3.5f)
+        {
+            effect_Animator.SetBool("Close", true);
+            effect_Animator.SetTrigger("DirectlyDown");
 
+        }
         transform.position = Vector3.Lerp(v3_startPosition, v3_endPosition, t);
         if (transform.position == v3_endPosition)
         {
-            //if it is a fused card Start Couroutine to wait until the area effect 
-            if (b_mergedCard)
-            {
-                StartCoroutine(CastInBattlefield());
-            }
-            else
-            {
-                Explosion();
-            }
- 
+            elapsedTime = 0f;   
+            print("Impacto");
+            StartCoroutine(Explosion());
+            b_startMovement = false;
         }
     }
     // When everything is finished, the card is disabled
-    private void Explosion()
+    private IEnumerator Explosion()
     {
-        print("Explota proyectil");
+        effect_Animator.SetTrigger("Explode");
+        //Wait until the Explosion animation has finished 
+        while (!b_finishAnimation)
+        {
+            b_finishAnimation = false;
+
+            yield return null;
+
+        }
+      
         ResetEffect();
-       
+    }
+
+    #endregion
+    #region Animation Methods
+    internal void StartMovement()
+    {
+        effect_Animator.SetTrigger("Casted");
+        b_startMovement = true;
+    }
+    internal void RestoreRotation()
+    {
+        transform.rotation = InitialRotation;
+    }
+    public void FinishAnimation()
+    {
+
+        b_finishAnimation = true;
+    }
+    internal void PlayExplosionClip()
+    {
+
+        //Sound
     }
     #endregion
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using UnityEditor;
 using UnityEngine;
 
 public class PlayMode_DeckManager : MonoBehaviour
@@ -45,46 +46,6 @@ public class PlayMode_DeckManager : MonoBehaviour
     //Generate cards Pool from player's deck 
     private void GetDeck()
     {
-        /*
-        for (int r = 0; r < 3; ++r)
-        {
-            for (int i = 0; i < PlayerData.i_CardSlotNumber.Length; ++i)
-            {
-                if (PlayerData.i_CardSlotNumber[i] != 0)
-                {
-
-                    if (r <= 0)
-                    {
-                        GameObject obj = Instantiate(PlayerData.go_spellsIndeck[i], deckPosition_Transform.transform);
-                        obj.name = obj.name + r;
-                        obj.SetActive(false);
-                        cards_NotInHand_GameObjects.Add(obj);
-                    }
-                    else
-                    {
-                        GameObject obj = Instantiate(PlayerData.go_spellsIndeck[i], deckPosition_Transform.transform);
-                        obj.name = obj.name + r;
-                        obj.SetActive(false);
-                        if (r >= 2)
-                        {
-                            cards_NotInHand_GameObjects.Add(obj);
-
-                        }
-                        else
-                        {
-                            cards_NotInHand_GameObjects.Add(obj);
-
-                        }
-                    }
-                }
-                else
-                {
-                    Debug.Log("Null");
-                }
-            }
-        }
-        */
-
         for (int i = 0; i < PlayerData.go_spellsIndeck.Length; ++i)
         {
             GameObject obj = Instantiate(PlayerData.go_spellsIndeck[i], deckPosition_Transform.transform);
@@ -107,30 +68,46 @@ public class PlayMode_DeckManager : MonoBehaviour
 
             cards_InHand_GameObjects[i].SetActive(true);
             cards_InHand_GameObjects[i].gameObject.transform.position = handPositions_Transform[i].position;
+            cards_InHand_GameObjects[i].transform.GetComponent<SpellCard_Manager>().v3_currentPosition = handPositions_Transform[i].position;
         }
     }
-    //Still working......
-    public void GetSpellBackToDeck(SpellCard_Manager card, Vector3 previousPosition)
+    //USED CARD 
+    // Disable the used card and move it back to the deck
+    public void GetSpellBackToDeck(SpellCard_Manager usedCard, Vector3 previousPosition)
     {
-        int cardListIndex = cards_InHand_GameObjects.IndexOf(card.gameObject);
-        cards_InHand_GameObjects.Remove(card.gameObject);
-        cards_NotInHand_GameObjects.Add(card.gameObject);
-        card.gameObject.SetActive(false);
+        cards_InHand_GameObjects.Remove(usedCard.gameObject);
+        cards_NotInHand_GameObjects.Add(usedCard.gameObject);
+        usedCard.gameObject.SetActive(false);
+        usedCard.transform.position = deckPosition_Transform.position;
+        usedCard.v3_currentPosition = deckPosition_Transform.position;
         GetSpellToHand(previousPosition);
     }
+    //NEW CARD
+    //Get new card from Deck to Hand and place it   
     private void GetSpellToHand( Vector3 peviousPosition)
     {
-       
-        int randomIndex = Random.Range(0, cards_NotInHand_GameObjects.Count);
-        cards_NotInHand_GameObjects[randomIndex].SetActive(true);
-         
-        cards_NotInHand_GameObjects[randomIndex].transform.position = peviousPosition;
-        print("Hacer efecto de moverse desde la posicion del deck a la posicion en la mano");
-        cards_NotInHand_GameObjects[randomIndex].GetComponent<SpellCard_Manager>().v3_cardInitialPosition = peviousPosition;
-        //Cambiar de lista 
-        cards_InHand_GameObjects.Add(cards_NotInHand_GameObjects[randomIndex]);
-        cards_NotInHand_GameObjects.RemoveAt(randomIndex);
-
+        
+        cards_NotInHand_GameObjects[0].SetActive(true);
+        cards_NotInHand_GameObjects[0].GetComponent<SpellCard_Manager>().v3_currentPosition = peviousPosition;
+        cards_InHand_GameObjects.Add(cards_NotInHand_GameObjects[0]);
+        //cards_NotInHand_GameObjects[0].transform.position = peviousPosition;
+        
+        StartCoroutine(MoveFromDeckToHand(peviousPosition));
     }
+    //Deck-->Hand movement
+    private IEnumerator MoveFromDeckToHand(Vector3 peviousPosition)
+    {
+        float elapsedTime = 0;
+        while (elapsedTime < 0.3f)
+        {
+            cards_NotInHand_GameObjects[0].transform.position = Vector3.Lerp(deckPosition_Transform.position, peviousPosition, elapsedTime / 0.3f);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        cards_NotInHand_GameObjects[0].transform.position = peviousPosition;
+        cards_NotInHand_GameObjects.RemoveAt(0);
+    }
+
+
     #endregion
 }

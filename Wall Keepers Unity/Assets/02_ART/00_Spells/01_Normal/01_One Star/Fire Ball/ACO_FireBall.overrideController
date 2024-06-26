@@ -7,9 +7,13 @@ AnimatorOverrideController:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: ACO_FireBall
-  m_Controller: {fileID: 9100000, guid: 7b4eb7c4126afb448b0e175d74e72887, type: 2}
+  m_Controller: {fileID: 9100000, guid: 686cf00378bd9d84f96fdbe02001ca8a, type: 2}
   m_Clips:
-  - m_OriginalClip: {fileID: 7400000, guid: 1b08a86ddea82784f99f5e9954993f67, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: 1346282c1baf1c240903329f044af2b6, type: 2}
-  - m_OriginalClip: {fileID: 7400000, guid: 9ae5272807d09aa4db480a385dbe316b, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: f236c7d8b84e98f429e85f717b894bdb, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 3e614fc0d46bb6642b105dc6855fd7c1, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 573de8d4956341b459111ae490511adb, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 622c16eef7e8d5e4a985e5d1f1c622bd, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: a1b1001c8beda5c4e871249de9195e9a, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 47ce1d122b8c3974b833e895438a90f7, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 4869cf775d8d1f64e89d3a19f92d20d9, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 1403de4d50d0e27408e4c88406c1ed3d, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 2b80eb548325d764c87b092582f2ed0c, type: 2}

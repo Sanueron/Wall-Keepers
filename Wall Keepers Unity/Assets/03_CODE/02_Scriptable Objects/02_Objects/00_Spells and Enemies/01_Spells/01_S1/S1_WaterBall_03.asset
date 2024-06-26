@@ -22,11 +22,15 @@ MonoBehaviour:
   f_resistance: 0
   requiredElementalRune: {fileID: 11400000, guid: fed4aaf3e278ee447868e6cf2800cc52, type: 2}
   _card_Sprite: {fileID: 21300000, guid: e532fb3743b17cd448dbbde580d4ac71, type: 3}
-  _onField_Sprite: {fileID: 1010123252, guid: 7ca17a4c9d7a26b48a46f09c234335b2, type: 3}
+  _onField_Sprite: {fileID: 6585663717174138110, guid: 03ce541a0ef925949b9f6ce96b8b1537, type: 3}
   spellPrefab: {fileID: 0}
   castClip: {fileID: 8300000, guid: 77f0ac2484477f349ba897bd8cc34fa5, type: 3}
   impactClip: {fileID: 8300000, guid: 3c2d3732bf1ad2340a58165a00830c56, type: 3}
   i_starLevel: 1
+  spr_spellRequiredCard_1: {fileID: 0}
+  spr_spellRequiredCard_2: {fileID: 0}
+  i_spellRequired_1_Id: 0
+  i_spellRequired_2_Id: 0
   f_repeatingDmgCoolDown: 0
   e_CastingType: 1
   e_Effect: 1

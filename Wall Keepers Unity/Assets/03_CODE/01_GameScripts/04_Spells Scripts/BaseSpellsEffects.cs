@@ -5,6 +5,7 @@ using UnityEngine;
 public class BaseSpellsEffects : MonoBehaviour
 {
     #region Local Stats variables
+    [SerializeField] internal Animator effect_Animator;
     internal bool b_spellEffectActiveInBattlefield = false;
     protected float f_damage, f_resistance, f_speed, f_duration;
     protected bool b_mergedCard;
@@ -27,18 +28,16 @@ public class BaseSpellsEffects : MonoBehaviour
     internal void ResetEffect()
     {
         b_spellEffectActiveInBattlefield = false;
-        //transform.parent = spellCardParent;
-        //transform.position = spellCardParent.position;
+        transform.parent = spellCardParent;
+        transform.position = spellCardParent.position;
         gameObject.SetActive(false);
     }
     //Coroutine to wait until the spell establisehed duration
-    internal IEnumerator CastInBattlefield()
+
+    internal void PlayCastClip()
     {
-        WaitForSeconds wait_durationInBattlefield = new WaitForSeconds(f_duration);
-        yield return wait_durationInBattlefield;
-        ResetEffect();
+
+        //Sound
     }
-
-
     #endregion
 }

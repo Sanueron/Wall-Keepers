@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class InstantArea : BaseSpellsEffects
 {
+    
     #region InstantArea Methods
     //Receive target 
     public override void ActivateEffect(Vector3 starPosition, Vector3 target)
@@ -11,10 +12,13 @@ public class InstantArea : BaseSpellsEffects
         SetTarget(target);
     }
 
-    private void SetTarget(Vector3 target)
+    private void OnEnable()
     {
-        transform.parent = null;
-        gameObject.transform.position = target;
+        SetAnimationBool();
+    }
+    private void SetAnimationBool()
+    {
+        effect_Animator.SetBool("Wall", true);
 
     }
     //Wait until spell effect finish 
@@ -25,7 +29,20 @@ public class InstantArea : BaseSpellsEffects
             StartCoroutine(CastInBattlefield());
         }
     }
+    private void SetTarget(Vector3 target)
+    {
+        transform.parent = null;
+        gameObject.transform.position = target;
 
+    }
+    internal IEnumerator CastInBattlefield()
+    {
+        WaitForSeconds wait_durationInBattlefield = new WaitForSeconds(f_duration);
+        yield return wait_durationInBattlefield;
+        ResetEffect();
+    }
+
+   
 
     #endregion
 }

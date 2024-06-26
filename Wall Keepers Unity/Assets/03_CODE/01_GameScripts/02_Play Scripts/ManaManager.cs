@@ -4,12 +4,13 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEngine.Rendering.DebugUI;
 
 public class ManaManager : MonoBehaviour
 {
     #region Variables
     public static ManaManager instance { get; private set; } // Can be read by all scripts but only modified by this
-    [SerializeField] private int i_currentManaValue;
+    [SerializeField] private float f_currentManaValue;
     private int i_MaxManaValue = 10;
     [SerializeField] private Image img_manaBarFront;
     [SerializeField] private Image img_manaBarBack;
@@ -17,13 +18,11 @@ public class ManaManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI manaTMP;
     #endregion
     #region Unity Life Cycle
-
     void Start()
     {
         InitializeMana();
-        InvokeRepeating("IncreaseMana", 0f, f_manaIncreaseSpeed);
+       
     }
-
     private void Awake()
     {
         // Implement Singleton Pattern
@@ -35,75 +34,79 @@ public class ManaManager : MonoBehaviour
         }
         instance = this; // Equal the instance to this script
     }
-
+    private void FixedUpdate()
+    {
+       
+        IncreaseMana();
+    }
     #endregion
-    #region Mana Management Methods
+    #region Init Methods
     //Initialize Mana Value to MAX
     private void InitializeMana()
     {
-        i_currentManaValue = i_MaxManaValue;
+        //f_currentManaValue = i_MaxManaValue;
     }
-    //Increase Mana Method (InvokeRepeating on start)
+    #endregion
+    #region Increase & Decrease Bars
     private void IncreaseMana()
     {
-        if (i_currentManaValue < i_MaxManaValue)
+        if (f_currentManaValue <= i_MaxManaValue)
         {
-            i_currentManaValue += 1;
-            UpdateManaBar();
+            f_currentManaValue += Time.deltaTime * f_manaIncreaseSpeed;
+            IncreaseManaBar();
         }
-
+        else
+        {
+            print("Stop");
+        }
     }
     //Method called by ActionsManager when Player cast a card 
     public void ReduceCurrentMana(int amount)
     {
-        i_currentManaValue -= amount;
-        UpdateManaBar();
+        f_currentManaValue -= amount;
+        ReduceBothBars();
     }
-
+    //To decrease Mana Bars
+    private void ReduceBothBars()
+    {
+        img_manaBarBack.fillAmount = GetManaBarFillValue();
+        img_manaBarFront.fillAmount = GetTrucateFillValue();
+        UpdateManaNumber();
+    }
+    //Auto Increase Mana 
+    private void IncreaseManaBar()
+    {
+        img_manaBarBack.fillAmount = GetManaBarFillValue();//Increase Back Bar 
+        if(img_manaBarBack.fillAmount >= img_manaBarFront.fillAmount + 0.1f)//Increase Front Bar, this only goes up 0,1 by 0,1
+        {
+            img_manaBarFront.fillAmount = GetTrucateFillValue();//Needs a truncate to fit well into the mana grid.
+        }
+        UpdateManaNumber();
+    }
+    private void UpdateManaNumber()
+    {
+        manaTMP.text = ((int)f_currentManaValue).ToString();
+    }
+    #endregion
+    #region Get Variables
     //Get ManaValue normalized 
     private float GetManaBarFillValue()
     {
-        float fillBarValue = (float)i_currentManaValue / i_MaxManaValue;
-        if (i_currentManaValue >= i_MaxManaValue)
+        float fillBarValue = f_currentManaValue / i_MaxManaValue;
+        if (f_currentManaValue >= i_MaxManaValue)
         {
             fillBarValue = 1f;
         }
         return fillBarValue;
     }
-
-    //Update ManaBar
-    private void UpdateManaBar()
+    private float GetTrucateFillValue()
     {
-        StartCoroutine(LerpLifeBar());
-        manaTMP.text = i_currentManaValue.ToString();
-
+        return Mathf.Floor(GetManaBarFillValue() * 10) / 10;
     }
-    //Smoothly ManaBar Increase & Decrease 
-    private IEnumerator LerpLifeBar()
+    public float GetCurrentMana()
     {
-        float elapsedTime = 0;
-        while (elapsedTime < f_manaIncreaseSpeed)
-        {
-            img_manaBarBack.fillAmount = Mathf.Lerp(img_manaBarBack.fillAmount, GetManaBarFillValue(), elapsedTime / f_manaIncreaseSpeed);
-            if (img_manaBarBack.fillAmount < 1)
-            {
-                img_manaBarFront.fillAmount = Mathf.Lerp(img_manaBarFront.fillAmount, GetManaBarFillValue() - 0.1f, elapsedTime / f_manaIncreaseSpeed);
-
-            }
-            else
-            {
-                img_manaBarFront.fillAmount = 1;
-            }
-            
-            elapsedTime += Time.deltaTime;
-            yield return null;
-        }
-
+        return f_currentManaValue;
     }
-    public int GetCurrentMana()
-    {
-        return i_currentManaValue;
-    }
-
     #endregion
+   
 }
