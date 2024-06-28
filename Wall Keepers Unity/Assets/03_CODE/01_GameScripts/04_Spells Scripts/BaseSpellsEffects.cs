@@ -12,14 +12,14 @@ public class BaseSpellsEffects : MonoBehaviour
     internal Transform spellCardParent;
     #endregion
     #region Local Common Methods
-    internal void SetSpellStatsInSpellEffect(Transform tParent, float dmg, float res, float speed, float dur, bool merged)
+    internal void SetSpellStatsInSpellEffect(Transform tParent, float dmg, float res, float speed, float dur)
     {
         spellCardParent = tParent;
         f_damage = dmg;
         f_resistance = res;
         f_speed = speed;
         f_duration = dur;
-        b_mergedCard = merged;
+     
     }
     public virtual void ActivateEffect(Vector3 starPosition, Vector3 target)
     {

@@ -11,14 +11,17 @@ public class Projectile : BaseSpellsEffects
     [SerializeField] private Vector3 v3_Projectail_Cast_Position;
     private bool b_startMovement;
     private Quaternion InitialRotation;
-    private bool b_finishAnimation;
-
+   [SerializeField] private bool b_finishAnimation;
+    private float f_journeyLength;
+    private float startTime;
     #endregion
 
     #region Unity Life Cycle
+
     private void Awake()
     {
         InitialRotation = transform.rotation;
+      
     }
     private void FixedUpdate()
     {
@@ -42,30 +45,27 @@ public class Projectile : BaseSpellsEffects
     public void CastBall(Vector3 starPosition, Vector3 target)
     {
        
-        transform.parent = null;
+       transform.parent = null;
        transform.position = starPosition;
-        v3_startPosition = starPosition;
-        v3_endPosition = target;
-        print("InitialPos" + transform.position);
-        print("EndPos" + v3_endPosition);
+       v3_startPosition = starPosition;
+       v3_endPosition = target;
+       f_journeyLength = Vector3.Distance(v3_startPosition, v3_endPosition);
+
     }
     private void ProjectailMovement()
     {
-        // Increment the elapsed time
-        elapsedTime += Time.deltaTime;
-        // Calculate the percentage of elapsed time
-        float t = elapsedTime / f_speed;
-        if (v3_endPosition.y <= 3.5f)
-        {
-            effect_Animator.SetBool("Close", true);
-            effect_Animator.SetTrigger("DirectlyDown");
-
-        }
-        transform.position = Vector3.Lerp(v3_startPosition, v3_endPosition, t);
+        //ROTATE TOWARDS TARGET
+        Vector3 directionToTarget = v3_endPosition - transform.position;
+        float angulo = Mathf.Atan2(directionToTarget.y, directionToTarget.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angulo - 90)); 
+        //INTERPOLATION
+        //We need to know the proportion of the journey that has been completed, using fractionOfJourney to make a good interpolation between the start and end positions.
+        //Without this, the projectile takes the same time to reach all positions.
+        float f_distCovered = (Time.time - startTime) * 1.0f * f_speed;
+        float fractionOfJourney = f_distCovered / f_journeyLength;
+        transform.position = Vector3.Lerp(v3_startPosition, v3_endPosition, fractionOfJourney);
         if (transform.position == v3_endPosition)
         {
-            elapsedTime = 0f;   
-            print("Impacto");
             StartCoroutine(Explosion());
             b_startMovement = false;
         }
@@ -77,19 +77,32 @@ public class Projectile : BaseSpellsEffects
         //Wait until the Explosion animation has finished 
         while (!b_finishAnimation)
         {
-            b_finishAnimation = false;
-
             yield return null;
-
         }
-      
+        b_finishAnimation = false;
         ResetEffect();
     }
+    /*If We want to Separate Projectail UP and Projectail Down Animations again 
 
+     if (fractionOfJourney > 0.5f)
+        {
+            effect_Animator.SetTrigger("GoingDown");
+        }
+    private void DirectlyDown()
+    {
+        if (v3_endPosition.y <= 3.5f)
+        {
+            effect_Animator.SetBool("Close", true);
+            effect_Animator.SetTrigger("DirectlyDown");
+
+        }
+    }
+    */
     #endregion
     #region Animation Methods
     internal void StartMovement()
     {
+        startTime = Time.time;
         effect_Animator.SetTrigger("Casted");
         b_startMovement = true;
     }
@@ -99,12 +112,10 @@ public class Projectile : BaseSpellsEffects
     }
     public void FinishAnimation()
     {
-
         b_finishAnimation = true;
     }
     internal void PlayExplosionClip()
     {
-
         //Sound
     }
     #endregion

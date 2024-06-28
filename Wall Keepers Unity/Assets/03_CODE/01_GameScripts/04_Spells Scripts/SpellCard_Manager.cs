@@ -18,7 +18,7 @@ public class SpellCard_Manager : MonoBehaviour
     #region Spell Stats variables
     private int i_spellLevel, i_spellAwakeningLvl;
     private float f_damage, f_resistance, f_speed, f_duration;
-    private bool b_merged;
+    
     #endregion
 
     #region Spell Effect variables
@@ -67,8 +67,7 @@ public class SpellCard_Manager : MonoBehaviour
         f_duration = spellBaseData.f_duration +
                 SpellsData.f_durationIncreaseByLevel * i_spellLevel +
                 SpellsData.f_damageIncreaseByAwakening * i_spellAwakeningLvl;
-        // If is a fused card
-        b_merged = spellBaseData.b_isMerged;
+       
 
         #endregion
     }
@@ -88,7 +87,7 @@ public class SpellCard_Manager : MonoBehaviour
         foreach (BaseSpellsEffects spellsEffects in listOf_spellEffects)
         {
             // Pass to spell effect spells stats updated with level and awakening level
-            spellsEffects.SetSpellStatsInSpellEffect(transform, f_damage, f_resistance, f_speed, f_duration, b_merged);
+            spellsEffects.SetSpellStatsInSpellEffect(transform, f_damage, f_resistance, f_speed, f_duration);
             spellsEffects.gameObject.SetActive(false);
         }
     }
@@ -133,7 +132,7 @@ public class SpellCard_Manager : MonoBehaviour
     }
     #endregion
 
-   
+    #region Collisions
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.layer == 9)
@@ -151,6 +150,7 @@ public class SpellCard_Manager : MonoBehaviour
             b_onBattlefield = false;
         }
     }
+    #endregion
 }
 
 

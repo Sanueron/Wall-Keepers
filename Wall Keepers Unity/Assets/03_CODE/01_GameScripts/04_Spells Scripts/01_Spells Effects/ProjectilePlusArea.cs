@@ -9,12 +9,15 @@ public class ProjectilePlusArea : BaseSpellsEffects
     private Vector3 v3_startPosition;
     private float elapsedTime = 0f;
     [SerializeField] private Vector3 v3_Projectail_Cast_Position;
+    private float f_journeyLength;
+    private float startTime;
+    private bool b_startMovement;
     #endregion
 
     #region Unity Life Cycle
     private void FixedUpdate()
     {
-        if (b_spellEffectActiveInBattlefield)
+        if (b_spellEffectActiveInBattlefield && b_startMovement)
         {
             ProjectailMovement();
         }
@@ -43,16 +46,20 @@ public class ProjectilePlusArea : BaseSpellsEffects
     }
     private void ProjectailMovement()
     {
-        
-        // Increment the elapsed time
-        elapsedTime += Time.deltaTime;
-        // Calculate the percentage of elapsed time
-        float t = elapsedTime / f_speed;
+        //ROTATE TOWARDS TARGET
+        Vector3 directionToTarget = v3_endPosition - transform.position;
+        float angulo = Mathf.Atan2(directionToTarget.y, directionToTarget.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angulo - 90));
+        //INTERPOLATION
+        //We need to know the proportion of the journey that has been completed, using fractionOfJourney to make a good interpolation between the start and end positions.
+        //Without this, the projectile takes the same time to reach all positions.
+        float f_distCovered = (Time.time - startTime) * 1.0f * f_speed;
+        float fractionOfJourney = f_distCovered / f_journeyLength;
+        transform.position = Vector3.Lerp(v3_startPosition, v3_endPosition, fractionOfJourney);
 
-        transform.position = Vector3.Lerp(v3_startPosition, v3_endPosition, t);
         if (transform.position == v3_endPosition)
         {
-           
+            b_startMovement = false;
             //Start coroutine to waint until the spell effect finish
             StartCoroutine(CastInBattlefield());
         }
@@ -65,7 +72,17 @@ public class ProjectilePlusArea : BaseSpellsEffects
         elapsedTime = 0;
         ResetEffect();
     }
+    internal void StartMovement()
+    {
+        startTime = Time.time;
+        effect_Animator.SetTrigger("Casted");
+        b_startMovement = true;
+    }
+    internal void StartLake()
+    {
+        effect_Animator.SetTrigger("Lake");
 
+    }
 
     #endregion
 }
