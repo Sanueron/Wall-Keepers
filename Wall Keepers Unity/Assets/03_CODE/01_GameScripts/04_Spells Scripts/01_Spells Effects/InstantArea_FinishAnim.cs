@@ -40,13 +40,22 @@ public class InstInstantArea_FinishAnimantArea : BaseSpellsEffects
     {
         WaitForSeconds wait_durationInBattlefield = new WaitForSeconds(f_duration);
         yield return wait_durationInBattlefield;
-        ResetEffect();
+        FinishLoop();
+    }
+ 
+    internal void FinishLoop()
+    {
+
+        effect_Animator.SetTrigger("FinishLoop");
     }
     internal void Disable()
     {
         ResetEffect();
     }
-
+    internal void FireEffect()
+    {
+        //FireTornadoEffect
+    }
 
 
     #endregion

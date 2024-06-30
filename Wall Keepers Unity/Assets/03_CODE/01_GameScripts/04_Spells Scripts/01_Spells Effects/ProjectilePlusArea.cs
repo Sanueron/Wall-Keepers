@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,9 +13,24 @@ public class ProjectilePlusArea : BaseSpellsEffects
     private float f_journeyLength;
     private float startTime;
     private bool b_startMovement;
+    private bool b_finishAnimation;
+    private Quaternion InitialRotation;
+    private int i_start_spriteSortingOrder;
+    private SpriteRenderer spell_SpriteRenderer;
     #endregion
 
     #region Unity Life Cycle
+    private void Start()
+    {
+        GetStartVariables();
+    }
+
+    private void GetStartVariables()
+    {
+        spell_SpriteRenderer = GetComponent<SpriteRenderer>();
+        i_start_spriteSortingOrder = spell_SpriteRenderer.sortingOrder;
+    }
+
     private void FixedUpdate()
     {
         if (b_spellEffectActiveInBattlefield && b_startMovement)
@@ -40,9 +56,9 @@ public class ProjectilePlusArea : BaseSpellsEffects
         transform.parent = null;
         transform.position = starPosition;
         v3_startPosition = starPosition;
+        print(starPosition);
         v3_endPosition = target;
-        print("InitialPos" + transform.position);
-        print("EndPos" + v3_endPosition);
+        f_journeyLength = Vector3.Distance(v3_startPosition, v3_endPosition);
     }
     private void ProjectailMovement()
     {
@@ -56,33 +72,61 @@ public class ProjectilePlusArea : BaseSpellsEffects
         float f_distCovered = (Time.time - startTime) * 1.0f * f_speed;
         float fractionOfJourney = f_distCovered / f_journeyLength;
         transform.position = Vector3.Lerp(v3_startPosition, v3_endPosition, fractionOfJourney);
-
         if (transform.position == v3_endPosition)
         {
+            Explosion();
             b_startMovement = false;
-            //Start coroutine to waint until the spell effect finish
-            StartCoroutine(CastInBattlefield());
         }
     }
-
-    internal IEnumerator CastInBattlefield()
+    // When everything is finished, the card is disabled
+    private void Explosion()
     {
-        WaitForSeconds wait_durationInBattlefield = new WaitForSeconds(f_duration);
-        yield return wait_durationInBattlefield;
-        elapsedTime = 0;
-        ResetEffect();
+        effect_Animator.SetTrigger("Explode");
+        
+        
     }
+    private IEnumerator StartLake()
+    {
+        effect_Animator.SetTrigger("Lake");
+        //Wait until the Lake animation has finished 
+        while (!b_finishAnimation)
+        {
+            yield return null;
+        }
+        b_finishAnimation = false;
+        ResetEffect();
+        ResetVariables();
+    }
+
     internal void StartMovement()
     {
         startTime = Time.time;
         effect_Animator.SetTrigger("Casted");
         b_startMovement = true;
     }
-    internal void StartLake()
+   
+
+    //Metodos que se repiten con el projectile, por lo tanto creo que esta clase deberia de heredar directamente de Projectile 
+    public void FinishAnimation()
     {
-        effect_Animator.SetTrigger("Lake");
-
+        b_finishAnimation = true;
     }
-
+    internal void PlayExplosionClip()
+    {
+        //Sound
+    }
+    internal void RestoreRotation()
+    {
+        transform.rotation = InitialRotation;
+    }
+    internal void Exploded()
+    {
+        spell_SpriteRenderer.sortingOrder = spell_SpriteRenderer.sortingOrder - 1;
+    }
+    private void ResetVariables()
+    {
+        spell_SpriteRenderer.sortingOrder = i_start_spriteSortingOrder;
+    }
+    
     #endregion
 }

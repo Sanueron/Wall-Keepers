@@ -48,12 +48,99 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4708899997401019408, guid: 16a64cdb6f7ab5140ab2d251b6fb4155, type: 3}
+      propertyPath: m_Size.x
+      value: 27.842855
+      objectReference: {fileID: 0}
+    - target: {fileID: 4708899997401019408, guid: 16a64cdb6f7ab5140ab2d251b6fb4155, type: 3}
+      propertyPath: m_Size.y
+      value: 38.10266
+      objectReference: {fileID: 0}
+    - target: {fileID: 4708899997401019408, guid: 16a64cdb6f7ab5140ab2d251b6fb4155, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1459958281, guid: 37bfc545a7cd3c548934d2b3224935d6, type: 3}
+    - target: {fileID: 4708899997401019408, guid: 16a64cdb6f7ab5140ab2d251b6fb4155, type: 3}
+      propertyPath: m_Color.b
+      value: 0.7372549
+      objectReference: {fileID: 0}
+    - target: {fileID: 4708899997401019408, guid: 16a64cdb6f7ab5140ab2d251b6fb4155, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8980392
+      objectReference: {fileID: 0}
+    - target: {fileID: 4708899997401019408, guid: 16a64cdb6f7ab5140ab2d251b6fb4155, type: 3}
+      propertyPath: m_Color.r
+      value: 0.43529412
+      objectReference: {fileID: 0}
+    - target: {fileID: 4708899997401019408, guid: 16a64cdb6f7ab5140ab2d251b6fb4155, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4883891549409874169, guid: 16a64cdb6f7ab5140ab2d251b6fb4155, type: 3}
       propertyPath: m_Name
-      value: InstantAreaEffect
+      value: InstantAreaEffect_Tornado
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6890344747032341311, guid: 16a64cdb6f7ab5140ab2d251b6fb4155, type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6890344747032341311, guid: 16a64cdb6f7ab5140ab2d251b6fb4155, type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6890344747032341311, guid: 16a64cdb6f7ab5140ab2d251b6fb4155, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 27.842855
+      objectReference: {fileID: 0}
+    - target: {fileID: 6890344747032341311, guid: 16a64cdb6f7ab5140ab2d251b6fb4155, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 38.10266
+      objectReference: {fileID: 0}
+    - target: {fileID: 6890344747032341311, guid: 16a64cdb6f7ab5140ab2d251b6fb4155, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 27.842855
+      objectReference: {fileID: 0}
+    - target: {fileID: 6890344747032341311, guid: 16a64cdb6f7ab5140ab2d251b6fb4155, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 38.10266
+      objectReference: {fileID: 0}
+    - target: {fileID: 6890344747032341311, guid: 16a64cdb6f7ab5140ab2d251b6fb4155, type: 3}
+      propertyPath: m_SpriteTilingProperty.adaptiveTilingThreshold
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9139954799275499290, guid: 16a64cdb6f7ab5140ab2d251b6fb4155, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: 85398de7b6bb5db499b84794164cde4b, type: 2}
+    m_RemovedComponents:
+    - {fileID: -8391791005168630368, guid: 16a64cdb6f7ab5140ab2d251b6fb4155, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4883891549409874169, guid: 16a64cdb6f7ab5140ab2d251b6fb4155, type: 3}
+      insertIndex: 1
+      addedObject: {fileID: -5156669986589784201}
   m_SourcePrefab: {fileID: 100100000, guid: 16a64cdb6f7ab5140ab2d251b6fb4155, type: 3}
+--- !u!95 &1721196869008178949 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 9139954799275499290, guid: 16a64cdb6f7ab5140ab2d251b6fb4155, type: 3}
+  m_PrefabInstance: {fileID: 7581052513257676831}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3094639680773550310 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4883891549409874169, guid: 16a64cdb6f7ab5140ab2d251b6fb4155, type: 3}
+  m_PrefabInstance: {fileID: 7581052513257676831}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-5156669986589784201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3094639680773550310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f8ec8e7360e5fc4caa59bb42cd00d8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effect_Animator: {fileID: 1721196869008178949}
