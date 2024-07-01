@@ -182,7 +182,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      LifeBar02_0: 178841844976008931
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

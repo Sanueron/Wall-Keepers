@@ -1,0 +1,27 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class BaseEnemyAction : MonoBehaviour
+{
+    [Header("Get Enemy Script with stats")]
+    [SerializeField] protected Enemy enemyStats;
+
+    #region Local variables
+    protected int i_hp, i_damage, i_speed;
+    #endregion
+
+    #region Common Methods
+    internal void GetEnemyStats()
+    {
+        i_hp = enemyStats.i_hp;
+        i_damage = enemyStats.i_damage;
+        i_speed = enemyStats.i_speed;
+    }
+    internal virtual void TakeAction()
+    {
+        // Define each enemy action in here
+    }
+    #endregion
+
+}
