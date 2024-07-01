@@ -7,19 +7,23 @@ public class BaseSpellsEffects : MonoBehaviour
     #region Local Stats variables
     [SerializeField] internal Animator effect_Animator;
     internal bool b_spellEffectActiveInBattlefield = false;
-    protected float f_damage, f_resistance, f_speed, f_duration;
+    protected float f_damage, f_resistance, f_speed, f_duration, f_repeatRate, f_slowDownValue;
+    protected int i_slowDownValue;
     protected bool b_mergedCard;
     internal Transform spellCardParent;
     #endregion
     #region Local Common Methods
-    internal void SetSpellStatsInSpellEffect(Transform tParent, float dmg, float res, float speed, float dur)
+    internal void SetSpellStatsInSpellEffect(Transform tParent, float dmg, float res, float speed, float dur, float repeatRate, int slowDownValue)
     {
         spellCardParent = tParent;
         f_damage = dmg;
         f_resistance = res;
         f_speed = speed;
         f_duration = dur;
-     
+        f_repeatRate = repeatRate;
+        i_slowDownValue = slowDownValue;
+
+
     }
     public virtual void ActivateEffect(Vector3 starPosition, Vector3 target)
     {

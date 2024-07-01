@@ -55,10 +55,7 @@ public class ManaManager : MonoBehaviour
             f_currentManaValue += Time.deltaTime * f_manaIncreaseSpeed;
             IncreaseManaBar();
         }
-        else
-        {
-            print("Stop");
-        }
+      
     }
     //Method called by ActionsManager when Player cast a card 
     public void ReduceCurrentMana(int amount)

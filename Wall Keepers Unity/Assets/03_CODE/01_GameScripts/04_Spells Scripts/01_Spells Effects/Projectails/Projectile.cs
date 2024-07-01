@@ -1,39 +1,31 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProjectilePlusArea : BaseSpellsEffects
+public class Projectile : BaseSpellsEffects
 {
     #region Variables
     private Vector3 v3_endPosition;
     private Vector3 v3_startPosition;
     private float elapsedTime = 0f;
     [SerializeField] private Vector3 v3_Projectail_Cast_Position;
+    private bool b_startMovement;
+    private Quaternion InitialRotation;
+   [SerializeField] private bool b_finishAnimation;
     private float f_journeyLength;
     private float startTime;
-    private bool b_startMovement;
-    private bool b_finishAnimation;
-    private Quaternion InitialRotation;
-    private int i_start_spriteSortingOrder;
-    private SpriteRenderer spell_SpriteRenderer;
     #endregion
 
     #region Unity Life Cycle
-    private void Start()
-    {
-        GetStartVariables();
-    }
 
-    private void GetStartVariables()
+    private void Awake()
     {
-        spell_SpriteRenderer = GetComponent<SpriteRenderer>();
-        i_start_spriteSortingOrder = spell_SpriteRenderer.sortingOrder;
+        InitialRotation = transform.rotation;
+      
     }
-
     private void FixedUpdate()
     {
-        if (b_spellEffectActiveInBattlefield && b_startMovement)
+        if (b_spellEffectActiveInBattlefield&&b_startMovement)
         {
             ProjectailMovement();
         }
@@ -52,61 +44,72 @@ public class ProjectilePlusArea : BaseSpellsEffects
     // Method to save the target position
     public void CastBall(Vector3 starPosition, Vector3 target)
     {
+       
+       transform.parent = null;
+       transform.position = starPosition;
+       v3_startPosition = starPosition;
+       v3_endPosition = target;
+       f_journeyLength = Vector3.Distance(v3_startPosition, v3_endPosition);
 
-        transform.parent = null;
-        transform.position = starPosition;
-        v3_startPosition = starPosition;
-        print(starPosition);
-        v3_endPosition = target;
-        f_journeyLength = Vector3.Distance(v3_startPosition, v3_endPosition);
     }
     private void ProjectailMovement()
     {
         //ROTATE TOWARDS TARGET
         Vector3 directionToTarget = v3_endPosition - transform.position;
         float angulo = Mathf.Atan2(directionToTarget.y, directionToTarget.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angulo - 90));
+        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angulo - 90)); 
         //INTERPOLATION
         //We need to know the proportion of the journey that has been completed, using fractionOfJourney to make a good interpolation between the start and end positions.
         //Without this, the projectile takes the same time to reach all positions.
-        float f_distCovered = (Time.time - startTime) * 1.0f * f_speed;
+        float f_distCovered = (Time.time - startTime) * 1.0f * f_speed*2.0f;
         float fractionOfJourney = f_distCovered / f_journeyLength;
         transform.position = Vector3.Lerp(v3_startPosition, v3_endPosition, fractionOfJourney);
         if (transform.position == v3_endPosition)
         {
-            Explosion();
+            StartCoroutine(Explosion());
             b_startMovement = false;
         }
     }
     // When everything is finished, the card is disabled
-    private void Explosion()
+    private IEnumerator Explosion()
     {
         effect_Animator.SetTrigger("Explode");
-        
-        
-    }
-    private IEnumerator StartLake()
-    {
-        effect_Animator.SetTrigger("Lake");
-        //Wait until the Lake animation has finished 
+        //Wait until the Explosion animation has finished 
         while (!b_finishAnimation)
         {
             yield return null;
         }
         b_finishAnimation = false;
         ResetEffect();
-        ResetVariables();
     }
+    /*If We want to Separate Projectail UP and Projectail Down Animations again 
 
+     if (fractionOfJourney > 0.5f)
+        {
+            effect_Animator.SetTrigger("GoingDown");
+        }
+    private void DirectlyDown()
+    {
+        if (v3_endPosition.y <= 3.5f)
+        {
+            effect_Animator.SetBool("Close", true);
+            effect_Animator.SetTrigger("DirectlyDown");
+
+        }
+    }
+    */
+    #endregion
+    #region Animation Methods
     internal void StartMovement()
     {
         startTime = Time.time;
         effect_Animator.SetTrigger("Casted");
         b_startMovement = true;
     }
-   
-
-    //Metodos que se repiten con el projectile, por lo tanto creo que esta clase deberia de heredar directamente de Projectile 
+    internal void RestoreRotation()
+    {
+        transform.rotation = InitialRotation;
+    }
     public void FinishAnimation()
     {
         b_finishAnimation = true;
@@ -115,18 +118,17 @@ public class ProjectilePlusArea : BaseSpellsEffects
     {
         //Sound
     }
-    internal void RestoreRotation()
-    {
-        transform.rotation = InitialRotation;
-    }
-    internal void Exploded()
-    {
-        spell_SpriteRenderer.sortingOrder = spell_SpriteRenderer.sortingOrder - 1;
-    }
-    private void ResetVariables()
-    {
-        spell_SpriteRenderer.sortingOrder = i_start_spriteSortingOrder;
-    }
-    
     #endregion
+    #region Collisions
+    // When the enemy collides with this effect (when the collider is enabled), it calls the enemy's ReceiveDamage function.
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == 10)
+        {
+            print("Collision");
+            collision.GetComponent<Enemy>().ReceiveDamage((int)f_damage);//We should use the same data type  ¿Float or Int?
+        }
+    }
+    #endregion
+
 }

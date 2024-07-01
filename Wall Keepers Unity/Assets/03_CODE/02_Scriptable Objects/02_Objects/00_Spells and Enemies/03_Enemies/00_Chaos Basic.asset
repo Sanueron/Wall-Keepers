@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 00_Chaos Basic
   m_EditorClassIdentifier: 
   i_id: 0
-  i_hp: 0
+  i_hp: 1000
   i_dmg: 0
   i_speed: 1
   f_RageOfAction: 0

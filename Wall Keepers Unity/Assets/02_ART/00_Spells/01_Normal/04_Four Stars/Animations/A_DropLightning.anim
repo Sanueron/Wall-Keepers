@@ -73,7 +73,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.46666667
+        time: 0.38333333
         value: 1
         inSlope: Infinity
         outSlope: Infinity
@@ -82,7 +82,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.75
+        time: 0.6333333
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -103,19 +103,19 @@ AnimationClip:
     curve:
     - time: 0
       value: {fileID: -277356940, guid: e88c97a4270139d408b8c607a4ee570d, type: 3}
-    - time: 0.16666667
+    - time: 0.15
       value: {fileID: -1022109504, guid: e88c97a4270139d408b8c607a4ee570d, type: 3}
-    - time: 0.33333334
+    - time: 0.28333333
       value: {fileID: -513838682, guid: e88c97a4270139d408b8c607a4ee570d, type: 3}
-    - time: 0.46666667
+    - time: 0.38333333
       value: {fileID: -1332612118, guid: e88c97a4270139d408b8c607a4ee570d, type: 3}
-    - time: 0.6666667
+    - time: 0.56666666
       value: {fileID: -2080862161, guid: e88c97a4270139d408b8c607a4ee570d, type: 3}
-    - time: 0.8333333
+    - time: 0.7
       value: {fileID: 833638147, guid: e88c97a4270139d408b8c607a4ee570d, type: 3}
-    - time: 1.05
+    - time: 0.8833333
       value: {fileID: -1394688277, guid: e88c97a4270139d408b8c607a4ee570d, type: 3}
-    - time: 1.25
+    - time: 1.05
       value: {fileID: 464684, guid: e88c97a4270139d408b8c607a4ee570d, type: 3}
     attribute: m_Sprite
     path: 
@@ -179,7 +179,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1.4166666
+    m_StopTime: 1.25
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -251,7 +251,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.46666667
+        time: 0.38333333
         value: 1
         inSlope: Infinity
         outSlope: Infinity
@@ -260,7 +260,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.75
+        time: 0.6333333
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -287,7 +287,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 1.4166666
+  - time: 1.25
     functionName: Disable
     data: 
     objectReferenceParameter: {fileID: 0}

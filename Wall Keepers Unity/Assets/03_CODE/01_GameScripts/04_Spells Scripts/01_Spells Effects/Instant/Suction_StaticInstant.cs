@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InstInstantArea_FinishAnimantArea : BaseSpellsEffects
+public class Suction_StaticInstant : BaseSpellsEffects
 {
     
     #region InstantArea Methods

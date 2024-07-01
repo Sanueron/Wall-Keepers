@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InstantArea_NoLoopeable : BaseSpellsEffects
+public class Obstacle_StaticInstant : BaseSpellsEffects
 {
     
     #region InstantArea Methods
@@ -10,6 +10,15 @@ public class InstantArea_NoLoopeable : BaseSpellsEffects
     public override void ActivateEffect(Vector3 starPosition, Vector3 target)
     {
         SetTarget(target);
+    }
+
+    private void OnEnable()
+    {
+        SetAnimationBool();
+    }
+    private void SetAnimationBool()//This method is Only for walls 
+    {
+     effect_Animator.SetBool("Wall", true);
     }
     //Wait until spell effect finish 
     private void FixedUpdate()
@@ -28,6 +37,7 @@ public class InstantArea_NoLoopeable : BaseSpellsEffects
     internal IEnumerator CastInBattlefield()
     {
         WaitForSeconds wait_durationInBattlefield = new WaitForSeconds(f_duration);
+        Obstaculize();
         yield return wait_durationInBattlefield;
         ResetEffect();
     }
@@ -36,7 +46,10 @@ public class InstantArea_NoLoopeable : BaseSpellsEffects
         ResetEffect();
     }
 
-
+    private void Obstaculize()
+    {
+        print("Obstacle");
+    }
 
     #endregion
 }

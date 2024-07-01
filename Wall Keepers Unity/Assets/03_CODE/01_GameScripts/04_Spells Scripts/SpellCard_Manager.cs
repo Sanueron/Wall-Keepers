@@ -16,9 +16,10 @@ public class SpellCard_Manager : MonoBehaviour
     #endregion
 
     #region Spell Stats variables
-    private int i_spellLevel, i_spellAwakeningLvl;
-    private float f_damage, f_resistance, f_speed, f_duration;
-    
+    private int i_spellLevel, i_spellAwakeningLvl, i_slowDownValue;
+    private float f_damage, f_resistance, f_speed, f_duration, f_repeatRate;
+
+
     #endregion
 
     #region Spell Effect variables
@@ -67,7 +68,10 @@ public class SpellCard_Manager : MonoBehaviour
         f_duration = spellBaseData.f_duration +
                 SpellsData.f_durationIncreaseByLevel * i_spellLevel +
                 SpellsData.f_damageIncreaseByAwakening * i_spellAwakeningLvl;
-       
+        //Repeat Rate, Always the same value
+        f_repeatRate = spellBaseData.f_attackInterval;
+        //Slow down (MudBall), Always the same
+        i_slowDownValue = spellBaseData.i_slowDown_value;
 
         #endregion
     }
@@ -87,7 +91,7 @@ public class SpellCard_Manager : MonoBehaviour
         foreach (BaseSpellsEffects spellsEffects in listOf_spellEffects)
         {
             // Pass to spell effect spells stats updated with level and awakening level
-            spellsEffects.SetSpellStatsInSpellEffect(transform, f_damage, f_resistance, f_speed, f_duration);
+            spellsEffects.SetSpellStatsInSpellEffect(transform, f_damage, f_resistance, f_speed, f_duration, f_repeatRate, i_slowDownValue);
             spellsEffects.gameObject.SetActive(false);
         }
     }
@@ -139,7 +143,6 @@ public class SpellCard_Manager : MonoBehaviour
         {
             b_onBattlefield = true;
             _card_SpriteRenderer.sprite = spellBaseData._onField_Sprite;
-            print("STAY");
         }
     }
     private void OnTriggerExit2D(Collider2D collision)

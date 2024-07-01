@@ -97,7 +97,6 @@ public class ActionsManager : MonoBehaviour
         }
         b_timerIsOn = false;
         f_timer = 0;
-        print("CardDroped");
         if (selectedSpell.b_onBattlefield)//  Battlefield collider 
         {
             // Check if enough Mana to cast
@@ -106,12 +105,9 @@ public class ActionsManager : MonoBehaviour
                 //Reduce Mana 
                 ManaManager.instance.ReduceCurrentMana(selectedSpell.GetCardData().i_mana_cost);
                 //Active Effect
-                //selectedSpell.ActiveEffect(selectedSpell.v3_cardInitialPosition, selectedSpell.transform.position);
-                print("Aquí tiramos effecto de hechizo");
                 selectedSpell.ActivateSpellEffect();
                 //Reset card 
                 PlayMode_DeckManager.instance.GetSpellBackToDeck(selectedSpell, selectedSpell.v3_currentPosition);// current position is his position in Hand
-               
             }
             else
             {
@@ -137,21 +133,16 @@ public class ActionsManager : MonoBehaviour
     //A method to return the card to its slot
     private IEnumerator ReturnToHandPosition( SpellCard_Manager selectedSpell)
     {
-
-        print("dale");
         Vector3 startPosition = selectedSpell.transform.position;
         float elapsedTime = 0;
-
         while (elapsedTime < 0.3f)
         {
             selectedSpell.transform.position = Vector3.Lerp(startPosition, selectedSpell.v3_currentPosition, elapsedTime / 0.3f);
             elapsedTime += Time.deltaTime;
             yield return null; 
         }
-
         transform.position = selectedSpell.v3_currentPosition;
         SetCardSortingOrder(i_defaultSortingOrder, selectedSpell);
-      
     }
     private void SetCardSortingOrder(int sortingOrder, SpellCard_Manager selectedSpell)
     {

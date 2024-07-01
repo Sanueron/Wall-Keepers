@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
     #region Enemy Stats and Info
     [Header("Stats")]
     [SerializeField] ScripteableEnemies baseStats;
-    internal int i_hp, i_damage, i_speed;
+    internal int i_hp, i_damage, i_speed, i_startSpeed;
     internal float f_rangeOfAction;
     #endregion
 
@@ -33,6 +33,7 @@ public class Enemy : MonoBehaviour
     {
         e_enemyState = EnemyState.Moving;
         GetStats();
+       
     }
     private void Update()
     {
@@ -59,6 +60,7 @@ public class Enemy : MonoBehaviour
                 break;
             case EnemyState.ReceiveDamage:
                 // Play anim
+                SwitchState(EnemyState.Moving);
                 break;
             case EnemyState.Defeated:
                 // Play anim
@@ -70,6 +72,7 @@ public class Enemy : MonoBehaviour
         i_hp = baseStats.i_hp;
         i_damage = baseStats.i_dmg;
         i_speed = baseStats.i_speed;
+        i_startSpeed = i_speed;
         f_rangeOfAction = baseStats.f_RageOfAction;
     }
     private void TakeAction()
@@ -83,6 +86,7 @@ public class Enemy : MonoBehaviour
     }
     internal void ReceiveDamage(int i_damageReceived)
     {
+        print("Hurt:-" + i_damageReceived + " Total: " + i_hp);
         i_hp -= i_damageReceived;
         if(i_hp < 0)
         {
@@ -92,8 +96,20 @@ public class Enemy : MonoBehaviour
         else
         {
             // Receive Damage
-            SwitchState(EnemyState.ReceiveDamage);
+            //SwitchState(EnemyState.ReceiveDamage);
         }
+    }
+    internal void SlowDown(int decreaseValue)
+    {
+        print("SlowDown"+i_speed);
+        i_speed = i_speed/decreaseValue;
+
+    }
+
+    internal void RestoreSpeed()
+    {
+        i_speed = i_startSpeed;
+
     }
     #endregion
 }

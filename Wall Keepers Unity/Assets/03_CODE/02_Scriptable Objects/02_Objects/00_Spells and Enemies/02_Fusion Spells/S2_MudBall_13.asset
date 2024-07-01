@@ -47,3 +47,4 @@ MonoBehaviour:
   fusionSprite5: {fileID: 0}
   b_canAwake: 0
   i_awakenLevel: 1
+  i_slowDown_value: 3

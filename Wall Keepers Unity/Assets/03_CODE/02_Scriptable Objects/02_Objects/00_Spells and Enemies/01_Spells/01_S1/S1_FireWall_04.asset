@@ -38,7 +38,7 @@ MonoBehaviour:
   e_2Element: 0
   Description: Creates a fire wall that deals damage over time to enemies inside
     it.
-  f_attackInterval: 0
+  f_attackInterval: 1
   b_isMerged: 0
   fusionSprite1: {fileID: 0}
   fusionSprite2: {fileID: 0}

@@ -52,6 +52,50 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4773681600118774583, guid: 0544668d66cf40b42889f2c2f47dfe5e, type: 3}
+      propertyPath: m_Size.x
+      value: 9.708557
+      objectReference: {fileID: 0}
+    - target: {fileID: 4773681600118774583, guid: 0544668d66cf40b42889f2c2f47dfe5e, type: 3}
+      propertyPath: m_Size.y
+      value: 6.514531
+      objectReference: {fileID: 0}
+    - target: {fileID: 4773681600118774583, guid: 0544668d66cf40b42889f2c2f47dfe5e, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.03340912
+      objectReference: {fileID: 0}
+    - target: {fileID: 4773681600118774583, guid: 0544668d66cf40b42889f2c2f47dfe5e, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.641376
+      objectReference: {fileID: 0}
+    - target: {fileID: 4773681600118774583, guid: 0544668d66cf40b42889f2c2f47dfe5e, type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.x
+      value: 0.4952919
+      objectReference: {fileID: 0}
+    - target: {fileID: 4773681600118774583, guid: 0544668d66cf40b42889f2c2f47dfe5e, type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.y
+      value: 0.43295467
+      objectReference: {fileID: 0}
+    - target: {fileID: 4773681600118774583, guid: 0544668d66cf40b42889f2c2f47dfe5e, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 2.8704135
+      objectReference: {fileID: 0}
+    - target: {fileID: 4773681600118774583, guid: 0544668d66cf40b42889f2c2f47dfe5e, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 2.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 4773681600118774583, guid: 0544668d66cf40b42889f2c2f47dfe5e, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 9.568046
+      objectReference: {fileID: 0}
+    - target: {fileID: 4773681600118774583, guid: 0544668d66cf40b42889f2c2f47dfe5e, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 8.733334
+      objectReference: {fileID: 0}
+    - target: {fileID: 4773681600118774583, guid: 0544668d66cf40b42889f2c2f47dfe5e, type: 3}
+      propertyPath: m_SpriteTilingProperty.adaptiveTilingThreshold
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7496801940804510461, guid: 0544668d66cf40b42889f2c2f47dfe5e, type: 3}
       propertyPath: m_Name
       value: ProjectailPlusAreaEffect_MagmaBall
@@ -67,9 +111,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7496801940804510461, guid: 0544668d66cf40b42889f2c2f47dfe5e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2422341502856368508}
-    - targetCorrespondingSourceObject: {fileID: 7496801940804510461, guid: 0544668d66cf40b42889f2c2f47dfe5e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 8359958050157234822}
   m_SourcePrefab: {fileID: 100100000, guid: 0544668d66cf40b42889f2c2f47dfe5e, type: 3}
 --- !u!1 &7390657900940715841 stripped
 GameObject:
@@ -152,49 +193,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &8359958050157234822
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7390657900940715841}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: -0.011130571, y: -0.23569167}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.4952919, y: 0.43295467}
-    oldSize: {x: 2.8704135, y: 2.62}
-    newSize: {x: 2.8704135, y: 2.62}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 2.6413932, y: 2.0828083}
-  m_EdgeRadius: 0

@@ -44,7 +44,7 @@ public class ScripteableCard : ScriptableObject
     public enum element2 { None, Fire, Earth, Water, Wind, Electric };
     public element2 e_2Element;
     public string Description;
-    [Header("Tonado")]
+    [Header("ContinousDmg")]
     //Para cuando metamos mas
     public float f_attackInterval;
     [Header("FusedCards")]
@@ -56,6 +56,7 @@ public class ScripteableCard : ScriptableObject
     public Sprite fusionSprite5;
     public bool b_canAwake;
     public int i_awakenLevel = 1;
+    public int i_slowDown_value;
     #endregion
 
 }

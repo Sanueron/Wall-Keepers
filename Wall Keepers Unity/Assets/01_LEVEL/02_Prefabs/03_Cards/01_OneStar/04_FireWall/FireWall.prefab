@@ -67,11 +67,11 @@ PrefabInstance:
     - target: {fileID: 4257493173228200327, guid: 693b018ee78c884418c8725b7170f77b, type: 3}
       propertyPath: spellEffectPrefab
       value: 
-      objectReference: {fileID: -8391791005168630368, guid: 16a64cdb6f7ab5140ab2d251b6fb4155, type: 3}
+      objectReference: {fileID: 1910567663011318656, guid: 4cd8a074d484d704c8c4e41cd589841e, type: 3}
     - target: {fileID: 4257493173228200327, guid: 693b018ee78c884418c8725b7170f77b, type: 3}
       propertyPath: _spellEffect_GameObject
       value: 
-      objectReference: {fileID: 4883891549409874169, guid: 16a64cdb6f7ab5140ab2d251b6fb4155, type: 3}
+      objectReference: {fileID: 5966984580797030105, guid: 4cd8a074d484d704c8c4e41cd589841e, type: 3}
     - target: {fileID: 4257493173228200327, guid: 693b018ee78c884418c8725b7170f77b, type: 3}
       propertyPath: i_numberOfSpellEffectsInStock
       value: 4
