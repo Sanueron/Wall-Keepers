@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Lofelt.NiceVibrations.MMSwitch;
 
 public class Enemy : MonoBehaviour
 {
@@ -86,7 +87,12 @@ public class Enemy : MonoBehaviour
         if(i_hp < 0)
         {
             // Defeated
-            e_enemyState = EnemyState.Defeated;
+            SwitchState(EnemyState.Defeated);
+        }
+        else
+        {
+            // Receive Damage
+            SwitchState(EnemyState.ReceiveDamage);
         }
     }
     #endregion
