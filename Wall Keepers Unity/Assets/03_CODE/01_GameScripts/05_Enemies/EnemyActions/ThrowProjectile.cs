@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class ThrowProjectile : BaseEnemyAction
 {
+    /*
     internal override void TakeAction()
     {
         // Throw projectile
     }
+    */
 }

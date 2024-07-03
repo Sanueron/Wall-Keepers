@@ -17,7 +17,6 @@ public class ContinuousDmg_StaticProjectail : BaseSpellsEffects
     private Quaternion InitialRotation;
     private int i_start_spriteSortingOrder;
     private SpriteRenderer spell_SpriteRenderer;
-    private Enemy enemyScript;
     #endregion
 
     #region Unity Life Cycle

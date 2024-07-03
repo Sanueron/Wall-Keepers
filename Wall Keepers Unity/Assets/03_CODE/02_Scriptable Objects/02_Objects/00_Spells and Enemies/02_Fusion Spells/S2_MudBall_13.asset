@@ -31,6 +31,8 @@ MonoBehaviour:
   spr_spellRequiredCard_2: {fileID: 21300000, guid: e532fb3743b17cd448dbbde580d4ac71, type: 3}
   i_spellRequired_1_Id: 2
   i_spellRequired_2_Id: 3
+  f_slowDown_value: 0.5
+  f_attackInterval: 0
   f_repeatingDmgCoolDown: 0
   e_CastingType: 1
   e_Effect: 3
@@ -38,7 +40,6 @@ MonoBehaviour:
   e_2Element: 0
   Description: Deals damage to enemies and leaves a small mud lake in the battlefield
     for few seconds that reduces demons speed.
-  f_attackInterval: 0
   b_isMerged: 1
   fusionSprite1: {fileID: 21300000, guid: e532fb3743b17cd448dbbde580d4ac71, type: 3}
   fusionSprite2: {fileID: 21300000, guid: 56e43086f278d9c45b61663d5a1f7345, type: 3}
@@ -47,4 +48,3 @@ MonoBehaviour:
   fusionSprite5: {fileID: 0}
   b_canAwake: 0
   i_awakenLevel: 1
-  i_slowDown_value: 3

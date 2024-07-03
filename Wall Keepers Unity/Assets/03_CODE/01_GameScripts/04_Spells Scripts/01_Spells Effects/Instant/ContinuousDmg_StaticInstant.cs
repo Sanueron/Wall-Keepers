@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class ContinuousDmg_StaticInstant : BaseSpellsEffects
 {
-    #region Variables
-    private Enemy enemyScript;
-    #endregion
+  
     #region InstantArea Methods
     //Receive target 
     public override void ActivateEffect(Vector3 starPosition, Vector3 target)

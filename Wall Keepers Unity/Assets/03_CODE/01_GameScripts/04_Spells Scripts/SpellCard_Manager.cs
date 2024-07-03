@@ -16,8 +16,8 @@ public class SpellCard_Manager : MonoBehaviour
     #endregion
 
     #region Spell Stats variables
-    private int i_spellLevel, i_spellAwakeningLvl, i_slowDownValue;
-    private float f_damage, f_resistance, f_speed, f_duration, f_repeatRate;
+    private int i_spellLevel, i_spellAwakeningLvl;
+    private float f_damage, f_resistance, f_speed, f_duration, f_repeatRate, f_slowDownValue;
 
 
     #endregion
@@ -71,7 +71,7 @@ public class SpellCard_Manager : MonoBehaviour
         //Repeat Rate, Always the same value
         f_repeatRate = spellBaseData.f_attackInterval;
         //Slow down (MudBall), Always the same
-        i_slowDownValue = spellBaseData.i_slowDown_value;
+        f_slowDownValue = spellBaseData.f_slowDown_value;
 
         #endregion
     }
@@ -91,7 +91,7 @@ public class SpellCard_Manager : MonoBehaviour
         foreach (BaseSpellsEffects spellsEffects in listOf_spellEffects)
         {
             // Pass to spell effect spells stats updated with level and awakening level
-            spellsEffects.SetSpellStatsInSpellEffect(transform, f_damage, f_resistance, f_speed, f_duration, f_repeatRate, i_slowDownValue);
+            spellsEffects.SetSpellStatsInSpellEffect(transform, f_damage, f_resistance, f_speed, f_duration, f_repeatRate, f_slowDownValue);
             spellsEffects.gameObject.SetActive(false);
         }
     }

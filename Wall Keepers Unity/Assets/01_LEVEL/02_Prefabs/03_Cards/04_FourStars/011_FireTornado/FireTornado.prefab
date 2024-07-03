@@ -10,11 +10,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 24460214465607094, guid: 693b018ee78c884418c8725b7170f77b, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 1.0666667
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 24460214465607094, guid: 693b018ee78c884418c8725b7170f77b, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 1.4666667
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 2223377848759761113, guid: 693b018ee78c884418c8725b7170f77b, type: 3}
       propertyPath: m_Name
@@ -67,7 +67,7 @@ PrefabInstance:
     - target: {fileID: 4257493173228200327, guid: 693b018ee78c884418c8725b7170f77b, type: 3}
       propertyPath: spellEffectPrefab
       value: 
-      objectReference: {fileID: 7778603725959375473, guid: 92dc32ec914bc8747becb9bbfbd184d7, type: 3}
+      objectReference: {fileID: -8479635758121280273, guid: 92dc32ec914bc8747becb9bbfbd184d7, type: 3}
     - target: {fileID: 4257493173228200327, guid: 693b018ee78c884418c8725b7170f77b, type: 3}
       propertyPath: _spellEffect_GameObject
       value: 

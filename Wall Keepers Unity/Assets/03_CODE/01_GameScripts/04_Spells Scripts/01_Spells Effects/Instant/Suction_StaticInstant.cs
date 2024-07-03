@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Build.Content;
 using UnityEngine;
+using static Enemy;
 
-public class Suction_StaticInstant : BaseSpellsEffects
+public class SuctionDmg_StaticInstant : BaseSpellsEffects
 {
-    
     #region InstantArea Methods
     //Receive target 
     public override void ActivateEffect(Vector3 starPosition, Vector3 target)
@@ -45,18 +46,42 @@ public class Suction_StaticInstant : BaseSpellsEffects
  
     internal void FinishLoop()
     {
-
         effect_Animator.SetTrigger("FinishLoop");
     }
     internal void Disable()
     {
         ResetEffect();
     }
-    internal void FireEffect()
+    internal void Suck()
     {
-        //FireTornadoEffect
+        enemyScript.moveToTarget_transform = gameObject.transform;
+    }
+
+    private void EnemyOut()//When the Tornado finish and the Enemy is oustide this collider, the enemy recovers his Movement
+    {
+        enemyScript.RestoreTarget();
     }
 
 
     #endregion
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.layer == 10)
+        {
+            enemyScript = collision.gameObject.GetComponent<Enemy>();
+            Suck();
+
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == 10)
+        {
+            EnemyOut();
+
+        }
+    }
 }

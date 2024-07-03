@@ -6,6 +6,7 @@ public class BaseEnemyAction : MonoBehaviour
 {
     [Header("Get Enemy Script with stats")]
     [SerializeField] protected Enemy enemyStats;
+    
 
     #region Local variables
     protected int i_hp, i_damage, i_speed;
@@ -18,9 +19,11 @@ public class BaseEnemyAction : MonoBehaviour
         i_damage = enemyStats.i_damage;
         i_speed = enemyStats.i_speed;
     }
-    internal virtual void TakeAction()
+    internal virtual void TakeAction(WallManager wall, Obstacle_StaticInstant staticObstacle)
     {
         // Define each enemy action in here
+        staticObstacle.ReceiveDamage(i_damage);
+
     }
     #endregion
 

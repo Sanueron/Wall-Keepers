@@ -32,6 +32,9 @@ public class ScripteableCard : ScriptableObject
     [SerializeField] internal Sprite spr_spellRequiredCard_2;
     [SerializeField] internal int i_spellRequired_1_Id, i_spellRequired_2_Id;
 
+
+    public float f_slowDown_value;
+    public float f_attackInterval;
     #region Delete
     [Header("Lake")]
     public float f_repeatingDmgCoolDown;//LakeLifeTime
@@ -46,7 +49,7 @@ public class ScripteableCard : ScriptableObject
     public string Description;
     [Header("ContinousDmg")]
     //Para cuando metamos mas
-    public float f_attackInterval;
+
     [Header("FusedCards")]
     public bool b_isMerged;
     public Sprite fusionSprite1;
@@ -56,7 +59,7 @@ public class ScripteableCard : ScriptableObject
     public Sprite fusionSprite5;
     public bool b_canAwake;
     public int i_awakenLevel = 1;
-    public int i_slowDown_value;
+   
     #endregion
 
 }

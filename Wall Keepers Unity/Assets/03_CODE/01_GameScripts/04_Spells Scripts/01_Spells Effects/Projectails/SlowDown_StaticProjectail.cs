@@ -17,7 +17,6 @@ public class SlowDown_StaticProjectail : BaseSpellsEffects
     private Quaternion InitialRotation;
     private int i_start_spriteSortingOrder;
     private SpriteRenderer spell_SpriteRenderer;
-    private Enemy enemyScript;
     #endregion
 
     #region Unity Life Cycle
@@ -135,23 +134,20 @@ public class SlowDown_StaticProjectail : BaseSpellsEffects
         if (collision.gameObject.layer == 10)
         {
             enemyScript = collision.gameObject.GetComponent<Enemy>();
-            SlowDown();
-
+            SlowDown();// Apply effect 
         }
     }
-
     private void OnTriggerExit2D(Collider2D collision)
     {
-       EnemyOut();
+       EnemyOut();//Disable effect 
     }
-    private void SlowDown()
+    internal void SlowDown()
     {
-        enemyScript.SlowDown(i_slowDownValue);
+       enemyScript.f_speedDecreasedValue = f_slowDownValue;// To slow down I'll change this value of Enemy to decrease speed * f_slowDownValue 
     }
     private void EnemyOut()
     {
         enemyScript.RestoreSpeed();
     }
-    
     #endregion
 }
