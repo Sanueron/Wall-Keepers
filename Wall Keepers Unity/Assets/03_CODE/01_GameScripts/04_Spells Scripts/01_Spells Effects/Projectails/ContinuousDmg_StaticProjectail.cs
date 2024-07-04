@@ -123,35 +123,34 @@ public class ContinuousDmg_StaticProjectail : BaseSpellsEffects
     {
         spell_SpriteRenderer.sortingOrder = spell_SpriteRenderer.sortingOrder - 1;
     }
-    private void ResetVariables()
-    {
-        spell_SpriteRenderer.sortingOrder = i_start_spriteSortingOrder;
-    }
+ 
     public void ContinuousDmg()
     {
-        if (enemyScript != null)
+        foreach (Enemy enemy in enemiesScripts_List)
         {
-            enemyScript.ReceiveDamage((int)f_damage);
+            enemy.ReceiveDamage((int)f_damage);
         }
     }
 
     #endregion
-
-
-
     #region Collisions
     // When an enemy enters the area, repeatedly hurt the enemy
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == 10)
+        if (collision.gameObject.layer == i_EnemyLayer)
         {
-            enemyScript = collision.gameObject.GetComponent<Enemy>();
+            AddToEnemiesList(collision.gameObject.GetComponent<Enemy>());
             InvokeRepeating("ContinuousDmg", .0f, f_repeatRate);
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        if(collision.gameObject.layer == i_EnemyLayer)
+        {
+            RemoveFromEnemiesList(collision.gameObject.GetComponent<Enemy>());
+        }
+       
         CancelInvoke("ContinuousDmg");
     }
     #endregion

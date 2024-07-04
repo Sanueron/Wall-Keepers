@@ -43,7 +43,7 @@ public class InstantDamage : BaseSpellsEffects
     // When the enemy collides with this effect (when the collider is enabled), it calls the enemy's ReceiveDamage function.
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == 10)
+        if (collision.gameObject.layer == i_EnemyLayer)
         {
             print("Collision");
             collision.GetComponent<Enemy>().ReceiveDamage((int)f_damage);//We should use the same data type  ¿Float or Int?

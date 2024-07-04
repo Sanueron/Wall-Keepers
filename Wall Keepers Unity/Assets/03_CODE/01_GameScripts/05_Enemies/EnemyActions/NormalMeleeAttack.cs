@@ -6,33 +6,47 @@ public class NormalMeleeAttack : BaseEnemyAction
 {
 
     #region Action
-    internal override void TakeAction(WallManager wall, Obstacle_StaticInstant staticObstacle)
+    internal override void TakeAction(GameObject obstacle, GameObject wall)
     {
-        // Attack single target in range
-        Attack();
+        if(obstacle != null)
+        {
+
+
+            Obstacle_StaticInstant obstacleStats = obstacle.GetComponent<Obstacle_StaticInstant>();
+            if (obstacleStats != null)
+            {
+                AttackObstacle(obstacleStats);
+                return;
+            }
+
+
+        }
 
         if(wall != null)
         {
+            WallManager wallStats = wall.GetComponent<WallManager>();
+            if (wallStats != null)
+            {
 
-            // hace daño al wall
+                AttackWall(wallStats);
+            }
+
         }
+      
+    }
 
-
-        if (staticObstacle != null)
-        {
-
-            // hace daño al obstaculo
-        }
-
-
-
-       
+    internal void AttackObstacle(Obstacle_StaticInstant obstacleStats)
+    {
+       obstacleStats.ReceiveDamage(i_damage);
+     
 
     }
 
-    internal void Attack()// diferenciar muralla de obstaculo o obsmoving 
+    internal void AttackWall(WallManager wallStats)
     {
-        print("Attack"); 
+        print("wall");
+        wallStats.ReceiveHit(i_damage);
+
     }
     #endregion
 }

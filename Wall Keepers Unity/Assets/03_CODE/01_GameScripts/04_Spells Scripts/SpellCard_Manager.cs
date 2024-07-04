@@ -18,7 +18,7 @@ public class SpellCard_Manager : MonoBehaviour
     #region Spell Stats variables
     private int i_spellLevel, i_spellAwakeningLvl;
     private float f_damage, f_resistance, f_speed, f_duration, f_repeatRate, f_slowDownValue;
-
+    private int i_battlefieldLayer = 9;
 
     #endregion
 
@@ -139,7 +139,7 @@ public class SpellCard_Manager : MonoBehaviour
     #region Collisions
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == 9)
+        if (collision.gameObject.layer == i_battlefieldLayer)
         {
             b_onBattlefield = true;
             _card_SpriteRenderer.sprite = spellBaseData._onField_Sprite;
@@ -147,7 +147,7 @@ public class SpellCard_Manager : MonoBehaviour
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == 9)
+        if (collision.gameObject.layer == i_battlefieldLayer)
         {
             _card_SpriteRenderer.sprite = spellBaseData._card_Sprite;
             b_onBattlefield = false;

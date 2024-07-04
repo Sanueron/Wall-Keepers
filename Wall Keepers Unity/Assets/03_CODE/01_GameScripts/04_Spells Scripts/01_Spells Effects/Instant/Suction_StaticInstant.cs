@@ -52,36 +52,41 @@ public class SuctionDmg_StaticInstant : BaseSpellsEffects
     {
         ResetEffect();
     }
-    internal void Suck()
-    {
-        enemyScript.moveToTarget_transform = gameObject.transform;
-    }
-
-    private void EnemyOut()//When the Tornado finish and the Enemy is oustide this collider, the enemy recovers his Movement
-    {
-        enemyScript.RestoreTarget();
-    }
 
 
     #endregion
-
-
+    #region Suck Methods
+    internal void Suck()
+    {
+        foreach (Enemy enemy in enemiesScripts_List)
+        {
+            enemy.moveToTarget_transform = gameObject.transform;
+        }
+    }
+    private void EnemyOut()//When the Tornado finish and the Enemy is oustide this collider, the enemy recovers his Movement
+    {
+        foreach (Enemy enemy in enemiesScripts_List)
+        {
+            enemy.RestoreTarget();
+        }
+    }
+    #endregion
+    #region Collisions
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.layer == 10)
+        if(collision.gameObject.layer == i_EnemyLayer)
         {
-            enemyScript = collision.gameObject.GetComponent<Enemy>();
-            Suck();
-
+            AddToEnemiesList(collision.gameObject.GetComponent<Enemy>());
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == 10)
+        if (collision.gameObject.layer == i_EnemyLayer)
         {
-            EnemyOut();
-
+            RemoveFromEnemiesList(collision.gameObject.GetComponent<Enemy>());
         }
     }
+    
+    #endregion
 }

@@ -131,23 +131,34 @@ public class SlowDown_StaticProjectail : BaseSpellsEffects
     // When an enemy enters the area, repeatedly hurt the enemy
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == 10)
+        if (collision.gameObject.layer == i_EnemyLayer)// Enemy layer 
         {
-            enemyScript = collision.gameObject.GetComponent<Enemy>();
-            SlowDown();// Apply effect 
+            /*A Diferencia de otros scripts de Area, aqui hay que modificar una variable del enemigo
+            justo cuando entra, por lo que creo que es mejor hacerlo individualmente,
+            cuando un enemigo entra y no hacer un foreach a una lista */
+           Enemy enemyScript =  collision.gameObject.GetComponent<Enemy>();
+           SlowDown(enemyScript);
+          
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-       EnemyOut();//Disable effect 
+        if(collision.gameObject.layer == i_EnemyLayer)
+        {
+            Enemy enemyScript = collision.gameObject.GetComponent<Enemy>();
+            EnemyOut(enemyScript);
+        }
+      
     }
-    internal void SlowDown()
+    internal void SlowDown(Enemy enemy)
     {
-       enemyScript.f_speedDecreasedValue = f_slowDownValue;// To slow down I'll change this value of Enemy to decrease speed * f_slowDownValue 
+        
+            enemy.f_speedDecreasedValue = f_slowDownValue;// To slow down I'll change this value of Enemy to decrease speed * f_slowDownValue 
+        
     }
-    private void EnemyOut()
+    private void EnemyOut(Enemy enemy)
     {
-        enemyScript.RestoreSpeed();
+        enemy.RestoreSpeed();    
     }
     #endregion
 }

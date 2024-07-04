@@ -60,44 +60,44 @@ public class Suction_StaticInstant : BaseSpellsEffects
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.layer == 10)
+        if(collision.gameObject.layer == i_EnemyLayer)
         {
-            enemyScript = collision.gameObject.GetComponent<Enemy>();
-            print(f_repeatRate);
+            AddToEnemiesList(collision.gameObject.GetComponent<Enemy>());
             InvokeRepeating("ContinuousDmg", .0f, f_repeatRate);
             Suck();
-
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == 10)
+        if (collision.gameObject.layer == i_EnemyLayer)
         {
-            print("ENEMYEXIT");
+            RemoveFromEnemiesList(collision.gameObject.GetComponent<Enemy>());
             EnemyOut();
             CancelInvoke("ContinuousDmg");
         }
     }
     #endregion
-
-
     #region Enemy Effect Methods
     internal void Suck()
     {
-        enemyScript.moveToTarget_transform = gameObject.transform;
+        foreach (Enemy enemy in enemiesScripts_List)
+        {
+            enemy.moveToTarget_transform = gameObject.transform;
+        }   
     }
-
     private void EnemyOut()//When the Tornado finish and the Enemy is oustide this collider, the enemy recovers his Movement
     {
-        enemyScript.RestoreTarget();
+        foreach (Enemy enemy in enemiesScripts_List)
+        {
+            enemy.RestoreTarget();
+        }
     }
-
     private void ContinuousDmg()
     {
-        if (enemyScript != null)
+        foreach (Enemy enemy in enemiesScripts_List)
         {
-            enemyScript.ReceiveDamage((int)f_damage);
+            enemy.ReceiveDamage((int)f_damage);
         }
     }
     #endregion

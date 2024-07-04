@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   i_id: 0
   i_hp: 1000
-  i_dmg: 5
+  i_dmg: 200
   i_speed: 1
-  f_RageOfAction: 2
+  f_RageOfAction: 1
   deathClip: {fileID: 0}
   e_Clan: 1
   e_ElementalType: 0

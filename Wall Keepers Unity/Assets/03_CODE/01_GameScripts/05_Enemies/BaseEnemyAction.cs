@@ -13,16 +13,22 @@ public class BaseEnemyAction : MonoBehaviour
     #endregion
 
     #region Common Methods
+
+    private void Start()
+    {
+        GetEnemyStats();
+    }
     internal void GetEnemyStats()
     {
         i_hp = enemyStats.i_hp;
         i_damage = enemyStats.i_damage;
+        print("El base dmg es: " + i_damage);
         i_speed = enemyStats.i_speed;
     }
-    internal virtual void TakeAction(WallManager wall, Obstacle_StaticInstant staticObstacle)
+    internal virtual void TakeAction(GameObject obstacle, GameObject wall)
     {
         // Define each enemy action in here
-        staticObstacle.ReceiveDamage(i_damage);
+      
 
     }
     #endregion

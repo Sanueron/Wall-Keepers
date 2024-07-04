@@ -7,6 +7,8 @@ public class Obstacle_StaticInstant : BaseSpellsEffects
 {
     private bool b_flinched, b_canFlinch;
     private WaitForSeconds flintchTimer_WFS = new WaitForSeconds(0.5f);
+    private float f_flinchForce = 3.5f;
+    private float f_stopEnemyDelay = 0.3f;
     #region InstantArea Methods
     //Receive target 
     public override void ActivateEffect(Vector3 starPosition, Vector3 target)
@@ -16,36 +18,17 @@ public class Obstacle_StaticInstant : BaseSpellsEffects
     private void OnEnable()
     {
         SetAnimationBool();
-        StartCoroutine(RockWallFlichTimer());
     }
     private void SetAnimationBool()//This method is Only for walls 
     {
      effect_Animator.SetBool("Wall", true);
     }
     //Wait until spell effect finish 
-    private void FixedUpdate()
-    {
-        if (b_spellEffectActiveInBattlefield)
-        {
-            StartCoroutine(CastInBattlefield());
-        }
-        if (b_flinched)
-        {
-            // Aplicamos la fricción
-            Vector3 friccion = -enemyScript.rb_Enemy.velocity.normalized * 0.1f;
-            enemyScript.rb_Enemy.AddForce(friccion, ForceMode2D.Impulse);
-
-            if (enemyScript.rb_Enemy.velocity.y <= 0)
-            {
-                b_flinched = false;
-            }
-        }
-    }
+  
     private void SetTarget(Vector3 target)
     {
         transform.parent = null;
         gameObject.transform.position = target;
-
     }
     internal IEnumerator CastInBattlefield()
     {
@@ -54,51 +37,46 @@ public class Obstacle_StaticInstant : BaseSpellsEffects
         ResetEffect();
     }
     internal void Disable()
-    {
-        
+    {  
         ResetEffect();
     }
     #endregion
     // When enemies collide with the wall, they stop and begin attacking it.
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void Flinch()
     {
-        if(collision.gameObject.layer == 10)
+        foreach (Enemy enemy in enemiesScripts_List)
         {
-            enemyScript = collision.gameObject.GetComponent<Enemy>();
-            if (b_canFlinch)
-            {
-                Flinch(3.0f);
-            }
-        } 
-    }
-
-    private IEnumerator RockWallFlichTimer()
-    {
-        b_canFlinch = true;
-        yield return flintchTimer_WFS;
-        b_canFlinch = false;
-    }
-    public void Flinch(float force)
-    {
-        if (enemyScript.rb_Enemy != null)
-        {
-            b_flinched = true;
-            enemyScript.rb_Enemy.AddForce(transform.up * force, ForceMode2D.Impulse);
-        }
-        else
-        {
-            Debug.Log("No pilla el RB");
+            enemy.rb_Enemy.AddForce(transform.up * f_flinchForce, ForceMode2D.Impulse);
+            StartCoroutine(StopEnemyAfterDelay(enemy, f_stopEnemyDelay));
         }
     }
-    internal void ReceiveDamage(int i_damageReceived)
+    private IEnumerator StopEnemyAfterDelay(Enemy enemy, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        enemy.rb_Enemy.velocity = Vector2.zero;
+        enemy.rb_Enemy.angularVelocity = 0f;  // Si también quieres detener cualquier rotación
+    }
+    internal bool ReceiveDamage(int i_damageReceived)
     {
         print("damaged: "+i_damageReceived);
         f_resistance -= i_damageReceived;
         if (f_resistance < 0)
         {
             Disable();
+            return false;
+        }
+        else
+        {
+              return true;
         }
       
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.layer == i_EnemyLayer)
+        {
+            AddToEnemiesList(collision.gameObject.GetComponent<Enemy>());
+        }
     }
 }
