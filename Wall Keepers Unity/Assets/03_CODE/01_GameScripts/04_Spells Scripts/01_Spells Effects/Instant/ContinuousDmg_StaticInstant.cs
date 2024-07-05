@@ -54,6 +54,13 @@ public class ContinuousDmg_StaticInstant : BaseSpellsEffects
         }
       
     }
+    internal void HurtEnemies()
+    {
+        foreach (Enemy enemy in enemiesScripts_List)
+        {
+            enemy.ReceiveDamage((int)f_damage);
+        }
+    }
     #endregion
     #region Collisions
     // When an enemy enters the area, repeatedly hurt the enemy
@@ -62,13 +69,16 @@ public class ContinuousDmg_StaticInstant : BaseSpellsEffects
         if (collision.gameObject.layer == i_EnemyLayer)
         {
             AddToEnemiesList(collision.gameObject.GetComponent<Enemy>());
-            InvokeRepeating("ContinuousDmg", .0f,f_repeatRate);
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        CancelInvoke("ContinuousDmg");
+        if (collision.gameObject.layer == i_EnemyLayer)
+        {
+            RemoveFromEnemiesList(collision.gameObject.GetComponent<Enemy>());
+        }
+        //CancelInvoke("ContinuousDmg");
     }
     #endregion
 }

@@ -50,17 +50,21 @@ public class SuctionDmg_StaticInstant : BaseSpellsEffects
     }
     internal void Disable()
     {
+        EnemyOut();
+
         ResetEffect();
     }
 
 
     #endregion
+
     #region Suck Methods
     internal void Suck()
     {
         foreach (Enemy enemy in enemiesScripts_List)
         {
             enemy.moveToTarget_transform = gameObject.transform;
+            enemy.b_moveToTarget = true;
         }
     }
     private void EnemyOut()//When the Tornado finish and the Enemy is oustide this collider, the enemy recovers his Movement
@@ -71,6 +75,7 @@ public class SuctionDmg_StaticInstant : BaseSpellsEffects
         }
     }
     #endregion
+
     #region Collisions
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -84,6 +89,7 @@ public class SuctionDmg_StaticInstant : BaseSpellsEffects
     {
         if (collision.gameObject.layer == i_EnemyLayer)
         {
+            collision.gameObject.GetComponent<Enemy>().RestoreTarget();
             RemoveFromEnemiesList(collision.gameObject.GetComponent<Enemy>());
         }
     }

@@ -133,6 +133,7 @@ public class ContinuousDmg_StaticProjectail : BaseSpellsEffects
     }
 
     #endregion
+
     #region Collisions
     // When an enemy enters the area, repeatedly hurt the enemy
     private void OnTriggerEnter2D(Collider2D collision)
@@ -149,9 +150,9 @@ public class ContinuousDmg_StaticProjectail : BaseSpellsEffects
         if(collision.gameObject.layer == i_EnemyLayer)
         {
             RemoveFromEnemiesList(collision.gameObject.GetComponent<Enemy>());
+            CancelInvoke("ContinuousDmg");
         }
-       
-        CancelInvoke("ContinuousDmg");
+
     }
     #endregion
 }

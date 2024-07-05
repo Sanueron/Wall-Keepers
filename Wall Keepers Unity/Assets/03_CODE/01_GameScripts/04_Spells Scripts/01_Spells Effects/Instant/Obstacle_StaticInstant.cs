@@ -58,7 +58,6 @@ public class Obstacle_StaticInstant : BaseSpellsEffects
     }
     internal bool ReceiveDamage(int i_damageReceived)
     {
-        print("damaged: "+i_damageReceived);
         f_resistance -= i_damageReceived;
         if (f_resistance < 0)
         {

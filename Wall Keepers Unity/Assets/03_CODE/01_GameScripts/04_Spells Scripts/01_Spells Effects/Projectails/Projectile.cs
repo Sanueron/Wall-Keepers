@@ -99,6 +99,7 @@ public class Projectile : BaseSpellsEffects
     }
     */
     #endregion
+
     #region Animation Methods
     internal void StartMovement()
     {
@@ -119,6 +120,7 @@ public class Projectile : BaseSpellsEffects
         //Sound
     }
     #endregion
+
     #region Collisions
     // When the enemy collides with this effect (when the collider is enabled), it calls the enemy's ReceiveDamage function.
     private void OnTriggerEnter2D(Collider2D collision)

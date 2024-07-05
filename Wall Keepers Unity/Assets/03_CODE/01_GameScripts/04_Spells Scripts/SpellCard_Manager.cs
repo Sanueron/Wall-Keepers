@@ -19,7 +19,6 @@ public class SpellCard_Manager : MonoBehaviour
     private int i_spellLevel, i_spellAwakeningLvl;
     private float f_damage, f_resistance, f_speed, f_duration, f_repeatRate, f_slowDownValue;
     private int i_battlefieldLayer = 9;
-
     #endregion
 
     #region Spell Effect variables
@@ -101,10 +100,11 @@ public class SpellCard_Manager : MonoBehaviour
         for (int i = 0; i < listOf_spellEffects.Count; i++)
         {
             // Check if spell effect is not still active in battlefield
-            if (!listOf_spellEffects[i].b_spellEffectActiveInBattlefield)
+            if (!listOf_spellEffects[i].b_spellEffectActiveInBattlefield) // Not in battlefield
             {
                 print("Active");
-
+                // Reset Stats
+                listOf_spellEffects[i].SetSpellStatsInSpellEffect(transform, f_damage, f_resistance, f_speed, f_duration, f_repeatRate, f_slowDownValue);
                 // Activate Spell effect
                 listOf_spellEffects[i].ActivateEffect(transform_Projectail_Cast_Position.position, transform.position);
                 // Set spell state to active

@@ -82,7 +82,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: GoingUp
+  m_Name: Instant Cast
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -233,7 +233,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: A_LoopFireWall
+  m_Name: Loop
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -292,29 +292,29 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 1709788598059339686}
-    m_Position: {x: 152.49432, y: 330.44177, z: 0}
+    m_Position: {x: 210, y: 360, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 7106797478069258345}
-    m_Position: {x: 240, y: 210, z: 0}
+    m_Position: {x: -220, y: 660, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4415247192574450916}
-    m_Position: {x: 20, y: 450, z: 0}
+    m_Position: {x: 80, y: 590, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1361734486829015109}
-    m_Position: {x: 370, y: 520, z: 0}
+    m_Position: {x: 420, y: 430, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 8096106049199933324}
-    m_Position: {x: 510, y: 290, z: 0}
+    m_Position: {x: 330, y: 590, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 8208107163380814594}
-    m_Position: {x: 550, y: 650, z: 0}
+    m_Position: {x: 210, y: 510, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: -5717144567309180507}
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
-  m_AnyStatePosition: {x: 0, y: 90, z: 0}
+  m_AnyStatePosition: {x: 0, y: 360, z: 0}
   m_EntryPosition: {x: 0, y: 220, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
@@ -381,7 +381,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Magma
+  m_Name: Loop Extra
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -407,7 +407,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: FinishTornado
+  m_Name: End
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
