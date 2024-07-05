@@ -40,7 +40,10 @@ public class Enemy : MonoBehaviour
     #endregion
     #region Animations
     [Header("Animations")]
-    private int i_WalkHash, i_AttackHash, i_HitHash, i_DefeatedHash;
+    private int i_WalkHash = Animator.StringToHash("Walking"),
+        i_AttackHash = Animator.StringToHash("Attack"), 
+        i_HitHash = Animator.StringToHash("ReceiveHit"),
+        i_DefeatedHash = Animator.StringToHash("Defeated");
     #endregion
 
     #region Unity Life Cycle
@@ -48,7 +51,6 @@ public class Enemy : MonoBehaviour
     {
         SwitchState(EnemyState.Moving);
         GetStats();
-        InitializeAnimations();
        
     }
     private void Update()
@@ -65,13 +67,6 @@ public class Enemy : MonoBehaviour
     #endregion
 
     #region General Methods
-    private void InitializeAnimations()
-    {
-        i_WalkHash = Animator.StringToHash("Walking");
-        i_AttackHash = Animator.StringToHash("Attack");
-        i_HitHash = Animator.StringToHash("ReceiveHit");
-        i_DefeatedHash = Animator.StringToHash("Defeated");
-    }
     private void DetectObstacle()
     {
         int wallLayer = 1 << 6;   // Wall Layer
