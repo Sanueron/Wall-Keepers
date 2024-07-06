@@ -80,14 +80,14 @@ public class SlowDown_StaticProjectail : BaseSpellsEffects
     // When everything is finished, the card is disabled
     private void Explosion()
     {
-        effect_Animator.SetTrigger("Explode");
+        effect_Animator.SetTrigger(i_EnterEnd);
         
         
     }
     private void StartLake()
     {
         StartCoroutine(Lake());
-        effect_Animator.SetTrigger("Lake");
+        effect_Animator.SetTrigger(i_EnterExtraLoop);
     }
     private IEnumerator Lake()
     {
@@ -99,7 +99,7 @@ public class SlowDown_StaticProjectail : BaseSpellsEffects
     internal void StartMovement()
     {
         startTime = Time.time;
-        effect_Animator.SetTrigger("Casted");
+        effect_Animator.SetTrigger(i_EnterLoop);
         b_startMovement = true;
     }
    
@@ -138,13 +138,15 @@ public class SlowDown_StaticProjectail : BaseSpellsEffects
             cuando un enemigo entra y no hacer un foreach a una lista */
            Enemy enemyScript =  collision.gameObject.GetComponent<Enemy>();
            SlowDown(enemyScript);
-          
+            AddToEnemiesList(collision.gameObject.GetComponent<Enemy>());// Esto es para el daño de impacto
+
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if(collision.gameObject.layer == i_EnemyLayer)
         {
+            RemoveFromEnemiesList(collision.gameObject.GetComponent<Enemy>());  
             Enemy enemyScript = collision.gameObject.GetComponent<Enemy>();
             EnemyOut(enemyScript);
         }

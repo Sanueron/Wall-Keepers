@@ -6,6 +6,8 @@ TagManager:
   tags:
   - FireBall
   - Wall
+  - EnemyManager
+  - Enemy
   layers:
   - Default
   - TransparentFX

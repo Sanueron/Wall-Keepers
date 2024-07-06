@@ -54,39 +54,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4773681600118774583, guid: 0544668d66cf40b42889f2c2f47dfe5e, type: 3}
       propertyPath: m_Size.x
-      value: 12
+      value: 9.430519
       objectReference: {fileID: 0}
     - target: {fileID: 4773681600118774583, guid: 0544668d66cf40b42889f2c2f47dfe5e, type: 3}
       propertyPath: m_Size.y
-      value: 7
+      value: 4.6308784
       objectReference: {fileID: 0}
     - target: {fileID: 4773681600118774583, guid: 0544668d66cf40b42889f2c2f47dfe5e, type: 3}
       propertyPath: m_Offset.x
-      value: 0.5
+      value: 0.0768137
+      objectReference: {fileID: 0}
+    - target: {fileID: 4773681600118774583, guid: 0544668d66cf40b42889f2c2f47dfe5e, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.1168766
       objectReference: {fileID: 0}
     - target: {fileID: 4773681600118774583, guid: 0544668d66cf40b42889f2c2f47dfe5e, type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.x
-      value: 0.48233813
+      value: 0.4010913
       objectReference: {fileID: 0}
     - target: {fileID: 4773681600118774583, guid: 0544668d66cf40b42889f2c2f47dfe5e, type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.y
-      value: 0.54654443
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4773681600118774583, guid: 0544668d66cf40b42889f2c2f47dfe5e, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
-      value: 0.62866205
+      value: 12.79
       objectReference: {fileID: 0}
     - target: {fileID: 4773681600118774583, guid: 0544668d66cf40b42889f2c2f47dfe5e, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.y
-      value: 0.59999996
+      value: 13.770865
       objectReference: {fileID: 0}
     - target: {fileID: 4773681600118774583, guid: 0544668d66cf40b42889f2c2f47dfe5e, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 13.44812
+      value: 12.79
       objectReference: {fileID: 0}
     - target: {fileID: 4773681600118774583, guid: 0544668d66cf40b42889f2c2f47dfe5e, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 9.18
+      value: 13.770865
       objectReference: {fileID: 0}
     - target: {fileID: 4773681600118774583, guid: 0544668d66cf40b42889f2c2f47dfe5e, type: 3}
       propertyPath: m_SpriteTilingProperty.adaptiveTilingThreshold
@@ -94,7 +98,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7496801940804510461, guid: 0544668d66cf40b42889f2c2f47dfe5e, type: 3}
       propertyPath: m_Name
-      value: ProjectailPlusAreaEffect_MudBall
+      value: SlowDownEffect_MudBall
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -2498564269224096355, guid: 0544668d66cf40b42889f2c2f47dfe5e, type: 3}
@@ -181,7 +185,7 @@ Animator:
   m_GameObject: {fileID: 1399397781384191132}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: 9a240706bc5a9bb47a5b8e7ddb1a76ec, type: 2}
+  m_Controller: {fileID: 22100000, guid: 65d0ed5afa0778c458991e8aba61b09d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -206,4 +210,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effect_Animator: {fileID: 6072970367001265856}
+  enemiesScripts_List: []
   v3_Projectail_Cast_Position: {x: 0, y: 0, z: 0}

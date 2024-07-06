@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 763282961913728372}
   m_Layer: 10
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51,8 +51,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseStats: {fileID: 11400000, guid: 0da133b22e3bd7948b365b2e8464e04d, type: 2}
   enemy_animator: {fileID: 4639288644109584130}
+  e_enemyState: 0
   moveToTarget_transform: {fileID: 0}
   enemyAction: {fileID: 5113152881919228058}
+  i_spawnNumber: 0
 --- !u!114 &5113152881919228058
 MonoBehaviour:
   m_ObjectHideFlags: 0

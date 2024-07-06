@@ -28,13 +28,14 @@ public class Enemy : MonoBehaviour
     #region Moving Variables
     internal Transform wallToTarget_transform;
     [SerializeField] internal Transform moveToTarget_transform;
+    internal Transform Origin_moveToTarget_transform;
     private Transform wallTarget_transform;
     internal float f_speedDecreasedValue = 1.0f;
     #endregion
     #region Action
     [Header("Action")]
     [SerializeField] BaseEnemyAction enemyAction;
-
+    public int i_spawnNumber;
 
 
     #endregion
@@ -47,6 +48,13 @@ public class Enemy : MonoBehaviour
     #endregion
 
     #region Unity Life Cycle
+
+
+    private void OnEnable()
+    {
+        Origin_moveToTarget_transform = moveToTarget_transform;
+    }
+
     private void Awake()
     {
         SwitchState(EnemyState.Moving);
@@ -186,7 +194,7 @@ public class Enemy : MonoBehaviour
     }
     internal void RestoreTarget()
     {
-        moveToTarget_transform = wallTarget_transform;
+        moveToTarget_transform = Origin_moveToTarget_transform;
     }
     internal void ReceiveDamage(int i_damageReceived)
     {
