@@ -58,10 +58,11 @@ public class Obstacle_StaticInstant : BaseSpellsEffects
     }
     internal bool ReceiveDamage(int i_damageReceived)
     {
+        print("Receive damage");
         f_resistance -= i_damageReceived;
         if (f_resistance < 0)
         {
-            Disable();
+            StartEndAnimation();
             return false;
         }
         else

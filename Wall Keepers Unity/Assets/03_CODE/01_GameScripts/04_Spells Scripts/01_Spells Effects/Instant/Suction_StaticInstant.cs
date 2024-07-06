@@ -46,16 +46,9 @@ public class SuctionDmg_StaticInstant : BaseSpellsEffects
  
     internal void FinishLoop()
     {
-        effect_Animator.SetTrigger("FinishLoop");
+        effect_Animator.SetTrigger(i_EnterEnd);
     }
-    internal void Disable()
-    {
-        EnemyOut();
-
-        ResetEffect();
-    }
-
-
+  
     #endregion
 
     #region Suck Methods
@@ -67,13 +60,7 @@ public class SuctionDmg_StaticInstant : BaseSpellsEffects
             enemy.b_moveToTarget = true;
         }
     }
-    private void EnemyOut()//When the Tornado finish and the Enemy is oustide this collider, the enemy recovers his Movement
-    {
-        foreach (Enemy enemy in enemiesScripts_List)
-        {
-            enemy.RestoreTarget();
-        }
-    }
+ 
     #endregion
 
     #region Collisions

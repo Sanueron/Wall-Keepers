@@ -86,11 +86,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6890344747032341311, guid: 16a64cdb6f7ab5140ab2d251b6fb4155, type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.x
-      value: 0.5
+      value: 0.49999976
       objectReference: {fileID: 0}
     - target: {fileID: 6890344747032341311, guid: 16a64cdb6f7ab5140ab2d251b6fb4155, type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.y
-      value: 0.5
+      value: 0.5282601
       objectReference: {fileID: 0}
     - target: {fileID: 6890344747032341311, guid: 16a64cdb6f7ab5140ab2d251b6fb4155, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
@@ -115,7 +115,7 @@ PrefabInstance:
     - target: {fileID: 9139954799275499290, guid: 16a64cdb6f7ab5140ab2d251b6fb4155, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 22100000, guid: 7a0589de922f8174eaa1033bef71b5e9, type: 2}
+      objectReference: {fileID: 22100000, guid: 877d780dfd9f0f243befeddebfc96e2a, type: 2}
     m_RemovedComponents:
     - {fileID: -8391791005168630368, guid: 16a64cdb6f7ab5140ab2d251b6fb4155, type: 3}
     m_RemovedGameObjects: []
@@ -146,6 +146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effect_Animator: {fileID: 4469347393349047284}
+  enemiesScripts_List: []
 --- !u!50 &2663926500911693928
 Rigidbody2D:
   serializedVersion: 4

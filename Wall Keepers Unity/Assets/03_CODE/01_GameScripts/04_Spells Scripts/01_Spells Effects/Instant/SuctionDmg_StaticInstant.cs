@@ -13,16 +13,6 @@ public class Suction_StaticInstant : BaseSpellsEffects
         SetTarget(target);
     }
 
-    private void OnEnable()
-    {
-        SetAnimationBool();
-    }
-    private void SetAnimationBool()
-    {
-      
-        effect_Animator.SetBool("Wall", true);
-
-    }
     //Wait until spell effect finish 
     private void FixedUpdate()
     {
@@ -46,7 +36,8 @@ public class Suction_StaticInstant : BaseSpellsEffects
  
     internal void FinishLoop()
     {
-        effect_Animator.SetTrigger("FinishLoop");
+        print("Finished?");
+        effect_Animator.SetTrigger(i_EnterEnd);
     }
     internal void Disable()
     {
@@ -56,28 +47,7 @@ public class Suction_StaticInstant : BaseSpellsEffects
 
     #endregion
 
-    #region Collision Methods
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.gameObject.layer == i_EnemyLayer)
-        {
-            AddToEnemiesList(collision.gameObject.GetComponent<Enemy>());
-            InvokeRepeating("ContinuousDmg", .0f, f_repeatRate);
-            Suck();
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.layer == i_EnemyLayer)
-        {
-            RemoveFromEnemiesList(collision.gameObject.GetComponent<Enemy>());
-            EnemyOut();
-            CancelInvoke("ContinuousDmg");
-        }
-    }
-    #endregion
+   
     #region Enemy Effect Methods
     internal void Suck()
     {
@@ -86,22 +56,28 @@ public class Suction_StaticInstant : BaseSpellsEffects
             enemy.moveToTarget_transform = gameObject.transform;
         }   
     }
-    private void EnemyOut()//When the Tornado finish and the Enemy is oustide this collider, the enemy recovers his Movement
+
+    #endregion
+
+    #region Collision Methods
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        foreach (Enemy enemy in enemiesScripts_List)
+        if (collision.gameObject.layer == i_EnemyLayer)
         {
-            enemy.RestoreTarget();
+            AddToEnemiesList(collision.gameObject.GetComponent<Enemy>());
+            
         }
     }
-    private void ContinuousDmg()
+
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        foreach (Enemy enemy in enemiesScripts_List)
+        if (collision.gameObject.layer == i_EnemyLayer)
         {
-            enemy.ReceiveDamage((int)f_damage);
+            RemoveFromEnemiesList(collision.gameObject.GetComponent<Enemy>());
+
         }
     }
     #endregion
-
-
 
 }

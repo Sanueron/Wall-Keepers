@@ -11,33 +11,12 @@ public class InstantDamage : BaseSpellsEffects
         SetTarget(target);
     }
     //Wait until spell effect finish 
-    private void FixedUpdate()
-    {
-        if (b_spellEffectActiveInBattlefield)
-        {
-            StartCoroutine(CastInBattlefield());
-        }
-    }
-    private void SetTarget(Vector3 target)
+     private void SetTarget(Vector3 target)
     {
         transform.parent = null;
         gameObject.transform.position = target;
 
     }
-    internal IEnumerator CastInBattlefield()
-    {
-        WaitForSeconds wait_durationInBattlefield = new WaitForSeconds(f_duration);
-        yield return wait_durationInBattlefield;
-        ResetEffect();
-    }
-    internal void Disable()
-    {
-        ResetEffect();
-    }
-
-
-
-
     #endregion
     #region Collisions
     // When the enemy collides with this effect (when the collider is enabled), it calls the enemy's ReceiveDamage function.
@@ -45,8 +24,7 @@ public class InstantDamage : BaseSpellsEffects
     {
         if (collision.gameObject.layer == i_EnemyLayer)
         {
-            print("Collision");
-            collision.GetComponent<Enemy>().ReceiveDamage((int)f_damage);//We should use the same data type  ¿Float or Int?
+            AddToEnemiesList(collision.gameObject.GetComponent<Enemy>());
         }
     }
     #endregion

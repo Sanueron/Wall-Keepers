@@ -11,49 +11,28 @@ public class ContinuousDmg_StaticInstant : BaseSpellsEffects
     {
         SetTarget(target);
     }
-
-    private void OnEnable()
-    {
-        SetAnimationBool();
-    }
-    private void SetAnimationBool()//This method is Only for walls 
-    {
-     effect_Animator.SetBool("Wall", true);
-    }
-    //Wait until spell effect finish 
-    private void FixedUpdate()
-    {
-        if (b_spellEffectActiveInBattlefield)
-        {
-            StartCoroutine(CastInBattlefield());
-        }
-    }
     private void SetTarget(Vector3 target)
     {
         transform.parent = null;
         gameObject.transform.position = target;
 
     }
-    internal void Disable()
+    //Wait until spell effect finish 
+    private void FixedUpdate()//1º Loop FireWall
     {
-        ResetEffect();
+        if (b_spellEffectActiveInBattlefield)
+        {
+            StartCoroutine(CastInBattlefield());
+        }
     }
-
+ 
     internal IEnumerator CastInBattlefield()
     {
         WaitForSeconds wait_durationInBattlefield = new WaitForSeconds(f_duration);
         yield return wait_durationInBattlefield;
-        ResetEffect();
+        effect_Animator.SetTrigger(i_EnterEnd);//When the is finised, start End animation
     }
  
-    public void ContinuousDmg()
-    {
-        foreach (Enemy enemy in enemiesScripts_List)
-        {
-            enemy.ReceiveDamage((int)f_damage);
-        }
-      
-    }
     internal void HurtEnemies()
     {
         foreach (Enemy enemy in enemiesScripts_List)
@@ -78,7 +57,7 @@ public class ContinuousDmg_StaticInstant : BaseSpellsEffects
         {
             RemoveFromEnemiesList(collision.gameObject.GetComponent<Enemy>());
         }
-        //CancelInvoke("ContinuousDmg");
+        
     }
     #endregion
 }

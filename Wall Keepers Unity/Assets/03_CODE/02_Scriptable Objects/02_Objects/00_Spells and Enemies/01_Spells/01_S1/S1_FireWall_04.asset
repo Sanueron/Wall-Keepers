@@ -17,7 +17,7 @@ MonoBehaviour:
   i_spellStarsTier: 1
   i_mana_cost: 2
   f_dmg: 150
-  f_duration: 1
+  f_duration: 0.5
   f_projectileSpeed: 1
   f_resistance: 0
   requiredElementalRune: {fileID: 11400000, guid: b5ee84b6f16ee1644953e2c67339c918, type: 2}
@@ -31,6 +31,8 @@ MonoBehaviour:
   spr_spellRequiredCard_2: {fileID: 0}
   i_spellRequired_1_Id: 0
   i_spellRequired_2_Id: 0
+  f_slowDown_value: 0
+  f_attackInterval: 1
   f_repeatingDmgCoolDown: 1
   e_CastingType: 2
   e_Effect: 2
@@ -38,7 +40,6 @@ MonoBehaviour:
   e_2Element: 0
   Description: Creates a fire wall that deals damage over time to enemies inside
     it.
-  f_attackInterval: 1
   b_isMerged: 0
   fusionSprite1: {fileID: 0}
   fusionSprite2: {fileID: 0}

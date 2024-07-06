@@ -81,15 +81,14 @@ public class ContinuousDmg_StaticProjectail : BaseSpellsEffects
     // When everything is finished, the card is disabled
     private void Explosion()
     {
-        effect_Animator.SetTrigger("Explode");
-        
-        
+        effect_Animator.SetTrigger(i_EnterEnd);
+     
     }
 
     private void StartLake()
     {
         StartCoroutine(Lake());
-        effect_Animator.SetTrigger("Lake");
+        effect_Animator.SetTrigger(i_EnterExtraLoop);
     }
     private IEnumerator Lake()
     {
@@ -101,7 +100,7 @@ public class ContinuousDmg_StaticProjectail : BaseSpellsEffects
     internal void StartMovement()
     {
         startTime = Time.time;
-        effect_Animator.SetTrigger("Casted");
+        effect_Animator.SetTrigger(i_EnterLoop);
         b_startMovement = true;
     }
    
@@ -111,10 +110,7 @@ public class ContinuousDmg_StaticProjectail : BaseSpellsEffects
     {
         b_finishAnimation = true;
     }
-    internal void PlayExplosionClip()
-    {
-        //Sound
-    }
+
     internal void RestoreRotation()
     {
         transform.rotation = InitialRotation;
@@ -122,14 +118,6 @@ public class ContinuousDmg_StaticProjectail : BaseSpellsEffects
     internal void Exploded()
     {
         spell_SpriteRenderer.sortingOrder = spell_SpriteRenderer.sortingOrder - 1;
-    }
- 
-    public void ContinuousDmg()
-    {
-        foreach (Enemy enemy in enemiesScripts_List)
-        {
-            enemy.ReceiveDamage((int)f_damage);
-        }
     }
 
     #endregion
@@ -141,7 +129,7 @@ public class ContinuousDmg_StaticProjectail : BaseSpellsEffects
         if (collision.gameObject.layer == i_EnemyLayer)
         {
             AddToEnemiesList(collision.gameObject.GetComponent<Enemy>());
-            InvokeRepeating("ContinuousDmg", .0f, f_repeatRate);
+        
         }
     }
 
@@ -150,7 +138,6 @@ public class ContinuousDmg_StaticProjectail : BaseSpellsEffects
         if(collision.gameObject.layer == i_EnemyLayer)
         {
             RemoveFromEnemiesList(collision.gameObject.GetComponent<Enemy>());
-            CancelInvoke("ContinuousDmg");
         }
 
     }

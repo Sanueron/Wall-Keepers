@@ -99,7 +99,7 @@ PrefabInstance:
     - target: {fileID: 9139954799275499290, guid: 16a64cdb6f7ab5140ab2d251b6fb4155, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 22100000, guid: 179cc51b847be4b4dadeaf3722458b73, type: 2}
+      objectReference: {fileID: 22100000, guid: 7ffa3ed69b02d3b478cde27b51c0bf18, type: 2}
     m_RemovedComponents:
     - {fileID: -8391791005168630368, guid: 16a64cdb6f7ab5140ab2d251b6fb4155, type: 3}
     - {fileID: 6890344747032341311, guid: 16a64cdb6f7ab5140ab2d251b6fb4155, type: 3}
@@ -139,6 +139,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effect_Animator: {fileID: 283448477421466657}
+  enemiesScripts_List: []
 --- !u!58 &7468555481515185299
 CircleCollider2D:
   m_ObjectHideFlags: 0

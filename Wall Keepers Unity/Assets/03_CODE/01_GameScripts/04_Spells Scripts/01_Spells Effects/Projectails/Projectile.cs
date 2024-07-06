@@ -66,58 +66,27 @@ public class Projectile : BaseSpellsEffects
         transform.position = Vector3.Lerp(v3_startPosition, v3_endPosition, fractionOfJourney);
         if (transform.position == v3_endPosition)
         {
-            StartCoroutine(Explosion());
+            Explosion();
             b_startMovement = false;
         }
     }
     // When everything is finished, the card is disabled
-    private IEnumerator Explosion()
+    private void Explosion()
     {
-        effect_Animator.SetTrigger("Explode");
-        //Wait until the Explosion animation has finished 
-        while (!b_finishAnimation)
-        {
-            yield return null;
-        }
-        b_finishAnimation = false;
-        ResetEffect();
+        effect_Animator.SetTrigger(i_EnterEnd);
     }
-    /*If We want to Separate Projectail UP and Projectail Down Animations again 
-
-     if (fractionOfJourney > 0.5f)
-        {
-            effect_Animator.SetTrigger("GoingDown");
-        }
-    private void DirectlyDown()
-    {
-        if (v3_endPosition.y <= 3.5f)
-        {
-            effect_Animator.SetBool("Close", true);
-            effect_Animator.SetTrigger("DirectlyDown");
-
-        }
-    }
-    */
     #endregion
 
     #region Animation Methods
     internal void StartMovement()
     {
         startTime = Time.time;
-        effect_Animator.SetTrigger("Casted");
+        effect_Animator.SetTrigger(i_EnterLoop);
         b_startMovement = true;
     }
     internal void RestoreRotation()
     {
         transform.rotation = InitialRotation;
-    }
-    public void FinishAnimation()
-    {
-        b_finishAnimation = true;
-    }
-    internal void PlayExplosionClip()
-    {
-        //Sound
     }
     #endregion
 

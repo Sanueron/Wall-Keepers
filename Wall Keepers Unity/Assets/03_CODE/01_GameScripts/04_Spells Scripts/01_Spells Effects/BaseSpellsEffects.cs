@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.EventSystems.EventTrigger;
 
 public class BaseSpellsEffects : MonoBehaviour
 {
@@ -13,6 +14,15 @@ public class BaseSpellsEffects : MonoBehaviour
    [SerializeField] internal List <Enemy> enemiesScripts_List = new List<Enemy>();
     protected int i_EnemyLayer = 10;
     #endregion
+    #region Animations
+    [Header("Animations")]
+    protected int i_EnterLoop = Animator.StringToHash("Enter Loop"),
+        i_EnterEnd = Animator.StringToHash("Enter End"),
+        i_EnterExtraLoop = Animator.StringToHash("Enter Extra Loop"),
+        i_EnterExtraEnd = Animator.StringToHash("Enter Extra End");
+    #endregion
+
+
     #region Local Common Methods
     internal void SetSpellStatsInSpellEffect(Transform tParent, float dmg, float res, float speed, float dur, float repeatRate, float slowDownValue)
     {
@@ -40,13 +50,21 @@ public class BaseSpellsEffects : MonoBehaviour
     }
     //Coroutine to wait until the spell establisehed duration
 
+
+    #endregion
+    #region PlaySounds
     internal void PlayCastClip()
     {
 
         //Sound
     }
+    internal void PlayExplosionClip()
+    {
+        //Sound
+    }
     #endregion
 
+    #region Enemies List
     protected void AddToEnemiesList(Enemy enemy)
     {
         enemiesScripts_List.Add(enemy);
@@ -57,5 +75,34 @@ public class BaseSpellsEffects : MonoBehaviour
 
         enemiesScripts_List.Remove(enemy);
     }
+    #endregion
+
+
+    protected void StartEndAnimation()
+    {
+        effect_Animator.SetTrigger(i_EnterEnd);
+    }
+
+    protected void StartLoopAnimation()
+    {
+        effect_Animator.SetTrigger(i_EnterLoop);
+    }
+
+    internal void RestoreEnemyTarget()
+    {
+        foreach (Enemy enemy in enemiesScripts_List)
+        {
+            enemy.RestoreTarget();
+        }
+    }
+
+    internal void HurtEnemies()
+    {
+        foreach (Enemy enemy in enemiesScripts_List)
+        {
+            enemy.ReceiveDamage((int)f_damage);
+        }
+    }
+
 
 }

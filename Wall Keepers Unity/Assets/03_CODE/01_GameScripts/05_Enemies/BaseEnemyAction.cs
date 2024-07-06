@@ -22,7 +22,6 @@ public class BaseEnemyAction : MonoBehaviour
     {
         i_hp = enemyStats.i_hp;
         i_damage = enemyStats.i_damage;
-        print("El base dmg es: " + i_damage);
         i_speed = enemyStats.i_speed;
     }
     internal virtual void TakeAction(GameObject obstacle, GameObject wall)

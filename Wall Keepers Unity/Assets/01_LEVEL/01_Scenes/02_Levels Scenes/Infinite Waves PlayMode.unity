@@ -808,6 +808,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: InstantAreaEffect_FireWall
       objectReference: {fileID: 0}
+    - target: {fileID: 5966984580797030105, guid: 4cd8a074d484d704c8c4e41cd589841e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2014,23 +2018,23 @@ PrefabInstance:
     - target: {fileID: 5385874556896161994, guid: 71f24c3a9548cd8459c88d9a3e793d44, type: 3}
       propertyPath: 'testSpell.Array.data[1]'
       value: 
-      objectReference: {fileID: 2327403631427265565, guid: ff6dbcbdf5744fc43bdebc9b7686aa7d, type: 3}
+      objectReference: {fileID: 6727009534614784051, guid: a203cb86f52e8a148a91b2e74c4676e1, type: 3}
     - target: {fileID: 5385874556896161994, guid: 71f24c3a9548cd8459c88d9a3e793d44, type: 3}
       propertyPath: 'testSpell.Array.data[2]'
       value: 
-      objectReference: {fileID: 2281120582499952988, guid: 32e6cea71a439c84282b4e21652c8bc4, type: 3}
+      objectReference: {fileID: 7719444508412569677, guid: a7d28c15866c7004d98c96c6521b186b, type: 3}
     - target: {fileID: 5385874556896161994, guid: 71f24c3a9548cd8459c88d9a3e793d44, type: 3}
       propertyPath: 'testSpell.Array.data[3]'
       value: 
-      objectReference: {fileID: 3674581023105877773, guid: c1c1f6cf6f5257c438855b3ca7e00d31, type: 3}
+      objectReference: {fileID: 6727009534614784051, guid: a203cb86f52e8a148a91b2e74c4676e1, type: 3}
     - target: {fileID: 5385874556896161994, guid: 71f24c3a9548cd8459c88d9a3e793d44, type: 3}
       propertyPath: 'testSpell.Array.data[4]'
       value: 
-      objectReference: {fileID: 6162980890195160768, guid: 4ad41361dc484e446a783549e188f7d6, type: 3}
+      objectReference: {fileID: 3674581023105877773, guid: c1c1f6cf6f5257c438855b3ca7e00d31, type: 3}
     - target: {fileID: 5385874556896161994, guid: 71f24c3a9548cd8459c88d9a3e793d44, type: 3}
       propertyPath: 'testSpell.Array.data[5]'
       value: 
-      objectReference: {fileID: 6727009534614784051, guid: a203cb86f52e8a148a91b2e74c4676e1, type: 3}
+      objectReference: {fileID: 1118882952174717138, guid: dca42d3b935f370448c5b490db7b5df2, type: 3}
     - target: {fileID: 5385874556896161994, guid: 71f24c3a9548cd8459c88d9a3e793d44, type: 3}
       propertyPath: 'testSpell.Array.data[6]'
       value: 
@@ -2038,11 +2042,11 @@ PrefabInstance:
     - target: {fileID: 5385874556896161994, guid: 71f24c3a9548cd8459c88d9a3e793d44, type: 3}
       propertyPath: 'testSpell.Array.data[7]'
       value: 
-      objectReference: {fileID: 7719444508412569677, guid: a7d28c15866c7004d98c96c6521b186b, type: 3}
+      objectReference: {fileID: 1118882952174717138, guid: dca42d3b935f370448c5b490db7b5df2, type: 3}
     - target: {fileID: 5385874556896161994, guid: 71f24c3a9548cd8459c88d9a3e793d44, type: 3}
       propertyPath: 'testSpell.Array.data[8]'
       value: 
-      objectReference: {fileID: 4685049368777396939, guid: 6705ba25b9778114fa52a4f950555b61, type: 3}
+      objectReference: {fileID: 1118882952174717138, guid: dca42d3b935f370448c5b490db7b5df2, type: 3}
     - target: {fileID: 5385874556896161994, guid: 71f24c3a9548cd8459c88d9a3e793d44, type: 3}
       propertyPath: 'testSpell.Array.data[9]'
       value: 

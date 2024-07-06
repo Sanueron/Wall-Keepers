@@ -12,7 +12,7 @@ public class Enemy : MonoBehaviour
     internal int i_hp, i_damage, i_speed, i_startSpeed;
     internal float f_rangeOfAction;
     internal Rigidbody2D rb_Enemy;
-    [SerializeField]private Animator enemy_animator;
+    [SerializeField] private Animator enemy_animator;
     private bool b_CannotWalk;
     WallManager wallScript;
     Obstacle_StaticInstant targetObstacle; // cuando lo detecte el raycast guardarlo aqui 
@@ -20,7 +20,7 @@ public class Enemy : MonoBehaviour
     GameObject go_wall;
     #endregion
     #region Enemy States
-    internal enum EnemyState { Moving, TakingAction, ReceiveDamage, Defeated,Attack, Stop }
+    internal enum EnemyState { Moving, TakingAction, ReceiveDamage, Defeated, Attack, Stop }
     [SerializeField] internal EnemyState e_enemyState;
     internal bool b_targetDetected = false;
     internal bool b_moveToTarget, b_receivingDamage;
@@ -29,7 +29,7 @@ public class Enemy : MonoBehaviour
     internal Transform wallToTarget_transform;
     [SerializeField] internal Transform moveToTarget_transform;
     private Transform wallTarget_transform;
-    internal float f_speedDecreasedValue=1.0f;
+    internal float f_speedDecreasedValue = 1.0f;
     #endregion
     #region Action
     [Header("Action")]
@@ -41,7 +41,7 @@ public class Enemy : MonoBehaviour
     #region Animations
     [Header("Animations")]
     private int i_WalkHash = Animator.StringToHash("Walking"),
-        i_AttackHash = Animator.StringToHash("Attack"), 
+        i_AttackHash = Animator.StringToHash("Attack"),
         i_HitHash = Animator.StringToHash("ReceiveHit"),
         i_DefeatedHash = Animator.StringToHash("Defeated");
     #endregion
@@ -51,7 +51,7 @@ public class Enemy : MonoBehaviour
     {
         SwitchState(EnemyState.Moving);
         GetStats();
-       
+
     }
     private void Update()
     {
@@ -84,30 +84,28 @@ public class Enemy : MonoBehaviour
             {
                 go_wall = raycastHit2D.collider.gameObject;
                 print("Detecta el Wall " + e_enemyState);
-                if (e_enemyState != EnemyState.TakingAction)
-                {
-                    print("cambia a Taking Action");
+              
                     SwitchState(EnemyState.TakingAction);
-                }
+                
             }
             else if (raycastHit2D.collider.gameObject.GetComponent<Obstacle_StaticInstant>() != null
                 && !b_receivingDamage)
             {
                 print("Detecta el obstaculo");
                 go_obstacle = raycastHit2D.collider.gameObject;
-                if (e_enemyState != EnemyState.TakingAction)
-                {
-                    print("cambia a Taking Action");
-                    SwitchState(EnemyState.TakingAction);
-                }
+              
+                SwitchState(EnemyState.TakingAction);
+
             }
+           
 
         }
         else
         {
-            if (e_enemyState != EnemyState.Moving && !b_receivingDamage)
+            if (!b_receivingDamage)
             {
                 print("Moving");
+               
                 SwitchState(EnemyState.Moving);
             }
         }
@@ -120,12 +118,12 @@ public class Enemy : MonoBehaviour
     }
     internal void SwitchState(EnemyState newState)
     {
-        e_enemyState=newState;
+        e_enemyState = newState;
         switch (e_enemyState)
         {
             case EnemyState.Moving:
                 go_obstacle = null;
-                go_wall=null;
+                go_wall = null;
                 enemy_animator.SetTrigger(i_WalkHash);
                 b_moveToTarget = true; // Stop moving
                 break;
@@ -144,7 +142,7 @@ public class Enemy : MonoBehaviour
                 // Play anim
                 enemy_animator.SetTrigger(i_DefeatedHash);
                 break;
-      
+
         }
     }
     //Metodo para checkear 
@@ -168,13 +166,16 @@ public class Enemy : MonoBehaviour
     }
     private void MoveToTarget()
     {
-        var step = i_speed* f_speedDecreasedValue * Time.deltaTime; // calculate distance to move
+        var step = i_speed * f_speedDecreasedValue * Time.deltaTime; // calculate distance to move
         transform.position = Vector3.MoveTowards(transform.position, moveToTarget_transform.position, step);
     }
     internal void EndReceiveDamage()//Event that triggers when the damage animation ends so that the enemy knows what to do next.
     {
         b_receivingDamage = false;
     }
+
+   
+
     #endregion
 
     #region External Methods
