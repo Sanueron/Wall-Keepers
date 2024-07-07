@@ -45,6 +45,12 @@ public class Enemy : MonoBehaviour
     #endregion
 
     #region Unity Life Cycle
+    private void Awake()
+    {
+        SwitchState(EnemyState.Moving);
+        GetStats();
+
+    }
     private void Start()
     {
         // Set Initial Move to target pos and wall pos.
@@ -54,12 +60,12 @@ public class Enemy : MonoBehaviour
         RestoreTarget();
 
     }
-    private void Awake()
+    private void OnEnable()
     {
-        SwitchState(EnemyState.Moving);
-        GetStats();
-
+        // Add to current round enemies list
+        //RestoreTarget();
     }
+
     private void Update()
     {
         if (b_moveToTarget) // No obstacle, moves towards wall
@@ -226,6 +232,12 @@ public class Enemy : MonoBehaviour
     internal void RemoveFromBattlefield()
     {
         gameObject.SetActive(false); // Disactivate enemy
+    }
+    internal void ResetEnemy()
+    {
+        // Set enemy stats and States to base
+        SwitchState(EnemyState.Moving);
+        GetStats();
     }
     #endregion
 
