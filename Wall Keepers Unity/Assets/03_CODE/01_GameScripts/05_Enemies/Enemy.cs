@@ -1,8 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using static Lofelt.NiceVibrations.MMSwitch;
 
 public class Enemy : MonoBehaviour
 {
@@ -28,7 +25,7 @@ public class Enemy : MonoBehaviour
     #region Moving Variables
     internal Transform wallToTarget_transform;
     [SerializeField] internal Transform moveToTarget_transform;
-    internal Transform Origin_moveToTarget_transform;
+    internal Transform wall_moveToTarget_transform;
     private Transform wallTarget_transform;
     internal float f_speedDecreasedValue = 1.0f;
     #endregion
@@ -48,9 +45,14 @@ public class Enemy : MonoBehaviour
     #endregion
 
     #region Unity Life Cycle
-    private void OnEnable()
+    private void Start()
     {
-        Origin_moveToTarget_transform = moveToTarget_transform;
+        // Set Initial Move to target pos and wall pos.
+        GameObject go_wallMoveTo = GameObject.Find("Enemies Wall Move to Target");
+        wall_moveToTarget_transform = go_wallMoveTo.transform;
+        moveToTarget_transform = wall_moveToTarget_transform;
+        RestoreTarget();
+
     }
     private void Awake()
     {
@@ -197,7 +199,10 @@ public class Enemy : MonoBehaviour
     }
     internal void RestoreTarget()
     {
-        moveToTarget_transform = Origin_moveToTarget_transform;
+        Vector3 wallMoveToTargetPostion = new Vector3(transform.position.x,
+            wall_moveToTarget_transform.position.y, wall_moveToTarget_transform.position.z);
+
+        moveToTarget_transform.position = wallMoveToTargetPostion;
     }
     internal void OutOfAreaApplyingForceToEnemy()
     {
