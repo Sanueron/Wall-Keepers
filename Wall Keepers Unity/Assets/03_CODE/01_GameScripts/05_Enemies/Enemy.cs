@@ -23,7 +23,7 @@ public class Enemy : MonoBehaviour
     internal enum EnemyState { Moving, TakingAction, ReceiveDamage, Defeated, Attack, Stop }
     [SerializeField] internal EnemyState e_enemyState;
     internal bool b_targetDetected = false;
-    internal bool b_moveToTarget, b_receivingDamage;
+    internal bool b_moveToTarget, b_receivingDamage, b_beingAttracktedBySpell;
     #endregion
     #region Moving Variables
     internal Transform wallToTarget_transform;
@@ -60,9 +60,15 @@ public class Enemy : MonoBehaviour
     }
     private void Update()
     {
-        if (b_moveToTarget)
+        if (b_moveToTarget) // No obstacle, moves towards wall
         {
             MoveToTarget();
+            return;
+        }
+        if (b_beingAttracktedBySpell)
+        {
+            MoveToTarget();
+            return;
         }
     }
     private void FixedUpdate()
@@ -125,7 +131,7 @@ public class Enemy : MonoBehaviour
                 go_obstacle = null;
                 go_wall = null;
                 enemy_animator.SetBool(i_WalkHash, true);
-                b_moveToTarget = true; // Stop moving
+                b_moveToTarget = true; 
                 break;
             case EnemyState.TakingAction:
                 b_moveToTarget = false; // Stop moving
@@ -192,6 +198,10 @@ public class Enemy : MonoBehaviour
     internal void RestoreTarget()
     {
         moveToTarget_transform = Origin_moveToTarget_transform;
+    }
+    internal void OutOfAreaApplyingForceToEnemy()
+    {
+        b_beingAttracktedBySpell = false;
     }
     internal void ReceiveDamage(int i_damageReceived)
     {

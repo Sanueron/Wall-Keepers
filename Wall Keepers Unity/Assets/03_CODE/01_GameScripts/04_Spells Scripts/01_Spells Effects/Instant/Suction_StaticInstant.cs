@@ -46,7 +46,7 @@ public class SuctionDmg_StaticInstant : BaseSpellsEffects
         foreach (Enemy enemy in enemiesScripts_List)
         {
             enemy.moveToTarget_transform = gameObject.transform;
-            enemy.b_moveToTarget = true;
+            enemy.b_beingAttracktedBySpell = true;
         }
     }
  
@@ -66,6 +66,7 @@ public class SuctionDmg_StaticInstant : BaseSpellsEffects
         if (collision.gameObject.layer == i_EnemyLayer)
         {
             collision.gameObject.GetComponent<Enemy>().RestoreTarget();
+            collision.gameObject.GetComponent<Enemy>().OutOfAreaApplyingForceToEnemy();
             RemoveFromEnemiesList(collision.gameObject.GetComponent<Enemy>());
         }
     }
