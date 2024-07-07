@@ -13,17 +13,6 @@ public class SuctionDmg_StaticInstant : BaseSpellsEffects
         SetTarget(target);
     }
 
-    private void OnEnable()
-    {
-        SetAnimationBool();
-    }
-    private void SetAnimationBool()
-    {
-      
-        effect_Animator.SetBool("Wall", true);
-
-    }
-    //Wait until spell effect finish 
     private void FixedUpdate()
     {
         if (b_spellEffectActiveInBattlefield)

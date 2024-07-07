@@ -27,8 +27,6 @@ public class BaseEnemyAction : MonoBehaviour
     internal virtual void TakeAction(GameObject obstacle, GameObject wall)
     {
         // Define each enemy action in here
-      
-
     }
     #endregion
 

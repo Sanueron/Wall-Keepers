@@ -1,6 +1,7 @@
 using Cinemachine.Utility;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -31,8 +32,11 @@ public class ActionsManager : MonoBehaviour
     #region Unity Life Cycle
     private void Update()
     {
-       
-      
+        if (b_timerIsOn)
+        {
+            f_timer += Time.deltaTime;
+        }
+
         if (b_draggingCard) // if action is card dragging 
         {
             // Check if player stops draggind and tries to drop card
@@ -93,7 +97,9 @@ public class ActionsManager : MonoBehaviour
         {
             // Show card info panel 
             Debug.Log("Show card info panel");
+            StartCoroutine(ReturnToHandPosition(selectedSpell));
             //ShowCardInfoPanel(selectedSpell);
+            return;
         }
         b_timerIsOn = false;
         f_timer = 0;
@@ -173,7 +179,7 @@ public class ActionsManager : MonoBehaviour
                 SpellCard_Manager spellCardInHand = hit.transform.GetComponent<SpellCard_Manager>();
                 if (spellCardInHand != null) // If collider hitted is Spell Card
                 {
-                    // Start timer to see of trying to see card info only. Timer is checked in Drop method to know touch was fast.
+                    // Start timer to see if trying to see card info only. Timer is checked in Drop method to know touch was fast.
                     b_timerIsOn = true;
 
                     // Check to indicate if Card can be dragged

@@ -38,15 +38,12 @@ public class NormalMeleeAttack : BaseEnemyAction
     internal void AttackObstacle(Obstacle_StaticInstant obstacleStats)
     {
        obstacleStats.ReceiveDamage(i_damage);
-     
-
     }
 
     internal void AttackWall(WallManager wallStats)
     {
         print("wall");
         wallStats.ReceiveHit(i_damage);
-
     }
     #endregion
 }

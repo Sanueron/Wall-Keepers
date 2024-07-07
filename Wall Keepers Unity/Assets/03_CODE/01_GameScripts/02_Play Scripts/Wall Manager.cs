@@ -47,7 +47,6 @@ public class WallManager : MonoBehaviour
 
         if (f_wallLife <= 0)
         {
-        
             e_OnWallDestroyed?.Invoke(this, EventArgs.Empty);
         }
     }

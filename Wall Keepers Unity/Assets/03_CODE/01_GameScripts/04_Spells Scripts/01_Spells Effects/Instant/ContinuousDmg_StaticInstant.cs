@@ -33,7 +33,7 @@ public class ContinuousDmg_StaticInstant : BaseSpellsEffects
         effect_Animator.SetTrigger(i_EnterEnd);//When the is finised, start End animation
     }
  
-    internal void HurtEnemies()
+    internal override void HurtEnemies()
     {
         foreach (Enemy enemy in enemiesScripts_List)
         {

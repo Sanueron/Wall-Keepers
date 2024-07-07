@@ -55,7 +55,6 @@ public class BaseSpellsEffects : MonoBehaviour
     #region PlaySounds
     internal void PlayCastClip()
     {
-
         //Sound
     }
     internal void PlayExplosionClip()
@@ -72,7 +71,6 @@ public class BaseSpellsEffects : MonoBehaviour
 
     protected void RemoveFromEnemiesList(Enemy enemy)
     {
-
         enemiesScripts_List.Remove(enemy);
     }
     #endregion
@@ -96,7 +94,7 @@ public class BaseSpellsEffects : MonoBehaviour
         }
     }
 
-    internal void HurtEnemies()
+    internal virtual void HurtEnemies()
     {
         print("Hurt");
         foreach (Enemy enemy in enemiesScripts_List)

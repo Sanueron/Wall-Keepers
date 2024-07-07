@@ -6,7 +6,7 @@ using UnityEngine;
 public class ScripteableLootBook : ScriptableObject
 {
     [Header("INFO TIRADAS")]
-    public string name;
+    public string s_name;
     public string description;
     public int id;
     public int i_dropRateOne;//0-30

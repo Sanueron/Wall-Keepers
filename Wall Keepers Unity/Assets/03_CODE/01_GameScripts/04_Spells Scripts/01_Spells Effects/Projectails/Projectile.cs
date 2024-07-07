@@ -7,7 +7,6 @@ public class Projectile : BaseSpellsEffects
     #region Variables
     private Vector3 v3_endPosition;
     private Vector3 v3_startPosition;
-    private float elapsedTime = 0f;
     [SerializeField] private Vector3 v3_Projectail_Cast_Position;
     private bool b_startMovement;
     private Quaternion InitialRotation;
@@ -100,7 +99,7 @@ public class Projectile : BaseSpellsEffects
         }
     }
 
-    internal void HurtEnemies()
+    internal override void HurtEnemies()
     {
         foreach (Enemy enemy in enemiesScripts_List)
         {

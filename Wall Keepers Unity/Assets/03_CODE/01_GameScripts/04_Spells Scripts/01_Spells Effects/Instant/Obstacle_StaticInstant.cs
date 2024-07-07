@@ -15,16 +15,7 @@ public class Obstacle_StaticInstant : BaseSpellsEffects
     {
         SetTarget(target);
     }
-    private void OnEnable()
-    {
-        SetAnimationBool();
-    }
-    private void SetAnimationBool()//This method is Only for walls 
-    {
-     effect_Animator.SetBool("Wall", true);
-    }
-    //Wait until spell effect finish 
-  
+      
     private void SetTarget(Vector3 target)
     {
         transform.parent = null;

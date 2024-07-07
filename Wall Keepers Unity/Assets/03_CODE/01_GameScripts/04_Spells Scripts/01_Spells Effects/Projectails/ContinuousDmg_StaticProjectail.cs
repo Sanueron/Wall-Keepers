@@ -8,12 +8,10 @@ public class ContinuousDmg_StaticProjectail : BaseSpellsEffects
     #region Variables
     private Vector3 v3_endPosition;
     private Vector3 v3_startPosition;
-    private float elapsedTime = 0f;
     [SerializeField] private Vector3 v3_Projectail_Cast_Position;
     private float f_journeyLength;
     private float startTime;
     private bool b_startMovement;
-    private bool b_finishAnimation;
     private Quaternion InitialRotation;
     private int i_start_spriteSortingOrder;
     private SpriteRenderer spell_SpriteRenderer;
@@ -84,7 +82,6 @@ public class ContinuousDmg_StaticProjectail : BaseSpellsEffects
         effect_Animator.SetTrigger(i_EnterEnd);
      
     }
-
     private void StartLake()
     {
         StartCoroutine(Lake());
@@ -102,13 +99,6 @@ public class ContinuousDmg_StaticProjectail : BaseSpellsEffects
         startTime = Time.time;
         effect_Animator.SetTrigger(i_EnterLoop);
         b_startMovement = true;
-    }
-   
-
-    //Metodos que se repiten con el projectile, por lo tanto creo que esta clase deberia de heredar directamente de Projectile 
-    public void FinishAnimation()
-    {
-        b_finishAnimation = true;
     }
 
     internal void RestoreRotation()

@@ -102,7 +102,6 @@ public class SpellCard_Manager : MonoBehaviour
             // Check if spell effect is not still active in battlefield
             if (!listOf_spellEffects[i].b_spellEffectActiveInBattlefield) // Not in battlefield
             {
-                print("Active");
                 // Reset Stats
                 listOf_spellEffects[i].SetSpellStatsInSpellEffect(transform, f_damage, f_resistance, f_speed, f_duration, f_repeatRate, f_slowDownValue);
                 // Activate Spell effect

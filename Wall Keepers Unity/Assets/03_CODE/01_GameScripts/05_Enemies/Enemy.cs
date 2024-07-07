@@ -48,13 +48,10 @@ public class Enemy : MonoBehaviour
     #endregion
 
     #region Unity Life Cycle
-
-
     private void OnEnable()
     {
         Origin_moveToTarget_transform = moveToTarget_transform;
     }
-
     private void Awake()
     {
         SwitchState(EnemyState.Moving);
@@ -85,35 +82,29 @@ public class Enemy : MonoBehaviour
 
         if (raycastHit2D.collider != null)
         {
-            print(raycastHit2D.collider.gameObject.name);
-            print("ObstacleDetected");
             if (raycastHit2D.collider.gameObject.GetComponent<WallManager>() != null
                 && !b_receivingDamage)
             {
                 go_wall = raycastHit2D.collider.gameObject;
-                print("Detecta el Wall " + e_enemyState);
-              
-                    SwitchState(EnemyState.TakingAction);
-                
+                SwitchState(EnemyState.TakingAction);
+                return;
             }
             else if (raycastHit2D.collider.gameObject.GetComponent<Obstacle_StaticInstant>() != null
                 && !b_receivingDamage)
             {
-                print("Detecta el obstaculo");
                 go_obstacle = raycastHit2D.collider.gameObject;
               
                 SwitchState(EnemyState.TakingAction);
-
+                return;
             }
-           
-
         }
-        else
+        else // No obstacle detected
         {
             if (!b_receivingDamage)
             {
-                print("Moving");
-               
+                // If enemy state is defeated dont move
+                if(e_enemyState == EnemyState.Defeated) { return; }
+                // If no obstacle detected and enemy not defeated move towards Wall
                 SwitchState(EnemyState.Moving);
             }
         }
@@ -127,31 +118,40 @@ public class Enemy : MonoBehaviour
     internal void SwitchState(EnemyState newState)
     {
         e_enemyState = newState;
+        SetAllStatesAnimsToFalse();
         switch (e_enemyState)
         {
             case EnemyState.Moving:
                 go_obstacle = null;
                 go_wall = null;
-                enemy_animator.SetTrigger(i_WalkHash);
+                enemy_animator.SetBool(i_WalkHash, true);
                 b_moveToTarget = true; // Stop moving
                 break;
             case EnemyState.TakingAction:
                 b_moveToTarget = false; // Stop moving
-                enemy_animator.SetTrigger(i_AttackHash);
+                enemy_animator.SetBool(i_AttackHash, true);
                 // Play anim
                 break;
             case EnemyState.ReceiveDamage:
                 b_moveToTarget = false; // Stop moving
                 b_receivingDamage = true; // Indicate enemy is receiving damage
-                enemy_animator.SetTrigger(i_HitHash);
+                enemy_animator.SetBool(i_HitHash, true);
                 break;
             case EnemyState.Defeated:
+                print("Defeated");
                 b_moveToTarget = false; // Stop moving
                 // Play anim
-                enemy_animator.SetTrigger(i_DefeatedHash);
+                enemy_animator.SetBool(i_DefeatedHash, true);
                 break;
 
         }
+    }
+    private void SetAllStatesAnimsToFalse()
+    {
+        enemy_animator.SetBool(i_WalkHash, false);
+        enemy_animator.SetBool(i_AttackHash, false);
+        enemy_animator.SetBool(i_HitHash, false);
+        enemy_animator.SetBool(i_DefeatedHash, false);
     }
     //Metodo para checkear 
     private void GetStats()
@@ -171,6 +171,7 @@ public class Enemy : MonoBehaviour
     internal void AttackEvent()// When the enemy attacks, we call this event which executes the enemyAction method.
     {
         enemyAction.TakeAction(go_obstacle, go_wall);
+        print("Takes Action");
     }
     private void MoveToTarget()
     {
@@ -181,9 +182,6 @@ public class Enemy : MonoBehaviour
     {
         b_receivingDamage = false;
     }
-
-   
-
     #endregion
 
     #region External Methods
