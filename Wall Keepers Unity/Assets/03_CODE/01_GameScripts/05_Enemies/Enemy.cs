@@ -141,7 +141,7 @@ public class Enemy : MonoBehaviour
                 print("Defeated");
                 b_moveToTarget = false; // Stop moving
                 // Play anim
-                enemy_animator.SetBool(i_DefeatedHash, true);
+                enemy_animator.SetTrigger(i_DefeatedHash);
                 break;
 
         }
@@ -151,7 +151,6 @@ public class Enemy : MonoBehaviour
         enemy_animator.SetBool(i_WalkHash, false);
         enemy_animator.SetBool(i_AttackHash, false);
         enemy_animator.SetBool(i_HitHash, false);
-        enemy_animator.SetBool(i_DefeatedHash, false);
     }
     //Metodo para checkear 
     private void GetStats()
