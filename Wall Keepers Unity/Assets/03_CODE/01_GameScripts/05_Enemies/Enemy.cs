@@ -30,6 +30,7 @@ public class Enemy : MonoBehaviour
     #endregion
 
     #region Moving Variables
+    internal Vector3 targetToMove;
     internal Transform wallToTarget_transform;
     [SerializeField] internal Transform moveToTarget_transform;
     internal Transform wall_moveToTarget_transform;
@@ -54,12 +55,6 @@ public class Enemy : MonoBehaviour
     #endregion
 
     #region Unity Life Cycle
-    private void Awake()
-    {
-        SwitchState(EnemyState.Moving);
-        GetStats();
-
-    }
     private void OnEnable()
     {
         // Add enemy to list of enemies of this round
@@ -72,6 +67,10 @@ public class Enemy : MonoBehaviour
     }
     private void Start()
     {
+        SwitchState(EnemyState.Moving);
+
+        GetStats();
+
         // Set Initial Move to target pos and wall pos.
         GameObject go_wallMoveTo = GameObject.Find("Enemies Wall Move to Target");
         wall_moveToTarget_transform = go_wallMoveTo.transform;
@@ -203,7 +202,14 @@ public class Enemy : MonoBehaviour
     private void MoveToTarget()
     {
         var step = i_speed * f_speedDecreasedValue * Time.deltaTime; // calculate distance to move
-        Vector3 targetToMove = new Vector3(transform.position.x, moveToTarget_transform.position.y, moveToTarget_transform.position.z);
+        if (b_beingAttracktedBySpell)
+        {
+            targetToMove = new Vector3(moveToTarget_transform.position.x, moveToTarget_transform.position.y, moveToTarget_transform.position.z);
+        }
+        else
+        {
+            targetToMove = new Vector3(transform.position.x, moveToTarget_transform.position.y, moveToTarget_transform.position.z);
+        }
         transform.position = Vector3.MoveTowards(transform.position, targetToMove, step);
     }
     internal void EndReceiveDamage()//Event that triggers when the damage animation ends so that the enemy knows what to do next.
@@ -254,7 +260,7 @@ public class Enemy : MonoBehaviour
     {
         // Set enemy stats and States to base
         //RestoreTarget();
-        SwitchState(EnemyState.Moving);
+        //SwitchState(EnemyState.Moving);
         GetStats();
     }
     #endregion
