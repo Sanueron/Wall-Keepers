@@ -64,6 +64,7 @@ public class Enemy : MonoBehaviour
         wall_moveToTarget_transform = go_wallMoveTo.transform;
         moveToTarget_transform = wall_moveToTarget_transform;
         RestoreTarget();
+        SwitchState(EnemyState.Moving);
     }
     private void Start()
     {
@@ -259,7 +260,6 @@ public class Enemy : MonoBehaviour
     internal void ResetEnemy()
     {
         // Set enemy stats and States to base
-        //RestoreTarget();
         //SwitchState(EnemyState.Moving);
         GetStats();
     }
