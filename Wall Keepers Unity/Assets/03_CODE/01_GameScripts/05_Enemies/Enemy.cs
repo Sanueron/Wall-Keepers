@@ -1,8 +1,13 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    #region Events
+    public static event EventHandler onEnemyDefeated;
+    #endregion
+
     #region Enemy Stats and Info
     [Header("Stats")]
     [SerializeField] ScripteableEnemies baseStats;
@@ -16,12 +21,14 @@ public class Enemy : MonoBehaviour
     GameObject go_obstacle;
     GameObject go_wall;
     #endregion
+
     #region Enemy States
     internal enum EnemyState { Moving, TakingAction, ReceiveDamage, Defeated, Attack, Stop }
     [SerializeField] internal EnemyState e_enemyState;
     internal bool b_targetDetected = false;
     internal bool b_moveToTarget, b_receivingDamage, b_beingAttracktedBySpell;
     #endregion
+
     #region Moving Variables
     internal Transform wallToTarget_transform;
     [SerializeField] internal Transform moveToTarget_transform;
@@ -29,6 +36,7 @@ public class Enemy : MonoBehaviour
     private Transform wallTarget_transform;
     internal float f_speedDecreasedValue = 1.0f;
     #endregion
+
     #region Action
     [Header("Action")]
     [SerializeField] BaseEnemyAction enemyAction;
@@ -36,6 +44,7 @@ public class Enemy : MonoBehaviour
 
 
     #endregion
+
     #region Animations
     [Header("Animations")]
     private int i_WalkHash = Animator.StringToHash("Walking"),
@@ -50,6 +59,16 @@ public class Enemy : MonoBehaviour
         SwitchState(EnemyState.Moving);
         GetStats();
 
+    }
+    private void OnEnable()
+    {
+        // Add enemy to list of enemies of this round
+        RoundsManager.listOfEnemiesInRound.Add(this);
+
+        GameObject go_wallMoveTo = GameObject.Find("Enemies Wall Move to Target");
+        wall_moveToTarget_transform = go_wallMoveTo.transform;
+        moveToTarget_transform = wall_moveToTarget_transform;
+        RestoreTarget();
     }
     private void Start()
     {
@@ -184,7 +203,8 @@ public class Enemy : MonoBehaviour
     private void MoveToTarget()
     {
         var step = i_speed * f_speedDecreasedValue * Time.deltaTime; // calculate distance to move
-        transform.position = Vector3.MoveTowards(transform.position, moveToTarget_transform.position, step);
+        Vector3 targetToMove = new Vector3(transform.position.x, moveToTarget_transform.position.y, moveToTarget_transform.position.z);
+        transform.position = Vector3.MoveTowards(transform.position, targetToMove, step);
     }
     internal void EndReceiveDamage()//Event that triggers when the damage animation ends so that the enemy knows what to do next.
     {
@@ -202,7 +222,7 @@ public class Enemy : MonoBehaviour
     {
         Vector3 wallMoveToTargetPostion = new Vector3(transform.position.x,
             wall_moveToTarget_transform.position.y, wall_moveToTarget_transform.position.z);
-
+        //print("Enemy moves to " + wallMoveToTargetPostion);
         moveToTarget_transform.position = wallMoveToTargetPostion;
     }
     internal void OutOfAreaApplyingForceToEnemy()
@@ -215,6 +235,8 @@ public class Enemy : MonoBehaviour
         if (i_hp < 0)
         {
             SwitchState(EnemyState.Defeated);
+            RoundsManager.listOfEnemiesInRound.Remove(this);
+            onEnemyDefeated?.Invoke(this, EventArgs.Empty);
         }
         else
         {

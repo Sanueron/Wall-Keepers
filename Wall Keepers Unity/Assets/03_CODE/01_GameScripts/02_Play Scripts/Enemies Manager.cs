@@ -325,7 +325,11 @@ public class EnemiesManager : MonoBehaviour
     }
     #endregion
 
-    #region Acces Methods
+    #region Access Methods
+    internal bool IsSpawningEnemies()
+    {
+        return b_spawnEnemies;
+    }
     internal void SetSpawnEnemiesToTrue()
     {
         b_spawnEnemies = true;

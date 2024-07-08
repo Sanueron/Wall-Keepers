@@ -19,6 +19,7 @@ public class RoundsManager : MonoBehaviour
 
     #region Waves/Rounds count variables
     internal int i_currentWave;
+    internal static List<Enemy> listOfEnemiesInRound = new List<Enemy>();
     #endregion
 
     #region External Variables
@@ -36,6 +37,25 @@ public class RoundsManager : MonoBehaviour
         }
 
         i_currentWave = 1;
+
+        // Subscribe to events
+        Enemy.onEnemyDefeated += Enemy_onEnemyDefeated;
+    }
+
+    private void Enemy_onEnemyDefeated(object sender, System.EventArgs e)
+    {
+        // Check if still spawning enemies
+        if (!script_enemiesManager.IsSpawningEnemies())
+        {
+            // Check list of enemies of this round
+            if(listOfEnemiesInRound.Count <= 0)
+            {
+                // All enemies of this wave/round defeated, move to next round
+                i_currentWave++;
+                tmp_nextWaveText.text = "Wave " + i_currentWave.ToString();
+                animator_NextWave.SetTrigger(i_nextWaveTriggerHash);
+            }
+        }
     }
     #endregion
 
