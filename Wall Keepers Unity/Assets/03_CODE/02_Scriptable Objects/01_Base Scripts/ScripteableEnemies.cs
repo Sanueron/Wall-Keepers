@@ -9,6 +9,7 @@ public class ScripteableEnemies : ScriptableObject
     public int i_dmg;
     public int i_speed;
     public float f_RageOfAction;
+    public int i_manaEnergyReleased;
 
     [Header("SFXs")]
     public AudioClip deathClip;
