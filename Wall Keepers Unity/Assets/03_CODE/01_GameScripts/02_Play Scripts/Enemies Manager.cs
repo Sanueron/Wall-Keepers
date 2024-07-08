@@ -272,7 +272,6 @@ public class EnemiesManager : MonoBehaviour
     {
         int i_totalEnemiesToSpawn = i_enemiesToSpawnOfRank_1 + i_enemiesToSpawnOfRank_2 + i_enemiesToSpawnOfRank_3
             + i_enemiesToSpawnOfRank_4 + i_enemiesToSpawnOfRank_5;
-        print(i_totalEnemiesToSpawn);
         if (i_totalEnemiesToSpawn <= 0)
         {
             return true;

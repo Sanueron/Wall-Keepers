@@ -11,7 +11,7 @@ public class Enemy : MonoBehaviour
     #region Enemy Stats and Info
     [Header("Stats")]
     [SerializeField] ScripteableEnemies baseStats;
-    internal int i_hp, i_damage, i_speed, i_startSpeed;
+    internal int i_id, i_hp, i_damage, i_speed, i_startSpeed, i_manaEnergyReleased;
     internal float f_rangeOfAction;
     internal Rigidbody2D rb_Enemy;
     [SerializeField] private Animator enemy_animator;
@@ -183,10 +183,12 @@ public class Enemy : MonoBehaviour
     //Metodo para checkear 
     private void GetStats()
     {
+        i_id = baseStats.i_id;
         i_hp = baseStats.i_hp;
         i_damage = baseStats.i_dmg;
         i_speed = baseStats.i_speed;
         f_rangeOfAction = baseStats.f_RageOfAction;
+        i_manaEnergyReleased = baseStats.i_manaEnergyReleased;
 
         //Start variables
         i_startSpeed = i_speed;
