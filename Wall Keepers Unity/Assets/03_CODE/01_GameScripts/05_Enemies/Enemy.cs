@@ -60,11 +60,6 @@ public class Enemy : MonoBehaviour
         RestoreTarget();
 
     }
-    private void OnEnable()
-    {
-        // Add to current round enemies list
-        //RestoreTarget();
-    }
 
     private void Update()
     {
@@ -236,6 +231,7 @@ public class Enemy : MonoBehaviour
     internal void ResetEnemy()
     {
         // Set enemy stats and States to base
+        //RestoreTarget();
         SwitchState(EnemyState.Moving);
         GetStats();
     }
