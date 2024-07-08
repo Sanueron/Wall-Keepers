@@ -324,4 +324,11 @@ public class EnemiesManager : MonoBehaviour
         arrayOf_spawnPointsBlocked[i_spawnPointIndex] = false;
     }
     #endregion
+
+    #region Acces Methods
+    internal void SetSpawnEnemiesToTrue()
+    {
+        b_spawnEnemies = true;
+    }
+    #endregion
 }

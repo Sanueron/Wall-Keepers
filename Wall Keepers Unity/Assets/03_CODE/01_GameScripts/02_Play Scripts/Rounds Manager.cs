@@ -6,45 +6,47 @@ using UnityEngine;
 
 public class RoundsManager : MonoBehaviour
 {
-    [SerializeField] private GameObject roundTextUI_GameObject;
-    public TMP_Text roundText;
-    public TMP_Text pause_roundText;
-    public int i_round;
-    public void UpdateRoundText(int currentRound)
+    #region UI Round/Waves counter panel
+    [Header("Next Wave Panel Variables")]
+    [SerializeField] Animator animator_NextWave;
+    [SerializeField] private TMP_Text tmp_nextWaveText;
+    #endregion
+
+    #region Animator Variables
+    private int i_startTriggerHash = Animator.StringToHash("Start");
+    private int i_nextWaveTriggerHash = Animator.StringToHash("Next Wave");
+    #endregion
+
+    #region Waves/Rounds count variables
+    internal int i_currentWave;
+    #endregion
+
+    #region External Variables
+    EnemiesManager script_enemiesManager;
+    #endregion
+
+    #region UNITY life Cycle
+    private void Start()
     {
-        if (roundText != null)
+        // Get Enemies Manager script to access spawn enemies method
+        GameObject go = GameObject.Find("Enemies Manager");
+        if(go != null)
         {
-            i_round = currentRound;
-            pause_roundText.text = "Round: " + currentRound;
-            Debug.Log(i_round);
-            if (currentRound > 1)
-            {
-                roundText.text = "Round: " + currentRound;
-            }
-            else
-            {
-                if (roundText.gameObject.tag != "StartGamePause")
-                {
-                    roundText.text = "Start Game";
-
-                }
-                else
-                {
-                    roundText.text = " ";
-                }
-
-            }
+            script_enemiesManager = go.GetComponent<EnemiesManager>();
         }
 
-        roundTextUI_GameObject.SetActive(true);
-        StartCoroutine(DisableRoundText());
-
+        i_currentWave = 1;
     }
+    #endregion
 
-    public IEnumerator DisableRoundText()
+    #region Local Methods
+    public void StartEndlessWaveLevel()
     {
-        yield return new WaitForSeconds(2.1f);
-        roundTextUI_GameObject.SetActive(false);
-
+        animator_NextWave.SetTrigger(i_startTriggerHash);
     }
+    internal void SpawnFirstWaveEnemies()
+    {
+        script_enemiesManager.SetSpawnEnemiesToTrue();
+    }
+    #endregion
 }
