@@ -12,13 +12,17 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -1832752377, guid: dae4123f30479734aae0db53bf57c938, type: 3}
+    - target: {fileID: 2306393389132629302, guid: 987eb037603a07e40ae333665b139928, type: 3}
+      propertyPath: m_fontSize
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3305258558540259068, guid: 987eb037603a07e40ae333665b139928, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -11.33
       objectReference: {fileID: 0}
     - target: {fileID: 3305258558540259068, guid: 987eb037603a07e40ae333665b139928, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 11.94
       objectReference: {fileID: 0}
     - target: {fileID: 3305258558540259068, guid: 987eb037603a07e40ae333665b139928, type: 3}
       propertyPath: m_LocalPosition.z
@@ -30,15 +34,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3305258558540259068, guid: 987eb037603a07e40ae333665b139928, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3305258558540259068, guid: 987eb037603a07e40ae333665b139928, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3305258558540259068, guid: 987eb037603a07e40ae333665b139928, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3305258558540259068, guid: 987eb037603a07e40ae333665b139928, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -57,8 +61,24 @@ PrefabInstance:
       value: Crazy
       objectReference: {fileID: 0}
     - target: {fileID: 3650482070449739290, guid: 987eb037603a07e40ae333665b139928, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3650482070449739290, guid: 987eb037603a07e40ae333665b139928, type: 3}
       propertyPath: m_TagString
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 5101558497474588937, guid: 987eb037603a07e40ae333665b139928, type: 3}
+      propertyPath: m_Alpha
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5101558497474588937, guid: 987eb037603a07e40ae333665b139928, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5101558497474588937, guid: 987eb037603a07e40ae333665b139928, type: 3}
+      propertyPath: m_BlocksRaycasts
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5690274150969169209, guid: 987eb037603a07e40ae333665b139928, type: 3}
       propertyPath: m_Controller

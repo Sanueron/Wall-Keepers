@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
@@ -11,7 +13,8 @@ public class Enemy : MonoBehaviour
     #region Enemy Stats and Info
     [Header("Stats")]
     [SerializeField] ScripteableEnemies baseStats;
-    internal int i_id, i_hp, i_damage, i_speed, i_startSpeed, i_manaEnergyReleased;
+    internal int i_id, i_hp, i_maxHp, i_damage, i_speed, i_startSpeed, i_manaEnergyReleased;
+    float f_hpForHealthBar;
     internal float f_rangeOfAction;
     internal Rigidbody2D rb_Enemy;
     [SerializeField] private Animator enemy_animator;
@@ -22,8 +25,13 @@ public class Enemy : MonoBehaviour
     GameObject go_wall;
     #endregion
 
+    [Header("Enemy UI Variables")]
+    [SerializeField] Image img_fillBar;
+    [SerializeField] TextMeshProUGUI tmp_damageTaken;
+
     #region Enemy States
     internal enum EnemyState { Moving, TakingAction, ReceiveDamage, Defeated, Attack, Stop }
+    [Header("Enemy States")]
     [SerializeField] internal EnemyState e_enemyState;
     internal bool b_targetDetected = false;
     internal bool b_moveToTarget, b_receivingDamage, b_beingAttracktedBySpell;
@@ -32,7 +40,7 @@ public class Enemy : MonoBehaviour
     #region Moving Variables
     internal Vector3 targetToMove;
     internal Transform wallToTarget_transform;
-    [SerializeField] internal Transform moveToTarget_transform;
+    internal Transform moveToTarget_transform;
     internal Transform wall_moveToTarget_transform;
     private Transform wallTarget_transform;
     internal float f_speedDecreasedValue = 1.0f;
@@ -204,6 +212,8 @@ public class Enemy : MonoBehaviour
     {
         i_id = baseStats.i_id;
         i_hp = baseStats.i_hp;
+        i_maxHp = i_hp;
+        f_hpForHealthBar = i_hp;
         i_damage = baseStats.i_dmg;
         i_speed = baseStats.i_speed;
         f_rangeOfAction = baseStats.f_RageOfAction;
@@ -239,6 +249,32 @@ public class Enemy : MonoBehaviour
     }
     #endregion
 
+    #region Health Bar Fill Methods
+    IEnumerator SumUp()
+    {
+        float f_duration = 1f;
+        var rate = Mathf.Abs(f_hpForHealthBar - i_hp) / f_duration;
+        while (f_hpForHealthBar != i_hp)
+        {
+            print("Fill effect" + f_hpForHealthBar + " Hp " + i_hp);
+            f_hpForHealthBar = Mathf.MoveTowards(f_hpForHealthBar, i_hp, rate * Time.deltaTime);
+            img_fillBar.fillAmount = GetFillBarValue();
+            yield return null;
+        }
+    }
+
+    private float GetFillBarValue()
+    {
+        float fillBarValue = f_hpForHealthBar / i_maxHp;
+        print("fill bar value is " + fillBarValue);
+        if (f_hpForHealthBar >= i_maxHp)
+        {
+            fillBarValue = 1f;
+        }
+        return fillBarValue;
+    }
+    #endregion
+
     #region External Methods
     internal void RestoreSpeed()
     {
@@ -255,6 +291,7 @@ public class Enemy : MonoBehaviour
     internal void ReceiveDamage(int i_damageReceived)
     {
         i_hp -= i_damageReceived;
+        tmp_damageTaken.text = i_damageReceived.ToString();
         if (i_hp < 0)
         {
             SwitchState(EnemyState.Defeated);
@@ -265,6 +302,7 @@ public class Enemy : MonoBehaviour
         {
             SwitchState(EnemyState.ReceiveDamage);
         }
+        StartCoroutine(SumUp());
     }
     #endregion
 
