@@ -99,7 +99,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 4
+  m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -324,3 +324,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aec276dc837612b49a59111b14dccee0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  demonitoInfo: {fileID: 0}
+  tmp_numberOfDemonitosDefeated: {fileID: 7274345647034476777}

@@ -100,6 +100,10 @@ public class ActionsManager : MonoBehaviour
         float f_timeLimitForShowingCardInfoPanel = .2f;
         if (f_timer < f_timeLimitForShowingCardInfoPanel)
         {
+            if (LevelsGnralManager.b_stopLevel) // if level stopped don't show
+            {
+                return;
+            }
             // Show card info panel 
             Debug.Log("Show card info panel");
             StartCoroutine(ReturnToHandPosition(selectedSpell));

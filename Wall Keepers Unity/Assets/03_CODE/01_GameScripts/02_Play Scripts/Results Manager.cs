@@ -25,6 +25,12 @@ public class ResultsManager : MonoBehaviour
     [SerializeField] private AudioClip aC_levelComplete;
     #endregion
 
+    #region Demonitos Defeated
+    [Header("Demonitos Boxes")]
+    [SerializeField] private List<DemonitoBoxDataContainer> listOfDemonitosBoxes = new List<DemonitoBoxDataContainer>();
+    private int[] arrayOfDemonitosDefeatedById = new int[100];
+    #endregion
+
     #region Animator Control Variables
     int i_animatorTrigger = Animator.StringToHash("Show");
     #endregion
@@ -45,6 +51,12 @@ public class ResultsManager : MonoBehaviour
 
         // Unpause Level
         LevelsGnralManager.b_stopLevel = false;
+
+        // Reset enemies defeated count
+        for (int i = 0; i < arrayOfDemonitosDefeatedById.Length; i++)
+        {
+            arrayOfDemonitosDefeatedById[i] = 0;
+        }
     }
     #endregion
 
@@ -52,13 +64,16 @@ public class ResultsManager : MonoBehaviour
     private void Enemy_onEnemyDefeated(object sender, System.EventArgs e)
     {
         Enemy defeatedEnemy = (Enemy)sender;
+        // Get enemy mana energy released
         i_manaObtained += defeatedEnemy.i_manaEnergyReleased;
-        print(defeatedEnemy.name);
+        // Save enemy count for number of enemies defeated of this type
+        arrayOfDemonitosDefeatedById[defeatedEnemy.i_id]++;
         // Save type of enemy defeated for later count of defeated enemies by type
     }
     private void WallManager_e_OnWallDestroyed(object sender, System.EventArgs e)
     {
         // Update Results Panel info
+        ShowDemonitosDefeated();
         ShowNewRecordOrBestScore();
         ShowWavesCompleted();
         ShowManaObtained();
@@ -79,6 +94,25 @@ public class ResultsManager : MonoBehaviour
     #endregion
 
     #region Results Methods
+    private void ShowDemonitosDefeated()
+    {
+        int i_demonitoID = 0;
+        int i_countOfDemonitosDefeated = 0;
+        for(int i = 0; i < listOfDemonitosBoxes.Count; i++)
+        {
+            i_demonitoID = listOfDemonitosBoxes[i].demonitoInfo.i_id;
+            i_countOfDemonitosDefeated = arrayOfDemonitosDefeatedById[i_demonitoID];
+            if(i_countOfDemonitosDefeated > 0)
+            {
+                listOfDemonitosBoxes[i].tmp_numberOfDemonitosDefeated.text = i_countOfDemonitosDefeated.ToString();
+                listOfDemonitosBoxes[i].gameObject.SetActive(true);
+            }
+            else
+            {
+                listOfDemonitosBoxes[i].gameObject.SetActive(false);
+            }
+        }
+    }
     private void ShowNewRecordOrBestScore()
     {
         if (script_roundsManager.i_currentWave - 1 > PlayerData.i_maxRound) // New Record

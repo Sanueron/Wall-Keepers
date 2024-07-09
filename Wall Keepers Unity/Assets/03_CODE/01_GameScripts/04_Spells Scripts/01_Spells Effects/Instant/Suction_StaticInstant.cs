@@ -6,13 +6,8 @@ using static Enemy;
 
 public class SuctionDmg_StaticInstant : BaseSpellsEffects
 {
-    #region InstantArea Methods
-    //Receive target 
-    public override void ActivateEffect(Vector3 starPosition, Vector3 target)
-    {
-        SetTarget(target);
-    }
 
+    #region Unity Life Cycle
     private void FixedUpdate()
     {
         if (b_spellEffectActiveInBattlefield)
@@ -20,6 +15,25 @@ public class SuctionDmg_StaticInstant : BaseSpellsEffects
             StartCoroutine(CastInBattlefield());
         }
     }
+    private void OnDisable()
+    {
+        foreach (Enemy enemy in enemiesScripts_List)
+        {
+            enemy.RestoreTarget();
+            enemy.OutOfAreaApplyingForceToEnemy();
+        }
+        // Empty List when effect is over
+        enemiesScripts_List.Clear();
+    }
+    #endregion
+
+    #region InstantArea Methods
+    //Receive target 
+    public override void ActivateEffect(Vector3 starPosition, Vector3 target)
+    {
+        SetTarget(target);
+    }
+
     private void SetTarget(Vector3 target)
     {
         transform.parent = null;

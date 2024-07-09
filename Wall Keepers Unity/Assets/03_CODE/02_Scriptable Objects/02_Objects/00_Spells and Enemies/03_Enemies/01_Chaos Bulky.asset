@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 095fe339d410b2b4fb3ae82e354c45cc, type: 3}
   m_Name: 01_Chaos Bulky
   m_EditorClassIdentifier: 
-  i_id: 0
+  i_id: 1
   i_hp: 1000
   i_dmg: 500
   i_speed: 1

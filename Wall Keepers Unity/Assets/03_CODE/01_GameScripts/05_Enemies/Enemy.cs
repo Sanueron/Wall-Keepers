@@ -219,7 +219,6 @@ public class Enemy : MonoBehaviour
     internal void AttackEvent()// When the enemy attacks, we call this event which executes the enemyAction method.
     {
         enemyAction.TakeAction(go_obstacle, go_wall);
-        print("Takes Action");
     }
     private void MoveToTarget()
     {
@@ -228,7 +227,7 @@ public class Enemy : MonoBehaviour
         {
             targetToMove = new Vector3(moveToTarget_transform.position.x, moveToTarget_transform.position.y, moveToTarget_transform.position.z);
         }
-        else
+        else // move to wall
         {
             targetToMove = new Vector3(transform.position.x, moveToTarget_transform.position.y, moveToTarget_transform.position.z);
         }
@@ -243,15 +242,11 @@ public class Enemy : MonoBehaviour
     #region External Methods
     internal void RestoreSpeed()
     {
-        print("SpeedRestored");
         f_speedDecreasedValue = 1.0f;
     }
     internal void RestoreTarget()
     {
-        Vector3 wallMoveToTargetPostion = new Vector3(transform.position.x,
-            wall_moveToTarget_transform.position.y, wall_moveToTarget_transform.position.z);
-        //print("Enemy moves to " + wallMoveToTargetPostion);
-        moveToTarget_transform.position = wallMoveToTargetPostion;
+        moveToTarget_transform = wall_moveToTarget_transform;
     }
     internal void OutOfAreaApplyingForceToEnemy()
     {
