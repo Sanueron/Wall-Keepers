@@ -148,18 +148,29 @@ public class ActionsManager : MonoBehaviour
     }
 
     //A method to return the card to its slot
-    private IEnumerator ReturnToHandPosition( SpellCard_Manager selectedSpell)
+    private IEnumerator ReturnToHandPosition(SpellCard_Manager selectedSpell)
     {
+        while(selectedSpell.transform.position != selectedSpell.v3_currentPosition)
+        {
+            selectedSpell.transform.position = Vector3.MoveTowards(selectedSpell.transform.position,
+                selectedSpell.v3_currentPosition, .5f);
+            yield return null;
+        }
+        //transform.position = selectedSpell.v3_currentPosition;
+        SetCardSortingOrder(i_defaultSortingOrder, selectedSpell);
+
+        /*
         Vector3 startPosition = selectedSpell.transform.position;
         float elapsedTime = 0;
         while (elapsedTime < 0.3f)
         {
-            selectedSpell.transform.position = Vector3.Lerp(startPosition, selectedSpell.v3_currentPosition, elapsedTime / 0.3f);
-            elapsedTime += Time.deltaTime;
+            //selectedSpell.transform.position = Vector3.Lerp(startPosition, selectedSpell.v3_currentPosition, elapsedTime / 0.3f);
+            //elapsedTime += Time.deltaTime;
             yield return null; 
         }
         transform.position = selectedSpell.v3_currentPosition;
         SetCardSortingOrder(i_defaultSortingOrder, selectedSpell);
+        */
     }
     private void SetCardSortingOrder(int sortingOrder, SpellCard_Manager selectedSpell)
     {
