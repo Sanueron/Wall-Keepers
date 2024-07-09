@@ -40,6 +40,7 @@ public class RoundsManager : MonoBehaviour
 
         // Subscribe to events
         Enemy.onEnemyDefeated += Enemy_onEnemyDefeated;
+
     }
 
     private void Enemy_onEnemyDefeated(object sender, System.EventArgs e)

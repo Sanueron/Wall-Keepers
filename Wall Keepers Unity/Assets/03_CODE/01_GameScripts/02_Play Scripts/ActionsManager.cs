@@ -30,6 +30,11 @@ public class ActionsManager : MonoBehaviour
     [SerializeField] List<GameObject> effectList_GameObject = new List<GameObject>();
     #endregion
     #region Unity Life Cycle
+    private void Start()
+    {
+        // Block Actions at Start when Start panel is showing
+        b_busy = true;
+    }
     private void Update()
     {
         if (b_timerIsOn)
@@ -157,6 +162,7 @@ public class ActionsManager : MonoBehaviour
     }
     //Get the SpriteRenderer from selectedSpell
     #endregion
+
     #region Additional Methods 
     private void GetWorldPositionBasedOnScreenTouchPosition()
     {
@@ -190,13 +196,16 @@ public class ActionsManager : MonoBehaviour
             }
         }
     }
-
     private void ShowCardInfoPanel(SpellCard_Manager selectedCard)
     {
         b_busy = true; // Prevent player from dragging cards or doing other actions
         b_showingCardInfo = true;
         //MenuManager.instance.ShowSelectedCardInfoMenu(selectedCard);
     }
+    #endregion
+
+    #region External Methods
+    public void SetBusyOFF() {  b_busy = false; }
     #endregion
 
 }
