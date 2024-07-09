@@ -90,6 +90,9 @@ public class ResultsManager : MonoBehaviour
 
         // Play Results Panel Music
         AudioManager.instance.PlayNewMusicClip(aC_resultsMusic);
+
+        // Save Data
+        SaveData.instance.AssignDataAndSave();
     }
     #endregion
 
@@ -117,6 +120,8 @@ public class ResultsManager : MonoBehaviour
     {
         if (script_roundsManager.i_currentWave - 1 > PlayerData.i_maxRound) // New Record
         {
+            // Save New Record
+            PlayerData.i_maxRound = script_roundsManager.i_currentWave - 1;
             // Show New Record text and hide Best Score text
             go_newRecord.SetActive(true);
             go_bestScore.SetActive(false);
