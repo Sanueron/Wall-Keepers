@@ -18,7 +18,7 @@ MonoBehaviour:
   i_mana_cost: 1
   f_dmg: 0
   f_duration: 3
-  f_projectileSpeed: 1
+  f_projectileSpeed: 0
   f_resistance: 0
   requiredElementalRune: {fileID: 11400000, guid: b1f41260bc5382245be7bf31f10bb7ea, type: 2}
   _card_Sprite: {fileID: 21300000, guid: ab3451163fe3ccd4882b5e3cf3879839, type: 3}
@@ -27,13 +27,18 @@ MonoBehaviour:
   castClip: {fileID: 8300000, guid: 2b1df6e9228a48e46804c2ab22c37c9f, type: 3}
   impactClip: {fileID: 0}
   i_starLevel: 2
+  spr_spellRequiredCard_1: {fileID: 0}
+  spr_spellRequiredCard_2: {fileID: 0}
+  i_spellRequired_1_Id: 0
+  i_spellRequired_2_Id: 0
+  f_slowDown_value: 0
+  f_attackInterval: 0
   f_repeatingDmgCoolDown: 0
   e_CastingType: 2
   e_Effect: 2
   e_Element: 4
   e_2Element: 0
   Description: Pulls enemies in area to its center.
-  f_attackInterval: 0
   b_isMerged: 0
   fusionSprite1: {fileID: 0}
   fusionSprite2: {fileID: 0}

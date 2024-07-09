@@ -16,9 +16,9 @@ MonoBehaviour:
   e_spellType: 0
   i_spellStarsTier: 2
   i_mana_cost: 3
-  f_dmg: 10
-  f_duration: 99999
-  f_projectileSpeed: 1
+  f_dmg: 0
+  f_duration: 10
+  f_projectileSpeed: 0
   f_resistance: 2000
   requiredElementalRune: {fileID: 11400000, guid: fbe28b66f306cc74c909847eba3cdf2f, type: 2}
   _card_Sprite: {fileID: 21300000, guid: b24b76436b1924e4f856e0c27ddf7465, type: 3}

@@ -11,6 +11,17 @@ public class Obstacle_StaticInstant : BaseSpellsEffects
     private float f_stopEnemyDelay = 0.3f;
     #region InstantArea Methods
     //Receive target 
+
+    #region Unity Life Cycle
+    private void FixedUpdate()
+    {
+        if (b_spellEffectActiveInBattlefield)
+        {
+            StartCoroutine(CastInBattlefield());
+        }
+    }
+    #endregion
+
     public override void ActivateEffect(Vector3 starPosition, Vector3 target)
     {
         SetTarget(target);
@@ -25,7 +36,11 @@ public class Obstacle_StaticInstant : BaseSpellsEffects
     {
         WaitForSeconds wait_durationInBattlefield = new WaitForSeconds(f_duration);
         yield return wait_durationInBattlefield;
-        ResetEffect();
+        FinishLoop();
+    }
+    internal void FinishLoop()
+    {
+        effect_Animator.SetTrigger(i_EnterEnd);
     }
     internal void Disable()
     {  
