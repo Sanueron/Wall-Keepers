@@ -29,6 +29,7 @@ public class ActionsManager : MonoBehaviour
     [SerializeField]LayerMask spellCards_LayerMask;
     [SerializeField] List<GameObject> effectList_GameObject = new List<GameObject>();
     #endregion
+
     #region Unity Life Cycle
     private void Start()
     {
@@ -78,6 +79,7 @@ public class ActionsManager : MonoBehaviour
         }
     }
     #endregion
+
     #region Drag Cards Methods
     private void InitCardDrag()
     {
@@ -138,7 +140,7 @@ public class ActionsManager : MonoBehaviour
             Debug.Log("Return to hand - Show message - Can't cast in here");
             StartCoroutine(ReturnToHandPosition(selectedSpell));
         }
-
+        SetCardSortingOrder(i_defaultSortingOrder, selectedSpell);
         //selectedSpell.GetCardVisuals().SetCardSortingOrder(i_defaultSortingOrder);
 
 
