@@ -17,6 +17,7 @@ MonoBehaviour:
   i_dmg: 200
   i_speed: 1
   f_RageOfAction: 1.5
+  i_manaEnergyReleased: 3
   deathClip: {fileID: 0}
   e_Clan: 1
   e_ElementalType: 0

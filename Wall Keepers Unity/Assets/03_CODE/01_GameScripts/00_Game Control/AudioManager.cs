@@ -40,4 +40,15 @@ public class AudioManager : MonoBehaviour
         aS_SFxs.PlayOneShot(aC_SFxClip);
     }
     #endregion
+
+    #region General Methods
+    public void StopMusicPlaying()
+    {
+        aS_music.Stop();
+    }
+    public void StopSFXs()
+    {
+        aS_SFxs.Stop();
+    }
+    #endregion
 }

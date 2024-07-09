@@ -82,6 +82,20 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
+        // Check if level paused
+        if (LevelsGnralManager.b_stopLevel)
+        {
+            enemy_animator.speed = 0;
+            return;
+        }
+        else // Check if Animator Speed is equal to 1
+        { 
+            if(enemy_animator.speed != 1) // If not set back to 1
+            {
+                enemy_animator.speed = 1;
+            }
+        }
+
         if (b_moveToTarget) // No obstacle, moves towards wall
         {
             MoveToTarget();
@@ -95,6 +109,11 @@ public class Enemy : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        if (LevelsGnralManager.b_stopLevel)
+        {
+            return;
+        }
+
         DetectObstacle();
     }
     #endregion

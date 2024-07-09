@@ -467,7 +467,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 248867340430807000}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: PlaySFxOneTime
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: d6b949c39c04b47468ec0c41da9ca25e, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3080718524198275159
 GameObject:
   m_ObjectHideFlags: 0
@@ -1219,6 +1231,9 @@ MonoBehaviour:
   tmp_currentWavesRecord: {fileID: 89094286365408393}
   tmp_wavesCompleted: {fileID: 7586377158834960050}
   tmp_totalManaObtained: {fileID: 8534834659294605529}
+  script_roundsManager: {fileID: 0}
+  aC_resultsMusic: {fileID: 8300000, guid: dac68af6fdd5a5641821d97d59c58635, type: 3}
+  aC_buttonsSfx: {fileID: 0}
 --- !u!1 &4579727433470197218
 GameObject:
   m_ObjectHideFlags: 0

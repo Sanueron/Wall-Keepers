@@ -19,6 +19,12 @@ public class ResultsManager : MonoBehaviour
     [SerializeField] RoundsManager script_roundsManager;
     #endregion
 
+    #region Music and SFXs
+    [Header("Music and Sfx")]
+    [SerializeField] private AudioClip aC_resultsMusic;
+    [SerializeField] private AudioClip aC_levelComplete;
+    #endregion
+
     #region Animator Control Variables
     int i_animatorTrigger = Animator.StringToHash("Show");
     #endregion
@@ -36,6 +42,9 @@ public class ResultsManager : MonoBehaviour
 
         // Set initial Mana Energy obtained
         i_manaObtained = 0;
+
+        // Unpause Level
+        LevelsGnralManager.b_stopLevel = false;
     }
     #endregion
 
@@ -51,10 +60,21 @@ public class ResultsManager : MonoBehaviour
     {
         // Update Results Panel info
         ShowNewRecordOrBestScore();
+        ShowWavesCompleted();
+        ShowManaObtained();
+
+        // Pause Enemies Actions
+        LevelsGnralManager.b_stopLevel = true;
+
+        // Play finish SFX
+        AudioManager.instance.PlaySFxOneTime(aC_levelComplete);
 
         //Show results panel
         animator_ResultsPanel.SetTrigger(i_animatorTrigger);
         Debug.Log("finish");
+
+        // Play Results Panel Music
+        AudioManager.instance.PlayNewMusicClip(aC_resultsMusic);
     }
     #endregion
 
@@ -75,6 +95,15 @@ public class ResultsManager : MonoBehaviour
             go_newRecord.SetActive(false);
             go_bestScore.SetActive(true);
         }
+    }
+    private void ShowWavesCompleted()
+    {
+        int wavesCompleted = script_roundsManager.i_currentWave - 1;
+        tmp_wavesCompleted.text = wavesCompleted.ToString();
+    }
+    private void ShowManaObtained()
+    {
+        tmp_totalManaObtained.text = i_manaObtained.ToString();
     }
     #endregion
 
