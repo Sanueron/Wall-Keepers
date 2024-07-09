@@ -158,19 +158,6 @@ public class ActionsManager : MonoBehaviour
         }
         //transform.position = selectedSpell.v3_currentPosition;
         SetCardSortingOrder(i_defaultSortingOrder, selectedSpell);
-
-        /*
-        Vector3 startPosition = selectedSpell.transform.position;
-        float elapsedTime = 0;
-        while (elapsedTime < 0.3f)
-        {
-            //selectedSpell.transform.position = Vector3.Lerp(startPosition, selectedSpell.v3_currentPosition, elapsedTime / 0.3f);
-            //elapsedTime += Time.deltaTime;
-            yield return null; 
-        }
-        transform.position = selectedSpell.v3_currentPosition;
-        SetCardSortingOrder(i_defaultSortingOrder, selectedSpell);
-        */
     }
     private void SetCardSortingOrder(int sortingOrder, SpellCard_Manager selectedSpell)
     {
