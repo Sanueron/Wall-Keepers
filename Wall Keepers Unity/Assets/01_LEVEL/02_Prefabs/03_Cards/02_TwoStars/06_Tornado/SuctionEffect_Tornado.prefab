@@ -152,6 +152,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   effect_Animator: {fileID: 1721196869008178949}
   enemiesScripts_List: []
+  aS_spellAudioSource: {fileID: 8379136671789317961}
+  aC_spellCastSfx: {fileID: 8300000, guid: b195014b7f0c80c4b9d3700b00cc76e7, type: 3}
+  aC_loopSfx: {fileID: 8300000, guid: 2b1df6e9228a48e46804c2ab22c37c9f, type: 3}
 --- !u!58 &570811571510220195
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -215,3 +218,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!82 &8379136671789317961 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2125104672354934614, guid: 16a64cdb6f7ab5140ab2d251b6fb4155, type: 3}
+  m_PrefabInstance: {fileID: 7581052513257676831}
+  m_PrefabAsset: {fileID: 0}

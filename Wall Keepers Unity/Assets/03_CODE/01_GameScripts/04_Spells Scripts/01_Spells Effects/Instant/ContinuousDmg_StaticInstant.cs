@@ -41,6 +41,14 @@ public class ContinuousDmg_StaticInstant : BaseSpellsEffects
         }
     }
     #endregion
+
+    #region SFX Play Methods
+    internal void StopLoopSfx()
+    {
+        aS_spellAudioSource.Stop();
+    }
+    #endregion
+
     #region Collisions
     // When an enemy enters the area, repeatedly hurt the enemy
     private void  OnTriggerEnter2D(Collider2D collision)

@@ -68,6 +68,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: ProjectailEffect_RockBall
       objectReference: {fileID: 0}
+    - target: {fileID: 8528019506986214660, guid: 308f6e3862f2c20448cfd58839c9e5c7, type: 3}
+      propertyPath: aC_hitSfx
+      value: 
+      objectReference: {fileID: 8300000, guid: 0f7be925563d9c84d99dbc7d3be5f557, type: 3}
+    - target: {fileID: 8528019506986214660, guid: 308f6e3862f2c20448cfd58839c9e5c7, type: 3}
+      propertyPath: aC_spellCastSfx
+      value: 
+      objectReference: {fileID: 8300000, guid: e44abf68a940e9843a277e7208d277da, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

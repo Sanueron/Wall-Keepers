@@ -6,6 +6,10 @@ using static Enemy;
 
 public class SuctionDmg_StaticInstant : BaseSpellsEffects
 {
+    #region Additional SFX
+    [Header("Additional SFX")]
+    [SerializeField] AudioClip aC_loopSfx;
+    #endregion
 
     #region Unity Life Cycle
     private void FixedUpdate()
@@ -63,7 +67,19 @@ public class SuctionDmg_StaticInstant : BaseSpellsEffects
             enemy.b_beingAttracktedBySpell = true;
         }
     }
- 
+
+    #endregion
+
+    #region SFX Play Methods
+    internal void PlayLoopSfx()
+    {
+        aS_spellAudioSource.clip = aC_loopSfx;
+        aS_spellAudioSource.Play();
+    }
+    internal void StopLoopSfx()
+    {
+        aS_spellAudioSource.Stop();
+    }
     #endregion
 
     #region Collisions

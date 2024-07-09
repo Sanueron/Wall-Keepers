@@ -103,10 +103,14 @@ MonoBehaviour:
   v3_currentPosition: {x: 0, y: 0, z: 0}
   spellBaseData: {fileID: 0}
   _spellEffect_GameObject: {fileID: 0}
+  b_onBattlefield: 0
+  _targetSprite: {fileID: 0}
   spellEffectPrefab: {fileID: 0}
   listOf_spellEffects: []
   i_numberOfSpellEffectsInStock: 0
   transform_Projectail_Cast_Position: {fileID: 0}
+  aS_spellAudioSource: {fileID: 0}
+  aC_spellCastSfx: {fileID: 0}
 --- !u!61 &24460214465607094
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -145,7 +149,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 8, y: 11}
+    oldSize: {x: 8.00293, y: 11}
     newSize: {x: 8, y: 11}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

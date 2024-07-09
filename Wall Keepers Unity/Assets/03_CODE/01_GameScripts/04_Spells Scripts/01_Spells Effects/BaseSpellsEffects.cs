@@ -14,6 +14,7 @@ public class BaseSpellsEffects : MonoBehaviour
    [SerializeField] internal List <Enemy> enemiesScripts_List = new List<Enemy>();
     protected int i_EnemyLayer = 10;
     #endregion
+
     #region Animations
     [Header("Animations")]
     protected int i_EnterLoop = Animator.StringToHash("Enter Loop"),
@@ -22,6 +23,11 @@ public class BaseSpellsEffects : MonoBehaviour
         i_EnterExtraEnd = Animator.StringToHash("Enter Extra End");
     #endregion
 
+    #region Spell Sfx
+    [Header("Spell Stats")]
+    [SerializeField] protected AudioSource aS_spellAudioSource;
+    [SerializeField] protected AudioClip aC_spellCastSfx;
+    #endregion
 
     #region Local Common Methods
     internal void SetSpellStatsInSpellEffect(Transform tParent, float dmg, float res, float speed, float dur, float repeatRate, float slowDownValue)
@@ -51,16 +57,6 @@ public class BaseSpellsEffects : MonoBehaviour
     //Coroutine to wait until the spell establisehed duration
 
 
-    #endregion
-    #region PlaySounds
-    internal void PlayCastClip()
-    {
-        //Sound
-    }
-    internal void PlayExplosionClip()
-    {
-        //Sound
-    }
     #endregion
 
     #region Enemies List
@@ -103,5 +99,8 @@ public class BaseSpellsEffects : MonoBehaviour
         }
     }
 
-
+    internal void PlaySpellCastSfx()
+    {
+        aS_spellAudioSource.PlayOneShot(aC_spellCastSfx);
+    }
 }

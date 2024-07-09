@@ -42,7 +42,6 @@ public class NormalMeleeAttack : BaseEnemyAction
 
     internal void AttackWall(WallManager wallStats)
     {
-        print("wall");
         wallStats.ReceiveHit(i_damage);
     }
     #endregion

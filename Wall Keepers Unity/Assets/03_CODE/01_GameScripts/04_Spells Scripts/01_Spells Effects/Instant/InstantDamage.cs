@@ -18,6 +18,7 @@ public class InstantDamage : BaseSpellsEffects
 
     }
     #endregion
+    
     #region Collisions
     // When the enemy collides with this effect (when the collider is enabled), it calls the enemy's ReceiveDamage function.
     private void OnTriggerEnter2D(Collider2D collision)

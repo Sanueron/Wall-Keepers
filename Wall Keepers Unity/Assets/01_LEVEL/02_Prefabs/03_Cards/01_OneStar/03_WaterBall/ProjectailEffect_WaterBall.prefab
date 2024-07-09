@@ -68,6 +68,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: ProjectailEffect_WaterBall
       objectReference: {fileID: 0}
+    - target: {fileID: 8528019506986214660, guid: 308f6e3862f2c20448cfd58839c9e5c7, type: 3}
+      propertyPath: aC_hitSfx
+      value: 
+      objectReference: {fileID: 8300000, guid: 3c2d3732bf1ad2340a58165a00830c56, type: 3}
+    - target: {fileID: 8528019506986214660, guid: 308f6e3862f2c20448cfd58839c9e5c7, type: 3}
+      propertyPath: aC_spellCastSfx
+      value: 
+      objectReference: {fileID: 8300000, guid: 77f0ac2484477f349ba897bd8cc34fa5, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

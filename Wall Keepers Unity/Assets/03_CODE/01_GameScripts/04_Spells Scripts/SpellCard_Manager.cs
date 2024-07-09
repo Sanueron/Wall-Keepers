@@ -8,6 +8,7 @@ public class SpellCard_Manager : MonoBehaviour
 {
     #region Spells variables
     public Vector3 v3_currentPosition;
+    [Header("Spell Stats")]
     [SerializeField] private ScripteableCard spellBaseData;
     [SerializeField] private GameObject _spellEffect_GameObject;
     public bool b_onBattlefield;

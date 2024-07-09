@@ -40,7 +40,6 @@ public class WallManager : MonoBehaviour
     //Method accessed by the enemy to deal damage to the wall
     public void ReceiveHit( float EnemyDmg)
     {
-        print("Wall hitted");
         f_wallLife -= EnemyDmg;
         // img_wallLifeBar.fillAmount = GetHpFillBarValue();
         StartCoroutine(DecreaseLifeBar());

@@ -256,7 +256,6 @@ public class Enemy : MonoBehaviour
         var rate = Mathf.Abs(f_hpForHealthBar - i_hp) / f_duration;
         while (f_hpForHealthBar != i_hp)
         {
-            print("Fill effect" + f_hpForHealthBar + " Hp " + i_hp);
             f_hpForHealthBar = Mathf.MoveTowards(f_hpForHealthBar, i_hp, rate * Time.deltaTime);
             img_fillBar.fillAmount = GetFillBarValue();
             yield return null;
@@ -266,7 +265,6 @@ public class Enemy : MonoBehaviour
     private float GetFillBarValue()
     {
         float fillBarValue = f_hpForHealthBar / i_maxHp;
-        print("fill bar value is " + fillBarValue);
         if (f_hpForHealthBar >= i_maxHp)
         {
             fillBarValue = 1f;

@@ -15,6 +15,11 @@ public class Projectile : BaseSpellsEffects
     private float startTime;
     #endregion
 
+    #region Additional SFX
+    [Header("Additional SFX")]
+    [SerializeField] AudioClip aC_hitSfx;
+    #endregion
+
     #region Unity Life Cycle
 
     private void Awake()
@@ -105,6 +110,13 @@ public class Projectile : BaseSpellsEffects
         {
           enemy.ReceiveDamage((int)f_damage);
         }
+    }
+    #endregion
+
+    #region SFX Play Methods
+    internal void PlayHitSfx()
+    {
+        aS_spellAudioSource.PlayOneShot(aC_hitSfx);
     }
     #endregion
 

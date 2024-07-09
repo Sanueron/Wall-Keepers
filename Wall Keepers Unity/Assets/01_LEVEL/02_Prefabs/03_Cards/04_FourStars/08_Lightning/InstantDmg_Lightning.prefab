@@ -144,6 +144,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   effect_Animator: {fileID: 1453050786882551556}
   enemiesScripts_List: []
+  aS_spellAudioSource: {fileID: 8610885767468695368}
+  aC_spellCastSfx: {fileID: 8300000, guid: 42cc79a4862bb9a46923d599104e367e, type: 3}
 --- !u!50 &8740003867056496075
 Rigidbody2D:
   serializedVersion: 4
@@ -171,3 +173,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!82 &8610885767468695368 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2125104672354934614, guid: 16a64cdb6f7ab5140ab2d251b6fb4155, type: 3}
+  m_PrefabInstance: {fileID: 7709566124669345822}
+  m_PrefabAsset: {fileID: 0}

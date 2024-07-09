@@ -68,6 +68,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: ProjectailEffect_Arrow
       objectReference: {fileID: 0}
+    - target: {fileID: 8528019506986214660, guid: 308f6e3862f2c20448cfd58839c9e5c7, type: 3}
+      propertyPath: aC_loopSfx
+      value: 
+      objectReference: {fileID: 8300000, guid: d072348a9df3e714b8b0e37f720442f3, type: 3}
+    - target: {fileID: 8528019506986214660, guid: 308f6e3862f2c20448cfd58839c9e5c7, type: 3}
+      propertyPath: aC_spellCastSfx
+      value: 
+      objectReference: {fileID: 8300000, guid: 993d8429039484c409b86e6ab4bb4a79, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
