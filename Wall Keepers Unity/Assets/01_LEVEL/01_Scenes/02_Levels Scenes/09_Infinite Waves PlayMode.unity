@@ -6842,6 +6842,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 80577845}
     m_Modifications:
+    - target: {fileID: 4645027937563612116, guid: 61e55234a5d65fb4e8b6c4818b709737, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: e1973770c72fd5140962df8b336d09bf, type: 2}
     - target: {fileID: 4906636501188421721, guid: 61e55234a5d65fb4e8b6c4818b709737, type: 3}
       propertyPath: m_Name
       value: Chaos Normal D
