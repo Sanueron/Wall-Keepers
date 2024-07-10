@@ -78,6 +78,9 @@ public class ResultsManager : MonoBehaviour
         ShowWavesCompleted();
         ShowManaObtained();
 
+        // Add Mana Energy Obtained to Player current Mana
+        PlayerData.i_mana += i_manaObtained;
+
         // Pause Enemies Actions
         LevelsGnralManager.b_stopLevel = true;
 

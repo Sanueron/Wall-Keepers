@@ -116,6 +116,7 @@ public class Projectile : BaseSpellsEffects
     #region SFX Play Methods
     internal void PlayHitSfx()
     {
+        aS_spellAudioSource.Stop();
         aS_spellAudioSource.PlayOneShot(aC_hitSfx);
     }
     #endregion

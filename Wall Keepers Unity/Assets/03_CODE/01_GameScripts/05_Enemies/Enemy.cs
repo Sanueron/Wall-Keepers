@@ -29,6 +29,10 @@ public class Enemy : MonoBehaviour
     [SerializeField] Image img_fillBar;
     [SerializeField] TextMeshProUGUI tmp_damageTaken;
 
+    [Header("Enemy Sfxs")]
+    [SerializeField] private AudioSource aS_enemy;
+    [SerializeField] private AudioClip aC_enemyDefeated;
+
     #region Enemy States
     internal enum EnemyState { Moving, TakingAction, ReceiveDamage, Defeated, Attack, Stop }
     [Header("Enemy States")]
@@ -301,6 +305,13 @@ public class Enemy : MonoBehaviour
             SwitchState(EnemyState.ReceiveDamage);
         }
         StartCoroutine(SumUp());
+    }
+    #endregion
+
+    #region SFXs Methods
+    internal void PlayEnemyDefeated()
+    {
+        aS_enemy.PlayOneShot(aC_enemyDefeated);
     }
     #endregion
 

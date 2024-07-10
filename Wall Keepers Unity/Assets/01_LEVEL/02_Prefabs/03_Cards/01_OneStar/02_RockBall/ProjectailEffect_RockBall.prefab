@@ -71,7 +71,7 @@ PrefabInstance:
     - target: {fileID: 8528019506986214660, guid: 308f6e3862f2c20448cfd58839c9e5c7, type: 3}
       propertyPath: aC_hitSfx
       value: 
-      objectReference: {fileID: 8300000, guid: 0f7be925563d9c84d99dbc7d3be5f557, type: 3}
+      objectReference: {fileID: 8300000, guid: d3231fe49cd80b049b74567cea095aa5, type: 3}
     - target: {fileID: 8528019506986214660, guid: 308f6e3862f2c20448cfd58839c9e5c7, type: 3}
       propertyPath: aC_spellCastSfx
       value: 
