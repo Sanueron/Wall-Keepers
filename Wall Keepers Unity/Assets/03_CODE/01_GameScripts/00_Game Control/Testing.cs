@@ -9,14 +9,35 @@ public class Testing : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        //PlayerData.i_keys = 15;
-        //PlayerData.i_mana = 10000;
-        //PlayerData.i_spell_Cards_Obtained[1] = 50;
+        PlayerData.i_keys = 0;
+        PlayerData.i_mana = 0;
+        PlayerData.i_spell_Cards_Obtained[1] = 50;
+        PlayerData.i_spell_Cards_Obtained[2] = 50;
+        PlayerData.i_spell_Cards_Obtained[3] = 50;
+        PlayerData.i_spell_Cards_Obtained[4] = 50;
+        PlayerData.i_spell_Cards_Obtained[5] = 50;
+        PlayerData.i_spell_Cards_Obtained[6] = 50;
+        PlayerData.i_spell_Cards_Obtained[7] = 50;
+        PlayerData.i_spell_Cards_Obtained[8] = 50;
+        PlayerData.i_spell_Cards_Obtained[9] = 50;
+        PlayerData.i_spell_Cards_Obtained[10] = 50;
+        PlayerData.i_spell_Cards_Obtained[11] = 50;
+        PlayerData.b_spellCardObtained[1] = true;
+        PlayerData.b_spellCardObtained[2] = true;
+        PlayerData.b_spellCardObtained[3] = true;
+        PlayerData.b_spellCardObtained[4] = true;
+        PlayerData.b_spellCardObtained[5] = true;
+        PlayerData.b_spellCardObtained[6] = true;
+        PlayerData.b_spellCardObtained[7] = true;
+        PlayerData.b_spellCardObtained[8] = true;
+        PlayerData.b_spellCardObtained[9] = true;
+        PlayerData.b_spellCardObtained[10] = true;
+        PlayerData.b_spellCardObtained[11] = true;
         //PlayerData.i_spell_Card_Level[1] = 9;
         //PlayerData.i_elementalRunesInStock[0] = 5;
         //print(PlayerData.i_lastDayLogInShop);
-       
-        TestDeck();
+        //PlayerData.b_spellCardObtained[1] = true;
+        //TestDeck();
 
     }
 

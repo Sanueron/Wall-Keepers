@@ -78,7 +78,7 @@ public class PullResultsManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("Not enough keys)"); // Replace with panel
+          ContextualMenuManager.instance.ShowNotEnoughKeysPanel();
         }
     }
 

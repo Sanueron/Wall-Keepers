@@ -138,6 +138,8 @@ public class DeckManager : MonoBehaviour
                 deckSlots_array[i].spellPrefab = spellPrefab;
                 PlayerData.deck_GameObjects[deckSlots_array[i].i_deckSlotIndex] = deckSlots_array[i].spellPrefab;
                 PlayerData.spellsInDeckData[deckSlots_array[i].i_deckSlotIndex] = spellData;
+                PlayerData.go_spellsIndeck[i] = spellPrefab;
+                print(PlayerData.go_spellsIndeck[i].name);
                 break;
             }
         }

@@ -112,7 +112,7 @@ public class BuyableItemManager : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("Not enough Mana, show how to get mana panel");
+                    ContextualMenuManager.instance.ShowNotEnoughManaPanel();
                 }
                 break;
             case PriceType.Euros:

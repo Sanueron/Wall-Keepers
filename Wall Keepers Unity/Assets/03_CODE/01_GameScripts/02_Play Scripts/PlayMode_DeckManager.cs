@@ -48,6 +48,7 @@ public class PlayMode_DeckManager : MonoBehaviour
     {
         for (int i = 0; i < PlayerData.go_spellsIndeck.Length; ++i)
         {
+            print(PlayerData.go_spellsIndeck[i].name);
             GameObject obj = Instantiate(PlayerData.go_spellsIndeck[i], deckPosition_Transform.transform);
             obj.SetActive(false);
             cards_NotInHand_GameObjects.Add(obj);
