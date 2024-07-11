@@ -8,7 +8,7 @@ public class BaseSpellsEffects : MonoBehaviour
     #region Local Stats variables
     [SerializeField] internal Animator effect_Animator;
     internal bool b_spellEffectActiveInBattlefield = false;
-    protected float f_damage, f_resistance, f_speed, f_duration, f_repeatRate, f_slowDownValue;
+    protected float f_damage, f_resistance, f_speed, f_duration, f_repeatRate, f_slowDownValue, f_initialSpeed;
     protected bool b_mergedCard;
     internal Transform spellCardParent;
    [SerializeField] internal List <Enemy> enemiesScripts_List = new List<Enemy>();

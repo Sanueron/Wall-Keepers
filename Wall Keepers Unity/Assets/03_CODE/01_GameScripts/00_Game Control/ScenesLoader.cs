@@ -30,4 +30,16 @@ public class ScenesLoader : MonoBehaviour
     {
         sceneToLoadIndex = i_nextScene;
     }
+
+    public void CheckDeckBeforeLoadScene()
+    {
+        if(PlayerData.b_isDeckFull)
+        {
+            LoadIndicatedScene();
+        }
+        else
+        {
+            ContextualMenuManager.instance.ShowDeckNotFull();
+        }
+    }
 }

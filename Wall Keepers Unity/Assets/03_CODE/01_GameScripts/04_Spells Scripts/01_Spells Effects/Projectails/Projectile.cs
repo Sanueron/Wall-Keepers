@@ -22,10 +22,10 @@ public class Projectile : BaseSpellsEffects
 
     #region Unity Life Cycle
 
-    private void Awake()
+   
+    private void Start()
     {
-        InitialRotation = transform.rotation;
-      
+        InitializeVars();
     }
     private void FixedUpdate()
     {
@@ -33,10 +33,29 @@ public class Projectile : BaseSpellsEffects
         {
             ProjectailMovement();
         }
+
+        if(LevelsGnralManager.b_stopLevel)
+        {
+          
+            f_speed = 0.0f;
+            print(f_speed + "SpeedPaused");
+        }
+        else
+        {
+            f_speed = f_initialSpeed;
+            print(f_speed+"SpeedContinue");
+            print(f_initialSpeed + "InitSpeed");
+        }
     }
     #endregion
 
     #region Base Methods
+    private void InitializeVars()
+    {
+        InitialRotation = transform.rotation;
+        f_initialSpeed = f_speed;
+        print("Init" + f_initialSpeed);
+    }
     public override void ActivateEffect(Vector3 starPosition, Vector3 target)
     {
         // Set new behaviour for Projectiles

@@ -23,8 +23,6 @@ public class ContextualMenuManager : MonoBehaviour
         instance = this; // Equal the instance to this script
     }
 
-  
-
     public void ShowDeckNotFull()
     {
         go_DeckIsFull.SetActive(true);
@@ -37,10 +35,6 @@ public class ContextualMenuManager : MonoBehaviour
     public void ShowNotEnoughKeysPanel()
     {
         go_NotEnough_KeysMenu.SetActive(true); 
-    }
-    public void ChangeScene(int scene)//Button eaccess
-    {
-        SceneManager.LoadScene(scene);
     }
     public void CloseManaPanel()
     {
