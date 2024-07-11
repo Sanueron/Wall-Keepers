@@ -30,6 +30,9 @@ EditorBuildSettings:
     path: Assets/01_LEVEL/01_Scenes/01_Game Scenes/07_Shop.unity
     guid: a8f32d9f45f158b4086a26a536160b28
   - enabled: 1
+    path: Assets/01_LEVEL/01_Scenes/01_Game Scenes/08_Tutorial.unity
+    guid: 4e603755de7b1294cb894790db70084c
+  - enabled: 1
     path: Assets/01_LEVEL/01_Scenes/02_Levels Scenes/09_Infinite Waves PlayMode.unity
     guid: cf31ceb3558e44e4db7baf1eda4fe82d
   m_configObjects: {}

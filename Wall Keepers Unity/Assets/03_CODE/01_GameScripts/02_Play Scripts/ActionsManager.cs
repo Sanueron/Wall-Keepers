@@ -38,6 +38,11 @@ public class ActionsManager : MonoBehaviour
     }
     private void Update()
     {
+        if (LevelsGnralManager.b_stopLevel) // if level stopped don't show
+        {
+            return;
+        }
+
         if (b_timerIsOn)
         {
             f_timer += Time.deltaTime;

@@ -4,30 +4,24 @@ using UnityEngine;
 
 public class PlayModesManager : MonoBehaviour
 {
-    [SerializeField] GameObject go_PlayModesViewPort;
-    [SerializeField] GameObject go_EndlessWavesViewPort;
-    [SerializeField] GameObject go_EndlessWavesBanner;
-    private void Awake()
-    {
-        go_EndlessWavesViewPort.SetActive(false);
-        go_EndlessWavesBanner.SetActive(false);
-    }
+    #region Local Variables
+    [SerializeField] Animator animator_endlessWaves;
+    int i_animatorBool_Show = Animator.StringToHash("Show");
+    #endregion
+
+    #region UNity Life Cycle
+
+    #endregion
+
+    #region Endless Waves Methods
     public void PlayEndlessWavesMode()
     {
-        Disable_PlayModesViewPort();
-        go_EndlessWavesViewPort.SetActive(true);
-       
-
+        animator_endlessWaves.SetBool(i_animatorBool_Show, true);
     }
-    internal void ActiveEndlessWavesBanner()
+    public void CloseEndlessWavesPlayMode()
     {
-        go_EndlessWavesBanner.SetActive(true);
-
+        animator_endlessWaves.SetBool(i_animatorBool_Show, false);
     }
-    private void Disable_PlayModesViewPort()
-    {
-        go_PlayModesViewPort.SetActive(false);
-    }
-
+    #endregion
 
 }
