@@ -20,6 +20,7 @@ public class ContinuousDmg_StaticInstant : BaseSpellsEffects
     //Wait until spell effect finish 
     private void FixedUpdate()//1º Loop FireWall
     {
+        CheckIfLevelPaused();
         if (b_spellEffectActiveInBattlefield)
         {
             StartCoroutine(CastInBattlefield());

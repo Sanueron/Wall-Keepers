@@ -31,6 +31,7 @@ public class ContinuousDmg_StaticProjectail : BaseSpellsEffects
 
     private void FixedUpdate()
     {
+        CheckIfLevelPaused();
         if (b_spellEffectActiveInBattlefield && b_startMovement)
         {
             ProjectailMovement();

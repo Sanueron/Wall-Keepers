@@ -21,7 +21,7 @@ public class SaveData : MonoBehaviour
         }
         instance = this; // Equal the instance to this script
 
-        //Reset(); // Only when we want to delete data
+       //Reset(); // Only when we want to delete data
         // Load Player Saved Data
         LoadAndAssignData();
 

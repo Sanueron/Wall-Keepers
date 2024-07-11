@@ -7,10 +7,13 @@ using UnityEngine.SceneManagement;
 
 public class ContextualMenuManager : MonoBehaviour
 {
+    #region Variables
     public static ContextualMenuManager instance { get; private set; }
     [SerializeField] private GameObject go_NotEnough_ManaMenu;
     [SerializeField] private GameObject go_NotEnough_KeysMenu;
     [SerializeField] private GameObject go_DeckIsFull;
+    #endregion
+    #region Unity Life Cycle
     private void Awake()
     {
         // Implement Singleton Pattern
@@ -22,7 +25,8 @@ public class ContextualMenuManager : MonoBehaviour
         }
         instance = this; // Equal the instance to this script
     }
-
+    #endregion
+    #region Methods
     public void ShowDeckNotFull()
     {
         go_DeckIsFull.SetActive(true);
@@ -44,6 +48,10 @@ public class ContextualMenuManager : MonoBehaviour
     {
         go_NotEnough_KeysMenu.SetActive(false);
     }
-
+    public void CloseDecksIsNotFullPanel()
+    {
+        go_DeckIsFull.SetActive(false);
+    }
+    #endregion
 
 }

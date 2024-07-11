@@ -103,4 +103,22 @@ public class BaseSpellsEffects : MonoBehaviour
     {
         aS_spellAudioSource.PlayOneShot(aC_spellCastSfx);
     }
+
+    internal void CheckIfLevelPaused()
+    {
+
+        if (LevelsGnralManager.b_stopLevel)
+        {
+            effect_Animator.speed = 0;
+            return;
+        }
+        else // Check if Animator Speed is equal to 1
+        {
+            if (effect_Animator.speed != 1) // If not set back to 1
+            {
+                effect_Animator.speed = 1;
+            }
+        }
+    }
+ 
 }

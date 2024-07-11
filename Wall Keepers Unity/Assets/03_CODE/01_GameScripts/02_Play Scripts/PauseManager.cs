@@ -11,11 +11,6 @@ public class PauseManager : MonoBehaviour
         go_pausePanel.SetActive(true);
     }
 
-    public void EndGame()
-    {
-        print("openResults");
-    }
-
     public void ContinueGame()
     {
         LevelsGnralManager.b_stopLevel = false;

@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 764828334746082454, guid: 302bd324a6cc7884d9a50b0ab1b96177, type: 3}
+      propertyPath: m_Name
+      value: Close Button
+      objectReference: {fileID: 0}
     - target: {fileID: 1262867907732429560, guid: 302bd324a6cc7884d9a50b0ab1b96177, type: 3}
       propertyPath: m_SizeDelta.x
       value: 169
@@ -28,6 +32,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 3585c17ed4f39b1439079b00be49858c, type: 3}
+    - target: {fileID: 2805404214763206055, guid: 302bd324a6cc7884d9a50b0ab1b96177, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 8482712648628362555, guid: e769fedf2a849434e82de23067795a68, type: 3}
     - target: {fileID: 3888988956250690742, guid: 302bd324a6cc7884d9a50b0ab1b96177, type: 3}
       propertyPath: m_Name
       value: Icon
@@ -36,6 +44,42 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 3585c17ed4f39b1439079b00be49858c, type: 3}
+    - target: {fileID: 7030469575861027048, guid: 302bd324a6cc7884d9a50b0ab1b96177, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7030469575861027048, guid: 302bd324a6cc7884d9a50b0ab1b96177, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7030469575861027048, guid: 302bd324a6cc7884d9a50b0ab1b96177, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7030469575861027048, guid: 302bd324a6cc7884d9a50b0ab1b96177, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CloseManaPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 7030469575861027048, guid: 302bd324a6cc7884d9a50b0ab1b96177, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlaySFxOneTime
+      objectReference: {fileID: 0}
+    - target: {fileID: 7030469575861027048, guid: 302bd324a6cc7884d9a50b0ab1b96177, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ContextualMenuManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7030469575861027048, guid: 302bd324a6cc7884d9a50b0ab1b96177, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: AudioManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7030469575861027048, guid: 302bd324a6cc7884d9a50b0ab1b96177, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 8300000, guid: d6b949c39c04b47468ec0c41da9ca25e, type: 3}
+    - target: {fileID: 7030469575861027048, guid: 302bd324a6cc7884d9a50b0ab1b96177, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.AudioClip, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7217844993661388527, guid: 302bd324a6cc7884d9a50b0ab1b96177, type: 3}
       propertyPath: m_SizeDelta.x
       value: 169
@@ -137,8 +181,20 @@ PrefabInstance:
       value: Not Enough Text
       objectReference: {fileID: 0}
     - target: {fileID: 8065238691359143258, guid: 302bd324a6cc7884d9a50b0ab1b96177, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 94.1188
+      objectReference: {fileID: 0}
+    - target: {fileID: 8065238691359143258, guid: 302bd324a6cc7884d9a50b0ab1b96177, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 105.5145
+      objectReference: {fileID: 0}
+    - target: {fileID: 8065238691359143258, guid: 302bd324a6cc7884d9a50b0ab1b96177, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 257
+      objectReference: {fileID: 0}
+    - target: {fileID: 8065238691359143258, guid: 302bd324a6cc7884d9a50b0ab1b96177, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 407.72995
       objectReference: {fileID: 0}
     - target: {fileID: 8301155224227047550, guid: 302bd324a6cc7884d9a50b0ab1b96177, type: 3}
       propertyPath: m_Name
@@ -148,6 +204,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ContextualMessage_NotEnoughMana2
       objectReference: {fileID: 0}
+    - target: {fileID: 8556413344837307485, guid: 302bd324a6cc7884d9a50b0ab1b96177, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8571247072465672505, guid: 302bd324a6cc7884d9a50b0ab1b96177, type: 3}
       propertyPath: m_text
       value: Not Enough Mana
@@ -155,6 +215,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 5802161485957753298, guid: 302bd324a6cc7884d9a50b0ab1b96177, type: 3}
+    - {fileID: 6466950696158878456, guid: 302bd324a6cc7884d9a50b0ab1b96177, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 302bd324a6cc7884d9a50b0ab1b96177, type: 3}

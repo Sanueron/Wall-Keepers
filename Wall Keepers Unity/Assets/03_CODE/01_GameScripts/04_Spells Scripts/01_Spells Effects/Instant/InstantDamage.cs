@@ -3,7 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class InstantDamage : BaseSpellsEffects
-{ 
+{
+    #region Unity Life Cycle
+    private void FixedUpdate()
+    {
+        CheckIfLevelPaused();
+    }
+    #endregion  
     #region InstantArea Methods
     //Receive target 
     public override void ActivateEffect(Vector3 starPosition, Vector3 target)

@@ -14,6 +14,7 @@ public class ActionsManager : MonoBehaviour
     [SerializeField]private bool b_draggingCard;
     private float f_timer = 0;
     private bool b_timerIsOn;
+    [SerializeField] GameObject go_spellInfoPanel;
     public bool GetIsDragging()
     {
         return b_draggingCard;
@@ -112,9 +113,9 @@ public class ActionsManager : MonoBehaviour
                 return;
             }
             // Show card info panel 
-            Debug.Log("Show card info panel");
+           
             StartCoroutine(ReturnToHandPosition(selectedSpell));
-            //ShowCardInfoPanel(selectedSpell);
+            ShowCardInfoPanel(selectedSpell);
             return;
         }
         b_timerIsOn = false;
@@ -205,13 +206,36 @@ public class ActionsManager : MonoBehaviour
             }
         }
     }
+
+    #endregion
+
+
+    #region Spell Info
+
     private void ShowCardInfoPanel(SpellCard_Manager selectedCard)
     {
+        go_spellInfoPanel.SetActive(true);
         b_busy = true; // Prevent player from dragging cards or doing other actions
         b_showingCardInfo = true;
-        //MenuManager.instance.ShowSelectedCardInfoMenu(selectedCard);
+        LevelsGnralManager.b_stopLevel = true;
+        PlayMode_Spell_Info.instance.ShowSpellData(selectedCard);
     }
+
+    public void CloseCardInfoPanel()
+    {
+        LevelsGnralManager.b_stopLevel = false;
+        go_spellInfoPanel.SetActive(false);
+        b_busy = false; // Prevent player from dragging cards or doing other actions
+        b_showingCardInfo = false;
+    }
+
+   
+
+    
+
+
     #endregion
+
 
     #region External Methods
     public void SetBusyOFF() {  b_busy = false; }

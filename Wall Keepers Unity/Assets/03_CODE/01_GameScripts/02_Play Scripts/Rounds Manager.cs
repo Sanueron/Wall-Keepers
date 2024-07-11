@@ -10,6 +10,7 @@ public class RoundsManager : MonoBehaviour
     [Header("Next Wave Panel Variables")]
     [SerializeField] Animator animator_NextWave;
     [SerializeField] private TMP_Text tmp_nextWaveText;
+    [SerializeField] private TMP_Text tmp_nextWaveText_PauseMenu;
     #endregion
 
     #region Animator Variables
@@ -54,6 +55,7 @@ public class RoundsManager : MonoBehaviour
                 // All enemies of this wave/round defeated, move to next round
                 i_currentWave++;
                 tmp_nextWaveText.text = "Wave " + i_currentWave.ToString();
+                tmp_nextWaveText_PauseMenu.text = "Wave " + i_currentWave.ToString();
                 animator_NextWave.SetTrigger(i_nextWaveTriggerHash);
             }
         }

@@ -29,23 +29,14 @@ public class Projectile : BaseSpellsEffects
     }
     private void FixedUpdate()
     {
+        CheckIfLevelPaused();
+
         if (b_spellEffectActiveInBattlefield&&b_startMovement)
         {
             ProjectailMovement();
         }
 
-        if(LevelsGnralManager.b_stopLevel)
-        {
-          
-            f_speed = 0.0f;
-            print(f_speed + "SpeedPaused");
-        }
-        else
-        {
-            f_speed = f_initialSpeed;
-            print(f_speed+"SpeedContinue");
-            print(f_initialSpeed + "InitSpeed");
-        }
+       
     }
     #endregion
 
@@ -62,6 +53,7 @@ public class Projectile : BaseSpellsEffects
         CastBall(starPosition, target);
     }
     #endregion
+
 
     #region Projectile Methods
     // Method to save the target position

@@ -72,6 +72,11 @@ public class ResultsManager : MonoBehaviour
     }
     private void WallManager_e_OnWallDestroyed(object sender, System.EventArgs e)
     {
+        ShowResults();
+    }
+
+    public void ShowResults()
+    {
         // Update Results Panel info
         ShowDemonitosDefeated();
         ShowNewRecordOrBestScore();

@@ -14,6 +14,7 @@ public class SuctionDmg_StaticInstant : BaseSpellsEffects
     #region Unity Life Cycle
     private void FixedUpdate()
     {
+        CheckIfLevelPaused();
         if (b_spellEffectActiveInBattlefield)
         {
             StartCoroutine(CastInBattlefield());

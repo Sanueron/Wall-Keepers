@@ -16,6 +16,8 @@ public class Suction_StaticInstant : BaseSpellsEffects
     //Wait until spell effect finish 
     private void FixedUpdate()
     {
+        CheckIfLevelPaused();
+
         if (b_spellEffectActiveInBattlefield)
         {
             StartCoroutine(CastInBattlefield());
