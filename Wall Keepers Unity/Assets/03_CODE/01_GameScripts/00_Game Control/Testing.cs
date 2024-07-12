@@ -11,12 +11,9 @@ public class Testing : MonoBehaviour
     {
         //ObtainAllCards();    
         //TestDeck();
-        PlayerData.i_keys = 100;
+        //PlayerData.i_keys = 100;
     }
-    private void Start()
-    {
-        print(PlayerData.i_spell_Cards_Obtained[2]);
-    }
+
     public void SmallEnemyHit()
     {
         WallManager.instance.ReceiveHit(200f);
