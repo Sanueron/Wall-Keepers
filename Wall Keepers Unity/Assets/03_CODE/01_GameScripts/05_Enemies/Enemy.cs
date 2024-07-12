@@ -78,6 +78,10 @@ public class Enemy : MonoBehaviour
         RestoreTarget();
         SwitchState(EnemyState.Moving);
     }
+    private void OnDisable()
+    {
+        StopCoroutine(SumUp());
+    }
     private void Start()
     {
         SwitchState(EnemyState.Moving);
