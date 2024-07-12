@@ -18,7 +18,7 @@ public class SpellCard_Manager : MonoBehaviour
 
     #region Spell Stats variables
     private int i_spellLevel, i_spellAwakeningLvl;
-    private float f_damage, f_resistance, f_speed, f_duration, f_repeatRate, f_slowDownValue;
+    internal float f_damage, f_resistance, f_speed, f_duration, f_repeatRate, f_slowDownValue;
     private int i_battlefieldLayer = 9;
     #endregion
 

@@ -54,10 +54,10 @@ public class PlayMode_Spell_Info : MonoBehaviour
         tmp_spellStar.text = scripteableCard.i_spellStarsTier.ToString();//STAR LEVEL
         tmp_spellLevel.text = PlayerData.i_spell_Card_Level[scripteableCard.i_id].ToString();//LEVEL
         tmp_spellAwkLevel.text = PlayerData.i_awakening_Card_Level[scripteableCard.i_id].ToString();//AWAKENING LEVEL
-        tmp_damageAlone.text = scripteableCard.f_dmg.ToString();//DAMAGE
-        tmp_resistanceAlone.text = scripteableCard.f_resistance.ToString();//RESISTANCE
-        tmp_speedAlone.text = scripteableCard.f_projectileSpeed.ToString();//SPEED
-        tmp_durationAlone.text = scripteableCard.f_duration.ToString();//DURATION
+        tmp_damageAlone.text = spellCard.f_damage.ToString();//DAMAGE
+        tmp_resistanceAlone.text = spellCard.f_resistance.ToString();//RESISTANCE
+        tmp_speedAlone.text = spellCard.f_speed.ToString();//SPEED
+        tmp_durationAlone.text = spellCard.f_duration.ToString();//DURATION
     }
     #endregion
 

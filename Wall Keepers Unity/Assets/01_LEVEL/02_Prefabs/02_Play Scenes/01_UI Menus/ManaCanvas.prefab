@@ -451,7 +451,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0a2086f9253ccd4d937664b908b3c87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  f_currentManaValue: 100
+  f_currentManaValue: 10
   img_manaBarFront: {fileID: 6665496094229339464}
   img_manaBarBack: {fileID: 5979982935090883221}
   f_manaIncreaseSpeed: 0.8
