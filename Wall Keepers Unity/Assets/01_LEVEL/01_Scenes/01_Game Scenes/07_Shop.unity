@@ -735,6 +735,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7844009949372236184, guid: 19592bb497374124981939cd3a5d8261, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -44
+      objectReference: {fileID: 0}
     - target: {fileID: 7999844749141601286, guid: 19592bb497374124981939cd3a5d8261, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 2
@@ -781,7 +785,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8658849940346773683, guid: 19592bb497374124981939cd3a5d8261, type: 3}
       propertyPath: m_Name
-      value: ContextualMessage_NotEnoughMana2
+      value: ContextualMessage_NotEnoughMana (OFF)
       objectReference: {fileID: 0}
     - target: {fileID: 8658849940346773683, guid: 19592bb497374124981939cd3a5d8261, type: 3}
       propertyPath: m_IsActive
