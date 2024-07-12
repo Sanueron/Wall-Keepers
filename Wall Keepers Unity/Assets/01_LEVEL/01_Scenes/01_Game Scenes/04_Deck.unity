@@ -5658,6 +5658,7 @@ MonoBehaviour:
   listOf_FireSpells:
   - {fileID: 7462792870928014989}
   - {fileID: 1977454907}
+  - {fileID: 4178787647169595958}
   listOf_WaterSpells:
   - {fileID: 971611648}
   listOf_EarthSpells:
@@ -11300,6 +11301,10 @@ PrefabInstance:
       propertyPath: spellPrefab
       value: 
       objectReference: {fileID: 6452281988306610173, guid: 7f757d0830d5a8d40ab3f8c4b0e58762, type: 3}
+    - target: {fileID: 546419065340522663, guid: 89b4785def52fc34db1e850ca6e31dde, type: 3}
+      propertyPath: spellBaseData
+      value: 
+      objectReference: {fileID: 11400000, guid: bee568d9a37cc524681302dac694215c, type: 2}
     - target: {fileID: 4587843700520439554, guid: 89b4785def52fc34db1e850ca6e31dde, type: 3}
       propertyPath: m_Name
       value: S3_Ignite
@@ -11394,6 +11399,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7211978408616625220, guid: 89b4785def52fc34db1e850ca6e31dde, type: 3}
   m_PrefabInstance: {fileID: 4178787647169595954}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4178787647169595958 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 546419065340522663, guid: 89b4785def52fc34db1e850ca6e31dde, type: 3}
+  m_PrefabInstance: {fileID: 4178787647169595954}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d77957f1efd87a646b97f080b02e5272, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4958416575386258335
 PrefabInstance:
   m_ObjectHideFlags: 0

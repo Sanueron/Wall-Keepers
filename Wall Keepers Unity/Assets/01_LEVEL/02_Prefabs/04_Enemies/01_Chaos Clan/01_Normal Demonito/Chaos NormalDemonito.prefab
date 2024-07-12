@@ -68,6 +68,10 @@ PrefabInstance:
       propertyPath: aC_enemyDefeated
       value: 
       objectReference: {fileID: 8300000, guid: 120964583a880cf46867a36b60b446a1, type: 3}
+    - target: {fileID: 7234329801822366835, guid: 987eb037603a07e40ae333665b139928, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

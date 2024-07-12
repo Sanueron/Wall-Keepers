@@ -30,7 +30,7 @@ public class PlayModesManager : MonoBehaviour
 
     public void GetWavesRecord()
     {
-        tmp_wavesRecord.text = PlayerData.i_maxRound.ToString();
+        tmp_wavesRecord.text = "Record: "+PlayerData.i_maxRound.ToString();
     }
     #endregion
 

@@ -18,7 +18,7 @@ MonoBehaviour:
   i_mana_cost: 1
   f_dmg: 125
   f_duration: 3
-  f_projectileSpeed: 1
+  f_projectileSpeed: 0
   f_resistance: 0
   requiredElementalRune: {fileID: 11400000, guid: b1f41260bc5382245be7bf31f10bb7ea, type: 2}
   _card_Sprite: {fileID: 21300000, guid: 47d265fab1b735c4c8cb9559e58de540, type: 3}
@@ -31,13 +31,14 @@ MonoBehaviour:
   spr_spellRequiredCard_2: {fileID: 21300000, guid: ab3451163fe3ccd4882b5e3cf3879839, type: 3}
   i_spellRequired_1_Id: 4
   i_spellRequired_2_Id: 6
+  f_slowDown_value: 0
+  f_attackInterval: 0.5
   f_repeatingDmgCoolDown: 0.5
   e_CastingType: 2
   e_Effect: 2
   e_Element: 1
   e_2Element: 4
   Description: Pulls enemies in area to its center while they burn
-  f_attackInterval: 0.5
   b_isMerged: 1
   fusionSprite1: {fileID: 21300000, guid: 98c5e5e3d84daae42b3aea85d9a6c1c6, type: 3}
   fusionSprite2: {fileID: 21300000, guid: ab3451163fe3ccd4882b5e3cf3879839, type: 3}
@@ -46,4 +47,3 @@ MonoBehaviour:
   fusionSprite5: {fileID: 0}
   b_canAwake: 0
   i_awakenLevel: 1
-  i_slowDown_value: 0

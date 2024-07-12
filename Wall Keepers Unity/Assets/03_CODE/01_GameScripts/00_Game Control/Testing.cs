@@ -9,8 +9,10 @@ public class Testing : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        //PlayerData.b_spellCardObtained[9] = true;
+        
         //ObtainAllCards();    
-        //TestDeck();
+        TestDeck();
         //PlayerData.i_keys = 100;
     }
 
@@ -29,11 +31,9 @@ public class Testing : MonoBehaviour
     {
         for (int i = 0; i < PlayerData.go_spellsIndeck.Length; i++)
         {
-            PlayerData.go_spellsIndeck[i] = testSpell[i];
+            print(PlayerData.go_spellsIndeck[i]);
 
         }
-
-
     }
 
     public void ObtainAllCards()
@@ -42,7 +42,6 @@ public class Testing : MonoBehaviour
      
             for (int i = 0; i < PlayerData.i_spell_Cards_Obtained.Length; i++)
             {
-                     PlayerData.i_spell_Cards_Obtained[i] = 1;
                     PlayerData.b_spellCardObtained[i] = true;
              }
 

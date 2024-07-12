@@ -76,6 +76,7 @@ public class DeckManager : MonoBehaviour
     #region Unity Life Cycle
     void Awake()
     {
+       
         // Implement Singleton Pattern
         if (instance != null) // Error check to avoid more than one Instance of this script to be created
         {

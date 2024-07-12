@@ -85,15 +85,12 @@ public class Enemy : MonoBehaviour
     private void Start()
     {
         SwitchState(EnemyState.Moving);
-
         GetStats();
-
         // Set Initial Move to target pos and wall pos.
         GameObject go_wallMoveTo = GameObject.Find("Enemies Wall Move to Target");
         wall_moveToTarget_transform = go_wallMoveTo.transform;
         moveToTarget_transform = wall_moveToTarget_transform;
         RestoreTarget();
-
     }
 
     private void Update()
@@ -308,14 +305,19 @@ public class Enemy : MonoBehaviour
         {
             SwitchState(EnemyState.ReceiveDamage);
         }
-        StartCoroutine(SumUp());
+        if (gameObject.activeSelf)
+        {
+            StartCoroutine(SumUp());
+        }
     }
     #endregion
 
     #region SFXs Methods
     internal void PlayEnemyDefeated()
     {
+        aS_enemy.Stop();
         aS_enemy.PlayOneShot(aC_enemyDefeated);
+        print("sound" + aC_enemyDefeated);
     }
     #endregion
 

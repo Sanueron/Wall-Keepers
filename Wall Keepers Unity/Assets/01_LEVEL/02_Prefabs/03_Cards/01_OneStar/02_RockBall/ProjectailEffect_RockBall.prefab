@@ -64,6 +64,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -1939025917, guid: cfcfcff7648083544b0a09688d2d4334, type: 3}
+    - target: {fileID: 6767728718698725619, guid: 308f6e3862f2c20448cfd58839c9e5c7, type: 3}
+      propertyPath: m_Radius
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6767728718698725619, guid: 308f6e3862f2c20448cfd58839c9e5c7, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7496801940804510461, guid: 308f6e3862f2c20448cfd58839c9e5c7, type: 3}
       propertyPath: m_Name
       value: ProjectailEffect_RockBall

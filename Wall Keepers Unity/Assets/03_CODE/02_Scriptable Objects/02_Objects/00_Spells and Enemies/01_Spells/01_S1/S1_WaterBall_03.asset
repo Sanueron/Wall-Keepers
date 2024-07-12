@@ -17,7 +17,7 @@ MonoBehaviour:
   i_spellStarsTier: 1
   i_mana_cost: 2
   f_dmg: 300
-  f_duration: 1
+  f_duration: 0
   f_projectileSpeed: 4
   f_resistance: 0
   requiredElementalRune: {fileID: 11400000, guid: fed4aaf3e278ee447868e6cf2800cc52, type: 2}
@@ -31,13 +31,14 @@ MonoBehaviour:
   spr_spellRequiredCard_2: {fileID: 0}
   i_spellRequired_1_Id: 0
   i_spellRequired_2_Id: 0
+  f_slowDown_value: 0
+  f_attackInterval: 0
   f_repeatingDmgCoolDown: 0
   e_CastingType: 1
   e_Effect: 1
   e_Element: 3
   e_2Element: 0
   Description: Cast a water ball that deals impact damage to enemies.
-  f_attackInterval: 0
   b_isMerged: 0
   fusionSprite1: {fileID: 21300000, guid: 56e43086f278d9c45b61663d5a1f7345, type: 3}
   fusionSprite2: {fileID: 21300000, guid: 9ec7f95bc6c2e4641ba647264480ac04, type: 3}

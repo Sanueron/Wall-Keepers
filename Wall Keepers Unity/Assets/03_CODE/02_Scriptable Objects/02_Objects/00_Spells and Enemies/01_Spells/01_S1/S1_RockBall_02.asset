@@ -17,7 +17,7 @@ MonoBehaviour:
   i_spellStarsTier: 1
   i_mana_cost: 2
   f_dmg: 350
-  f_duration: 1
+  f_duration: 0
   f_projectileSpeed: 2
   f_resistance: 0
   requiredElementalRune: {fileID: 11400000, guid: fbe28b66f306cc74c909847eba3cdf2f, type: 2}
@@ -31,13 +31,14 @@ MonoBehaviour:
   spr_spellRequiredCard_2: {fileID: 0}
   i_spellRequired_1_Id: 0
   i_spellRequired_2_Id: 0
+  f_slowDown_value: 0
+  f_attackInterval: 0
   f_repeatingDmgCoolDown: 0
   e_CastingType: 1
   e_Effect: 1
   e_Element: 2
   e_2Element: 0
-  Description: 'Launches a rock projectile that deals damage to hitted enemies. '
-  f_attackInterval: 0
+  Description: Launches a rock projectile that deals damage to hitted enemies.
   b_isMerged: 0
   fusionSprite1: {fileID: 21300000, guid: 025795bce8e06b642a1523fe07280593, type: 3}
   fusionSprite2: {fileID: 21300000, guid: e532fb3743b17cd448dbbde580d4ac71, type: 3}

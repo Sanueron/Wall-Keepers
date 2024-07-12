@@ -21,7 +21,7 @@ public class SaveData : MonoBehaviour
         }
         instance = this; // Equal the instance to this script
 
-        // Reset(); // Only when we want to delete data
+        //Reset(); // Only when we want to delete data
         // Load Player Saved Data
         LoadAndAssignData();
 
@@ -45,7 +45,6 @@ public class SaveData : MonoBehaviour
         string filepath = Application.persistentDataPath + "/playerData.json";
         Debug.Log(filepath);
         System.IO.File.WriteAllText(filepath, playerData);
-        PlayerData.b_firstDataSave = true;
         Debug.Log("Data saved");
     }
     public void LoadAndAssignData()

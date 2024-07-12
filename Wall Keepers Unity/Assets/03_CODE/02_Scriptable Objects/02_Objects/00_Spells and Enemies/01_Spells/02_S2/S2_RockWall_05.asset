@@ -19,7 +19,7 @@ MonoBehaviour:
   f_dmg: 0
   f_duration: 10
   f_projectileSpeed: 0
-  f_resistance: 2000
+  f_resistance: 450
   requiredElementalRune: {fileID: 11400000, guid: fbe28b66f306cc74c909847eba3cdf2f, type: 2}
   _card_Sprite: {fileID: 21300000, guid: b24b76436b1924e4f856e0c27ddf7465, type: 3}
   _onField_Sprite: {fileID: -531373202, guid: bec6e802947a54c4fb54f1f70570468f, type: 3}

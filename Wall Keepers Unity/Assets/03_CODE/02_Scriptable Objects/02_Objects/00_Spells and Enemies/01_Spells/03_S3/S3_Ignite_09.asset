@@ -20,13 +20,13 @@ MonoBehaviour:
   f_duration: 0
   f_projectileSpeed: 0
   f_resistance: 0
-  requiredElementalRune: {fileID: 0}
-  _card_Sprite: {fileID: 21300000, guid: 379d0eea71138634ab2e317abbe903ed, type: 3}
-  _onField_Sprite: {fileID: -1423547225, guid: 9641dc86ca04a5540bafa8aa1e9d96f7, type: 3}
+  requiredElementalRune: {fileID: 11400000, guid: b5ee84b6f16ee1644953e2c67339c918, type: 2}
+  _card_Sprite: {fileID: 21300000, guid: 28db58739c396b54483ba9af07b1aac5, type: 3}
+  _onField_Sprite: {fileID: 6585663717174138110, guid: 03ce541a0ef925949b9f6ce96b8b1537, type: 3}
   spellPrefab: {fileID: 0}
-  castClip: {fileID: 8300000, guid: 42cc79a4862bb9a46923d599104e367e, type: 3}
-  impactClip: {fileID: 8300000, guid: 42cc79a4862bb9a46923d599104e367e, type: 3}
-  i_starLevel: 4
+  castClip: {fileID: 8300000, guid: 2bf7f0c04a8f21d4f8c87aec38d9272c, type: 3}
+  impactClip: {fileID: 8300000, guid: 2bf7f0c04a8f21d4f8c87aec38d9272c, type: 3}
+  i_starLevel: 3
   spr_spellRequiredCard_1: {fileID: 0}
   spr_spellRequiredCard_2: {fileID: 0}
   i_spellRequired_1_Id: 0
@@ -36,7 +36,7 @@ MonoBehaviour:
   f_repeatingDmgCoolDown: 0
   e_CastingType: 2
   e_Effect: 2
-  e_Element: 5
+  e_Element: 1
   e_2Element: 0
   Description: Casts a lighting in the target area that deals impact damage to enemies
     in area.

@@ -64,6 +64,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -1860624191, guid: d8010b197db830d46af7dea6338faf7d, type: 3}
+    - target: {fileID: 6767728718698725619, guid: 308f6e3862f2c20448cfd58839c9e5c7, type: 3}
+      propertyPath: m_Radius
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6767728718698725619, guid: 308f6e3862f2c20448cfd58839c9e5c7, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.27
+      objectReference: {fileID: 0}
     - target: {fileID: 7496801940804510461, guid: 308f6e3862f2c20448cfd58839c9e5c7, type: 3}
       propertyPath: m_Name
       value: ProjectailEffect_WaterBall
