@@ -23,7 +23,7 @@ MonoBehaviour:
   requiredElementalRune: {fileID: 11400000, guid: dea30c48ba8a65b458abab783486f147, type: 2}
   _card_Sprite: {fileID: 21300000, guid: 379d0eea71138634ab2e317abbe903ed, type: 3}
   _onField_Sprite: {fileID: -277356940, guid: e88c97a4270139d408b8c607a4ee570d, type: 3}
-  spellPrefab: {fileID: 0}
+  spellPrefab: {fileID: 7719444508412569677, guid: a7d28c15866c7004d98c96c6521b186b, type: 3}
   castClip: {fileID: 8300000, guid: 42cc79a4862bb9a46923d599104e367e, type: 3}
   impactClip: {fileID: 8300000, guid: 42cc79a4862bb9a46923d599104e367e, type: 3}
   i_starLevel: 4

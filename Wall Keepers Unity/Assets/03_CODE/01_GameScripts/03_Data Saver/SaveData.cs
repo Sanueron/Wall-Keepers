@@ -21,7 +21,7 @@ public class SaveData : MonoBehaviour
         }
         instance = this; // Equal the instance to this script
 
-        //Reset(); // Only when we want to delete data
+        // Reset(); // Only when we want to delete data
         // Load Player Saved Data
         LoadAndAssignData();
 
@@ -97,6 +97,8 @@ public class Container
     public ScripteableCard[] spellsInDeckData = new ScripteableCard[8];
     public int[] i_CardSlotNumber = new int[8];
     public bool b_isDeckFull;
+    public int[] i_spellInDeckByID = new int[8];
+
     //
     public int i_totalCardsInDeck;
     public int i_maxRound;
@@ -139,10 +141,11 @@ public class Container
         deck_GameObjects = PlayerData.deck_GameObjects;
         spellsInDeckData = PlayerData.spellsInDeckData;
         b_isDeckFull = PlayerData.b_isDeckFull;
+        i_spellInDeckByID = PlayerData.i_spellInDeckByID;
         #endregion
 
         #region Elemental Runes
-        i_elementalRunesInStock = PlayerData.i_elementalRunesInStock;
+    i_elementalRunesInStock = PlayerData.i_elementalRunesInStock;
         #endregion
 
         #region Shop Data
@@ -175,6 +178,7 @@ public class Container
         PlayerData.deck_GameObjects = deck_GameObjects;
         PlayerData.spellsInDeckData = spellsInDeckData;
         PlayerData.b_isDeckFull = b_isDeckFull;
+        PlayerData.i_spellInDeckByID = i_spellInDeckByID;
         #endregion
 
         #region Elemental Runes

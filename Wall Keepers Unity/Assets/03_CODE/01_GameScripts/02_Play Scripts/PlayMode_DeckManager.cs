@@ -14,6 +14,9 @@ public class PlayMode_DeckManager : MonoBehaviour
     [SerializeField] internal List<GameObject> cards_NotInHand_GameObjects = new List<GameObject>();
     [SerializeField] private List<Transform> handPositions_Transform = new List<Transform>();
     [SerializeField] private Transform deckPosition_Transform;
+    [Header("Spells Data to Instantiate spells prefabs")]
+    [SerializeField] List<ScripteableCard> listOfSpellsData = new List<ScripteableCard>();
+
     private Vector3 v3_lastcardPosition;
 
     public static PlayMode_DeckManager instance { get; private set; }
@@ -35,14 +38,35 @@ public class PlayMode_DeckManager : MonoBehaviour
     }
     private void Start()
     {
+        ReAssignSpellsInDeckPrefabs();
         GetDeck();
         GetFirstHand();
     }
     #endregion
 
     #region Deck Methods
-    //Delete when the DeckScene its ready 
- 
+    // Set Spells Prefabs in this scene to avoid instantiate error when opening game and playing directly
+    private void ReAssignSpellsInDeckPrefabs() // To avoid data loading error when opening game first time
+    {
+        for (int i = 0; i < PlayerData.i_spellInDeckByID.Length; i++)
+        {
+            if (PlayerData.i_spellInDeckByID[i] > 0) // Avoid ID 0, as its default for empty
+            {
+                for (int j = 0; j < listOfSpellsData.Count; j++)
+                {
+                    int i_checkedSpellId = listOfSpellsData[j].i_id;
+                    int i_spellInDeckID = PlayerData.i_spellInDeckByID[i];
+
+                    if (i_spellInDeckID == i_checkedSpellId)
+                    {
+                        // Reassign Spells Prefabs
+                        PlayerData.go_spellsIndeck[i] = listOfSpellsData[j].spellPrefab;
+                    }
+                }
+            }
+        }
+    }
+
     //Generate cards Pool from player's deck 
     private void GetDeck()
     {

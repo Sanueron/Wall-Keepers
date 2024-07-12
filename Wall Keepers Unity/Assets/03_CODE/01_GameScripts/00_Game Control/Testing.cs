@@ -12,8 +12,8 @@ public class Testing : MonoBehaviour
         //PlayerData.b_spellCardObtained[9] = true;
         
         //ObtainAllCards();    
-        TestDeck();
-        //PlayerData.i_keys = 100;
+        //TestDeck();
+        PlayerData.i_keys = 100;
     }
 
     public void SmallEnemyHit()

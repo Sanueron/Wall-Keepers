@@ -138,8 +138,11 @@ public class DeckManager : MonoBehaviour
                 // Assign Spell Prefab
                 deckSlots_array[i].spellPrefab = spellPrefab;
                 PlayerData.deck_GameObjects[deckSlots_array[i].i_deckSlotIndex] = deckSlots_array[i].spellPrefab;
+                // ---Only Works When coming from Deck (Not when initializing game)
                 PlayerData.spellsInDeckData[deckSlots_array[i].i_deckSlotIndex] = spellData;
                 PlayerData.go_spellsIndeck[i] = spellPrefab;
+                // ---
+                PlayerData.i_spellInDeckByID[i] = spellData.i_id; // Store spell in deck using its ID
                 print(PlayerData.go_spellsIndeck[i].name);
                 break;
             }
