@@ -8,15 +8,18 @@ public class SpellSlot : BaseSlot
     #region Deck interaction methods
     public void BlockUseButtonIfDeckSlotsComplete()
     {
+       
         button_addOrRemoveSpellToFromDeck.interactable = true;
 
         // Now check if Deck is complete and if so mark interactable as false
         if (PlayerData.b_isDeckFull)
         {
+            print("COMPLETE");
             button_addOrRemoveSpellToFromDeck.interactable = false;
         }
         if(DeckManager.instance.CheckIfSpellAlreadyInDeck(GetSlotSpellInfo())) // Check if this spell is already in deck
         {
+            print("INDECK");
             // Already in deck. Bloc Use button
             button_addOrRemoveSpellToFromDeck.interactable = false;
         }

@@ -36,7 +36,7 @@ public class ManaManager : MonoBehaviour
     }
     private void FixedUpdate()
     {
-       
+        CheckIfLevelPaused();
         IncreaseMana();
     }
     #endregion
@@ -105,5 +105,21 @@ public class ManaManager : MonoBehaviour
         return f_currentManaValue;
     }
     #endregion
-   
+    #region Detect Pause
+    internal void CheckIfLevelPaused()
+    {
+        if (LevelsGnralManager.b_stopLevel)
+        {
+            f_manaIncreaseSpeed = 0;
+            return;
+        }
+        else // Check if Animator Speed is equal to 1
+        {
+            if (f_manaIncreaseSpeed != 1) // If not set back to 1
+            {
+                f_manaIncreaseSpeed = 1;
+            }
+        }
+    }
+    #endregion
 }

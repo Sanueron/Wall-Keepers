@@ -21,7 +21,6 @@ public class MainMenuManager : MonoBehaviour
         {
             if (PlayerData.i_spellInDeckByID[i] > 0) // Avoid ID 0, as its default for empty
             {
-                print(PlayerData.i_spellInDeckByID[i]);
                 for (int j = 0; j < listOfSpellsData.Count; j++)
                 {
                     int i_checkedSpellId = listOfSpellsData[j].i_id;
@@ -34,8 +33,6 @@ public class MainMenuManager : MonoBehaviour
 
                         // Reassign Spells Data objects
                         PlayerData.spellsInDeckData[i] = listOfSpellsData[j];
-
-                        print(PlayerData.go_spellsIndeck[i]);
                     }
                 }
             }
