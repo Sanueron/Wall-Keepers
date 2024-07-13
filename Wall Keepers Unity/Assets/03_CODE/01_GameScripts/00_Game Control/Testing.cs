@@ -13,8 +13,9 @@ public class Testing : MonoBehaviour
         
        ObtainAllCards();    
         //TestDeck();
-        PlayerData.i_keys = 100;
-      
+        PlayerData.i_keys = 1000;
+        PlayerData.i_mana = 1000;
+
     }
 
     public void SmallEnemyHit()
