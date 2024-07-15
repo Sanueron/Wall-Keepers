@@ -55,6 +55,7 @@ MonoBehaviour:
   aC_spellCastSfx: {fileID: 0}
   v3_Projectail_Cast_Position: {x: 0, y: 0, z: 0}
   b_finishAnimation: 0
+  aC_hitSfx: {fileID: 0}
 --- !u!95 &4012272448226575195
 Animator:
   serializedVersion: 7
@@ -119,7 +120,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 70
   m_Sprite: {fileID: 6706792291038638048, guid: 786ffb6a72b45324baccbbdd1f654527, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

@@ -115,6 +115,14 @@ public class Projectile : BaseSpellsEffects
         }
     }
 
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == i_EnemyLayer)
+        {
+            RemoveFromEnemiesList(collision.gameObject.GetComponent<Enemy>());
+        }
+    }
+
     internal override void HurtEnemies()
     {
         foreach (Enemy enemy in enemiesScripts_List)

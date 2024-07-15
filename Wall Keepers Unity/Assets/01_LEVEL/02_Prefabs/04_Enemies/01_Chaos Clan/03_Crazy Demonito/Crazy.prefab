@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -1832752377, guid: dae4123f30479734aae0db53bf57c938, type: 3}
+    - target: {fileID: 624243025780841981, guid: 987eb037603a07e40ae333665b139928, type: 3}
+      propertyPath: m_SortingOrder
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 2306393389132629302, guid: 987eb037603a07e40ae333665b139928, type: 3}
       propertyPath: m_fontSize
       value: 0.65

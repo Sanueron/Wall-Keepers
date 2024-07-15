@@ -48,27 +48,15 @@ public class LightningStorm_AllArea_Effect : BaseSpellsEffects
         // Reset the lightning counter
         i_ligthningsDroped = 0;
         // Start casting lightnings
-        StartCoroutine(CastOneLightning());//Lanzamos una corrutina que dura 1 segundo, que se repetira hasta agotar los rayos 
+       //Lanzamos una corrutina que dura 1 segundo, que se repetira hasta agotar los rayos 
         WaitForSeconds wait_durationInBattlefield = new WaitForSeconds(f_duration);
         yield return wait_durationInBattlefield;
     }
-    internal IEnumerator CastOneLightning()
+    internal void CastOneLightning()
     {
-        if (i_ligthningsDroped < go_oneThunder.Count-1)
-        {
-            ++i_ligthningsDroped;
             gameObject.transform.position = GenerateRandomPosition();
             go_oneThunder[i_ligthningsDroped].GetComponent<OneLightningEffect>().SetDmg(f_damage);
             Instantiate(go_oneThunder[i_ligthningsDroped], transform);
-            WaitForSeconds wait_TimeBtwLightning = new WaitForSeconds(0.5f);
-            yield return wait_TimeBtwLightning;
-            // Call CastOneLightning again until the condition is met
-            StartCoroutine(CastOneLightning());
-        }
-        else
-        {
-            print("Finished Casting All Lightnings");
-        }
     }
     private Vector3 GenerateRandomPosition()
     {
