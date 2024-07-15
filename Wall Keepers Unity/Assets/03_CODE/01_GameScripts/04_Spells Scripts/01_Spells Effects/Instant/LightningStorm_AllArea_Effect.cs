@@ -7,7 +7,6 @@ public class LightningStorm_AllArea_Effect : BaseSpellsEffects
     #region Variables
     [SerializeField] private List<GameObject> go_oneThunder = new List<GameObject>();
     private int i_ligthningsDroped;
-    private bool b_lightningInstantiated;
     #endregion
     #region BaseSpells Methods
     public override void ActivateEffect(Vector3 starPosition, Vector3 target)
@@ -21,42 +20,46 @@ public class LightningStorm_AllArea_Effect : BaseSpellsEffects
     }
     #endregion
     #region Unity Life Cycle
-    private void OnEnable()
-    {
-        for (int i = 0; i < go_oneThunder.Count; i++)
-        {
-            go_oneThunder[i].GetComponent<OneLightningEffect>().SetDmg(f_damage);
-        }
-    }
-    private void Start()
-    {
-        StartCoroutine(CastInBattlefield());   
-    }
-   
-    private void FixedUpdate()//1º Loop FireWall
-    {
-        CheckIfLevelPaused();
-        if (b_spellEffectActiveInBattlefield)
-        {
-            //En vez de un whild hacer otra corrutina para que si no ha finalizado lance los rayos 
-        }
-    }
     #endregion
     #region LStorm Methods
-    internal IEnumerator CastInBattlefield()//Primero casteamos la tormenta durante la duracion determinada 
+    internal void StartStorm()
     {
-        // Reset the lightning counter
-        i_ligthningsDroped = 0;
-        // Start casting lightnings
-       //Lanzamos una corrutina que dura 1 segundo, que se repetira hasta agotar los rayos 
+        CheckIfLevelPaused();
+        effect_Animator.SetTrigger(i_EnterLoop);
+        StartCoroutine(CastInBattlefield());
+    }
+    internal IEnumerator CastInBattlefield()//First, we cast the storm for the determined duration.
+    {
         WaitForSeconds wait_durationInBattlefield = new WaitForSeconds(f_duration);
         yield return wait_durationInBattlefield;
+        effect_Animator.SetTrigger(i_EnterEnd);
     }
     internal void CastOneLightning()
     {
-            gameObject.transform.position = GenerateRandomPosition();
-            go_oneThunder[i_ligthningsDroped].GetComponent<OneLightningEffect>().SetDmg(f_damage);
-            Instantiate(go_oneThunder[i_ligthningsDroped], transform);
+        gameObject.transform.position = GenerateRandomPosition();
+        ActivateOneLightning();
+    }
+    internal void ActivateOneLightning()
+    {
+        // Take first spell effect in list which is not active already
+        for (int i = 0; i < go_oneThunder.Count; i++)
+        {
+            // Check if spell effect is not still active in battlefield
+            if (!go_oneThunder[i].gameObject.GetComponent<OneLightningEffect>().b_lightningInstantiated) // Not in battlefield
+            {
+                go_oneThunder[i].gameObject.GetComponent<OneLightningEffect>().SetDmg(f_damage);//<------------------------------¿Poque el primero no recibe nada?
+                // Set spell state to active
+                go_oneThunder[i].gameObject.GetComponent<OneLightningEffect>().b_spellEffectActiveInBattlefield = true;
+                // Activate effect
+                go_oneThunder[i].gameObject.SetActive(true);
+                // Stop loop to activate effect once
+                break;
+            }
+            else
+            {
+                Debug.Log("No lo coge");
+            }
+        }
     }
     private Vector3 GenerateRandomPosition()
     {
@@ -65,13 +68,6 @@ public class LightningStorm_AllArea_Effect : BaseSpellsEffects
         float randomY = Random.Range(-6f, 12f);
         // Create a random position Vector3
         return new Vector3(randomX, randomY, 0f);
-    }
-    internal void InstantiateOneLightning()
-    {
-        if (!b_lightningInstantiated)
-        {
-            b_lightningInstantiated = true;
-        }
     }
     #endregion
     #region SFX Play Methods

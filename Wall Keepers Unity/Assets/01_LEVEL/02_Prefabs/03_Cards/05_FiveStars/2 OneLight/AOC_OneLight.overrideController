@@ -6,7 +6,7 @@ AnimatorOverrideController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: AOC_LightningStorm Animator
+  m_Name: AOC_OneLight
   m_Controller: {fileID: 9100000, guid: 492b5ac707c47e240aedbefdfaa2b8e9, type: 2}
   m_Clips:
   - m_OriginalClip: {fileID: 7400000, guid: 174e4e44290f19e4ba64d3746fea8f89, type: 2}

@@ -45,7 +45,6 @@ public class Projectile : BaseSpellsEffects
     {
         InitialRotation = transform.rotation;
         f_initialSpeed = f_speed;
-        print("Init" + f_initialSpeed);
     }
     public override void ActivateEffect(Vector3 starPosition, Vector3 target)
     {

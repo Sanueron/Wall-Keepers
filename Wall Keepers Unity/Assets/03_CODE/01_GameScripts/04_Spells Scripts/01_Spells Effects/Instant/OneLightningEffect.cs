@@ -5,6 +5,7 @@ using UnityEngine;
 public class OneLightningEffect : BaseSpellsEffects
 {
     public float f_stormDmg;
+    public bool b_lightningInstantiated;
     #region Unity Life Cycle
     private void FixedUpdate()
     {
@@ -14,6 +15,7 @@ public class OneLightningEffect : BaseSpellsEffects
     # region OneLightning Methods
         public void SetDmg(float dmg)//This method is called by LightningStormArea before enabling this object.
         {
+            print("le pasamos el daño" + dmg);
             f_stormDmg= dmg;
         }
         internal void ResetLightning()

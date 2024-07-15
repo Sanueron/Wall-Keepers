@@ -24,8 +24,8 @@ MonoBehaviour:
   _card_Sprite: {fileID: 2109498805517718816, guid: 3205feb765c4a4f478eee427f008542b, type: 3}
   _onField_Sprite: {fileID: 0}
   spellPrefab: {fileID: 3911533940361278871, guid: 1ef4a4be4f2e58f4db5a4530bad119a8, type: 3}
-  castClip: {fileID: 0}
-  impactClip: {fileID: 0}
+  castClip: {fileID: 8300000, guid: 42cc79a4862bb9a46923d599104e367e, type: 3}
+  impactClip: {fileID: 8300000, guid: 42cc79a4862bb9a46923d599104e367e, type: 3}
   i_starLevel: 1
   spr_spellRequiredCard_1: {fileID: 0}
   spr_spellRequiredCard_2: {fileID: 0}
