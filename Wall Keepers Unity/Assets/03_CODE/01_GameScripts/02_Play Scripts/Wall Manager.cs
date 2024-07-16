@@ -10,7 +10,7 @@ public class WallManager : MonoBehaviour
     [Header("Wall variables")]
     [SerializeField] internal Image img_wallLifeBar;
     float f_wallLife;
-    float f_MaxWallLife = 1000000000f;
+    float f_MaxWallLife = 10000f;
     public static WallManager instance { get; private set; } // Can be read by all scripts but only modified by this
     public static event EventHandler e_OnWallDestroyed;
     [SerializeField] private float f_lifeBar_SpeedDecrease;

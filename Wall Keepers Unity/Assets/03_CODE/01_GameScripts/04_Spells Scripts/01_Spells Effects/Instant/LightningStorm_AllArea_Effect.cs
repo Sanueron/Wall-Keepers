@@ -47,7 +47,7 @@ public class LightningStorm_AllArea_Effect : BaseSpellsEffects
             // Check if spell effect is not still active in battlefield
             if (!go_oneThunder[i].gameObject.GetComponent<OneLightningEffect>().b_lightningInstantiated) // Not in battlefield
             {
-                go_oneThunder[i].gameObject.GetComponent<OneLightningEffect>().SetDmg(f_damage);//<------------------------------¿Poque el primero no recibe nada?
+                go_oneThunder[i].gameObject.GetComponent<OneLightningEffect>().SetDmg(f_damage);
                 // Set spell state to active
                 go_oneThunder[i].gameObject.GetComponent<OneLightningEffect>().b_lightningInstantiated = true;
                 // Activate effect

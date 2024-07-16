@@ -17,7 +17,7 @@ MonoBehaviour:
   i_spellStarsTier: 5
   i_mana_cost: 6
   f_dmg: 800
-  f_duration: 4
+  f_duration: 8
   f_projectileSpeed: 0
   f_resistance: 0
   requiredElementalRune: {fileID: 11400000, guid: dea30c48ba8a65b458abab783486f147, type: 2}

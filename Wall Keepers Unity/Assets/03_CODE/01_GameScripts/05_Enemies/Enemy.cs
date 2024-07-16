@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
 {
     #region Events
     public static event EventHandler onEnemyDefeated;
+    private bool b_eventCalled;
     #endregion
 
     #region Enemy Stats and Info
@@ -15,7 +16,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] ScripteableEnemies baseStats;
     internal int i_id, i_hp, i_maxHp, i_damage, i_speed, i_startSpeed, i_manaEnergyReleased;
     float f_hpForHealthBar;
-    internal float f_rangeOfAction;
+    internal float f_rangeOfAction, f_projectailSpeed;
     internal Rigidbody2D rb_Enemy;
     [SerializeField] private Animator enemy_animator;
     private bool b_CannotWalk;
@@ -222,6 +223,7 @@ public class Enemy : MonoBehaviour
         i_damage = baseStats.i_dmg;
         i_speed = baseStats.i_speed;
         f_rangeOfAction = baseStats.f_RageOfAction;
+        f_projectailSpeed = baseStats.f_projectailSpeed;    
         i_manaEnergyReleased = baseStats.i_manaEnergyReleased;
 
         //Start variables
@@ -299,7 +301,11 @@ public class Enemy : MonoBehaviour
         {
             SwitchState(EnemyState.Defeated);
             RoundsManager.listOfEnemiesInRound.Remove(this);
-            onEnemyDefeated?.Invoke(this, EventArgs.Empty);
+            if (!b_eventCalled)
+            {
+                onEnemyDefeated?.Invoke(this, EventArgs.Empty);
+                b_eventCalled = true;
+            }
         }
         else
         {
@@ -331,6 +337,7 @@ public class Enemy : MonoBehaviour
         // Set enemy stats and States to base
         //SwitchState(EnemyState.Moving);
         GetStats();
+        b_eventCalled = false;
     }
     #endregion
 

@@ -46,9 +46,10 @@ public class RoundsManager : MonoBehaviour
 
     private void Enemy_onEnemyDefeated(object sender, System.EventArgs e)
     {
+        print(sender.ToString());
         // Check if still spawning enemies
         if (!script_enemiesManager.IsSpawningEnemies())
-        {
+        {print(listOfEnemiesInRound.Count.ToString());  
             // Check list of enemies of this round
             if(listOfEnemiesInRound.Count <= 0)
             {
