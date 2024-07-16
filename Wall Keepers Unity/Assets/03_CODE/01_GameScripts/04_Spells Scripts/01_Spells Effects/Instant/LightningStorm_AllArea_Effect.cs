@@ -49,7 +49,7 @@ public class LightningStorm_AllArea_Effect : BaseSpellsEffects
             {
                 go_oneThunder[i].gameObject.GetComponent<OneLightningEffect>().SetDmg(f_damage);//<------------------------------¿Poque el primero no recibe nada?
                 // Set spell state to active
-                go_oneThunder[i].gameObject.GetComponent<OneLightningEffect>().b_spellEffectActiveInBattlefield = true;
+                go_oneThunder[i].gameObject.GetComponent<OneLightningEffect>().b_lightningInstantiated = true;
                 // Activate effect
                 go_oneThunder[i].gameObject.SetActive(true);
                 // Stop loop to activate effect once
@@ -59,6 +59,15 @@ public class LightningStorm_AllArea_Effect : BaseSpellsEffects
             {
                 Debug.Log("No lo coge");
             }
+        }
+    }
+    internal void OnDisable()//Reset Lightnings
+    {
+        for(int i = 0;i < go_oneThunder.Count; i++)
+        {
+            go_oneThunder[i].gameObject.GetComponent<OneLightningEffect>().b_lightningInstantiated = false;
+            // Activate effect
+            go_oneThunder[i].gameObject.SetActive(false);
         }
     }
     private Vector3 GenerateRandomPosition()

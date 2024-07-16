@@ -179,6 +179,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: OneLight_LightningStormEffect (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 3084089282456796334, guid: 4c470c4ee83f68248810627c38ba406b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -245,6 +249,10 @@ PrefabInstance:
     - target: {fileID: 3084089282456796334, guid: 4c470c4ee83f68248810627c38ba406b, type: 3}
       propertyPath: m_Name
       value: OneLight_LightningStormEffect (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3084089282456796334, guid: 4c470c4ee83f68248810627c38ba406b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -313,6 +321,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: OneLight_LightningStormEffect (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 3084089282456796334, guid: 4c470c4ee83f68248810627c38ba406b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -379,6 +391,10 @@ PrefabInstance:
     - target: {fileID: 3084089282456796334, guid: 4c470c4ee83f68248810627c38ba406b, type: 3}
       propertyPath: m_Name
       value: OneLight_LightningStormEffect (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3084089282456796334, guid: 4c470c4ee83f68248810627c38ba406b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -672,6 +688,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: OneLight_LightningStormEffect (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3084089282456796334, guid: 4c470c4ee83f68248810627c38ba406b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -738,6 +758,10 @@ PrefabInstance:
     - target: {fileID: 3084089282456796334, guid: 4c470c4ee83f68248810627c38ba406b, type: 3}
       propertyPath: m_Name
       value: OneLight_LightningStormEffect (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3084089282456796334, guid: 4c470c4ee83f68248810627c38ba406b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -806,6 +830,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: OneLight_LightningStormEffect
       objectReference: {fileID: 0}
+    - target: {fileID: 3084089282456796334, guid: 4c470c4ee83f68248810627c38ba406b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -872,6 +900,10 @@ PrefabInstance:
     - target: {fileID: 3084089282456796334, guid: 4c470c4ee83f68248810627c38ba406b, type: 3}
       propertyPath: m_Name
       value: OneLight_LightningStormEffect (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3084089282456796334, guid: 4c470c4ee83f68248810627c38ba406b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -940,6 +972,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: OneLight_LightningStormEffect (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3084089282456796334, guid: 4c470c4ee83f68248810627c38ba406b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1006,6 +1042,10 @@ PrefabInstance:
     - target: {fileID: 3084089282456796334, guid: 4c470c4ee83f68248810627c38ba406b, type: 3}
       propertyPath: m_Name
       value: OneLight_LightningStormEffect (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3084089282456796334, guid: 4c470c4ee83f68248810627c38ba406b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
