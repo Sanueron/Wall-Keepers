@@ -27,11 +27,6 @@ public class ScripteableCard : ScriptableObject
     public AudioClip impactClip;
     public int i_starLevel = 1;
 
-    [Header("Spell Art and Prefab")]
-    [SerializeField] internal GameObject prefab_fusionResultCard_Option_1;
-    [SerializeField] internal GameObject prefab_fusionResultCard_Option_2;
-
-
     [Header("Fusion Cards Required Combination and Normal Cards (Possible Combinations")]
     [SerializeField] internal Sprite spr_spellRequiredCard_1;
     [SerializeField] internal Sprite spr_spellRequiredCard_2;

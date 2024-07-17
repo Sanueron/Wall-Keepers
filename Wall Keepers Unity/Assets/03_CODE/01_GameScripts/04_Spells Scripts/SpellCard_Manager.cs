@@ -30,8 +30,20 @@ public class SpellCard_Manager : MonoBehaviour
     [SerializeField] public Transform transform_Projectail_Cast_Position;
     #endregion
 
+
     #region Spells Merge Control variables
-    private bool b_tryingFusion;
+    [Header("Fusion Results")]
+    [SerializeField] private GameObject go_fusionSpellOption_1;
+    [SerializeField] private GameObject go_fusionSpellOption_2;
+    internal bool b_tryingFusion, b_spellSelectedForFusion, b_isFusionOption_1, b_isFusionOption_2;
+
+    // Animator variables
+    #region Animator
+    [SerializeField] private Animator animatorOf_spellCard;
+    private int i_canFuseHash = Animator.StringToHash("canFuse");
+    private Transform transform_FusedCardStartPostition;
+    #endregion
+
     #endregion
 
     #region Unity Life Cycle
@@ -141,21 +153,30 @@ public class SpellCard_Manager : MonoBehaviour
     #endregion
 
     #region Merge Methods
-    private bool isMergePossible()
+    internal void ShowCanMergeOption_Anim()
     {
-        return false;
+        animatorOf_spellCard.SetBool(i_canFuseHash, true);
+    }
+    internal void StopFuseAnim()
+    {
+        animatorOf_spellCard.SetBool(i_canFuseHash, false);
+    }
+    private void ShowFusedSpells()
+    {
+        if (b_isFusionOption_1)
+        {
+            // Create fusion option 1
+            GameObject obj = Instantiate(go_fusionSpellOption_1, transform_FusedCardStartPostition);
+        }
+        else if (b_isFusionOption_2)
+        {
+            // Create fusion option 2
+            GameObject obj = Instantiate(go_fusionSpellOption_2, transform_FusedCardStartPostition);
+        }
     }
     #endregion
 
     #region Collisions
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        // Check if collides with other spell card (for fusion checks)
-        if (collision.gameObject.tag == gameObject.tag) // If same tag then both are Spell Cards
-        {
-            print("over spell card");
-        }
-    }
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.layer == i_battlefieldLayer)
@@ -165,6 +186,40 @@ public class SpellCard_Manager : MonoBehaviour
 
             // Block Fusion, prevents fusion from happening when throwing a spell
             b_tryingFusion = false;
+            // Stop can fuse animations
+            StopFuseAnim();
+        }
+
+        // Check if collides with other spell card (for fusion checks)
+        if (collision.gameObject.tag == gameObject.tag) // If same tag then both are Spell Cards
+        {
+            // Get detected spell data
+            SpellCard_Manager detectedSpell = collision.gameObject.GetComponent<SpellCard_Manager>();
+            // Check if detected card is a valid fusion option
+            if (spellBaseData.i_spellRequired_1_Id == detectedSpell.GetCardData().i_id) // Fusion spell option 1
+            {
+                print("Detects Fuse option");
+                // Play Can Fuse Animation
+                ShowCanMergeOption_Anim();
+                // Save Fusion card position to later instantiate fused card there
+                transform_FusedCardStartPostition = collision.transform;
+                // Set control bools
+                b_tryingFusion = true;
+                b_isFusionOption_1 = true;
+                b_isFusionOption_2 = false;
+            }
+            else if (spellBaseData.i_spellRequired_2_Id == detectedSpell.GetCardData().i_id) // Fusion spell option 2
+            {
+                print("Detects Fuse option");
+                // Play Can Fuse Animation 
+                ShowCanMergeOption_Anim();
+                // Save Fusion card position to later instantiate fused card there
+                transform_FusedCardStartPostition = collision.transform;
+                // Set control bools
+                b_tryingFusion = true;
+                b_isFusionOption_1 = false;
+                b_isFusionOption_2 = true;
+            }
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -173,6 +228,28 @@ public class SpellCard_Manager : MonoBehaviour
         {
             _card_SpriteRenderer.sprite = spellBaseData._card_Sprite;
             b_onBattlefield = false;
+        }
+
+        // Get detected spell data
+        if (collision.gameObject.tag == gameObject.tag)
+        {
+            // Get detected spell data
+            SpellCard_Manager detectedSpellOut = collision.gameObject.GetComponent<SpellCard_Manager>();
+
+            if (spellBaseData.i_spellRequired_1_Id == detectedSpellOut.GetCardData().i_id) // Fusion spell option 1
+            {
+                StopFuseAnim();
+                b_tryingFusion = false;
+                b_isFusionOption_1 = false;
+            }
+            else if (spellBaseData.i_spellRequired_2_Id == detectedSpellOut.GetCardData().i_id) // Fusion spell option 2
+            {
+                // Play Can Fuse Animation 
+                StopFuseAnim();
+                // Set control bools
+                b_tryingFusion = false;
+                b_isFusionOption_2 = false;
+            }
         }
     }
     #endregion

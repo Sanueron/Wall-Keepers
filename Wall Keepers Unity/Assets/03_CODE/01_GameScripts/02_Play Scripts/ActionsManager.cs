@@ -20,6 +20,7 @@ public class ActionsManager : MonoBehaviour
         return b_draggingCard;
     }
     #endregion
+
     #region Drag Variables
     private Vector3 v3_cardInitialPosition;
     private Vector2 v2_screenPosition;
@@ -105,6 +106,10 @@ public class ActionsManager : MonoBehaviour
     {
         b_busy = false;
         b_draggingCard = false;
+
+        // Use bool for merge control
+        selectedSpell.b_spellSelectedForFusion = true;
+
         float f_timeLimitForShowingCardInfoPanel = .2f;
         if (f_timer < f_timeLimitForShowingCardInfoPanel)
         {
@@ -113,13 +118,21 @@ public class ActionsManager : MonoBehaviour
                 return;
             }
             // Show card info panel 
-           
+            selectedSpell.b_spellSelectedForFusion = false;
             StartCoroutine(ReturnToHandPosition(selectedSpell));
             ShowCardInfoPanel(selectedSpell);
             return;
         }
         b_timerIsOn = false;
         f_timer = 0;
+
+        // Check if trying Fusion
+        if (selectedSpell.b_tryingFusion)
+        {
+
+        }
+
+        // Check if thrown in battlefield
         if (selectedSpell.b_onBattlefield)//  Battlefield collider 
         {
             // Check if enough Mana to cast
@@ -137,7 +150,6 @@ public class ActionsManager : MonoBehaviour
                 Debug.Log("Return to hand - Show message - Not enough Mana");
                 StartCoroutine(ReturnToHandPosition(selectedSpell));
             }
-
         }
         else
         {
@@ -149,7 +161,7 @@ public class ActionsManager : MonoBehaviour
         SetCardSortingOrder(i_defaultSortingOrder, selectedSpell);
         //selectedSpell.GetCardVisuals().SetCardSortingOrder(i_defaultSortingOrder);
 
-
+        selectedSpell.b_spellSelectedForFusion = false;
         selectedSpell = null;
     }
 

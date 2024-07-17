@@ -27,9 +27,11 @@ MonoBehaviour:
   castClip: {fileID: 8300000, guid: 75fc791c48557f6428e07ec13b8ab381, type: 3}
   impactClip: {fileID: 8300000, guid: 1d1924a735763b141bcb5a1a4a0e3ca8, type: 3}
   i_starLevel: 1
+  prefab_fusionResultCard_Option_1: {fileID: 6162980890195160768, guid: 4ad41361dc484e446a783549e188f7d6, type: 3}
+  prefab_fusionResultCard_Option_2: {fileID: 0}
   spr_spellRequiredCard_1: {fileID: 0}
   spr_spellRequiredCard_2: {fileID: 0}
-  i_spellRequired_1_Id: 0
+  i_spellRequired_1_Id: 2
   i_spellRequired_2_Id: 0
   f_slowDown_value: 0
   f_attackInterval: 0
