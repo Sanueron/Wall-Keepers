@@ -106,6 +106,14 @@ public class PlayMode_DeckManager : MonoBehaviour
         usedCard.v3_currentPosition = deckPosition_Transform.position;
         GetSpellToHand(previousPosition);
     }
+    public void GetSpellFusedBackToDeckButDontReplace(SpellCard_Manager usedCard, Vector3 previousPosition)
+    {
+        cards_InHand_GameObjects.Remove(usedCard.gameObject);
+        cards_NotInHand_GameObjects.Add(usedCard.gameObject);
+        usedCard.gameObject.SetActive(false);
+        usedCard.transform.position = deckPosition_Transform.position;
+        usedCard.v3_currentPosition = deckPosition_Transform.position;
+    }
     //NEW CARD
     //Get new card from Deck to Hand and place it   
     private void GetSpellToHand( Vector3 peviousPosition)

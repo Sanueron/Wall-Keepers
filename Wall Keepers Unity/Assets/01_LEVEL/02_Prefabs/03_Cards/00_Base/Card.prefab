@@ -114,6 +114,7 @@ MonoBehaviour:
   transform_Projectail_Cast_Position: {fileID: 0}
   go_fusionSpellOption_1: {fileID: 0}
   go_fusionSpellOption_2: {fileID: 0}
+  sprRenderer_fusionBorderAnim: {fileID: 1861805446740190951}
   animatorOf_spellCard: {fileID: 3630695319793047356}
 --- !u!61 &24460214465607094
 BoxCollider2D:
@@ -284,7 +285,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 91
+  m_SortingOrder: 71
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

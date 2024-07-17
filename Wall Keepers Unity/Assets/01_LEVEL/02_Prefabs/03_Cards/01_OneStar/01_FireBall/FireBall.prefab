@@ -69,6 +69,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6311959573655052390, guid: 64f609e6f2a40004a873e9f6be320e93, type: 3}
     - target: {fileID: 4257493173228200327, guid: 693b018ee78c884418c8725b7170f77b, type: 3}
+      propertyPath: go_fusionSpellOption_1
+      value: 
+      objectReference: {fileID: 6162980890195160768, guid: 4ad41361dc484e446a783549e188f7d6, type: 3}
+    - target: {fileID: 4257493173228200327, guid: 693b018ee78c884418c8725b7170f77b, type: 3}
       propertyPath: _spellEffect_GameObject
       value: 
       objectReference: {fileID: 5316768609979770783, guid: 64f609e6f2a40004a873e9f6be320e93, type: 3}

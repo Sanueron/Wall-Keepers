@@ -129,7 +129,21 @@ public class ActionsManager : MonoBehaviour
         // Check if trying Fusion
         if (selectedSpell.b_tryingFusion)
         {
+            selectedSpell.InstantiateFusedSpellOnhand();
 
+            // Get both spells used for fusion back to deck
+            PlayMode_DeckManager.instance.GetSpellBackToDeck(selectedSpell, selectedSpell.v3_currentPosition);
+            PlayMode_DeckManager.instance.GetSpellFusedBackToDeckButDontReplace(selectedSpell.spellFusedWith, 
+                selectedSpell.spellFusedWith.v3_currentPosition);
+
+            // Resets
+            SetCardSortingOrder(i_defaultSortingOrder, selectedSpell);
+            selectedSpell.b_spellSelectedForFusion = false;
+            selectedSpell.spellFusedWith = null;
+            selectedSpell.b_isFusionOption_1 = false;
+            selectedSpell.b_isFusionOption_2 = false;
+            selectedSpell = null;
+            return; // Stop here
         }
 
         // Check if thrown in battlefield
@@ -161,6 +175,8 @@ public class ActionsManager : MonoBehaviour
         SetCardSortingOrder(i_defaultSortingOrder, selectedSpell);
         //selectedSpell.GetCardVisuals().SetCardSortingOrder(i_defaultSortingOrder);
 
+        // Resets
+        selectedSpell.spellFusedWith = null;
         selectedSpell.b_spellSelectedForFusion = false;
         selectedSpell = null;
     }
@@ -180,7 +196,7 @@ public class ActionsManager : MonoBehaviour
     private void SetCardSortingOrder(int sortingOrder, SpellCard_Manager selectedSpell)
     {
         selectedSpell.GetComponent<Renderer>().sortingOrder = sortingOrder;
-
+        selectedSpell.sprRenderer_fusionBorderAnim.sortingOrder = sortingOrder+1;
     }
     //Get the SpriteRenderer from selectedSpell
     #endregion

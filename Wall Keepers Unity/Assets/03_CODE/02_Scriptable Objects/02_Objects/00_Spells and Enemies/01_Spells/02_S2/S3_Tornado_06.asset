@@ -29,7 +29,7 @@ MonoBehaviour:
   i_starLevel: 2
   spr_spellRequiredCard_1: {fileID: 0}
   spr_spellRequiredCard_2: {fileID: 0}
-  i_spellRequired_1_Id: 0
+  i_spellRequired_1_Id: 4
   i_spellRequired_2_Id: 0
   f_slowDown_value: 0
   f_attackInterval: 0

@@ -32,10 +32,14 @@ public class SpellCard_Manager : MonoBehaviour
 
 
     #region Spells Merge Control variables
-    [Header("Fusion Results")]
+    [Header("Fusion Results and effects")]
     [SerializeField] private GameObject go_fusionSpellOption_1;
     [SerializeField] private GameObject go_fusionSpellOption_2;
+    [SerializeField] internal SpriteRenderer sprRenderer_fusionBorderAnim;
     internal bool b_tryingFusion, b_spellSelectedForFusion, b_isFusionOption_1, b_isFusionOption_2;
+    internal SpellCard_Manager spellFusedWith; // Use to send back to deck spell with which we are fusing this
+    private List<SpellCard_Manager> listOf_fusionSpellsPrefabs_option_1 = new List<SpellCard_Manager>();
+    private List<SpellCard_Manager> listOf_fusionSpellsPrefabs_option_2 = new List<SpellCard_Manager>();
 
     // Animator variables
     #region Animator
@@ -155,28 +159,97 @@ public class SpellCard_Manager : MonoBehaviour
     #region Merge Methods
     internal void ShowCanMergeOption_Anim()
     {
+        print("Show merge animation");
+        print(gameObject.name);
         animatorOf_spellCard.SetBool(i_canFuseHash, true);
     }
     internal void StopFuseAnim()
     {
+        print(gameObject.name);
+        print("Stop fuse");
         animatorOf_spellCard.SetBool(i_canFuseHash, false);
     }
-    private void ShowFusedSpells()
+    internal void InstantiateFusedSpellOnhand()
     {
         if (b_isFusionOption_1)
         {
-            // Create fusion option 1
-            GameObject obj = Instantiate(go_fusionSpellOption_1, transform_FusedCardStartPostition);
+            if(listOf_fusionSpellsPrefabs_option_1.Count > 0)
+            {
+                for (int i = 0; i < listOf_fusionSpellsPrefabs_option_1.Count; i++)
+                {
+                    if (!listOf_fusionSpellsPrefabs_option_1[i].gameObject.activeSelf) // Checked already instantiated prefabs
+                    {
+                        listOf_fusionSpellsPrefabs_option_1[i].transform.position = transform_FusedCardStartPostition.position;
+                        listOf_fusionSpellsPrefabs_option_1[i].gameObject.SetActive(true);
+                        listOf_fusionSpellsPrefabs_option_1[i].v3_currentPosition = transform_FusedCardStartPostition.position;
+                        break;
+                    }
+                    else // All Active in hand, instantiate new one
+                    {
+                        // Create fusion option 1
+                        GameObject obj = Instantiate(go_fusionSpellOption_1, transform_FusedCardStartPostition.position, transform.rotation,
+                            transform.parent);
+                    }
+                }
+            }
+            else
+            {
+                // Create fusion option 1
+                GameObject obj = Instantiate(go_fusionSpellOption_1, transform_FusedCardStartPostition.position, transform.rotation,
+                    transform.parent);
+            }
         }
         else if (b_isFusionOption_2)
         {
-            // Create fusion option 2
-            GameObject obj = Instantiate(go_fusionSpellOption_2, transform_FusedCardStartPostition);
+            if (listOf_fusionSpellsPrefabs_option_1.Count > 0)
+            {
+                for (int i = 0; i < listOf_fusionSpellsPrefabs_option_2.Count; i++)
+                {
+                    if (!listOf_fusionSpellsPrefabs_option_2[i].gameObject.activeSelf) // Checked already instantiated prefabs
+                    {
+                        listOf_fusionSpellsPrefabs_option_2[i].transform.position = transform_FusedCardStartPostition.position;
+                        listOf_fusionSpellsPrefabs_option_2[i].gameObject.SetActive(true);
+                        listOf_fusionSpellsPrefabs_option_2[i].v3_currentPosition = transform_FusedCardStartPostition.position;
+                        break;
+                    }
+                    else // All Active in hand, instantiate new one
+                    {
+                        // Create fusion option 1
+                        GameObject obj = Instantiate(go_fusionSpellOption_2, transform_FusedCardStartPostition.position, transform.rotation,
+                            transform.parent);
+                    }
+                }
+            }
+            else
+            {
+                // Create fusion option 1
+                GameObject obj = Instantiate(go_fusionSpellOption_2, transform_FusedCardStartPostition.position, transform.rotation,
+                    transform.parent);
+            }
         }
     }
     #endregion
 
     #region Collisions
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == gameObject.tag) // If same tag then both are Spell Cards
+        {
+            // Get detected spell data
+            SpellCard_Manager detectedSpell = collision.gameObject.GetComponent<SpellCard_Manager>();
+
+            // Check if trying fusion already and update to this (stop previous)
+            if (spellFusedWith != null)
+            {
+                spellFusedWith.StopFuseAnim();
+                spellFusedWith = detectedSpell;
+            }
+            else
+            {
+                spellFusedWith = detectedSpell;
+            }
+        }
+    }
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.layer == i_battlefieldLayer)
@@ -188,6 +261,7 @@ public class SpellCard_Manager : MonoBehaviour
             b_tryingFusion = false;
             // Stop can fuse animations
             StopFuseAnim();
+            spellFusedWith = null;
         }
 
         // Check if collides with other spell card (for fusion checks)
@@ -197,8 +271,7 @@ public class SpellCard_Manager : MonoBehaviour
             SpellCard_Manager detectedSpell = collision.gameObject.GetComponent<SpellCard_Manager>();
             // Check if detected card is a valid fusion option
             if (spellBaseData.i_spellRequired_1_Id == detectedSpell.GetCardData().i_id) // Fusion spell option 1
-            {
-                print("Detects Fuse option");
+            {                
                 // Play Can Fuse Animation
                 ShowCanMergeOption_Anim();
                 // Save Fusion card position to later instantiate fused card there
@@ -210,7 +283,6 @@ public class SpellCard_Manager : MonoBehaviour
             }
             else if (spellBaseData.i_spellRequired_2_Id == detectedSpell.GetCardData().i_id) // Fusion spell option 2
             {
-                print("Detects Fuse option");
                 // Play Can Fuse Animation 
                 ShowCanMergeOption_Anim();
                 // Save Fusion card position to later instantiate fused card there
@@ -238,14 +310,23 @@ public class SpellCard_Manager : MonoBehaviour
 
             if (spellBaseData.i_spellRequired_1_Id == detectedSpellOut.GetCardData().i_id) // Fusion spell option 1
             {
+                print("Fuses with fire ball");
+                // Stop Can Fuse Animation
                 StopFuseAnim();
+                // Stop other spell anim
+                if(spellFusedWith != null)
+                    spellFusedWith.StopFuseAnim();
                 b_tryingFusion = false;
                 b_isFusionOption_1 = false;
             }
             else if (spellBaseData.i_spellRequired_2_Id == detectedSpellOut.GetCardData().i_id) // Fusion spell option 2
             {
-                // Play Can Fuse Animation 
+                print("Fuses with water ball");
+                // Stop Can Fuse Animation 
                 StopFuseAnim();
+                // Stop other spell anim
+                if(spellFusedWith != null)
+                    spellFusedWith.StopFuseAnim();
                 // Set control bools
                 b_tryingFusion = false;
                 b_isFusionOption_2 = false;
