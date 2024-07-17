@@ -114,11 +114,9 @@ public class DeckManager : MonoBehaviour
     #region Deck Slots Control
     private void AssignSpellsInDeckAtStart()
     {
-        print(deckSlots_array.Length);
         // Assign saved Spells in deck to their current slots
         for (int i = 0; i < deckSlots_array.Length; i++)
         {
-            print(PlayerData.spellsInDeckData[deckSlots_array[i].i_deckSlotIndex]);
             if(PlayerData.spellsInDeckData[deckSlots_array[i].i_deckSlotIndex] != null)
             {
                 deckSlots_array[i].SetSpellInfo(PlayerData.spellsInDeckData[deckSlots_array[i].i_deckSlotIndex]);
