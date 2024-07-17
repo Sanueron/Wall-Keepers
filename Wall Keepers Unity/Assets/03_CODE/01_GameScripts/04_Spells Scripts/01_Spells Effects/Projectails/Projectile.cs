@@ -27,17 +27,20 @@ public class Projectile : BaseSpellsEffects
     {
         InitializeVars();
     }
-
-    
-    private void FixedUpdate()
+  
+    private void Update()
     {
         CheckIfLevelPaused();
+        if (LevelsGnralManager.b_stopLevel)
+        {
+            return;
+        }
         if (b_spellEffectActiveInBattlefield && b_startMovement)
         {
-            print("SigueEntrando");
-            ProjectailMovement();
+            ProjectileMovement();
         }
     }
+   
     #endregion
 
     #region Base Methods
@@ -66,24 +69,23 @@ public class Projectile : BaseSpellsEffects
        f_journeyLength = Vector3.Distance(v3_startPosition, v3_endPosition);
 
     }
-    private void ProjectailMovement()
+
+    private void ProjectileMovement()
     {
         //ROTATE TOWARDS TARGET
         Vector3 directionToTarget = v3_endPosition - transform.position;
         float angulo = Mathf.Atan2(directionToTarget.y, directionToTarget.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angulo - 90)); 
-        //INTERPOLATION
-        //We need to know the proportion of the journey that has been completed, using fractionOfJourney to make a good interpolation between the start and end positions.
-        //Without this, the projectile takes the same time to reach all positions.
-        float f_distCovered = (Time.time - startTime) * 1.0f * f_speed*2.0f;
-        float fractionOfJourney = f_distCovered / f_journeyLength;
-        transform.position = Vector3.Lerp(v3_startPosition, v3_endPosition, fractionOfJourney);
+        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angulo - 90));
+        //Movement
+        var step = f_speed * Time.deltaTime;
+        transform.position = Vector3.MoveTowards(transform.position, v3_endPosition, step);
         if (transform.position == v3_endPosition)
         {
             Explosion();
             b_startMovement = false;
         }
     }
+   
     // When everything is finished, the card is disabled
     private void Explosion()
     {
