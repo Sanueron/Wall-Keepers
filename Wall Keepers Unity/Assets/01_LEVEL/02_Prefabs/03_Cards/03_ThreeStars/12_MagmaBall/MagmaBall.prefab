@@ -56,6 +56,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3630695319793047356, guid: 693b018ee78c884418c8725b7170f77b, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: 540820fed6ee9864585c2894ce186909, type: 2}
     - target: {fileID: 4257493173228200327, guid: 693b018ee78c884418c8725b7170f77b, type: 3}
       propertyPath: spellBaseData
       value: 
@@ -87,6 +91,22 @@ PrefabInstance:
     - target: {fileID: 7630918611897523993, guid: 693b018ee78c884418c8725b7170f77b, type: 3}
       propertyPath: m_Color.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7660787232790481782, guid: 693b018ee78c884418c8725b7170f77b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 6.221569
+      objectReference: {fileID: 0}
+    - target: {fileID: 7660787232790481782, guid: 693b018ee78c884418c8725b7170f77b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 7.706337
+      objectReference: {fileID: 0}
+    - target: {fileID: 7660787232790481782, guid: 693b018ee78c884418c8725b7170f77b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.006
+      objectReference: {fileID: 0}
+    - target: {fileID: 7660787232790481782, guid: 693b018ee78c884418c8725b7170f77b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.029
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
