@@ -30,6 +30,10 @@ public class SpellCard_Manager : MonoBehaviour
     [SerializeField] public Transform transform_Projectail_Cast_Position;
     #endregion
 
+    #region Spells Merge Control variables
+    private bool b_tryingFusion;
+    #endregion
+
     #region Unity Life Cycle
     private void Start()
     {
@@ -136,13 +140,31 @@ public class SpellCard_Manager : MonoBehaviour
     }
     #endregion
 
+    #region Merge Methods
+    private bool isMergePossible()
+    {
+        return false;
+    }
+    #endregion
+
     #region Collisions
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        // Check if collides with other spell card (for fusion checks)
+        if (collision.gameObject.tag == gameObject.tag) // If same tag then both are Spell Cards
+        {
+            print("over spell card");
+        }
+    }
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.layer == i_battlefieldLayer)
         {
             b_onBattlefield = true;
             _card_SpriteRenderer.sprite = spellBaseData._onField_Sprite;
+
+            // Block Fusion, prevents fusion from happening when throwing a spell
+            b_tryingFusion = false;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)

@@ -8,6 +8,7 @@ TagManager:
   - Wall
   - EnemyManager
   - Enemy
+  - SpellCard
   layers:
   - Default
   - TransparentFX

@@ -11,10 +11,10 @@ public class Testing : MonoBehaviour
     {
         //PlayerData.b_spellCardObtained[9] = true;
         
-       ObtainAllCards();    
-        //TestDeck();
-        PlayerData.i_keys = 1000;
-        PlayerData.i_mana = 1000;
+        // ObtainAllCards();    
+        // TestDeck();
+        // PlayerData.i_keys = 1000;
+        // PlayerData.i_mana = 1000;
 
     }
 
