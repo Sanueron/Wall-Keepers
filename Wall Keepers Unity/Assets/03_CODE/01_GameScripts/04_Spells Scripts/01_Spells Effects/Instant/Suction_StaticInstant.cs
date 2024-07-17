@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using static Enemy;
+using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
 
 public class SuctionDmg_StaticInstant : BaseSpellsEffects
 {
@@ -16,11 +17,17 @@ public class SuctionDmg_StaticInstant : BaseSpellsEffects
         CheckIfLevelPaused();
         if (b_spellEffectActiveInBattlefield)
         {
-            StartCoroutine(CastInBattlefield());
+            if (!b_effectFinished)
+            {
+                CastEffectWithTimer();
+            }
+            //StartCoroutine(CastInBattlefield());
         }
     }
     private void OnDisable()
     {
+         b_effectFinished = false;
+        
         foreach (Enemy enemy in enemiesScripts_List)
         {
             enemy.RestoreTarget();
@@ -44,17 +51,19 @@ public class SuctionDmg_StaticInstant : BaseSpellsEffects
         gameObject.transform.position = target;
 
     }
+
+ 
+
+
     internal IEnumerator CastInBattlefield()
     {
         WaitForSeconds wait_durationInBattlefield = new WaitForSeconds(f_duration);
         yield return wait_durationInBattlefield;
-        FinishLoop();
+        
     }
+
+
  
-    internal void FinishLoop()
-    {
-        effect_Animator.SetTrigger(i_EnterEnd);
-    }
   
     #endregion
 

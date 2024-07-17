@@ -4,7 +4,21 @@ using UnityEngine;
 
 public class ContinuousDmg_StaticInstant : BaseSpellsEffects
 {
-  
+    #region Unity Life Cycle
+    private void FixedUpdate()//1º Loop FireWall
+    {
+        CheckIfLevelPaused();
+        if (!b_effectFinished)
+        {
+            CastEffectWithTimer();
+        }
+    }
+    internal void OnDisable()//Reset Lightnings
+    {
+        b_effectFinished = false;
+
+    }
+    #endregion
     #region InstantArea Methods
     //Receive target 
     public override void ActivateEffect(Vector3 starPosition, Vector3 target)
@@ -18,21 +32,6 @@ public class ContinuousDmg_StaticInstant : BaseSpellsEffects
 
     }
     //Wait until spell effect finish 
-    private void FixedUpdate()//1º Loop FireWall
-    {
-        CheckIfLevelPaused();
-        if (b_spellEffectActiveInBattlefield)
-        {
-            StartCoroutine(CastInBattlefield());
-        }
-    }
- 
-    internal IEnumerator CastInBattlefield()
-    {
-        WaitForSeconds wait_durationInBattlefield = new WaitForSeconds(f_duration);
-        yield return wait_durationInBattlefield;
-        effect_Animator.SetTrigger(i_EnterEnd);//When the is finised, start End animation
-    }
  
     internal override void HurtEnemies()
     {
@@ -42,7 +41,7 @@ public class ContinuousDmg_StaticInstant : BaseSpellsEffects
         }
     }
     #endregion
-
+  
     #region SFX Play Methods
     internal void StopLoopSfx()
     {

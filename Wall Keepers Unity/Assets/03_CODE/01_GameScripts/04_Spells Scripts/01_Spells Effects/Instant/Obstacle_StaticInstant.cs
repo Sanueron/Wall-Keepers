@@ -5,24 +5,27 @@ using static Enemy;
 
 public class Obstacle_StaticInstant : BaseSpellsEffects
 {
+    #region Variables
     private bool b_flinched, b_canFlinch;
     private WaitForSeconds flintchTimer_WFS = new WaitForSeconds(0.5f);
     private float f_flinchForce = 3.5f;
     private float f_stopEnemyDelay = 0.3f;
-    #region InstantArea Methods
-    //Receive target 
-
+    #endregion
     #region Unity Life Cycle
     private void FixedUpdate()
     {
         CheckIfLevelPaused();
-        if (b_spellEffectActiveInBattlefield)
+        if (!b_effectFinished)
         {
-            StartCoroutine(CastInBattlefield());
+            CastEffectWithTimer();
         }
     }
+    private void OnDisable()
+    {
+        b_effectFinished = false;
+    }
     #endregion
-
+    #region Inherit Methods
     public override void ActivateEffect(Vector3 starPosition, Vector3 target)
     {
         SetTarget(target);
@@ -33,21 +36,8 @@ public class Obstacle_StaticInstant : BaseSpellsEffects
         transform.parent = null;
         gameObject.transform.position = target;
     }
-    internal IEnumerator CastInBattlefield()
-    {
-        WaitForSeconds wait_durationInBattlefield = new WaitForSeconds(f_duration);
-        yield return wait_durationInBattlefield;
-        FinishLoop();
-    }
-    internal void FinishLoop()
-    {
-        effect_Animator.SetTrigger(i_EnterEnd);
-    }
-    internal void Disable()
-    {  
-        ResetEffect();
-    }
     #endregion
+    #region RockWall Methods
     // When enemies collide with the wall, they stop and begin attacking it.
     public void Flinch()
     {
@@ -78,7 +68,8 @@ public class Obstacle_StaticInstant : BaseSpellsEffects
         }
       
     }
-
+    #endregion
+    #region Colliders
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.layer == i_EnemyLayer)
@@ -86,4 +77,5 @@ public class Obstacle_StaticInstant : BaseSpellsEffects
             AddToEnemiesList(collision.gameObject.GetComponent<Enemy>());
         }
     }
+    #endregion
 }

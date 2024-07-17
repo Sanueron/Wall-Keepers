@@ -27,16 +27,16 @@ public class Projectile : BaseSpellsEffects
     {
         InitializeVars();
     }
+
+    
     private void FixedUpdate()
     {
         CheckIfLevelPaused();
-
-        if (b_spellEffectActiveInBattlefield&&b_startMovement)
+        if (b_spellEffectActiveInBattlefield && b_startMovement)
         {
+            print("SigueEntrando");
             ProjectailMovement();
         }
-
-       
     }
     #endregion
 

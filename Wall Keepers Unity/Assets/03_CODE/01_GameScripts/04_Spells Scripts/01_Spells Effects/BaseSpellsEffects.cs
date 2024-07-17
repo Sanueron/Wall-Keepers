@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
 using static UnityEngine.EventSystems.EventTrigger;
 
 public class BaseSpellsEffects : MonoBehaviour
@@ -28,6 +30,10 @@ public class BaseSpellsEffects : MonoBehaviour
     [SerializeField] protected AudioSource aS_spellAudioSource;
     [SerializeField] protected AudioClip aC_spellCastSfx;
     #endregion
+    #region Time Control
+    protected float f_counter;
+    protected bool b_effectStarted, b_effectFinished;
+    #endregion
 
     #region Local Common Methods
     internal void SetSpellStatsInSpellEffect(Transform tParent, float dmg, float res, float speed, float dur, float repeatRate, float slowDownValue)
@@ -54,12 +60,9 @@ public class BaseSpellsEffects : MonoBehaviour
         transform.position = spellCardParent.position;
         gameObject.SetActive(false);
     }
-    //Coroutine to wait until the spell establisehed duration
-
-
     #endregion
 
-    #region Enemies List
+    #region Enemies 
     protected void AddToEnemiesList(Enemy enemy)
     {
         enemiesScripts_List.Add(enemy);
@@ -69,19 +72,6 @@ public class BaseSpellsEffects : MonoBehaviour
     {
         enemiesScripts_List.Remove(enemy);
     }
-    #endregion
-
-
-    protected void StartEndAnimation()
-    {
-        effect_Animator.SetTrigger(i_EnterEnd);
-    }
-
-    protected void StartLoopAnimation()
-    {
-        effect_Animator.SetTrigger(i_EnterLoop);
-    }
-
     internal void RestoreEnemyTarget()
     {
         foreach (Enemy enemy in enemiesScripts_List)
@@ -99,11 +89,28 @@ public class BaseSpellsEffects : MonoBehaviour
         }
     }
 
+    #endregion
+
+    #region Animations and SFX
+    protected void StartEndAnimation()
+    {
+        effect_Animator.SetTrigger(i_EnterEnd);
+    }
+
+    protected void StartLoopAnimation()
+    {
+        effect_Animator.SetTrigger(i_EnterLoop);
+        b_effectStarted = true;
+    }
     internal void PlaySpellCastSfx()
     {
         aS_spellAudioSource.PlayOneShot(aC_spellCastSfx);
     }
 
+    #endregion
+
+
+    #region Time control
     internal void CheckIfLevelPaused()
     {
 
@@ -120,5 +127,21 @@ public class BaseSpellsEffects : MonoBehaviour
             }
         }
     }
- 
+   // For spells that stay on the battlefield for a while, we would need a timer that  replace a corrutine, so that they can be paused properly.
+    internal void CastEffectWithTimer()
+    {
+        if (!LevelsGnralManager.b_stopLevel && b_effectStarted)
+        {
+            f_counter += Time.deltaTime;
+            if (f_counter >= f_duration)
+            {
+                effect_Animator.SetTrigger(i_EnterEnd);
+                f_counter = 0f;
+                b_effectFinished = true;
+            }
+        }
+    }
+    #endregion 
+
+
 }

@@ -6,7 +6,6 @@ public class LightningStorm_AllArea_Effect : BaseSpellsEffects
 {
     #region Variables
     [SerializeField] private List<GameObject> go_oneThunder = new List<GameObject>();
-    private int i_ligthningsDroped;
     #endregion
     #region BaseSpells Methods
     public override void ActivateEffect(Vector3 starPosition, Vector3 target)
@@ -20,14 +19,26 @@ public class LightningStorm_AllArea_Effect : BaseSpellsEffects
     }
     #endregion
     #region Unity Life Cycle
-    #endregion
-    #region LStorm Methods
-    internal void StartStorm()
+    private void FixedUpdate()
     {
         CheckIfLevelPaused();
-        effect_Animator.SetTrigger(i_EnterLoop);
-        StartCoroutine(CastInBattlefield());
+        if (!b_effectFinished)
+        {
+            CastEffectWithTimer();
+        }
     }
+    internal void OnDisable()//Reset Lightnings
+    {
+        b_effectFinished = false;
+        for (int i = 0; i < go_oneThunder.Count; i++)
+        {
+            go_oneThunder[i].gameObject.GetComponent<OneLightningEffect>().b_lightningInstantiated = false;
+            // Activate effect
+            go_oneThunder[i].gameObject.SetActive(false);
+        }
+    }
+    #endregion
+    #region LStorm Methods
     internal IEnumerator CastInBattlefield()//First, we cast the storm for the determined duration.
     {
         WaitForSeconds wait_durationInBattlefield = new WaitForSeconds(f_duration);
@@ -61,15 +72,6 @@ public class LightningStorm_AllArea_Effect : BaseSpellsEffects
             }
         }
     }
-    internal void OnDisable()//Reset Lightnings
-    {
-        for(int i = 0;i < go_oneThunder.Count; i++)
-        {
-            go_oneThunder[i].gameObject.GetComponent<OneLightningEffect>().b_lightningInstantiated = false;
-            // Activate effect
-            go_oneThunder[i].gameObject.SetActive(false);
-        }
-    }
     private Vector3 GenerateRandomPosition()
     {
         // Generate random x and y positions
@@ -86,7 +88,6 @@ public class LightningStorm_AllArea_Effect : BaseSpellsEffects
     }
     #endregion
     #region Collisions
-    // When an enemy enters the area, repeatedly hurt the enemy
     private void  OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.layer == i_EnemyLayer)
