@@ -84,7 +84,7 @@ public class LightningStorm_AllArea_Effect : BaseSpellsEffects
     internal void ShowBorders()
     {
         go_CastBorders.transform.parent = null;
-        go_CastBorders.transform.position = new Vector3(0.0f, 3.6f, 0.0f);
+        go_CastBorders.transform.position = new Vector3(0.0f, 3.2f, 0.0f);
     }
 
     internal void OccultBorders()
