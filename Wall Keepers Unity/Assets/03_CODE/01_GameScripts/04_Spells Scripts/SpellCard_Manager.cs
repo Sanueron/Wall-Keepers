@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.NetworkInformation;
 using Unity.VisualScripting;
 using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
@@ -14,6 +15,7 @@ public class SpellCard_Manager : MonoBehaviour
     public bool b_onBattlefield;
     [SerializeField] private Sprite _targetSprite;
     private SpriteRenderer _card_SpriteRenderer;
+    public bool b_cardColocation_Finished;
     #endregion
 
     #region Spell Stats variables
@@ -56,6 +58,10 @@ public class SpellCard_Manager : MonoBehaviour
         InitializedCard();
         SetSpellInitialStats();
         InitializeSpellEffectsPrefabs();
+    }
+    private void OnDisable()
+    {
+        b_cardColocation_Finished = false;  
     }
     #endregion
 
@@ -247,7 +253,7 @@ public class SpellCard_Manager : MonoBehaviour
 
             // Check if trying fusion already and update to this (stop previous)
             if (spellFusedWith != null)
-            {
+            {   
                 spellFusedWith.StopFuseAnim();
                 spellFusedWith = detectedSpell;
             }
@@ -272,32 +278,35 @@ public class SpellCard_Manager : MonoBehaviour
         }
 
         // Check if collides with other spell card (for fusion checks)
-        if (collision.gameObject.tag == gameObject.tag) // If same tag then both are Spell Cards
+        if (collision.gameObject.tag == gameObject.tag && b_cardColocation_Finished) // If same tag then both are Spell Cards
         {
             // Get detected spell data
             SpellCard_Manager detectedSpell = collision.gameObject.GetComponent<SpellCard_Manager>();
-            // Check if detected card is a valid fusion option
-            if (spellBaseData.i_spellRequired_1_Id == detectedSpell.GetCardData().i_id) // Fusion spell option 1
-            {                
-                // Play Can Fuse Animation
-                ShowCanMergeOption_Anim();
-                // Save Fusion card position to later instantiate fused card there
-                transform_FusedCardStartPostition = collision.transform;
-                // Set control bools
-                b_tryingFusion = true;
-                b_isFusionOption_1 = true;
-                b_isFusionOption_2 = false;
-            }
-            else if (spellBaseData.i_spellRequired_2_Id == detectedSpell.GetCardData().i_id) // Fusion spell option 2
+            if (detectedSpell.b_cardColocation_Finished)
             {
-                // Play Can Fuse Animation 
-                ShowCanMergeOption_Anim();
-                // Save Fusion card position to later instantiate fused card there
-                transform_FusedCardStartPostition = collision.transform;
-                // Set control bools
-                b_tryingFusion = true;
-                b_isFusionOption_1 = false;
-                b_isFusionOption_2 = true;
+                // Check if detected card is a valid fusion option
+                if (spellBaseData.i_spellRequired_1_Id == detectedSpell.GetCardData().i_id) // Fusion spell option 1
+                {
+                    // Play Can Fuse Animation
+                    ShowCanMergeOption_Anim();
+                    // Save Fusion card position to later instantiate fused card there
+                    transform_FusedCardStartPostition = collision.transform;
+                    // Set control bools
+                    b_tryingFusion = true;
+                    b_isFusionOption_1 = true;
+                    b_isFusionOption_2 = false;
+                }
+                else if (spellBaseData.i_spellRequired_2_Id == detectedSpell.GetCardData().i_id) // Fusion spell option 2
+                {
+                    // Play Can Fuse Animation 
+                    ShowCanMergeOption_Anim();
+                    // Save Fusion card position to later instantiate fused card there
+                    transform_FusedCardStartPostition = collision.transform;
+                    // Set control bools
+                    b_tryingFusion = true;
+                    b_isFusionOption_1 = false;
+                    b_isFusionOption_2 = true;
+                }
             }
         }
     }

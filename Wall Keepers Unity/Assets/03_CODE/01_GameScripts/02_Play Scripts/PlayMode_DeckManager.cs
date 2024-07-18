@@ -92,7 +92,9 @@ public class PlayMode_DeckManager : MonoBehaviour
 
             cards_InHand_GameObjects[i].SetActive(true);
             cards_InHand_GameObjects[i].gameObject.transform.position = handPositions_Transform[i].position;
-            cards_InHand_GameObjects[i].transform.GetComponent<SpellCard_Manager>().v3_currentPosition = handPositions_Transform[i].position;
+            SpellCard_Manager spellScritp = cards_InHand_GameObjects[i].transform.GetComponent<SpellCard_Manager>();
+            spellScritp.v3_currentPosition = handPositions_Transform[i].position;
+            spellScritp.b_cardColocation_Finished = true;
         }
     }
     //USED CARD 
@@ -129,7 +131,9 @@ public class PlayMode_DeckManager : MonoBehaviour
     {
         
         cards_NotInHand_GameObjects[0].SetActive(true);
-        cards_NotInHand_GameObjects[0].GetComponent<SpellCard_Manager>().v3_currentPosition = peviousPosition;
+        SpellCard_Manager spellScript = cards_NotInHand_GameObjects[0].GetComponent<SpellCard_Manager>();
+        spellScript.v3_currentPosition = peviousPosition;
+        spellScript.b_cardColocation_Finished = true;
         cards_InHand_GameObjects.Add(cards_NotInHand_GameObjects[0]);
         //cards_NotInHand_GameObjects[0].transform.position = peviousPosition;
         

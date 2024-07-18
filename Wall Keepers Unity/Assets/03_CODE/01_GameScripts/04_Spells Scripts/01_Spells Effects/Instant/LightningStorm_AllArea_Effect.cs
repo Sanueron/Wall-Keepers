@@ -6,6 +6,7 @@ public class LightningStorm_AllArea_Effect : BaseSpellsEffects
 {
     #region Variables
     [SerializeField] private List<GameObject> go_oneThunder = new List<GameObject>();
+    [SerializeField] private GameObject go_CastBorders;
     #endregion
     #region BaseSpells Methods
     public override void ActivateEffect(Vector3 starPosition, Vector3 target)
@@ -79,6 +80,17 @@ public class LightningStorm_AllArea_Effect : BaseSpellsEffects
         float randomY = Random.Range(-6f, 12f);
         // Create a random position Vector3
         return new Vector3(randomX, randomY, 0f);
+    }
+    internal void ShowBorders()
+    {
+        go_CastBorders.transform.parent = null;
+        go_CastBorders.transform.position = new Vector3(0.0f, 3.6f, 0.0f);
+    }
+
+    internal void OccultBorders()
+    {
+        go_CastBorders.transform.parent = transform;
+
     }
     #endregion
     #region SFX Play Methods

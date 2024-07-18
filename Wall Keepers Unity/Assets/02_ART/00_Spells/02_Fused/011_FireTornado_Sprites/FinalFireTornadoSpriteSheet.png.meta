@@ -364,11 +364,11 @@ TextureImporter:
         serializedVersion: 2
         x: 768
         y: 667
-        width: 256
+        width: 226
         height: 333
       alignment: 9
-      pivot: {x: 0.4952917, y: 0.33350563}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.52195674, y: 0.32626644}
+      border: {x: 0, y: 0, z: 1, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -385,11 +385,11 @@ TextureImporter:
         serializedVersion: 2
         x: 1012
         y: 667
-        width: 256
+        width: 242
         height: 333
       alignment: 9
       pivot: {x: 0.4670434, y: 0.23578064}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 0, y: 0, z: 1, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -404,9 +404,9 @@ TextureImporter:
       name: FinalFireTornadoSpriteSheet_5
       rect:
         serializedVersion: 2
-        x: 1280
+        x: 1282
         y: 667
-        width: 256
+        width: 229
         height: 333
       alignment: 9
       pivot: {x: 0.39171314, y: 0.30093062}
@@ -431,7 +431,7 @@ TextureImporter:
         height: 333
       alignment: 9
       pivot: {x: 0.37758923, y: 0.29007223}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 0, y: 0, z: 9, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -446,9 +446,9 @@ TextureImporter:
       name: FinalFireTornadoSpriteSheet_7
       rect:
         serializedVersion: 2
-        x: 1792
+        x: 1783
         y: 667
-        width: 256
+        width: 265
         height: 333
       alignment: 9
       pivot: {x: 0.4717512, y: 0.32988605}
@@ -574,7 +574,7 @@ TextureImporter:
         serializedVersion: 2
         x: 1280
         y: 334
-        width: 256
+        width: 245
         height: 333
       alignment: 9
       pivot: {x: 0.33050823, y: 0.19958624}
@@ -595,7 +595,7 @@ TextureImporter:
         serializedVersion: 2
         x: 1536
         y: 334
-        width: 256
+        width: 236
         height: 333
       alignment: 9
       pivot: {x: 0.4387946, y: 0.27197504}
@@ -766,7 +766,7 @@ TextureImporter:
         width: 256
         height: 333
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

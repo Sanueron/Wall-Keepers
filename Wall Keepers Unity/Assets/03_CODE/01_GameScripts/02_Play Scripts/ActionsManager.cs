@@ -14,7 +14,7 @@ public class ActionsManager : MonoBehaviour
     [SerializeField]private bool b_draggingCard;
     private float f_timer = 0;
     private bool b_timerIsOn;
-    [SerializeField] GameObject go_spellInfoPanel;
+    [SerializeField] GameObject go_spellInfoPanel, go_StormSprites;
     public bool GetIsDragging()
     {
         return b_draggingCard;
@@ -88,6 +88,7 @@ public class ActionsManager : MonoBehaviour
     #endregion
 
     #region Drag Cards Methods
+
     private void InitCardDrag()
     {
         b_busy = true;
@@ -106,7 +107,6 @@ public class ActionsManager : MonoBehaviour
     {
         b_busy = false;
         b_draggingCard = false;
-
         // Use bool for merge control
         selectedSpell.b_spellSelectedForFusion = true;
 
@@ -266,6 +266,14 @@ public class ActionsManager : MonoBehaviour
 
 
     #region External Methods
+    public void ActiveStormSprites()
+    {
+        go_StormSprites.SetActive(true);    
+    }
+    public void DisableStormSprites()
+    {
+        go_StormSprites.SetActive(false);
+    }
     public void SetBusyOFF() {  b_busy = false; }
     #endregion
 
