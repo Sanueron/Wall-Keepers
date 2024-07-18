@@ -9,6 +9,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -2498564269224096355, guid: 0544668d66cf40b42889f2c2f47dfe5e, type: 3}
+      propertyPath: aC_hitSfx
+      value: 
+      objectReference: {fileID: 8300000, guid: 1d1924a735763b141bcb5a1a4a0e3ca8, type: 3}
+    - target: {fileID: -2498564269224096355, guid: 0544668d66cf40b42889f2c2f47dfe5e, type: 3}
+      propertyPath: aC_spellCastSfx
+      value: 
+      objectReference: {fileID: 8300000, guid: 9afa0b9d12b3bc64f88a5232e34b725a, type: 3}
+    - target: {fileID: -2498564269224096355, guid: 0544668d66cf40b42889f2c2f47dfe5e, type: 3}
       propertyPath: effect_Animator
       value: 
       objectReference: {fileID: 2271652396205078566}
@@ -181,7 +189,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 40
+  m_SortingOrder: 70
   m_Sprite: {fileID: -100988331, guid: 1251efa6af80cae4190ec81dee14ea84, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

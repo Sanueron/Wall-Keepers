@@ -1,7 +1,9 @@
+using NUnit;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Analytics;
 using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
 using static UnityEngine.EventSystems.EventTrigger;
 
@@ -29,6 +31,7 @@ public class BaseSpellsEffects : MonoBehaviour
     [Header("Spell Stats")]
     [SerializeField] protected AudioSource aS_spellAudioSource;
     [SerializeField] protected AudioClip aC_spellCastSfx;
+    [SerializeField] protected AudioClip aC_hitSfx;
     #endregion
     #region Time Control
     protected float f_counter;
@@ -82,9 +85,9 @@ public class BaseSpellsEffects : MonoBehaviour
 
     internal virtual void HurtEnemies()
     {
-        print("Hurt");
         foreach (Enemy enemy in enemiesScripts_List)
         {
+            print(enemiesScripts_List.Count);
             enemy.ReceiveDamage((int)f_damage);
         }
     }
@@ -109,7 +112,11 @@ public class BaseSpellsEffects : MonoBehaviour
 
     #endregion
 
-
+    internal void PlayHitSfx()
+    {
+        aS_spellAudioSource.Stop();
+        aS_spellAudioSource.PlayOneShot(aC_hitSfx);
+    }
     #region Time control
     internal void CheckIfLevelPaused()
     {
@@ -136,6 +143,19 @@ public class BaseSpellsEffects : MonoBehaviour
             if (f_counter >= f_duration)
             {
                 effect_Animator.SetTrigger(i_EnterEnd);
+                f_counter = 0f;
+                b_effectFinished = true;
+            }
+        }
+    }
+    internal void CastEffectWithTimerLakes()
+    {
+        if (!LevelsGnralManager.b_stopLevel && b_effectStarted)
+        {
+            f_counter += Time.deltaTime;
+            if (f_counter >= f_duration)
+            {
+                effect_Animator.SetTrigger(i_EnterExtraEnd);
                 f_counter = 0f;
                 b_effectFinished = true;
             }

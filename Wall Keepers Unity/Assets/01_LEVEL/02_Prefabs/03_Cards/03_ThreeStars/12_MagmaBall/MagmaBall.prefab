@@ -61,6 +61,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 22100000, guid: 540820fed6ee9864585c2894ce186909, type: 2}
     - target: {fileID: 4257493173228200327, guid: 693b018ee78c884418c8725b7170f77b, type: 3}
+      propertyPath: b_fusedCard
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4257493173228200327, guid: 693b018ee78c884418c8725b7170f77b, type: 3}
       propertyPath: spellBaseData
       value: 
       objectReference: {fileID: 11400000, guid: 070d98dbc4d97a6459e289764f5c5652, type: 2}

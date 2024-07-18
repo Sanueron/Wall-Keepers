@@ -117,6 +117,10 @@ public class Enemy : MonoBehaviour
         }
         if (b_beingAttracktedBySpell)
         {
+            if(e_enemyState == EnemyState.ReceiveDamage)
+            {
+                return;
+            }
             MoveToTarget();
             return;
         }

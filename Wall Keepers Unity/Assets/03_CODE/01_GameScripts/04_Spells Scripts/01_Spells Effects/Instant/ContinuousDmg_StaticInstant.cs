@@ -19,6 +19,17 @@ public class ContinuousDmg_StaticInstant : BaseSpellsEffects
 
     }
     #endregion
+    internal override void HurtEnemies()
+    {
+        foreach (Enemy enemy in enemiesScripts_List)
+        {
+            print(enemiesScripts_List.Count);
+            if (enemy.i_hp > 0)
+            {
+                enemy.ReceiveDamage((int)f_damage);
+            } 
+        }
+    }
     #region InstantArea Methods
     //Receive target 
     public override void ActivateEffect(Vector3 starPosition, Vector3 target)
@@ -32,14 +43,6 @@ public class ContinuousDmg_StaticInstant : BaseSpellsEffects
 
     }
     //Wait until spell effect finish 
- 
-    internal override void HurtEnemies()
-    {
-        foreach (Enemy enemy in enemiesScripts_List)
-        {
-            enemy.ReceiveDamage((int)f_damage);
-        }
-    }
     #endregion
   
     #region SFX Play Methods

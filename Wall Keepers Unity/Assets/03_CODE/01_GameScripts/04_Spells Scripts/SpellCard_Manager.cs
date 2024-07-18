@@ -36,7 +36,7 @@ public class SpellCard_Manager : MonoBehaviour
     [SerializeField] private GameObject go_fusionSpellOption_1;
     [SerializeField] private GameObject go_fusionSpellOption_2;
     [SerializeField] internal SpriteRenderer sprRenderer_fusionBorderAnim;
-    internal bool b_tryingFusion, b_spellSelectedForFusion, b_isFusionOption_1, b_isFusionOption_2;
+    internal bool b_tryingFusion, b_spellSelectedForFusion, b_isFusionOption_1, b_isFusionOption_2, b_FusedCard;
     internal SpellCard_Manager spellFusedWith; // Use to send back to deck spell with which we are fusing this
     private List<SpellCard_Manager> listOf_fusionSpellsPrefabs_option_1 = new List<SpellCard_Manager>();
     private List<SpellCard_Manager> listOf_fusionSpellsPrefabs_option_2 = new List<SpellCard_Manager>();
@@ -159,14 +159,10 @@ public class SpellCard_Manager : MonoBehaviour
     #region Merge Methods
     internal void ShowCanMergeOption_Anim()
     {
-        print("Show merge animation");
-        print(gameObject.name);
         animatorOf_spellCard.SetBool(i_canFuseHash, true);
     }
     internal void StopFuseAnim()
     {
-        print(gameObject.name);
-        print("Stop fuse");
         animatorOf_spellCard.SetBool(i_canFuseHash, false);
     }
     internal void InstantiateFusedSpellOnhand()
@@ -189,6 +185,7 @@ public class SpellCard_Manager : MonoBehaviour
                         // Create fusion option 1
                         GameObject obj = Instantiate(go_fusionSpellOption_1, transform_FusedCardStartPostition.position, transform.rotation,
                             transform.parent);
+                        SetFusedCardResultStats(obj);
                     }
                 }
             }
@@ -197,6 +194,7 @@ public class SpellCard_Manager : MonoBehaviour
                 // Create fusion option 1
                 GameObject obj = Instantiate(go_fusionSpellOption_1, transform_FusedCardStartPostition.position, transform.rotation,
                     transform.parent);
+                SetFusedCardResultStats(obj);
             }
         }
         else if (b_isFusionOption_2)
@@ -217,6 +215,8 @@ public class SpellCard_Manager : MonoBehaviour
                         // Create fusion option 1
                         GameObject obj = Instantiate(go_fusionSpellOption_2, transform_FusedCardStartPostition.position, transform.rotation,
                             transform.parent);
+                        SetFusedCardResultStats(obj);
+
                     }
                 }
             }
@@ -225,11 +225,18 @@ public class SpellCard_Manager : MonoBehaviour
                 // Create fusion option 1
                 GameObject obj = Instantiate(go_fusionSpellOption_2, transform_FusedCardStartPostition.position, transform.rotation,
                     transform.parent);
+                SetFusedCardResultStats(obj);
             }
         }
     }
+    private void SetFusedCardResultStats(GameObject obj)
+    {
+        SpellCard_Manager fusedCard= obj.GetComponent<SpellCard_Manager>();
+        fusedCard.v3_currentPosition = obj.transform.position;
+        fusedCard.b_FusedCard = true;
+    }
     #endregion
-
+    
     #region Collisions
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -310,7 +317,6 @@ public class SpellCard_Manager : MonoBehaviour
 
             if (spellBaseData.i_spellRequired_1_Id == detectedSpellOut.GetCardData().i_id) // Fusion spell option 1
             {
-                print("Fuses with fire ball");
                 // Stop Can Fuse Animation
                 StopFuseAnim();
                 // Stop other spell anim
@@ -321,7 +327,6 @@ public class SpellCard_Manager : MonoBehaviour
             }
             else if (spellBaseData.i_spellRequired_2_Id == detectedSpellOut.GetCardData().i_id) // Fusion spell option 2
             {
-                print("Fuses with water ball");
                 // Stop Can Fuse Animation 
                 StopFuseAnim();
                 // Stop other spell anim

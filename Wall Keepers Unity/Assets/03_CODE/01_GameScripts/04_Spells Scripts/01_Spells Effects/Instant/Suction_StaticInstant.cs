@@ -4,7 +4,7 @@ using UnityEngine;
 using static Enemy;
 using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
 
-public class SuctionDmg_StaticInstant : BaseSpellsEffects
+public class Suction_StaticInstant : BaseSpellsEffects
 {
     #region Additional SFX
     [Header("Additional SFX")]
@@ -21,7 +21,6 @@ public class SuctionDmg_StaticInstant : BaseSpellsEffects
             {
                 CastEffectWithTimer();
             }
-            //StartCoroutine(CastInBattlefield());
         }
     }
     private void OnDisable()
@@ -30,6 +29,7 @@ public class SuctionDmg_StaticInstant : BaseSpellsEffects
         
         foreach (Enemy enemy in enemiesScripts_List)
         {
+            print("Disable");
             enemy.RestoreTarget();
             enemy.OutOfAreaApplyingForceToEnemy();
         }
@@ -52,7 +52,13 @@ public class SuctionDmg_StaticInstant : BaseSpellsEffects
 
     }
 
- 
+    internal void ResetSucctionAreaSpell()
+    {
+        b_spellEffectActiveInBattlefield = false;
+        transform.parent = spellCardParent;
+        transform.position = spellCardParent.position;
+        gameObject.SetActive(false);
+    }
 
 
     internal IEnumerator CastInBattlefield()
@@ -104,6 +110,7 @@ public class SuctionDmg_StaticInstant : BaseSpellsEffects
     {
         if (collision.gameObject.layer == i_EnemyLayer)
         {
+            print("ExitTornado");
             collision.gameObject.GetComponent<Enemy>().RestoreTarget();
             collision.gameObject.GetComponent<Enemy>().OutOfAreaApplyingForceToEnemy();
             RemoveFromEnemiesList(collision.gameObject.GetComponent<Enemy>());

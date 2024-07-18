@@ -32,14 +32,37 @@ public class ContinuousDmg_StaticProjectail : BaseSpellsEffects
     private void FixedUpdate()
     {
         CheckIfLevelPaused();
+        if (LevelsGnralManager.b_stopLevel)
+        {
+            return;
+        }
         if (b_spellEffectActiveInBattlefield && b_startMovement)
         {
             ProjectailMovement();
         }
+        if (!b_effectFinished)
+        {
+            CastEffectWithTimerLakes();
+        }
+    }
+    internal void OnDisable()//Reset Lightnings
+    {
+        b_effectFinished = false;
     }
     #endregion
 
     #region Base Methods
+    internal override void HurtEnemies()
+    {
+        foreach (Enemy enemy in enemiesScripts_List)
+        {
+            print(enemiesScripts_List.Count);
+            if (enemy.i_hp > 0)
+            {
+                enemy.ReceiveDamage((int)f_damage);
+            }
+        }
+    }
     public override void ActivateEffect(Vector3 starPosition, Vector3 target)
     {
         // Set new behaviour for Projectiles
@@ -51,11 +74,9 @@ public class ContinuousDmg_StaticProjectail : BaseSpellsEffects
     // Method to save the target position
     public void CastBall(Vector3 starPosition, Vector3 target)
     {
-
         transform.parent = null;
         transform.position = starPosition;
         v3_startPosition = starPosition;
-        print(starPosition);
         v3_endPosition = target;
         f_journeyLength = Vector3.Distance(v3_startPosition, v3_endPosition);
     }
@@ -85,16 +106,9 @@ public class ContinuousDmg_StaticProjectail : BaseSpellsEffects
     }
     private void StartLake()
     {
-        StartCoroutine(Lake());
         effect_Animator.SetTrigger(i_EnterExtraLoop);
+        b_effectStarted = true;
     }
-    private IEnumerator Lake()
-    {
-        WaitForSeconds wait_durationInBattlefield = new WaitForSeconds(f_duration);
-        yield return wait_durationInBattlefield;
-        ResetEffect();
-    }
-
     internal void StartMovement()
     {
         startTime = Time.time;

@@ -28,13 +28,25 @@ public class SlowDown_StaticProjectail : BaseSpellsEffects
         spell_SpriteRenderer = GetComponent<SpriteRenderer>();
         i_start_spriteSortingOrder = spell_SpriteRenderer.sortingOrder;
     }
-
     private void FixedUpdate()
     {
+        CheckIfLevelPaused();
+        if (LevelsGnralManager.b_stopLevel)
+        {
+            return;
+        }
         if (b_spellEffectActiveInBattlefield && b_startMovement)
         {
             ProjectailMovement();
         }
+        if (!b_effectFinished)
+        {
+            CastEffectWithTimerLakes();
+        }
+    }
+    internal void OnDisable()//Reset Lightnings
+    {
+        b_effectFinished = false;
     }
     #endregion
 
@@ -79,21 +91,12 @@ public class SlowDown_StaticProjectail : BaseSpellsEffects
     private void Explosion()
     {
         effect_Animator.SetTrigger(i_EnterEnd);
-        
-        
     }
     private void StartLake()
     {
-        StartCoroutine(Lake());
         effect_Animator.SetTrigger(i_EnterExtraLoop);
+        b_effectStarted = true;
     }
-    private IEnumerator Lake()
-    {
-        WaitForSeconds wait_durationInBattlefield = new WaitForSeconds(f_duration);
-        yield return wait_durationInBattlefield;
-        ResetEffect();
-    }
-
     internal void StartMovement()
     {
         startTime = Time.time;

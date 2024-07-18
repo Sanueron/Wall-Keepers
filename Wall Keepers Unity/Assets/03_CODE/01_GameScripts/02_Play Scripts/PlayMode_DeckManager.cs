@@ -99,13 +99,22 @@ public class PlayMode_DeckManager : MonoBehaviour
     // Disable the used card and move it back to the deck
     public void GetSpellBackToDeck(SpellCard_Manager usedCard, Vector3 previousPosition)
     {
-        cards_InHand_GameObjects.Remove(usedCard.gameObject);
-        cards_NotInHand_GameObjects.Add(usedCard.gameObject);
+        if (!usedCard.b_FusedCard)
+        {
+            cards_NotInHand_GameObjects.Add(usedCard.gameObject);
+            cards_InHand_GameObjects.Remove(usedCard.gameObject);
+        }
+        else
+        {
+            usedCard.transform.parent = null;   
+        }
         usedCard.gameObject.SetActive(false);
         usedCard.transform.position = deckPosition_Transform.position;
         usedCard.v3_currentPosition = deckPosition_Transform.position;
         GetSpellToHand(previousPosition);
+        
     }
+    // This is the card selected for fusion. The new fused card will replace this one.
     public void GetSpellFusedBackToDeckButDontReplace(SpellCard_Manager usedCard, Vector3 previousPosition)
     {
         cards_InHand_GameObjects.Remove(usedCard.gameObject);

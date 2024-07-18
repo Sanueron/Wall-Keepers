@@ -116,7 +116,10 @@ public class ResultsManager : MonoBehaviour
             if(i_countOfDemonitosDefeated > 0)
             {
                 listOfDemonitosBoxes[i].tmp_numberOfDemonitosDefeated.text = i_countOfDemonitosDefeated.ToString();
-                listOfDemonitosBoxes[i].gameObject.SetActive(true);
+                if (listOfDemonitosBoxes[i] != null)
+                {
+                    listOfDemonitosBoxes[i].gameObject.SetActive(true);
+                }
             }
             else
             {

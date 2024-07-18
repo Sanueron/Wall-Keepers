@@ -15,11 +15,6 @@ public class Projectile : BaseSpellsEffects
     private float startTime;
     #endregion
 
-    #region Additional SFX
-    [Header("Additional SFX")]
-    [SerializeField] AudioClip aC_hitSfx;
-    #endregion
-
     #region Unity Life Cycle
 
    
@@ -132,13 +127,4 @@ public class Projectile : BaseSpellsEffects
         }
     }
     #endregion
-
-    #region SFX Play Methods
-    internal void PlayHitSfx()
-    {
-        aS_spellAudioSource.Stop();
-        aS_spellAudioSource.PlayOneShot(aC_hitSfx);
-    }
-    #endregion
-
 }

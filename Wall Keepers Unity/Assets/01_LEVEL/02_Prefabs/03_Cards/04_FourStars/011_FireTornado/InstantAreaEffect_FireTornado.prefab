@@ -107,14 +107,14 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4883891549409874169, guid: 16a64cdb6f7ab5140ab2d251b6fb4155, type: 3}
-      insertIndex: 1
-      addedObject: {fileID: -8479635758121280273}
-    - targetCorrespondingSourceObject: {fileID: 4883891549409874169, guid: 16a64cdb6f7ab5140ab2d251b6fb4155, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7468555481515185299}
     - targetCorrespondingSourceObject: {fileID: 4883891549409874169, guid: 16a64cdb6f7ab5140ab2d251b6fb4155, type: 3}
       insertIndex: -1
       addedObject: {fileID: 713209755325010346}
+    - targetCorrespondingSourceObject: {fileID: 4883891549409874169, guid: 16a64cdb6f7ab5140ab2d251b6fb4155, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7020013057059548441}
   m_SourcePrefab: {fileID: 100100000, guid: 16a64cdb6f7ab5140ab2d251b6fb4155, type: 3}
 --- !u!95 &283448477421466657 stripped
 Animator:
@@ -126,20 +126,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4883891549409874169, guid: 16a64cdb6f7ab5140ab2d251b6fb4155, type: 3}
   m_PrefabInstance: {fileID: 9023145014752291643}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &-8479635758121280273
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4539549162600807362}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20939377b8cedba44a2afe25c6d5174a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  effect_Animator: {fileID: 283448477421466657}
-  enemiesScripts_List: []
 --- !u!58 &7468555481515185299
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -203,3 +189,26 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &7020013057059548441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4539549162600807362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f8ec8e7360e5fc4caa59bb42cd00d8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effect_Animator: {fileID: 283448477421466657}
+  enemiesScripts_List: []
+  aS_spellAudioSource: {fileID: 6937027651472766061}
+  aC_spellCastSfx: {fileID: 8300000, guid: b195014b7f0c80c4b9d3700b00cc76e7, type: 3}
+  aC_hitSfx: {fileID: 0}
+  aC_loopSfx: {fileID: 8300000, guid: 2b1df6e9228a48e46804c2ab22c37c9f, type: 3}
+--- !u!82 &6937027651472766061 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2125104672354934614, guid: 16a64cdb6f7ab5140ab2d251b6fb4155, type: 3}
+  m_PrefabInstance: {fileID: 9023145014752291643}
+  m_PrefabAsset: {fileID: 0}
