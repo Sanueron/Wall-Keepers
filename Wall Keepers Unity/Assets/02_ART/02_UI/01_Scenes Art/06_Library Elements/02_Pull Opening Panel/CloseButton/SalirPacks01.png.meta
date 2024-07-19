@@ -182,7 +182,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      SalirPacks01_0: 3233144474939006378
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -87,7 +87,6 @@ public class BaseSpellsEffects : MonoBehaviour
     {
         foreach (Enemy enemy in enemiesScripts_List)
         {
-            print(enemiesScripts_List.Count);
             enemy.ReceiveDamage((int)f_damage);
         }
     }

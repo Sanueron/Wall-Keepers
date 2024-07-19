@@ -42,14 +42,17 @@ public class RoundsManager : MonoBehaviour
         // Subscribe to events
         Enemy.onEnemyDefeated += Enemy_onEnemyDefeated;
 
+        // Reset list of Enemies at Start
+        listOfEnemiesInRound.Clear();
+        print(listOfEnemiesInRound.Count);
+
     }
 
     private void Enemy_onEnemyDefeated(object sender, System.EventArgs e)
     {
-        print(sender.ToString());
         // Check if still spawning enemies
         if (!script_enemiesManager.IsSpawningEnemies())
-        {print(listOfEnemiesInRound.Count.ToString());  
+        {
             // Check list of enemies of this round
             if(listOfEnemiesInRound.Count <= 0)
             {
@@ -57,7 +60,9 @@ public class RoundsManager : MonoBehaviour
                 i_currentWave++;
                 tmp_nextWaveText.text = "Wave " + i_currentWave.ToString();
                 tmp_nextWaveText_PauseMenu.text = "Wave " + i_currentWave.ToString();
-                animator_NextWave.SetTrigger(i_nextWaveTriggerHash);
+                
+                if(animator_NextWave != null) // Special check as Round Manager instance destroys the original
+                    animator_NextWave.SetTrigger(i_nextWaveTriggerHash);
             }
         }
     }

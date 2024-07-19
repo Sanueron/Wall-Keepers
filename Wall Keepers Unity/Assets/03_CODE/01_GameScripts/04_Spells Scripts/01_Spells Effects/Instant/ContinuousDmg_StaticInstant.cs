@@ -23,7 +23,6 @@ public class ContinuousDmg_StaticInstant : BaseSpellsEffects
     {
         foreach (Enemy enemy in enemiesScripts_List)
         {
-            print(enemiesScripts_List.Count);
             if (enemy.i_hp > 0)
             {
                 enemy.ReceiveDamage((int)f_damage);

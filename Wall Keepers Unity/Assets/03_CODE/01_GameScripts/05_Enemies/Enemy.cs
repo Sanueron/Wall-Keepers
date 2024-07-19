@@ -239,7 +239,8 @@ public class Enemy : MonoBehaviour
 
     internal void AttackEvent()// When the enemy attacks, we call this event which executes the enemyAction method.
     {
-        enemyAction.TakeAction(go_obstacle, go_wall);
+        if(!LevelsGnralManager.b_stopLevel)
+            enemyAction.TakeAction(go_obstacle, go_wall);
     }
     private void MoveToTarget()
     {
@@ -305,6 +306,7 @@ public class Enemy : MonoBehaviour
         {
             SwitchState(EnemyState.Defeated);
             RoundsManager.listOfEnemiesInRound.Remove(this);
+            print("Removes enemy " + gameObject.name);
             if (!b_eventCalled)
             {
                 onEnemyDefeated?.Invoke(this, EventArgs.Empty);
@@ -327,7 +329,6 @@ public class Enemy : MonoBehaviour
     {
         aS_enemy.Stop();
         aS_enemy.PlayOneShot(aC_enemyDefeated);
-        print("sound" + aC_enemyDefeated);
     }
     #endregion
 

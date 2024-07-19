@@ -72,6 +72,7 @@ public class ResultsManager : MonoBehaviour
     }
     private void WallManager_e_OnWallDestroyed(object sender, System.EventArgs e)
     {
+        LevelsGnralManager.b_stopLevel = true;
         ShowResults();
     }
 
@@ -93,7 +94,8 @@ public class ResultsManager : MonoBehaviour
         AudioManager.instance.PlaySFxOneTime(aC_levelComplete);
 
         //Show results panel
-        animator_ResultsPanel.SetTrigger(i_animatorTrigger);
+        if(animator_ResultsPanel != null)
+            animator_ResultsPanel.SetTrigger(i_animatorTrigger);
         Debug.Log("finish");
 
         // Play Results Panel Music
@@ -123,7 +125,8 @@ public class ResultsManager : MonoBehaviour
             }
             else
             {
-                listOfDemonitosBoxes[i].gameObject.SetActive(false);
+                if (listOfDemonitosBoxes[i] != null)
+                    listOfDemonitosBoxes[i].gameObject.SetActive(false);
             }
         }
     }
@@ -134,16 +137,20 @@ public class ResultsManager : MonoBehaviour
             // Save New Record
             PlayerData.i_maxRound = script_roundsManager.i_currentWave - 1;
             // Show New Record text and hide Best Score text
-            go_newRecord.SetActive(true);
-            go_bestScore.SetActive(false);
+            if (go_newRecord != null)
+                go_newRecord.SetActive(true);
+            if (go_bestScore != null)
+                go_bestScore.SetActive(false);
         }
         else // Not best score
         {
             // Pass Best score to TMP visual
             tmp_currentWavesRecord.text = PlayerData.i_maxRound.ToString();
             // Show New Record text and hide Best Score text
-            go_newRecord.SetActive(false);
-            go_bestScore.SetActive(true);
+            if(go_newRecord != null)
+                go_newRecord.SetActive(false);
+            if(go_bestScore != null)
+                go_bestScore.SetActive(true);
         }
     }
     private void ShowWavesCompleted()
