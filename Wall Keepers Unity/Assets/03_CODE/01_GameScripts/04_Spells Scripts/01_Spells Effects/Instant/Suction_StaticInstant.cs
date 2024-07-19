@@ -110,7 +110,6 @@ public class Suction_StaticInstant : BaseSpellsEffects
     {
         if (collision.gameObject.layer == i_EnemyLayer)
         {
-            print("ExitTornado");
             collision.gameObject.GetComponent<Enemy>().RestoreTarget();
             collision.gameObject.GetComponent<Enemy>().OutOfAreaApplyingForceToEnemy();
             RemoveFromEnemiesList(collision.gameObject.GetComponent<Enemy>());

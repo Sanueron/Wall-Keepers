@@ -7,6 +7,8 @@ using UnityEngine;
 
 public class SpellCard_Manager : MonoBehaviour
 {
+    ActionsManager script_actionsManager;
+
     #region Spells variables
     public Vector3 v3_currentPosition;
     [Header("Spell Stats")]
@@ -58,6 +60,10 @@ public class SpellCard_Manager : MonoBehaviour
         InitializedCard();
         SetSpellInitialStats();
         InitializeSpellEffectsPrefabs();
+
+        // Get Actions Manager for use in Fuse logic
+        GameObject go = GameObject.FindGameObjectWithTag("ActionsManager");
+        script_actionsManager = go.GetComponent<ActionsManager>();
     }
     private void OnDisable()
     {
@@ -244,13 +250,61 @@ public class SpellCard_Manager : MonoBehaviour
     #endregion
     
     #region Collisions
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if(script_actionsManager != null)
+        {
+            if (script_actionsManager.GetSelectedSpell() != this)
+            {
+                return;
+            }
+        }
+        
         if (collision.gameObject.tag == gameObject.tag) // If same tag then both are Spell Cards
         {
             // Get detected spell data
             SpellCard_Manager detectedSpell = collision.gameObject.GetComponent<SpellCard_Manager>();
 
+            // Check if collides with other spell card (for fusion checks)
+            
+            if (b_cardColocation_Finished) 
+            {
+                // Check if detected card is a valid fusion option
+                if (spellBaseData.i_spellRequired_1_Id == detectedSpell.GetCardData().i_id) // Fusion spell option 1
+                {
+                    // Show spell which is fusing with anim
+                    detectedSpell.ShowCanMergeOption_Anim();
+
+                    // Play Can Fuse Animation
+                    ShowCanMergeOption_Anim();
+                    // Save Fusion card position to later instantiate fused card there
+                    transform_FusedCardStartPostition = collision.transform;
+                    // Set control bools
+                    b_tryingFusion = true;
+                    b_isFusionOption_1 = true;
+                    b_isFusionOption_2 = false;
+                    spellFusedWith = detectedSpell;
+                }
+                else if (spellBaseData.i_spellRequired_2_Id == detectedSpell.GetCardData().i_id) // Fusion spell option 2
+                {
+                    // Show spell which is fusing with anim
+                    detectedSpell.ShowCanMergeOption_Anim();
+
+                    // Play Can Fuse Animation 
+                    ShowCanMergeOption_Anim();
+                    // Save Fusion card position to later instantiate fused card there
+                    transform_FusedCardStartPostition = collision.transform;
+                    // Set control bools
+                    b_tryingFusion = true;
+                    b_isFusionOption_1 = false;
+                    b_isFusionOption_2 = true;
+                    spellFusedWith = detectedSpell;
+                }
+            }
+
+
+            /*
             // Check if trying fusion already and update to this (stop previous)
             if (spellFusedWith != null)
             {   
@@ -261,8 +315,10 @@ public class SpellCard_Manager : MonoBehaviour
             {
                 spellFusedWith = detectedSpell;
             }
+            */
         }
     }
+    
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.layer == i_battlefieldLayer)
@@ -274,40 +330,14 @@ public class SpellCard_Manager : MonoBehaviour
             b_tryingFusion = false;
             // Stop can fuse animations
             StopFuseAnim();
-            spellFusedWith = null;
-        }
-
-        // Check if collides with other spell card (for fusion checks)
-        if (collision.gameObject.tag == gameObject.tag && b_cardColocation_Finished) // If same tag then both are Spell Cards
-        {
-            // Get detected spell data
-            SpellCard_Manager detectedSpell = collision.gameObject.GetComponent<SpellCard_Manager>();
-            if (detectedSpell.b_cardColocation_Finished)
+            if(spellFusedWith != null)
             {
-                // Check if detected card is a valid fusion option
-                if (spellBaseData.i_spellRequired_1_Id == detectedSpell.GetCardData().i_id) // Fusion spell option 1
-                {
-                    // Play Can Fuse Animation
-                    ShowCanMergeOption_Anim();
-                    // Save Fusion card position to later instantiate fused card there
-                    transform_FusedCardStartPostition = collision.transform;
-                    // Set control bools
-                    b_tryingFusion = true;
-                    b_isFusionOption_1 = true;
-                    b_isFusionOption_2 = false;
-                }
-                else if (spellBaseData.i_spellRequired_2_Id == detectedSpell.GetCardData().i_id) // Fusion spell option 2
-                {
-                    // Play Can Fuse Animation 
-                    ShowCanMergeOption_Anim();
-                    // Save Fusion card position to later instantiate fused card there
-                    transform_FusedCardStartPostition = collision.transform;
-                    // Set control bools
-                    b_tryingFusion = true;
-                    b_isFusionOption_1 = false;
-                    b_isFusionOption_2 = true;
-                }
+                spellFusedWith.StopFuseAnim();
+                b_tryingFusion = false;
+                b_isFusionOption_1 = false;
+                b_isFusionOption_2 = false;
             }
+            spellFusedWith = null;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -316,6 +346,15 @@ public class SpellCard_Manager : MonoBehaviour
         {
             _card_SpriteRenderer.sprite = spellBaseData._card_Sprite;
             b_onBattlefield = false;
+            b_cardColocation_Finished = true;
+        }
+
+        if (script_actionsManager != null)
+        {
+            if (script_actionsManager.GetSelectedSpell() != this)
+            {
+                return;
+            }
         }
 
         // Get detected spell data
@@ -326,6 +365,26 @@ public class SpellCard_Manager : MonoBehaviour
 
             if (spellBaseData.i_spellRequired_1_Id == detectedSpellOut.GetCardData().i_id) // Fusion spell option 1
             {
+                // Check if other spell possible for fusion
+                if (spellFusedWith != null) // Null check for error avoid
+                {
+                    // Stop spell fused with anim
+                    detectedSpellOut.StopFuseAnim();
+
+                    if (spellFusedWith != detectedSpellOut) // Is current spell for fusion selected this?
+                    {
+                        // NO, another possible fusion spell is being selected
+                    }
+                    else // Yes, no other fusion spell is being selected
+                    {
+                        // Stop Can Fuse Animation
+                        StopFuseAnim();
+                        b_tryingFusion = false;
+                        b_isFusionOption_1 = false;
+                    }
+                }
+
+                /*
                 // Stop Can Fuse Animation
                 StopFuseAnim();
                 // Stop other spell anim
@@ -333,17 +392,29 @@ public class SpellCard_Manager : MonoBehaviour
                     spellFusedWith.StopFuseAnim();
                 b_tryingFusion = false;
                 b_isFusionOption_1 = false;
+                */
+
             }
             else if (spellBaseData.i_spellRequired_2_Id == detectedSpellOut.GetCardData().i_id) // Fusion spell option 2
             {
-                // Stop Can Fuse Animation 
-                StopFuseAnim();
-                // Stop other spell anim
-                if(spellFusedWith != null)
-                    spellFusedWith.StopFuseAnim();
-                // Set control bools
-                b_tryingFusion = false;
-                b_isFusionOption_2 = false;
+                // Check if other spell possible for fusion
+                if (spellFusedWith != null) // Null check for error avoid
+                {
+                    // Stop spell fused with anim
+                    detectedSpellOut.StopFuseAnim();
+
+                    if (spellFusedWith != detectedSpellOut) // Is current spell for fusion selected this?
+                    {
+                        // NO, another possible fusion spell is being selected
+                    }
+                    else // Yes, no other fusion spell is being selected
+                    {
+                        // Stop Can Fuse Animation
+                        StopFuseAnim();
+                        b_tryingFusion = false;
+                        b_isFusionOption_2 = false;
+                    }
+                }
             }
         }
     }

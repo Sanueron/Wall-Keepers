@@ -306,7 +306,6 @@ public class Enemy : MonoBehaviour
         {
             SwitchState(EnemyState.Defeated);
             RoundsManager.listOfEnemiesInRound.Remove(this);
-            print("Removes enemy " + gameObject.name);
             if (!b_eventCalled)
             {
                 onEnemyDefeated?.Invoke(this, EventArgs.Empty);

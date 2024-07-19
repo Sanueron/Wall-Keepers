@@ -27,6 +27,7 @@ public class ActionsManager : MonoBehaviour
     private Vector3 v3_worldPosition;
     [SerializeField] Vector3 v3_projectailCast_Area;
     [SerializeField] private SpellCard_Manager selectedSpell;
+    internal SpellCard_Manager GetSelectedSpell() { return selectedSpell; }
     private int i_sortingOrder_WhenDragging = 90, i_defaultSortingOrder = 70;
     [SerializeField]LayerMask spellCards_LayerMask;
     [SerializeField] List<GameObject> effectList_GameObject = new List<GameObject>();
