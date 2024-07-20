@@ -63,13 +63,13 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 1308116741173784569, guid: 6bfcdafc7a5520946aa453a6cf1c6f7c, type: 3}
+      value: {fileID: 2240854168303413542, guid: de7fe02e8f3c72e4d8fd6f3de8bd3e79, type: 3}
     - time: 0.11666667
-      value: {fileID: -3315503741896369220, guid: 6bfcdafc7a5520946aa453a6cf1c6f7c, type: 3}
+      value: {fileID: 6762839027423114432, guid: de7fe02e8f3c72e4d8fd6f3de8bd3e79, type: 3}
     - time: 0.21666667
-      value: {fileID: 1396046646919152073, guid: 6bfcdafc7a5520946aa453a6cf1c6f7c, type: 3}
+      value: {fileID: -513867243414895199, guid: de7fe02e8f3c72e4d8fd6f3de8bd3e79, type: 3}
     - time: 0.33333334
-      value: {fileID: -4267489550638085353, guid: 6bfcdafc7a5520946aa453a6cf1c6f7c, type: 3}
+      value: {fileID: -5924536764030548523, guid: de7fe02e8f3c72e4d8fd6f3de8bd3e79, type: 3}
     attribute: m_Sprite
     path: Fusion Anim Border
     classID: 212
@@ -110,10 +110,10 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 1308116741173784569, guid: 6bfcdafc7a5520946aa453a6cf1c6f7c, type: 3}
-    - {fileID: -3315503741896369220, guid: 6bfcdafc7a5520946aa453a6cf1c6f7c, type: 3}
-    - {fileID: 1396046646919152073, guid: 6bfcdafc7a5520946aa453a6cf1c6f7c, type: 3}
-    - {fileID: -4267489550638085353, guid: 6bfcdafc7a5520946aa453a6cf1c6f7c, type: 3}
+    - {fileID: 2240854168303413542, guid: de7fe02e8f3c72e4d8fd6f3de8bd3e79, type: 3}
+    - {fileID: 6762839027423114432, guid: de7fe02e8f3c72e4d8fd6f3de8bd3e79, type: 3}
+    - {fileID: -513867243414895199, guid: de7fe02e8f3c72e4d8fd6f3de8bd3e79, type: 3}
+    - {fileID: -5924536764030548523, guid: de7fe02e8f3c72e4d8fd6f3de8bd3e79, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
