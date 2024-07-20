@@ -105,6 +105,10 @@ public class Container
     public bool b_firstDataSave;
     public bool[] b_CanAwake = new bool[100];
 
+    #region Tutorial Data
+    public bool[] b_tutorialComplete = new bool[25];
+    #endregion
+
     #region Elemental Runes
     public int[] i_elementalRunesInStock = new int[100];
     #endregion
@@ -136,6 +140,10 @@ public class Container
         b_firstDataSave = PlayerData.b_firstDataSave;
         b_CanAwake = PlayerData.b_canAwake;
         go_spellsIndeck = PlayerData.go_spellsIndeck;
+
+        #region Tutorials Data
+        b_tutorialComplete = PlayerData.b_tutorialComplete;
+        #endregion
 
         #region Deck
         deck_GameObjects = PlayerData.deck_GameObjects;
@@ -173,6 +181,10 @@ public class Container
         PlayerData.i_CardSlotNumber = i_CardSlotNumber;
         PlayerData.b_firstDataSave= b_firstDataSave;
         PlayerData.b_canAwake = b_CanAwake;
+
+        #region Tutorials Data
+        PlayerData.b_tutorialComplete = b_tutorialComplete;
+        #endregion
 
         #region Deck
         PlayerData.deck_GameObjects = deck_GameObjects;

@@ -23,6 +23,10 @@ public static class PlayerData
 
     internal static bool b_firstDataSave;
 
+    #region Tutorial Data
+    internal static bool[] b_tutorialComplete = new bool[25];
+    #endregion
+
     #region Elemental Runes
     // Runes IDs: Fire = 0 // Water = 1 // Earth = 2 // Wind = 3 // Lighting = 4
     internal static int[] i_elementalRunesInStock = new int[100];

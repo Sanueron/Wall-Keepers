@@ -15,7 +15,7 @@ public class AudioManager : MonoBehaviour
     #endregion 
 
     #region Unity Life Cycle
-    private void Start()
+    private void Awake()
     {
         // Implement Singleton Pattern
         if (instance != null) // Error check to avoid more than one Instance of this script to be created
