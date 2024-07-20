@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class EnemiesManager : MonoBehaviour
 {
+    #region Rounds Control variables, Passes info to round manager
+    [Header("Max Rounds")]
+    [Tooltip("For endless waves is O")]
+    private int i_levelMaxRound;
+    public int GetLevelMaxRounds()
+    {
+        return i_levelMaxRound;
+    }
+    #endregion
     // Manages Pool of enemies and Spawn Methods
 
     #region Lists of Demonitos by Ranks
@@ -45,7 +54,6 @@ public class EnemiesManager : MonoBehaviour
         {
             b_spawnEnemies = false; // Stop spawning enemies
             EnemiesNumberForNextRound(); // Set Next round enemies counts
-            print("All enemies spawned");
         }
     }
     #endregion

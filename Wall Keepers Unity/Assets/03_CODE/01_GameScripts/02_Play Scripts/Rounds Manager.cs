@@ -48,14 +48,22 @@ public class RoundsManager : MonoBehaviour
 
     private void Enemy_onEnemyDefeated(object sender, System.EventArgs e)
     {
-        // Add check coming from enemies manager to know if level has limited rounds.
-
         // Check if still spawning enemies
         if (!script_enemiesManager.IsSpawningEnemies())
         {
             // Check list of enemies of this round
             if(listOfEnemiesInRound.Count <= 0)
             {
+                // Add check coming from enemies manager to know if level has limited rounds and if last round was this.
+                // if so end level and show results panel (for Limited Rounds Levels)
+                if(script_enemiesManager.GetLevelMaxRounds() != 0) // 0 means endless wave mode, no max round
+                {
+                    if(i_currentWave == script_enemiesManager.GetLevelMaxRounds()) // Max Wave reached
+                    {
+                        // Level Complete, show level comlete panel and stop game
+                    }
+                }
+
                 // All enemies of this wave/round defeated, move to next round
                 i_currentWave++;
                 tmp_nextWaveText.text = "Wave " + i_currentWave.ToString();

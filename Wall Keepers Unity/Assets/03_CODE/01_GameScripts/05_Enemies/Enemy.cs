@@ -203,7 +203,6 @@ public class Enemy : MonoBehaviour
                 enemy_animator.SetBool(i_HitHash, true);
                 break;
             case EnemyState.Defeated:
-                print("Defeated");
                 b_moveToTarget = false; // Stop moving
                 // Play anim
                 enemy_animator.SetTrigger(i_DefeatedHash);
