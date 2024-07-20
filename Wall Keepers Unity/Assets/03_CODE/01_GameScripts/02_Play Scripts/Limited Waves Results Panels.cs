@@ -33,7 +33,6 @@ public class LimitedWavesResultsPanels : MonoBehaviour
         go_levelFailedMenu.SetActive(true);
 
         // Show level failed Panel
-        print("Show level faild panel");
         animator_lmtWavesResultsPanel.SetTrigger(i_animatorVariables);
     }
     private void RoundsManager_ev_OnLevelComplete(object sender, EventArgs e)
@@ -45,8 +44,9 @@ public class LimitedWavesResultsPanels : MonoBehaviour
         go_levelCompleteMenu.SetActive(true);
 
         // Show level complete Panel
-        print("Show level complete panel");
         animator_lmtWavesResultsPanel.SetTrigger(i_animatorVariables);
+
+        // Give Rewards and Mark reward as obtained
     }
     #endregion
 }
