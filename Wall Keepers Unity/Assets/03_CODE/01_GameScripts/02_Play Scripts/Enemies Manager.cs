@@ -7,7 +7,7 @@ public class EnemiesManager : MonoBehaviour
     #region Rounds Control variables, Passes info to round manager
     [Header("Max Rounds")]
     [Tooltip("For endless waves is O")]
-    private int i_levelMaxRound;
+    [SerializeField] private int i_levelMaxRound;
     public int GetLevelMaxRounds()
     {
         return i_levelMaxRound;

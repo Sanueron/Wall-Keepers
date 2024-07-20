@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -6,6 +7,10 @@ using UnityEngine;
 
 public class RoundsManager : MonoBehaviour
 {
+    #region
+    public static event EventHandler ev_OnLevelComplete;
+    #endregion
+
     #region UI Round/Waves counter panel
     [Header("Next Wave Panel Variables")]
     [SerializeField] Animator animator_NextWave;
@@ -60,7 +65,10 @@ public class RoundsManager : MonoBehaviour
                 {
                     if(i_currentWave == script_enemiesManager.GetLevelMaxRounds()) // Max Wave reached
                     {
-                        // Level Complete, show level comlete panel and stop game
+                        // Level Complete, show level comlete panel
+                        print("Level Complete");
+                        ev_OnLevelComplete?.Invoke(this, EventArgs.Empty);
+                        return;
                     }
                 }
 
