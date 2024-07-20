@@ -273,6 +273,10 @@ public class SpellCard_Manager : MonoBehaviour
                 // Check if detected card is a valid fusion option
                 if (spellBaseData.i_spellRequired_1_Id == detectedSpell.GetCardData().i_id) // Fusion spell option 1
                 {
+                    if(spellFusedWith != null) // if any previous spell for fusion, stop previous spell can fuse anim
+                    {
+                        spellFusedWith.StopFuseAnim();
+                    }
                     // Show spell which is fusing with anim
                     detectedSpell.ShowCanMergeOption_Anim();
 
@@ -288,6 +292,11 @@ public class SpellCard_Manager : MonoBehaviour
                 }
                 else if (spellBaseData.i_spellRequired_2_Id == detectedSpell.GetCardData().i_id) // Fusion spell option 2
                 {
+                    if (spellFusedWith != null) // if any previous spell for fusion, stop previous spell can fuse anim
+                    {
+                        spellFusedWith.StopFuseAnim();
+                    }
+
                     // Show spell which is fusing with anim
                     detectedSpell.ShowCanMergeOption_Anim();
 
