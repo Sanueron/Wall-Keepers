@@ -81,6 +81,8 @@ public class TutorialsManager : MonoBehaviour
     internal void CompleteTutorial()
     {
         PlayerData.b_tutorialComplete[i_tutorialIndex] = true;
+        print("Complete tutorial " + PlayerData.b_tutorialComplete[i_tutorialIndex]);
+        SaveData.instance.AssignDataAndSave();
     }
     internal void WelcomeTutorialRewards()
     {

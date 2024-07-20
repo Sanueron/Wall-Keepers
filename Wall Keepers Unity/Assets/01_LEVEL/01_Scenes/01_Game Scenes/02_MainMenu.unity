@@ -859,6 +859,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf8ac6582d33acf4da9874fb252f7935, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  i_tutorialIndex: 1
   e_tutorialType: 0
   animator_Tutorial: {fileID: 193307073}
   aS_tutorial: {fileID: 193307074}
