@@ -44,12 +44,12 @@ public class RoundsManager : MonoBehaviour
 
         // Reset list of Enemies at Start
         listOfEnemiesInRound.Clear();
-        print(listOfEnemiesInRound.Count);
-
     }
 
     private void Enemy_onEnemyDefeated(object sender, System.EventArgs e)
     {
+        // Add check coming from enemies manager to know if level has limited rounds.
+
         // Check if still spawning enemies
         if (!script_enemiesManager.IsSpawningEnemies())
         {
