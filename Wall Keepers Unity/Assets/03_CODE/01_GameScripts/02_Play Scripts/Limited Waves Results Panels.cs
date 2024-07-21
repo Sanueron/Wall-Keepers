@@ -12,6 +12,16 @@ public class LimitedWavesResultsPanels : MonoBehaviour
     [SerializeField] GameObject go_levelFailedMenu;
     #endregion
 
+    #region Rewards Control variables
+    [Header("Rewards Control Variables")]
+    [SerializeField] private bool b_spellRewarded;
+    [SerializeField] private int i_spellID, i_spellAmount;
+    [SerializeField] private bool b_elementalRunesRewarded;
+    [SerializeField] private int i_runeID, i_runesAmount;
+    [SerializeField] private bool b_manaKeysRewarded;
+    [SerializeField] private int i_manaKeysObtained;
+    #endregion
+
     #region Unity Life Cycle
     // Start is called before the first frame update
     void Start()
@@ -26,6 +36,17 @@ public class LimitedWavesResultsPanels : MonoBehaviour
     #region Events Methods
     private void WallManager_e_OnWallDestroyed(object sender, EventArgs e)
     {
+        LevelFailed();
+    }
+    private void RoundsManager_ev_OnLevelComplete(object sender, EventArgs e)
+    {
+        LevelComplete();
+    }
+    #endregion
+
+    #region Complete or Failed Methods
+    public void LevelFailed()
+    {
         // Stop game
         LevelsGnralManager.b_stopLevel = true;
 
@@ -35,7 +56,7 @@ public class LimitedWavesResultsPanels : MonoBehaviour
         // Show level failed Panel
         animator_lmtWavesResultsPanel.SetTrigger(i_animatorVariables);
     }
-    private void RoundsManager_ev_OnLevelComplete(object sender, EventArgs e)
+    private void LevelComplete()
     {
         // Stop game
         LevelsGnralManager.b_stopLevel = true;
@@ -47,6 +68,24 @@ public class LimitedWavesResultsPanels : MonoBehaviour
         animator_lmtWavesResultsPanel.SetTrigger(i_animatorVariables);
 
         // Give Rewards and Mark reward as obtained
+        // Check if Reward is spell
+        if (b_spellRewarded)
+        {
+            // If spell obtained already directly add spell amount
+            PlayerData.b_spellCardObtained[i_spellID] = true;
+            PlayerData.i_spell_Cards_Obtained[i_spellID] += i_spellAmount;
+        }
+        if (b_elementalRunesRewarded) // Get runes reward
+        {
+            PlayerData.i_elementalRunesInStock[i_runeID] += i_runesAmount;
+        }
+        if (b_manaKeysRewarded)
+        {
+            PlayerData.i_keys += i_manaKeysObtained;
+        }
+
+        // Save Data
+        SaveData.instance.AssignDataAndSave();
     }
     #endregion
 }
