@@ -40,6 +40,10 @@ public class TutorialsManager : MonoBehaviour
                     AudioManager.instance.StopMusicPlaying();
                 }
                 break;
+
+            case TutorialType.HowToPlay:
+                AudioManager.instance.StopMusicPlaying();
+                break;
         }
     }
     #endregion
