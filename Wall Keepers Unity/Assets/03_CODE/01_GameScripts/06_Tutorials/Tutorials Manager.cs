@@ -28,15 +28,16 @@ public class TutorialsManager : MonoBehaviour
     #endregion
 
     #region How to Play Tutorial Specifics
+    [Header("Welcome Tutorial")]
+    [SerializeField] private ScripteableCard[] arrayOf_initialSpellsIndeck = new ScripteableCard[8];
     [Header("How to Play")]
-    [SerializeField] private GameObject[] go_initialSpellsIndeck = new GameObject[8];
-
     [SerializeField] CanvasGroup canvasGroup_wavesManager; // Used to know when the level has started and step 3 shall start
     #endregion
 
     #region Unity Life Cycle
     private void Awake()
     {
+        /*
         switch(e_tutorialType)
         {
             case TutorialType.HowToPlay:
@@ -48,6 +49,7 @@ public class TutorialsManager : MonoBehaviour
                 print("Assign spells");
                 break;
         }
+        */
     }
     private void Start()
     {
@@ -150,6 +152,26 @@ public class TutorialsManager : MonoBehaviour
         PlayerData.b_spellCardObtained[5] = true; // Rock Wall
         PlayerData.b_spellCardObtained[6] = true; // Tornado
         PlayerData.b_spellCardObtained[9] = true; // Ignite
+
+        // Assign Deck
+        AssignFirstDeck();
+    }
+    private void AssignFirstDeck()
+    {
+        for (int i = 0; i < arrayOf_initialSpellsIndeck.Length; i++)
+        {
+            int i_checkedSpellId = arrayOf_initialSpellsIndeck[i].i_id;
+
+            // Assign spell in deck by ID (The one which saves player data when game is closed)
+            PlayerData.i_spellInDeckByID[i] = i_checkedSpellId;
+
+            // Reassign Spells Prefabs
+            PlayerData.go_spellsIndeck[i] = arrayOf_initialSpellsIndeck[i].spellPrefab;
+
+            // Reassign Spells Data objects
+            PlayerData.spellsInDeckData[i] = arrayOf_initialSpellsIndeck[i];
+        }
+        PlayerData.b_isDeckFull = true;
     }
     #endregion
 

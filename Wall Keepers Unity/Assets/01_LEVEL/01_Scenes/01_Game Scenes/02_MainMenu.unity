@@ -2907,6 +2907,38 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5449883619778331765, guid: a8490ea8209c39a40bdf26df7db045ff, type: 3}
+      propertyPath: 'arrayOf_initialSpellsIndeck.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: ae21289ad7e55024c8506cb1aa404486, type: 2}
+    - target: {fileID: 5449883619778331765, guid: a8490ea8209c39a40bdf26df7db045ff, type: 3}
+      propertyPath: 'arrayOf_initialSpellsIndeck.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 528fb03b778ef634bacd6d056b3505f1, type: 2}
+    - target: {fileID: 5449883619778331765, guid: a8490ea8209c39a40bdf26df7db045ff, type: 3}
+      propertyPath: 'arrayOf_initialSpellsIndeck.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: ac1f51fdb6b24d346b1dbf9269a0ef71, type: 2}
+    - target: {fileID: 5449883619778331765, guid: a8490ea8209c39a40bdf26df7db045ff, type: 3}
+      propertyPath: 'arrayOf_initialSpellsIndeck.Array.data[3]'
+      value: 
+      objectReference: {fileID: 11400000, guid: ddcb41f80aec763419fec5ac480f8314, type: 2}
+    - target: {fileID: 5449883619778331765, guid: a8490ea8209c39a40bdf26df7db045ff, type: 3}
+      propertyPath: 'arrayOf_initialSpellsIndeck.Array.data[4]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 9cd07bb43a8f8ce419479b4cd6d3dbef, type: 2}
+    - target: {fileID: 5449883619778331765, guid: a8490ea8209c39a40bdf26df7db045ff, type: 3}
+      propertyPath: 'arrayOf_initialSpellsIndeck.Array.data[5]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f44eb88455fe6545ab8bb150c45d638, type: 2}
+    - target: {fileID: 5449883619778331765, guid: a8490ea8209c39a40bdf26df7db045ff, type: 3}
+      propertyPath: 'arrayOf_initialSpellsIndeck.Array.data[6]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 3d1e0af4a247bd843a7015d0a121f956, type: 2}
+    - target: {fileID: 5449883619778331765, guid: a8490ea8209c39a40bdf26df7db045ff, type: 3}
+      propertyPath: 'arrayOf_initialSpellsIndeck.Array.data[7]'
+      value: 
+      objectReference: {fileID: 11400000, guid: bee568d9a37cc524681302dac694215c, type: 2}
     - target: {fileID: 7973792259033694903, guid: a8490ea8209c39a40bdf26df7db045ff, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
