@@ -4,8 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Analytics;
-using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
-using static UnityEngine.EventSystems.EventTrigger;
+//using static UnityEngine.EventSystems.EventTrigger;
 
 public class BaseSpellsEffects : MonoBehaviour
 {

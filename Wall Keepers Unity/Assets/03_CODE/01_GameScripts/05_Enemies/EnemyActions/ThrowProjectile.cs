@@ -1,7 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime;
-using UnityEditor.SearchService;
 using UnityEngine;
 
 public class ThrowProjectile : BaseEnemyAction

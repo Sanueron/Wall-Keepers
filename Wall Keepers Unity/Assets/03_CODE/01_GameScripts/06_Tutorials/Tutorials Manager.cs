@@ -35,22 +35,6 @@ public class TutorialsManager : MonoBehaviour
     #endregion
 
     #region Unity Life Cycle
-    private void Awake()
-    {
-        /*
-        switch(e_tutorialType)
-        {
-            case TutorialType.HowToPlay:
-                // Assign initial Deck
-                for (int i = 0; i < go_initialSpellsIndeck.Length; i++)
-                {
-                    PlayerData.go_spellsIndeck[i] = go_initialSpellsIndeck[i];
-                }
-                print("Assign spells");
-                break;
-        }
-        */
-    }
     private void Start()
     {
         switch (e_tutorialType)

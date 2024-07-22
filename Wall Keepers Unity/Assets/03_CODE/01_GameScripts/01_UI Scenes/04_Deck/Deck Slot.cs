@@ -19,9 +19,10 @@ public class DeckSlot : BaseSlot
     public void RemoveSpellFromDeck()
     {
         // Remove from saved data
-        PlayerData.go_spellsIndeck[i_deckSlotIndex]=null;
+        PlayerData.go_spellsIndeck[i_deckSlotIndex]= null;
         PlayerData.deck_GameObjects[i_deckSlotIndex] = null;
         PlayerData.spellsInDeckData[i_deckSlotIndex] = null;
+        PlayerData.i_spellInDeckByID[i_deckSlotIndex] = 0;
         // Mark deck as not complete
         PlayerData.b_isDeckFull = false;
         // Back to default sprite
