@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TutorialsManager : MonoBehaviour
 {
@@ -35,6 +36,7 @@ public class TutorialsManager : MonoBehaviour
     [Header("Deck Variables for tutorial checks")]
     [SerializeField] GameObject go_selectedSpellInDeckRemoveButton;
     [SerializeField] GameObject go_rockBallAddButton;
+    [SerializeField] CanvasGroup canvasGroup_spellInfo;
     #endregion
 
     #region Unity Life Cycle
@@ -107,7 +109,13 @@ public class TutorialsManager : MonoBehaviour
                         }
                         break;
                     case 5: // Wait for player to Add Rock ball to deck
-                        if (!go_rockBallAddButton.activeSelf)
+                        if (!go_rockBallAddButton.GetComponent<Button>().interactable)
+                        {
+                            PlayNextStepAnim();
+                        }
+                        break;
+                    case 6:
+                        if (canvasGroup_spellInfo.alpha == 1)
                         {
                             PlayNextStepAnim();
                         }
