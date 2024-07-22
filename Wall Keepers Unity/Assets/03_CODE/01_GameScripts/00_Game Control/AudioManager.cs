@@ -46,6 +46,10 @@ public class AudioManager : MonoBehaviour
     {
         aS_music.Stop();
     }
+    public void PlayMusic()
+    {
+        aS_music.Play();
+    }
     public void StopSFXs()
     {
         aS_SFxs.Stop();

@@ -157,6 +157,10 @@ public class TutorialsManager : MonoBehaviour
         }
         PlayerData.b_isDeckFull = true;
     }
+    internal void PlaySceneMusic()
+    {
+        AudioManager.instance.PlayMusic();
+    }
     #endregion
 
     #region Tutorials Specific Methods
