@@ -70,7 +70,6 @@ public class ContinuousDmg_StaticInstant : BaseSpellsEffects
         {
             RemoveFromEnemiesList(collision.gameObject.GetComponent<Enemy>());
         }
-        
     }
     #endregion
 }

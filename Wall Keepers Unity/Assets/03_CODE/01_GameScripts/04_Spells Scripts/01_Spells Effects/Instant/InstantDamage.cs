@@ -31,7 +31,6 @@ public class InstantDamage : BaseSpellsEffects
     {
         if (collision.gameObject.layer == i_EnemyLayer)
         {
-            print("Detect enemies");
             AddToEnemiesList(collision.gameObject.GetComponent<Enemy>());
         }
     }
