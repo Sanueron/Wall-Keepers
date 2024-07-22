@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2223377848759761113, guid: 693b018ee78c884418c8725b7170f77b, type: 3}
       propertyPath: m_Name
-      value: S3_Ignite Variant
+      value: S3_Ignite
       objectReference: {fileID: 0}
     - target: {fileID: 3413756491470563924, guid: 693b018ee78c884418c8725b7170f77b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -63,7 +63,7 @@ PrefabInstance:
     - target: {fileID: 4257493173228200327, guid: 693b018ee78c884418c8725b7170f77b, type: 3}
       propertyPath: spellEffectPrefab
       value: 
-      objectReference: {fileID: 4585580198275248554, guid: 74e526cbc9c49b745a73748be5399097, type: 3}
+      objectReference: {fileID: 542538673652193126, guid: 74e526cbc9c49b745a73748be5399097, type: 3}
     - target: {fileID: 4257493173228200327, guid: 693b018ee78c884418c8725b7170f77b, type: 3}
       propertyPath: _spellEffect_GameObject
       value: 

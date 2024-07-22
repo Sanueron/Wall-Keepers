@@ -32,6 +32,7 @@ public class BaseSpellsEffects : MonoBehaviour
     [SerializeField] protected AudioClip aC_spellCastSfx;
     [SerializeField] protected AudioClip aC_hitSfx;
     #endregion
+
     #region Time Control
     protected float f_counter;
     protected bool b_effectStarted, b_effectFinished;
@@ -47,8 +48,6 @@ public class BaseSpellsEffects : MonoBehaviour
         f_duration = dur;
         f_repeatRate = repeatRate;
         f_slowDownValue = slowDownValue;
-
-
     }
     public virtual void ActivateEffect(Vector3 starPosition, Vector3 target)
     {
@@ -84,8 +83,10 @@ public class BaseSpellsEffects : MonoBehaviour
 
     internal virtual void HurtEnemies()
     {
+        print(enemiesScripts_List.Count);
         foreach (Enemy enemy in enemiesScripts_List)
         {
+            print("Deal damage to " + enemy.name);
             enemy.ReceiveDamage((int)f_damage);
         }
     }

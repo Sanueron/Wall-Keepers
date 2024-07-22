@@ -16,16 +16,18 @@ public class ContinuousDmg_StaticInstant : BaseSpellsEffects
     internal void OnDisable()//Reset Lightnings
     {
         b_effectFinished = false;
-
+        enemiesScripts_List.Clear();
     }
     #endregion
     internal override void HurtEnemies()
     {
         foreach (Enemy enemy in enemiesScripts_List)
         {
+            print(enemy.name);
             if (enemy.i_hp > 0)
             {
                 enemy.ReceiveDamage((int)f_damage);
+                print("Deals damage " + f_damage);
             } 
         }
     }
@@ -57,6 +59,7 @@ public class ContinuousDmg_StaticInstant : BaseSpellsEffects
     {
         if (collision.gameObject.layer == i_EnemyLayer)
         {
+            print("Enemy detected");
             AddToEnemiesList(collision.gameObject.GetComponent<Enemy>());
         }
     }
