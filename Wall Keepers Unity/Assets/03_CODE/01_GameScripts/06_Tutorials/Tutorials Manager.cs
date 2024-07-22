@@ -11,6 +11,8 @@ public class TutorialsManager : MonoBehaviour
     [Header("Control Variables")]
     [SerializeField] private TutorialType e_tutorialType;
     private int i_currentStep = 0;
+
+    private bool b_checked = false;
     #endregion
 
     #region Tutorials Main Components
@@ -25,7 +27,28 @@ public class TutorialsManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI tmp_displayedTextInChatBox;
     #endregion
 
+    #region How to Play Tutorial Specifics
+    [Header("How to Play")]
+    [SerializeField] private GameObject[] go_initialSpellsIndeck = new GameObject[8];
+
+    [SerializeField] CanvasGroup canvasGroup_wavesManager; // Used to know when the level has started and step 3 shall start
+    #endregion
+
     #region Unity Life Cycle
+    private void Awake()
+    {
+        switch(e_tutorialType)
+        {
+            case TutorialType.HowToPlay:
+                // Assign initial Deck
+                for (int i = 0; i < go_initialSpellsIndeck.Length; i++)
+                {
+                    PlayerData.go_spellsIndeck[i] = go_initialSpellsIndeck[i];
+                }
+                print("Assign spells");
+                break;
+        }
+    }
     private void Start()
     {
         switch (e_tutorialType)
@@ -46,6 +69,23 @@ public class TutorialsManager : MonoBehaviour
                 break;
         }
     }
+    private void Update()
+    {
+        switch (e_tutorialType)
+        {
+            case TutorialType.HowToPlay:
+                switch (i_currentStep)
+                {
+                    case 3: // Step 2 to 3
+                        if(canvasGroup_wavesManager.alpha == 0)
+                        {
+                            PlayNextStepAnim();
+                        }
+                        break;
+                }
+                break;
+        }
+    }
     #endregion
 
     #region Methods to Move to next step
@@ -53,9 +93,21 @@ public class TutorialsManager : MonoBehaviour
     {
         i_currentStep++;
     }
+    internal void UpdateCurrentStepOnce()
+    {
+        if (!b_checked)
+        {
+            b_checked = true;
+            i_currentStep++;
+        }
+    }
     public void PlayNextStepAnim()
     {
         animator_Tutorial.SetInteger(animatorIntVariable, i_currentStep);
+    }
+    internal void SetCheckedToFalse()
+    {
+        b_checked = false;
     }
     #endregion
 
@@ -99,5 +151,20 @@ public class TutorialsManager : MonoBehaviour
         PlayerData.b_spellCardObtained[6] = true; // Tornado
         PlayerData.b_spellCardObtained[9] = true; // Ignite
     }
+    #endregion
+
+    #region Tutorials Specific Methods
+
+    #region How To Play Tutorial
+    internal void PauseGame()
+    {
+        LevelsGnralManager.b_stopLevel = true;
+    }
+    internal void UnPauseGame()
+    {
+        LevelsGnralManager.b_stopLevel = false;
+    }
+    #endregion
+
     #endregion
 }

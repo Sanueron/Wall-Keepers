@@ -23,6 +23,10 @@ public static class PlayerData
 
     internal static bool b_firstDataSave;
 
+    #region Story Levels Complete Control
+    internal static bool[] b_levelComplete = new bool[100];
+    #endregion
+
     #region Tutorial Data
     internal static bool[] b_tutorialComplete = new bool[25];
     #endregion

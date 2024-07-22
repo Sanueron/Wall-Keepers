@@ -105,6 +105,10 @@ public class Container
     public bool b_firstDataSave;
     public bool[] b_CanAwake = new bool[100];
 
+    #region Story Levels Complete Control
+    public bool[] b_levelComplete = new bool[100];
+    #endregion
+
     #region Tutorial Data
     public bool[] b_tutorialComplete = new bool[25];
     #endregion
@@ -140,6 +144,10 @@ public class Container
         b_firstDataSave = PlayerData.b_firstDataSave;
         b_CanAwake = PlayerData.b_canAwake;
         go_spellsIndeck = PlayerData.go_spellsIndeck;
+
+        #region Story Levels
+        b_levelComplete = PlayerData.b_levelComplete;
+        #endregion
 
         #region Tutorials Data
         b_tutorialComplete = PlayerData.b_tutorialComplete;
@@ -181,6 +189,10 @@ public class Container
         PlayerData.i_CardSlotNumber = i_CardSlotNumber;
         PlayerData.b_firstDataSave= b_firstDataSave;
         PlayerData.b_canAwake = b_CanAwake;
+
+        #region Story Levels
+        PlayerData.b_levelComplete = b_levelComplete;
+        #endregion
 
         #region Tutorials Data
         PlayerData.b_tutorialComplete = b_tutorialComplete;

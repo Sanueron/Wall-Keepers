@@ -6,6 +6,7 @@ using UnityEngine;
 public class LimitedWavesResultsPanels : MonoBehaviour
 {
     #region Complete or Fail Variables
+    [SerializeField] private int i_levelID;
     [SerializeField] Animator animator_lmtWavesResultsPanel;
     private int i_animatorVariables = Animator.StringToHash("Show");
     [SerializeField] GameObject go_levelCompleteMenu;
@@ -14,6 +15,7 @@ public class LimitedWavesResultsPanels : MonoBehaviour
 
     #region Rewards Control variables
     [Header("Rewards Control Variables")]
+    [SerializeField] private GameObject go_rewardsAlreadyClaimed;
     [SerializeField] private bool b_spellRewarded;
     [SerializeField] private int i_spellID, i_spellAmount;
     [SerializeField] private bool b_elementalRunesRewarded;
@@ -67,22 +69,33 @@ public class LimitedWavesResultsPanels : MonoBehaviour
         // Show level complete Panel
         animator_lmtWavesResultsPanel.SetTrigger(i_animatorVariables);
 
-        // Give Rewards and Mark reward as obtained
-        // Check if Reward is spell
-        if (b_spellRewarded)
+        // Check if this level was already complete
+        if(PlayerData.b_levelComplete[i_levelID]) // If already completed then dont give rewards
         {
-            // If spell obtained already directly add spell amount
-            PlayerData.b_spellCardObtained[i_spellID] = true;
-            PlayerData.i_spell_Cards_Obtained[i_spellID] += i_spellAmount;
+            // Show Reward already claimed visuals
+            go_rewardsAlreadyClaimed.SetActive(true);
         }
-        if (b_elementalRunesRewarded) // Get runes reward
+        else // Give Rewards and Mark reward as obtained
         {
-            PlayerData.i_elementalRunesInStock[i_runeID] += i_runesAmount;
+            // Check if Reward is spell
+            if (b_spellRewarded)
+            {
+                // If spell obtained already directly add spell amount
+                PlayerData.b_spellCardObtained[i_spellID] = true;
+                PlayerData.i_spell_Cards_Obtained[i_spellID] += i_spellAmount;
+            }
+            if (b_elementalRunesRewarded) // Get runes reward
+            {
+                PlayerData.i_elementalRunesInStock[i_runeID] += i_runesAmount;
+            }
+            if (b_manaKeysRewarded)
+            {
+                PlayerData.i_keys += i_manaKeysObtained;
+            }
         }
-        if (b_manaKeysRewarded)
-        {
-            PlayerData.i_keys += i_manaKeysObtained;
-        }
+
+        // Mark level as Complete
+        PlayerData.b_levelComplete[i_levelID] = true;
 
         // Save Data
         SaveData.instance.AssignDataAndSave();
