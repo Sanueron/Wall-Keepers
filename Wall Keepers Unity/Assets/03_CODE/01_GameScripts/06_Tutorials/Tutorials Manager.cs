@@ -53,6 +53,17 @@ public class TutorialsManager : MonoBehaviour
             case TutorialType.HowToPlay:
                 AudioManager.instance.StopMusicPlaying();
                 break;
+
+            case TutorialType.Deck:
+                if (PlayerData.b_tutorialComplete[i_tutorialIndex]) // Tutorial complete
+                {
+                    gameObject.SetActive(false);
+                }
+                else // Tutorial not complete
+                {
+                    AudioManager.instance.StopMusicPlaying();
+                }
+                break;
         }
     }
     private void Update()
@@ -67,6 +78,15 @@ public class TutorialsManager : MonoBehaviour
                         {
                             PlayNextStepAnim();
                         }
+                        break;
+                }
+                break;
+
+            case TutorialType.Deck:
+                switch (i_currentStep)
+                {
+                    case 2: // Step 2 to 3
+
                         break;
                 }
                 break;
