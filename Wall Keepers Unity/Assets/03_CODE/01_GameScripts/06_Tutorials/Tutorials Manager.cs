@@ -32,6 +32,9 @@ public class TutorialsManager : MonoBehaviour
     [SerializeField] private ScripteableCard[] arrayOf_initialSpellsIndeck = new ScripteableCard[8];
     [Header("How to Play")]
     [SerializeField] CanvasGroup canvasGroup_wavesManager; // Used to know when the level has started and step 3 shall start
+    [Header("Deck Variables for tutorial checks")]
+    [SerializeField] GameObject go_selectedSpellInDeckRemoveButton;
+    [SerializeField] GameObject go_rockBallAddButton;
     #endregion
 
     #region Unity Life Cycle
@@ -85,8 +88,29 @@ public class TutorialsManager : MonoBehaviour
             case TutorialType.Deck:
                 switch (i_currentStep)
                 {
-                    case 2: // Step 2 to 3
-
+                    case 2: // Step 1 to 2
+                        if (go_selectedSpellInDeckRemoveButton.activeSelf)
+                        {
+                            PlayNextStepAnim();
+                        }
+                        break;
+                    case 3:
+                        if (!PlayerData.b_isDeckFull) // Wait for player to remove spell and bool changes to false
+                        {
+                            PlayNextStepAnim();
+                        }
+                        break;
+                    case 4: // Wait for player to select Rock ball in spells book
+                        if (go_rockBallAddButton.activeSelf)
+                        {
+                            PlayNextStepAnim();
+                        }
+                        break;
+                    case 5: // Wait for player to Add Rock ball to deck
+                        if (!go_rockBallAddButton.activeSelf)
+                        {
+                            PlayNextStepAnim();
+                        }
                         break;
                 }
                 break;
