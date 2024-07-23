@@ -2908,6 +2908,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5449883619778331765, guid: a8490ea8209c39a40bdf26df7db045ff, type: 3}
+      propertyPath: 'listOf_aC_forTutorial.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 31f4ede44a47bdb48b795eb075daee75, type: 3}
+    - target: {fileID: 5449883619778331765, guid: a8490ea8209c39a40bdf26df7db045ff, type: 3}
+      propertyPath: 'listOf_aC_forTutorial.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 29cc76d2651aedf4987c16ab47093d79, type: 3}
+    - target: {fileID: 5449883619778331765, guid: a8490ea8209c39a40bdf26df7db045ff, type: 3}
+      propertyPath: 'listOf_aC_forTutorial.Array.data[3]'
+      value: 
+      objectReference: {fileID: 8300000, guid: bd752f3a024cdd34a8159ae15cc411d3, type: 3}
+    - target: {fileID: 5449883619778331765, guid: a8490ea8209c39a40bdf26df7db045ff, type: 3}
       propertyPath: 'arrayOf_initialSpellsIndeck.Array.data[0]'
       value: 
       objectReference: {fileID: 11400000, guid: ae21289ad7e55024c8506cb1aa404486, type: 2}

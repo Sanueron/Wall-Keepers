@@ -14609,9 +14609,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: c4c7bbfe922d07643bc522936a382dea, type: 3}
     - target: {fileID: 261427436563857921, guid: 8e51d18fd98b4774698b9d9a139a80f5, type: 3}
+      propertyPath: 'listOf_aC_forTutorial.Array.data[2]'
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 261427436563857921, guid: 8e51d18fd98b4774698b9d9a139a80f5, type: 3}
       propertyPath: 'listOf_aC_forTutorial.Array.data[3]'
       value: 
-      objectReference: {fileID: 8300000, guid: 8a119fae8380cae42b670fed2bdfc681, type: 3}
+      objectReference: {fileID: 8300000, guid: 5d036fd2e1ad98941ab0d144ad0ff1b6, type: 3}
     - target: {fileID: 261427436563857921, guid: 8e51d18fd98b4774698b9d9a139a80f5, type: 3}
       propertyPath: 'listOf_aC_forTutorial.Array.data[4]'
       value: 
