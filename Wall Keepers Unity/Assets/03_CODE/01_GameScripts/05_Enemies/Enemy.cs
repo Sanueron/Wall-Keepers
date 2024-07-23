@@ -301,7 +301,7 @@ public class Enemy : MonoBehaviour
     {
         i_hp -= i_damageReceived;
         tmp_damageTaken.text = i_damageReceived.ToString();
-        if (i_hp < 0)
+        if (i_hp <= 0)
         {
             SwitchState(EnemyState.Defeated);
             RoundsManager.listOfEnemiesInRound.Remove(this);

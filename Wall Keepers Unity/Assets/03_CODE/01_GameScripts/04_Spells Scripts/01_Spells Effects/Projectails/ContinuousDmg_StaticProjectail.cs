@@ -57,8 +57,10 @@ public class ContinuousDmg_StaticProjectail : BaseSpellsEffects
         foreach (Enemy enemy in enemiesScripts_List)
         {
             print(enemiesScripts_List.Count);
+            print("Enemy HP " + enemy.i_hp);
             if (enemy.i_hp > 0)
             {
+                print("Deals damage " + f_damage);
                 enemy.ReceiveDamage((int)f_damage);
             }
         }

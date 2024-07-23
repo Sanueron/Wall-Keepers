@@ -23,11 +23,9 @@ public class ContinuousDmg_StaticInstant : BaseSpellsEffects
     {
         foreach (Enemy enemy in enemiesScripts_List)
         {
-            print(enemy.name);
             if (enemy.i_hp > 0)
             {
                 enemy.ReceiveDamage((int)f_damage);
-                print("Deals damage " + f_damage);
             } 
         }
     }
