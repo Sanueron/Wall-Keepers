@@ -5,6 +5,8 @@ public class ScripteableCard : ScriptableObject
 {
     [Header("Base Info and Stats")]
     public int i_id;
+    [TextArea(5,20)]
+    public string Description;
     public enum SpellType { Normal, Fusion };
     public SpellType e_spellType;
     public int i_spellStarsTier;
@@ -35,6 +37,8 @@ public class ScripteableCard : ScriptableObject
 
     public float f_slowDown_value;
     public float f_attackInterval;
+
+
     #region Delete
     [Header("Lake")]
     public float f_repeatingDmgCoolDown;//LakeLifeTime
@@ -46,7 +50,7 @@ public class ScripteableCard : ScriptableObject
     public element e_Element;
     public enum element2 { None, Fire, Earth, Water, Wind, Electric };
     public element2 e_2Element;
-    public string Description;
+    
     [Header("ContinousDmg")]
     //Para cuando metamos mas
 

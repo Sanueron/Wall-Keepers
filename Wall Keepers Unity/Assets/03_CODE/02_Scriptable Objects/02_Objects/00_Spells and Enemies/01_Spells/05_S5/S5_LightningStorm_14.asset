@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: S5_LightningStorm_14
   m_EditorClassIdentifier: 
   i_id: 14
+  Description: Summons electric clouds that cover all battlefield and discharges
+    lightings randomly over it dealing damage to enemies hitted.
   e_spellType: 0
   i_spellStarsTier: 5
   i_mana_cost: 6
@@ -38,7 +40,6 @@ MonoBehaviour:
   e_Effect: 2
   e_Element: 5
   e_2Element: 0
-  Description: 
   b_isMerged: 0
   fusionSprite1: {fileID: 0}
   fusionSprite2: {fileID: 0}

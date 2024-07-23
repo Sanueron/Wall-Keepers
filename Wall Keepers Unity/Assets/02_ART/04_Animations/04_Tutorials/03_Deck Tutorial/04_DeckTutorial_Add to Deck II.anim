@@ -107,7 +107,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 379.64377
+        value: 376.49512
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -128,7 +128,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 759.2975
+        value: 753.0003
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -149,7 +149,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -454.951
+        value: -458.57874
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -170,7 +170,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 909.9088
+        value: 917.1647
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -647,7 +647,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 379.64377
+        value: 376.49512
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -668,7 +668,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 759.2975
+        value: 753.0003
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -689,7 +689,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -454.951
+        value: -458.57874
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -710,7 +710,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 909.9088
+        value: 917.1647
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -920,7 +920,8 @@ AnimationClip:
   m_Events:
   - time: 0
     functionName: UpdateText
-    data: 'To add any spell to deck, first tap on it in the spells book. '
+    data: Next, tap on the "Use" button to add it to the next empty slot of your
+      deck.
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
