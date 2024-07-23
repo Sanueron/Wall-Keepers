@@ -988,7 +988,7 @@ MonoBehaviour:
   - {fileID: 0}
   aS_spellAudioSource: {fileID: 2217830643499179822}
   aC_spellCastSfx: {fileID: 8300000, guid: 42cc79a4862bb9a46923d599104e367e, type: 3}
-  aC_hitSfx: {fileID: 0}
+  aC_hitSfx: {fileID: 8300000, guid: 42cc79a4862bb9a46923d599104e367e, type: 3}
   go_oneThunder:
   - {fileID: 6937492725426626053}
   - {fileID: 5405000358334829186}

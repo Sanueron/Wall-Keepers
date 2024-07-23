@@ -95,7 +95,7 @@ PrefabInstance:
     - target: {fileID: 6502948530216482400, guid: 987eb037603a07e40ae333665b139928, type: 3}
       propertyPath: aC_enemyDefeated
       value: 
-      objectReference: {fileID: 8300000, guid: 17130620fbc65ed459db648cf15fbb6c, type: 3}
+      objectReference: {fileID: 8300000, guid: 64ae373e8987c284996916c1a3634cd3, type: 3}
     - target: {fileID: 7713926829714478276, guid: 987eb037603a07e40ae333665b139928, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 1.37
