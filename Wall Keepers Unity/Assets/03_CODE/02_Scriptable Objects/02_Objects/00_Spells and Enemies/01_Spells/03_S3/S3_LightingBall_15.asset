@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67a28c5053d354cbc9b5d80ae0aaa875, type: 3}
   m_Name: S3_LightingBall_15
   m_EditorClassIdentifier: 
-  i_id: 1
+  i_id: 15
   Description: Casts a lightball that explodes and deals impact  damage to enemies.
   e_spellType: 0
   i_spellStarsTier: 1
   i_mana_cost: 2
-  f_dmg: 325
+  f_dmg: 500
   f_duration: 0
-  f_projectileSpeed: 8
+  f_projectileSpeed: 9
   f_resistance: 0
   requiredElementalRune: {fileID: 11400000, guid: dea30c48ba8a65b458abab783486f147, type: 2}
   _card_Sprite: {fileID: 21300000, guid: 98c5e5e3d84daae42b3aea85d9a6c1c6, type: 3}
