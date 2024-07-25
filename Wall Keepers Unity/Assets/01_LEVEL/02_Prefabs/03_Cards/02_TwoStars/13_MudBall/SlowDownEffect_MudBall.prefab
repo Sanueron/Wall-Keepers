@@ -70,11 +70,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4773681600118774583, guid: 0544668d66cf40b42889f2c2f47dfe5e, type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.x
-      value: 0.4010913
+      value: 0.46114308
       objectReference: {fileID: 0}
     - target: {fileID: 4773681600118774583, guid: 0544668d66cf40b42889f2c2f47dfe5e, type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.y
-      value: 0.5
+      value: 0.45734632
       objectReference: {fileID: 0}
     - target: {fileID: 4773681600118774583, guid: 0544668d66cf40b42889f2c2f47dfe5e, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
@@ -115,6 +115,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7496801940804510461, guid: 0544668d66cf40b42889f2c2f47dfe5e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3333220200643088057}
+    - targetCorrespondingSourceObject: {fileID: 7496801940804510461, guid: 0544668d66cf40b42889f2c2f47dfe5e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5502431431649407710}
   m_SourcePrefab: {fileID: 100100000, guid: 0544668d66cf40b42889f2c2f47dfe5e, type: 3}
 --- !u!82 &273047206975966600 stripped
 AudioSource:
@@ -168,7 +171,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 40
+  m_SortingOrder: 70
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -220,3 +223,39 @@ MonoBehaviour:
   aC_spellCastSfx: {fileID: 8300000, guid: 77f0ac2484477f349ba897bd8cc34fa5, type: 3}
   aC_hitSfx: {fileID: 8300000, guid: 3c2d3732bf1ad2340a58165a00830c56, type: 3}
   v3_Projectail_Cast_Position: {x: 0, y: 0, z: 0}
+--- !u!58 &5502431431649407710
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1399397781384191132}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.03610134, y: -0.61}
+  m_Radius: 2.6599379
