@@ -68,6 +68,9 @@ public class PullResultsManager : MonoBehaviour
     {
         if(i_pullCost <= PlayerData.i_keys)
         {
+            // Daily Mission
+            PlayerData.b_makeOnePull_DailyMissionComplete = true;
+
             LibraryShopManager.instance.UpdatePlayerManaKeys(i_pullCost); // Reduces Player mana keys by pull cost
             // Indicate how many time pull is done
             i_pullOpeningTimes = i_pullCost;
