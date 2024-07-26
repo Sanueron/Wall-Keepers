@@ -23,6 +23,13 @@ public static class PlayerData
 
     internal static bool b_firstDataSave;
 
+    #region Daily Missions
+    internal static int i_gamesPlayed_DailyMissionCount;
+    internal static bool b_makeOnePull_DailyMissionComplete;
+    internal static bool b_improveOneSpell_DailyMissionComplete;
+    internal static bool b_allDailyMissionComplete;
+    #endregion
+
     #region Story Levels Complete Control
     internal static bool[] b_levelComplete = new bool[100];
     #endregion

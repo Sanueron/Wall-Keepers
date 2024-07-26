@@ -105,6 +105,13 @@ public class Container
     public bool b_firstDataSave;
     public bool[] b_CanAwake = new bool[100];
 
+    #region Daily Missions
+    public int i_gamesPlayed_DailyMissionCount;
+    public bool b_makeOnePull_DailyMissionComplete;
+    public bool b_improveOneSpell_DailyMissionComplete;
+    public bool b_allDailyMissionComplete;
+    #endregion
+
     #region Story Levels Complete Control
     public bool[] b_levelComplete = new bool[100];
     #endregion
@@ -144,6 +151,13 @@ public class Container
         b_firstDataSave = PlayerData.b_firstDataSave;
         b_CanAwake = PlayerData.b_canAwake;
         go_spellsIndeck = PlayerData.go_spellsIndeck;
+
+        #region Daily Missions
+        i_gamesPlayed_DailyMissionCount = PlayerData.i_gamesPlayed_DailyMissionCount;
+        b_makeOnePull_DailyMissionComplete = PlayerData.b_makeOnePull_DailyMissionComplete;
+        b_improveOneSpell_DailyMissionComplete = PlayerData.b_improveOneSpell_DailyMissionComplete;
+        b_allDailyMissionComplete = PlayerData.b_allDailyMissionComplete;
+        #endregion
 
         #region Story Levels
         b_levelComplete = PlayerData.b_levelComplete;
@@ -189,6 +203,13 @@ public class Container
         PlayerData.i_CardSlotNumber = i_CardSlotNumber;
         PlayerData.b_firstDataSave= b_firstDataSave;
         PlayerData.b_canAwake = b_CanAwake;
+
+        #region Daily Missions
+        PlayerData.i_gamesPlayed_DailyMissionCount = i_gamesPlayed_DailyMissionCount;
+        PlayerData.b_makeOnePull_DailyMissionComplete = b_makeOnePull_DailyMissionComplete;
+        PlayerData.b_improveOneSpell_DailyMissionComplete = b_improveOneSpell_DailyMissionComplete;
+        PlayerData.b_allDailyMissionComplete = b_allDailyMissionComplete;
+        #endregion
 
         #region Story Levels
         PlayerData.b_levelComplete = b_levelComplete;
