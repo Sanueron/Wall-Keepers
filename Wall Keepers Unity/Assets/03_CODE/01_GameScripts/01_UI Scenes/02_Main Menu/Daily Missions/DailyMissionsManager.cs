@@ -145,7 +145,7 @@ public class DailyMissionsManager : MonoBehaviour
         // Mission 5 - Complete all daily missions
         PlayerData.b_allDailyMissionComplete = b_allMissionsComplete;
         script_dailyMission_5.tmp_missionsCompletedText.text = i_countOfMissionsComplete.ToString();
-        if (PlayerData.b_improveOneSpell_DailyMissionComplete)
+        if (PlayerData.b_allDailyMissionComplete)
         {
             // Check if mission already claimed
             if (PlayerData.b_dailyMission_Five_Claimed) // Show claimed already

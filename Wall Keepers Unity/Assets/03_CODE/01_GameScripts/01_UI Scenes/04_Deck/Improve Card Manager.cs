@@ -24,6 +24,9 @@ public class ImproveCardManager : MonoBehaviour
 
     public void LevelUpSpell()
     {
+        // Daily Missions Improve one spell
+        PlayerData.b_improveOneSpell_DailyMissionComplete = true;
+
         // Activate Actions Block Panel
         go_actionsBlockPanel.SetActive(true);
 
