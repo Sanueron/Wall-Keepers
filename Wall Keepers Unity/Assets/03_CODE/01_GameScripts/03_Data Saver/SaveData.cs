@@ -106,10 +106,14 @@ public class Container
     public bool[] b_CanAwake = new bool[100];
 
     #region Daily Missions
+    // Mission requirements
     public int i_gamesPlayed_DailyMissionCount;
     public bool b_makeOnePull_DailyMissionComplete;
     public bool b_improveOneSpell_DailyMissionComplete;
     public bool b_allDailyMissionComplete;
+    // Claimed status
+    public bool b_dailyMission_One_Claimed, b_dailyMission_Two_Claimed,
+        b_dailyMission_Three_Claimed, b_dailyMission_Four_Claimed, b_dailyMission_Five_Claimed;
     #endregion
 
     #region Story Levels Complete Control
@@ -133,7 +137,7 @@ public class Container
     #endregion
 
     #region Date and Time
-    public int i_lastDayLogInShop = -1;
+    public int i_lastDayLogInShop = -1, i_lastDayLogInMainMenu = -1;
     #endregion
     #endregion
 
@@ -157,6 +161,12 @@ public class Container
         b_makeOnePull_DailyMissionComplete = PlayerData.b_makeOnePull_DailyMissionComplete;
         b_improveOneSpell_DailyMissionComplete = PlayerData.b_improveOneSpell_DailyMissionComplete;
         b_allDailyMissionComplete = PlayerData.b_allDailyMissionComplete;
+        // Claimed Status
+        b_dailyMission_One_Claimed = PlayerData.b_dailyMission_One_Claimed;
+        b_dailyMission_Two_Claimed = PlayerData.b_dailyMission_Two_Claimed;
+        b_dailyMission_Three_Claimed = PlayerData.b_dailyMission_Three_Claimed;
+        b_dailyMission_Four_Claimed = PlayerData.b_dailyMission_Four_Claimed;
+        b_dailyMission_Five_Claimed = PlayerData.b_dailyMission_Five_Claimed;
         #endregion
 
         #region Story Levels
@@ -187,6 +197,7 @@ public class Container
 
         #region Date and Time
         i_lastDayLogInShop = PlayerData.i_lastDayLogInShop;
+        i_lastDayLogInMainMenu = PlayerData.i_lastDayLogInMainMenu;
         #endregion
     }
     internal void ContainerPassDataToPlayerData()
@@ -209,6 +220,12 @@ public class Container
         PlayerData.b_makeOnePull_DailyMissionComplete = b_makeOnePull_DailyMissionComplete;
         PlayerData.b_improveOneSpell_DailyMissionComplete = b_improveOneSpell_DailyMissionComplete;
         PlayerData.b_allDailyMissionComplete = b_allDailyMissionComplete;
+        // Claimed Status
+        PlayerData.b_dailyMission_One_Claimed = b_dailyMission_One_Claimed;
+        PlayerData.b_dailyMission_Two_Claimed = b_dailyMission_Two_Claimed;
+        PlayerData.b_dailyMission_Three_Claimed = b_dailyMission_Three_Claimed;
+        PlayerData.b_dailyMission_Four_Claimed = b_dailyMission_Four_Claimed;
+        PlayerData.b_dailyMission_Five_Claimed = b_dailyMission_Five_Claimed;
         #endregion
 
         #region Story Levels
@@ -239,6 +256,7 @@ public class Container
 
         #region Date and Time
         PlayerData.i_lastDayLogInShop = i_lastDayLogInShop;
+        PlayerData.i_lastDayLogInMainMenu = i_lastDayLogInMainMenu;
         #endregion
     }
 

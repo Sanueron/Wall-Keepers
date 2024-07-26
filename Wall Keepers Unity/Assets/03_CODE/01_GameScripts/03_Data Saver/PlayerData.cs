@@ -24,10 +24,14 @@ public static class PlayerData
     internal static bool b_firstDataSave;
 
     #region Daily Missions
+    // Requirements
     internal static int i_gamesPlayed_DailyMissionCount;
     internal static bool b_makeOnePull_DailyMissionComplete;
     internal static bool b_improveOneSpell_DailyMissionComplete;
     internal static bool b_allDailyMissionComplete;
+    // Claimed status
+    internal static bool b_dailyMission_One_Claimed, b_dailyMission_Two_Claimed,
+        b_dailyMission_Three_Claimed, b_dailyMission_Four_Claimed, b_dailyMission_Five_Claimed;
     #endregion
 
     #region Story Levels Complete Control
@@ -52,6 +56,6 @@ public static class PlayerData
     #endregion
 
     #region Date and Time
-    internal static int i_lastDayLogInShop;
+    internal static int i_lastDayLogInShop, i_lastDayLogInMainMenu;
     #endregion
 }

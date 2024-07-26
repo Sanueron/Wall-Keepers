@@ -10,7 +10,6 @@ public class MainMenuManager : MonoBehaviour
     #region Unity Life Cycle
     private void Start()
     {
-
         ReAssignSpellsInDeckPrefabs();
         SaveData.instance.AssignDataAndSave();
     }
