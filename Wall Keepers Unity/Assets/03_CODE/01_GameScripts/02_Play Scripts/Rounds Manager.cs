@@ -92,6 +92,7 @@ public class RoundsManager : MonoBehaviour
     internal void SpawnFirstWaveEnemies()
     {
         script_enemiesManager.SetSpawnEnemiesToTrue();
+        LevelsGnralManager.b_stopLevel = false;
     }
     #endregion
 }

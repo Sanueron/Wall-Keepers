@@ -24,10 +24,17 @@ public class LimitedWavesResultsPanels : MonoBehaviour
     [SerializeField] private int i_manaKeysObtained;
     #endregion
 
+    #region Bug Control variables
+    // To avoid bug that calls this script events even from other scenes
+    bool b_scriptIsInScene = false;
+    #endregion
+
     #region Unity Life Cycle
     // Start is called before the first frame update
     void Start()
     {
+        print("Limited Waves Panel is Here");
+        b_scriptIsInScene = true;
         // Subscribe to events
         WallManager.e_OnWallDestroyed += WallManager_e_OnWallDestroyed;
         RoundsManager.ev_OnLevelComplete += RoundsManager_ev_OnLevelComplete;
@@ -38,11 +45,13 @@ public class LimitedWavesResultsPanels : MonoBehaviour
     #region Events Methods
     private void WallManager_e_OnWallDestroyed(object sender, EventArgs e)
     {
-        LevelFailed();
+        if(b_scriptIsInScene)
+            LevelFailed();
     }
     private void RoundsManager_ev_OnLevelComplete(object sender, EventArgs e)
     {
-        LevelComplete();
+        if (b_scriptIsInScene)
+            LevelComplete();
     }
     #endregion
 
@@ -53,10 +62,19 @@ public class LimitedWavesResultsPanels : MonoBehaviour
         LevelsGnralManager.b_stopLevel = true;
 
         // Activa Level failed panel
-        go_levelFailedMenu.SetActive(true);
+        if(go_levelFailedMenu != null)
+            go_levelFailedMenu.SetActive(true);
+
+        // Reset control variable
+        b_scriptIsInScene = false;
+
+        // Unsuscribe from events to avoid weird errors
+        WallManager.e_OnWallDestroyed -= WallManager_e_OnWallDestroyed;
+        RoundsManager.ev_OnLevelComplete -= RoundsManager_ev_OnLevelComplete;
 
         // Show level failed Panel
-        animator_lmtWavesResultsPanel.SetTrigger(i_animatorVariables);
+        if(animator_lmtWavesResultsPanel != null)
+            animator_lmtWavesResultsPanel.SetTrigger(i_animatorVariables);
     }
     private void LevelComplete()
     {
@@ -64,16 +82,19 @@ public class LimitedWavesResultsPanels : MonoBehaviour
         LevelsGnralManager.b_stopLevel = true;
 
         // Activa Level complete panel
-        go_levelCompleteMenu.SetActive(true);
+        if(go_levelCompleteMenu != null)
+            go_levelCompleteMenu.SetActive(true);
 
         // Show level complete Panel
-        animator_lmtWavesResultsPanel.SetTrigger(i_animatorVariables);
+        if(animator_lmtWavesResultsPanel != null)
+            animator_lmtWavesResultsPanel.SetTrigger(i_animatorVariables);
 
         // Check if this level was already complete
         if(PlayerData.b_levelComplete[i_levelID]) // If already completed then dont give rewards
         {
             // Show Reward already claimed visuals
-            go_rewardsAlreadyClaimed.SetActive(true);
+            if(go_rewardsAlreadyClaimed != null)
+                go_rewardsAlreadyClaimed.SetActive(true);
         }
         else // Give Rewards and Mark reward as obtained
         {
@@ -96,6 +117,13 @@ public class LimitedWavesResultsPanels : MonoBehaviour
 
         // Mark level as Complete
         PlayerData.b_levelComplete[i_levelID] = true;
+
+        // Reset control variable
+        b_scriptIsInScene = false;
+
+        // Unsuscribe from events to avoid weird errors
+        WallManager.e_OnWallDestroyed -= WallManager_e_OnWallDestroyed;
+        RoundsManager.ev_OnLevelComplete -= RoundsManager_ev_OnLevelComplete;
 
         // Save Data
         SaveData.instance.AssignDataAndSave();
