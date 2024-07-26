@@ -16,7 +16,7 @@ public class DailyMissionsManager : MonoBehaviour
     #region Unity Life Cycle
     private void Start()
     {
-        
+        CheckIfNewDayAndUpdateDailyMissions();
     }
     #endregion
 
@@ -24,13 +24,12 @@ public class DailyMissionsManager : MonoBehaviour
     {
         if (PlayerData.i_lastDayLogInMainMenu != DateTime.Now.Day) // Is new Day, refresh shop items
         {
+            print("Resets new day");
             ResetAllDailyMissions();
             PlayerData.i_lastDayLogInMainMenu = DateTime.Now.Day; // Save New day as last day log in
         }
-        else // Not new day
-        {
 
-        }
+        SetDailyMissionsState();
     }
 
     private void ResetAllDailyMissions()
@@ -45,13 +44,17 @@ public class DailyMissionsManager : MonoBehaviour
 
     private void SetDailyMissionsState()
     {
-        // For Mission Five
+        // For Mission Five - All missions complete
         bool b_allMissionsComplete = true;
+        int i_countOfMissionsComplete = 0;
 
         // Mission 1 - Play 1 Game
         int i_missionOneGamesPlayedRequired = 1;
-        if(PlayerData.i_gamesPlayed_DailyMissionCount >= i_missionOneGamesPlayedRequired)
+        // Update text 
+        script_dailyMission_1.tmp_missionsCompletedText.text = PlayerData.i_gamesPlayed_DailyMissionCount.ToString();
+        if (PlayerData.i_gamesPlayed_DailyMissionCount >= i_missionOneGamesPlayedRequired)
         {
+            i_countOfMissionsComplete += 1;
             // Check if mission already claimed
             if (PlayerData.b_dailyMission_One_Claimed) // Show claimed already
             {
@@ -70,8 +73,11 @@ public class DailyMissionsManager : MonoBehaviour
 
         // Mission 2 - Play 3 Games
         int i_missionTwoGamesPlayedRequired = 3;
+        // Update text 
+        script_dailyMission_2.tmp_missionsCompletedText.text = PlayerData.i_gamesPlayed_DailyMissionCount.ToString();
         if (PlayerData.i_gamesPlayed_DailyMissionCount >= i_missionTwoGamesPlayedRequired)
         {
+            i_countOfMissionsComplete += 1;
             // Check if mission already claimed
             if (PlayerData.b_dailyMission_Two_Claimed) // Show claimed already
             {
@@ -91,6 +97,9 @@ public class DailyMissionsManager : MonoBehaviour
         // Mission 3 - Make 1 Pull
         if (PlayerData.b_makeOnePull_DailyMissionComplete)
         {
+            i_countOfMissionsComplete += 1;
+            // Update text 
+            script_dailyMission_3.tmp_missionsCompletedText.text = "1";
             // Check if mission already claimed
             if (PlayerData.b_dailyMission_Three_Claimed) // Show claimed already
             {
@@ -105,11 +114,16 @@ public class DailyMissionsManager : MonoBehaviour
         else
         {
             b_allMissionsComplete = false;
+            // Update text 
+            script_dailyMission_3.tmp_missionsCompletedText.text = "0";
         }
 
         // Mission 4 - Improve 1 spell
         if (PlayerData.b_improveOneSpell_DailyMissionComplete)
         {
+            i_countOfMissionsComplete += 1;
+            // Update text 
+            script_dailyMission_4.tmp_missionsCompletedText.text = "1";
             // Check if mission already claimed
             if (PlayerData.b_dailyMission_Four_Claimed) // Show claimed already
             {
@@ -124,21 +138,24 @@ public class DailyMissionsManager : MonoBehaviour
         else
         {
             b_allMissionsComplete = false;
+            // Update text 
+            script_dailyMission_4.tmp_missionsCompletedText.text = "0";
         }
 
         // Mission 5 - Complete all daily missions
         PlayerData.b_allDailyMissionComplete = b_allMissionsComplete;
+        script_dailyMission_5.tmp_missionsCompletedText.text = i_countOfMissionsComplete.ToString();
         if (PlayerData.b_improveOneSpell_DailyMissionComplete)
         {
             // Check if mission already claimed
-            if (PlayerData.b_dailyMission_Four_Claimed) // Show claimed already
+            if (PlayerData.b_dailyMission_Five_Claimed) // Show claimed already
             {
-                script_dailyMission_4.go_claimedEffect.SetActive(true);
+                script_dailyMission_5.go_claimedEffect.SetActive(true);
             }
             else // Show can claim
             {
-                script_dailyMission_4.go_canClaimEffect.SetActive(true);
-                script_dailyMission_4.button_missionClaim.interactable = true;
+                script_dailyMission_5.go_canClaimEffect.SetActive(true);
+                script_dailyMission_5.button_missionClaim.interactable = true;
             }
         }
     }

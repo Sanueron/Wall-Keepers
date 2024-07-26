@@ -16,6 +16,7 @@ public class MissionsBoxes : MonoBehaviour
 
     #region Logic Elements
     [Header("Logic Elements")]
+    [SerializeField] private int i_currentMissionNumber;
     [SerializeField] internal Button button_missionClaim;
 
     #endregion
@@ -31,11 +32,46 @@ public class MissionsBoxes : MonoBehaviour
     #region Claim Mission Rewards methods
     public void ClaimManaReward(int i_manaRewarded)
     {
+        button_missionClaim.interactable = false;
+        go_canClaimEffect.SetActive(false);
+        go_claimedEffect.SetActive(true);
+
         PlayerData.i_mana += i_manaRewarded;
+        MarkMissionsAsClaimed();
+
+        SaveData.instance.AssignDataAndSave();
     }
-    public void ClaimManaKeysRewardes(int i_keysRewarded)
+    public void ClaimManaKeysRewards(int i_keysRewarded)
     {
+        button_missionClaim.interactable = false;
+        go_canClaimEffect.SetActive(false);
+        go_claimedEffect.SetActive(true);
+
         PlayerData.i_keys += i_keysRewarded;
+        MarkMissionsAsClaimed();
+
+        SaveData.instance.AssignDataAndSave();
+    }
+    private void MarkMissionsAsClaimed()
+    {
+        switch (i_currentMissionNumber)
+        {
+            case 1:
+                PlayerData.b_dailyMission_One_Claimed = true;
+                break;
+            case 2:
+                PlayerData.b_dailyMission_Two_Claimed = true;
+                break;
+            case 3:
+                PlayerData.b_dailyMission_Three_Claimed = true;
+                break;
+            case 4:
+                PlayerData.b_dailyMission_Four_Claimed = true;
+                break;
+            case 5:
+                PlayerData.b_dailyMission_Five_Claimed = true;
+                break;
+        }
     }
     #endregion
 }

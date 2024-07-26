@@ -31,10 +31,12 @@ public class ScenesLoader : MonoBehaviour
         sceneToLoadIndex = i_nextScene;
     }
 
-    public void CheckDeckBeforeLoadScene()
+    public void CheckDeckBeforeLoadScene() // Use to know if player can start a game or does not has a valid deck
     {
         if(PlayerData.b_isDeckFull)
         {
+            PlayerData.i_gamesPlayed_DailyMissionCount += 1;
+            SaveData.instance.AssignDataAndSave();
             LoadIndicatedScene();
         }
         else
