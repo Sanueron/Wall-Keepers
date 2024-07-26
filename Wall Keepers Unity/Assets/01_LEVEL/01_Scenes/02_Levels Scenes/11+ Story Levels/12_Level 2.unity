@@ -13056,7 +13056,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6121282552174425733, guid: 0e2e8ce1c0db28242b0078ded00eb38c, type: 3}
       propertyPath: i_levelID
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6121282552174425733, guid: 0e2e8ce1c0db28242b0078ded00eb38c, type: 3}
       propertyPath: i_spellID
