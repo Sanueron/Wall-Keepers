@@ -88,6 +88,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: ProjectailEffect_GigantFireBall
       objectReference: {fileID: 0}
+    - target: {fileID: 8528019506986214660, guid: 308f6e3862f2c20448cfd58839c9e5c7, type: 3}
+      propertyPath: aC_hitSfx
+      value: 
+      objectReference: {fileID: 8300000, guid: 57592bb482a093a4e913c5b12a0085ef, type: 3}
+    - target: {fileID: 8528019506986214660, guid: 308f6e3862f2c20448cfd58839c9e5c7, type: 3}
+      propertyPath: aC_spellCastSfx
+      value: 
+      objectReference: {fileID: 8300000, guid: caa910bd8323785408dab863eb374b9e, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
