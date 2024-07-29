@@ -16,6 +16,10 @@ PrefabInstance:
       propertyPath: spellBaseData
       value: 
       objectReference: {fileID: 11400000, guid: 912e6217fe4d5804ea6241f41d644fb7, type: 2}
+    - target: {fileID: 1370452447835895853, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 899b3e68aff4caf44bd2fadbb5286ab2, type: 3}
     - target: {fileID: 2953748825001162203, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_Name
       value: S4_Gigant Fireball
