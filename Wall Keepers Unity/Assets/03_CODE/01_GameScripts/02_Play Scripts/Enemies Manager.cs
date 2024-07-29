@@ -8,6 +8,7 @@ public class EnemiesManager : MonoBehaviour
     [Header("Max Rounds")]
     [Tooltip("For endless waves is O")]
     [SerializeField] private int i_levelMaxRound;
+    internal bool b_checkThisEnemiesManager;
     public int GetLevelMaxRounds()
     {
         return i_levelMaxRound;
@@ -40,6 +41,10 @@ public class EnemiesManager : MonoBehaviour
     #endregion
 
     #region Unity Life Cycle
+    private void Awake()
+    {
+        b_checkThisEnemiesManager = true;
+    }
     private void LateUpdate()
     {
         // Check if must spawn enemies

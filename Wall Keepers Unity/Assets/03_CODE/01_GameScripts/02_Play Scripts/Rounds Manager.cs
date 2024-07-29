@@ -43,6 +43,8 @@ public class RoundsManager : MonoBehaviour
         }
 
         i_currentWave = 1;
+        print("Current Wave is " + i_currentWave);
+        print("Current Max Wave is " + script_enemiesManager.GetLevelMaxRounds());
 
         // Subscribe to events
         Enemy.onEnemyDefeated += Enemy_onEnemyDefeated;
@@ -63,10 +65,13 @@ public class RoundsManager : MonoBehaviour
                 // if so end level and show results panel (for Limited Rounds Levels)
                 if(script_enemiesManager.GetLevelMaxRounds() != 0) // 0 means endless wave mode, no max round
                 {
-                    if(i_currentWave == script_enemiesManager.GetLevelMaxRounds()) // Max Wave reached
+                    // use bool to avoid error of checking other levels Max Rounds
+                    if (i_currentWave == script_enemiesManager.GetLevelMaxRounds() && script_enemiesManager.b_checkThisEnemiesManager) // Max Wave reached
                     {
                         // Level Complete, show level comlete panel
                         print("Level Complete");
+                        script_enemiesManager.b_checkThisEnemiesManager = false;
+                        i_currentWave = 1; // reset Current Wave
                         ev_OnLevelComplete?.Invoke(this, EventArgs.Empty);
                         return;
                     }

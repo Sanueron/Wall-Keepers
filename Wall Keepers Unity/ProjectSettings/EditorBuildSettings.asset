@@ -39,10 +39,12 @@ EditorBuildSettings:
     path: Assets/01_LEVEL/01_Scenes/01_Game Scenes/10_Season pass.unity
     guid: 64fe17880f2ea8f48bc61f7f9f83e644
   - enabled: 1
-    path: Assets/01_LEVEL/01_Scenes/02_Levels Scenes/11+ Story Levels/11_Level 1.unity
+    path: Assets/01_LEVEL/01_Scenes/02_Levels Scenes/11-13_Story Levels/11_Level
+      1.unity
     guid: 7b93199b41483874d934e20c6e340ac3
   - enabled: 1
-    path: Assets/01_LEVEL/01_Scenes/02_Levels Scenes/11+ Story Levels/12_Level 2.unity
+    path: Assets/01_LEVEL/01_Scenes/02_Levels Scenes/11-13_Story Levels/12_Level
+      2.unity
     guid: 3ef33d93dec302e4c833cb6344f9ff58
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

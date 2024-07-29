@@ -83,10 +83,8 @@ public class BaseSpellsEffects : MonoBehaviour
 
     internal virtual void HurtEnemies()
     {
-        print(enemiesScripts_List.Count);
         foreach (Enemy enemy in enemiesScripts_List)
         {
-            print("Deal damage to " + enemy.name);
             enemy.ReceiveDamage((int)f_damage);
         }
     }

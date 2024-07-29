@@ -69,7 +69,7 @@ public class LightningStorm_AllArea_Effect : BaseSpellsEffects
             }
             else
             {
-                Debug.Log("No lo coge");
+                
             }
         }
     }

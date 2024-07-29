@@ -42,7 +42,6 @@ public class PlayMode_Spell_Info : MonoBehaviour
     public void ShowSpellData(SpellCard_Manager spellCard)
     {
         ScripteableCard scripteableCard = spellCard.GetCardData();
-        print(scripteableCard.f_dmg);
         // Disactive not applicable stats (if base stat is 0 disactivate)
         if (scripteableCard.f_dmg > 0) { go_spellDamageStats.SetActive(true); } else { go_spellDamageStats.SetActive(false); }
         if (scripteableCard.f_resistance > 0) { go_spellResistanceStats.SetActive(true); } else { go_spellResistanceStats.SetActive(false); }

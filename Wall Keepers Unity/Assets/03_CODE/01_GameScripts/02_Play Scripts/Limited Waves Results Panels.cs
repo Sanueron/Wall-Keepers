@@ -33,7 +33,6 @@ public class LimitedWavesResultsPanels : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        print("Limited Waves Panel is Here");
         b_scriptIsInScene = true;
         // Subscribe to events
         WallManager.e_OnWallDestroyed += WallManager_e_OnWallDestroyed;

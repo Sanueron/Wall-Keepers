@@ -84,8 +84,14 @@ public class ResultsManager : MonoBehaviour
         ShowWavesCompleted();
         ShowManaObtained();
 
+        // Reset Waves to avoid bugs
+        script_roundsManager.i_currentWave = 1;
+
         // Add Mana Energy Obtained to Player current Mana
+        print("Player Mana " + PlayerData.i_mana);
+        print("Mana obtained" + i_manaObtained);
         PlayerData.i_mana += i_manaObtained;
+        print("Player Final Mana " + PlayerData.i_mana);
 
         // Pause Enemies Actions
         LevelsGnralManager.b_stopLevel = true;
