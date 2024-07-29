@@ -51,6 +51,8 @@ public class ImproveCardManager : MonoBehaviour
         //i_elementID = 0;
         animator_lvlUPEffect.SetInteger(i_animatorIntVariable, 0); // Set to 0 to avoid animation looping
         // Play SFXs
+        AudioManager.instance.StopMusicPlaying();
+        StartCoroutine(RestartSceneMusic());
         AudioManager.instance.PlaySFxOneTime(listOf_elementsAudioClip[i_elementID]);
 
         // Show Stats increase
@@ -89,6 +91,8 @@ public class ImproveCardManager : MonoBehaviour
         //i_elementID = 0;
         animator_lvlUPEffect.SetInteger(i_animatorIntVariable, 0); // Set to 0 to avoid animation looping
         // Play SFXs
+        AudioManager.instance.StopMusicPlaying();
+        StartCoroutine(RestartSceneMusic());
         AudioManager.instance.PlaySFxOneTime(listOf_elementsAudioClip[i_elementID]);
 
         // Show Stats increase
@@ -258,6 +262,12 @@ public class ImproveCardManager : MonoBehaviour
 
         // Disactivate Block Action Panel
         go_actionsBlockPanel.SetActive(false);
+        AudioManager.instance.PlayMusic();
+    }
+    IEnumerator RestartSceneMusic()
+    {
+        yield return new WaitForSeconds(1.5f);
+        AudioManager.instance.PlayMusic();
     }
     private float GetFillBarValue(float i_cardsInStock)
     {
