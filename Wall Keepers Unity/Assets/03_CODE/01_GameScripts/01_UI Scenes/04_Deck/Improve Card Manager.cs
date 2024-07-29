@@ -107,6 +107,10 @@ public class ImproveCardManager : MonoBehaviour
         float newElementalRunesInStock = PlayerData.i_elementalRunesInStock[spellInfo.requiredElementalRune.i_runeID];
         ShowElementalRunesReduceEffect(newElementalRunesInStock, i_spellID);
     }
+    internal void StopLevelUpAnim()
+    {
+        animator_lvlUPEffect.SetInteger(i_animatorIntVariable, 0); 
+    }
     private void GetSpellCurrentStats()
     {
         f_currentDamage = DeckManager.instance.f_damage;
