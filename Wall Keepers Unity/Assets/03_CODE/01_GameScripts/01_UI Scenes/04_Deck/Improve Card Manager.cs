@@ -49,7 +49,7 @@ public class ImproveCardManager : MonoBehaviour
         IndicateSpellElementIDForAnimation();
         animator_lvlUPEffect.SetInteger(i_animatorIntVariable, i_elementID); // Play Improve card effect over card anim
         //i_elementID = 0;
-        animator_lvlUPEffect.SetInteger(i_animatorIntVariable, 0); // Set to 0 to avoid animation looping
+        //animator_lvlUPEffect.SetInteger(i_animatorIntVariable, 0); // Set to 0 to avoid animation looping
         // Play SFXs
         AudioManager.instance.StopMusicPlaying();
         StartCoroutine(RestartSceneMusic());
@@ -89,7 +89,7 @@ public class ImproveCardManager : MonoBehaviour
         IndicateSpellElementIDForAnimation();
         animator_lvlUPEffect.SetInteger(i_animatorIntVariable, i_elementID); // Play Improve card effect over card anim
         //i_elementID = 0;
-        animator_lvlUPEffect.SetInteger(i_animatorIntVariable, 0); // Set to 0 to avoid animation looping
+        //animator_lvlUPEffect.SetInteger(i_animatorIntVariable, 0); // Set to 0 to avoid animation looping
         // Play SFXs
         AudioManager.instance.StopMusicPlaying();
         StartCoroutine(RestartSceneMusic());

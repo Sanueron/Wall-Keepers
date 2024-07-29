@@ -39,6 +39,13 @@ public class DailyMissionsManager : MonoBehaviour
         PlayerData.b_improveOneSpell_DailyMissionComplete = false;
         PlayerData.b_allDailyMissionComplete = false;
 
+        // reset Claimed control variable
+        PlayerData.b_dailyMission_One_Claimed = false;
+        PlayerData.b_dailyMission_Two_Claimed = false;
+        PlayerData.b_dailyMission_Three_Claimed = false;
+        PlayerData.b_dailyMission_Four_Claimed = false;
+        PlayerData.b_dailyMission_Five_Claimed = false;
+
         SaveData.instance.AssignDataAndSave();
     }
 
