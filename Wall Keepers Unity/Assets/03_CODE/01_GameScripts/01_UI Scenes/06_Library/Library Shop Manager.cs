@@ -158,5 +158,12 @@ public class LibraryShopManager : MonoBehaviour
     {
         _animator.SetTrigger("start");
     }
+
+    public void ShowPullDropRates(GameObject go_pullDropRates)
+    {
+        go_pullDropRates.SetActive(true);
+        print(go_pullDropRates.name);
+        print(go_pullDropRates.activeSelf);
+    }
     #endregion
 }
