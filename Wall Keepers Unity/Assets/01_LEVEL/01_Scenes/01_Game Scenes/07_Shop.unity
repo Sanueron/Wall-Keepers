@@ -3376,6 +3376,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 544d2673b46bc574aabba52a49e9894d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  environment: production
+  consumableItem_5000Mana:
+    s_Name: Buy 5000 Mana
+    s_Id: mana_5000
+    s_Desc: Get 5000 Mana energy.
+    f_Price: 0.99
+  consumableItem_30000Mana:
+    s_Name: Buy 30000 Mana
+    s_Id: mana_30000
+    s_Desc: Get 30000 Mana energy.
+    f_Price: 4.99
+  nonConsumableItem_RemoveAds:
+    s_Name: Remove Ads
+    s_Id: no_ads
+    s_Desc: Remove all in game advertisements
+    f_Price: 1.99
+  subscriptionItem_seasonWizzardPass:
+    s_Name: Wizzards Pass
+    s_Id: wizzard_pass
+    s_Desc: Unblock Wizzards Pass (elite) rewards and missions
+    f_Price: 6.99
+    i_duration: 1
   tmp_playerMana: {fileID: 2085056509}
 --- !u!1 &1267084340
 GameObject:
@@ -3582,6 +3604,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shop Items Mana Energy Section
       objectReference: {fileID: 0}
+    - target: {fileID: 2182880028120180816, guid: f711201f695b05749ae1319955bdcfe0, type: 3}
+      propertyPath: m_Name
+      value: Buy 5000 Mana Energy
+      objectReference: {fileID: 0}
     - target: {fileID: 3373136158309904361, guid: f711201f695b05749ae1319955bdcfe0, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -3624,7 +3650,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3535633649043450109, guid: f711201f695b05749ae1319955bdcfe0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: Buy30000Mana
+      value: TryPurchase_Buy30000Mana
       objectReference: {fileID: 0}
     - target: {fileID: 3535633649043450109, guid: f711201f695b05749ae1319955bdcfe0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -3872,7 +3898,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8414126735419859168, guid: f711201f695b05749ae1319955bdcfe0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: Buy5000Mana
+      value: TryPurchase_Buy5000Mana
       objectReference: {fileID: 0}
     - target: {fileID: 8414126735419859168, guid: f711201f695b05749ae1319955bdcfe0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -3893,6 +3919,10 @@ PrefabInstance:
     - target: {fileID: 8414126735419859168, guid: f711201f695b05749ae1319955bdcfe0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8533479909973351417, guid: f711201f695b05749ae1319955bdcfe0, type: 3}
+      propertyPath: m_Name
+      value: 'Buy 30000 Mana Energy '
       objectReference: {fileID: 0}
     - target: {fileID: 8723246900070262299, guid: f711201f695b05749ae1319955bdcfe0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
