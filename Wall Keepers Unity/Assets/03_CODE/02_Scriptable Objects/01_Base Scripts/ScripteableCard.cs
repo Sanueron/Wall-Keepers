@@ -40,7 +40,6 @@ public class ScripteableCard : ScriptableObject
 
 
     #region Delete
-    [Header("Lake")]
     public float f_repeatingDmgCoolDown;//LakeLifeTime
     public enum castingType {None, Projectile, Instant, AllMap };
     public castingType e_CastingType;
