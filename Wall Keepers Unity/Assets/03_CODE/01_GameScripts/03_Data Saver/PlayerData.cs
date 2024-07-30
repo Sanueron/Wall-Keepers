@@ -55,6 +55,12 @@ public static class PlayerData
     internal static int[] i_elementalRunesPurchasesLeftInShop = new int[3];
     #endregion
 
+    #region Purchased Items Data
+    internal static bool b_removeAdsBought;
+    internal static bool b_wizzardPassBought;
+    internal static int i_lastSeasonPassBought;
+    #endregion
+
     #region Date and Time
     internal static int i_lastDayLogInShop, i_lastDayLogInMainMenu;
     #endregion

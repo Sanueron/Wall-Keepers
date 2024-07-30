@@ -136,9 +136,16 @@ public class Container
 
     #endregion
 
+    #region Purchased Items Data
+    public bool b_removeAdsBought;
+    public bool b_wizzardPassBought;
+    public int i_lastSeasonPassBought;
+    #endregion
+
     #region Date and Time
     public int i_lastDayLogInShop = -1, i_lastDayLogInMainMenu = -1;
     #endregion
+
     #endregion
 
     internal void ContainerGetDataFromPlayerData() // Before saving data from container we get the data updated from Player Data
@@ -193,6 +200,12 @@ public class Container
         shopBuyableSpells = PlayerData.shopBuyableSpells;
         shopBuyableERunes = PlayerData.shopBuyableERunes;
         i_elementalRunesPurchasesLeftInShop = PlayerData.i_elementalRunesPurchasesLeftInShop;
+        #endregion
+
+        #region Purchased Items Data
+        b_removeAdsBought = PlayerData.b_removeAdsBought;
+        b_wizzardPassBought = PlayerData.b_wizzardPassBought;
+        i_lastSeasonPassBought = PlayerData.i_lastSeasonPassBought;
         #endregion
 
         #region Date and Time
@@ -252,6 +265,12 @@ public class Container
         PlayerData.shopBuyableSpells = shopBuyableSpells;
         PlayerData.shopBuyableERunes = shopBuyableERunes;
         PlayerData.i_elementalRunesPurchasesLeftInShop = i_elementalRunesPurchasesLeftInShop;
+        #endregion
+
+        #region Purchased Items Data
+        PlayerData.b_removeAdsBought = b_removeAdsBought;
+        PlayerData.b_wizzardPassBought = b_wizzardPassBought;
+        PlayerData.i_lastSeasonPassBought = i_lastSeasonPassBought;
         #endregion
 
         #region Date and Time

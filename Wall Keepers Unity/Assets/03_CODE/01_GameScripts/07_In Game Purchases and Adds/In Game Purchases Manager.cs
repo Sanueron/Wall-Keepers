@@ -8,6 +8,7 @@ using UnityEngine.Purchasing.Extension;
 using UnityEditor.VersionControl;
 using Unity.Services.Core;
 using Unity.Services.Core.Environments;
+using static InGamePurchasesManager;
 
 
 
@@ -43,6 +44,58 @@ public class InGamePurchasesManager : MonoBehaviour, IDetailedStoreListener
     }
     #endregion
 
+    #region Receipt Data
+    [Serializable]
+    public class SkuDetails
+    {
+        public string productId;
+        public string type;
+        public string title;
+        public string name;
+        public string iconUrl;
+        public string description;
+        public string price;
+        public long price_amount_micros;
+        public string price_currency_code;
+        public string skuDetailsToken;
+    }
+
+    [Serializable]
+    public class PayloadData
+    {
+        public string orderId;
+        public string packageName;
+        public string productId;
+        public long purchaseTime;
+        public int purchaseState;
+        public string purchaseToken;
+        public int quantity;
+        public bool acknowledged;
+    }
+
+    [Serializable]
+    public class Payload
+    {
+        public string json;
+        public string signature;
+        public List<SkuDetails> skuDetails;
+        public PayloadData payloadData;
+    }
+
+    [Serializable]
+    public class Data
+    {
+        public string Payload;
+        public string Store;
+        public string TransactionID;
+    }
+
+    // Access objects
+    public Data data;
+    public Payload payload;
+    public PayloadData payloadData;
+    #endregion
+
     #region Purchase Objects
     IStoreController m_StoreController;
     public ConsumableItem consumableItem_5000Mana;
@@ -59,11 +112,15 @@ public class InGamePurchasesManager : MonoBehaviour, IDetailedStoreListener
     float f_playerCurrentMana;
     #endregion
 
+    #region Purchase Complete SFXs
+    [SerializeField] AudioSource aS_sfxs;
+    [SerializeField] AudioClip aC_purchasedComplete;
+    #endregion
+
     #region Unity Life Cycle
 
     async void Start()
     {
-        
         try
         {
             var options = new InitializationOptions()
@@ -106,6 +163,9 @@ public class InGamePurchasesManager : MonoBehaviour, IDetailedStoreListener
     }
     public void Buy5000Mana() // Price 0,99€
     {
+        // Play Purchased complete SFX
+        aS_sfxs.PlayOneShot(aC_purchasedComplete);
+
         // Assign local var of mana obtained
         int i_manaObtained = 5000;
         // Assign Local Variable Current Mana
@@ -123,6 +183,9 @@ public class InGamePurchasesManager : MonoBehaviour, IDetailedStoreListener
     }
     public void Buy30000Mana() // Price 0,99€
     {
+        // Play Purchased complete SFX
+        aS_sfxs.PlayOneShot(aC_purchasedComplete);
+
         // Assign local var of mana obtained
         int i_manaObtained = 30000;
         // Assign Local Variable Current Mana
@@ -150,6 +213,27 @@ public class InGamePurchasesManager : MonoBehaviour, IDetailedStoreListener
     private void UnlockWizzardPassAccess()
     {
 
+    }
+    #endregion
+
+    #region Check if Special Products Purchased (Used to avoid hacking)
+    private void CheckIfNoAdsPayed(string id)
+    {
+        if(m_StoreController != null)
+        {
+            var product = m_StoreController.products.WithID(id);
+            if(product != null)
+            {
+                if (product.hasReceipt) // Purchased
+                {
+                    PlayerData.b_removeAdsBought = true;
+                }
+                else // Not Purchased
+                {
+                    PlayerData.b_removeAdsBought = false;
+                }
+            }
+        }
     }
     #endregion
 
@@ -188,6 +272,21 @@ public class InGamePurchasesManager : MonoBehaviour, IDetailedStoreListener
         // Distribute rewards checking which product was bought
         if(product.definition.id == consumableItem_5000Mana.s_Id)
         {
+            /*
+            // Get Quantity of purchases
+            string receipt = product.receipt;
+            data = JsonUtility.FromJson<Data>(receipt);
+            payload = JsonUtility.FromJson<Payload>(data.Payload);
+            payloadData = JsonUtility.FromJson<PayloadData>(payload.json);
+
+            int quantity = payloadData.quantity;
+
+            for (int i = 0; i < quantity; i++)
+            {
+                Buy5000Mana();
+            }
+            */
+
             Buy5000Mana();
         }
         else if(product.definition.id == consumableItem_30000Mana.s_Id)
@@ -216,6 +315,9 @@ public class InGamePurchasesManager : MonoBehaviour, IDetailedStoreListener
     {
         print("Success initializing purchases");
         m_StoreController = controller;
+
+        // Additional checks to avoid hacking. Checks if player has a receipt
+        CheckIfNoAdsPayed(nonConsumableItem_RemoveAds.s_Id);
     }
 
     public void OnPurchaseFailed(Product product, PurchaseFailureDescription failureDescription)
