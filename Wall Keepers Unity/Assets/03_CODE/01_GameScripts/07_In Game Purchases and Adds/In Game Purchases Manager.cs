@@ -5,12 +5,8 @@ using UnityEngine;
 using System;
 using UnityEngine.Purchasing;
 using UnityEngine.Purchasing.Extension;
-using UnityEditor.VersionControl;
 using Unity.Services.Core;
 using Unity.Services.Core.Environments;
-using static InGamePurchasesManager;
-
-
 
 public class InGamePurchasesManager : MonoBehaviour, IDetailedStoreListener
 {
