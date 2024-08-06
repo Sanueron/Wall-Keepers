@@ -113,6 +113,11 @@ public class SaveData : MonoBehaviour
           {"MakeOnePull_DailyMission", playerData_Container.b_makeOnePull_DailyMissionComplete},
           {"improveOneSpell_DailyMission", playerData_Container.b_improveOneSpell_DailyMissionComplete},
           {"allMissionsCompleted_DailyMission", playerData_Container.b_allDailyMissionComplete},
+          {"dailyMissionOneClaimed", playerData_Container.b_dailyMission_One_Claimed},
+          {"dailyMissionTwoClaimed", playerData_Container.b_dailyMission_Two_Claimed},
+          {"dailyMissionThreeClaimed", playerData_Container.b_dailyMission_Three_Claimed},
+          {"dailyMissionFourClaimed", playerData_Container.b_dailyMission_Four_Claimed},
+          {"dailyMissionFiveClaimed", playerData_Container.b_dailyMission_Five_Claimed},
         };
         var result = await CloudSaveService.Instance.Data.Player.SaveAsync(playerCurrencies);
         Debug.Log($"Saved data {string.Join(',', playerCurrencies)}");
@@ -219,6 +224,36 @@ public class SaveData : MonoBehaviour
         {
             //Debug.Log($"allMissionsCompleted_DailyMission value: {allMissionsCompleted_DailyMission.Value.GetAs<int>()}");
             PlayerData.b_allDailyMissionComplete = allMissionsCompleted_DailyMission.Value.GetAs<bool>();
+        }
+        // Daily Missions Claimed status (bool)
+        if (playerData.TryGetValue("dailyMissionOneClaimed", out var dailyMissionOneClaimed))
+        {
+            //Debug.Log($"dailyMissionOneClaimed value: {dailyMissionOneClaimed.Value.GetAs<int>()}");
+            PlayerData.b_dailyMission_One_Claimed = dailyMissionOneClaimed.Value.GetAs<bool>();
+        }
+        // Daily Missions Claimed status (bool)
+        if (playerData.TryGetValue("dailyMissionTwoClaimed", out var dailyMissionTwoClaimed))
+        {
+            //Debug.Log($"dailyMissionTwoClaimed value: {dailyMissionTwoClaimed.Value.GetAs<int>()}");
+            PlayerData.b_dailyMission_Two_Claimed = dailyMissionTwoClaimed.Value.GetAs<bool>();
+        }
+        // Daily Missions Claimed status (bool)
+        if (playerData.TryGetValue("dailyMissionThreeClaimed", out var dailyMissionThreeClaimed))
+        {
+            //Debug.Log($"dailyMissionThreeClaimed value: {dailyMissionThreeClaimed.Value.GetAs<int>()}");
+            PlayerData.b_dailyMission_Three_Claimed = dailyMissionThreeClaimed.Value.GetAs<bool>();
+        }
+        // Daily Missions Claimed status (bool)
+        if (playerData.TryGetValue("dailyMissionFourClaimed", out var dailyMissionFourClaimed))
+        {
+            //Debug.Log($"dailyMissionFourClaimed value: {dailyMissionThreeClaimed.Value.GetAs<int>()}");
+            PlayerData.b_dailyMission_Four_Claimed = dailyMissionFourClaimed.Value.GetAs<bool>();
+        }
+        // Daily Missions Claimed status (bool)
+        if (playerData.TryGetValue("dailyMissionFiveClaimed", out var dailyMissionFiveClaimed))
+        {
+            //Debug.Log($"dailyMissionFiveClaimed value: {dailyMissionFiveClaimed.Value.GetAs<int>()}");
+            PlayerData.b_dailyMission_Five_Claimed = dailyMissionFiveClaimed.Value.GetAs<bool>();
         }
 
     }
