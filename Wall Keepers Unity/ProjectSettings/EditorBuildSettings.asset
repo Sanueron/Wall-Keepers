@@ -49,20 +49,5 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/01_LEVEL/01_Scenes/01_Game Scenes/14_Wizzard Studio.unity
     guid: 3097eab4541515443a683fe0d7f9d4f0
-  - enabled: 1
-    path: Assets/01_LEVEL/01_Scenes/01_Game Scenes/16_UpgradeScenes/16_UpgradeWall.unity
-    guid: 993da20d242bfef459db8193e0619328
-  - enabled: 1
-    path: Assets/01_LEVEL/01_Scenes/01_Game Scenes/16_UpgradeScenes/17_UpgradeMagic.unity
-    guid: 9378201cf647c9548a538701f93a0937
-  - enabled: 1
-    path: Assets/01_LEVEL/01_Scenes/01_Game Scenes/16_UpgradeScenes/18_UpgradeMana.unity
-    guid: efd40c841d2457745bfdaa7b1f5a4578
-  - enabled: 1
-    path: Assets/01_LEVEL/01_Scenes/01_Game Scenes/16_UpgradeScenes/19_UpgradeFusion.unity
-    guid: ac565cd20faf0f743814262ebcdd17c4
-  - enabled: 1
-    path: Assets/01_LEVEL/01_Scenes/01_Game Scenes/15_Bestiary.unity
-    guid: 1d96d9f7680526e49899d9b94c13a8f3
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
