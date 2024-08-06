@@ -254,7 +254,11 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      IconoThunder_0: 6968207063166078785
+      IconoThunder_1: 8853198960792291029
+      IconoThunder_2: 2173401857807166173
+      IconoThunder_3: -509895322472140158
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

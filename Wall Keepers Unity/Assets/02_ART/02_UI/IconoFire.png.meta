@@ -182,7 +182,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      IconoFire_0: 7219594882429257213
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
