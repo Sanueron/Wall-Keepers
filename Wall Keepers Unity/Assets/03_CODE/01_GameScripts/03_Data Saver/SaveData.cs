@@ -1,5 +1,8 @@
 using UnityEngine;
 using System.Collections.Generic;
+using Unity.Services.CloudSave;
+using Unity.Services.Core;
+using Unity.Services.Authentication.PlayerAccounts;
 
 public class SaveData : MonoBehaviour
 {
@@ -10,7 +13,11 @@ public class SaveData : MonoBehaviour
     private Container playerData_Container = new Container();
 
     #region Unity Life Cycle Methods
-    private void Awake()
+    async void Awake()
+    {
+        await UnityServices.InitializeAsync();
+    }
+    private void Start()
     {
         // Implement Singleton Pattern
         if (instance != null) // Error check to avoid more than one Instance of this script to be created
@@ -38,6 +45,8 @@ public class SaveData : MonoBehaviour
         playerData_Container.ContainerGetDataFromPlayerData();
         // Save data to Json
         SaveToJson();
+        // Save Data to Unity Cloud
+        SaveDataToCloud();
     }
     public void SaveToJson()
     {
@@ -74,9 +83,50 @@ public class SaveData : MonoBehaviour
     }
     #endregion
 
+    #region Save Data To Unity Cloud
+    public async void SaveDataToCloud()
+    {
+        // Example
+        /*
+        var playerData = new Dictionary<string, object>{
+          {"firstKeyName", "a text value"},
+          {"secondKeyName", 123}
+        };
+        var result = await CloudSaveService.Instance.Data.Player.SaveAsync(playerData);
+        Debug.Log($"Saved data {string.Join(',', playerData)}");
+        */
+
+        var playerCurrencies = new Dictionary<string, object>{
+          {"PlayerManaEnergy", playerData_Container.i_mana},
+          {"PlayerManaKeys", playerData_Container.i_keys}
+        };
+        var result = await CloudSaveService.Instance.Data.Player.SaveAsync(playerCurrencies);
+        Debug.Log($"Saved data {string.Join(',', playerCurrencies)}");
+    }
+
+    public async void LoadDataFromCloud()
+    {
+        var playerData = await CloudSaveService.Instance.Data.Player.LoadAsync(new HashSet<string> {
+          "PlayerManaEnergy", "PlayerManaKeys"
+        });
+
+        if (playerData.TryGetValue("PlayerManaEnergy", out var playerSavedMana))
+        {
+            Debug.Log($"PlayerManaEnergy value: {playerSavedMana.Value.GetAs<string>()}");
+            PlayerData.i_mana = playerSavedMana.Value.GetAs<int>();
+            print(PlayerData.i_mana);
+        }
+
+        if (playerData.TryGetValue("PlayerManaKeys", out var playerSavedManaKeys))
+        {
+            Debug.Log($"PlayerManaKeys value: {playerSavedManaKeys.Value.GetAs<int>()}");
+            PlayerData.i_keys = playerSavedManaKeys.Value.GetAs<int>();
+            print(PlayerData.i_keys);
+        }
+    }
+    #endregion
 
 }
-
 
 #region Data Container
 [System.Serializable]

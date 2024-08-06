@@ -5,12 +5,17 @@ using Unity.Services.Authentication.PlayerAccounts;
 using System;
 using TMPro;
 using UnityEngine;
+using Unity.Services.Authentication.PlayerAccounts.Samples;
 
 public class AuthenticationManager : MonoBehaviour
 {
+    [SerializeField ] PlayerAccountsDemo script_playerAccountDemo;
+    [SerializeField ] SaveData script_saveData;
     [SerializeField] GameObject go_loginPanel;
     [SerializeField] GameObject go_startButton;
     public TextMeshProUGUI tmp_playerID;
+
+    bool b_dataFromCloudLoaded;
     private void Start()
     {
         if (PlayerAccountService.Instance.IsSignedIn)
@@ -19,6 +24,7 @@ public class AuthenticationManager : MonoBehaviour
             // Hide Log in Objects
             go_loginPanel.SetActive(false);
             go_startButton.SetActive(true);
+            script_saveData.AssignDataAndSave();
         }
         else
         {
@@ -26,9 +32,9 @@ public class AuthenticationManager : MonoBehaviour
             {
                 // Hide Log in Objects
                 print("Player is Logged In as Guest");
+                script_playerAccountDemo.Guest_SignIn();
                 go_loginPanel.SetActive(false);
                 go_startButton.SetActive(true);
-                print(AuthenticationService.Instance.PlayerId);
             }
             else
             {
@@ -43,6 +49,14 @@ public class AuthenticationManager : MonoBehaviour
     }
     private void LateUpdate()
     {
+        if(AuthenticationService.Instance.AccessToken != null && !b_dataFromCloudLoaded)
+        {
+            // Assign Data saved in Cloud from player stored data
+            print("Load data from cloud");
+            script_saveData.LoadDataFromCloud();
+            print("Session Token is " + AuthenticationService.Instance.AccessToken);
+            b_dataFromCloudLoaded = true;
+        }
         if (AuthenticationService.Instance.PlayerId != null)
         {
             if (tmp_playerID.text != AuthenticationService.Instance.PlayerId)
@@ -66,4 +80,13 @@ public class AuthenticationManager : MonoBehaviour
     {
         go_startButton.SetActive(true);
     }
+
+    #region Test Cloud Save Data
+    public void TestSaveDataInCloud()
+    {
+        PlayerData.i_mana = 1000;
+        script_saveData.AssignDataAndSave();
+        script_saveData.SaveDataToCloud();
+    }
+    #endregion
 }
