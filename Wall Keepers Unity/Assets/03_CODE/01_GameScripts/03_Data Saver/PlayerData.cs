@@ -12,9 +12,9 @@ public static class PlayerData
     internal static int[] i_awakening_Card_Level = new int[100];
     internal static bool[] b_canAwake = new bool[100];
     // Deck
-    internal static GameObject[] deck_GameObjects = new GameObject[8];
-    internal static GameObject[] go_spellsIndeck = new GameObject[8];
-    internal static ScripteableCard[] spellsInDeckData = new ScripteableCard[8];
+    internal static GameObject[] deck_GameObjects = new GameObject[8]; // Don't save in cloud
+    internal static GameObject[] go_spellsIndeck = new GameObject[8]; // Don't save in cloud
+    internal static ScripteableCard[] spellsInDeckData = new ScripteableCard[8]; // Don't save in cloud
     internal static int[] i_spellInDeckByID = new int[8]; // Used to saved spells in deck (Is reassigned in main Scene)
     internal static int[] i_CardSlotNumber = new int[8];
     internal static bool b_isDeckFull;

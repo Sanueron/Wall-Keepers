@@ -98,7 +98,21 @@ public class SaveData : MonoBehaviour
 
         var playerCurrencies = new Dictionary<string, object>{
           {"PlayerManaEnergy", playerData_Container.i_mana},
-          {"PlayerManaKeys", playerData_Container.i_keys}
+          {"PlayerManaKeys", playerData_Container.i_keys},
+          {"SpellCardsObtained", playerData_Container.b_spellCardObtained},
+          {"NumberOfSpellsObtainedOfEachSpell", playerData_Container.i_spell_Cards_Obtained},
+          {"SpellsLevels", playerData_Container.i_spell_Card_Level},
+          {"SpellsAwakeningLevels", playerData_Container.i_awakening_Card_Level},
+          {"spellCanbeAwaken", playerData_Container.b_CanAwake},
+          {"spellsInDeck", playerData_Container.i_spellInDeckByID},
+          {"cardSlotNumber", playerData_Container.i_CardSlotNumber},
+          {"deckIsFull", playerData_Container.b_isDeckFull},
+          {"EndlessWavesMaxRound", playerData_Container.i_maxRound},
+          {"b_firstDataSave", playerData_Container.b_firstDataSave},
+          {"gamesPlayed_DailyMissionCount", playerData_Container.i_gamesPlayed_DailyMissionCount},
+          {"MakeOnePull_DailyMission", playerData_Container.b_makeOnePull_DailyMissionComplete},
+          {"improveOneSpell_DailyMission", playerData_Container.b_improveOneSpell_DailyMissionComplete},
+          {"allMissionsCompleted_DailyMission", playerData_Container.b_allDailyMissionComplete},
         };
         var result = await CloudSaveService.Instance.Data.Player.SaveAsync(playerCurrencies);
         Debug.Log($"Saved data {string.Join(',', playerCurrencies)}");
@@ -110,19 +124,103 @@ public class SaveData : MonoBehaviour
           "PlayerManaEnergy", "PlayerManaKeys"
         });
 
+        // Mana Energy (Int)
         if (playerData.TryGetValue("PlayerManaEnergy", out var playerSavedMana))
         {
             Debug.Log($"PlayerManaEnergy value: {playerSavedMana.Value.GetAs<string>()}");
             PlayerData.i_mana = playerSavedMana.Value.GetAs<int>();
-            print(PlayerData.i_mana);
         }
-
+        // Mana Keys (Int)
         if (playerData.TryGetValue("PlayerManaKeys", out var playerSavedManaKeys))
         {
             Debug.Log($"PlayerManaKeys value: {playerSavedManaKeys.Value.GetAs<int>()}");
             PlayerData.i_keys = playerSavedManaKeys.Value.GetAs<int>();
-            print(PlayerData.i_keys);
         }
+        // Spells Obtained (Array of bools)
+        if (playerData.TryGetValue("SpellCardsObtained", out var SpellCardsObtained))
+        {
+            //Debug.Log($"SpellCardsObtained value: {SpellCardsObtained.Value.GetAs<int>()}");
+            PlayerData.b_spellCardObtained = SpellCardsObtained.Value.GetAs<bool[]>();
+        }
+        // Number of Spells Obtained of each spell (Array of ints)
+        if (playerData.TryGetValue("NumberOfSpellsObtainedOfEachSpell", out var NumberOfSpellsObtainedOfEachSpell))
+        {
+            //Debug.Log($"NumberOfSpellsObtainedOfEachSpell value: {NumberOfSpellsObtainedOfEachSpell.Value.GetAs<int>()}");
+            PlayerData.i_spell_Cards_Obtained = NumberOfSpellsObtainedOfEachSpell.Value.GetAs<int[]>();
+        }
+        // Spells Levels (Array of ints)
+        if (playerData.TryGetValue("SpellsLevels", out var SpellsLevels))
+        {
+            //Debug.Log($"SpellsLevels value: {SpellsLevels.Value.GetAs<int>()}");
+            PlayerData.i_spell_Card_Level = SpellsLevels.Value.GetAs<int[]>();
+        }
+        // Spells Awakening Levels (Array of ints)
+        if (playerData.TryGetValue("SpellsAwakeningLevels", out var SpellsAwakeningLevels))
+        {
+            //Debug.Log($"SpellsAwakeningLevels value: {SpellsAwakeningLevels.Value.GetAs<int>()}");
+            PlayerData.i_awakening_Card_Level = SpellsAwakeningLevels.Value.GetAs<int[]>();
+        }
+        // Spells Which can be awaken (Array of bools)
+        if (playerData.TryGetValue("spellCanbeAwaken", out var spellCanbeAwaken))
+        {
+            //Debug.Log($"spellCanbeAwaken value: {spellCanbeAwaken.Value.GetAs<int>()}");
+            PlayerData.b_canAwake = spellCanbeAwaken.Value.GetAs<bool[]>();
+        }
+        // Spells In Deck (Array of ints)
+        if (playerData.TryGetValue("spellsInDeck", out var spellsInDeck))
+        {
+            //Debug.Log($"spellsInDeck value: {spellsInDeck.Value.GetAs<int>()}");
+            PlayerData.i_spellInDeckByID = spellsInDeck.Value.GetAs<int[]>();
+        }
+        // Deck slots data (Array of ints)
+        if (playerData.TryGetValue("cardSlotNumber", out var cardSlotNumber))
+        {
+            //Debug.Log($"cardSlotNumber value: {cardSlotNumber.Value.GetAs<int>()}");
+            PlayerData.i_CardSlotNumber = cardSlotNumber.Value.GetAs<int[]>();
+        }
+        // Deck full or not state (Array of ints)
+        if (playerData.TryGetValue("deckIsFull", out var deckIsFull))
+        {
+            //Debug.Log($"deckIsFull value: {deckIsFull.Value.GetAs<int>()}");
+            PlayerData.b_isDeckFull = deckIsFull.Value.GetAs<bool>();
+        }
+        // Max wave reached in endless waves mode (int)
+        if (playerData.TryGetValue("EndlessWavesMaxRound", out var EndlessWavesMaxRound))
+        {
+            //Debug.Log($"EndlessWavesMaxRound value: {EndlessWavesMaxRound.Value.GetAs<int>()}");
+            PlayerData.i_maxRound = deckIsFull.Value.GetAs<int>();
+        }
+        // Is first data save done check (bool)
+        if (playerData.TryGetValue("b_firstDataSave", out var b_firstDataSave))
+        {
+            //Debug.Log($"b_firstDataSave value: {b_firstDataSave.Value.GetAs<int>()}");
+            PlayerData.b_firstDataSave = b_firstDataSave.Value.GetAs<bool>();
+        }
+        // Daily Missions Games played count (int)
+        if (playerData.TryGetValue("gamesPlayed_DailyMissionCount", out var gamesPlayed_DailyMissionCount))
+        {
+            //Debug.Log($"gamesPlayed_DailyMissionCount value: {gamesPlayed_DailyMissionCount.Value.GetAs<int>()}");
+            PlayerData.i_gamesPlayed_DailyMissionCount = gamesPlayed_DailyMissionCount.Value.GetAs<int>();
+        }
+        // Daily Missions Games Make one pull (bool)
+        if (playerData.TryGetValue("MakeOnePull_DailyMission", out var MakeOnePull_DailyMission))
+        {
+            //Debug.Log($"gamesPlayed_DailyMissionCount value: {gamesPlayed_DailyMissionCount.Value.GetAs<int>()}");
+            PlayerData.b_makeOnePull_DailyMissionComplete = MakeOnePull_DailyMission.Value.GetAs<bool>();
+        }
+        // Daily Missions improve one spell (bool)
+        if (playerData.TryGetValue("improveOneSpell_DailyMission", out var improveOneSpell_DailyMission))
+        {
+            //Debug.Log($"improveOneSpell_DailyMission value: {improveOneSpell_DailyMission.Value.GetAs<int>()}");
+            PlayerData.b_improveOneSpell_DailyMissionComplete = improveOneSpell_DailyMission.Value.GetAs<bool>();
+        }
+        // Daily Missions improve one spell (bool)
+        if (playerData.TryGetValue("allMissionsCompleted_DailyMission", out var allMissionsCompleted_DailyMission))
+        {
+            //Debug.Log($"allMissionsCompleted_DailyMission value: {allMissionsCompleted_DailyMission.Value.GetAs<int>()}");
+            PlayerData.b_allDailyMissionComplete = allMissionsCompleted_DailyMission.Value.GetAs<bool>();
+        }
+
     }
     #endregion
 

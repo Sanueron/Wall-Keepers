@@ -54,6 +54,7 @@ public class AuthenticationManager : MonoBehaviour
             // Assign Data saved in Cloud from player stored data
             print("Load data from cloud");
             script_saveData.LoadDataFromCloud();
+            script_saveData.AssignDataAndSave(); // To pass cloud data to Save Data container data
             print("Session Token is " + AuthenticationService.Instance.AccessToken);
             b_dataFromCloudLoaded = true;
         }
