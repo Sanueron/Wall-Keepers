@@ -47,6 +47,10 @@ EditorBuildSettings:
       2.unity
     guid: 3ef33d93dec302e4c833cb6344f9ff58
   - enabled: 1
+    path: Assets/01_LEVEL/01_Scenes/02_Levels Scenes/11-13_Story Levels/13_Level
+      3.unity
+    guid: c5bd199bde977aa4f9fe8459bb80c35f
+  - enabled: 1
     path: Assets/01_LEVEL/01_Scenes/01_Game Scenes/14_Wizzard Studio.unity
     guid: 3097eab4541515443a683fe0d7f9d4f0
   m_configObjects: {}

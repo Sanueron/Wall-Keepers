@@ -1,5 +1,5 @@
 # ninja log v5
-1	69	7445605924348406	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	5ccd9a5e27c52a53
-69	162	7445605925039092	C:/Users/lr_sc/Desktop/Wall-Keepers/Wall Keepers Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/4d1y3b1f/obj/arm64-v8a/libswappywrapper.so	b236b7ccc82a91a7
-1	195	7446388673636460	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	5ccd9a5e27c52a53
-195	317	7446388674603984	C:/Users/lr_sc/Desktop/Wall-Keepers/Wall Keepers Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/4d1y3b1f/obj/arm64-v8a/libswappywrapper.so	b236b7ccc82a91a7
+1	288	7446693190915051	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	5ccd9a5e27c52a53
+288	478	7446693192521753	C:/Users/lr_sc/Desktop/Wall-Keepers/Wall Keepers Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/4d1y3b1f/obj/arm64-v8a/libswappywrapper.so	b236b7ccc82a91a7
+1	67	7446696296775763	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	5ccd9a5e27c52a53
+67	160	7446696297400116	C:/Users/lr_sc/Desktop/Wall-Keepers/Wall Keepers Unity/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/4d1y3b1f/obj/arm64-v8a/libswappywrapper.so	b236b7ccc82a91a7

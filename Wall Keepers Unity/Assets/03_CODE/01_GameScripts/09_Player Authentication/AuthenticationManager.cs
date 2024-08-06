@@ -1,8 +1,5 @@
-using Unity.Services.Core;
 using Unity.Services.Authentication;
-using System.Threading.Tasks;
 using Unity.Services.Authentication.PlayerAccounts;
-using System;
 using TMPro;
 using UnityEngine;
 using Unity.Services.Authentication.PlayerAccounts.Samples;
