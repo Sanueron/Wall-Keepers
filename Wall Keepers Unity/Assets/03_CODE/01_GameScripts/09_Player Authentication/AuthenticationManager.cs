@@ -11,7 +11,7 @@ public class AuthenticationManager : MonoBehaviour
     [SerializeField] GameObject go_loginPanel;
     [SerializeField] GameObject go_startButton;
     public TextMeshProUGUI tmp_playerID;
-    private async void Start()
+    private void Start()
     {
         if (PlayerAccountService.Instance.IsSignedIn)
         {
@@ -41,13 +41,29 @@ public class AuthenticationManager : MonoBehaviour
         // Update player ID
         tmp_playerID.text = AuthenticationService.Instance.PlayerId;
     }
+    private void LateUpdate()
+    {
+        if (AuthenticationService.Instance.PlayerId != null)
+        {
+            if (tmp_playerID.text != AuthenticationService.Instance.PlayerId)
+            {
+                tmp_playerID.text = AuthenticationService.Instance.PlayerId;
+            }
+        }
+
+    }
 
     public void HideLogInPanel()
     {
         go_loginPanel.SetActive(false);
+        tmp_playerID.text = AuthenticationService.Instance.PlayerId;
     }
     public void ShowLogInPanel()
     {
         go_loginPanel.SetActive(true);
+    }
+    public void ShowPlayButton()
+    {
+        go_startButton.SetActive(true);
     }
 }
