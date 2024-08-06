@@ -118,6 +118,18 @@ public class SaveData : MonoBehaviour
           {"dailyMissionThreeClaimed", playerData_Container.b_dailyMission_Three_Claimed},
           {"dailyMissionFourClaimed", playerData_Container.b_dailyMission_Four_Claimed},
           {"dailyMissionFiveClaimed", playerData_Container.b_dailyMission_Five_Claimed},
+          {"levelsCompleteStatus", playerData_Container.b_levelComplete},
+          {"tutorialsCompleteStatus", playerData_Container.b_tutorialComplete},
+          {"elementalRunesInStock", playerData_Container.i_elementalRunesInStock},
+          {"spellInShopBoughtAlready", playerData_Container.b_spellBoughtAlready},
+          {"shopBuyableSpells", playerData_Container.shopBuyableSpells},
+          {"shopBuyableERunes", playerData_Container.shopBuyableERunes},
+          {"runesLeftInShop", playerData_Container.i_elementalRunesPurchasesLeftInShop},
+          {"removeAdsState", playerData_Container.b_removeAdsBought},
+          {"currentWizzardPassBought", playerData_Container.b_wizzardPassBought},
+          {"seasonPassBoughtID", playerData_Container.i_lastSeasonPassBought},
+          {"lastDayLogInShop", playerData_Container.i_lastDayLogInShop},
+          {"lastDayLogInMainMenu", playerData_Container.i_lastDayLogInMainMenu}
         };
         var result = await CloudSaveService.Instance.Data.Player.SaveAsync(playerCurrencies);
         Debug.Log($"Saved data {string.Join(',', playerCurrencies)}");
@@ -254,6 +266,72 @@ public class SaveData : MonoBehaviour
         {
             //Debug.Log($"dailyMissionFiveClaimed value: {dailyMissionFiveClaimed.Value.GetAs<int>()}");
             PlayerData.b_dailyMission_Five_Claimed = dailyMissionFiveClaimed.Value.GetAs<bool>();
+        }
+        // Story Levels Completion status (array of bool)
+        if (playerData.TryGetValue("levelsCompleteStatus", out var levelsCompleteStatus))
+        {
+            //Debug.Log($"levelsCompleteStatus value: {levelsCompleteStatus.Value.GetAs<int>()}");
+            PlayerData.b_levelComplete = levelsCompleteStatus.Value.GetAs<bool[]>();
+        }
+        // Tutorials Completion status (array of bool)
+        if (playerData.TryGetValue("tutorialsCompleteStatus", out var tutorialsCompleteStatus))
+        {
+            //Debug.Log($"tutorialsCompleteStatus value: {tutorialsCompleteStatus.Value.GetAs<int>()}");
+            PlayerData.b_tutorialComplete = tutorialsCompleteStatus.Value.GetAs<bool[]>();
+        }
+        // elemental Runes In Stock (array of int)
+        if (playerData.TryGetValue("elementalRunesInStock", out var elementalRunesInStock))
+        {
+            //Debug.Log($"elementalRunesInStock value: {elementalRunesInStock.Value.GetAs<int>()}");
+            PlayerData.i_elementalRunesInStock = elementalRunesInStock.Value.GetAs<int[]>();
+        }
+        // Shop items (spells) left (array of bool)
+        if (playerData.TryGetValue("spellInShopBoughtAlready", out var spellInShopBoughtAlready))
+        {
+            //Debug.Log($"spellInShopBoughtAlready value: {spellInShopBoughtAlready.Value.GetAs<int>()}");
+            PlayerData.b_spellBoughtAlready = spellInShopBoughtAlready.Value.GetAs<bool[]>();
+        }
+        // Shop items (available runes) (array of ints)
+        if (playerData.TryGetValue("shopBuyableERunes", out var shopBuyableERunes))
+        {
+            //Debug.Log($"shopBuyableERunes value: {shopBuyableERunes.Value.GetAs<int>()}");
+            PlayerData.shopBuyableERunes = shopBuyableERunes.Value.GetAs<int[]>();
+        }
+        // Shop items (available runes left) (array of ints)
+        if (playerData.TryGetValue("runesLeftInShop", out var runesLeftInShop))
+        {
+            //Debug.Log($"runesLeftInShop value: {runesLeftInShop.Value.GetAs<int>()}");
+            PlayerData.i_elementalRunesPurchasesLeftInShop = runesLeftInShop.Value.GetAs<int[]>();
+        }
+        // Removed Ads (bool)
+        if (playerData.TryGetValue("removeAdsState", out var removeAdsState))
+        {
+            //Debug.Log($"removeAdsState value: {removeAdsState.Value.GetAs<int>()}");
+            PlayerData.b_removeAdsBought = removeAdsState.Value.GetAs<bool>();
+        }
+        // Season Pass obtained status (bool)
+        if (playerData.TryGetValue("currentWizzardPassBought", out var currentWizzardPassBought))
+        {
+            //Debug.Log($"removeAdsState value: {removeAdsState.Value.GetAs<int>()}");
+            PlayerData.b_wizzardPassBought = currentWizzardPassBought.Value.GetAs<bool>();
+        }
+        // Last Season Pass bought ID (int)
+        if (playerData.TryGetValue("seasonPassBoughtID", out var seasonPassBoughtID))
+        {
+            //Debug.Log($"seasonPassBoughtID value: {seasonPassBoughtID.Value.GetAs<int>()}");
+            PlayerData.i_lastSeasonPassBought = seasonPassBoughtID.Value.GetAs<int>();
+        }
+        // Last day log in in shop (int)
+        if (playerData.TryGetValue("lastDayLogInShop", out var lastDayLogInShop))
+        {
+            //Debug.Log($"lastDayLogInShop value: {lastDayLogInShop.Value.GetAs<int>()}");
+            PlayerData.i_lastDayLogInShop = lastDayLogInShop.Value.GetAs<int>();
+        }
+        // Last day log in in Main Menu scene (int)
+        if (playerData.TryGetValue("lastDayLogInMainMenu", out var lastDayLogInMainMenu))
+        {
+            //Debug.Log($"lastDayLogInMainMenu value: {lastDayLogInMainMenu.Value.GetAs<int>()}");
+            PlayerData.i_lastDayLogInMainMenu = lastDayLogInMainMenu.Value.GetAs<int>();
         }
 
     }
