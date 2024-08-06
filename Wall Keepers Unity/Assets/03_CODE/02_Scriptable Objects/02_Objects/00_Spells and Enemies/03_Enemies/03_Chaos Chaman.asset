@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 095fe339d410b2b4fb3ae82e354c45cc, type: 3}
   m_Name: 03_Chaos Chaman
   m_EditorClassIdentifier: 
+  sprite_bestiary: {fileID: 414378516, guid: b955cd2dfa61b1f4590e73d404982fab, type: 3}
   i_id: 3
   i_hp: 400
   i_dmg: 20
@@ -19,6 +20,7 @@ MonoBehaviour:
   f_RageOfAction: 8
   f_projectailSpeed: 1.5
   i_manaEnergyReleased: 7
+  Description: 03_Chaos Chaman
   deathClip: {fileID: 0}
   e_Clan: 1
   e_ElementalType: 0
