@@ -12771,6 +12771,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LifeCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 1354240124160742065, guid: 35bde627e9db0c14f93d916b51a45562, type: 3}
+      propertyPath: m_FillAmount
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3510441161273792605, guid: 35bde627e9db0c14f93d916b51a45562, type: 3}
       propertyPath: m_Pivot.x
       value: 0
