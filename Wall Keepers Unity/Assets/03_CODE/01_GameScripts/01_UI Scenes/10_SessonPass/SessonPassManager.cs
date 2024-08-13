@@ -11,18 +11,13 @@ public class SessonPassManager : MonoBehaviour
     [SerializeField] private Slider slider_lvl;
     [SerializeField] private GameObject go_rewardPanel;
     #endregion
-
     #region Unity Life Cycle
     private void Start()
     {
         UpdatelvlBar();
     }
     #endregion
-
-
-
     #region Methods
-
     private void UpdatelvlBar()
     {
         print(GetBarValue());
@@ -38,7 +33,7 @@ public class SessonPassManager : MonoBehaviour
         }
         return fillBarValue;
     }
-    private void RewardSystem()
+    private void RewardSystem()//To activate blocks each level 
     {
         switch (f_lvl) 
         {
@@ -99,17 +94,13 @@ public class SessonPassManager : MonoBehaviour
                     go_lvlBlocks[i].gameObject.GetComponent<BlockLevel>().ToEnable();
                 }
                 break;
-
         }
     }
     public void CloseRewardPanel()
     {
         go_rewardPanel.SetActive(false);
     }
-  
-    
     #endregion
-
 }
 
 
