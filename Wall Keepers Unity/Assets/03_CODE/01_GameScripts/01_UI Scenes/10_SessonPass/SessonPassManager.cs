@@ -9,6 +9,7 @@ public class SessonPassManager : MonoBehaviour
     [SerializeField] private List<GameObject> go_lvlBlocks;
     public float f_lvl = 0;// This level is provisional, the real one will be on PlayerData
     [SerializeField] private Slider slider_lvl;
+    [SerializeField] private GameObject go_rewardPanel;
     #endregion
 
     #region Unity Life Cycle
@@ -24,11 +25,11 @@ public class SessonPassManager : MonoBehaviour
 
     private void UpdatelvlBar()
     {
-        print(GetHpFillBarValue());
-        slider_lvl.value = GetHpFillBarValue();
+        print(GetBarValue());
+        slider_lvl.value = GetBarValue();
         RewardSystem();
     }
-    private float GetHpFillBarValue()
+    private float GetBarValue()
     {
         float fillBarValue = f_lvl / 10;
         if (f_lvl >= 10)
@@ -101,8 +102,12 @@ public class SessonPassManager : MonoBehaviour
 
         }
     }
-
-
+    public void CloseRewardPanel()
+    {
+        go_rewardPanel.SetActive(false);
+    }
+  
+    
     #endregion
 
 }
