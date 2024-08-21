@@ -29,11 +29,7 @@ public class SaveData : MonoBehaviour
 
         // Reset(); // Only when we want to delete data
         // Load Player Saved Data
-        LoadAndAssignData();
-
-        // Only for testing
-        // PlayerData.i_mana = 100000;
-       
+        // LoadAndAssignData();       
     }
     #endregion
 
@@ -57,11 +53,13 @@ public class SaveData : MonoBehaviour
     }
     public void LoadAndAssignData()
     {
+        // Load Data from Cloud
+        LoadDataFromCloud();
         // Load saved data
-        LoadFromJson();
+        //LoadFromJson();
+
         // Pass saved data to PlayerData
         playerData_Container.ContainerPassDataToPlayerData();
-
     }
     public void LoadFromJson()
     {
@@ -96,39 +94,39 @@ public class SaveData : MonoBehaviour
         */
 
         var playerCurrencies = new Dictionary<string, object>{
-          {"PlayerManaEnergy", playerData_Container.i_mana},
-          {"PlayerManaKeys", playerData_Container.i_keys},
-          {"SpellCardsObtained", playerData_Container.b_spellCardObtained},
-          {"NumberOfSpellsObtainedOfEachSpell", playerData_Container.i_spell_Cards_Obtained},
-          {"SpellsLevels", playerData_Container.i_spell_Card_Level},
-          {"SpellsAwakeningLevels", playerData_Container.i_awakening_Card_Level},
-          {"spellCanbeAwaken", playerData_Container.b_CanAwake},
-          {"spellsInDeck", playerData_Container.i_spellInDeckByID},
-          {"cardSlotNumber", playerData_Container.i_CardSlotNumber},
-          {"deckIsFull", playerData_Container.b_isDeckFull},
-          {"EndlessWavesMaxRound", playerData_Container.i_maxRound},
-          {"b_firstDataSave", playerData_Container.b_firstDataSave},
-          {"gamesPlayed_DailyMissionCount", playerData_Container.i_gamesPlayed_DailyMissionCount},
-          {"MakeOnePull_DailyMission", playerData_Container.b_makeOnePull_DailyMissionComplete},
-          {"improveOneSpell_DailyMission", playerData_Container.b_improveOneSpell_DailyMissionComplete},
-          {"allMissionsCompleted_DailyMission", playerData_Container.b_allDailyMissionComplete},
-          {"dailyMissionOneClaimed", playerData_Container.b_dailyMission_One_Claimed},
-          {"dailyMissionTwoClaimed", playerData_Container.b_dailyMission_Two_Claimed},
-          {"dailyMissionThreeClaimed", playerData_Container.b_dailyMission_Three_Claimed},
-          {"dailyMissionFourClaimed", playerData_Container.b_dailyMission_Four_Claimed},
-          {"dailyMissionFiveClaimed", playerData_Container.b_dailyMission_Five_Claimed},
-          {"levelsCompleteStatus", playerData_Container.b_levelComplete},
-          {"tutorialsCompleteStatus", playerData_Container.b_tutorialComplete},
-          {"elementalRunesInStock", playerData_Container.i_elementalRunesInStock},
-          {"spellInShopBoughtAlready", playerData_Container.b_spellBoughtAlready},
-          {"shopBuyableSpells", playerData_Container.shopBuyableSpells},
-          {"shopBuyableERunes", playerData_Container.shopBuyableERunes},
-          {"runesLeftInShop", playerData_Container.i_elementalRunesPurchasesLeftInShop},
-          {"removeAdsState", playerData_Container.b_removeAdsBought},
-          {"currentWizzardPassBought", playerData_Container.b_wizzardPassBought},
-          {"seasonPassBoughtID", playerData_Container.i_lastSeasonPassBought},
-          {"lastDayLogInShop", playerData_Container.i_lastDayLogInShop},
-          {"lastDayLogInMainMenu", playerData_Container.i_lastDayLogInMainMenu}
+          {"PlayerManaEnergy", PlayerData.i_mana},
+          {"PlayerManaKeys", PlayerData.i_keys},
+          {"SpellCardsObtained", PlayerData.b_spellCardObtained},
+          {"NumberOfSpellsObtainedOfEachSpell", PlayerData.i_spell_Cards_Obtained},
+          {"SpellsLevels", PlayerData.i_spell_Card_Level},
+          {"SpellsAwakeningLevels", PlayerData.i_awakening_Card_Level},
+          {"spellCanbeAwaken", PlayerData.b_canAwake},
+          {"spellsInDeck", PlayerData.i_spellInDeckByID},
+          {"cardSlotNumber", PlayerData.i_CardSlotNumber},
+          {"deckIsFull", PlayerData.b_isDeckFull},
+          {"EndlessWavesMaxRound", PlayerData.i_maxRound},
+          {"b_firstDataSave", PlayerData.b_firstDataSave},
+          {"gamesPlayed_DailyMissionCount", PlayerData.i_gamesPlayed_DailyMissionCount},
+          {"MakeOnePull_DailyMission", PlayerData.b_makeOnePull_DailyMissionComplete},
+          {"improveOneSpell_DailyMission", PlayerData.b_improveOneSpell_DailyMissionComplete},
+          {"allMissionsCompleted_DailyMission", PlayerData.b_allDailyMissionComplete},
+          {"dailyMissionOneClaimed", PlayerData.b_dailyMission_One_Claimed},
+          {"dailyMissionTwoClaimed", PlayerData.b_dailyMission_Two_Claimed},
+          {"dailyMissionThreeClaimed", PlayerData.b_dailyMission_Three_Claimed},
+          {"dailyMissionFourClaimed", PlayerData.b_dailyMission_Four_Claimed},
+          {"dailyMissionFiveClaimed", PlayerData.b_dailyMission_Five_Claimed},
+          {"levelsCompleteStatus", PlayerData.b_levelComplete},
+          {"tutorialsCompleteStatus", PlayerData.b_tutorialComplete},
+          {"elementalRunesInStock", PlayerData.i_elementalRunesInStock},
+          {"spellInShopBoughtAlready", PlayerData.b_spellBoughtAlready},
+          {"shopBuyableSpells", PlayerData.shopBuyableSpells},
+          {"shopBuyableERunes", PlayerData.shopBuyableERunes},
+          {"runesLeftInShop", PlayerData.i_elementalRunesPurchasesLeftInShop},
+          {"removeAdsState", PlayerData.b_removeAdsBought},
+          {"currentWizzardPassBought", PlayerData.b_wizzardPassBought},
+          {"seasonPassBoughtID", PlayerData.i_lastSeasonPassBought},
+          {"lastDayLogInShop", PlayerData.i_lastDayLogInShop},
+          {"lastDayLogInMainMenu", PlayerData.i_lastDayLogInMainMenu}
         };
         var result = await CloudSaveService.Instance.Data.Player.SaveAsync(playerCurrencies);
         Debug.Log($"Saved data {string.Join(',', playerCurrencies)}");
@@ -137,7 +135,12 @@ public class SaveData : MonoBehaviour
     public async void LoadDataFromCloud()
     {
         var playerData = await CloudSaveService.Instance.Data.Player.LoadAsync(new HashSet<string> {
-          "PlayerManaEnergy", "PlayerManaKeys"
+          "PlayerManaEnergy", "PlayerManaKeys", "SpellCardsObtained", "NumberOfSpellsObtainedOfEachSpell", "SpellsLevels",
+          "SpellsAwakeningLevels", "SpellsAwakeningLevels", "spellCanbeAwaken", "spellsInDeck", "cardSlotNumber", "deckIsFull",
+          "EndlessWavesMaxRound", "b_firstDataSave", "gamesPlayed_DailyMissionCount", "MakeOnePull_DailyMission", "improveOneSpell_DailyMission",
+          "allMissionsCompleted_DailyMission", "dailyMissionOneClaimed", "dailyMissionTwoClaimed", "dailyMissionThreeClaimed", "dailyMissionFourClaimed",
+          "dailyMissionFiveClaimed", "levelsCompleteStatus", "tutorialsCompleteStatus", "elementalRunesInStock", "spellInShopBoughtAlready", "shopBuyableERunes",
+          "runesLeftInShop", "removeAdsState", "currentWizzardPassBought", "seasonPassBoughtID", "lastDayLogInShop", "lastDayLogInMainMenu"
         });
 
         // Mana Energy (Int)
@@ -156,7 +159,7 @@ public class SaveData : MonoBehaviour
         if (playerData.TryGetValue("SpellCardsObtained", out var SpellCardsObtained))
         {
             //Debug.Log($"SpellCardsObtained value: {SpellCardsObtained.Value.GetAs<int>()}");
-            PlayerData.b_spellCardObtained = SpellCardsObtained.Value.GetAs<bool[]>();
+            playerData_Container.b_spellCardObtained = SpellCardsObtained.Value.GetAs<bool[]>();
         }
         // Number of Spells Obtained of each spell (Array of ints)
         if (playerData.TryGetValue("NumberOfSpellsObtainedOfEachSpell", out var NumberOfSpellsObtainedOfEachSpell))
@@ -204,7 +207,7 @@ public class SaveData : MonoBehaviour
         if (playerData.TryGetValue("EndlessWavesMaxRound", out var EndlessWavesMaxRound))
         {
             //Debug.Log($"EndlessWavesMaxRound value: {EndlessWavesMaxRound.Value.GetAs<int>()}");
-            PlayerData.i_maxRound = deckIsFull.Value.GetAs<int>();
+            PlayerData.i_maxRound = EndlessWavesMaxRound.Value.GetAs<int>();
         }
         // Is first data save done check (bool)
         if (playerData.TryGetValue("b_firstDataSave", out var b_firstDataSave))
@@ -275,8 +278,8 @@ public class SaveData : MonoBehaviour
         // Tutorials Completion status (array of bool)
         if (playerData.TryGetValue("tutorialsCompleteStatus", out var tutorialsCompleteStatus))
         {
-            //Debug.Log($"tutorialsCompleteStatus value: {tutorialsCompleteStatus.Value.GetAs<int>()}");
             PlayerData.b_tutorialComplete = tutorialsCompleteStatus.Value.GetAs<bool[]>();
+            print(PlayerData.b_tutorialComplete);
         }
         // elemental Runes In Stock (array of int)
         if (playerData.TryGetValue("elementalRunesInStock", out var elementalRunesInStock))
@@ -332,7 +335,7 @@ public class SaveData : MonoBehaviour
             //Debug.Log($"lastDayLogInMainMenu value: {lastDayLogInMainMenu.Value.GetAs<int>()}");
             PlayerData.i_lastDayLogInMainMenu = lastDayLogInMainMenu.Value.GetAs<int>();
         }
-
+        print("All data loaded");
     }
     #endregion
 
@@ -363,7 +366,7 @@ public class Container
     public int i_totalCardsInDeck;
     public int i_maxRound;
     public bool b_firstDataSave;
-    public bool[] b_CanAwake = new bool[100];
+    public bool[] b_canAwake = new bool[100];
 
     #region Daily Missions
     // Mission requirements
@@ -420,7 +423,7 @@ public class Container
         i_CardSlotNumber = PlayerData.i_CardSlotNumber;
         i_maxRound = PlayerData.i_maxRound;
         b_firstDataSave = PlayerData.b_firstDataSave;
-        b_CanAwake = PlayerData.b_canAwake;
+        b_canAwake = PlayerData.b_canAwake;
         go_spellsIndeck = PlayerData.go_spellsIndeck;
 
         #region Daily Missions
@@ -486,7 +489,7 @@ public class Container
         PlayerData.i_spell_Cards_Obtained = i_spell_Cards_Obtained;
         PlayerData.i_CardSlotNumber = i_CardSlotNumber;
         PlayerData.b_firstDataSave= b_firstDataSave;
-        PlayerData.b_canAwake = b_CanAwake;
+        PlayerData.b_canAwake = b_canAwake;
 
         #region Daily Missions
         PlayerData.i_gamesPlayed_DailyMissionCount = i_gamesPlayed_DailyMissionCount;

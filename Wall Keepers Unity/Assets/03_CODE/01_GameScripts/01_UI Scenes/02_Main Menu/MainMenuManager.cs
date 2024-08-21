@@ -11,7 +11,7 @@ public class MainMenuManager : MonoBehaviour
     private void Start()
     {
         ReAssignSpellsInDeckPrefabs();
-        SaveData.instance.AssignDataAndSave();
+        // SaveData.instance.AssignDataAndSave();
     }
     #endregion
 
