@@ -7,7 +7,8 @@ using UnityEngine.UI;
 public class MissionsBoxes : MonoBehaviour
 {
     // Missions Visual Elements and Local logics
-
+    [Header("Referenced Scripts")]
+    [SerializeField] private MainMenuManager script_mainMenuManager;
     #region Visual Elements
     [Header("Visual Elements")]
     [SerializeField] internal TextMeshProUGUI tmp_missionsCompletedText;
@@ -37,6 +38,7 @@ public class MissionsBoxes : MonoBehaviour
         go_claimedEffect.SetActive(true);
 
         PlayerData.i_mana += i_manaRewarded;
+        script_mainMenuManager.UpdateEffectManaEnergy(PlayerData.i_mana);
         MarkMissionsAsClaimed();
 
         SaveData.instance.AssignDataAndSave();
@@ -48,6 +50,7 @@ public class MissionsBoxes : MonoBehaviour
         go_claimedEffect.SetActive(true);
 
         PlayerData.i_keys += i_keysRewarded;
+        script_mainMenuManager.ShowSumUpManaKeys(PlayerData.i_mana);
         MarkMissionsAsClaimed();
 
         SaveData.instance.AssignDataAndSave();

@@ -8,11 +8,7 @@ public class BuilderManager : MonoBehaviour
     #region Variables
     [SerializeField] GameObject go_ContextualMessage_mana, go_ContextualMessage_confirmation;
     #endregion
-    private void Start()
-    {
-        PlayerData.i_mana += 100000;
-        SaveData.instance.SaveToJson();
-    }
+
     #region Methods
     public void DisableMessage(GameObject message)
     {

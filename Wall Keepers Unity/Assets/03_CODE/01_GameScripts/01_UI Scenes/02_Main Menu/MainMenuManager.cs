@@ -1,11 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class MainMenuManager : MonoBehaviour
 {
     [Header("Use List to reassign saved spells in deck prefabs and data when opening game")]
     [SerializeField] List<ScripteableCard> listOfSpellsData = new List<ScripteableCard>();
+
+    [Header("Player Currencies")]
+    [SerializeField] private TextMeshProUGUI tmp_playerMana;
+    [SerializeField] private TextMeshProUGUI tmp_playerManaKeys;
+    float f_currentManaEnergy, f_currentManaKeys;
 
     #region Unity Life Cycle
     private void Start()
@@ -15,6 +21,8 @@ public class MainMenuManager : MonoBehaviour
         // Assign spells in deck to avoid bug
         ReAssignSpellsInDeckPrefabs();
         // SaveData.instance.AssignDataAndSave();
+        // Update Player Mana and Keys UI visual elements
+        GetPlayerCurrenciesAndUpdateTMP();
     }
     #endregion
 
@@ -52,4 +60,45 @@ public class MainMenuManager : MonoBehaviour
             }
         }
     }
+
+    #region Manage Player Currencies Methods
+    private void GetPlayerCurrenciesAndUpdateTMP()
+    {
+        tmp_playerMana.text = PlayerData.i_mana.ToString();
+        f_currentManaEnergy = PlayerData.i_mana;
+        tmp_playerManaKeys.text = PlayerData.i_keys.ToString();
+        f_currentManaKeys = PlayerData.i_keys;
+    }
+    internal void UpdateEffectManaEnergy(float f_newManaEnergy)
+    {
+        StartCoroutine(SumUPManaEnergy(f_newManaEnergy));
+    }
+    IEnumerator SumUPManaEnergy(float f_newManaEnergy)
+    {
+        float f_duration = 1f;
+        var rate = Mathf.Abs(f_newManaEnergy - f_currentManaEnergy) / f_duration;
+        while (f_currentManaEnergy != f_newManaEnergy)
+        {
+            f_currentManaEnergy = Mathf.MoveTowards(f_currentManaEnergy, f_newManaEnergy, rate * Time.deltaTime);
+            tmp_playerMana.text = ((int)f_currentManaEnergy).ToString();
+            yield return null;
+        }
+    }
+
+    internal void ShowSumUpManaKeys(float f_newSilverCoinsAmount)
+    {
+        StartCoroutine(SumUpSilverCoins(f_newSilverCoinsAmount));
+    }
+    IEnumerator SumUpSilverCoins(float f_newSilverCoinsAmount)
+    {
+        float f_duration = 1f;
+        var rate = Mathf.Abs(f_newSilverCoinsAmount - f_currentManaKeys) / f_duration;
+        while (f_currentManaKeys != f_newSilverCoinsAmount)
+        {
+            f_currentManaKeys = Mathf.MoveTowards(f_currentManaKeys, f_newSilverCoinsAmount, rate * Time.deltaTime);
+            tmp_playerManaKeys.text = ((int)f_currentManaKeys).ToString();
+            yield return null;
+        }
+    }
+    #endregion
 }
