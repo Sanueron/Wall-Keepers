@@ -17,38 +17,4 @@ public class Testing : MonoBehaviour
         //PlayerData.i_mana = 1000;
         
     }
-
-    public void SmallEnemyHit()
-    {
-        WallManager.instance.ReceiveHit(200f);
-
-    }
-
-    public void BigEnemyHit()
-    {
-        WallManager.instance.ReceiveHit(600f);
-    }
-
-    public void TestDeck()
-    {
-        for (int i = 0; i < PlayerData.go_spellsIndeck.Length; i++)
-        {
-            print(PlayerData.go_spellsIndeck[i]);
-
-        }
-    }
-
-    public void ObtainAllCards()
-    {
-
-     
-            for (int i = 0; i < PlayerData.i_spell_Cards_Obtained.Length; i++)
-            {
-                    PlayerData.b_spellCardObtained[i] = true;
-             }
-
-    }
-
-
-
 }

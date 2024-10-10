@@ -34,7 +34,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -123.00003}
+  m_AnchoredPosition: {x: 0, y: 158.33334}
   m_SizeDelta: {x: 450, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &357887205862678237
@@ -367,6 +367,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator_NextWave: {fileID: 1724065011812497272}
   tmp_nextWaveText: {fileID: 783361290183107538}
+  tmp_nextWaveText_PauseMenu: {fileID: 0}
 --- !u!1 &5279985281840038438
 GameObject:
   m_ObjectHideFlags: 0
@@ -401,7 +402,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 212}
+  m_AnchoredPosition: {x: 0, y: 493.33337}
   m_SizeDelta: {x: 450, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &366137072677910988
@@ -539,7 +540,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -500.74075}
+  m_AnchoredPosition: {x: 0, y: -219.40738}
   m_SizeDelta: {x: 528, y: 277}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6220652158089317270

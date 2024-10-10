@@ -7,7 +7,7 @@ public class ScripteableEnemies : ScriptableObject
     public int i_id;
     public int i_hp;
     public int i_dmg;
-    public int i_speed;
+    public float f_speed;
     public float f_RageOfAction, f_projectailSpeed;
     public int i_manaEnergyReleased;
     public string Description;

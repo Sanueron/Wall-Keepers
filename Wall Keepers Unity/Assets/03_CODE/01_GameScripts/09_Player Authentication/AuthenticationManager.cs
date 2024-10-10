@@ -21,7 +21,7 @@ public class AuthenticationManager : MonoBehaviour
             // Hide Log in Objects
             go_loginPanel.SetActive(false);
             go_startButton.SetActive(true);
-            script_saveData.AssignDataAndSave();
+            //script_saveData.AssignDataAndSave();
         }
         else
         {

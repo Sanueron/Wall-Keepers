@@ -7,7 +7,8 @@ public class BaseEnemyAction : MonoBehaviour
     [Header("Get Enemy Script with stats")]
     [SerializeField] protected Enemy enemyStats;
     #region Local variables
-    protected int i_hp, i_damage, i_speed;
+    protected int i_hp, i_damage;
+    protected float f_speed;
     protected float f_projectailSpeed;
     #endregion
 
@@ -21,7 +22,7 @@ public class BaseEnemyAction : MonoBehaviour
     {
         i_hp = enemyStats.i_hp;
         i_damage = enemyStats.i_damage;
-        i_speed = enemyStats.i_speed;
+        f_speed = enemyStats.f_speed;
         f_projectailSpeed = enemyStats.f_projectailSpeed;
     }
     internal virtual void TakeAction(GameObject obstacle, GameObject wall)

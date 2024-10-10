@@ -14,7 +14,8 @@ public class Enemy : MonoBehaviour
     #region Enemy Stats and Info
     [Header("Stats")]
     [SerializeField] ScripteableEnemies baseStats;
-    internal int i_id, i_hp, i_maxHp, i_damage, i_speed, i_startSpeed, i_manaEnergyReleased;
+    internal int i_id, i_hp, i_maxHp, i_damage, i_manaEnergyReleased;
+    internal float f_speed, f_startSpeed;
     float f_hpForHealthBar;
     internal float f_rangeOfAction, f_projectailSpeed;
     internal Rigidbody2D rb_Enemy;
@@ -224,13 +225,13 @@ public class Enemy : MonoBehaviour
         i_maxHp = i_hp;
         f_hpForHealthBar = i_hp;
         i_damage = baseStats.i_dmg;
-        i_speed = baseStats.i_speed;
+        f_speed = baseStats.f_speed;
         f_rangeOfAction = baseStats.f_RageOfAction;
         f_projectailSpeed = baseStats.f_projectailSpeed;    
         i_manaEnergyReleased = baseStats.i_manaEnergyReleased;
 
         //Start variables
-        i_startSpeed = i_speed;
+        f_startSpeed = f_speed;
         wallTarget_transform = moveToTarget_transform;
         rb_Enemy = gameObject.GetComponent<Rigidbody2D>();
 
@@ -243,7 +244,7 @@ public class Enemy : MonoBehaviour
     }
     private void MoveToTarget()
     {
-        var step = i_speed * f_speedDecreasedValue * Time.deltaTime; // calculate distance to move
+        var step = f_speed * f_speedDecreasedValue * Time.deltaTime; // calculate distance to move
         if (b_beingAttracktedBySpell)
         {
             targetToMove = new Vector3(moveToTarget_transform.position.x, moveToTarget_transform.position.y, moveToTarget_transform.position.z);

@@ -18,7 +18,7 @@ public class BestiaryManager : MonoBehaviour
         tmp_description.text = enemyData.Description;
         tmp_hp.text = enemyData.i_hp.ToString();
         tmp_attack.text = enemyData.i_dmg.ToString();
-        tmp_speed.text = enemyData.i_speed.ToString();
+        tmp_speed.text = enemyData.f_speed.ToString();
 
         if (enemyData.f_RageOfAction > 3.0f)
         {
