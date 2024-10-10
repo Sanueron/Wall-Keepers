@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: S1_RockBall_02
   m_EditorClassIdentifier: 
   i_id: 2
+  Description: Launches a rock projectile that deals damage to hitted enemies.
   e_spellType: 0
   i_spellStarsTier: 1
   i_mana_cost: 2
@@ -22,7 +23,7 @@ MonoBehaviour:
   f_resistance: 0
   requiredElementalRune: {fileID: 11400000, guid: fbe28b66f306cc74c909847eba3cdf2f, type: 2}
   _card_Sprite: {fileID: 21300000, guid: b6698326a422df24aa1396eca7ab6bd1, type: 3}
-  _onField_Sprite: {fileID: 6585663717174138110, guid: 03ce541a0ef925949b9f6ce96b8b1537, type: 3}
+  _onField_Sprite: {fileID: 1909578519830951322, guid: d6cb27bb78b5f9d4c9467e12887cd8f5, type: 3}
   spellPrefab: {fileID: 1753346450388262725, guid: 67ceb0b7fd70e9d4d819f80244d628a8, type: 3}
   castClip: {fileID: 8300000, guid: e44abf68a940e9843a277e7208d277da, type: 3}
   impactClip: {fileID: 8300000, guid: d3231fe49cd80b049b74567cea095aa5, type: 3}
@@ -38,7 +39,6 @@ MonoBehaviour:
   e_Effect: 1
   e_Element: 2
   e_2Element: 0
-  Description: Launches a rock projectile that deals damage to hitted enemies.
   b_isMerged: 0
   fusionSprite1: {fileID: 21300000, guid: 025795bce8e06b642a1523fe07280593, type: 3}
   fusionSprite2: {fileID: 21300000, guid: e532fb3743b17cd448dbbde580d4ac71, type: 3}

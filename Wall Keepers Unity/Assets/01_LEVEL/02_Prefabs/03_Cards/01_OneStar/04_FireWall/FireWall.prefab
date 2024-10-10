@@ -16,6 +16,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: FireWall
       objectReference: {fileID: 0}
+    - target: {fileID: 3372936717296222066, guid: 693b018ee78c884418c8725b7170f77b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 17.594582
+      objectReference: {fileID: 0}
+    - target: {fileID: 3372936717296222066, guid: 693b018ee78c884418c8725b7170f77b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 17.594582
+      objectReference: {fileID: 0}
+    - target: {fileID: 3372936717296222066, guid: 693b018ee78c884418c8725b7170f77b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 17.594582
+      objectReference: {fileID: 0}
     - target: {fileID: 3413756491470563924, guid: 693b018ee78c884418c8725b7170f77b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -88,6 +100,22 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 7f6c26aa08505064a9f0f8076d600c91, type: 3}
+    - target: {fileID: 8123303722278049104, guid: 693b018ee78c884418c8725b7170f77b, type: 3}
+      propertyPath: m_Size.x
+      value: 1.285
+      objectReference: {fileID: 0}
+    - target: {fileID: 8123303722278049104, guid: 693b018ee78c884418c8725b7170f77b, type: 3}
+      propertyPath: m_Size.y
+      value: 0.39445153
+      objectReference: {fileID: 0}
+    - target: {fileID: 8123303722278049104, guid: 693b018ee78c884418c8725b7170f77b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -460007331, guid: c0a58384d5040c14fb73a8c88ac65a87, type: 3}
+    - target: {fileID: 8123303722278049104, guid: 693b018ee78c884418c8725b7170f77b, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
