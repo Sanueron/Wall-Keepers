@@ -80,6 +80,22 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 60
       objectReference: {fileID: 0}
+    - target: {fileID: 8123303722278049104, guid: 693b018ee78c884418c8725b7170f77b, type: 3}
+      propertyPath: m_Size.x
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8123303722278049104, guid: 693b018ee78c884418c8725b7170f77b, type: 3}
+      propertyPath: m_Size.y
+      value: 8.330001
+      objectReference: {fileID: 0}
+    - target: {fileID: 8123303722278049104, guid: 693b018ee78c884418c8725b7170f77b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1170580032, guid: 2b2ea9686dd59604ab6c3584c4a50f25, type: 3}
+    - target: {fileID: 8123303722278049104, guid: 693b018ee78c884418c8725b7170f77b, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

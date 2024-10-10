@@ -129,9 +129,10 @@ public class PlayMode_DeckManager : MonoBehaviour
     //Get new card from Deck to Hand and place it   
     private void GetSpellToHand( Vector3 peviousPosition)
     {
-        
         cards_NotInHand_GameObjects[0].SetActive(true);
         SpellCard_Manager spellScript = cards_NotInHand_GameObjects[0].GetComponent<SpellCard_Manager>();
+        spellScript.SetCardScale();
+        print(spellScript.v3_cardScale);
         spellScript.v3_currentPosition = peviousPosition;
         spellScript.b_cardColocation_Finished = true;
         cards_InHand_GameObjects.Add(cards_NotInHand_GameObjects[0]);

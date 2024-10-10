@@ -10,11 +10,12 @@ public class SpellCard_Manager : MonoBehaviour
     ActionsManager script_actionsManager;
 
     #region Spells variables
-    public Vector3 v3_currentPosition;
+    internal Vector3 v3_currentPosition, v3_cardScale;
     [Header("Spell Stats")]
     [SerializeField] private ScripteableCard spellBaseData;
     [SerializeField] private GameObject _spellEffect_GameObject;
     public bool b_onBattlefield;
+    [SerializeField] private GameObject go_spellPreviewOnBattlefield;
     [SerializeField] private Sprite _targetSprite;
     private SpriteRenderer _card_SpriteRenderer;
     public bool b_cardColocation_Finished;
@@ -64,6 +65,11 @@ public class SpellCard_Manager : MonoBehaviour
         // Get Actions Manager for use in Fuse logic
         GameObject go = GameObject.FindGameObjectWithTag("ActionsManager");
         script_actionsManager = go.GetComponent<ActionsManager>();
+    }
+    private void OnEnable()
+    {
+        // Get Spell Card Size and save it locally
+        v3_cardScale = transform.localScale;
     }
     private void OnDisable()
     {
@@ -165,6 +171,11 @@ public class SpellCard_Manager : MonoBehaviour
     public void DisableCard()
     {
         gameObject.SetActive(false);
+    }
+
+    public void SetCardScale()
+    {
+        transform.localScale = v3_cardScale;
     }
     #endregion
 
@@ -334,6 +345,7 @@ public class SpellCard_Manager : MonoBehaviour
         {
             b_onBattlefield = true;
             _card_SpriteRenderer.sprite = spellBaseData._onField_Sprite;
+            go_spellPreviewOnBattlefield.SetActive(true);
 
             // Block Fusion, prevents fusion from happening when throwing a spell
             b_tryingFusion = false;
@@ -355,6 +367,7 @@ public class SpellCard_Manager : MonoBehaviour
         {
             _card_SpriteRenderer.sprite = spellBaseData._card_Sprite;
             b_onBattlefield = false;
+            go_spellPreviewOnBattlefield.SetActive(false);
             b_cardColocation_Finished = true;
         }
 

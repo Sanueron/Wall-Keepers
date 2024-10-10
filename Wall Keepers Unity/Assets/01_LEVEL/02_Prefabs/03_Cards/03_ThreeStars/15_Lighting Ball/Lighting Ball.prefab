@@ -12,6 +12,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lighting Ball
       objectReference: {fileID: 0}
+    - target: {fileID: 3372936717296222066, guid: 693b018ee78c884418c8725b7170f77b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3372936717296222066, guid: 693b018ee78c884418c8725b7170f77b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3372936717296222066, guid: 693b018ee78c884418c8725b7170f77b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3413756491470563924, guid: 693b018ee78c884418c8725b7170f77b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -82,6 +94,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7630918611897523993, guid: 693b018ee78c884418c8725b7170f77b, type: 3}
       propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8123303722278049104, guid: 693b018ee78c884418c8725b7170f77b, type: 3}
+      propertyPath: m_Size.x
+      value: 1.4222223
+      objectReference: {fileID: 0}
+    - target: {fileID: 8123303722278049104, guid: 693b018ee78c884418c8725b7170f77b, type: 3}
+      propertyPath: m_Size.y
+      value: 1.4222223
+      objectReference: {fileID: 0}
+    - target: {fileID: 8123303722278049104, guid: 693b018ee78c884418c8725b7170f77b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -2102340102, guid: 3add3b0f6313e7647b18e26e2fc448ac, type: 3}
+    - target: {fileID: 8123303722278049104, guid: 693b018ee78c884418c8725b7170f77b, type: 3}
+      propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

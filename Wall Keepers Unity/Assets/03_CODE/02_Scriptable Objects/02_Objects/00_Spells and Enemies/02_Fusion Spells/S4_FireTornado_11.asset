@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: S4_FireTornado_11
   m_EditorClassIdentifier: 
   i_id: 11
+  Description: Pulls enemies in area to its center while they burn
   e_spellType: 1
   i_spellStarsTier: 4
   i_mana_cost: 1
@@ -22,7 +23,7 @@ MonoBehaviour:
   f_resistance: 0
   requiredElementalRune: {fileID: 11400000, guid: b1f41260bc5382245be7bf31f10bb7ea, type: 2}
   _card_Sprite: {fileID: 21300000, guid: 47d265fab1b735c4c8cb9559e58de540, type: 3}
-  _onField_Sprite: {fileID: -674192880, guid: 0f4bda73bdf1a3a4dac812099ad3dbde, type: 3}
+  _onField_Sprite: {fileID: 1909578519830951322, guid: d6cb27bb78b5f9d4c9467e12887cd8f5, type: 3}
   spellPrefab: {fileID: 0}
   castClip: {fileID: 8300000, guid: 2b1df6e9228a48e46804c2ab22c37c9f, type: 3}
   impactClip: {fileID: 0}
@@ -38,7 +39,6 @@ MonoBehaviour:
   e_Effect: 2
   e_Element: 1
   e_2Element: 4
-  Description: Pulls enemies in area to its center while they burn
   b_isMerged: 1
   fusionSprite1: {fileID: 21300000, guid: 98c5e5e3d84daae42b3aea85d9a6c1c6, type: 3}
   fusionSprite2: {fileID: 21300000, guid: ab3451163fe3ccd4882b5e3cf3879839, type: 3}

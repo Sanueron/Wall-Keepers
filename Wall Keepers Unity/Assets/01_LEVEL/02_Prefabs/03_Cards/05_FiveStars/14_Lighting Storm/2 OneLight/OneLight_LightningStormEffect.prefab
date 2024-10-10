@@ -107,7 +107,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 23.130001, y: 7.100127}
+  m_Size: {x: 19.133333, y: 26.401756}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
@@ -147,17 +147,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.18447208, y: 0.15505171}
+  m_Offset: {x: -0.12362051, y: 1.6357822}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5094442, y: 0.14636092}
+    pivot: {x: 0.4905559, y: 0.07791461}
     oldSize: {x: 19.133333, y: 26.401756}
     newSize: {x: 19.133333, y: 26.401756}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 13.117779, y: 8.203373}
+  m_Size: {x: 8.9392805, y: 5.3230486}
   m_EdgeRadius: 0
 --- !u!82 &3103228356497428064
 AudioSource:

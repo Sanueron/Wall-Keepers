@@ -50,7 +50,7 @@ public class MissionsBoxes : MonoBehaviour
         go_claimedEffect.SetActive(true);
 
         PlayerData.i_keys += i_keysRewarded;
-        script_mainMenuManager.ShowSumUpManaKeys(PlayerData.i_mana);
+        script_mainMenuManager.ShowSumUpManaKeys(PlayerData.i_keys);
         MarkMissionsAsClaimed();
 
         SaveData.instance.AssignDataAndSave();
