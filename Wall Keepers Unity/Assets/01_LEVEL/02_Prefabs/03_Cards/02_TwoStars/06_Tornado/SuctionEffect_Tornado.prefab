@@ -62,15 +62,15 @@ PrefabInstance:
       objectReference: {fileID: 1459958281, guid: 37bfc545a7cd3c548934d2b3224935d6, type: 3}
     - target: {fileID: 4708899997401019408, guid: 16a64cdb6f7ab5140ab2d251b6fb4155, type: 3}
       propertyPath: m_Color.b
-      value: 0.7372549
+      value: 0.9719772
       objectReference: {fileID: 0}
     - target: {fileID: 4708899997401019408, guid: 16a64cdb6f7ab5140ab2d251b6fb4155, type: 3}
       propertyPath: m_Color.g
-      value: 0.8980392
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4708899997401019408, guid: 16a64cdb6f7ab5140ab2d251b6fb4155, type: 3}
       propertyPath: m_Color.r
-      value: 0.43529412
+      value: 0.9481132
       objectReference: {fileID: 0}
     - target: {fileID: 4708899997401019408, guid: 16a64cdb6f7ab5140ab2d251b6fb4155, type: 3}
       propertyPath: m_WasSpriteAssigned
@@ -154,6 +154,7 @@ MonoBehaviour:
   enemiesScripts_List: []
   aS_spellAudioSource: {fileID: 8379136671789317961}
   aC_spellCastSfx: {fileID: 8300000, guid: b195014b7f0c80c4b9d3700b00cc76e7, type: 3}
+  aC_hitSfx: {fileID: 0}
   aC_loopSfx: {fileID: 8300000, guid: 2b1df6e9228a48e46804c2ab22c37c9f, type: 3}
 --- !u!58 &570811571510220195
 CircleCollider2D:
@@ -190,7 +191,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 1.1728563, y: 4.4645405}
-  m_Radius: 8.623573
+  m_Radius: 7
 --- !u!50 &8187935248209676272
 Rigidbody2D:
   serializedVersion: 4
