@@ -461,7 +461,7 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 49
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &376784913
 MonoBehaviour:
@@ -478,6 +478,7 @@ MonoBehaviour:
   useTypeWriter: 1
   startTypewriterMode: 3
   hideAppearancesOnSkip: 0
+  hideDisappearancesOnSkip: 0
   triggerEventsOnSkip: 0
   resetTypingSpeedAtStartup: 1
   disappearanceOrientation: 0
