@@ -62,6 +62,8 @@ public class ManaManager : MonoBehaviour
     {
         f_currentManaValue -= amount;
         ReduceBothBars();
+        // Update Mana Used for Magic Pass Experience obtained
+        PlayerData.i_magicPassManaExp += amount;
     }
     //To decrease Mana Bars
     private void ReduceBothBars()

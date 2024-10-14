@@ -313,13 +313,45 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3935453274126684345, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: m_text
+      value: x5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3935453274126684345, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: m_fontSize
+      value: 42.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 4166548311250011187, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5821664586327007907, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b370c376e6e57b14eb05ac1bd60c060c, type: 3}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: i_passLevel
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: e_accesstype
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: e_rewardType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: i_rewardAmount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: script_seasonPassManager
+      value: 
+      objectReference: {fileID: 2087006417}
     - target: {fileID: 7038374303196156232, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
       propertyPath: m_Name
-      value: Level 10 Reward
-      objectReference: {fileID: 0}
-    - target: {fileID: 7207943649259680107, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -25.5
+      value: Level 10 Reward_x5 Mana Keys_Premium Pass
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -419,13 +451,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: script_seasonPassManager
+      value: 
+      objectReference: {fileID: 2087006417}
     - target: {fileID: 7038374303196156232, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
       propertyPath: m_Name
       value: Level 30 Reward
-      objectReference: {fileID: 0}
-    - target: {fileID: 7207943649259680107, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -25.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -525,13 +557,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: script_seasonPassManager
+      value: 
+      objectReference: {fileID: 2087006417}
     - target: {fileID: 7038374303196156232, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
       propertyPath: m_Name
       value: Level 41 Reward
-      objectReference: {fileID: 0}
-    - target: {fileID: 7207943649259680107, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -25.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -684,10 +716,10 @@ RectTransform:
   - {fileID: 329999018}
   m_Father: {fileID: 666773588}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0.5}
-  m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -220.56895, y: 131.07}
-  m_SizeDelta: {x: 441.1379, y: 1471.2}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 179.43105, y: 1395}
+  m_SizeDelta: {x: 441.1379, y: 2051.0708}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &85570673
 MonoBehaviour:
@@ -734,7 +766,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 85570671}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 31a19414c41e5ae4aae2af33fee712f6, type: 3}
   m_Name: 
@@ -977,13 +1009,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3935453274126684345, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: m_text
+      value: x10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3935453274126684345, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: m_fontSize
+      value: 42.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 4166548311250011187, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: i_passLevel
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: e_accesstype
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: e_rewardType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: i_rewardAmount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: script_seasonPassManager
+      value: 
+      objectReference: {fileID: 2087006417}
     - target: {fileID: 7038374303196156232, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
       propertyPath: m_Name
-      value: Level 15 Reward
-      objectReference: {fileID: 0}
-    - target: {fileID: 7207943649259680107, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -25.5
+      value: Level 15 Reward_x10 Mana Keys_Premium
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1227,13 +1287,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: script_seasonPassManager
+      value: 
+      objectReference: {fileID: 2087006417}
     - target: {fileID: 7038374303196156232, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
       propertyPath: m_Name
       value: Level 43 Reward
-      objectReference: {fileID: 0}
-    - target: {fileID: 7207943649259680107, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -25.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1578,13 +1638,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: script_seasonPassManager
+      value: 
+      objectReference: {fileID: 2087006417}
     - target: {fileID: 7038374303196156232, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
       propertyPath: m_Name
       value: Level 24 Reward
-      objectReference: {fileID: 0}
-    - target: {fileID: 7207943649259680107, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -25.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1684,13 +1744,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3935453274126684345, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: m_text
+      value: x1750
+      objectReference: {fileID: 0}
+    - target: {fileID: 3935453274126684345, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: m_fontSize
+      value: 30.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4166548311250011187, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: i_passLevel
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: i_rewardAmount
+      value: 1750
+      objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: script_seasonPassManager
+      value: 
+      objectReference: {fileID: 2087006417}
     - target: {fileID: 7038374303196156232, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
       propertyPath: m_Name
-      value: Level 13 Reward
-      objectReference: {fileID: 0}
-    - target: {fileID: 7207943649259680107, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -25.5
+      value: Level 13 Reward_x1750 Mana Energy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1736,7 +1816,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -58.99998, y: 7416.3203}
+  m_AnchoredPosition: {x: -58.99998, y: 7126.385}
   m_SizeDelta: {x: 391, y: 16303.841}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &329999019
@@ -1941,13 +2021,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: script_seasonPassManager
+      value: 
+      objectReference: {fileID: 2087006417}
     - target: {fileID: 7038374303196156232, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
       propertyPath: m_Name
       value: Level 44 Reward
-      objectReference: {fileID: 0}
-    - target: {fileID: 7207943649259680107, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -25.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2365,13 +2445,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: script_seasonPassManager
+      value: 
+      objectReference: {fileID: 2087006417}
     - target: {fileID: 7038374303196156232, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
       propertyPath: m_Name
       value: 'Level 34 Reward '
-      objectReference: {fileID: 0}
-    - target: {fileID: 7207943649259680107, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -25.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2471,13 +2551,45 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3935453274126684345, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: m_text
+      value: x3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3935453274126684345, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: m_fontSize
+      value: 42.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 4166548311250011187, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5821664586327007907, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b370c376e6e57b14eb05ac1bd60c060c, type: 3}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: i_passLevel
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: e_accesstype
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: e_rewardType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: i_rewardAmount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: script_seasonPassManager
+      value: 
+      objectReference: {fileID: 2087006417}
     - target: {fileID: 7038374303196156232, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
       propertyPath: m_Name
-      value: Level 5 Reward
-      objectReference: {fileID: 0}
-    - target: {fileID: 7207943649259680107, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -25.5
+      value: Level 5 Reward_x3 ManaKeys_Premium Pass
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2577,13 +2689,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: script_seasonPassManager
+      value: 
+      objectReference: {fileID: 2087006417}
     - target: {fileID: 7038374303196156232, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
       propertyPath: m_Name
       value: Level 38 Reward
-      objectReference: {fileID: 0}
-    - target: {fileID: 7207943649259680107, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -25.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2683,13 +2795,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: script_seasonPassManager
+      value: 
+      objectReference: {fileID: 2087006417}
     - target: {fileID: 7038374303196156232, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
       propertyPath: m_Name
       value: 'Level 37 Reward '
-      objectReference: {fileID: 0}
-    - target: {fileID: 7207943649259680107, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -25.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2791,15 +2903,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3935453274126684345, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
       propertyPath: m_text
-      value: x10
+      value: x1000
       objectReference: {fileID: 0}
     - target: {fileID: 3935453274126684345, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
       propertyPath: m_fontSize
-      value: 42.35
+      value: 37.05
       objectReference: {fileID: 0}
+    - target: {fileID: 4166548311250011187, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: i_passLevel
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: e_accesstype
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: i_rewardAmount
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: script_seasonPassManager
+      value: 
+      objectReference: {fileID: 2087006417}
     - target: {fileID: 7038374303196156232, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
       propertyPath: m_Name
-      value: Level 2 Reward_x10_Mana Keys_Premium_Pass
+      value: Level 2 Reward_x10 Mana Energy_Premium Pass
       objectReference: {fileID: 0}
     - target: {fileID: 7207943649259680107, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -2971,13 +3103,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: script_seasonPassManager
+      value: 
+      objectReference: {fileID: 2087006417}
     - target: {fileID: 7038374303196156232, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
       propertyPath: m_Name
       value: Level 27 Reward
-      objectReference: {fileID: 0}
-    - target: {fileID: 7207943649259680107, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -25.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3077,13 +3209,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: script_seasonPassManager
+      value: 
+      objectReference: {fileID: 2087006417}
     - target: {fileID: 7038374303196156232, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
       propertyPath: m_Name
       value: Level 28 Reward
-      objectReference: {fileID: 0}
-    - target: {fileID: 7207943649259680107, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -25.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3283,7 +3415,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 195.39, y: -775}
+  m_AnchoredPosition: {x: 195.39, y: -829}
   m_SizeDelta: {x: 323.3, y: 444.3724}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &612739906
@@ -3442,13 +3574,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: script_seasonPassManager
+      value: 
+      objectReference: {fileID: 2087006417}
     - target: {fileID: 7038374303196156232, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
       propertyPath: m_Name
       value: Level 18 Reward
-      objectReference: {fileID: 0}
-    - target: {fileID: 7207943649259680107, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -25.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3918,13 +4050,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: script_seasonPassManager
+      value: 
+      objectReference: {fileID: 2087006417}
     - target: {fileID: 7038374303196156232, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
       propertyPath: m_Name
       value: Level 39 Reward
-      objectReference: {fileID: 0}
-    - target: {fileID: 7207943649259680107, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -25.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4024,13 +4156,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3935453274126684345, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: m_text
+      value: x1250
+      objectReference: {fileID: 0}
+    - target: {fileID: 3935453274126684345, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: m_fontSize
+      value: 30.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4166548311250011187, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: i_passLevel
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: i_rewardAmount
+      value: 1250
+      objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: script_seasonPassManager
+      value: 
+      objectReference: {fileID: 2087006417}
     - target: {fileID: 7038374303196156232, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
       propertyPath: m_Name
-      value: Level 9 Reward
-      objectReference: {fileID: 0}
-    - target: {fileID: 7207943649259680107, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -25.5
+      value: Level 9 Reward_x1250 Mana Energy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4130,13 +4282,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3935453274126684345, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: m_text
+      value: x2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3935453274126684345, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: m_fontSize
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: i_passLevel
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: i_rewardAmount
+      value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: script_seasonPassManager
+      value: 
+      objectReference: {fileID: 2087006417}
     - target: {fileID: 7038374303196156232, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
       propertyPath: m_Name
-      value: Level 14 Reward
-      objectReference: {fileID: 0}
-    - target: {fileID: 7207943649259680107, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -25.5
+      value: Level 14 Reward_x2000 Mana Energy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4236,13 +4404,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3935453274126684345, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: m_text
+      value: x2250
+      objectReference: {fileID: 0}
+    - target: {fileID: 3935453274126684345, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: m_fontSize
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: i_passLevel
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: i_rewardAmount
+      value: 2250
+      objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: script_seasonPassManager
+      value: 
+      objectReference: {fileID: 2087006417}
     - target: {fileID: 7038374303196156232, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
       propertyPath: m_Name
-      value: Level 16 Reward
-      objectReference: {fileID: 0}
-    - target: {fileID: 7207943649259680107, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -25.5
+      value: Level 16 Reward_x2250 Mana Energy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4466,6 +4650,142 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6230385390595166586, guid: eabc16f069ab9d846a8c5eccfd532c87, type: 3}
   m_PrefabInstance: {fileID: 801546755}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &841432800
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 841432801}
+  - component: {fileID: 841432803}
+  - component: {fileID: 841432802}
+  m_Layer: 5
+  m_Name: Mana Left To Next Level
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &841432801
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 841432800}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1688552563}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: -238, y: 300}
+  m_SizeDelta: {x: 250, y: 59.8687}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &841432802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 841432800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 99/100
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 306a5220a4239d947a1ac5d5ea7ef53a, type: 2}
+  m_sharedMaterial: {fileID: 8838370511125401581, guid: 306a5220a4239d947a1ac5d5ea7ef53a, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4290659343
+  m_fontColor: {r: 0.059763268, g: 0.26475036, b: 0.745283, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 45
+  m_fontSizeBase: 45
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &841432803
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 841432800}
+  m_CullTransparentMesh: 1
 --- !u!1001 &853244784
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4646,6 +4966,142 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 884015668}
+  m_CullTransparentMesh: 1
+--- !u!1 &899949896
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 899949897}
+  - component: {fileID: 899949899}
+  - component: {fileID: 899949898}
+  m_Layer: 5
+  m_Name: How to Gain Exp Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &899949897
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 899949896}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1688552563}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: -238, y: 409.44}
+  m_SizeDelta: {x: 250, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &899949898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 899949896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Use mana to cast spellsin battle to gain pass experience.
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 306a5220a4239d947a1ac5d5ea7ef53a, type: 2}
+  m_sharedMaterial: {fileID: 8838370511125401581, guid: 306a5220a4239d947a1ac5d5ea7ef53a, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4280831334
+  m_fontColor: {r: 0.40000004, g: 0.3019608, b: 0.15686275, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 22
+  m_fontSizeBase: 22
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &899949899
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 899949896}
   m_CullTransparentMesh: 1
 --- !u!1001 &926742069
 PrefabInstance:
@@ -4894,7 +5350,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 178.52196, y: -300}
+  m_AnchoredPosition: {x: 178.52196, y: -354}
   m_SizeDelta: {x: 357.0439, y: 119}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &982915495
@@ -5297,13 +5753,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: script_seasonPassManager
+      value: 
+      objectReference: {fileID: 2087006417}
     - target: {fileID: 7038374303196156232, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
       propertyPath: m_Name
       value: Level 35 Reward
-      objectReference: {fileID: 0}
-    - target: {fileID: 7207943649259680107, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -25.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5403,13 +5859,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: script_seasonPassManager
+      value: 
+      objectReference: {fileID: 2087006417}
     - target: {fileID: 7038374303196156232, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
       propertyPath: m_Name
       value: Level 25 Reward
-      objectReference: {fileID: 0}
-    - target: {fileID: 7207943649259680107, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -25.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5509,13 +5965,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: script_seasonPassManager
+      value: 
+      objectReference: {fileID: 2087006417}
     - target: {fileID: 7038374303196156232, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
       propertyPath: m_Name
       value: 'Level 40 Reward '
-      objectReference: {fileID: 0}
-    - target: {fileID: 7207943649259680107, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -25.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5615,13 +6071,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4166548311250011187, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: i_passLevel
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: i_rewardAmount
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: script_seasonPassManager
+      value: 
+      objectReference: {fileID: 2087006417}
     - target: {fileID: 7038374303196156232, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
       propertyPath: m_Name
-      value: Level 8 Reward
-      objectReference: {fileID: 0}
-    - target: {fileID: 7207943649259680107, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -25.5
+      value: Level 8 Reward_x1000 Mana Energy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5827,13 +6295,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: script_seasonPassManager
+      value: 
+      objectReference: {fileID: 2087006417}
     - target: {fileID: 7038374303196156232, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
       propertyPath: m_Name
       value: Level 22 Reward
-      objectReference: {fileID: 0}
-    - target: {fileID: 7207943649259680107, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -25.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5951,6 +6419,81 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6230385390595166586, guid: eabc16f069ab9d846a8c5eccfd532c87, type: 3}
   m_PrefabInstance: {fileID: 1105232598}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1116970627
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1116970628}
+  - component: {fileID: 1116970630}
+  - component: {fileID: 1116970629}
+  m_Layer: 5
+  m_Name: Mana Icon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1116970628
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1116970627}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1688552563}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: -336.3, y: 296.2798}
+  m_SizeDelta: {x: 33.0168, y: 33.0168}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1116970629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1116970627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 6706792291038638048, guid: 786ffb6a72b45324baccbbdd1f654527, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1116970630
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1116970627}
+  m_CullTransparentMesh: 1
 --- !u!1001 &1125983432
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6039,13 +6582,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3935453274126684345, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: m_text
+      value: x1500
+      objectReference: {fileID: 0}
+    - target: {fileID: 3935453274126684345, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: m_fontSize
+      value: 29.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 4166548311250011187, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: i_passLevel
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: i_rewardAmount
+      value: 1500
+      objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: script_seasonPassManager
+      value: 
+      objectReference: {fileID: 2087006417}
     - target: {fileID: 7038374303196156232, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
       propertyPath: m_Name
-      value: Level 11 Reward
-      objectReference: {fileID: 0}
-    - target: {fileID: 7207943649259680107, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -25.5
+      value: Level 11 Reward_x1500 Mana Energy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6220,7 +6783,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 1
-  m_AdditionalShaderChannelsFlag: 9
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 1
@@ -6437,6 +7000,142 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6230385390595166586, guid: eabc16f069ab9d846a8c5eccfd532c87, type: 3}
   m_PrefabInstance: {fileID: 1170963969}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1180835857
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1180835858}
+  - component: {fileID: 1180835860}
+  - component: {fileID: 1180835859}
+  m_Layer: 5
+  m_Name: Mana Left to next level txt
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1180835858
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1180835857}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1688552563}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: -238, y: 334.39996}
+  m_SizeDelta: {x: 250, y: 40.136}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1180835859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1180835857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Mana to next level
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 306a5220a4239d947a1ac5d5ea7ef53a, type: 2}
+  m_sharedMaterial: {fileID: 8838370511125401581, guid: 306a5220a4239d947a1ac5d5ea7ef53a, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 22
+  m_fontSizeBase: 22
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 0
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1180835860
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1180835857}
+  m_CullTransparentMesh: 1
 --- !u!1001 &1187873051
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6525,13 +7224,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3935453274126684345, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: m_text
+      value: x750
+      objectReference: {fileID: 0}
+    - target: {fileID: 3935453274126684345, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: m_fontSize
+      value: 35.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 4166548311250011187, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: i_passLevel
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: i_rewardAmount
+      value: 750
+      objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: script_seasonPassManager
+      value: 
+      objectReference: {fileID: 2087006417}
     - target: {fileID: 7038374303196156232, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
       propertyPath: m_Name
-      value: Level 6 Reward
-      objectReference: {fileID: 0}
-    - target: {fileID: 7207943649259680107, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -25.5
+      value: Level 6 Reward_x750 Mana Energy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6949,7 +7668,7 @@ GameObject:
   - component: {fileID: 1233064988}
   - component: {fileID: 1233064987}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Magic Pass Level Txt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7161,13 +7880,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3935453274126684345, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: m_text
+      value: x500
+      objectReference: {fileID: 0}
+    - target: {fileID: 3935453274126684345, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: m_fontSize
+      value: 34.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4166548311250011187, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: i_passLevel
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: i_rewardAmount
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: script_seasonPassManager
+      value: 
+      objectReference: {fileID: 2087006417}
     - target: {fileID: 7038374303196156232, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
       propertyPath: m_Name
-      value: Level 4 Reward
-      objectReference: {fileID: 0}
-    - target: {fileID: 7207943649259680107, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -25.5
+      value: Level 4 Reward_x500 Mana Energy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7302,13 +8041,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: script_seasonPassManager
+      value: 
+      objectReference: {fileID: 2087006417}
     - target: {fileID: 7038374303196156232, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
       propertyPath: m_Name
       value: Level 31 Reward
-      objectReference: {fileID: 0}
-    - target: {fileID: 7207943649259680107, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -25.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7514,13 +8253,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: script_seasonPassManager
+      value: 
+      objectReference: {fileID: 2087006417}
     - target: {fileID: 7038374303196156232, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
       propertyPath: m_Name
       value: Level 48 Reward
-      objectReference: {fileID: 0}
-    - target: {fileID: 7207943649259680107, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -25.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8007,13 +8746,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: script_seasonPassManager
+      value: 
+      objectReference: {fileID: 2087006417}
     - target: {fileID: 7038374303196156232, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
       propertyPath: m_Name
       value: 'Level 49 Reward '
-      objectReference: {fileID: 0}
-    - target: {fileID: 7207943649259680107, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -25.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8113,13 +8852,53 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3236915578614664222, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 123.291
+      objectReference: {fileID: 0}
+    - target: {fileID: 3236915578614664222, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 123.291
+      objectReference: {fileID: 0}
+    - target: {fileID: 3935453274126684345, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: m_text
+      value: x250
+      objectReference: {fileID: 0}
+    - target: {fileID: 3935453274126684345, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: m_fontSize
+      value: 35.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4166548311250011187, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5821664586327007907, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6706792291038638048, guid: 786ffb6a72b45324baccbbdd1f654527, type: 3}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: i_passLevel
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: i_rewardAmount
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: script_seasonPassManager
+      value: 
+      objectReference: {fileID: 2087006417}
     - target: {fileID: 7038374303196156232, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
       propertyPath: m_Name
-      value: Level 3 Reward
+      value: Level 3 Reward_x250 Mana
+      objectReference: {fileID: 0}
+    - target: {fileID: 7207943649259680107, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7207943649259680107, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -25.5
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8167,7 +8946,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 150.52345, y: -450}
+  m_AnchoredPosition: {x: 150.52345, y: -503.99997}
   m_SizeDelta: {x: 301.0469, y: 95.2805}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1537455519
@@ -8296,13 +9075,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: script_seasonPassManager
+      value: 
+      objectReference: {fileID: 2087006417}
     - target: {fileID: 7038374303196156232, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
       propertyPath: m_Name
       value: Level 32 Reward
-      objectReference: {fileID: 0}
-    - target: {fileID: 7207943649259680107, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -25.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8538,13 +9317,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3935453274126684345, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: m_text
+      value: x3000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3935453274126684345, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: m_fontSize
+      value: 27.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 4166548311250011187, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: i_passLevel
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: e_accesstype
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: i_rewardAmount
+      value: 3000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: script_seasonPassManager
+      value: 
+      objectReference: {fileID: 2087006417}
     - target: {fileID: 7038374303196156232, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
       propertyPath: m_Name
-      value: Level 17 Reward
-      objectReference: {fileID: 0}
-    - target: {fileID: 7207943649259680107, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -25.5
+      value: Level 17 Reward_x3000 Mana Energy_Premium
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8644,13 +9447,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3935453274126684345, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: m_text
+      value: x2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3935453274126684345, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: m_fontSize
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 4166548311250011187, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: i_passLevel
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: e_accesstype
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: i_rewardAmount
+      value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: script_seasonPassManager
+      value: 
+      objectReference: {fileID: 2087006417}
     - target: {fileID: 7038374303196156232, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
       propertyPath: m_Name
-      value: Level 7 Reward
-      objectReference: {fileID: 0}
-    - target: {fileID: 7207943649259680107, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -25.5
+      value: Level 7 Reward_x2000 Mana Energy_Premium
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8964,7 +9791,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 2
+  m_fontStyle: 3
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -9186,6 +10013,10 @@ RectTransform:
   - {fileID: 561344625}
   - {fileID: 177733729}
   - {fileID: 666773588}
+  - {fileID: 1116970628}
+  - {fileID: 899949897}
+  - {fileID: 1180835858}
+  - {fileID: 841432801}
   - {fileID: 2118404537}
   m_Father: {fileID: 1290960517}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9451,13 +10282,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: script_seasonPassManager
+      value: 
+      objectReference: {fileID: 2087006417}
     - target: {fileID: 7038374303196156232, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
       propertyPath: m_Name
       value: Level 45 Reward
-      objectReference: {fileID: 0}
-    - target: {fileID: 7207943649259680107, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -25.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9769,13 +10600,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: script_seasonPassManager
+      value: 
+      objectReference: {fileID: 2087006417}
     - target: {fileID: 7038374303196156232, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
       propertyPath: m_Name
       value: Level 20 Reward
-      objectReference: {fileID: 0}
-    - target: {fileID: 7207943649259680107, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -25.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10524,13 +11355,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: script_seasonPassManager
+      value: 
+      objectReference: {fileID: 2087006417}
     - target: {fileID: 7038374303196156232, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
       propertyPath: m_Name
       value: Level 26 Reward
-      objectReference: {fileID: 0}
-    - target: {fileID: 7207943649259680107, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -25.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10872,13 +11703,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: script_seasonPassManager
+      value: 
+      objectReference: {fileID: 2087006417}
     - target: {fileID: 7038374303196156232, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
       propertyPath: m_Name
       value: Level 21 Reward
-      objectReference: {fileID: 0}
-    - target: {fileID: 7207943649259680107, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -25.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11630,7 +12461,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 59.00002, y: 317.41}
+  m_AnchoredPosition: {x: 59, y: 330}
   m_SizeDelta: {x: 321, y: 119}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1959807110
@@ -11759,13 +12590,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: script_seasonPassManager
+      value: 
+      objectReference: {fileID: 2087006417}
     - target: {fileID: 7038374303196156232, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
       propertyPath: m_Name
       value: 'Level 47 Reward '
-      objectReference: {fileID: 0}
-    - target: {fileID: 7207943649259680107, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -25.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11865,13 +12696,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: script_seasonPassManager
+      value: 
+      objectReference: {fileID: 2087006417}
     - target: {fileID: 7038374303196156232, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
       propertyPath: m_Name
       value: Level 42 Reward
-      objectReference: {fileID: 0}
-    - target: {fileID: 7207943649259680107, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -25.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12183,13 +13014,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: script_seasonPassManager
+      value: 
+      objectReference: {fileID: 2087006417}
     - target: {fileID: 7038374303196156232, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
       propertyPath: m_Name
       value: 'Level 36 Reward '
-      objectReference: {fileID: 0}
-    - target: {fileID: 7207943649259680107, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -25.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12289,13 +13120,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: script_seasonPassManager
+      value: 
+      objectReference: {fileID: 2087006417}
     - target: {fileID: 7038374303196156232, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
       propertyPath: m_Name
       value: Level 33 Reward
-      objectReference: {fileID: 0}
-    - target: {fileID: 7207943649259680107, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -25.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12395,13 +13226,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: script_seasonPassManager
+      value: 
+      objectReference: {fileID: 2087006417}
     - target: {fileID: 7038374303196156232, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
       propertyPath: m_Name
       value: Level 29 Reward
-      objectReference: {fileID: 0}
-    - target: {fileID: 7207943649259680107, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -25.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12501,13 +13332,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: script_seasonPassManager
+      value: 
+      objectReference: {fileID: 2087006417}
     - target: {fileID: 7038374303196156232, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
       propertyPath: m_Name
       value: Level 46 Reward
-      objectReference: {fileID: 0}
-    - target: {fileID: 7207943649259680107, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -25.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12607,13 +13438,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3935453274126684345, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: m_text
+      value: x3000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3935453274126684345, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: m_fontSize
+      value: 27.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 4166548311250011187, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: i_passLevel
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: e_accesstype
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: i_rewardAmount
+      value: 3000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: script_seasonPassManager
+      value: 
+      objectReference: {fileID: 2087006417}
     - target: {fileID: 7038374303196156232, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
       propertyPath: m_Name
-      value: Level 12 Reward
-      objectReference: {fileID: 0}
-    - target: {fileID: 7207943649259680107, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -25.5
+      value: Level 12 Reward_x3000 Mana Energy_Premium
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -12776,6 +13631,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   img_fillBar: {fileID: 884015670}
+  tmp_manaLeftToNextLevel: {fileID: 841432802}
+  tmp_currentMagicPassLevel: {fileID: 1233064987}
+  tmp_playerManaEnergy: {fileID: 8164235818331495424}
+  tmp_playerManaKeys: {fileID: 1707188582802438050}
 --- !u!1001 &2098695190
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13489,13 +14348,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: script_seasonPassManager
+      value: 
+      objectReference: {fileID: 2087006417}
     - target: {fileID: 7038374303196156232, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
       propertyPath: m_Name
       value: Level 23 Reward
-      objectReference: {fileID: 0}
-    - target: {fileID: 7207943649259680107, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -25.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13595,13 +14454,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: script_seasonPassManager
+      value: 
+      objectReference: {fileID: 2087006417}
     - target: {fileID: 7038374303196156232, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
       propertyPath: m_Name
       value: Level 19 Reward
-      objectReference: {fileID: 0}
-    - target: {fileID: 7207943649259680107, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -25.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13701,13 +14560,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: script_seasonPassManager
+      value: 
+      objectReference: {fileID: 2087006417}
     - target: {fileID: 7038374303196156232, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
       propertyPath: m_Name
       value: Level 50 Reward
-      objectReference: {fileID: 0}
-    - target: {fileID: 7207943649259680107, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -25.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14044,11 +14903,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3935453274126684345, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
       propertyPath: m_text
-      value: x100
+      value: x1
       objectReference: {fileID: 0}
     - target: {fileID: 3935453274126684345, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
       propertyPath: m_fontSize
-      value: 37.05
+      value: 42.35
       objectReference: {fileID: 0}
     - target: {fileID: 4166548311250011187, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
       propertyPath: m_IsActive
@@ -14057,10 +14916,26 @@ PrefabInstance:
     - target: {fileID: 5821664586327007907, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 3585c17ed4f39b1439079b00be49858c, type: 3}
+      objectReference: {fileID: 21300000, guid: b370c376e6e57b14eb05ac1bd60c060c, type: 3}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: i_passLevel
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: e_rewardType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: i_rewardAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
+      propertyPath: script_seasonPassManager
+      value: 
+      objectReference: {fileID: 2087006417}
     - target: {fileID: 7038374303196156232, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
       propertyPath: m_Name
-      value: Level 1 Reward_x100 Mana
+      value: Level 1 Reward_x1 Mana Keys
       objectReference: {fileID: 0}
     - target: {fileID: 9197516855916420843, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
       propertyPath: m_Sprite
@@ -14260,7 +15135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 145
+    m_Left: 50
     m_Right: 0
     m_Top: 45
     m_Bottom: 0
@@ -14408,7 +15283,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -100}
+  m_AnchoredPosition: {x: 0, y: -158}
   m_SizeDelta: {x: 0, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &7815155490670015376

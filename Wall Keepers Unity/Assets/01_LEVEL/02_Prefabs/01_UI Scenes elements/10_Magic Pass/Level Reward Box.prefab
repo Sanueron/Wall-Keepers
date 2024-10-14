@@ -519,7 +519,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5821664586327007907}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6414274503638830553}
+        m_TargetAssemblyTypeName: MagicPassRewardBox, Assembly-CSharp
+        m_MethodName: ClaimReward
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4166548311250011187
 GameObject:
   m_ObjectHideFlags: 0
@@ -535,7 +547,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4954810897918177394
 RectTransform:
   m_ObjectHideFlags: 0
@@ -986,6 +998,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2726715482556159787}
   - component: {fileID: 6257202952526390189}
+  - component: {fileID: 6414274503638830553}
   m_Layer: 5
   m_Name: Level Reward Box
   m_TagString: Untagged
@@ -1021,6 +1034,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7038374303196156232}
   m_CullTransparentMesh: 1
+--- !u!114 &6414274503638830553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7038374303196156232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4efc2251fc53a8146a3e11420c7e5ca5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  i_passLevel: 0
+  e_accesstype: 0
+  e_rewardType: 0
+  i_rewardAmount: 0
+  go_claimedIcon: {fileID: 1013730535597925793}
+  go_lvlNotReachedPanel: {fileID: 6826359061995329612}
+  go_premiumRewardBlockPanel: {fileID: 4166548311250011187}
+  script_seasonPassManager: {fileID: 0}
 --- !u!1 &7121868771924007889
 GameObject:
   m_ObjectHideFlags: 0
@@ -1131,7 +1164,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.000015259, y: 0}
-  m_SizeDelta: {x: 146.4624, y: 146.4624}
+  m_SizeDelta: {x: 123.291, y: 123.291}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1251557690438564763
 CanvasRenderer:
@@ -1161,7 +1194,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b370c376e6e57b14eb05ac1bd60c060c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3585c17ed4f39b1439079b00be49858c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

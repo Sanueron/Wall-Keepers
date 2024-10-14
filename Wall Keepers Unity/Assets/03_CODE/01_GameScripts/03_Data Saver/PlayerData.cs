@@ -62,4 +62,9 @@ public static class PlayerData
     #region Date and Time
     internal static int i_lastDayLogInShop, i_lastDayLogInMainMenu;
     #endregion
+
+    #region Magic Pass Data
+    internal static int i_magicPassManaExp = 0, i_magicPassLevel = 0;
+    internal static bool[] b_magicPassRewardClaimed = new bool[51];
+    #endregion
 }
