@@ -15,11 +15,19 @@ public class SeasonPassManager : MonoBehaviour
     private int i_passMaxLevel = 50, i_passCurrentLevel = 0, 
         i_manaUsed, i_manaToUseToReachNextLevel, i_baseManaToReachNextLvl = 50;
     private float f_currentLevelBarFillAmount, f_currentPlayerManaDisplaying, f_currentPlayerManaKeysDisplaying;
+    float f_moveDifferenceBetwenLevels = 323;
 
     [Header("Scene UI variables")]
+    [SerializeField] private RectTransform rewardsContentPanel;
     [SerializeField] Image img_fillBar;
     [SerializeField] TextMeshProUGUI tmp_manaLeftToNextLevel, tmp_currentMagicPassLevel,
         tmp_playerManaEnergy, tmp_playerManaKeys;
+    [Header("Scene AUDIO")]
+    [SerializeField] AudioSource aS_sceneSFx;
+    [SerializeField] AudioClip aC_collectManaEnergy, aC_collectManaKeys, aC_collecFeaturedSpell;
+    [Header("FEATURED SPELL PANEL")]
+    [SerializeField] Animator featuredSpell_animator;
+    int i_animatorString = Animator.StringToHash("Visible");
     #endregion
 
     #region Unity Life Cycle
@@ -73,13 +81,28 @@ public class SeasonPassManager : MonoBehaviour
     private void UpdateLevelAndExpVisuals()
     {
         // Visuals: Level Bar & Exp to next level Bar
-        UpdatelvlBar();
+        // UpdatelvlBar();
+        IncreaseSeveralLevels(PlayerData.i_magicPassLevel);
         tmp_currentMagicPassLevel.text = "Level " + PlayerData.i_magicPassLevel.ToString();
-        i_manaUsed = PlayerData.i_magicPassManaExp;
-        tmp_manaLeftToNextLevel.text = i_manaUsed + "/" + i_manaToUseToReachNextLevel;
+        PlayerData.i_magicPassManaExp = i_manaUsed;
+        tmp_manaLeftToNextLevel.text = PlayerData.i_magicPassManaExp + "/" + i_manaToUseToReachNextLevel;
+
+        // Move Content panel to current level
+        float contentPanelYPos = rewardsContentPanel.transform.position.y - (f_moveDifferenceBetwenLevels * PlayerData.i_magicPassLevel);
+        rewardsContentPanel.transform.position = new Vector3(rewardsContentPanel.transform.position.x,
+            contentPanelYPos,
+            rewardsContentPanel.transform.position.z);
     }
     IEnumerator UpdateCurrentPassLevelAndExp()
     {
+        while (i_manaUsed >= i_manaToUseToReachNextLevel)
+        {
+            // Calculate current level and current mana used and mana to use
+            i_manaToUseToReachNextLevel = i_baseManaToReachNextLvl + PlayerData.i_magicPassLevel * 10;
+            i_manaUsed -= i_manaToUseToReachNextLevel; // reduce mana used according to mana required to next lvl
+            PlayerData.i_magicPassLevel++;
+        }
+
         // If mana used is lower than mana required to use to next level STOP
         if (i_manaUsed < i_manaToUseToReachNextLevel)
         {
@@ -88,14 +111,7 @@ public class SeasonPassManager : MonoBehaviour
             OnMagicPassLevelUpdated?.Invoke(this, EventArgs.Empty);
             yield return null;
         }
-        while (i_manaUsed >= i_manaToUseToReachNextLevel)
-        {
-            // Calculate current level and current mana used and mana to use
-            i_manaToUseToReachNextLevel = i_baseManaToReachNextLvl + PlayerData.i_magicPassLevel * 10;
-            i_manaUsed -= i_manaToUseToReachNextLevel; // reduce mana used according to mana required to next lvl
-            PlayerData.i_magicPassLevel++;
-            yield return null;
-        }
+        
     }
     #endregion
 
@@ -115,7 +131,8 @@ public class SeasonPassManager : MonoBehaviour
         while (f_currentPlayerManaDisplaying != f_newManaEnergy)
         {
             f_currentPlayerManaDisplaying = Mathf.MoveTowards(f_currentPlayerManaDisplaying, f_newManaEnergy, rate * Time.deltaTime);
-            tmp_playerManaEnergy.text = f_currentPlayerManaDisplaying.ToString();
+            int manaRounded = (int)f_currentPlayerManaDisplaying;
+            tmp_playerManaEnergy.text = manaRounded.ToString();
             yield return null;
         }
     }
@@ -126,9 +143,32 @@ public class SeasonPassManager : MonoBehaviour
         while (f_currentPlayerManaKeysDisplaying != f_newManaKeys)
         {
             f_currentPlayerManaKeysDisplaying = Mathf.MoveTowards(f_currentPlayerManaKeysDisplaying, f_newManaKeys, rate * Time.deltaTime);
-            tmp_playerManaKeys.text = f_currentPlayerManaKeysDisplaying.ToString();
+            int keysRounded = (int)f_currentPlayerManaKeysDisplaying;
+            tmp_playerManaKeys.text = keysRounded.ToString();
             yield return null;
         }
+    }
+    #endregion
+
+    #region SFXs Methods
+    internal void PlayCollectManaEnergy()
+    {
+        aS_sceneSFx.PlayOneShot(aC_collectManaEnergy);
+    }
+    internal void PlayCollectManaKeys()
+    {
+        aS_sceneSFx.PlayOneShot(aC_collectManaKeys);
+    }
+    internal void PlayCollectFeaturedSpell()
+    {
+        aS_sceneSFx.PlayOneShot(aC_collecFeaturedSpell);
+    }
+    #endregion
+
+    #region Extra Methods
+    public void ShowFeaturedSpellPanel()
+    {
+        featuredSpell_animator.SetBool(i_animatorString, true);
     }
     #endregion
 }

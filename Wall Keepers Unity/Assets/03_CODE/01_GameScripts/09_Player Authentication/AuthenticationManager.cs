@@ -11,6 +11,7 @@ public class AuthenticationManager : MonoBehaviour
     [SerializeField] GameObject go_loginPanel;
     [SerializeField] GameObject go_startButton;
     public TextMeshProUGUI tmp_playerID;
+    public static bool b_dataAlreadyLoadedFromCloud = false;
 
     bool b_dataFromCloudLoaded;
     private void Start()
@@ -20,7 +21,7 @@ public class AuthenticationManager : MonoBehaviour
             print("Player is Sign in");
             // Hide Log in Objects
             go_loginPanel.SetActive(false);
-            go_startButton.SetActive(true);
+            //go_startButton.SetActive(true);
             //script_saveData.AssignDataAndSave();
         }
         else
@@ -31,7 +32,7 @@ public class AuthenticationManager : MonoBehaviour
                 print("Player is Logged In as Guest");
                 script_playerAccountDemo.Guest_SignIn();
                 go_loginPanel.SetActive(false);
-                go_startButton.SetActive(true);
+                //go_startButton.SetActive(true);
             }
             else
             {
@@ -61,6 +62,11 @@ public class AuthenticationManager : MonoBehaviour
             {
                 tmp_playerID.text = AuthenticationService.Instance.PlayerId;
             }
+        }
+
+        if (b_dataAlreadyLoadedFromCloud)
+        {
+            go_startButton.SetActive(true);
         }
 
     }

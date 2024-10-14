@@ -352,6 +352,7 @@ public class SaveData : MonoBehaviour
 
 
         print("All data loaded");
+        AuthenticationManager.b_dataAlreadyLoadedFromCloud = true;
     }
     #endregion
 

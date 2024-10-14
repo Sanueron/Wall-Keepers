@@ -8,8 +8,9 @@ public class MagicPassRewardBox : MonoBehaviour
     [SerializeField] private int i_passLevel;
     private enum AccessType { Free, Premium}
     [SerializeField] private AccessType e_accesstype;
-    private enum RewardType { Mana, Keys }
+    private enum RewardType { Mana, Keys, FeaturedSpell }
     [SerializeField] private RewardType e_rewardType;
+    [Tooltip("In case of Featured Spell Reward, Reward amount indicates Spell ID")]
     [SerializeField] private int i_rewardAmount;
 
     [Header("UI Box Variables")]
@@ -32,7 +33,6 @@ public class MagicPassRewardBox : MonoBehaviour
     private void Script_seasonPassManager_OnMagicPassLevelUpdated(object sender, System.EventArgs e)
     {
         UpdateState();
-        print(i_passLevel);
     }
     #endregion
     #region Local Methods
@@ -75,10 +75,20 @@ public class MagicPassRewardBox : MonoBehaviour
         {
             case RewardType.Mana:
                 PlayerData.i_mana += i_rewardAmount;
+                script_seasonPassManager.PlayCollectManaEnergy();
+                script_seasonPassManager.UpdateManaEnergyCurrency();
                 break;
 
             case RewardType.Keys:
                 PlayerData.i_keys += i_rewardAmount;
+                script_seasonPassManager.PlayCollectManaKeys();
+                script_seasonPassManager.UpdateManaKeysCurrency();
+                break;
+
+            case RewardType.FeaturedSpell:
+                // MARK SPELL as OBTAINED
+                PlayerData.b_spellCardObtained[i_rewardAmount] = true;
+                script_seasonPassManager.PlayCollectFeaturedSpell();
                 break;
         }
 

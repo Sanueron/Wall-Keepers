@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: S5_Inferno_10
   m_EditorClassIdentifier: 
   i_id: 10
+  Description: 
   e_spellType: 0
   i_spellStarsTier: 5
   i_mana_cost: 5
@@ -20,20 +21,24 @@ MonoBehaviour:
   f_duration: 0
   f_projectileSpeed: 0
   f_resistance: 0
-  requiredElementalRune: {fileID: 0}
+  requiredElementalRune: {fileID: 11400000, guid: b5ee84b6f16ee1644953e2c67339c918, type: 2}
   _card_Sprite: {fileID: 21300000, guid: 166d0bb484eb4fc4fbc3c53ab0e86dc5, type: 3}
   _onField_Sprite: {fileID: 0}
   spellPrefab: {fileID: 0}
   castClip: {fileID: 0}
   impactClip: {fileID: 0}
   i_starLevel: 1
+  spr_spellRequiredCard_1: {fileID: 0}
+  spr_spellRequiredCard_2: {fileID: 0}
+  i_spellRequired_1_Id: 0
+  i_spellRequired_2_Id: 0
+  f_slowDown_value: 0
+  f_attackInterval: 0
   f_repeatingDmgCoolDown: 0
   e_CastingType: 0
   e_Effect: 0
   e_Element: 0
   e_2Element: 0
-  Description: 
-  f_attackInterval: 0
   b_isMerged: 0
   fusionSprite1: {fileID: 0}
   fusionSprite2: {fileID: 0}
