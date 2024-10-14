@@ -126,7 +126,10 @@ public class SaveData : MonoBehaviour
           {"currentWizzardPassBought", PlayerData.b_wizzardPassBought},
           {"seasonPassBoughtID", PlayerData.i_lastSeasonPassBought},
           {"lastDayLogInShop", PlayerData.i_lastDayLogInShop},
-          {"lastDayLogInMainMenu", PlayerData.i_lastDayLogInMainMenu}
+          {"lastDayLogInMainMenu", PlayerData.i_lastDayLogInMainMenu},
+          {"i_magicPassManaExp", PlayerData.i_magicPassManaExp},
+          {"i_magicPassLevel", PlayerData.i_magicPassLevel},
+          {"b_magicPassRewardClaimed", PlayerData.b_magicPassRewardClaimed},
         };
         var result = await CloudSaveService.Instance.Data.Player.SaveAsync(playerCurrencies);
         Debug.Log($"Saved data {string.Join(',', playerCurrencies)}");
@@ -140,7 +143,8 @@ public class SaveData : MonoBehaviour
           "EndlessWavesMaxRound", "b_firstDataSave", "gamesPlayed_DailyMissionCount", "MakeOnePull_DailyMission", "improveOneSpell_DailyMission",
           "allMissionsCompleted_DailyMission", "dailyMissionOneClaimed", "dailyMissionTwoClaimed", "dailyMissionThreeClaimed", "dailyMissionFourClaimed",
           "dailyMissionFiveClaimed", "levelsCompleteStatus", "tutorialsCompleteStatus", "elementalRunesInStock", "spellInShopBoughtAlready", "shopBuyableERunes",
-          "runesLeftInShop", "removeAdsState", "currentWizzardPassBought", "seasonPassBoughtID", "lastDayLogInShop", "lastDayLogInMainMenu"
+          "runesLeftInShop", "removeAdsState", "currentWizzardPassBought", "seasonPassBoughtID", "lastDayLogInShop", "lastDayLogInMainMenu",
+          "i_magicPassManaExp","i_magicPassLevel","b_magicPassRewardClaimed",
         });
 
         // Mana Energy (Int)
@@ -331,10 +335,22 @@ public class SaveData : MonoBehaviour
         }
         // Last day log in in Main Menu scene (int)
         if (playerData.TryGetValue("lastDayLogInMainMenu", out var lastDayLogInMainMenu))
+        #region Magic Pass Data
+        if (playerData.TryGetValue("i_magicPassManaExp", out var i_magicPassManaExp))
         {
-            //Debug.Log($"lastDayLogInMainMenu value: {lastDayLogInMainMenu.Value.GetAs<int>()}");
-            PlayerData.i_lastDayLogInMainMenu = lastDayLogInMainMenu.Value.GetAs<int>();
+            PlayerData.i_magicPassManaExp = i_magicPassManaExp.Value.GetAs<int>();
         }
+        if (playerData.TryGetValue("i_magicPassLevel", out var i_magicPassLevel))
+        {
+            PlayerData.i_magicPassLevel = i_magicPassLevel.Value.GetAs<int>();
+        }
+        if (playerData.TryGetValue("b_magicPassRewardClaimed", out var b_magicPassRewardClaimed))
+        {
+            PlayerData.b_magicPassRewardClaimed = b_magicPassRewardClaimed.Value.GetAs<bool[]>();
+        }
+        #endregion
+
+
         print("All data loaded");
     }
     #endregion

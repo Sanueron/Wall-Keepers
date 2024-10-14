@@ -41,7 +41,6 @@ public class MagicPassRewardBox : MonoBehaviour
         switch (e_accesstype)
         {
             case AccessType.Free:
-                go_premiumRewardBlockPanel.SetActive(false);
                 break;
 
             case AccessType.Premium:
