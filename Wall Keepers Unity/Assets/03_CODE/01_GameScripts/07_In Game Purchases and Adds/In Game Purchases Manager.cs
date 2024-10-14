@@ -96,19 +96,26 @@ public class InGamePurchasesManager : MonoBehaviour, IDetailedStoreListener
     IStoreController m_StoreController;
     public ConsumableItem consumableItem_5000Mana;
     public ConsumableItem consumableItem_30000Mana;
-    public NonConsumableItem nonConsumableItem_RemoveAds;
+    public NonConsumableItem nonConsumableItem_BuyPassLevels;
     public SubscriptionItem subscriptionItem_seasonWizzardPass; // elite pass
     #endregion
 
     #region UI Variables to assign in Inspector
     [SerializeField] TextMeshProUGUI tmp_playerMana;
+    [Header("Premium Pass")]
+    [SerializeField] Animator _animatorPremiumPassPurchased;
+    [SerializeField] Animator _animatorPassLevelsPurchased;
+    int i_animatorString = Animator.StringToHash("Visible");
+    [SerializeField] GameObject go_purchasePremiumPassButton, go_purchasePassLevelsButton;
+    [SerializeField] TextMeshProUGUI tmp_passLevelDisplay;
     #endregion
 
     #region Control Variables
-    float f_playerCurrentMana;
+    float f_playerCurrentMana, f_currentPassLevel;
     #endregion
 
     #region Purchase Complete SFXs
+    [Header("Audio")]
     [SerializeField] AudioSource aS_sfxs;
     [SerializeField] AudioClip aC_purchasedComplete;
     #endregion
@@ -131,6 +138,14 @@ public class InGamePurchasesManager : MonoBehaviour, IDetailedStoreListener
         
 
         SetUpBuilder();
+
+        // Check if Premium pass already purchased
+        if (PlayerData.b_premiumPassPurchased)
+        {
+            // Hide buy pass button and show buy pass levels button
+            go_purchasePremiumPassButton.gameObject.SetActive(false);
+            go_purchasePassLevelsButton.gameObject.SetActive(true);
+        }
     }
 
     #endregion
@@ -144,7 +159,7 @@ public class InGamePurchasesManager : MonoBehaviour, IDetailedStoreListener
         // Set up products
         builder.AddProduct(consumableItem_5000Mana.s_Id, ProductType.Consumable);
         builder.AddProduct(consumableItem_30000Mana.s_Id, ProductType.Consumable);
-        builder.AddProduct(nonConsumableItem_RemoveAds.s_Id, ProductType.NonConsumable);
+        builder.AddProduct(nonConsumableItem_BuyPassLevels.s_Id, ProductType.NonConsumable);
         builder.AddProduct(subscriptionItem_seasonWizzardPass.s_Id, ProductType.Subscription);
 
         // Initialize
@@ -156,6 +171,61 @@ public class InGamePurchasesManager : MonoBehaviour, IDetailedStoreListener
     public void TryPurchase_Buy5000Mana()
     {
         m_StoreController.InitiatePurchase(consumableItem_5000Mana.s_Id);
+    }
+    public void BuyPremiumPass() // Price 4,99€
+    {
+        // Play Purchased complete SFX
+        aS_sfxs.PlayOneShot(aC_purchasedComplete);
+        // Mark pass as purhased
+        PlayerData.b_premiumPassPurchased = true;
+        // Show visual feedback
+        _animatorPremiumPassPurchased.SetBool(i_animatorString, true);
+        // Update Window state to purchased
+        StartCoroutine(SwapButtonsAfterPremiumPassPurchased());
+
+        SaveData.instance.AssignDataAndSave();
+    }
+    public void ClosePremiumPassPurchasedPanel()
+    {
+        _animatorPremiumPassPurchased.SetBool(i_animatorString, false);
+    }
+    IEnumerator SwapButtonsAfterPremiumPassPurchased()
+    {
+        yield return new WaitForSeconds(1);
+        go_purchasePremiumPassButton.gameObject.SetActive(false);
+        go_purchasePassLevelsButton.gameObject.SetActive(true);
+    }
+    public void Buy10PassLevels()
+    {
+        int i_levelsBought = 10;
+        // Play Purchased complete SFX
+        aS_sfxs.PlayOneShot(aC_purchasedComplete);
+        // Store Previous Level before buying
+        f_currentPassLevel = PlayerData.i_magicPassLevel;
+        // Mark pass as purhased
+        PlayerData.i_magicPassLevel += i_levelsBought;
+        // Show visual feedback
+        _animatorPassLevelsPurchased.SetBool(i_animatorString, true);
+        StartCoroutine(ShowLevelsIncreased(PlayerData.i_magicPassLevel));
+
+        SaveData.instance.AssignDataAndSave();
+    }
+    IEnumerator ShowLevelsIncreased(float f_newPassLevel)
+    {
+        yield return new WaitForSeconds(.5f);
+
+        float f_duration = 1f;
+        var rate = Mathf.Abs(f_newPassLevel - f_currentPassLevel) / f_duration;
+        while (f_currentPassLevel != f_newPassLevel)
+        {
+            f_currentPassLevel = Mathf.MoveTowards(f_currentPassLevel, f_newPassLevel, rate * Time.deltaTime);
+            tmp_passLevelDisplay.text = ((int)f_currentPassLevel).ToString();
+            yield return null;
+        }
+    }
+    public void ClosePassLevelsPurhcasedPanel()
+    {
+        _animatorPassLevelsPurchased.SetBool(i_animatorString, false);
     }
     public void Buy5000Mana() // Price 0,99€
     {
@@ -195,7 +265,7 @@ public class InGamePurchasesManager : MonoBehaviour, IDetailedStoreListener
 
     public void TryPurchase_RemoveAds()
     {
-        m_StoreController.InitiatePurchase(nonConsumableItem_RemoveAds.s_Id);
+        m_StoreController.InitiatePurchase(nonConsumableItem_BuyPassLevels.s_Id);
     }
     private void BuyRemoveAds()
     {
@@ -289,14 +359,15 @@ public class InGamePurchasesManager : MonoBehaviour, IDetailedStoreListener
         {
             Buy30000Mana();
         }
-        else if(product.definition.id == nonConsumableItem_RemoveAds.s_Id)
+        else if(product.definition.id == nonConsumableItem_BuyPassLevels.s_Id)
         {
-            BuyRemoveAds();
+            Buy10PassLevels();
         }
         else if(product.definition.id == subscriptionItem_seasonWizzardPass.s_Id)
         {
-            UnlockWizzardPassAccess();
+            BuyPremiumPass();
         }
+
 
         // To close
         return PurchaseProcessingResult.Complete;
@@ -313,7 +384,7 @@ public class InGamePurchasesManager : MonoBehaviour, IDetailedStoreListener
         m_StoreController = controller;
 
         // Additional checks to avoid hacking. Checks if player has a receipt
-        CheckIfNoAdsPayed(nonConsumableItem_RemoveAds.s_Id);
+        CheckIfNoAdsPayed(nonConsumableItem_BuyPassLevels.s_Id);
     }
 
     public void OnPurchaseFailed(Product product, PurchaseFailureDescription failureDescription)

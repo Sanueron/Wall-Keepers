@@ -45,6 +45,10 @@ public class MagicPassRewardBox : MonoBehaviour
 
             case AccessType.Premium:
                 // Check if Premium Pass Purchased
+                if (PlayerData.b_premiumPassPurchased)
+                {
+                    go_premiumRewardBlockPanel.SetActive(false);
+                }
                 break;
         }
 

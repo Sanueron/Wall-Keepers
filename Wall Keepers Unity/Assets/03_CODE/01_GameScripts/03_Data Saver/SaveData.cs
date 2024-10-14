@@ -130,6 +130,7 @@ public class SaveData : MonoBehaviour
           {"i_magicPassManaExp", PlayerData.i_magicPassManaExp},
           {"i_magicPassLevel", PlayerData.i_magicPassLevel},
           {"b_magicPassRewardClaimed", PlayerData.b_magicPassRewardClaimed},
+          {"b_premiumPassPurchased", PlayerData.b_premiumPassPurchased},
         };
         var result = await CloudSaveService.Instance.Data.Player.SaveAsync(playerCurrencies);
         Debug.Log($"Saved data {string.Join(',', playerCurrencies)}");
@@ -144,19 +145,17 @@ public class SaveData : MonoBehaviour
           "allMissionsCompleted_DailyMission", "dailyMissionOneClaimed", "dailyMissionTwoClaimed", "dailyMissionThreeClaimed", "dailyMissionFourClaimed",
           "dailyMissionFiveClaimed", "levelsCompleteStatus", "tutorialsCompleteStatus", "elementalRunesInStock", "spellInShopBoughtAlready", "shopBuyableERunes",
           "runesLeftInShop", "removeAdsState", "currentWizzardPassBought", "seasonPassBoughtID", "lastDayLogInShop", "lastDayLogInMainMenu",
-          "i_magicPassManaExp","i_magicPassLevel","b_magicPassRewardClaimed",
+          "i_magicPassManaExp","i_magicPassLevel","b_magicPassRewardClaimed","b_premiumPassPurchased",
         });
 
         // Mana Energy (Int)
         if (playerData.TryGetValue("PlayerManaEnergy", out var playerSavedMana))
         {
-            Debug.Log($"PlayerManaEnergy value: {playerSavedMana.Value.GetAs<string>()}");
             PlayerData.i_mana = playerSavedMana.Value.GetAs<int>();
         }
         // Mana Keys (Int)
         if (playerData.TryGetValue("PlayerManaKeys", out var playerSavedManaKeys))
         {
-            Debug.Log($"PlayerManaKeys value: {playerSavedManaKeys.Value.GetAs<int>()}");
             PlayerData.i_keys = playerSavedManaKeys.Value.GetAs<int>();
         }
         // Spells Obtained (Array of bools)
@@ -347,6 +346,10 @@ public class SaveData : MonoBehaviour
         if (playerData.TryGetValue("b_magicPassRewardClaimed", out var b_magicPassRewardClaimed))
         {
             PlayerData.b_magicPassRewardClaimed = b_magicPassRewardClaimed.Value.GetAs<bool[]>();
+        }
+        if (playerData.TryGetValue("b_premiumPassPurchased", out var b_premiumPassPurchased))
+        {
+            PlayerData.b_premiumPassPurchased = b_premiumPassPurchased.Value.GetAs<bool>();
         }
         #endregion
 

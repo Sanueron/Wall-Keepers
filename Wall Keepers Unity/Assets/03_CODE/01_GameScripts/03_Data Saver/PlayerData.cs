@@ -64,6 +64,7 @@ public static class PlayerData
     #endregion
 
     #region Magic Pass Data
+    internal static bool b_premiumPassPurchased;
     internal static int i_magicPassManaExp = 0, i_magicPassLevel = 0;
     internal static bool[] b_magicPassRewardClaimed = new bool[51];
     #endregion

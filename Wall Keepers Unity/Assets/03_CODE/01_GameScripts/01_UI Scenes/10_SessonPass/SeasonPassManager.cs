@@ -15,7 +15,7 @@ public class SeasonPassManager : MonoBehaviour
     private int i_passMaxLevel = 50, i_passCurrentLevel = 0, 
         i_manaUsed, i_manaToUseToReachNextLevel, i_baseManaToReachNextLvl = 50;
     private float f_currentLevelBarFillAmount, f_currentPlayerManaDisplaying, f_currentPlayerManaKeysDisplaying;
-    float f_moveDifferenceBetwenLevels = 323;
+    float f_moveDifferenceBetwenLevels = 425;
 
     [Header("Scene UI variables")]
     [SerializeField] private RectTransform rewardsContentPanel;

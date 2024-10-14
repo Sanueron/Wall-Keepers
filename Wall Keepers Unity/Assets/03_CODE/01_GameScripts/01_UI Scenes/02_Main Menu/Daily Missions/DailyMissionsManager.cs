@@ -17,6 +17,8 @@ public class DailyMissionsManager : MonoBehaviour
     private void Start()
     {
         CheckIfNewDayAndUpdateDailyMissions();
+
+        SaveData.instance.AssignDataAndSave();
     }
     #endregion
 
