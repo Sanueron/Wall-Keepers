@@ -3574,7 +3574,7 @@ MonoBehaviour:
   - {fileID: 722197835}
   deckPosition_Transform: {fileID: 1782817001}
   listOfSpellsData:
-  - {fileID: 11400000, guid: ae21289ad7e55024c8506cb1aa404486, type: 2}
+  - {fileID: 11400000, guid: 6eabf3b8dcb217445bf1e02a0f9a0f2f, type: 2}
   - {fileID: 11400000, guid: 528fb03b778ef634bacd6d056b3505f1, type: 2}
   - {fileID: 11400000, guid: ac1f51fdb6b24d346b1dbf9269a0ef71, type: 2}
   - {fileID: 11400000, guid: ddcb41f80aec763419fec5ac480f8314, type: 2}
