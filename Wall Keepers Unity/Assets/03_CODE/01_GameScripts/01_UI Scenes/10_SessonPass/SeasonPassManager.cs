@@ -65,7 +65,8 @@ public class SeasonPassManager : MonoBehaviour
         // Increase Level
         i_passCurrentLevel += levelsIncreased;
         // Show level increase
-        StartCoroutine(IncreaseLevel(GetPassLevelNormalized()));
+        //StartCoroutine(IncreaseLevel(GetPassLevelNormalized()));
+        img_fillBar.fillAmount = GetPassLevelNormalized();
     }
     IEnumerator IncreaseLevel(float f_newLevelBarFillAmount)
     {

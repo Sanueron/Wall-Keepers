@@ -37,7 +37,7 @@ public class SaveData : MonoBehaviour
     public void AssignDataAndSave()
     {
         // Get data from PlayerData
-        playerData_Container.ContainerGetDataFromPlayerData();
+        //playerData_Container.ContainerGetDataFromPlayerData();
         // Save data to Json
         SaveToJson();
         // Save Data to Unity Cloud
@@ -59,7 +59,7 @@ public class SaveData : MonoBehaviour
         //LoadFromJson();
 
         // Pass saved data to PlayerData
-        playerData_Container.ContainerPassDataToPlayerData();
+        //playerData_Container.ContainerPassDataToPlayerData();
     }
     public void LoadFromJson()
     {
@@ -161,8 +161,8 @@ public class SaveData : MonoBehaviour
         // Spells Obtained (Array of bools)
         if (playerData.TryGetValue("SpellCardsObtained", out var SpellCardsObtained))
         {
-            //Debug.Log($"SpellCardsObtained value: {SpellCardsObtained.Value.GetAs<int>()}");
-            playerData_Container.b_spellCardObtained = SpellCardsObtained.Value.GetAs<bool[]>();
+            Debug.Log($"SpellCardsObtained value: {SpellCardsObtained.Value.GetAs<bool[]>()}");
+            PlayerData.b_spellCardObtained = SpellCardsObtained.Value.GetAs<bool[]>();
         }
         // Number of Spells Obtained of each spell (Array of ints)
         if (playerData.TryGetValue("NumberOfSpellsObtainedOfEachSpell", out var NumberOfSpellsObtainedOfEachSpell))

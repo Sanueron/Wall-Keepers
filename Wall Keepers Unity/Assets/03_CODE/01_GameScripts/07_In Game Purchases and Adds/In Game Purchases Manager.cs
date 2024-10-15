@@ -198,12 +198,18 @@ public class InGamePurchasesManager : MonoBehaviour, IDetailedStoreListener
     public void Buy10PassLevels()
     {
         int i_levelsBought = 10;
+        int i_passMaxLevel = 50;
         // Play Purchased complete SFX
         aS_sfxs.PlayOneShot(aC_purchasedComplete);
         // Store Previous Level before buying
         f_currentPassLevel = PlayerData.i_magicPassLevel;
         // Mark pass as purhased
         PlayerData.i_magicPassLevel += i_levelsBought;
+        // Check that not passed max level
+        if(PlayerData.i_magicPassLevel > i_passMaxLevel)
+        {
+            PlayerData.i_magicPassLevel = i_passMaxLevel;
+        }
         // Show visual feedback
         _animatorPassLevelsPurchased.SetBool(i_animatorString, true);
         StartCoroutine(ShowLevelsIncreased(PlayerData.i_magicPassLevel));
