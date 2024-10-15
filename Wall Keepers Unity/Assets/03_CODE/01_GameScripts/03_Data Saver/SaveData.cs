@@ -39,7 +39,7 @@ public class SaveData : MonoBehaviour
         // Get data from PlayerData
         //playerData_Container.ContainerGetDataFromPlayerData();
         // Save data to Json
-        SaveToJson();
+        //SaveToJson();
         // Save Data to Unity Cloud
         SaveDataToCloud();
     }
@@ -161,7 +161,6 @@ public class SaveData : MonoBehaviour
         // Spells Obtained (Array of bools)
         if (playerData.TryGetValue("SpellCardsObtained", out var SpellCardsObtained))
         {
-            Debug.Log($"SpellCardsObtained value: {SpellCardsObtained.Value.GetAs<bool[]>()}");
             PlayerData.b_spellCardObtained = SpellCardsObtained.Value.GetAs<bool[]>();
         }
         // Number of Spells Obtained of each spell (Array of ints)
@@ -282,7 +281,6 @@ public class SaveData : MonoBehaviour
         if (playerData.TryGetValue("tutorialsCompleteStatus", out var tutorialsCompleteStatus))
         {
             PlayerData.b_tutorialComplete = tutorialsCompleteStatus.Value.GetAs<bool[]>();
-            print(PlayerData.b_tutorialComplete);
         }
         // elemental Runes In Stock (array of int)
         if (playerData.TryGetValue("elementalRunesInStock", out var elementalRunesInStock))
@@ -334,6 +332,9 @@ public class SaveData : MonoBehaviour
         }
         // Last day log in in Main Menu scene (int)
         if (playerData.TryGetValue("lastDayLogInMainMenu", out var lastDayLogInMainMenu))
+        {
+            PlayerData.i_lastDayLogInMainMenu = lastDayLogInMainMenu.Value.GetAs<int>();
+        }
         #region Magic Pass Data
         if (playerData.TryGetValue("i_magicPassManaExp", out var i_magicPassManaExp))
         {

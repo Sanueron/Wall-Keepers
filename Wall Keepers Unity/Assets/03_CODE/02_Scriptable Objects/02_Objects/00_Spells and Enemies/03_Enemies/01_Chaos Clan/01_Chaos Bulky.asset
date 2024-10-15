@@ -16,7 +16,7 @@ MonoBehaviour:
   i_id: 1
   i_hp: 1000
   i_dmg: 500
-  f_speed: 0.5
+  f_speed: 0.7
   f_RageOfAction: 3
   f_projectailSpeed: 0
   i_manaEnergyReleased: 5
