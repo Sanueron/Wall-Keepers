@@ -16,15 +16,15 @@ MonoBehaviour:
   Description: 
   e_spellType: 0
   i_spellStarsTier: 5
-  i_mana_cost: 5
-  f_dmg: 0
-  f_duration: 0
-  f_projectileSpeed: 0
+  i_mana_cost: 6
+  f_dmg: 400
+  f_duration: 1
+  f_projectileSpeed: 1
   f_resistance: 0
   requiredElementalRune: {fileID: 11400000, guid: fed4aaf3e278ee447868e6cf2800cc52, type: 2}
   _card_Sprite: {fileID: 21300000, guid: d1fb47f9605859c4aaf33544c930c4d6, type: 3}
   _onField_Sprite: {fileID: 0}
-  spellPrefab: {fileID: 0}
+  spellPrefab: {fileID: 4633565840450321078, guid: 6bf7c20c97e86b248a341e1d66982a87, type: 3}
   castClip: {fileID: 0}
   impactClip: {fileID: 0}
   i_starLevel: 1
@@ -35,9 +35,9 @@ MonoBehaviour:
   f_slowDown_value: 0
   f_attackInterval: 0
   f_repeatingDmgCoolDown: 0
-  e_CastingType: 0
-  e_Effect: 0
-  e_Element: 0
+  e_CastingType: 2
+  e_Effect: 2
+  e_Element: 3
   e_2Element: 0
   b_isMerged: 0
   fusionSprite1: {fileID: 0}

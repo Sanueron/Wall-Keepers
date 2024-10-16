@@ -120,6 +120,7 @@ public class ShopManager : MonoBehaviour
         }
 
         AssignDataOfNewSpellsDisplayedInShop(); // Show Spells Displayed Data (Card art and cost)
+
     }
     private void CheckShopItemsState()
     {
@@ -159,6 +160,8 @@ public class ShopManager : MonoBehaviour
         for (int i = 0; i < PlayerData.shopBuyableSpells.Length; i++)
         {
             // Get Data Saved 
+            // get spell displayed Index in array
+            print(PlayerData.shopBuyableSpells[i]);
             arrayOf_displayedShopBuyableSpells[i] = allBuyableSpellsDataObjects[PlayerData.shopBuyableSpells[i]];
             allBuyableSpellsDataObjects.RemoveAt(PlayerData.shopBuyableSpells[i]);
 

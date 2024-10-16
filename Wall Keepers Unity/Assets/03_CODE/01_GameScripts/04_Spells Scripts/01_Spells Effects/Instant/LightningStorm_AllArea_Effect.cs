@@ -8,6 +8,7 @@ public class LightningStorm_AllArea_Effect : BaseSpellsEffects
     [SerializeField] private List<GameObject> go_oneThunder = new List<GameObject>();
     [SerializeField] private GameObject go_CastBorders;
     #endregion
+
     #region BaseSpells Methods
     public override void ActivateEffect(Vector3 starPosition, Vector3 target)
     {
@@ -19,6 +20,7 @@ public class LightningStorm_AllArea_Effect : BaseSpellsEffects
         gameObject.transform.position = target;
     }
     #endregion
+
     #region Unity Life Cycle
     private void FixedUpdate()
     {
@@ -39,6 +41,7 @@ public class LightningStorm_AllArea_Effect : BaseSpellsEffects
         }
     }
     #endregion
+
     #region LStorm Methods
     internal IEnumerator CastInBattlefield()//First, we cast the storm for the determined duration.
     {
@@ -67,10 +70,6 @@ public class LightningStorm_AllArea_Effect : BaseSpellsEffects
                 // Stop loop to activate effect once
                 break;
             }
-            else
-            {
-                
-            }
         }
     }
     private Vector3 GenerateRandomPosition()
@@ -93,12 +92,14 @@ public class LightningStorm_AllArea_Effect : BaseSpellsEffects
 
     }
     #endregion
+
     #region SFX Play Methods
     internal void StopLoopSfx()
     {
         aS_spellAudioSource.Stop();
     }
     #endregion
+
     #region Collisions
     private void  OnTriggerEnter2D(Collider2D collision)
     {

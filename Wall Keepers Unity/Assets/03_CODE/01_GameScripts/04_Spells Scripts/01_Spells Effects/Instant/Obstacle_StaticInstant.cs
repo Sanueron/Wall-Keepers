@@ -11,6 +11,7 @@ public class Obstacle_StaticInstant : BaseSpellsEffects
     private float f_flinchForce = 3.5f;
     private float f_stopEnemyDelay = 0.3f;
     #endregion
+
     #region Unity Life Cycle
     private void FixedUpdate()
     {
@@ -25,6 +26,7 @@ public class Obstacle_StaticInstant : BaseSpellsEffects
         b_effectFinished = false;
     }
     #endregion
+
     #region Inherit Methods
     public override void ActivateEffect(Vector3 starPosition, Vector3 target)
     {
@@ -37,6 +39,7 @@ public class Obstacle_StaticInstant : BaseSpellsEffects
         gameObject.transform.position = target;
     }
     #endregion
+
     #region RockWall Methods
     // When enemies collide with the wall, they stop and begin attacking it.
     public void Flinch()
@@ -69,6 +72,7 @@ public class Obstacle_StaticInstant : BaseSpellsEffects
       
     }
     #endregion
+
     #region Colliders
     private void OnTriggerEnter2D(Collider2D collision)
     {

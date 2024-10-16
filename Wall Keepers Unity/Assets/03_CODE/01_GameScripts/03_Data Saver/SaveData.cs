@@ -145,7 +145,7 @@ public class SaveData : MonoBehaviour
           "allMissionsCompleted_DailyMission", "dailyMissionOneClaimed", "dailyMissionTwoClaimed", "dailyMissionThreeClaimed", "dailyMissionFourClaimed",
           "dailyMissionFiveClaimed", "levelsCompleteStatus", "tutorialsCompleteStatus", "elementalRunesInStock", "spellInShopBoughtAlready", "shopBuyableERunes",
           "runesLeftInShop", "removeAdsState", "currentWizzardPassBought", "seasonPassBoughtID", "lastDayLogInShop", "lastDayLogInMainMenu",
-          "i_magicPassManaExp","i_magicPassLevel","b_magicPassRewardClaimed","b_premiumPassPurchased",
+          "i_magicPassManaExp","i_magicPassLevel","b_magicPassRewardClaimed","b_premiumPassPurchased","shopBuyableSpells"
         });
 
         // Mana Energy (Int)
@@ -334,6 +334,11 @@ public class SaveData : MonoBehaviour
         if (playerData.TryGetValue("lastDayLogInMainMenu", out var lastDayLogInMainMenu))
         {
             PlayerData.i_lastDayLogInMainMenu = lastDayLogInMainMenu.Value.GetAs<int>();
+        }
+        // Spells available to buy in shop (int)
+        if (playerData.TryGetValue("shopBuyableSpells", out var shopBuyableSpells))
+        {
+            PlayerData.shopBuyableSpells = shopBuyableSpells.Value.GetAs<int[]>();
         }
         #region Magic Pass Data
         if (playerData.TryGetValue("i_magicPassManaExp", out var i_magicPassManaExp))

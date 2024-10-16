@@ -13804,6 +13804,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4854592891296396099, guid: 8c08375ddde817544acdc954caf1b352, type: 3}
+      propertyPath: e_levelType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4854592891296396099, guid: 8c08375ddde817544acdc954caf1b352, type: 3}
       propertyPath: script_roundsManager
       value: 
       objectReference: {fileID: 650083244}

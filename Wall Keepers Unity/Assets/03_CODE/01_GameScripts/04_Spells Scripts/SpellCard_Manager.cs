@@ -150,6 +150,7 @@ public class SpellCard_Manager : MonoBehaviour
                 // Activate effect
                 listOf_spellEffects[i].gameObject.SetActive(true);
                 // Stop loop to activate effect once
+                print("Se lanza hechizo");
                 break;
             }
             else
