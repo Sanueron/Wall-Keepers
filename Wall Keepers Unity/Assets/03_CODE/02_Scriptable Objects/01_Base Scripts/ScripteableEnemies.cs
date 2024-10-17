@@ -20,6 +20,6 @@ public class ScripteableEnemies : ScriptableObject
     [Header("Types")]
     public Clan e_Clan;
 
-    public enum ElementalType { None, Earth, Fire, Water };
+    public enum ElementalType { None, Earth, Fire, Water, Wind, Lighting };
     public ElementalType e_ElementalType;
 }

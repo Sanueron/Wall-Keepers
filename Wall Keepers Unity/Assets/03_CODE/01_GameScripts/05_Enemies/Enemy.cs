@@ -305,7 +305,21 @@ public class Enemy : MonoBehaviour
     internal void ReceiveDamage(int i_damageReceived)
     {
         // Check for elemental match for damage bonus or damage reduction
-
+        switch (baseStats.e_ElementalType)
+        {
+            case ScripteableEnemies.ElementalType.None:
+                break;
+            case ScripteableEnemies.ElementalType.Earth: // Weak to Fire, Strong to Lighting
+                break;
+            case ScripteableEnemies.ElementalType.Fire: // Weak to Water, Strong to Wind
+                break;
+            case ScripteableEnemies.ElementalType.Water: // Weak to Lighting, Strong to Fire
+                break;
+            case ScripteableEnemies.ElementalType.Wind: // None 
+                break;
+            case ScripteableEnemies.ElementalType.Lighting: // Weak to earth, Strong to Water
+                break;
+        }
 
         i_hp -= i_damageReceived;
         tmp_damageTaken.text = i_damageReceived.ToString();
