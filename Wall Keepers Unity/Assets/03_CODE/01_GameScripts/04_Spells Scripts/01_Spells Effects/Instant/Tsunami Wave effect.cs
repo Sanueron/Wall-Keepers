@@ -26,13 +26,13 @@ public class TsunamiWaveeffect : BaseSpellsEffects
                     effect_Animator.SetTrigger(i_EnterEnd);
                     f_counter = 0f;
                     b_startMoving = false;
+                    print("termina la ola");
                 }
                 else
                 {
                     // Move wave forward
                     var step = f_speed * Time.deltaTime;
                     transform.position = Vector3.MoveTowards(transform.position, targetToMove, step);
-                    print("Is moving "+ transform.position + " to " + targetToMove);
                 }
             }
         }
