@@ -334,7 +334,11 @@ public class Enemy : MonoBehaviour
     #region Remove from Battlefield and Reset Methods
     internal void RemoveFromBattlefield()
     {
-        gameObject.SetActive(false); // Disactivate enemy
+        if (gameObject.activeSelf)
+        {
+            gameObject.transform.parent = null; // To avoid weird error with wave
+            gameObject.SetActive(false); // Disactivate enemy
+        }
     }
     internal void ResetEnemy()
     {

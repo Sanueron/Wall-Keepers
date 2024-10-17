@@ -13,13 +13,14 @@ MonoBehaviour:
   m_Name: S5_Tsunami_18
   m_EditorClassIdentifier: 
   i_id: 18
-  Description: 
+  Description: A huge Wave starts from the frontier hitting and pushing back all
+    enemies in its way.
   e_spellType: 0
   i_spellStarsTier: 5
   i_mana_cost: 6
-  f_dmg: 400
-  f_duration: 1
-  f_projectileSpeed: 1
+  f_dmg: 100
+  f_duration: 2
+  f_projectileSpeed: 0
   f_resistance: 0
   requiredElementalRune: {fileID: 11400000, guid: fed4aaf3e278ee447868e6cf2800cc52, type: 2}
   _card_Sprite: {fileID: 21300000, guid: d1fb47f9605859c4aaf33544c930c4d6, type: 3}

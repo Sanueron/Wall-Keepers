@@ -8,6 +8,7 @@ public class TsunamiWaveeffect : BaseSpellsEffects
     #region Variables
     private bool b_startMoving;
     [SerializeField] internal Vector3 targetToMove, startPosition, v3_correctSizeWithNoParent;
+    [SerializeField] private float f_waveSpeed;
     #endregion
 
     #region Unity Life Cycle
@@ -26,12 +27,11 @@ public class TsunamiWaveeffect : BaseSpellsEffects
                     effect_Animator.SetTrigger(i_EnterEnd);
                     f_counter = 0f;
                     b_startMoving = false;
-                    print("termina la ola");
                 }
                 else
                 {
                     // Move wave forward
-                    var step = f_speed * Time.deltaTime;
+                    var step = f_waveSpeed * Time.deltaTime;
                     transform.position = Vector3.MoveTowards(transform.position, targetToMove, step);
                 }
             }
@@ -51,7 +51,6 @@ public class TsunamiWaveeffect : BaseSpellsEffects
     {
         SetTarget(target);
         b_spellEffectActiveInBattlefield = true;
-        print(transform.name);
         // Reset size
         transform.localScale = v3_correctSizeWithNoParent;
     }
@@ -70,7 +69,13 @@ public class TsunamiWaveeffect : BaseSpellsEffects
         {
             if (enemyInsideWave != null) 
             {
+                // Option 1
                 enemyInsideWave.transform.parent = null;
+                enemyInsideWave.transform.localScale = new Vector3(1, 1, 1);
+
+                // Option 2 (Pulls enemies to its center
+                //enemyInsideWave.RestoreTarget();
+                //enemyInsideWave.OutOfAreaApplyingForceToEnemy();
             }
         }
     }
@@ -92,6 +97,18 @@ public class TsunamiWaveeffect : BaseSpellsEffects
             // Deal damage once to enemies
             Enemy enemyHitted = collision.gameObject.GetComponent<Enemy>();
             enemyHitted.ReceiveDamage((int)f_damage);
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == i_EnemyLayer)
+        {
+            collision.transform.parent = null;
+            collision.transform.localScale = new Vector3(1, 1, 1);
+
+            //Enemy enemyHitted = collision.gameObject.GetComponent<Enemy>();
+            //enemyHitted.RestoreTarget();
+            //enemyHitted.OutOfAreaApplyingForceToEnemy();
         }
     }
     #endregion
