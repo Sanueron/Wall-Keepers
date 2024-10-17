@@ -18,7 +18,7 @@ MonoBehaviour:
   e_spellType: 0
   i_spellStarsTier: 5
   i_mana_cost: 6
-  f_dmg: 100
+  f_dmg: 200
   f_duration: 2
   f_projectileSpeed: 0
   f_resistance: 0

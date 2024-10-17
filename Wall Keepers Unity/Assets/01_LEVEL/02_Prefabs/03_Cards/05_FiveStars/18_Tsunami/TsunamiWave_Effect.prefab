@@ -173,7 +173,7 @@ MonoBehaviour:
   effect_Animator: {fileID: 1228359561642896791}
   enemiesScripts_List: []
   aS_spellAudioSource: {fileID: 806654839953606483}
-  aC_spellCastSfx: {fileID: 0}
+  aC_spellCastSfx: {fileID: 8300000, guid: 14b5ab8397f5f2e49be11cec63040bb1, type: 3}
   aC_hitSfx: {fileID: 0}
   targetToMove: {x: 0, y: 1000, z: 0}
   startPosition: {x: 0, y: -6.77, z: 0}

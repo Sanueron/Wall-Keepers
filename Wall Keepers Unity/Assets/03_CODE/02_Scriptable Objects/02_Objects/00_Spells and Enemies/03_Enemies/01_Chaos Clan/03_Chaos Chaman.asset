@@ -23,4 +23,4 @@ MonoBehaviour:
   Description: 03_Chaos Chaman
   deathClip: {fileID: 0}
   e_Clan: 1
-  e_ElementalType: 0
+  e_ElementalType: 2

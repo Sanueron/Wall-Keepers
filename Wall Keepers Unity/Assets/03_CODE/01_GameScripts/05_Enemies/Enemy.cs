@@ -60,8 +60,12 @@ public class Enemy : MonoBehaviour
 
     #endregion
 
+    #region Inmunities
+    [Header("Inmunities")]
+    [SerializeField] internal bool b_inmuneToBeingPulledOrPushedByExternalForced;
+    #endregion
+
     #region Animations
-    [Header("Animations")]
     private int i_WalkHash = Animator.StringToHash("Walking"),
         i_AttackHash = Animator.StringToHash("Attack"),
         i_HitHash = Animator.StringToHash("ReceiveHit"),
@@ -300,6 +304,9 @@ public class Enemy : MonoBehaviour
     }
     internal void ReceiveDamage(int i_damageReceived)
     {
+        // Check for elemental match for damage bonus or damage reduction
+
+
         i_hp -= i_damageReceived;
         tmp_damageTaken.text = i_damageReceived.ToString();
         if (i_hp <= 0)

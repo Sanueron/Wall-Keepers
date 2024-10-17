@@ -92,10 +92,15 @@ public class TsunamiWaveeffect : BaseSpellsEffects
         {
             // Store enemies inside to later release them
             AddToEnemiesList(collision.gameObject.GetComponent<Enemy>());
-            // Set as child to move enemies with it
-            collision.transform.parent = transform;
-            // Deal damage once to enemies
             Enemy enemyHitted = collision.gameObject.GetComponent<Enemy>();
+
+            // Check if enemy is not inmune to being pull
+            if (!enemyHitted.b_inmuneToBeingPulledOrPushedByExternalForced)
+            {
+                // Set as child to move enemies with it
+                collision.transform.parent = transform;
+            }
+            // Deal damage once to enemies
             enemyHitted.ReceiveDamage((int)f_damage);
         }
     }
