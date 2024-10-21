@@ -25,7 +25,7 @@ public class ContinuousDmg_StaticInstant : BaseSpellsEffects
         {
             if (enemy.i_hp > 0)
             {
-                enemy.ReceiveDamage((int)f_damage);
+                enemy.ReceiveDamage((int)f_damage, e_spellElement);
             } 
         }
     }

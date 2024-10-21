@@ -101,7 +101,7 @@ public class TsunamiWaveeffect : BaseSpellsEffects
                 collision.transform.parent = transform;
             }
             // Deal damage once to enemies
-            enemyHitted.ReceiveDamage((int)f_damage);
+            enemyHitted.ReceiveDamage((int)f_damage, e_spellElement);
         }
     }
     private void OnTriggerExit2D(Collider2D collision)

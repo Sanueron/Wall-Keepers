@@ -16,6 +16,9 @@ public class BaseSpellsEffects : MonoBehaviour
     internal Transform spellCardParent;
    [SerializeField] internal List <Enemy> enemiesScripts_List = new List<Enemy>();
     protected int i_EnemyLayer = 10;
+    internal enum SpellElement { None, Fire, Earth, Water, Wind, Lighting };
+    [SerializeField] internal SpellElement e_spellElement;
+
     #endregion
 
     #region Animations
@@ -85,7 +88,7 @@ public class BaseSpellsEffects : MonoBehaviour
     {
         foreach (Enemy enemy in enemiesScripts_List)
         {
-            enemy.ReceiveDamage((int)f_damage);
+            enemy.ReceiveDamage((int)f_damage, e_spellElement);
         }
     }
 

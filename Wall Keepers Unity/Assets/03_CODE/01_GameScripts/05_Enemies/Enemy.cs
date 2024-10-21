@@ -302,7 +302,7 @@ public class Enemy : MonoBehaviour
     {
         b_beingAttracktedBySpell = false;
     }
-    internal void ReceiveDamage(int i_damageReceived)
+    internal void ReceiveDamage(int i_damageReceived, BaseSpellsEffects.SpellElement e_spellElement)
     {
         // Check for elemental match for damage bonus or damage reduction
         switch (baseStats.e_ElementalType)
@@ -310,14 +310,54 @@ public class Enemy : MonoBehaviour
             case ScripteableEnemies.ElementalType.None:
                 break;
             case ScripteableEnemies.ElementalType.Earth: // Weak to Fire, Strong to Lighting
+                if(e_spellElement == BaseSpellsEffects.SpellElement.Fire)
+                {
+                    // Damage x2
+                    i_damageReceived *= 2;
+                }
+                else if(e_spellElement == BaseSpellsEffects.SpellElement.Lighting)
+                {
+                    // Damage /2
+                    i_damageReceived /= 2;
+                }
                 break;
             case ScripteableEnemies.ElementalType.Fire: // Weak to Water, Strong to Wind
+                if (e_spellElement == BaseSpellsEffects.SpellElement.Water)
+                {
+                    // Damage x2
+                    i_damageReceived *= 2;
+                }
+                else if (e_spellElement == BaseSpellsEffects.SpellElement.Wind)
+                {
+                    // Damage /2
+                    i_damageReceived /= 2;
+                }
                 break;
             case ScripteableEnemies.ElementalType.Water: // Weak to Lighting, Strong to Fire
+                if (e_spellElement == BaseSpellsEffects.SpellElement.Lighting)
+                {
+                    // Damage x2
+                    i_damageReceived *= 2;
+                }
+                else if (e_spellElement == BaseSpellsEffects.SpellElement.Fire)
+                {
+                    // Damage /2
+                    i_damageReceived /= 2;
+                }
                 break;
             case ScripteableEnemies.ElementalType.Wind: // None 
                 break;
             case ScripteableEnemies.ElementalType.Lighting: // Weak to earth, Strong to Water
+                if (e_spellElement == BaseSpellsEffects.SpellElement.Earth)
+                {
+                    // Damage x2
+                    i_damageReceived *= 2;
+                }
+                else if (e_spellElement == BaseSpellsEffects.SpellElement.Water)
+                {
+                    // Damage /2
+                    i_damageReceived /= 2;
+                }
                 break;
         }
 

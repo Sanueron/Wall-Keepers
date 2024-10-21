@@ -123,7 +123,7 @@ public class Projectile : BaseSpellsEffects
     {
         foreach (Enemy enemy in enemiesScripts_List)
         {
-          enemy.ReceiveDamage((int)f_damage);
+          enemy.ReceiveDamage((int)f_damage, e_spellElement);
         }
     }
     #endregion

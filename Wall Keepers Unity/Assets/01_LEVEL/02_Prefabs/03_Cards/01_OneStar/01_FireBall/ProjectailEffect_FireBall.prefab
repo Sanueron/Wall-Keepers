@@ -81,6 +81,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 1d1924a735763b141bcb5a1a4a0e3ca8, type: 3}
     - target: {fileID: 8528019506986214660, guid: 308f6e3862f2c20448cfd58839c9e5c7, type: 3}
+      propertyPath: e_spellElement
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8528019506986214660, guid: 308f6e3862f2c20448cfd58839c9e5c7, type: 3}
       propertyPath: aC_spellCastSfx
       value: 
       objectReference: {fileID: 8300000, guid: 75fc791c48557f6428e07ec13b8ab381, type: 3}

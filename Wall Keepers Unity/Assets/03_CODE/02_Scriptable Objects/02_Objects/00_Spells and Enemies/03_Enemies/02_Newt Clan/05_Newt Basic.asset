@@ -23,4 +23,4 @@ MonoBehaviour:
   Description: Common Newt demonito.
   deathClip: {fileID: 0}
   e_Clan: 2
-  e_ElementalType: 0
+  e_ElementalType: 3

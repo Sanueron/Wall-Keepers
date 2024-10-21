@@ -13,6 +13,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 1d1924a735763b141bcb5a1a4a0e3ca8, type: 3}
     - target: {fileID: -2498564269224096355, guid: 0544668d66cf40b42889f2c2f47dfe5e, type: 3}
+      propertyPath: e_spellElement
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -2498564269224096355, guid: 0544668d66cf40b42889f2c2f47dfe5e, type: 3}
       propertyPath: aC_spellCastSfx
       value: 
       objectReference: {fileID: 8300000, guid: 9afa0b9d12b3bc64f88a5232e34b725a, type: 3}

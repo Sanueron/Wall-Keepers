@@ -219,6 +219,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   effect_Animator: {fileID: 6072970367001265856}
   enemiesScripts_List: []
+  e_spellElement: 3
   aS_spellAudioSource: {fileID: 273047206975966600}
   aC_spellCastSfx: {fileID: 8300000, guid: 77f0ac2484477f349ba897bd8cc34fa5, type: 3}
   aC_hitSfx: {fileID: 8300000, guid: 3c2d3732bf1ad2340a58165a00830c56, type: 3}

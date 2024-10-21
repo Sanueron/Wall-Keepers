@@ -9,6 +9,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -8391791005168630368, guid: 16a64cdb6f7ab5140ab2d251b6fb4155, type: 3}
+      propertyPath: e_spellElement
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8391791005168630368, guid: 16a64cdb6f7ab5140ab2d251b6fb4155, type: 3}
       propertyPath: aC_spellCastSfx
       value: 
       objectReference: {fileID: 8300000, guid: 8568d1eb29ed6ac4cbedf726b6456353, type: 3}

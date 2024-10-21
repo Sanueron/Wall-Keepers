@@ -27,7 +27,7 @@ public class OneLightningEffect : BaseSpellsEffects
         {
             foreach (Enemy enemy in enemiesScripts_List)
             {
-                enemy.ReceiveDamage((int)f_stormDmg);
+                enemy.ReceiveDamage((int)f_stormDmg, e_spellElement);
             }
         }
         #endregion
