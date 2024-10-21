@@ -13004,6 +13004,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2106314056715703463, guid: 0e2e8ce1c0db28242b0078ded00eb38c, type: 3}
+      propertyPath: m_text
+      value: Day 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2340587607564689965, guid: 0e2e8ce1c0db28242b0078ded00eb38c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -13054,9 +13058,17 @@ PrefabInstance:
 
 '
       objectReference: {fileID: 0}
+    - target: {fileID: 4648515839758439444, guid: 0e2e8ce1c0db28242b0078ded00eb38c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5879859301705550602, guid: 0e2e8ce1c0db28242b0078ded00eb38c, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5943603190338846214, guid: 0e2e8ce1c0db28242b0078ded00eb38c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6121282552174425733, guid: 0e2e8ce1c0db28242b0078ded00eb38c, type: 3}
       propertyPath: i_levelID

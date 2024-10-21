@@ -6,38 +6,34 @@ using UnityEngine;
 public class WizzardStudioManager : MonoBehaviour
 {
     #region Variables
-    [Header("Canvas")]
-    [SerializeField] Canvas canvas_bestiary, canvas_upgradeWall, canvas_upgradeMagic;
-    [SerializeField] TextMeshProUGUI text_playerMana_upgradeWall, text_playerMana_upgradeMagic;
+    [Header("Main UI Elements")]
+    [SerializeField] TextMeshProUGUI tmp_player_manaEnergy;
+    [SerializeField] TextMeshProUGUI tmp_player_manaKeys;
+
+    int i_animatorsString = Animator.StringToHash("Visible");
     #endregion
+
     #region Unity Life Cycle
     private void Start()
     {
-        text_playerMana_upgradeWall.text = PlayerData.i_mana.ToString();
-        text_playerMana_upgradeMagic.text = PlayerData.i_mana.ToString();
+        UpdateCurrencies();
     }
     #endregion
-    #region Canvas methods
-    public void CloseCanvas(Canvas canvas)
-    {
-        canvas.gameObject.SetActive(false); 
-    }
-    public void OpenBestiary()
-    {
-        canvas_bestiary.gameObject.SetActive(true); 
-    }
-    public void OpenUpgradeWall()
-    {
-        canvas_upgradeWall.gameObject.SetActive(true);
-    }
-    public void OpenUpgradeMagic()
-    {
-        canvas_upgradeMagic.gameObject.SetActive(true);
-    }
 
+    #region Currencies Related Methods
+    private void UpdateCurrencies()
+    {
+        tmp_player_manaEnergy.text = PlayerData.i_mana.ToString();
+        tmp_player_manaKeys.text = PlayerData.i_keys.ToString();
+    }
     #endregion
 
-
-
-
+    public void ShowIndicatedPanel(Animator selectedPanel)
+    {
+        selectedPanel.SetBool(i_animatorsString, true);
+    }
+    public void HideIndicatedPanel(Animator selectedPanel)
+    {
+        selectedPanel.SetBool(i_animatorsString, false);
+    }
 }

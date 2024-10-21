@@ -10,7 +10,7 @@ public class EnemyProjectile : MonoBehaviour
     [Header("Variables")]
     private float f_journeyLength;
     private Vector3 v3_origin, v3_target;
-    public bool b_startProjectileMovement;
+    public bool b_startProjectileMovement, b_damageAlreadyDealth;
     private float f_lerpValue = 0.0f;
     private float f_lerpSpeed;
     private int i_damage;
@@ -27,6 +27,7 @@ public class EnemyProjectile : MonoBehaviour
     [SerializeField] AudioClip aC_hitSfx;
     [SerializeField] AudioSource aS_projectailAudioSource;
     #endregion
+
     private void FixedUpdate()
     {
         if (LevelsGnralManager.b_stopLevel)
@@ -71,18 +72,24 @@ public class EnemyProjectile : MonoBehaviour
         f_journeyLength = 0;
         f_lerpSpeed = 0;
         f_lerpValue = 0;
+        b_damageAlreadyDealth = false;
     }
     internal void DoDamage()
     {
-        if(go_targetObject.GetComponent<WallManager>() != null) 
+        if (!b_damageAlreadyDealth)
         {
-            go_targetObject.GetComponent<WallManager>().ReceiveHit(i_damage);  
+            b_damageAlreadyDealth = true;
+            if (go_targetObject.GetComponent<WallManager>() != null)
+            {
+                go_targetObject.GetComponent<WallManager>().ReceiveHit(i_damage);
+            }
+
+            if (go_targetObject.GetComponent<Obstacle_StaticInstant>() != null)
+            {
+                go_targetObject.GetComponent<Obstacle_StaticInstant>().ReceiveDamage(i_damage);
+            }
         }
 
-        if (go_targetObject.GetComponent<Obstacle_StaticInstant>() != null)
-        {
-            go_targetObject.GetComponent<Obstacle_StaticInstant>().ReceiveDamage(i_damage);
-        }
     }
 
     internal void PlayHitSfx()

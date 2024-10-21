@@ -38,7 +38,7 @@ public class WallManager : MonoBehaviour
         f_wallLife = f_MaxWallLife;
     }
     //Method accessed by the enemy to deal damage to the wall
-    public void ReceiveHit( float EnemyDmg)
+    public void ReceiveHit(float EnemyDmg)
     {
         f_wallLife -= EnemyDmg;
         // img_wallLifeBar.fillAmount = GetHpFillBarValue();

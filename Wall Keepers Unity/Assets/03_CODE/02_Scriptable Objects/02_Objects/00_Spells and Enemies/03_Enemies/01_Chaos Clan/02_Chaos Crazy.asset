@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 095fe339d410b2b4fb3ae82e354c45cc, type: 3}
   m_Name: 02_Chaos Crazy
   m_EditorClassIdentifier: 
-  sprite_bestiary: {fileID: -345662015, guid: dae4123f30479734aae0db53bf57c938, type: 3}
+  sprite_bestiary: {fileID: 4513427509828416702, guid: 2682258c3824649488cdf162c1466265, type: 3}
   i_id: 2
   i_hp: 300
   i_dmg: 200
@@ -20,7 +20,8 @@ MonoBehaviour:
   f_RageOfAction: 1.5
   f_projectailSpeed: 0
   i_manaEnergyReleased: 3
-  Description: 02_Chaos Crazy
+  Description: Faster than other demonitos they run like crazy towards their next
+    target to destroy.
   deathClip: {fileID: 0}
   e_Clan: 1
   e_ElementalType: 0

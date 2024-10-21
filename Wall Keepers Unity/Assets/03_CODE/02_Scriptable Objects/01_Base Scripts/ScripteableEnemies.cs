@@ -10,6 +10,7 @@ public class ScripteableEnemies : ScriptableObject
     public float f_speed;
     public float f_RageOfAction, f_projectailSpeed;
     public int i_manaEnergyReleased;
+    [TextArea(5,15)]
     public string Description;
 
     [Header("SFXs")]

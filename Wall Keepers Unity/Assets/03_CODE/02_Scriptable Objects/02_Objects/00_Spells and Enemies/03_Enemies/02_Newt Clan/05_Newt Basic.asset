@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 095fe339d410b2b4fb3ae82e354c45cc, type: 3}
   m_Name: 05_Newt Basic
   m_EditorClassIdentifier: 
-  sprite_bestiary: {fileID: 289988425, guid: 47b537a3f66378245947c21dd456d2e0, type: 3}
+  sprite_bestiary: {fileID: 4530609098385475206, guid: 7c7ee1e7f696d7846b336b07c100b750, type: 3}
   i_id: 0
   i_hp: 250
   i_dmg: 400
@@ -20,7 +20,8 @@ MonoBehaviour:
   f_RageOfAction: 1
   f_projectailSpeed: 0
   i_manaEnergyReleased: 2
-  Description: Common Newt demonito.
+  Description: The Newt clan lives in swampsand is commonly known from consuming
+    underwater life.
   deathClip: {fileID: 0}
   e_Clan: 2
   e_ElementalType: 3
