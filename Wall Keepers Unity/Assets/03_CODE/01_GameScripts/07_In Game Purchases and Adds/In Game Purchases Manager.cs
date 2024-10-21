@@ -144,7 +144,11 @@ public class InGamePurchasesManager : MonoBehaviour, IDetailedStoreListener
         {
             // Hide buy pass button and show buy pass levels button
             go_purchasePremiumPassButton.gameObject.SetActive(false);
-            go_purchasePassLevelsButton.gameObject.SetActive(true);
+            // If Player has NOT reached pass max level
+            if(PlayerData.i_magicPassLevel < 50)
+            {
+                go_purchasePassLevelsButton.gameObject.SetActive(true);
+            }
         }
     }
 
@@ -193,7 +197,8 @@ public class InGamePurchasesManager : MonoBehaviour, IDetailedStoreListener
     {
         yield return new WaitForSeconds(1);
         go_purchasePremiumPassButton.gameObject.SetActive(false);
-        go_purchasePassLevelsButton.gameObject.SetActive(true);
+        if (PlayerData.i_magicPassLevel < 50)
+            go_purchasePassLevelsButton.gameObject.SetActive(true);
     }
     public void Buy10PassLevels()
     {
