@@ -12,6 +12,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: 18_Tsunami Spell Card
       objectReference: {fileID: 0}
+    - target: {fileID: 3372936717296222066, guid: 693b018ee78c884418c8725b7170f77b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4.102758
+      objectReference: {fileID: 0}
+    - target: {fileID: 3372936717296222066, guid: 693b018ee78c884418c8725b7170f77b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4.102758
+      objectReference: {fileID: 0}
+    - target: {fileID: 3372936717296222066, guid: 693b018ee78c884418c8725b7170f77b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 4.102758
+      objectReference: {fileID: 0}
+    - target: {fileID: 3372936717296222066, guid: 693b018ee78c884418c8725b7170f77b, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3413756491470563924, guid: 693b018ee78c884418c8725b7170f77b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -80,8 +96,45 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: d1fb47f9605859c4aaf33544c930c4d6, type: 3}
+    - target: {fileID: 8123303722278049104, guid: 693b018ee78c884418c8725b7170f77b, type: 3}
+      propertyPath: m_Size.x
+      value: 11.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 8123303722278049104, guid: 693b018ee78c884418c8725b7170f77b, type: 3}
+      propertyPath: m_Size.y
+      value: 2.6401758
+      objectReference: {fileID: 0}
+    - target: {fileID: 8123303722278049104, guid: 693b018ee78c884418c8725b7170f77b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1200977535, guid: 3cb85080ad5cd674eae6d956d5e2bea8, type: 3}
+    - target: {fileID: 8123303722278049104, guid: 693b018ee78c884418c8725b7170f77b, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5556608263845835366, guid: 693b018ee78c884418c8725b7170f77b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 715350277601248790}
   m_SourcePrefab: {fileID: 100100000, guid: 693b018ee78c884418c8725b7170f77b, type: 3}
+--- !u!1 &1408417272336691209 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5556608263845835366, guid: 693b018ee78c884418c8725b7170f77b, type: 3}
+  m_PrefabInstance: {fileID: 6815843763896762991}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &715350277601248790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1408417272336691209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a4386851ea892c43abc547670743930, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  postionInBattlefield: {x: 0, y: -6.45, z: 0}
