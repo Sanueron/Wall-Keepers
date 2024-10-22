@@ -131,6 +131,11 @@ public class SaveData : MonoBehaviour
           {"i_magicPassLevel", PlayerData.i_magicPassLevel},
           {"b_magicPassRewardClaimed", PlayerData.b_magicPassRewardClaimed},
           {"b_premiumPassPurchased", PlayerData.b_premiumPassPurchased},
+          #region Wizzard Studio Attributes
+          {"i_wallUpgradeStage_TotalUpgrades", PlayerData.i_wallUpgradeStage_TotalUpgrades},
+          {"i_wallHPIncreased", PlayerData.i_wallHPIncreased},
+          {"i_wallHPRecoveryPerSecond", PlayerData.i_wallHPRecoveryPerSecond},
+          #endregion
         };
         var result = await CloudSaveService.Instance.Data.Player.SaveAsync(playerCurrencies);
         Debug.Log($"Saved data {string.Join(',', playerCurrencies)}");
@@ -145,7 +150,8 @@ public class SaveData : MonoBehaviour
           "allMissionsCompleted_DailyMission", "dailyMissionOneClaimed", "dailyMissionTwoClaimed", "dailyMissionThreeClaimed", "dailyMissionFourClaimed",
           "dailyMissionFiveClaimed", "levelsCompleteStatus", "tutorialsCompleteStatus", "elementalRunesInStock", "spellInShopBoughtAlready", "shopBuyableERunes",
           "runesLeftInShop", "removeAdsState", "currentWizzardPassBought", "seasonPassBoughtID", "lastDayLogInShop", "lastDayLogInMainMenu",
-          "i_magicPassManaExp","i_magicPassLevel","b_magicPassRewardClaimed","b_premiumPassPurchased","shopBuyableSpells"
+          "i_magicPassManaExp","i_magicPassLevel","b_magicPassRewardClaimed","b_premiumPassPurchased","shopBuyableSpells","i_wallUpgradeStage_TotalUpgrades",
+          "i_wallHPIncreased","i_wallHPRecoveryPerSecond",
         });
 
         // Mana Energy (Int)
@@ -359,6 +365,23 @@ public class SaveData : MonoBehaviour
         }
         #endregion
 
+        #region Wizzard Studio Data
+        // Wall Upgrades by each stage
+        if (playerData.TryGetValue("i_wallUpgradeStage_TotalUpgrades", out var i_wallUpgradeStage_TotalUpgrades))
+        {
+            PlayerData.i_wallUpgradeStage_TotalUpgrades = i_wallUpgradeStage_TotalUpgrades.Value.GetAs<int[]>();
+        }
+        // Amount of Wall HP Increased
+        if (playerData.TryGetValue("i_wallHPIncreased", out var i_wallHPIncreased))
+        {
+            PlayerData.i_wallHPIncreased = i_wallHPIncreased.Value.GetAs<int>();
+        }
+        // Amount of Wall HP recovery per second
+        if (playerData.TryGetValue("i_wallHPRecoveryPerSecond", out var i_wallHPRecoveryPerSecond))
+        {
+            PlayerData.i_wallHPRecoveryPerSecond = i_wallHPRecoveryPerSecond.Value.GetAs<int>();
+        }
+        #endregion
 
         print("All data loaded");
         AuthenticationManager.b_dataAlreadyLoadedFromCloud = true;

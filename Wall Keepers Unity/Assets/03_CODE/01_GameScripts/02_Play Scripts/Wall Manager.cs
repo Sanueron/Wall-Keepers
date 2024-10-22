@@ -35,7 +35,9 @@ public class WallManager : MonoBehaviour
     #region Wall Methods
     void InitializeWallLife()
     {
-        f_wallLife = f_MaxWallLife;
+        // Calculate Wall life with Wall Upgrades
+        int i_wallLifeAddingWallUpgrades = (int)f_MaxWallLife + PlayerData.i_wallHPIncreased;
+        f_wallLife = i_wallLifeAddingWallUpgrades;
     }
     //Method accessed by the enemy to deal damage to the wall
     public void ReceiveHit(float EnemyDmg)

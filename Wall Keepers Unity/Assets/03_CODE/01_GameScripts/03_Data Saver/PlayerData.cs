@@ -68,4 +68,11 @@ public static class PlayerData
     internal static int i_magicPassManaExp = 0, i_magicPassLevel = 0;
     internal static bool[] b_magicPassRewardClaimed = new bool[51];
     #endregion
+
+    #region Wizzard Studio Data
+    // Used to know how many upgrades has each stage
+    internal static int[] i_wallUpgradeStage_TotalUpgrades = new int[6];
+    internal static int i_wallHPIncreased = 0;
+    internal static int i_wallHPRecoveryPerSecond = 0;
+    #endregion
 }
