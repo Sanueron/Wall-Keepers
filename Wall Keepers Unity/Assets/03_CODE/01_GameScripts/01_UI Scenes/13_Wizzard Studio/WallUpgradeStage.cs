@@ -27,6 +27,8 @@ public class WallUpgradeStage : MonoBehaviour
     {
         // Assign mana cost to UI Tmp in prefab
         AssignUIVariablesValues();
+        // Check Staga state (if max Upgrades already reached)
+        CheckIfStageMaxUpgradesReached();
     }
 
     private void AssignUIVariablesValues()
@@ -69,26 +71,32 @@ public class WallUpgradeStage : MonoBehaviour
 
             case UpgradeType.WallRecovery:
                 PlayerData.i_wallHPRecoveryPerSecond += i_upgradeAmount;
+                // Show Upgrade acquired panel 
+                script_wizzardStudioManager.ShowWallRecoveryIncreased(PlayerData.i_wallHPRecoveryPerSecond, i_upgradeAmount);
                 break;
         }
 
         // Check if max upgrades reach
-        if(PlayerData.i_wallUpgradeStage_TotalUpgrades[i_stageId] >= i_maxUpgrades)
-        {
-            // Max upgrades reach, block this stage and unblock next stage
-            _button_Upgrade.interactable = false;
-
-            if(nextStage != null)
-            {
-                nextStage.UnblockThisStage();
-            }
-        }
+        CheckIfStageMaxUpgradesReached();
 
         // Update visual of total upgrades
         tmp_totalUpgrades.text = PlayerData.i_wallUpgradeStage_TotalUpgrades[i_stageId] + "/" + i_maxUpgrades.ToString();
 
         // Save Data
         SaveData.instance.AssignDataAndSave();
+    }
+    private void CheckIfStageMaxUpgradesReached()
+    {
+        if (PlayerData.i_wallUpgradeStage_TotalUpgrades[i_stageId] >= i_maxUpgrades)
+        {
+            // Max upgrades reach, block this stage and unblock next stage
+            _button_Upgrade.interactable = false;
+
+            if (nextStage != null)
+            {
+                nextStage.UnblockThisStage();
+            }
+        }
     }
     internal void UnblockThisStage()
     {

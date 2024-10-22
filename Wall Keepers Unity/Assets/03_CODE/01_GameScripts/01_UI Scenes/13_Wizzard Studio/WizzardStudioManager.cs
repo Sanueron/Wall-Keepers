@@ -17,7 +17,7 @@ public class WizzardStudioManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI tmp_wallHP, tmp_wallRecovery;
     [SerializeField] Animator _wallUpgradeCompletePanel_animator, _notEnoughManaEnergyPanel_animator;
     [SerializeField] GameObject go_wallHPIcon, go_wallRecoveryIcon;
-    float f_wallTotalHp;
+    float f_wallTotalHp, f_wallRecoveryAmountPerSecond;
 
     int i_animatorsString = Animator.StringToHash("Visible");
     #endregion
@@ -78,6 +78,7 @@ public class WizzardStudioManager : MonoBehaviour
         tmp_wallHP.text = f_wallTotalHp.ToString();
         // Show current Wall recovery amount per second
         tmp_wallRecovery.text = PlayerData.i_wallHPRecoveryPerSecond.ToString();
+        f_wallRecoveryAmountPerSecond = PlayerData.i_wallHPRecoveryPerSecond;
     }
     internal void ShowWallHPIncreased(float f_newWallHP, float f_amountIncreased)
     {
@@ -85,6 +86,7 @@ public class WizzardStudioManager : MonoBehaviour
         go_wallHPIcon.SetActive(true);
         go_wallRecoveryIcon.SetActive(false);
         // Show Panel
+        tmp_wallAttributeUpgraded.text = f_wallTotalHp.ToString();
         ShowIndicatedPanel(_wallUpgradeCompletePanel_animator);
         StartCoroutine(ShowWallHPIncreasedEffect(f_newWallHP));
         tmp_wallAttributeUpgradeValue.text = "+" + f_amountIncreased.ToString();
@@ -120,5 +122,35 @@ public class WizzardStudioManager : MonoBehaviour
             yield return null;
         }
     }
+
+    // Recovery 
+    internal void ShowWallRecoveryIncreased(float f_newWallRecovery, float f_amountIncreased)
+    {
+        // Show Wall HP icon
+        go_wallHPIcon.SetActive(false);
+        go_wallRecoveryIcon.SetActive(true);
+        // Show Panel
+        tmp_wallAttributeUpgraded.text = f_wallRecoveryAmountPerSecond.ToString();
+        ShowIndicatedPanel(_wallUpgradeCompletePanel_animator);
+        StartCoroutine(ShowWallRecoveryIncreasedEffect(f_newWallRecovery));
+        tmp_wallAttributeUpgradeValue.text = "+" + f_amountIncreased.ToString();
+        StartCoroutine(ShowAmountIncreasedReduceEffect(f_amountIncreased));
+    }
+    IEnumerator ShowWallRecoveryIncreasedEffect(float f_newWallRecoveryPerSecond)
+    {
+        yield return new WaitForSeconds(.1f);
+        float f_duration = 1f;
+        var rate = Mathf.Abs(f_newWallRecoveryPerSecond - f_wallRecoveryAmountPerSecond) / f_duration;
+        tmp_wallAttributeUpgraded.text = f_wallRecoveryAmountPerSecond.ToString();
+
+        while (f_wallRecoveryAmountPerSecond != f_newWallRecoveryPerSecond)
+        {
+            f_wallRecoveryAmountPerSecond = Mathf.MoveTowards(f_wallRecoveryAmountPerSecond, f_newWallRecoveryPerSecond, rate * Time.deltaTime);
+            tmp_wallAttributeUpgraded.text = ((int)f_wallRecoveryAmountPerSecond).ToString();
+            tmp_wallRecovery.text = ((int)f_wallRecoveryAmountPerSecond).ToString();
+            yield return null;
+        }
+    }
+
     #endregion
 }

@@ -81,12 +81,14 @@ public class MagicPassRewardBox : MonoBehaviour
                 PlayerData.i_mana += i_rewardAmount;
                 script_seasonPassManager.PlayCollectManaEnergy();
                 script_seasonPassManager.UpdateManaEnergyCurrency();
+                script_seasonPassManager.ShowClaimedRewardPanel(i_rewardAmount,true, false);
                 break;
 
             case RewardType.Keys:
                 PlayerData.i_keys += i_rewardAmount;
                 script_seasonPassManager.PlayCollectManaKeys();
                 script_seasonPassManager.UpdateManaKeysCurrency();
+                script_seasonPassManager.ShowClaimedRewardPanel(i_rewardAmount, false, true);
                 break;
 
             case RewardType.FeaturedSpell:

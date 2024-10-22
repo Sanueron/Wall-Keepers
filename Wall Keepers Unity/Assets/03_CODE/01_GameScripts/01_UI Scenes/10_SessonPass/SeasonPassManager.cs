@@ -25,8 +25,11 @@ public class SeasonPassManager : MonoBehaviour
     [Header("Scene AUDIO")]
     [SerializeField] AudioSource aS_sceneSFx;
     [SerializeField] AudioClip aC_collectManaEnergy, aC_collectManaKeys, aC_collecFeaturedSpell;
-    [Header("FEATURED SPELL PANEL")]
+    [Header("CLAIMED REWARDS PANELS")]
     [SerializeField] Animator featuredSpell_animator;
+    [SerializeField] Animator claimedReward_animator;
+    [SerializeField] GameObject go_manaEnergyIcon, go_manaKeysIcon;
+    [SerializeField] TextMeshProUGUI tmp_amountObtained;
     int i_animatorString = Animator.StringToHash("Visible");
     #endregion
 
@@ -166,10 +169,25 @@ public class SeasonPassManager : MonoBehaviour
     }
     #endregion
 
-    #region Extra Methods
+    #region Show Claimed Rewards Methods
     public void ShowFeaturedSpellPanel()
     {
         featuredSpell_animator.SetBool(i_animatorString, true);
+    }
+    public void HideFeaturedSpellPanel()
+    {
+        featuredSpell_animator.SetBool(i_animatorString, false);
+    }
+    public void ShowClaimedRewardPanel(int i_amountObtained, bool b_isManaEnergy, bool b_isMKeys)
+    {
+        tmp_amountObtained.text = "+" + i_amountObtained.ToString();
+        go_manaEnergyIcon.SetActive(b_isManaEnergy);
+        go_manaKeysIcon.SetActive(b_isMKeys);
+        claimedReward_animator.SetBool(i_animatorString, true);
+    }
+    public void HideClaimedRewardPanel()
+    {
+        claimedReward_animator.SetBool(i_animatorString, false);
     }
     #endregion
 }
