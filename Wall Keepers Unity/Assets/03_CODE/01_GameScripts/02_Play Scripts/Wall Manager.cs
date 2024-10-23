@@ -32,6 +32,7 @@ public class WallManager : MonoBehaviour
         InitializeWallLife();
     }
     #endregion
+
     #region Wall Methods
     void InitializeWallLife()
     {

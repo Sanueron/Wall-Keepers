@@ -105,7 +105,6 @@ public class ResultsManager : MonoBehaviour
         //Show results panel
         if(animator_ResultsPanel != null)
             animator_ResultsPanel.SetTrigger(i_animatorTrigger);
-        Debug.Log("finish");
 
         // Play Results Panel Music
         AudioManager.instance.PlayNewMusicClip(aC_resultsMusic);
@@ -145,6 +144,7 @@ public class ResultsManager : MonoBehaviour
         {
             // Save New Record
             PlayerData.i_maxRound = script_roundsManager.i_currentWave - 1;
+            tmp_wavesCompleted.text = (script_roundsManager.i_currentWave - 1).ToString();
             // Show New Record text and hide Best Score text
             if (go_newRecord != null)
                 go_newRecord.SetActive(true);
@@ -155,8 +155,9 @@ public class ResultsManager : MonoBehaviour
         {
             // Pass Best score to TMP visual
             tmp_currentWavesRecord.text = PlayerData.i_maxRound.ToString();
+            tmp_wavesCompleted.text = (script_roundsManager.i_currentWave - 1).ToString();
             // Show New Record text and hide Best Score text
-            if(go_newRecord != null)
+            if (go_newRecord != null)
                 go_newRecord.SetActive(false);
             if(go_bestScore != null)
                 go_bestScore.SetActive(true);
