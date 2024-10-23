@@ -186,6 +186,7 @@ public class WizzardStudioManager : MonoBehaviour
                 PlayerData.i_magicDamageAttributeUpgradeAmount[i_magicID] += (int)f_upgradeAmount;
                 break;
             case 1: // Resistance
+                PlayerData.i_magicResistanceAttributeUpgradeAmount[i_magicID] += (int)f_upgradeAmount;
                 break;
             case 2: // Duration
                 break;
@@ -196,6 +197,7 @@ public class WizzardStudioManager : MonoBehaviour
         // Show Upgrade obtained panel
 
         // Save Data
+        SaveData.instance.AssignDataAndSave();
     }
     #endregion
 }

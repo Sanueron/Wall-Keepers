@@ -137,6 +137,7 @@ public class SaveData : MonoBehaviour
           {"i_wallHPRecoveryPerSecond", PlayerData.i_wallHPRecoveryPerSecond},
           {"i_magicUpgradeLevel", PlayerData.i_magicUpgradeLevel},
           {"i_magicDamageAttributeUpgradeAmount", PlayerData.i_magicDamageAttributeUpgradeAmount},
+          {"i_magicResistanceAttributeUpgradeAmount", PlayerData.i_magicResistanceAttributeUpgradeAmount},
           #endregion
         };
         var result = await CloudSaveService.Instance.Data.Player.SaveAsync(playerCurrencies);
@@ -153,7 +154,8 @@ public class SaveData : MonoBehaviour
           "dailyMissionFiveClaimed", "levelsCompleteStatus", "tutorialsCompleteStatus", "elementalRunesInStock", "spellInShopBoughtAlready", "shopBuyableERunes",
           "runesLeftInShop", "removeAdsState", "currentWizzardPassBought", "seasonPassBoughtID", "lastDayLogInShop", "lastDayLogInMainMenu",
           "i_magicPassManaExp","i_magicPassLevel","b_magicPassRewardClaimed","b_premiumPassPurchased","shopBuyableSpells","i_wallUpgradeStage_TotalUpgrades",
-          "i_wallHPIncreased","i_wallHPRecoveryPerSecond","i_magicUpgradeLevel","i_magicDamageAttributeUpgradeAmount",
+          "i_wallHPIncreased","i_wallHPRecoveryPerSecond","i_magicUpgradeLevel","i_magicDamageAttributeUpgradeAmount","i_magicResistanceAttributeUpgradeAmount",
+
         });
 
         // Mana Energy (Int)
@@ -392,6 +394,11 @@ public class SaveData : MonoBehaviour
         if (playerData.TryGetValue("i_magicDamageAttributeUpgradeAmount", out var i_magicDamageAttributeUpgradeAmount))
         {
             PlayerData.i_magicDamageAttributeUpgradeAmount = i_magicDamageAttributeUpgradeAmount.Value.GetAs<int[]>();
+        }
+        // Magics Resistance Attribute Upgraded
+        if (playerData.TryGetValue("i_magicResistanceAttributeUpgradeAmount", out var i_magicResistanceAttributeUpgradeAmount))
+        {
+            PlayerData.i_magicResistanceAttributeUpgradeAmount = i_magicResistanceAttributeUpgradeAmount.Value.GetAs<int[]>();
         }
         
         #endregion
