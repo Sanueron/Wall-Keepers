@@ -189,13 +189,19 @@ public class Enemy : MonoBehaviour
     {
         e_enemyState = newState;
         SetAllStatesAnimsToFalse();
+
+        // Regular check
         switch (e_enemyState)
         {
             case EnemyState.Moving:
                 go_obstacle = null;
                 go_wall = null;
-                enemy_animator.SetBool(i_WalkHash, true);
-                b_moveToTarget = true; 
+                // Additional check for defeated enemies not dying bug
+                if (i_hp > 0)
+                {
+                    enemy_animator.SetBool(i_WalkHash, true);
+                    b_moveToTarget = true;
+                }
                 break;
             case EnemyState.TakingAction:
                 b_moveToTarget = false; // Stop moving
