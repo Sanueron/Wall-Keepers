@@ -135,6 +135,8 @@ public class SaveData : MonoBehaviour
           {"i_wallUpgradeStage_TotalUpgrades", PlayerData.i_wallUpgradeStage_TotalUpgrades},
           {"i_wallHPIncreased", PlayerData.i_wallHPIncreased},
           {"i_wallHPRecoveryPerSecond", PlayerData.i_wallHPRecoveryPerSecond},
+          {"i_magicUpgradeLevel", PlayerData.i_magicUpgradeLevel},
+          {"i_magicDamageAttributeUpgradeAmount", PlayerData.i_magicDamageAttributeUpgradeAmount},
           #endregion
         };
         var result = await CloudSaveService.Instance.Data.Player.SaveAsync(playerCurrencies);
@@ -151,7 +153,7 @@ public class SaveData : MonoBehaviour
           "dailyMissionFiveClaimed", "levelsCompleteStatus", "tutorialsCompleteStatus", "elementalRunesInStock", "spellInShopBoughtAlready", "shopBuyableERunes",
           "runesLeftInShop", "removeAdsState", "currentWizzardPassBought", "seasonPassBoughtID", "lastDayLogInShop", "lastDayLogInMainMenu",
           "i_magicPassManaExp","i_magicPassLevel","b_magicPassRewardClaimed","b_premiumPassPurchased","shopBuyableSpells","i_wallUpgradeStage_TotalUpgrades",
-          "i_wallHPIncreased","i_wallHPRecoveryPerSecond",
+          "i_wallHPIncreased","i_wallHPRecoveryPerSecond","i_magicUpgradeLevel","i_magicDamageAttributeUpgradeAmount",
         });
 
         // Mana Energy (Int)
@@ -381,6 +383,17 @@ public class SaveData : MonoBehaviour
         {
             PlayerData.i_wallHPRecoveryPerSecond = i_wallHPRecoveryPerSecond.Value.GetAs<int>();
         }
+        // Magics Upgrade Levels
+        if (playerData.TryGetValue("i_magicUpgradeLevel", out var i_magicUpgradeLevel))
+        {
+            PlayerData.i_magicUpgradeLevel = i_magicUpgradeLevel.Value.GetAs<int[]>();
+        }
+        // Magics Damage Attribute Upgraded
+        if (playerData.TryGetValue("i_magicDamageAttributeUpgradeAmount", out var i_magicDamageAttributeUpgradeAmount))
+        {
+            PlayerData.i_magicDamageAttributeUpgradeAmount = i_magicDamageAttributeUpgradeAmount.Value.GetAs<int[]>();
+        }
+        
         #endregion
 
         print("All data loaded");
