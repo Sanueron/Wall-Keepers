@@ -20,7 +20,6 @@ public class WizzardStudioManager : MonoBehaviour
     float f_wallTotalHp, f_wallRecoveryAmountPerSecond;
 
     [Header("Magic Upgrades")]
-    int i_magicMaxUpgradeLevel = 8;
     [SerializeField] Animator _MagicUpgradeCompletePanel_animator;
 
     int i_animatorsString = Animator.StringToHash("Visible");
@@ -158,46 +157,5 @@ public class WizzardStudioManager : MonoBehaviour
 
     #endregion
 
-    #region Magics Upgrades Methods
-    /* All Magics have 8 possible upgrades
-     * Level 1 & 5: Damage +50 / +100
-     * Level 2 & 6: Resistance +50 / +100
-     * Level 3 & 7: Duration +0.5 / +1
-     * Level 4 & 8: Speed +0.2 / +0.3
-    */
-
-    private void UpgradeMagic(int i_magicID, int i_upgradeType, float f_upgradeAmount)
-    {
-        // Increase Magic Upgrade Level
-        PlayerData.i_magicUpgradeLevel[i_magicID] += 1;
-        if(PlayerData.i_magicUpgradeLevel[i_magicID] >= i_magicMaxUpgradeLevel)
-        {
-            PlayerData.i_magicUpgradeLevel[i_magicID] = i_magicMaxUpgradeLevel;
-        }
-        else // If not max level
-        {
-            // Unblock Next Level if not reached max level
-        }
-
-        // Add Upgrade
-        switch (i_upgradeType)
-        {
-            case 0: // Damage
-                PlayerData.i_magicDamageAttributeUpgradeAmount[i_magicID] += (int)f_upgradeAmount;
-                break;
-            case 1: // Resistance
-                PlayerData.i_magicResistanceAttributeUpgradeAmount[i_magicID] += (int)f_upgradeAmount;
-                break;
-            case 2: // Duration
-                break;
-            case 3: // Speed
-                break;
-        }
-
-        // Show Upgrade obtained panel
-
-        // Save Data
-        SaveData.instance.AssignDataAndSave();
-    }
-    #endregion
+    
 }

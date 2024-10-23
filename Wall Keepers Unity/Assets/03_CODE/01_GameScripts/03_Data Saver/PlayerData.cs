@@ -79,6 +79,8 @@ public static class PlayerData
     internal static int[] i_magicUpgradeLevel = new int[30];
     // Spells Attributes Upgrade amount (Use magic IDs to letter correctly assign)
     internal static int[] i_magicDamageAttributeUpgradeAmount = new int[30];
-    //internal static float[] f_magicAttributeUpgradedAmount = new float[30];
+    internal static int[] i_magicResistanceAttributeUpgradeAmount = new int[30];
+    internal static float[] f_magicDurationAttributeUpgradedAmount = new float[30];
+    internal static float[] f_magicSpeedAttributeUpgradedAmount = new float[30];
     #endregion
 }

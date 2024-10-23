@@ -1398,15 +1398,15 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: WallUpgradeStage, Assembly-CSharp
-        m_MethodName: TryToPurchaseStageUpgrade
+      - m_Target: {fileID: 6650852486003917961}
+        m_TargetAssemblyTypeName: MagicUpgradeElementManager, Assembly-CSharp
+        m_MethodName: TryUpgrade
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 1000
+          m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -2401,6 +2401,7 @@ GameObject:
   m_Component:
   - component: {fileID: 370294075729441051}
   - component: {fileID: 6017296758037118849}
+  - component: {fileID: 6650852486003917961}
   m_Layer: 5
   m_Name: Magic Upgrade stage
   m_TagString: Untagged
@@ -2442,6 +2443,68 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6156140755547854779}
   m_CullTransparentMesh: 1
+--- !u!114 &6650852486003917961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6156140755547854779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0a0ecfee6b296649acb181099107abd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _upgradeButton: {fileID: 5713481589800310020}
+  arrayOf_blockedLevelsIcons:
+  - {fileID: 6103285744173117963}
+  - {fileID: 8916875947302470629}
+  - {fileID: 6420976155901426280}
+  - {fileID: 1395101445139846830}
+  - {fileID: 3978518302251811925}
+  - {fileID: 7331141106048105009}
+  - {fileID: 1205565416531657430}
+  - {fileID: 7444845522517660468}
+  arrayOf_unblockedLevelsIcons:
+  - {fileID: 130991422519876774}
+  - {fileID: 6563953490944793378}
+  - {fileID: 5955761564694213819}
+  - {fileID: 1106964659369529923}
+  - {fileID: 1291464979276029997}
+  - {fileID: 8237966832126506584}
+  - {fileID: 3856499010914827890}
+  - {fileID: 8814921682234594655}
+  arrayOf_upgradedLevelsIcons:
+  - {fileID: 3503672435587029231}
+  - {fileID: 7117492410684524228}
+  - {fileID: 4940390098365631304}
+  - {fileID: 2886588095555657184}
+  - {fileID: 3404820407097079663}
+  - {fileID: 8724128868719100300}
+  - {fileID: 3974815950172060871}
+  - {fileID: 4707951464718535506}
+  tmp_upgradeCost: {fileID: 8915933234955727257}
+  tmp_upgradesCurrentValues:
+  - {fileID: 5039042732657604109}
+  - {fileID: 9036406758768344254}
+  - {fileID: 4421762684901379105}
+  - {fileID: 5770413704561271423}
+  tmp_upgradesIncreaseValue:
+  - {fileID: 7075999558048261425}
+  - {fileID: 7415225884145598113}
+  - {fileID: 3139187498378442128}
+  - {fileID: 6192921541097606983}
+  i_magicID: 0
+  arrayOf_amountToUpgradeByUpgrade:
+  - 50
+  - 250
+  - 0.5
+  - 1
+  - 100
+  - 500
+  - 1
+  - 2
+  script_wizzardStudioManager: {fileID: 0}
 --- !u!1 &6420976155901426280
 GameObject:
   m_ObjectHideFlags: 0

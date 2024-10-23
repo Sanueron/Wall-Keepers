@@ -138,6 +138,8 @@ public class SaveData : MonoBehaviour
           {"i_magicUpgradeLevel", PlayerData.i_magicUpgradeLevel},
           {"i_magicDamageAttributeUpgradeAmount", PlayerData.i_magicDamageAttributeUpgradeAmount},
           {"i_magicResistanceAttributeUpgradeAmount", PlayerData.i_magicResistanceAttributeUpgradeAmount},
+          {"f_magicDurationAttributeUpgradedAmount", PlayerData.f_magicDurationAttributeUpgradedAmount},
+          {"f_magicSpeedAttributeUpgradedAmount", PlayerData.f_magicSpeedAttributeUpgradedAmount},
           #endregion
         };
         var result = await CloudSaveService.Instance.Data.Player.SaveAsync(playerCurrencies);
@@ -155,7 +157,7 @@ public class SaveData : MonoBehaviour
           "runesLeftInShop", "removeAdsState", "currentWizzardPassBought", "seasonPassBoughtID", "lastDayLogInShop", "lastDayLogInMainMenu",
           "i_magicPassManaExp","i_magicPassLevel","b_magicPassRewardClaimed","b_premiumPassPurchased","shopBuyableSpells","i_wallUpgradeStage_TotalUpgrades",
           "i_wallHPIncreased","i_wallHPRecoveryPerSecond","i_magicUpgradeLevel","i_magicDamageAttributeUpgradeAmount","i_magicResistanceAttributeUpgradeAmount",
-
+          "f_magicDurationAttributeUpgradedAmount","f_magicSpeedAttributeUpgradedAmount",
         });
 
         // Mana Energy (Int)
@@ -399,6 +401,16 @@ public class SaveData : MonoBehaviour
         if (playerData.TryGetValue("i_magicResistanceAttributeUpgradeAmount", out var i_magicResistanceAttributeUpgradeAmount))
         {
             PlayerData.i_magicResistanceAttributeUpgradeAmount = i_magicResistanceAttributeUpgradeAmount.Value.GetAs<int[]>();
+        }
+        // Magics Duration Attribute Upgraded
+        if (playerData.TryGetValue("f_magicDurationAttributeUpgradedAmount", out var f_magicDurationAttributeUpgradedAmount))
+        {
+            PlayerData.f_magicDurationAttributeUpgradedAmount = f_magicDurationAttributeUpgradedAmount.Value.GetAs<float[]>();
+        }
+        // Magics Speed Attribute Upgraded
+        if (playerData.TryGetValue("f_magicSpeedAttributeUpgradedAmount", out var f_magicSpeedAttributeUpgradedAmount))
+        {
+            PlayerData.f_magicSpeedAttributeUpgradedAmount = f_magicSpeedAttributeUpgradedAmount.Value.GetAs<float[]>();
         }
         
         #endregion

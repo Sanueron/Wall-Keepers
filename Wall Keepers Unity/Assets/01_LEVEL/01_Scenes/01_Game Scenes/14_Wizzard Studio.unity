@@ -15992,17 +15992,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c95c0e841a475241af0b7e2c06c12a3, type: 3}
---- !u!114 &2852560437485611968 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5553475087100929914, guid: 9c95c0e841a475241af0b7e2c06c12a3, type: 3}
-  m_PrefabInstance: {fileID: 2852560437485611967}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66b8be5107314814a82e38181b545454, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &5357253214795826477
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16091,30 +16080,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3139187498378442128, guid: 4575bfd38a5f7c84bb5e4c7da6148df4, type: 3}
-      propertyPath: m_text
-      value: +0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4421762684901379105, guid: 4575bfd38a5f7c84bb5e4c7da6148df4, type: 3}
-      propertyPath: m_text
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5713481589800310020, guid: 4575bfd38a5f7c84bb5e4c7da6148df4, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 2852560437485611968}
-    - target: {fileID: 5770413704561271423, guid: 4575bfd38a5f7c84bb5e4c7da6148df4, type: 3}
-      propertyPath: m_text
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 6156140755547854779, guid: 4575bfd38a5f7c84bb5e4c7da6148df4, type: 3}
       propertyPath: m_Name
-      value: Magic Upgrade stage
+      value: 03_Magic Upgrade stage_Wind
       objectReference: {fileID: 0}
-    - target: {fileID: 6192921541097606983, guid: 4575bfd38a5f7c84bb5e4c7da6148df4, type: 3}
-      propertyPath: m_text
-      value: +0.5
+    - target: {fileID: 6650852486003917961, guid: 4575bfd38a5f7c84bb5e4c7da6148df4, type: 3}
+      propertyPath: i_magicID
+      value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 6650852486003917961, guid: 4575bfd38a5f7c84bb5e4c7da6148df4, type: 3}
+      propertyPath: script_wizzardStudioManager
+      value: 
+      objectReference: {fileID: 1431786854}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
