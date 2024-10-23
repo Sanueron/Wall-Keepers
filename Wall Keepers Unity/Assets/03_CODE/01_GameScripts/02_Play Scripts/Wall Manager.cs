@@ -38,14 +38,15 @@ public class WallManager : MonoBehaviour
     }
     private void Update()
     {
-        if (LevelsGnralManager.b_stopLevel)
-        {
-            return;
-        }
+
         // If Wall life not equal to max life && Wall Recovery greater than 0
         if (f_wallLife < f_MaxWallLife
             && PlayerData.i_wallHPRecoveryPerSecond > 0) 
         {
+            if (LevelsGnralManager.b_stopLevel)
+            {
+                return;
+            }
             f_timer += Time.deltaTime;
             if(f_timer >= f_timeUntilNextRecovery)
             {
