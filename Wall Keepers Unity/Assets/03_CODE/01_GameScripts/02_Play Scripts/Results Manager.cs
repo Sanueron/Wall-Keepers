@@ -68,7 +68,6 @@ public class ResultsManager : MonoBehaviour
         Enemy defeatedEnemy = (Enemy)sender;
         // Get enemy mana energy released
         i_manaObtained += defeatedEnemy.i_manaEnergyReleased;
-        print(i_manaObtained);
         // Save enemy count for number of enemies defeated of this type
         arrayOfDemonitosDefeatedById[defeatedEnemy.i_id]++;
         // Save type of enemy defeated for later count of defeated enemies by type

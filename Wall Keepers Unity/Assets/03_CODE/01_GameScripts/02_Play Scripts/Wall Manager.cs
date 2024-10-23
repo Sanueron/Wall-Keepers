@@ -14,6 +14,9 @@ public class WallManager : MonoBehaviour
     public static WallManager instance { get; private set; } // Can be read by all scripts but only modified by this
     public static event EventHandler e_OnWallDestroyed;
     [SerializeField] private float f_lifeBar_SpeedDecrease;
+
+    // Wall recovery control variables
+    float f_timer = 0, f_timeUntilNextRecovery = 1;
     #endregion
     #region Unity Life Cycle
     private void Awake()
@@ -30,6 +33,31 @@ public class WallManager : MonoBehaviour
     private void Start()
     {
         InitializeWallLife();
+
+        f_timer = 0;
+    }
+    private void Update()
+    {
+        if (LevelsGnralManager.b_stopLevel)
+        {
+            return;
+        }
+        // If Wall life not equal to max life && Wall Recovery greater than 0
+        if (f_wallLife < f_MaxWallLife
+            && PlayerData.i_wallHPRecoveryPerSecond > 0) 
+        {
+            f_timer += Time.deltaTime;
+            if(f_timer >= f_timeUntilNextRecovery)
+            {
+                f_timer = 0;
+                float newWallHP = f_wallLife + PlayerData.i_wallHPRecoveryPerSecond;
+                if(newWallHP > f_MaxWallLife)
+                {
+                    newWallHP = f_MaxWallLife;
+                }
+                HealWall(newWallHP);
+            }
+        }
     }
     #endregion
 
@@ -38,13 +66,15 @@ public class WallManager : MonoBehaviour
     {
         // Calculate Wall life with Wall Upgrades
         int i_wallLifeAddingWallUpgrades = (int)f_MaxWallLife + PlayerData.i_wallHPIncreased;
-        f_wallLife = i_wallLifeAddingWallUpgrades;
+        f_MaxWallLife = i_wallLifeAddingWallUpgrades;
+        f_wallLife = f_MaxWallLife;
         print(f_wallLife);
     }
     //Method accessed by the enemy to deal damage to the wall
     public void ReceiveHit(float EnemyDmg)
     {
         f_wallLife -= EnemyDmg;
+        print("Wall life left " + f_wallLife);
         // img_wallLifeBar.fillAmount = GetHpFillBarValue();
         StartCoroutine(DecreaseLifeBar());
 
@@ -52,6 +82,15 @@ public class WallManager : MonoBehaviour
         {
             e_OnWallDestroyed?.Invoke(this, EventArgs.Empty);
         }
+    }
+    internal void HealWall(float newWallHP)
+    {
+        //StopCoroutine(DecreaseLifeBar());
+        print(newWallHP);
+        f_wallLife = newWallHP;
+        img_wallLifeBar.fillAmount = GetHpFillBarValue();
+        // img_wallLifeBar.fillAmount = GetHpFillBarValue();
+        // ShowWallHPIncrease(f_wallRecovery);
     }
     //To Lerp lifeBar value 
     private IEnumerator DecreaseLifeBar()
@@ -65,6 +104,7 @@ public class WallManager : MonoBehaviour
         }
 
     }
+
     //Get LifeBarValue normalized 
     private float GetHpFillBarValue()
     {
