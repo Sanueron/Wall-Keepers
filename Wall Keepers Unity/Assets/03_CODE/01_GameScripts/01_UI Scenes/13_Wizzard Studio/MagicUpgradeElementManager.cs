@@ -37,8 +37,9 @@ public class MagicUpgradeElementManager : MonoBehaviour
         // Check current upgrades completed
         CheckCurrentUpgrades();
         // Update Visuals at start
-        UpdateUpgradeCosts();
         UpdateUpgradeStatsValues();
+
+        print("Level to upgrade is " + i_levelToUpgrade + " For " + gameObject.name);
     }
     #endregion
 
@@ -49,40 +50,42 @@ public class MagicUpgradeElementManager : MonoBehaviour
             // Check if level is unblocked to upgrade
             if(i == PlayerData.i_magicUpgradeLevel[i_magicID])
             {
-                arrayOf_blockedLevelsIcons[i].SetActive(false);
-                arrayOf_unblockedLevelsIcons[i].SetActive(true);
-                // Set as next level to upgrade
-                i_levelToUpgrade = i+1;
+                if(i < arrayOf_blockedLevelsIcons.Length) // Used to avoid index out of array bug
+                {
+                    arrayOf_blockedLevelsIcons[i].SetActive(false);
+                    arrayOf_unblockedLevelsIcons[i].SetActive(true);
+                }
                 break;
             }
             else if (i < PlayerData.i_magicUpgradeLevel[i_magicID])
             {
-                arrayOf_blockedLevelsIcons[i].SetActive(false);
-                arrayOf_unblockedLevelsIcons[i].SetActive(false);
-                arrayOf_upgradedLevelsIcons[i].SetActive(true);
+                if (i < arrayOf_blockedLevelsIcons.Length) // Used to avoid index out of array bug
+                {
+                    arrayOf_blockedLevelsIcons[i].SetActive(false);
+                    arrayOf_unblockedLevelsIcons[i].SetActive(false);
+                    arrayOf_upgradedLevelsIcons[i].SetActive(true);
+                }
             }
         }
-
-        // Additional Check for Level 0 cases
-        /*
-        if(PlayerData.i_magicUpgradeLevel[i_magicID] == 0)
-        {
-            i_levelToUpgrade = 1;
-            arrayOf_blockedLevelsIcons[0].SetActive(false);
-            arrayOf_unblockedLevelsIcons[0].SetActive(true);
-        }
-        */
+        // Set next level to upgrade
+        i_levelToUpgrade = PlayerData.i_magicUpgradeLevel[i_magicID]+1;
     }
 
     private void UpdateUpgradeCosts()
     {
-        tmp_upgradeCost.text = (i_upgradeBaseCost * i_levelToUpgrade).ToString();
+        if (PlayerData.i_magicUpgradeLevel[i_magicID] >= i_magicMaxUpgradeLevel)
+        {
+            tmp_upgradeCost.text = "MAX UPGRADE";
+            _upgradeButton.interactable = false;
+        }
+        else
+        {
+            tmp_upgradeCost.text = (i_upgradeBaseCost * i_levelToUpgrade).ToString("n0");
+        }
     }
 
     private void UpdateUpgradeStatsValues()
     {
-        // Update current increase obtained
-
         // Update Damage Increased
         tmp_upgradesCurrentValues[0].text = PlayerData.i_magicDamageAttributeUpgradeAmount[i_magicID].ToString();
         // Update Resistance Increased
@@ -99,40 +102,48 @@ public class MagicUpgradeElementManager : MonoBehaviour
             tmp_upgradesIncreaseValue[i].gameObject.SetActive(false);
             // Check if this is the attribute increased in this upgrade
             int indexOfIncreaseValueToShow = PlayerData.i_magicUpgradeLevel[i_magicID] +1;
-            switch (indexOfIncreaseValueToShow)
+            // Check if Max Upgrade Level reached to know if has to display next level upgrade or not
+            if (PlayerData.i_magicUpgradeLevel[i_magicID] != i_magicMaxUpgradeLevel)
             {
-                case 1: // Damage
-                    tmp_upgradesIncreaseValue[0].gameObject.SetActive(true);
-                    break;
-                case 2: // Resistance
-                    tmp_upgradesIncreaseValue[1].gameObject.SetActive(true);
-                    break;
-                case 3: // Duration
-                    tmp_upgradesIncreaseValue[2].gameObject.SetActive(true);
-                    break;
-                case 4: // Speed
-                    tmp_upgradesIncreaseValue[3].gameObject.SetActive(true);
-                    break;
-                case 5: // Damage
-                    tmp_upgradesIncreaseValue[0].gameObject.SetActive(true);
-                    break;
-                case 6: // Resistance
-                    tmp_upgradesIncreaseValue[1].gameObject.SetActive(true);
-                    break;
-                case 7: // Duration
-                    tmp_upgradesIncreaseValue[2].gameObject.SetActive(true);
-                    break;
-                case 8: // Speed
-                    tmp_upgradesIncreaseValue[3].gameObject.SetActive(true);
-                    break;
-                case 9: // SHOW MAX LEVEL REACHED
-                    break;
+                switch (indexOfIncreaseValueToShow)
+                {
+                    case 1: // Damage
+                        tmp_upgradesIncreaseValue[0].gameObject.SetActive(true);
+                        break;
+                    case 2: // Resistance
+                        tmp_upgradesIncreaseValue[1].gameObject.SetActive(true);
+                        break;
+                    case 3: // Duration
+                        tmp_upgradesIncreaseValue[2].gameObject.SetActive(true);
+                        break;
+                    case 4: // Speed
+                        tmp_upgradesIncreaseValue[3].gameObject.SetActive(true);
+                        break;
+                    case 5: // Damage
+                        tmp_upgradesIncreaseValue[0].gameObject.SetActive(true);
+                        break;
+                    case 6: // Resistance
+                        tmp_upgradesIncreaseValue[1].gameObject.SetActive(true);
+                        break;
+                    case 7: // Duration
+                        tmp_upgradesIncreaseValue[2].gameObject.SetActive(true);
+                        break;
+                    case 8: // Speed
+                        tmp_upgradesIncreaseValue[3].gameObject.SetActive(true);
+                        break;
+                    case 9: // SHOW MAX LEVEL REACHED
+                        break;
+                }
+                // Display attribute upgrade increase value in TMP
+                float f_increaseValue = arrayOf_amountToUpgradeByUpgrade[PlayerData.i_magicUpgradeLevel[i_magicID]];
+                tmp_upgradesIncreaseValue[i].text = "+" + f_increaseValue.ToString();
             }
-            // Display attribute upgrade increase value in TMP
-            float f_increaseValue = arrayOf_amountToUpgradeByUpgrade[PlayerData.i_magicUpgradeLevel[i_magicID]];
-            tmp_upgradesIncreaseValue[i].text = "+" + f_increaseValue.ToString();
         }
-        // Show next Upgrade increase
+
+        // Upgrade Next Level Cost
+        UpdateUpgradeCosts();
+        // Check Next Upgrade
+        CheckCurrentUpgrades();
     }
 
     #region Magics Upgrades Methods
@@ -169,6 +180,8 @@ public class MagicUpgradeElementManager : MonoBehaviour
             PlayerData.i_magicUpgradeLevel[i_magicID] = i_magicMaxUpgradeLevel;
             // Hide next increase values
             print("Hide next increase values and show max increased");
+            arrayOf_unblockedLevelsIcons[PlayerData.i_magicUpgradeLevel[i_magicID]-1].SetActive(false);
+            arrayOf_upgradedLevelsIcons[PlayerData.i_magicUpgradeLevel[i_magicID]-1].SetActive(true);
         }
         else // If not max level
         {
@@ -181,7 +194,7 @@ public class MagicUpgradeElementManager : MonoBehaviour
             arrayOf_blockedLevelsIcons[i_nextLevelIndex].SetActive(false);
             arrayOf_unblockedLevelsIcons[i_nextLevelIndex].SetActive(true);
             // Set next level upgrade values
-            UpdateUpgradeStatsValues();
+            //UpdateUpgradeStatsValues();
         }
 
         // Add Upgrade
@@ -241,11 +254,15 @@ public class MagicUpgradeElementManager : MonoBehaviour
         }
 
         // Show Upgrade obtained panel
+        print("Attribute before Upgrade " + f_attributeValueBeforeUpgrade);
         script_wizzardStudioManager.ShowMagicAttributeUpgraded(i_indexForAttributeIconInShowUpgradePanel,
             f_attributeValueBeforeUpgrade, f_upgradeAmount);
 
         // Set new Level To Upgrade
         i_levelToUpgrade = PlayerData.i_magicUpgradeLevel[i_magicID];
+
+        // Update Stats Displayed
+        UpdateUpgradeStatsValues();
 
         // Save Data
         SaveData.instance.AssignDataAndSave();

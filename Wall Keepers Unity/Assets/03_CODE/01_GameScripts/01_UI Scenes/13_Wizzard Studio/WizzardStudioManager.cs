@@ -169,14 +169,16 @@ public class WizzardStudioManager : MonoBehaviour
             attributeIcon.SetActive(false);
         }
         go_arrayOfAttributesIcons[i_indexForAttributeUpgradedIcon].SetActive(true);
+
         // Set initial values of TMP and control variable
         f_attributeValueBeforeUpgrade = f_attributeValue;
-        print(f_attributeValueBeforeUpgrade);
         tmp_magicAttributeUpgraded.text = f_attributeValueBeforeUpgrade.ToString();
         tmp_magicAttributeIncrease.text = "+" + f_amountIncreased.ToString();
         f_attributeValueBeforeUpgrade = f_attributeValue;
+
         // Show Panel
         ShowIndicatedPanel(_magicUpgradeCompletePanel_animator);
+
         // Start Coroutines
         float f_newAttributeValue = f_attributeValueBeforeUpgrade + f_amountIncreased;
         StartCoroutine(ShowMagicAttributeIncreasedEffect(f_newAttributeValue));
@@ -184,28 +186,28 @@ public class WizzardStudioManager : MonoBehaviour
     }
     IEnumerator ShowMagicAttributeIncreasedEffect(float f_newAttributeValue)
     {
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(1f);
         float f_duration = 1f;
         var rate = Mathf.Abs(f_newAttributeValue - f_attributeValueBeforeUpgrade) / f_duration;
 
         while (f_attributeValueBeforeUpgrade != f_newAttributeValue)
         {
-            f_attributeValueBeforeUpgrade = Mathf.MoveTowards(f_wallTotalHp, f_newAttributeValue, rate * Time.deltaTime);
-            tmp_magicAttributeUpgraded.text = f_attributeValueBeforeUpgrade.ToString();
+            f_attributeValueBeforeUpgrade = Mathf.MoveTowards(f_attributeValueBeforeUpgrade, f_newAttributeValue, rate * Time.deltaTime);
+            tmp_magicAttributeUpgraded.text = (f_attributeValueBeforeUpgrade).ToString("f2");
             yield return null;
         }
     }
     IEnumerator ShowMagicAttributeAmountIncreasedReducedEffect(float f_amountIncreased)
     {
         int f_amountIncreasedTargetValue = 0;
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(1f);
         float f_duration = 1f;
         var rate = Mathf.Abs(f_amountIncreasedTargetValue - f_amountIncreased) / f_duration;
 
         while (f_amountIncreased != f_amountIncreasedTargetValue)
         {
             f_amountIncreased = Mathf.MoveTowards(f_amountIncreased, f_amountIncreasedTargetValue, rate * Time.deltaTime);
-            tmp_magicAttributeIncrease.text = "+" + f_amountIncreased.ToString();
+            tmp_magicAttributeIncrease.text = "+" + f_amountIncreased.ToString("f2");
             yield return null;
         }
     }
