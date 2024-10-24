@@ -75,9 +75,9 @@ public static class PlayerData
     internal static int i_wallHPIncreased = 0;
     internal static int i_wallHPRecoveryPerSecond = 0;
     // Upgrade Magic
-    // Magics IDs: (0)Earth, (1)Fire, (2)Water, (3)Wind, (4)Lighting
+    // Magics IDs: (0)General, (1)Fire, (2)Water, (3)Wind, (4)Lighting, (5)Earth
     internal static int[] i_magicUpgradeLevel = new int[30];
-    // Spells Attributes Upgrade amount (Use magic IDs to letter correctly assign)
+    // Spells Attributes Upgrade amount (Use magic IDs to later correctly assign)
     internal static int[] i_magicDamageAttributeUpgradeAmount = new int[30];
     internal static int[] i_magicResistanceAttributeUpgradeAmount = new int[30];
     internal static float[] f_magicDurationAttributeUpgradedAmount = new float[30];

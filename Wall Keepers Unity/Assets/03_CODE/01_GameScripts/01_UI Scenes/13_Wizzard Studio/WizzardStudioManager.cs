@@ -20,7 +20,10 @@ public class WizzardStudioManager : MonoBehaviour
     float f_wallTotalHp, f_wallRecoveryAmountPerSecond;
 
     [Header("Magic Upgrades")]
-    [SerializeField] Animator _MagicUpgradeCompletePanel_animator;
+    [SerializeField] Animator _magicUpgradeCompletePanel_animator;
+    [SerializeField] TextMeshProUGUI tmp_magicAttributeUpgraded, tmp_magicAttributeIncrease;
+    float f_attributeValueBeforeUpgrade, f_attributeUpgradeValueDisplayed;
+    [SerializeField] GameObject[] go_arrayOfAttributesIcons = new GameObject[4];
 
     int i_animatorsString = Animator.StringToHash("Visible");
     #endregion
@@ -157,5 +160,55 @@ public class WizzardStudioManager : MonoBehaviour
 
     #endregion
 
-    
+    #region Magic Upgrades
+    internal void ShowMagicAttributeUpgraded(int i_indexForAttributeUpgradedIcon, float f_attributeValue, float f_amountIncreased)
+    {
+        // Show Attribute icon (First set all off and the activate the corresponding one)
+        foreach(GameObject attributeIcon in go_arrayOfAttributesIcons)
+        {
+            attributeIcon.SetActive(false);
+        }
+        go_arrayOfAttributesIcons[i_indexForAttributeUpgradedIcon].SetActive(true);
+        // Set initial values of TMP and control variable
+        f_attributeValueBeforeUpgrade = f_attributeValue;
+        print(f_attributeValueBeforeUpgrade);
+        tmp_magicAttributeUpgraded.text = f_attributeValueBeforeUpgrade.ToString();
+        tmp_magicAttributeIncrease.text = "+" + f_amountIncreased.ToString();
+        f_attributeValueBeforeUpgrade = f_attributeValue;
+        // Show Panel
+        ShowIndicatedPanel(_magicUpgradeCompletePanel_animator);
+        // Start Coroutines
+        float f_newAttributeValue = f_attributeValueBeforeUpgrade + f_amountIncreased;
+        StartCoroutine(ShowMagicAttributeIncreasedEffect(f_newAttributeValue));
+        StartCoroutine(ShowMagicAttributeAmountIncreasedReducedEffect(f_amountIncreased));
+    }
+    IEnumerator ShowMagicAttributeIncreasedEffect(float f_newAttributeValue)
+    {
+        yield return new WaitForSeconds(.5f);
+        float f_duration = 1f;
+        var rate = Mathf.Abs(f_newAttributeValue - f_attributeValueBeforeUpgrade) / f_duration;
+
+        while (f_attributeValueBeforeUpgrade != f_newAttributeValue)
+        {
+            f_attributeValueBeforeUpgrade = Mathf.MoveTowards(f_wallTotalHp, f_newAttributeValue, rate * Time.deltaTime);
+            tmp_magicAttributeUpgraded.text = f_attributeValueBeforeUpgrade.ToString();
+            yield return null;
+        }
+    }
+    IEnumerator ShowMagicAttributeAmountIncreasedReducedEffect(float f_amountIncreased)
+    {
+        int f_amountIncreasedTargetValue = 0;
+        yield return new WaitForSeconds(.5f);
+        float f_duration = 1f;
+        var rate = Mathf.Abs(f_amountIncreasedTargetValue - f_amountIncreased) / f_duration;
+
+        while (f_amountIncreased != f_amountIncreasedTargetValue)
+        {
+            f_amountIncreased = Mathf.MoveTowards(f_amountIncreased, f_amountIncreasedTargetValue, rate * Time.deltaTime);
+            tmp_magicAttributeIncrease.text = "+" + f_amountIncreased.ToString();
+            yield return null;
+        }
+    }
+
+    #endregion
 }

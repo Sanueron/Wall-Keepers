@@ -89,21 +89,116 @@ public class SpellCard_Manager : MonoBehaviour
         i_spellLevel = PlayerData.i_spell_Card_Level[spellID];
         i_spellAwakeningLvl = PlayerData.i_awakening_Card_Level[spellID];
 
+        #region Get Spells Stats Increase by Magic Upgrades
+        float f_damageIncreased = 0;
+        float f_resitanceIncreased = 0;
+        float f_durationIncreased = 0;
+        float f_speedIncreased = 0;
+
+        #region Stats Increase by Magic Upgrades
+        int i_elementID = 0; // Local variables to store element ID
+        // Get Element ID
+        switch (spellBaseData.e_Element)
+        {
+            case ScripteableCard.element.None: // If no element ignore
+                break;
+            case ScripteableCard.element.Fire: // Element ID = 1
+                i_elementID = 1;
+                break;
+            case ScripteableCard.element.Water:  // Element ID = 2
+                i_elementID = 2;
+                break;
+            case ScripteableCard.element.Wind: // Element ID = 3
+                i_elementID = 3;
+                break;
+            case ScripteableCard.element.Electric: // Element ID = 4
+                i_elementID = 4;
+                break;
+            case ScripteableCard.element.Earth: // Element ID = 5
+                i_elementID = 5;
+                break;
+        }
+
+        // Damage
+        if (spellBaseData.f_dmg > 0) // Check that spell has damage to avoid adding non used attribute
+        {
+            // First Add Gnral Magic Upgrades that apply to all spells. ID = 0
+            f_damageIncreased += PlayerData.i_magicDamageAttributeUpgradeAmount[0];
+            
+            // Last Add Spell Element Specific Upgrades
+            // Check if element ID is not 0 to avoid adding twice Gnral Magic Upgrades
+            if(i_elementID != 0)
+            {
+                // Add element damage Upgrade
+                f_damageIncreased += PlayerData.i_magicDamageAttributeUpgradeAmount[i_elementID];
+            }
+        }
+        // Resistance
+        if (spellBaseData.f_resistance > 0) // Check that spell has damage to avoid adding non used attribute
+        {
+            // First Add Gnral Magic Upgrades that apply to all spells. ID = 0
+            f_resitanceIncreased += PlayerData.i_magicResistanceAttributeUpgradeAmount[0];
+            
+            // Last Add Spell Element Specific Upgrades
+            // Check if element ID is not 0 to avoid adding twice Gnral Magic Upgrades
+            if (i_elementID != 0)
+            {
+                // Add element damage Upgrade
+                f_resitanceIncreased += PlayerData.i_magicResistanceAttributeUpgradeAmount[i_elementID];
+            }
+        }
+        // Duration
+        if (spellBaseData.f_duration > 0) // Check that spell has damage to avoid adding non used attribute
+        {
+            // First Add Gnral Magic Upgrades that apply to all spells. ID = 0
+            f_durationIncreased += PlayerData.f_magicDurationAttributeUpgradedAmount[0];
+            
+            // Last Add Spell Element Specific Upgrades
+            // Check if element ID is not 0 to avoid adding twice Gnral Magic Upgrades
+            if (i_elementID != 0)
+            {
+                // Add element damage Upgrade
+                f_durationIncreased += PlayerData.f_magicDurationAttributeUpgradedAmount[i_elementID];
+            }
+        }
+        // Speed
+        if (spellBaseData.f_projectileSpeed > 0) // Check that spell has damage to avoid adding non used attribute
+        {
+            // First Add Gnral Magic Upgrades that apply to all spells. ID = 0
+            f_speedIncreased += PlayerData.f_magicSpeedAttributeUpgradedAmount[0];
+            
+            // Last Add Spell Element Specific Upgrades
+            // Check if element ID is not 0 to avoid adding twice Gnral Magic Upgrades
+            if (i_elementID != 0)
+            {
+                // Add element damage Upgrade
+                f_speedIncreased += PlayerData.f_magicSpeedAttributeUpgradedAmount[i_elementID];
+            }
+        }
+
+        #endregion
+
+        #endregion
+
         #region Get spell stats updated to level and awakening level
         // Damage
         f_damage = spellBaseData.f_dmg +
+                f_damageIncreased +
                 SpellsData.f_damageIncreaseByLevel * i_spellLevel +
                 SpellsData.f_damageIncreaseByAwakening * i_spellAwakeningLvl;
         // Resistance
         f_resistance = spellBaseData.f_resistance +
+                f_resitanceIncreased +
                 SpellsData.f_resistanceIncreaseByLevel * i_spellLevel +
                 SpellsData.f_resistanceIncreaseByAwakening * i_spellAwakeningLvl;
         // Speed
         f_speed = spellBaseData.f_projectileSpeed +
+                f_durationIncreased +
                 SpellsData.f_speedIncreaseByLevel * i_spellLevel +
                 SpellsData.f_speedIncreaseByAwakening * i_spellAwakeningLvl; // if 0 is instant casting
         // Duration
         f_duration = spellBaseData.f_duration +
+                f_speedIncreased +
                 SpellsData.f_durationIncreaseByLevel * i_spellLevel +
                 SpellsData.f_damageIncreaseByAwakening * i_spellAwakeningLvl;
         //Repeat Rate, Always the same value

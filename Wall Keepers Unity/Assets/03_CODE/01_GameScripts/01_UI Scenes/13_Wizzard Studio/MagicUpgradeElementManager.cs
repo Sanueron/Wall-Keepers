@@ -47,12 +47,12 @@ public class MagicUpgradeElementManager : MonoBehaviour
         for (int i = 0; i <= PlayerData.i_magicUpgradeLevel[i_magicID]; i++)
         {
             // Check if level is unblocked to upgrade
-            if(i == PlayerData.i_magicUpgradeLevel[i_magicID]+1)
+            if(i == PlayerData.i_magicUpgradeLevel[i_magicID])
             {
                 arrayOf_blockedLevelsIcons[i].SetActive(false);
                 arrayOf_unblockedLevelsIcons[i].SetActive(true);
                 // Set as next level to upgrade
-                i_levelToUpgrade = i;
+                i_levelToUpgrade = i+1;
                 break;
             }
             else if (i < PlayerData.i_magicUpgradeLevel[i_magicID])
@@ -64,12 +64,14 @@ public class MagicUpgradeElementManager : MonoBehaviour
         }
 
         // Additional Check for Level 0 cases
-        if(i_levelToUpgrade == 0)
+        /*
+        if(PlayerData.i_magicUpgradeLevel[i_magicID] == 0)
         {
             i_levelToUpgrade = 1;
             arrayOf_blockedLevelsIcons[0].SetActive(false);
             arrayOf_unblockedLevelsIcons[0].SetActive(true);
         }
+        */
     }
 
     private void UpdateUpgradeCosts()
@@ -182,51 +184,68 @@ public class MagicUpgradeElementManager : MonoBehaviour
             UpdateUpgradeStatsValues();
         }
 
-        // Show Upgrade obtained panel
-        //script_wizzardStudioManager
-
         // Add Upgrade
         int i_indexOfIncreaseAmount = i_levelToUpgrade - 1;
+        int i_indexForAttributeIconInShowUpgradePanel = 0;
+        float f_attributeValueBeforeUpgrade = 0;
         switch (i_levelToUpgrade)
         {
             case 1: // Damage
+                i_indexForAttributeIconInShowUpgradePanel = 0;
                 f_upgradeAmount = arrayOf_amountToUpgradeByUpgrade[i_indexOfIncreaseAmount];
+                f_attributeValueBeforeUpgrade = PlayerData.i_magicDamageAttributeUpgradeAmount[i_magicID];
                 PlayerData.i_magicDamageAttributeUpgradeAmount[i_magicID] += (int)f_upgradeAmount;
                 break;
             case 2: // Resistance
+                i_indexForAttributeIconInShowUpgradePanel = 1;
                 f_upgradeAmount = arrayOf_amountToUpgradeByUpgrade[i_indexOfIncreaseAmount];
+                f_attributeValueBeforeUpgrade = PlayerData.i_magicResistanceAttributeUpgradeAmount[i_magicID];
                 PlayerData.i_magicResistanceAttributeUpgradeAmount[i_magicID] += (int)f_upgradeAmount;
                 break;
             case 3: // Duration
+                i_indexForAttributeIconInShowUpgradePanel = 2;
                 f_upgradeAmount = arrayOf_amountToUpgradeByUpgrade[i_indexOfIncreaseAmount];
-                PlayerData.f_magicDurationAttributeUpgradedAmount[i_magicID] += (int)f_upgradeAmount;
+                f_attributeValueBeforeUpgrade = PlayerData.f_magicDurationAttributeUpgradedAmount[i_magicID];
+                PlayerData.f_magicDurationAttributeUpgradedAmount[i_magicID] += f_upgradeAmount;
                 break;
             case 4: // Speed
+                i_indexForAttributeIconInShowUpgradePanel = 3;
                 f_upgradeAmount = arrayOf_amountToUpgradeByUpgrade[i_indexOfIncreaseAmount];
-                PlayerData.f_magicSpeedAttributeUpgradedAmount[i_magicID] += (int)f_upgradeAmount;
+                f_attributeValueBeforeUpgrade = PlayerData.f_magicSpeedAttributeUpgradedAmount[i_magicID];
+                PlayerData.f_magicSpeedAttributeUpgradedAmount[i_magicID] += f_upgradeAmount;
                 break;
             case 5: // Damage
+                i_indexForAttributeIconInShowUpgradePanel = 0;
                 f_upgradeAmount = arrayOf_amountToUpgradeByUpgrade[i_indexOfIncreaseAmount];
+                f_attributeValueBeforeUpgrade = PlayerData.i_magicDamageAttributeUpgradeAmount[i_magicID];
                 PlayerData.i_magicDamageAttributeUpgradeAmount[i_magicID] += (int)f_upgradeAmount;
                 break;
             case 6: // Resistance
+                i_indexForAttributeIconInShowUpgradePanel = 1;
                 f_upgradeAmount = arrayOf_amountToUpgradeByUpgrade[i_indexOfIncreaseAmount];
+                f_attributeValueBeforeUpgrade = PlayerData.i_magicResistanceAttributeUpgradeAmount[i_magicID];
                 PlayerData.i_magicResistanceAttributeUpgradeAmount[i_magicID] += (int)f_upgradeAmount;
                 break;
             case 7: // Duration
+                i_indexForAttributeIconInShowUpgradePanel = 2;
                 f_upgradeAmount = arrayOf_amountToUpgradeByUpgrade[i_indexOfIncreaseAmount];
-                PlayerData.f_magicDurationAttributeUpgradedAmount[i_magicID] += (int)f_upgradeAmount;
+                f_attributeValueBeforeUpgrade = PlayerData.f_magicDurationAttributeUpgradedAmount[i_magicID];
+                PlayerData.f_magicDurationAttributeUpgradedAmount[i_magicID] += f_upgradeAmount;
                 break;
             case 8: // Speed
+                i_indexForAttributeIconInShowUpgradePanel = 3;
                 f_upgradeAmount = arrayOf_amountToUpgradeByUpgrade[i_indexOfIncreaseAmount];
-                PlayerData.f_magicSpeedAttributeUpgradedAmount[i_magicID] += (int)f_upgradeAmount;
+                f_attributeValueBeforeUpgrade = PlayerData.f_magicSpeedAttributeUpgradedAmount[i_magicID];
+                PlayerData.f_magicSpeedAttributeUpgradedAmount[i_magicID] += f_upgradeAmount;
                 break;
         }
 
+        // Show Upgrade obtained panel
+        script_wizzardStudioManager.ShowMagicAttributeUpgraded(i_indexForAttributeIconInShowUpgradePanel,
+            f_attributeValueBeforeUpgrade, f_upgradeAmount);
+
         // Set new Level To Upgrade
         i_levelToUpgrade = PlayerData.i_magicUpgradeLevel[i_magicID];
-
-
 
         // Save Data
         SaveData.instance.AssignDataAndSave();

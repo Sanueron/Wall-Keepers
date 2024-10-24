@@ -39,6 +39,7 @@ public class TsunamiWaveeffect : BaseSpellsEffects
     }
     private void OnDisable()
     {
+        GetEnemiesOutOfWave();
         f_counter = 0;
         b_effectFinished = false;
         b_startMoving = false;
