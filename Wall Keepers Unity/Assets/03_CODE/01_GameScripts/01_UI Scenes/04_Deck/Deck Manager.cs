@@ -238,8 +238,10 @@ public class DeckManager : MonoBehaviour
         bool b_awakeningReady = true;
         if (i_spellLevel == 10)
         {
+            print("Awaken level is " + i_spellAwakeningLvl);
             if(i_spellAwakeningLvl == 0)
             {
+                print("Pasa por aqui y activa los awaken objects");
                 // Show Awakening options
                 go_levelUpItems.SetActive(false);
                 go_awakenItems.SetActive(true);
@@ -352,8 +354,10 @@ public class DeckManager : MonoBehaviour
             else { b_awakeningReady = false; }
         }
         else { b_awakeningReady = false; }
+
         if (!b_awakeningReady) // Spell Not ready for Awakening Show Level Up options
         {
+            print("desactiva awakne objects");
             go_awakenItems.SetActive(false);
             awakenButton.gameObject.SetActive(false);
             // Check if Spell is fusion or not and Show level up buttons
