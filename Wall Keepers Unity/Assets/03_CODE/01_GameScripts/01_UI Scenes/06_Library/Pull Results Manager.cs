@@ -253,6 +253,13 @@ public class PullResultsManager : MonoBehaviour
             generalPullOpening_Animator.SetInteger(i_generalPullOpening_controlVariable, i_resultsOverviewAnimation);
         }
     }
+
+    public void SkipToResultsOverviewPanel()
+    {
+        int i_nextAnimation = 4;
+        UpdateResultsOverviewPanel();
+        generalPullOpening_Animator.SetInteger(i_generalPullOpening_controlVariable, i_nextAnimation);
+    }
     #endregion
 
     #region Extra Methods

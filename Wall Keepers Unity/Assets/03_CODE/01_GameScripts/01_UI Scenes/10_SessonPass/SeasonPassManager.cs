@@ -85,7 +85,12 @@ public class SeasonPassManager : MonoBehaviour
     private void UpdateLevelAndExpVisuals()
     {
         // Visuals: Level Bar & Exp to next level Bar
-        // UpdatelvlBar();
+        // Check if Max level reached
+        if(PlayerData.i_magicPassLevel >= i_passMaxLevel)
+        {
+            PlayerData.i_magicPassLevel = i_passMaxLevel;
+            tmp_manaLeftToNextLevel.gameObject.SetActive(false);
+        }
         IncreaseSeveralLevels(PlayerData.i_magicPassLevel);
         tmp_currentMagicPassLevel.text = "Level " + PlayerData.i_magicPassLevel.ToString();
         PlayerData.i_magicPassManaExp = i_manaUsed;

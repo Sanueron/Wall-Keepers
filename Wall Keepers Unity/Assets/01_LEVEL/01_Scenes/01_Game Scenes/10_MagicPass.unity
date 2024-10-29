@@ -4907,7 +4907,10 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1180835858}
+  - {fileID: 899949897}
+  - {fileID: 1116970628}
   m_Father: {fileID: 1688552563}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
@@ -5225,11 +5228,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1688552563}
+  m_Father: {fileID: 841432801}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -238, y: 409.44}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0.000030517578, y: 79.37433}
   m_SizeDelta: {x: 250, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &899949898
@@ -7253,11 +7256,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1688552563}
+  m_Father: {fileID: 841432801}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -141.3, y: 296.2798}
+  m_AnchorMin: {x: 1, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: -28.300003, y: -3.7859192}
   m_SizeDelta: {x: 33.0168, y: 33.0168}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1116970629
@@ -7909,11 +7912,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1688552563}
+  m_Father: {fileID: 841432801}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -238, y: 334.39996}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0.000030517578, y: 4.3342896}
   m_SizeDelta: {x: 250, y: 40.136}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1180835859
@@ -10987,9 +10990,6 @@ RectTransform:
   - {fileID: 561344625}
   - {fileID: 177733729}
   - {fileID: 666773588}
-  - {fileID: 1116970628}
-  - {fileID: 899949897}
-  - {fileID: 1180835858}
   - {fileID: 841432801}
   - {fileID: 2118404537}
   m_Father: {fileID: 1290960517}
