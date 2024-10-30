@@ -6,6 +6,9 @@ using UnityEngine;
 public class PlayModesManager : MonoBehaviour
 {
     #region Local Variables
+    [Header("Currencies")]
+    [SerializeField] private TextMeshProUGUI tmp_playerManaEnergy;
+    [SerializeField] private TextMeshProUGUI tmp_playerManaKeys;
     [Header("Levels Mode")]
     [SerializeField] Animator animator_levelsViewPort;
     [SerializeField] Transform transform_levelsPanel;
@@ -26,8 +29,15 @@ public class PlayModesManager : MonoBehaviour
         CheckLevelsState(); // Levels Play mode
         SetLevelsPanelToLastLevelUnlockedHeight(); // Play mode
         GetWavesRecord(); // Endless Waves
+        UpdatePlayerCurrencies();
     }
     #endregion
+
+    private void UpdatePlayerCurrencies()
+    {
+        tmp_playerManaEnergy.text = PlayerData.i_mana.ToString();
+        tmp_playerManaKeys.text = PlayerData.i_keys.ToString();
+    }
 
     #region Levels
     public void ShowLevelsViewPort()

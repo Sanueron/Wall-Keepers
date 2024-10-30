@@ -176,7 +176,7 @@ public class ResultsManager : MonoBehaviour
     private void ShowManaObtained()
     {
         tmp_totalPlayerMana.text = PlayerData.i_mana.ToString();
-        tmp_totalManaObtained.text = i_manaObtained.ToString();
+        tmp_totalManaObtained.text = "+" + i_manaObtained.ToString();
     }
     internal void ShowSumUpTotalManaEnergy(float f_newTotalManaAmount, float f_manaObtained)
     {
@@ -192,6 +192,7 @@ public class ResultsManager : MonoBehaviour
         {
             f_currentPlayerManaAmount = Mathf.MoveTowards(f_currentPlayerManaAmount, f_newTotalManaAmount, rate * Time.deltaTime);
             tmp_totalPlayerMana.text = ((int)f_currentPlayerManaAmount).ToString("f0");
+
             yield return null;
         }
     }
@@ -205,6 +206,10 @@ public class ResultsManager : MonoBehaviour
         {
             f_manaObtained = Mathf.MoveTowards(f_manaObtained, f_targetAmount, rate * Time.deltaTime);
             tmp_totalManaObtained.text = "+" + ((int)f_manaObtained).ToString("f0");
+            if (f_manaObtained == f_targetAmount)
+            {
+                tmp_totalManaObtained.gameObject.SetActive(false);
+            }
             yield return null;
         }
     }
