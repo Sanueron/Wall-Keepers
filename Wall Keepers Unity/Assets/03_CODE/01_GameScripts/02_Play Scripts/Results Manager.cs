@@ -11,7 +11,7 @@ public class ResultsManager : MonoBehaviour
     [SerializeField] private Animator animator_ResultsPanel;
     [SerializeField] private GameObject go_newRecord, go_bestScore;
     [SerializeField] private TextMeshProUGUI tmp_currentWavesRecord, tmp_wavesCompleted,
-        tmp_totalManaObtained;
+        tmp_totalManaObtained, tmp_totalPlayerMana;
     #endregion
 
     #region External Variables
@@ -41,6 +41,10 @@ public class ResultsManager : MonoBehaviour
     int i_manaObtained = 0;
     #endregion
 
+    #region Control Variables
+    private float f_currentPlayerManaAmount;
+    #endregion
+
     #region UNITY LIFE CYCLE
     void Start()
     { 
@@ -48,7 +52,8 @@ public class ResultsManager : MonoBehaviour
         Enemy.onEnemyDefeated += Enemy_onEnemyDefeated;
         WallManager.e_OnWallDestroyed += WallManager_e_OnWallDestroyed;
 
-        // Set initial Mana Energy obtained
+        // Set initial Mana Energy obtained and player mana
+        f_currentPlayerManaAmount = PlayerData.i_mana;
         i_manaObtained = 0;
 
         // Unpause Level
@@ -93,6 +98,7 @@ public class ResultsManager : MonoBehaviour
         if(e_levelType == LevelType.EndlessWavesLvl)
         {
             PlayerData.i_mana += i_manaObtained;
+            ShowSumUpTotalManaEnergy(PlayerData.i_mana, i_manaObtained);
         }
 
         // Pause Enemies Actions
@@ -169,8 +175,41 @@ public class ResultsManager : MonoBehaviour
     }
     private void ShowManaObtained()
     {
+        tmp_totalPlayerMana.text = PlayerData.i_mana.ToString();
         tmp_totalManaObtained.text = i_manaObtained.ToString();
     }
+    internal void ShowSumUpTotalManaEnergy(float f_newTotalManaAmount, float f_manaObtained)
+    {
+        StartCoroutine(SumUpTotalMana(f_newTotalManaAmount));
+        StartCoroutine(ReduceManaObtained(f_manaObtained));
+    }
+    IEnumerator SumUpTotalMana(float f_newTotalManaAmount)
+    {
+        yield return new WaitForSeconds(2f);
+        float f_duration = 1f;
+        var rate = Mathf.Abs(f_newTotalManaAmount - f_currentPlayerManaAmount) / f_duration;
+        while (f_currentPlayerManaAmount != f_newTotalManaAmount)
+        {
+            f_currentPlayerManaAmount = Mathf.MoveTowards(f_currentPlayerManaAmount, f_newTotalManaAmount, rate * Time.deltaTime);
+            tmp_totalPlayerMana.text = ((int)f_currentPlayerManaAmount).ToString("f0");
+            yield return null;
+        }
+    }
+    IEnumerator ReduceManaObtained(float f_manaObtained)
+    {
+        yield return new WaitForSeconds(2f);
+        float f_targetAmount = 0;
+        float f_duration = 1f;
+        var rate = Mathf.Abs(f_targetAmount - f_manaObtained) / f_duration;
+        while (f_manaObtained != f_targetAmount)
+        {
+            f_manaObtained = Mathf.MoveTowards(f_manaObtained, f_targetAmount, rate * Time.deltaTime);
+            tmp_totalManaObtained.text = "+" + ((int)f_manaObtained).ToString("f0");
+            yield return null;
+        }
+    }
     #endregion
+
+
 
 }

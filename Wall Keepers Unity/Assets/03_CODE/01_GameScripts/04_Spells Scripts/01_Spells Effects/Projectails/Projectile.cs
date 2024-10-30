@@ -67,20 +67,6 @@ public class Projectile : BaseSpellsEffects
 
     private void ProjectileMovement()
     {
-        /*
-        //ROTATE TOWARDS TARGET
-        Vector3 directionToTarget = v3_endPosition - transform.position;
-        float angulo = Mathf.Atan2(directionToTarget.y, directionToTarget.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angulo - 90));
-        //Movement
-        var step = f_speed * Time.deltaTime;
-        transform.position = Vector3.MoveTowards(transform.position, v3_endPosition, step);
-        if (transform.position == v3_endPosition)
-        {
-            Explosion();
-            b_startMovement = false;
-        }
-        */
 
         //ROTATE TOWARDS TARGET
         Vector3 directionToTarget = v3_endPosition - transform.position;
