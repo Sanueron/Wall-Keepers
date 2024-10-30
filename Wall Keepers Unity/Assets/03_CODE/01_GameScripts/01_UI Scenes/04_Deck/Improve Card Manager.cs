@@ -187,7 +187,7 @@ public class ImproveCardManager : MonoBehaviour
         while (f_statValueShown != targetValue)
         {
             f_statValueShown = Mathf.MoveTowards(f_statValueShown, targetValue, rate * Time.deltaTime);
-            DeckManager.instance.tmp_damageAlone.text = ((int)f_statValueShown).ToString();
+            DeckManager.instance.tmp_damageAlone.text = ((int)f_statValueShown).ToString("f0");
             yield return null;
         }
     }
@@ -198,7 +198,7 @@ public class ImproveCardManager : MonoBehaviour
         while (f_statValueShown != targetValue)
         {
             f_statValueShown = Mathf.MoveTowards(f_statValueShown, targetValue, rate * Time.deltaTime);
-            DeckManager.instance.tmp_resistanceAlone.text = ((int)f_statValueShown).ToString();
+            DeckManager.instance.tmp_resistanceAlone.text = ((int)f_statValueShown).ToString("f0");
             yield return null;
         }
     }
@@ -209,7 +209,7 @@ public class ImproveCardManager : MonoBehaviour
         while (f_statValueShown != targetValue)
         {
             f_statValueShown = Mathf.MoveTowards(f_statValueShown, targetValue, rate * Time.deltaTime);
-            DeckManager.instance.tmp_speedAlone.text = f_statValueShown.ToString();
+            DeckManager.instance.tmp_speedAlone.text = f_statValueShown.ToString("f2");
             yield return null;
         }
     }
@@ -220,7 +220,7 @@ public class ImproveCardManager : MonoBehaviour
         while (f_statValueShown != targetValue)
         {
             f_statValueShown = Mathf.MoveTowards(f_statValueShown, targetValue, rate * Time.deltaTime);
-            DeckManager.instance.tmp_durationAlone.text = f_statValueShown.ToString();
+            DeckManager.instance.tmp_durationAlone.text = f_statValueShown.ToString("f2");
             yield return null;
         }
     }

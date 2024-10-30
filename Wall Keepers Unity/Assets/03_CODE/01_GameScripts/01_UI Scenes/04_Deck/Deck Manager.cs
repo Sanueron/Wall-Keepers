@@ -238,12 +238,11 @@ public class DeckManager : MonoBehaviour
         bool b_awakeningReady = true;
         if (i_spellLevel == 10)
         {
-            print("Awaken level is " + i_spellAwakeningLvl);
             if(i_spellAwakeningLvl == 0)
             {
-                print("Pasa por aqui y activa los awaken objects");
                 // Show Awakening options
                 go_levelUpItems.SetActive(false);
+                go_fusionSpellsSpecialItems.SetActive(false);
                 go_awakenItems.SetActive(true);
                 awakenButton.gameObject.SetActive(true);
                 if (i_elementalRunesInStock >= i_elementalRunesCost)
@@ -267,6 +266,7 @@ public class DeckManager : MonoBehaviour
             {
                 // Show Awakening options
                 go_levelUpItems.SetActive(false);
+                go_fusionSpellsSpecialItems.SetActive(false);
                 go_awakenItems.SetActive(true);
                 awakenButton.gameObject.SetActive(true);
                 if (i_elementalRunesInStock >= i_elementalRunesCost)
@@ -290,6 +290,7 @@ public class DeckManager : MonoBehaviour
             {
                 // Show Awakening options
                 go_levelUpItems.SetActive(false);
+                go_fusionSpellsSpecialItems.SetActive(false);
                 go_awakenItems.SetActive(true);
                 awakenButton.gameObject.SetActive(true);
                 if (i_elementalRunesInStock >= i_elementalRunesCost)
@@ -313,6 +314,7 @@ public class DeckManager : MonoBehaviour
             {
                 // Show Awakening options
                 go_levelUpItems.SetActive(false);
+                go_fusionSpellsSpecialItems.SetActive(false);
                 go_awakenItems.SetActive(true);
                 awakenButton.gameObject.SetActive(true);
                 if (i_elementalRunesInStock >= i_elementalRunesCost)
@@ -336,6 +338,7 @@ public class DeckManager : MonoBehaviour
             {
                 // Show Awakening options
                 go_levelUpItems.SetActive(false);
+                go_fusionSpellsSpecialItems.SetActive(false);
                 go_awakenItems.SetActive(true);
                 awakenButton.gameObject.SetActive(true);
                 if (i_elementalRunesInStock >= i_elementalRunesCost)
@@ -357,7 +360,6 @@ public class DeckManager : MonoBehaviour
 
         if (!b_awakeningReady) // Spell Not ready for Awakening Show Level Up options
         {
-            print("desactiva awakne objects");
             go_awakenItems.SetActive(false);
             awakenButton.gameObject.SetActive(false);
             // Check if Spell is fusion or not and Show level up buttons
@@ -412,6 +414,14 @@ public class DeckManager : MonoBehaviour
                     break;
             }
         }
+
+        // Additional Check to avoid errors when displaying Awaken requirements only
+        if (go_awakenItems.activeSelf)
+        {
+            go_levelUpItems.SetActive(false);
+            go_fusionSpellsSpecialItems.SetActive(false);
+        }
+        print("Pasa por Deck Manager");
 
         animator_SpellInfoPanel.SetTrigger(i_animatorTriggerVar);
     }
@@ -577,6 +587,7 @@ public class DeckManager : MonoBehaviour
             {
                 // Show Awakening options
                 go_levelUpItems.SetActive(false);
+                go_fusionSpellsSpecialItems.SetActive(false);
                 go_awakenItems.SetActive(true);
                 awakenButton.gameObject.SetActive(true);
                 if (i_elementalRunesInStock >= i_elementalRunesCost)
@@ -600,6 +611,7 @@ public class DeckManager : MonoBehaviour
             {
                 // Show Awakening options
                 go_levelUpItems.SetActive(false);
+                go_fusionSpellsSpecialItems.SetActive(false);
                 go_awakenItems.SetActive(true);
                 awakenButton.gameObject.SetActive(true);
                 if (i_elementalRunesInStock >= i_elementalRunesCost)
@@ -623,6 +635,7 @@ public class DeckManager : MonoBehaviour
             {
                 // Show Awakening options
                 go_levelUpItems.SetActive(false);
+                go_fusionSpellsSpecialItems.SetActive(false);
                 go_awakenItems.SetActive(true);
                 awakenButton.gameObject.SetActive(true);
                 if (i_elementalRunesInStock >= i_elementalRunesCost)
@@ -646,6 +659,7 @@ public class DeckManager : MonoBehaviour
             {
                 // Show Awakening options
                 go_levelUpItems.SetActive(false);
+                go_fusionSpellsSpecialItems.SetActive(false);
                 go_awakenItems.SetActive(true);
                 awakenButton.gameObject.SetActive(true);
                 if (i_elementalRunesInStock >= i_elementalRunesCost)
@@ -669,6 +683,7 @@ public class DeckManager : MonoBehaviour
             {
                 // Show Awakening options
                 go_levelUpItems.SetActive(false);
+                go_fusionSpellsSpecialItems.SetActive(false);
                 go_awakenItems.SetActive(true);
                 awakenButton.gameObject.SetActive(true);
                 if (i_elementalRunesInStock >= i_elementalRunesCost)
@@ -683,6 +698,16 @@ public class DeckManager : MonoBehaviour
                     else { ShowStatsAlone(); }
                 }
                 else { ShowStatsAlone(); }
+            }
+            else if (i_spellAwakeningLvl == 5)
+            {
+                go_levelUpItems.SetActive(false);
+                go_fusionSpellsSpecialItems.SetActive(false);
+                go_awakenItems.SetActive(true);
+                awakenButton.gameObject.SetActive(false);
+                ShowStatsAlone();
+
+                tmp_lvlUpOrAwakentext.text = "MAX UPGRADE";
             }
             else { b_awakeningReady = false; }
         }
@@ -722,6 +747,9 @@ public class DeckManager : MonoBehaviour
                     break;
                 case ScripteableCard.SpellType.Fusion:
                     tmp_lvlUpOrAwakentext.text = "Level Up";
+                    img_spellRequired_1.sprite = spellInfo.spr_spellRequiredCard_1;
+                    img_spellRequired_2.sprite = spellInfo.spr_spellRequiredCard_2;
+                    go_fusionSpellsSpecialItems.SetActive(true);
                     go_levelUpItems.SetActive(false);
                     go_awakenItems.SetActive(false);
                     if (PlayerData.i_mana >= i_manaEnergyCost)
@@ -738,7 +766,6 @@ public class DeckManager : MonoBehaviour
                     break;
             }
         }
-
     }
     #endregion
 }

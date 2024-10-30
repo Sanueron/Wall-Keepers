@@ -8,6 +8,10 @@ public class MainMenuManager : MonoBehaviour
     [Header("Use List to reassign saved spells in deck prefabs and data when opening game")]
     [SerializeField] List<ScripteableCard> listOfSpellsData = new List<ScripteableCard>();
 
+    [Header("Current Season Number")]
+    public string s_seasonName;
+    [SerializeField] private int i_seasonID;
+
     [Header("Player Currencies")]
     [SerializeField] private TextMeshProUGUI tmp_playerMana;
     [SerializeField] private TextMeshProUGUI tmp_playerManaKeys;
@@ -23,6 +27,8 @@ public class MainMenuManager : MonoBehaviour
         // SaveData.instance.AssignDataAndSave();
         // Update Player Mana and Keys UI visual elements
         GetPlayerCurrenciesAndUpdateTMP();
+
+        CheckSeasonResets();
     }
     #endregion
 
@@ -61,6 +67,26 @@ public class MainMenuManager : MonoBehaviour
         }
     }
 
+    private void CheckSeasonResets()
+    {
+        // Check Current Season and compare against player last season log in to do resets if new season
+        if (PlayerData.i_lastSeasonPlayedID != i_seasonID)
+        {
+            // Mark new season as last played
+            PlayerData.i_lastSeasonPlayedID = i_seasonID;
+            // NEW SEASON (Reset all variables related to season pass rewards and level.
+            PlayerData.b_premiumPassPurchased = false; // Set Premium pass as not bought
+            PlayerData.i_magicPassManaExp = 0; // Set mana exp obtained to 0
+            PlayerData.i_magicPassLevel = 0; // Set Pass level to 0
+            // Set all rewards as not claimed
+            for (int i = 0; i < PlayerData.b_magicPassRewardClaimed.Length; i++)
+            {
+                PlayerData.b_magicPassRewardClaimed[i] = false;
+            }
+
+            SaveData.instance.AssignDataAndSave();
+        }
+    }
     #region Manage Player Currencies Methods
     private void GetPlayerCurrenciesAndUpdateTMP()
     {

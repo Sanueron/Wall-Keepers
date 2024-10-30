@@ -3092,6 +3092,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e775a7749a5fa3047ba54086ef9f238c, type: 2}
   - {fileID: 11400000, guid: 912e6217fe4d5804ea6241f41d644fb7, type: 2}
   - {fileID: 11400000, guid: 1e646959faa6bac489b535c7e77078c6, type: 2}
+  s_seasonName: Power of the seas
+  i_seasonID: 1
   tmp_playerMana: {fileID: 2003119030}
   tmp_playerManaKeys: {fileID: 2003119029}
 --- !u!1 &1512518588

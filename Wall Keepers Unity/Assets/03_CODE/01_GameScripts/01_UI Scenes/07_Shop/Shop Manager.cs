@@ -161,7 +161,6 @@ public class ShopManager : MonoBehaviour
         {
             // Get Data Saved 
             // get spell displayed Index in array
-            print(PlayerData.shopBuyableSpells[i]);
             arrayOf_displayedShopBuyableSpells[i] = allBuyableSpellsDataObjects[PlayerData.shopBuyableSpells[i]];
             allBuyableSpellsDataObjects.RemoveAt(PlayerData.shopBuyableSpells[i]);
 
