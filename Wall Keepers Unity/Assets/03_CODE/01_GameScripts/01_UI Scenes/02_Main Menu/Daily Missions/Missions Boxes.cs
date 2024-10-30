@@ -9,6 +9,7 @@ public class MissionsBoxes : MonoBehaviour
     // Missions Visual Elements and Local logics
     [Header("Referenced Scripts")]
     [SerializeField] private MainMenuManager script_mainMenuManager;
+    [SerializeField] private DailyMissionsManager script_dailyMissionsManager;
     #region Visual Elements
     [Header("Visual Elements")]
     [SerializeField] internal TextMeshProUGUI tmp_missionsCompletedText;
@@ -41,6 +42,8 @@ public class MissionsBoxes : MonoBehaviour
         script_mainMenuManager.UpdateEffectManaEnergy(PlayerData.i_mana);
         MarkMissionsAsClaimed();
 
+        script_dailyMissionsManager.CheckIfMoreMissionsToBeClaimed();
+
         SaveData.instance.AssignDataAndSave();
     }
     public void ClaimManaKeysRewards(int i_keysRewarded)
@@ -52,6 +55,8 @@ public class MissionsBoxes : MonoBehaviour
         PlayerData.i_keys += i_keysRewarded;
         script_mainMenuManager.ShowSumUpManaKeys(PlayerData.i_keys);
         MarkMissionsAsClaimed();
+
+        script_dailyMissionsManager.CheckIfMoreMissionsToBeClaimed();
 
         SaveData.instance.AssignDataAndSave();
     }

@@ -11,11 +11,16 @@ public class DailyMissionsManager : MonoBehaviour
     // 1 - Play one game; 2 - Play 3 games; 3 - Make one pull; 4 - Improve one card; 5 complete all missions.
     [SerializeField] MissionsBoxes script_dailyMission_1, script_dailyMission_2, script_dailyMission_3, script_dailyMission_4,
         script_dailyMission_5;
+    [SerializeField] Animator canClaimIcon_animator;
+    int i_animatorString = Animator.StringToHash("CanClaim");
+    public static int i_countOfDMissionsClaimable = 0;
     #endregion
 
     #region Unity Life Cycle
     private void Start()
     {
+        i_countOfDMissionsClaimable = 0;
+
         CheckIfNewDayAndUpdateDailyMissions();
 
         SaveData.instance.AssignDataAndSave();
@@ -73,6 +78,8 @@ public class DailyMissionsManager : MonoBehaviour
             {
                 script_dailyMission_1.go_canClaimEffect.SetActive(true);
                 script_dailyMission_1.button_missionClaim.interactable = true;
+                ShowCanClaimIcon();
+                i_countOfDMissionsClaimable++;
             }
         }
         else
@@ -96,6 +103,8 @@ public class DailyMissionsManager : MonoBehaviour
             {
                 script_dailyMission_2.go_canClaimEffect.SetActive(true);
                 script_dailyMission_2.button_missionClaim.interactable = true;
+                ShowCanClaimIcon();
+                i_countOfDMissionsClaimable++;
             }
         }
         else
@@ -118,6 +127,8 @@ public class DailyMissionsManager : MonoBehaviour
             {
                 script_dailyMission_3.go_canClaimEffect.SetActive(true);
                 script_dailyMission_3.button_missionClaim.interactable = true;
+                ShowCanClaimIcon();
+                i_countOfDMissionsClaimable++;
             }
         }
         else
@@ -142,6 +153,8 @@ public class DailyMissionsManager : MonoBehaviour
             {
                 script_dailyMission_4.go_canClaimEffect.SetActive(true);
                 script_dailyMission_4.button_missionClaim.interactable = true;
+                ShowCanClaimIcon();
+                i_countOfDMissionsClaimable++;
             }
         }
         else
@@ -165,7 +178,27 @@ public class DailyMissionsManager : MonoBehaviour
             {
                 script_dailyMission_5.go_canClaimEffect.SetActive(true);
                 script_dailyMission_5.button_missionClaim.interactable = true;
+                ShowCanClaimIcon();
+                i_countOfDMissionsClaimable++;
             }
+        }
+    }
+
+    private void ShowCanClaimIcon()
+    {
+        canClaimIcon_animator.SetBool(i_animatorString, true);
+    }
+    private void HideCanClaimIcon()
+    {
+        canClaimIcon_animator.SetBool(i_animatorString, false);
+    }
+    internal void CheckIfMoreMissionsToBeClaimed()
+    {
+        i_countOfDMissionsClaimable--;
+        if(i_countOfDMissionsClaimable <= 0)
+        {
+            i_countOfDMissionsClaimable = 0;
+            HideCanClaimIcon();
         }
     }
 }
