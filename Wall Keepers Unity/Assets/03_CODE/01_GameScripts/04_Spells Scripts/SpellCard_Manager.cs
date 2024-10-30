@@ -152,7 +152,7 @@ public class SpellCard_Manager : MonoBehaviour
         {
             // First Add Gnral Magic Upgrades that apply to all spells. ID = 0
             f_durationIncreased += PlayerData.f_magicDurationAttributeUpgradedAmount[0];
-            
+            print("Apply duration increase by magic upgrade " + gameObject.name);
             // Last Add Spell Element Specific Upgrades
             // Check if element ID is not 0 to avoid adding twice Gnral Magic Upgrades
             if (i_elementID != 0)
@@ -193,14 +193,14 @@ public class SpellCard_Manager : MonoBehaviour
                 SpellsData.f_resistanceIncreaseByAwakening * i_spellAwakeningLvl;
         // Speed
         f_speed = spellBaseData.f_projectileSpeed +
-                f_durationIncreased +
+                f_speedIncreased +
                 SpellsData.f_speedIncreaseByLevel * i_spellLevel +
                 SpellsData.f_speedIncreaseByAwakening * i_spellAwakeningLvl; // if 0 is instant casting
         // Duration
         f_duration = spellBaseData.f_duration +
-                f_speedIncreased +
+                f_durationIncreased +
                 SpellsData.f_durationIncreaseByLevel * i_spellLevel +
-                SpellsData.f_damageIncreaseByAwakening * i_spellAwakeningLvl;
+                SpellsData.f_durationIncreaseByAwakening * i_spellAwakeningLvl;
         //Repeat Rate, Always the same value
         f_repeatRate = spellBaseData.f_attackInterval;
         //Slow down (MudBall), Always the same

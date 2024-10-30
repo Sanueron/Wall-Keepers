@@ -471,7 +471,7 @@ public class DeckManager : MonoBehaviour
         {
             f_duration = spellInfo.f_duration +
                 SpellsData.f_durationIncreaseByLevel * i_spellLevel +
-                SpellsData.f_damageIncreaseByAwakening * i_spellAwakeningLvl;
+                SpellsData.f_durationIncreaseByAwakening * i_spellAwakeningLvl;
         }
 
         // Damage
