@@ -67,6 +67,7 @@ public class Projectile : BaseSpellsEffects
 
     private void ProjectileMovement()
     {
+        /*
         //ROTATE TOWARDS TARGET
         Vector3 directionToTarget = v3_endPosition - transform.position;
         float angulo = Mathf.Atan2(directionToTarget.y, directionToTarget.x) * Mathf.Rad2Deg;
@@ -74,6 +75,23 @@ public class Projectile : BaseSpellsEffects
         //Movement
         var step = f_speed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, v3_endPosition, step);
+        if (transform.position == v3_endPosition)
+        {
+            Explosion();
+            b_startMovement = false;
+        }
+        */
+
+        //ROTATE TOWARDS TARGET
+        Vector3 directionToTarget = v3_endPosition - transform.position;
+        float angulo = Mathf.Atan2(directionToTarget.y, directionToTarget.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angulo - 90));
+        //INTERPOLATION
+        //We need to know the proportion of the journey that has been completed, using fractionOfJourney to make a good interpolation between the start and end positions.
+        //Without this, the projectile takes the same time to reach all positions.
+        float f_distCovered = (Time.time - startTime) * f_speed;
+        float fractionOfJourney = f_distCovered / f_journeyLength;
+        transform.position = Vector3.Lerp(v3_startPosition, v3_endPosition, fractionOfJourney);
         if (transform.position == v3_endPosition)
         {
             Explosion();

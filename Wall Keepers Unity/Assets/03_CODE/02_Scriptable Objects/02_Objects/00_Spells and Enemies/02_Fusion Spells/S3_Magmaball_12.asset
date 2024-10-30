@@ -20,7 +20,7 @@ MonoBehaviour:
   i_mana_cost: 3
   f_dmg: 300
   f_duration: 1.5
-  f_projectileSpeed: 3
+  f_projectileSpeed: 4
   f_resistance: 0
   requiredElementalRune: {fileID: 11400000, guid: fbe28b66f306cc74c909847eba3cdf2f, type: 2}
   _card_Sprite: {fileID: 21300000, guid: 2c1052c07e243c047aa1a8187c591c91, type: 3}

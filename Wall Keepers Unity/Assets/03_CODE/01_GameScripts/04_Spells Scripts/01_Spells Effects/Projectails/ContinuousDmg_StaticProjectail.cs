@@ -88,7 +88,7 @@ public class ContinuousDmg_StaticProjectail : BaseSpellsEffects
         //INTERPOLATION
         //We need to know the proportion of the journey that has been completed, using fractionOfJourney to make a good interpolation between the start and end positions.
         //Without this, the projectile takes the same time to reach all positions.
-        float f_distCovered = (Time.time - startTime) * 1.0f * f_speed*2.0f;
+        float f_distCovered = (Time.time - startTime) * f_speed;
         float fractionOfJourney = f_distCovered / f_journeyLength;
         transform.position = Vector3.Lerp(v3_startPosition, v3_endPosition, fractionOfJourney);
         if (transform.position == v3_endPosition)
