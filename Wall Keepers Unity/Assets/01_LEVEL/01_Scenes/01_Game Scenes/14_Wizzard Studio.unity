@@ -425,6 +425,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 01_All Clans
       objectReference: {fileID: 0}
+    - target: {fileID: 1968716094570842853, guid: ad28fc7d23c68f342aa7270604f17563, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 926448392579309865, guid: 3753bca14f3bc4d4289e1b38da5da6ed, type: 3}
     - target: {fileID: 2872324747443649902, guid: ad28fc7d23c68f342aa7270604f17563, type: 3}
       propertyPath: m_text
       value: ALL
@@ -12656,7 +12660,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 397.3, y: 251.4815}
+  m_SizeDelta: {x: 397, y: 250}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1375806751
 MonoBehaviour:
@@ -14567,7 +14571,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 260, y: 251.4815}
+  m_SizeDelta: {x: 260, y: 250}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1555647471
 MonoBehaviour:
