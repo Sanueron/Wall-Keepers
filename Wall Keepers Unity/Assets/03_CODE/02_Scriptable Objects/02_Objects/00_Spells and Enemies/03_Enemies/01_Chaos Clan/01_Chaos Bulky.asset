@@ -20,8 +20,11 @@ MonoBehaviour:
   f_RageOfAction: 3
   f_projectailSpeed: 0
   i_manaEnergyReleased: 5
-  Description: Slow but very hard to take down. Bulkies are known for being able
+  Description: 'Slow but very hard to take down. Bulkies are known for being able
     to take lots of damage thanks to their big bodies.
+
+
+    Size: Big'
   deathClip: {fileID: 0}
   e_Clan: 1
   e_ElementalType: 0

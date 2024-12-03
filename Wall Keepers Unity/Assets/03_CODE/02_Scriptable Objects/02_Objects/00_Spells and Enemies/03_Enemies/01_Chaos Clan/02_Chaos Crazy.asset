@@ -20,8 +20,12 @@ MonoBehaviour:
   f_RageOfAction: 1.5
   f_projectailSpeed: 0
   i_manaEnergyReleased: 3
-  Description: Faster than other demonitos they run like crazy towards their next
+  Description: 'Faster than other demonitos they run like crazy towards their next
     target to destroy.
+
+
+    Size: Small'
   deathClip: {fileID: 0}
   e_Clan: 1
   e_ElementalType: 0
+  e_size: 0

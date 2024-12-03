@@ -38,8 +38,6 @@ public class MagicUpgradeElementManager : MonoBehaviour
         CheckCurrentUpgrades();
         // Update Visuals at start
         UpdateUpgradeStatsValues();
-
-        print("Level to upgrade is " + i_levelToUpgrade + " For " + gameObject.name);
     }
     #endregion
 

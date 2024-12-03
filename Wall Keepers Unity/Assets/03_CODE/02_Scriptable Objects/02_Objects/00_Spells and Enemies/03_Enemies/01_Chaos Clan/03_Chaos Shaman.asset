@@ -20,8 +20,13 @@ MonoBehaviour:
   f_RageOfAction: 8
   f_projectailSpeed: 1.5
   i_manaEnergyReleased: 7
-  Description: A shaman of the Chaos clan. Loves to set all in fire and shoots small
+  Description: 'A shaman of the Chaos clan. Loves to set all in fire and shoots small
     fire balls. Very dangerous as their magic allows them to attack from far away.
+
+
+    Size:
+    Small'
   deathClip: {fileID: 0}
   e_Clan: 1
   e_ElementalType: 2
+  e_size: 0

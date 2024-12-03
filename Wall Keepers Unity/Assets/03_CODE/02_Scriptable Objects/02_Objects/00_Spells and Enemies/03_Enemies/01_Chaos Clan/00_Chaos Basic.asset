@@ -20,8 +20,12 @@ MonoBehaviour:
   f_RageOfAction: 1
   f_projectailSpeed: 0
   i_manaEnergyReleased: 2
-  Description: Ordinary demonitos from the Chaos clan. They use their claws to scratch
+  Description: 'Ordinary demonitos from the Chaos clan. They use their claws to scratch
     and destroy everythinh they find.
+
+
+    Size: Small'
   deathClip: {fileID: 0}
   e_Clan: 1
   e_ElementalType: 0
+  e_size: 0

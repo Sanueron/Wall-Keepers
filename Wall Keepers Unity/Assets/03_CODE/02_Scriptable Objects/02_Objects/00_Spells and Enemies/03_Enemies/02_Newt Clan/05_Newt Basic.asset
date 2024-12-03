@@ -20,8 +20,12 @@ MonoBehaviour:
   f_RageOfAction: 1
   f_projectailSpeed: 0
   i_manaEnergyReleased: 2
-  Description: The Newt clan lives in swampsand is commonly known from consuming
+  Description: 'The Newt clan lives in swampsand is commonly known from consuming
     underwater life.
+
+
+    Size: Small'
   deathClip: {fileID: 0}
   e_Clan: 2
   e_ElementalType: 3
+  e_size: 0
