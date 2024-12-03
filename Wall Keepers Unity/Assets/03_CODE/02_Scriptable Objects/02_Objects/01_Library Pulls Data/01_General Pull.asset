@@ -27,6 +27,7 @@ MonoBehaviour:
   twoStar_Spells:
   - {fileID: 11400000, guid: 3d1e0af4a247bd843a7015d0a121f956, type: 2}
   - {fileID: 11400000, guid: 8f44eb88455fe6545ab8bb150c45d638, type: 2}
+  - {fileID: 11400000, guid: 774e3904f1facd84cb9b9daee243e1cb, type: 2}
   threeStar_Spells:
   - {fileID: 11400000, guid: bee568d9a37cc524681302dac694215c, type: 2}
   - {fileID: 11400000, guid: e775a7749a5fa3047ba54086ef9f238c, type: 2}

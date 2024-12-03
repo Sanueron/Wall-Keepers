@@ -533,6 +533,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5901946144623437381, guid: ad28fc7d23c68f342aa7270604f17563, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5901946144623437381, guid: ad28fc7d23c68f342aa7270604f17563, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5901946144623437381, guid: ad28fc7d23c68f342aa7270604f17563, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1403037130}
+    - target: {fileID: 5901946144623437381, guid: ad28fc7d23c68f342aa7270604f17563, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1148047154}
+    - target: {fileID: 5901946144623437381, guid: ad28fc7d23c68f342aa7270604f17563, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayOneShot
+      objectReference: {fileID: 0}
+    - target: {fileID: 5901946144623437381, guid: ad28fc7d23c68f342aa7270604f17563, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ShowAll
+      objectReference: {fileID: 0}
+    - target: {fileID: 5901946144623437381, guid: ad28fc7d23c68f342aa7270604f17563, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.AudioSource, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5901946144623437381, guid: ad28fc7d23c68f342aa7270604f17563, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: DemonitosBookManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5901946144623437381, guid: ad28fc7d23c68f342aa7270604f17563, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 8300000, guid: 6bb37fb13ce62414cbcf2633ce45a143, type: 3}
+    - target: {fileID: 5901946144623437381, guid: ad28fc7d23c68f342aa7270604f17563, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.AudioClip, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3617,12 +3657,17 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1996009721409543139, guid: c0ba7d4aba3af4c4fa31553949e915a8, type: 3}
   m_PrefabInstance: {fileID: 394136722}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 394136725}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 96b4117d5dfc9ba49820e98c2d1f30ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &394136725 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 395631380291576378, guid: c0ba7d4aba3af4c4fa31553949e915a8, type: 3}
+  m_PrefabInstance: {fileID: 394136722}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &408328840
 GameObject:
   m_ObjectHideFlags: 0
@@ -11175,6 +11220,13 @@ MonoBehaviour:
   go_waterIcon: {fileID: 955070495}
   go_windIcon: {fileID: 835941094}
   go_lightingIcon: {fileID: 273849913}
+  listOf_go_demonitosOfClan_Chaos:
+  - {fileID: 109373892158495774}
+  - {fileID: 1610234637}
+  - {fileID: 394136725}
+  - {fileID: 1721809758}
+  listOf_go_demonitosOfClan_Newt:
+  - {fileID: 1524439871}
 --- !u!1 &1208926812
 GameObject:
   m_ObjectHideFlags: 0
@@ -14454,12 +14506,17 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1996009721409543139, guid: c0ba7d4aba3af4c4fa31553949e915a8, type: 3}
   m_PrefabInstance: {fileID: 1524439868}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1524439871}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 96b4117d5dfc9ba49820e98c2d1f30ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1524439871 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 395631380291576378, guid: c0ba7d4aba3af4c4fa31553949e915a8, type: 3}
+  m_PrefabInstance: {fileID: 1524439868}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1525336613
 GameObject:
   m_ObjectHideFlags: 0
@@ -15356,12 +15413,17 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1996009721409543139, guid: c0ba7d4aba3af4c4fa31553949e915a8, type: 3}
   m_PrefabInstance: {fileID: 1610234634}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1610234637}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 96b4117d5dfc9ba49820e98c2d1f30ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1610234637 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 395631380291576378, guid: c0ba7d4aba3af4c4fa31553949e915a8, type: 3}
+  m_PrefabInstance: {fileID: 1610234634}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1627149405
 GameObject:
   m_ObjectHideFlags: 0
@@ -16189,12 +16251,17 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1996009721409543139, guid: c0ba7d4aba3af4c4fa31553949e915a8, type: 3}
   m_PrefabInstance: {fileID: 1721809755}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1721809758}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 96b4117d5dfc9ba49820e98c2d1f30ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1721809758 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 395631380291576378, guid: c0ba7d4aba3af4c4fa31553949e915a8, type: 3}
+  m_PrefabInstance: {fileID: 1721809755}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1725809752
 GameObject:
   m_ObjectHideFlags: 0
@@ -19783,6 +19850,58 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5901946144623437381, guid: ad28fc7d23c68f342aa7270604f17563, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5901946144623437381, guid: ad28fc7d23c68f342aa7270604f17563, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1403037130}
+    - target: {fileID: 5901946144623437381, guid: ad28fc7d23c68f342aa7270604f17563, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1148047154}
+    - target: {fileID: 5901946144623437381, guid: ad28fc7d23c68f342aa7270604f17563, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1148047154}
+    - target: {fileID: 5901946144623437381, guid: ad28fc7d23c68f342aa7270604f17563, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayOneShot
+      objectReference: {fileID: 0}
+    - target: {fileID: 5901946144623437381, guid: ad28fc7d23c68f342aa7270604f17563, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: HideAll
+      objectReference: {fileID: 0}
+    - target: {fileID: 5901946144623437381, guid: ad28fc7d23c68f342aa7270604f17563, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: ShowNewtClanDemonitos
+      objectReference: {fileID: 0}
+    - target: {fileID: 5901946144623437381, guid: ad28fc7d23c68f342aa7270604f17563, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.AudioSource, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5901946144623437381, guid: ad28fc7d23c68f342aa7270604f17563, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: DemonitosBookManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5901946144623437381, guid: ad28fc7d23c68f342aa7270604f17563, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: DemonitosBookManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5901946144623437381, guid: ad28fc7d23c68f342aa7270604f17563, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 8300000, guid: 6bb37fb13ce62414cbcf2633ce45a143, type: 3}
+    - target: {fileID: 5901946144623437381, guid: ad28fc7d23c68f342aa7270604f17563, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.AudioClip, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5901946144623437381, guid: ad28fc7d23c68f342aa7270604f17563, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -21049,12 +21168,17 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1996009721409543139, guid: c0ba7d4aba3af4c4fa31553949e915a8, type: 3}
   m_PrefabInstance: {fileID: 109373892158495772}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 109373892158495774}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 96b4117d5dfc9ba49820e98c2d1f30ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &109373892158495774 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 395631380291576378, guid: c0ba7d4aba3af4c4fa31553949e915a8, type: 3}
+  m_PrefabInstance: {fileID: 109373892158495772}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &906627439722825411 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3334419093884629981, guid: ad28fc7d23c68f342aa7270604f17563, type: 3}
@@ -21774,6 +21898,58 @@ PrefabInstance:
     - target: {fileID: 3334419093884629981, guid: ad28fc7d23c68f342aa7270604f17563, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5901946144623437381, guid: ad28fc7d23c68f342aa7270604f17563, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5901946144623437381, guid: ad28fc7d23c68f342aa7270604f17563, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1403037130}
+    - target: {fileID: 5901946144623437381, guid: ad28fc7d23c68f342aa7270604f17563, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1148047154}
+    - target: {fileID: 5901946144623437381, guid: ad28fc7d23c68f342aa7270604f17563, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1148047154}
+    - target: {fileID: 5901946144623437381, guid: ad28fc7d23c68f342aa7270604f17563, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayOneShot
+      objectReference: {fileID: 0}
+    - target: {fileID: 5901946144623437381, guid: ad28fc7d23c68f342aa7270604f17563, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: HideAll
+      objectReference: {fileID: 0}
+    - target: {fileID: 5901946144623437381, guid: ad28fc7d23c68f342aa7270604f17563, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: ShowChaosClanDemonitos
+      objectReference: {fileID: 0}
+    - target: {fileID: 5901946144623437381, guid: ad28fc7d23c68f342aa7270604f17563, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.AudioSource, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5901946144623437381, guid: ad28fc7d23c68f342aa7270604f17563, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: DemonitosBookManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5901946144623437381, guid: ad28fc7d23c68f342aa7270604f17563, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: DemonitosBookManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5901946144623437381, guid: ad28fc7d23c68f342aa7270604f17563, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 8300000, guid: 6bb37fb13ce62414cbcf2633ce45a143, type: 3}
+    - target: {fileID: 5901946144623437381, guid: ad28fc7d23c68f342aa7270604f17563, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.AudioClip, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5901946144623437381, guid: ad28fc7d23c68f342aa7270604f17563, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

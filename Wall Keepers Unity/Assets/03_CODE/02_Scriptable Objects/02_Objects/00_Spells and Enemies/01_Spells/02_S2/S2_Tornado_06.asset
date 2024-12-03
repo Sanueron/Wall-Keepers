@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 67a28c5053d354cbc9b5d80ae0aaa875, type: 3}
-  m_Name: S3_Tornado_06
+  m_Name: S2_Tornado_06
   m_EditorClassIdentifier: 
   i_id: 6
   Description: Pulls enemies in area to its center.

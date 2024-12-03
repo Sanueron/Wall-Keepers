@@ -75,7 +75,6 @@ public class WallManager : MonoBehaviour
     public void ReceiveHit(float EnemyDmg)
     {
         f_wallLife -= EnemyDmg;
-        print("Wall life left " + f_wallLife);
         // img_wallLifeBar.fillAmount = GetHpFillBarValue();
         StartCoroutine(DecreaseLifeBar());
 
@@ -87,7 +86,6 @@ public class WallManager : MonoBehaviour
     internal void HealWall(float newWallHP)
     {
         //StopCoroutine(DecreaseLifeBar());
-        print(newWallHP);
         f_wallLife = newWallHP;
         img_wallLifeBar.fillAmount = GetHpFillBarValue();
         // img_wallLifeBar.fillAmount = GetHpFillBarValue();

@@ -94,6 +94,8 @@ public class MagicPassRewardBox : MonoBehaviour
             case RewardType.FeaturedSpell:
                 // MARK SPELL as OBTAINED
                 PlayerData.b_spellCardObtained[i_rewardAmount] = true;
+                int i_featuredSpellCardAmountObtained = 50;
+                PlayerData.i_spell_Cards_Obtained[i_rewardAmount] += i_featuredSpellCardAmountObtained;
                 script_seasonPassManager.PlayCollectFeaturedSpell();
                 break;
         }

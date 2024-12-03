@@ -23,4 +23,8 @@ public class ScripteableEnemies : ScriptableObject
 
     public enum ElementalType { None, Earth, Fire, Water, Wind, Lighting };
     public ElementalType e_ElementalType;
+
+    public enum Size { small, medium, large };
+    [Header("Size")]
+    public Size e_size;
 }

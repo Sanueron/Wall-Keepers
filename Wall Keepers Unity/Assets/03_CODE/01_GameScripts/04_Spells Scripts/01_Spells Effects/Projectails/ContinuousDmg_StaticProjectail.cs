@@ -45,7 +45,7 @@ public class ContinuousDmg_StaticProjectail : BaseSpellsEffects
             CastEffectWithTimerLakes();
         }
     }
-    internal void OnDisable()//Reset Lightnings
+    internal void OnDisable()// Reset 
     {
         b_effectFinished = false;
     }

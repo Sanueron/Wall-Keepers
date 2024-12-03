@@ -13,10 +13,13 @@ public class DemonitosBookManager : MonoBehaviour
     [Header("Elemental Icons")]
     [SerializeField] GameObject go_earthIcon;
     [SerializeField] GameObject go_fireIcon, go_waterIcon, go_windIcon, go_lightingIcon;
+    [Header("Demonitos Boxes for Filtering")]
+    [SerializeField] private List<GameObject> listOf_go_demonitosOfClan_Chaos;
+    [SerializeField] private List<GameObject> listOf_go_demonitosOfClan_Newt;
 
     #endregion
 
-    #region Methods
+    #region Show Demonitos info Methods
     public void ShowEnemyData(ScripteableEnemies enemyData, Image img_selectedDemonitoIcon)
     {
         // Visual
@@ -69,6 +72,51 @@ public class DemonitosBookManager : MonoBehaviour
         go_waterIcon.SetActive(false);
         go_windIcon.SetActive(false);
         go_lightingIcon.SetActive(false);
+    }
+    #endregion
+
+    #region Filter Demonitos Methods
+    public void ShowAll()
+    {
+        foreach(GameObject demonitoBox in listOf_go_demonitosOfClan_Chaos)
+        {
+            if(!demonitoBox.activeSelf)
+            demonitoBox.SetActive(true);
+        }
+        foreach (GameObject demonitoBox in listOf_go_demonitosOfClan_Newt)
+        {
+            if (!demonitoBox.activeSelf)
+                demonitoBox.SetActive(true);
+        }
+    }
+    public void HideAll()
+    {
+        foreach (GameObject demonitoBox in listOf_go_demonitosOfClan_Chaos)
+        {
+            if (demonitoBox.activeSelf)
+                demonitoBox.SetActive(false);
+        }
+        foreach (GameObject demonitoBox in listOf_go_demonitosOfClan_Newt)
+        {
+            if (demonitoBox.activeSelf)
+                demonitoBox.SetActive(false);
+        }
+    }
+    public void ShowChaosClanDemonitos()
+    {
+        foreach (GameObject demonitoBox in listOf_go_demonitosOfClan_Chaos)
+        {
+            if (!demonitoBox.activeSelf)
+                demonitoBox.SetActive(true);
+        }
+    }
+    public void ShowNewtClanDemonitos()
+    {
+        foreach (GameObject demonitoBox in listOf_go_demonitosOfClan_Newt)
+        {
+            if (!demonitoBox.activeSelf)
+                demonitoBox.SetActive(true);
+        }
     }
     #endregion
 }

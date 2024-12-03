@@ -13,7 +13,7 @@ public class Enemy : MonoBehaviour
 
     #region Enemy Stats and Info
     [Header("Stats")]
-    [SerializeField] ScripteableEnemies baseStats;
+    [SerializeField] internal ScripteableEnemies baseStats;
     internal int i_id, i_hp, i_maxHp, i_damage, i_manaEnergyReleased;
     internal float f_speed, f_startSpeed;
     float f_hpForHealthBar;

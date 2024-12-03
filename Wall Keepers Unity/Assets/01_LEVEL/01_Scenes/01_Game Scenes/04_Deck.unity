@@ -6852,6 +6852,7 @@ MonoBehaviour:
   listOf_WaterSpells:
   - {fileID: 971611648}
   - {fileID: 5678329052404492800}
+  - {fileID: 1405454078}
   listOf_EarthSpells:
   - {fileID: 969151591}
   - {fileID: 715968309}
@@ -6945,13 +6946,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1608042777}
     m_Modifications:
+    - target: {fileID: 1208051427448736382, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
+      propertyPath: spellPrefab
+      value: 
+      objectReference: {fileID: 975993543300551935, guid: 3429b0997c6dc944ba2f1c4b60210dba, type: 3}
+    - target: {fileID: 1208051427448736382, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
+      propertyPath: spellBaseData
+      value: 
+      objectReference: {fileID: 11400000, guid: 774e3904f1facd84cb9b9daee243e1cb, type: 2}
+    - target: {fileID: 1370452447835895853, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -937018930210944903, guid: 100c1b5781a50ed45af5fc0621e0b454, type: 3}
     - target: {fileID: 2953748825001162203, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_Name
-      value: Spell Card (11)
+      value: S2_Bubble
       objectReference: {fileID: 0}
     - target: {fileID: 2953748825001162203, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_Pivot.x
@@ -6967,7 +6980,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_AnchorMin.x
@@ -6975,15 +6988,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 200
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 275
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_LocalScale.x
@@ -7027,11 +7040,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 790
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -737.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -7055,6 +7068,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8304779855854223005, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
   m_PrefabInstance: {fileID: 1405454076}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1405454078 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1208051427448736382, guid: f1f4da695e2826241bd5752498dd1928, type: 3}
+  m_PrefabInstance: {fileID: 1405454076}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d77957f1efd87a646b97f080b02e5272, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1418621780
 GameObject:
   m_ObjectHideFlags: 0
@@ -8642,6 +8666,7 @@ RectTransform:
   - {fileID: 1469587578}
   - {fileID: 715968308}
   - {fileID: 208771990}
+  - {fileID: 1405454077}
   - {fileID: 1431665428}
   - {fileID: 4178787647169595955}
   - {fileID: 16951462}
@@ -8654,7 +8679,6 @@ RectTransform:
   - {fileID: 2135970605}
   - {fileID: 8304779855896617115}
   - {fileID: 914290176}
-  - {fileID: 1405454077}
   - {fileID: 1843237108}
   - {fileID: 1524425339}
   - {fileID: 225684479}

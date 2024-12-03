@@ -9,12 +9,15 @@ public class Testing : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        //PlayerData.b_spellCardObtained[9] = true;
-        
+        PlayerData.b_spellCardObtained[35] = true;
+
         // ObtainAllCards();    
         // TestDeck();
         // PlayerData.i_keys = 1000;
         //PlayerData.i_mana = 1000;
-        
+
+    }
+    private void Start()
+    {
     }
 }
