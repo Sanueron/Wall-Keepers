@@ -14,8 +14,9 @@ public class BaseSpellsEffects : MonoBehaviour
     protected float f_damage, f_resistance, f_speed, f_duration, f_repeatRate, f_slowDownValue, f_initialSpeed;
     protected bool b_mergedCard;
     internal Transform spellCardParent;
-   [SerializeField] internal List <Enemy> enemiesScripts_List = new List<Enemy>();
+    [SerializeField] internal List <Enemy> enemiesScripts_List = new List<Enemy>();
     protected int i_EnemyLayer = 10;
+    public int GetEnemyLayer() { return i_EnemyLayer; }
     internal enum SpellElement { None, Fire, Earth, Water, Wind, Lighting };
     [SerializeField] internal SpellElement e_spellElement;
 
@@ -67,12 +68,12 @@ public class BaseSpellsEffects : MonoBehaviour
     #endregion
 
     #region Enemies 
-    protected void AddToEnemiesList(Enemy enemy)
+    internal void AddToEnemiesList(Enemy enemy)
     {
         enemiesScripts_List.Add(enemy);
     }
 
-    protected void RemoveFromEnemiesList(Enemy enemy)
+    internal void RemoveFromEnemiesList(Enemy enemy)
     {
         enemiesScripts_List.Remove(enemy);
     }

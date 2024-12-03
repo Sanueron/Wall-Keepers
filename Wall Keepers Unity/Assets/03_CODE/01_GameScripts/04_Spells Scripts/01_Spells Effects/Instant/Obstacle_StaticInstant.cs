@@ -8,7 +8,7 @@ public class Obstacle_StaticInstant : BaseSpellsEffects
     #region Variables
     private bool b_flinched, b_canFlinch;
     private WaitForSeconds flintchTimer_WFS = new WaitForSeconds(0.5f);
-    private float f_flinchForce = 3.5f;
+    internal float f_flinchForce = 3.5f;
     private float f_stopEnemyDelay = 0.3f;
     #endregion
 
@@ -58,7 +58,6 @@ public class Obstacle_StaticInstant : BaseSpellsEffects
     }
     internal bool ReceiveDamage(int i_damageReceived)
     {
-        print("Receive damage");
         f_resistance -= i_damageReceived;
         if (f_resistance < 0)
         {

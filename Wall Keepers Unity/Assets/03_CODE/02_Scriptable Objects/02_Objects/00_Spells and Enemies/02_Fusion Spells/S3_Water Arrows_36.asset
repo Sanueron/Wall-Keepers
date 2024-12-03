@@ -21,7 +21,7 @@ MonoBehaviour:
   f_duration: 0
   f_projectileSpeed: 6
   f_resistance: 0
-  requiredElementalRune: {fileID: 11400000, guid: b1f41260bc5382245be7bf31f10bb7ea, type: 2}
+  requiredElementalRune: {fileID: 11400000, guid: fed4aaf3e278ee447868e6cf2800cc52, type: 2}
   _card_Sprite: {fileID: 21300000, guid: a2478ddead45fb743a9e13f1f9ac44dc, type: 3}
   _onField_Sprite: {fileID: 1909578519830951322, guid: d6cb27bb78b5f9d4c9467e12887cd8f5, type: 3}
   spellPrefab: {fileID: 8552923680335254868, guid: 91d16e3320ba3ac43830eec412d54ea1, type: 3}

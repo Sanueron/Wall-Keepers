@@ -152,7 +152,6 @@ public class SpellCard_Manager : MonoBehaviour
         {
             // First Add Gnral Magic Upgrades that apply to all spells. ID = 0
             f_durationIncreased += PlayerData.f_magicDurationAttributeUpgradedAmount[0];
-            print("Apply duration increase by magic upgrade " + gameObject.name);
             // Last Add Spell Element Specific Upgrades
             // Check if element ID is not 0 to avoid adding twice Gnral Magic Upgrades
             if (i_elementID != 0)

@@ -69,7 +69,6 @@ public class WallManager : MonoBehaviour
         int i_wallLifeAddingWallUpgrades = (int)f_MaxWallLife + PlayerData.i_wallHPIncreased;
         f_MaxWallLife = i_wallLifeAddingWallUpgrades;
         f_wallLife = f_MaxWallLife;
-        print(f_wallLife);
     }
     //Method accessed by the enemy to deal damage to the wall
     public void ReceiveHit(float EnemyDmg)
