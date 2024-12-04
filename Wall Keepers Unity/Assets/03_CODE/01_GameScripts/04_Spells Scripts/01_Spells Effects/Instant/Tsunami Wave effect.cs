@@ -70,12 +70,9 @@ public class TsunamiWaveeffect : BaseSpellsEffects
             if (enemyInsideWave != null) 
             {
                 // Option 1
+                enemyInsideWave.f_speed = enemyInsideWave.f_startSpeed;
                 enemyInsideWave.transform.parent = null;
                 enemyInsideWave.transform.localScale = new Vector3(1, 1, 1);
-
-                // Option 2 (Pulls enemies to its center
-                //enemyInsideWave.RestoreTarget();
-                //enemyInsideWave.OutOfAreaApplyingForceToEnemy();
             }
         }
     }

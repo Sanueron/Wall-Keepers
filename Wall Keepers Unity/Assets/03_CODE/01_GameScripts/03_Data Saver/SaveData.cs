@@ -133,6 +133,8 @@ public class SaveData : MonoBehaviour
           {"b_premiumPassPurchased", PlayerData.b_premiumPassPurchased},
           {"i_lastSeasonPlayedID", PlayerData.i_lastSeasonPlayedID},
           {"b_seasonPosterShown", PlayerData.b_seasonPosterShown},
+          {"b_dailyFreeClaimed", PlayerData.b_dailyFreeClaimed},
+          {"b_gameTermsAccepted", PlayerData.b_gameTermsAccepted},
           #region Wizzard Studio Attributes
           {"i_wallUpgradeStage_TotalUpgrades", PlayerData.i_wallUpgradeStage_TotalUpgrades},
           {"i_wallHPIncreased", PlayerData.i_wallHPIncreased},
@@ -159,7 +161,8 @@ public class SaveData : MonoBehaviour
           "runesLeftInShop", "removeAdsState", "currentWizzardPassBought", "seasonPassBoughtID", "lastDayLogInShop", "lastDayLogInMainMenu",
           "i_magicPassManaExp","i_magicPassLevel","b_magicPassRewardClaimed","b_premiumPassPurchased","shopBuyableSpells","i_wallUpgradeStage_TotalUpgrades",
           "i_wallHPIncreased","i_wallHPRecoveryPerSecond","i_magicUpgradeLevel","i_magicDamageAttributeUpgradeAmount","i_magicResistanceAttributeUpgradeAmount",
-          "f_magicDurationAttributeUpgradedAmount","f_magicSpeedAttributeUpgradedAmount","i_lastSeasonPlayedID","b_seasonPosterShown",
+          "f_magicDurationAttributeUpgradedAmount","f_magicSpeedAttributeUpgradedAmount","i_lastSeasonPlayedID","b_seasonPosterShown","b_dailyFreeClaimed",
+          "b_gameTermsAccepted",
         });
 
         // Mana Energy (Int)
@@ -353,6 +356,14 @@ public class SaveData : MonoBehaviour
         if (playerData.TryGetValue("shopBuyableSpells", out var shopBuyableSpells))
         {
             PlayerData.shopBuyableSpells = shopBuyableSpells.Value.GetAs<int[]>();
+        }
+        if (playerData.TryGetValue("b_dailyFreeClaimed", out var b_dailyFreeClaimed))
+        {
+            PlayerData.b_dailyFreeClaimed = b_dailyFreeClaimed.Value.GetAs<bool>();
+        }
+        if (playerData.TryGetValue("b_gameTermsAccepted", out var b_gameTermsAccepted))
+        {
+            PlayerData.b_gameTermsAccepted = b_dailyFreeClaimed.Value.GetAs<bool>();
         }
         #region Magic Pass Data
         if (playerData.TryGetValue("i_magicPassManaExp", out var i_magicPassManaExp))

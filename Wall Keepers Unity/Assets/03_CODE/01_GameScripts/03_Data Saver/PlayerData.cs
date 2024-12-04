@@ -2,6 +2,8 @@ using UnityEngine;
 
 public static class PlayerData
 {
+    internal static bool b_gameTermsAccepted;
+
     internal static int i_keys;
     internal static int i_mana;
     internal static bool[] b_spellCardObtained = new bool[100];
@@ -54,6 +56,7 @@ public static class PlayerData
     #endregion
 
     #region Purchased Items Data
+    internal static bool b_dailyFreeClaimed;
     internal static bool b_removeAdsBought;
     internal static bool b_wizzardPassBought;
     internal static int i_lastSeasonPassBought;

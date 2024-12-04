@@ -13,6 +13,8 @@ public class AuthenticationManager : MonoBehaviour
     public TextMeshProUGUI tmp_playerID;
     public static bool b_dataAlreadyLoadedFromCloud = false;
 
+    [SerializeField] GameObject go_gameTermsPanel;
+
     bool b_dataFromCloudLoaded;
     private void Start()
     {
@@ -66,11 +68,41 @@ public class AuthenticationManager : MonoBehaviour
 
         if (b_dataAlreadyLoadedFromCloud)
         {
+            // Check if Privacy Policies and Refund Policies has been Accepted, if not show panel
+            if (!PlayerData.b_gameTermsAccepted)
+            {
+                ShowGameTermsPanel();
+            }
             go_startButton.SetActive(true);
         }
 
     }
-
+    public void AcceptTerms()
+    {
+        PlayerData.b_gameTermsAccepted = true;
+        HideGameTermsPanel();
+        SaveData.instance.AssignDataAndSave();
+    }
+    private void ShowGameTermsPanel()
+    {
+        go_gameTermsPanel.SetActive(true);
+    }
+    private void HideGameTermsPanel()
+    {
+        go_gameTermsPanel.SetActive(false);
+    }
+    public void LoadGameTermsPrivacyPolicy()
+    {
+        Application.OpenURL("https://lroar8.wixsite.com/lions-roar-games/about-5");
+    }
+    public void LoadGameTermsOfUse()
+    {
+        Application.OpenURL("https://lroar8.wixsite.com/lions-roar-games/about-5-1");
+    }
+    public void LoadGameRefundPolicy()
+    {
+        Application.OpenURL("https://lroar8.wixsite.com/lions-roar-games/copia-de-terms-of-use");
+    }
     public void HideLogInPanel()
     {
         go_loginPanel.SetActive(false);

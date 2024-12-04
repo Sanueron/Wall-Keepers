@@ -108,6 +108,8 @@ public class InGamePurchasesManager : MonoBehaviour, IDetailedStoreListener
     int i_animatorString = Animator.StringToHash("Visible");
     [SerializeField] GameObject go_purchasePremiumPassButton, go_purchasePassLevelsButton;
     [SerializeField] TextMeshProUGUI tmp_passLevelDisplay;
+    [Header("Premium Pass")]
+    [SerializeField] GameObject go_dailyFreeManaBlockedPanel;
     #endregion
 
     #region Control Variables
@@ -150,6 +152,12 @@ public class InGamePurchasesManager : MonoBehaviour, IDetailedStoreListener
                 go_purchasePassLevelsButton.gameObject.SetActive(true);
             }
         }
+
+        // Check if Daily Free claimed
+        if (PlayerData.b_dailyFreeClaimed)
+        {
+            go_dailyFreeManaBlockedPanel.gameObject.SetActive(true);
+        }
     }
 
     #endregion
@@ -172,6 +180,26 @@ public class InGamePurchasesManager : MonoBehaviour, IDetailedStoreListener
     #endregion
 
     #region Local Methods
+    public void GetFreeDailyMana() // Every day can get 500 mana energy for free
+    {
+        // Block daily free
+        go_dailyFreeManaBlockedPanel.SetActive(true);
+
+        // Mark daily free as claimed
+        PlayerData.b_dailyFreeClaimed = true;
+
+        aS_sfxs.PlayOneShot(aC_purchasedComplete);
+
+        // Assign local var of mana obtained
+        int i_manaObtained = 500;
+        // Assign Local Variable Current Mana
+        f_playerCurrentMana = PlayerData.i_mana;
+        // Add Mana 
+        PlayerData.i_mana += i_manaObtained;
+        StartCoroutine(SumUp(PlayerData.i_mana));
+        // Save Data
+        SaveData.instance.AssignDataAndSave();
+    }
     public void TryPurchase_Buy5000Mana()
     {
         m_StoreController.InitiatePurchase(consumableItem_5000Mana.s_Id);
@@ -286,10 +314,6 @@ public class InGamePurchasesManager : MonoBehaviour, IDetailedStoreListener
     public void TryPurchase_SeasonPass()
     {
         m_StoreController.InitiatePurchase(subscriptionItem_seasonWizzardPass.s_Id);
-    }
-    private void UnlockWizzardPassAccess()
-    {
-
     }
     #endregion
 

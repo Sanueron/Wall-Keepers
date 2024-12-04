@@ -2410,75 +2410,8 @@ Transform:
   - {fileID: 13758786}
   - {fileID: 1106039012}
   - {fileID: 180955138}
-  - {fileID: 771409426}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &771409425
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 743638278}
-    m_Modifications:
-    - target: {fileID: 2443416931025003213, guid: 71f24c3a9548cd8459c88d9a3e793d44, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2443416931025003213, guid: 71f24c3a9548cd8459c88d9a3e793d44, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2443416931025003213, guid: 71f24c3a9548cd8459c88d9a3e793d44, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2443416931025003213, guid: 71f24c3a9548cd8459c88d9a3e793d44, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2443416931025003213, guid: 71f24c3a9548cd8459c88d9a3e793d44, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2443416931025003213, guid: 71f24c3a9548cd8459c88d9a3e793d44, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2443416931025003213, guid: 71f24c3a9548cd8459c88d9a3e793d44, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2443416931025003213, guid: 71f24c3a9548cd8459c88d9a3e793d44, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2443416931025003213, guid: 71f24c3a9548cd8459c88d9a3e793d44, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2443416931025003213, guid: 71f24c3a9548cd8459c88d9a3e793d44, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6155179278143719763, guid: 71f24c3a9548cd8459c88d9a3e793d44, type: 3}
-      propertyPath: m_Name
-      value: TESTER
-      objectReference: {fileID: 0}
-    - target: {fileID: 6155179278143719763, guid: 71f24c3a9548cd8459c88d9a3e793d44, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 71f24c3a9548cd8459c88d9a3e793d44, type: 3}
---- !u!4 &771409426 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2443416931025003213, guid: 71f24c3a9548cd8459c88d9a3e793d44, type: 3}
-  m_PrefabInstance: {fileID: 771409425}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &864125519 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8480946250915444689, guid: f3d560cda3a946748841279fb0a9640f, type: 3}
@@ -3292,7 +3225,7 @@ GameObject:
   - component: {fileID: 1290792243}
   - component: {fileID: 1290792242}
   m_Layer: 0
-  m_Name: Nex Event TMP
+  m_Name: Nex Season TMP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3337,7 +3270,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: NEW EVENT!
+  m_text: NEW SEASON!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bbf71d8a58305463e9d91aeaca31eaa0, type: 2}
   m_sharedMaterial: {fileID: -4171563015097924827, guid: bbf71d8a58305463e9d91aeaca31eaa0, type: 2}
@@ -5568,11 +5501,11 @@ PrefabInstance:
     - target: {fileID: 8382440009680993789, guid: 933be60a9c6e9eb4f996877c05c589ce, type: 3}
       propertyPath: m_Resource
       value: 
-      objectReference: {fileID: 8300000, guid: dac68af6fdd5a5641821d97d59c58635, type: 3}
+      objectReference: {fileID: 8300000, guid: 930d49d1fbbe6354d8f868bdb4db9e4c, type: 3}
     - target: {fileID: 8382440009680993789, guid: 933be60a9c6e9eb4f996877c05c589ce, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: dac68af6fdd5a5641821d97d59c58635, type: 3}
+      objectReference: {fileID: 8300000, guid: 930d49d1fbbe6354d8f868bdb4db9e4c, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

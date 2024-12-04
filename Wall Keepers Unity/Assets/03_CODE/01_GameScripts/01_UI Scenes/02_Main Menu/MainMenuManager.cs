@@ -131,17 +131,17 @@ public class MainMenuManager : MonoBehaviour
         }
     }
 
-    internal void ShowSumUpManaKeys(float f_newSilverCoinsAmount)
+    internal void ShowSumUpManaKeys(float f_newManaKeysAmount)
     {
-        StartCoroutine(SumUpSilverCoins(f_newSilverCoinsAmount));
+        StartCoroutine(SumUpManaKeys(f_newManaKeysAmount));
     }
-    IEnumerator SumUpSilverCoins(float f_newSilverCoinsAmount)
+    IEnumerator SumUpManaKeys(float f_newManaKeysAmount)
     {
         float f_duration = 1f;
-        var rate = Mathf.Abs(f_newSilverCoinsAmount - f_currentManaKeys) / f_duration;
-        while (f_currentManaKeys != f_newSilverCoinsAmount)
+        var rate = Mathf.Abs(f_newManaKeysAmount - f_currentManaKeys) / f_duration;
+        while (f_currentManaKeys != f_newManaKeysAmount)
         {
-            f_currentManaKeys = Mathf.MoveTowards(f_currentManaKeys, f_newSilverCoinsAmount, rate * Time.deltaTime);
+            f_currentManaKeys = Mathf.MoveTowards(f_currentManaKeys, f_newManaKeysAmount, rate * Time.deltaTime);
             tmp_playerManaKeys.text = ((int)f_currentManaKeys).ToString();
             yield return null;
         }

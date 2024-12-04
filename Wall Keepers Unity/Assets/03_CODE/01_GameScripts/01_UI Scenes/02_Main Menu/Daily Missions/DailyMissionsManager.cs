@@ -33,6 +33,8 @@ public class DailyMissionsManager : MonoBehaviour
         {
             print("Resets new day");
             ResetAllDailyMissions();
+            // Reset Shop Daily Free
+            ResetShopDailyFreeManaEnergy();
             PlayerData.i_lastDayLogInMainMenu = DateTime.Now.Day; // Save New day as last day log in
         }
 
@@ -54,6 +56,11 @@ public class DailyMissionsManager : MonoBehaviour
         PlayerData.b_dailyMission_Five_Claimed = false;
 
         SaveData.instance.AssignDataAndSave();
+    }
+
+    private void ResetShopDailyFreeManaEnergy()
+    {
+        PlayerData.b_dailyFreeClaimed = false;
     }
 
     private void SetDailyMissionsState()
