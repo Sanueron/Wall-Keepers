@@ -15,7 +15,7 @@ public class SeasonPassManager : MonoBehaviour
     private int i_passMaxLevel = 50, i_passCurrentLevel = 0, 
         i_manaUsed, i_manaToUseToReachNextLevel, i_baseManaToReachNextLvl = 50;
     private float f_currentLevelBarFillAmount, f_currentPlayerManaDisplaying, f_currentPlayerManaKeysDisplaying;
-    float f_moveDifferenceBetwenLevels = 425;
+    float f_moveDifferenceBetwenLevels = 325;
 
     [Header("Scene UI variables")]
     [SerializeField] private RectTransform rewardsContentPanel;
@@ -97,7 +97,16 @@ public class SeasonPassManager : MonoBehaviour
         tmp_manaLeftToNextLevel.text = PlayerData.i_magicPassManaExp + "/" + i_manaToUseToReachNextLevel;
 
         // Move Content panel to current level
-        float contentPanelYPos = rewardsContentPanel.transform.position.y - (f_moveDifferenceBetwenLevels * PlayerData.i_magicPassLevel);
+        int i_playerPassLevelToMoveAdjusted = 0;
+        #region Adjust move Difference according to level
+        if (PlayerData.i_magicPassLevel <= 46)
+        {
+            i_playerPassLevelToMoveAdjusted = PlayerData.i_magicPassLevel-1;
+        }
+
+        #endregion
+        float contentPanelYPos = rewardsContentPanel.transform.position.y - (f_moveDifferenceBetwenLevels *
+           i_playerPassLevelToMoveAdjusted);
         rewardsContentPanel.transform.position = new Vector3(rewardsContentPanel.transform.position.x,
             contentPanelYPos,
             rewardsContentPanel.transform.position.z);

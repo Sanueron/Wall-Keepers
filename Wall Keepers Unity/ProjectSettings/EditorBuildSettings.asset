@@ -39,19 +39,19 @@ EditorBuildSettings:
     path: Assets/01_LEVEL/01_Scenes/01_Game Scenes/10_MagicPass.unity
     guid: c781ffc12c990ed4dafbe1e953618d1f
   - enabled: 1
-    path: Assets/01_LEVEL/01_Scenes/02_Levels Scenes/11-13_Story Levels/11_Level
-      1.unity
+    path: Assets/01_LEVEL/01_Scenes/02_Levels Scenes/Story Levels/11_Level 1.unity
     guid: 7b93199b41483874d934e20c6e340ac3
   - enabled: 1
-    path: Assets/01_LEVEL/01_Scenes/02_Levels Scenes/11-13_Story Levels/12_Level
-      2.unity
+    path: Assets/01_LEVEL/01_Scenes/02_Levels Scenes/Story Levels/12_Level 2.unity
     guid: 3ef33d93dec302e4c833cb6344f9ff58
   - enabled: 1
-    path: Assets/01_LEVEL/01_Scenes/02_Levels Scenes/11-13_Story Levels/13_Level
-      3.unity
+    path: Assets/01_LEVEL/01_Scenes/02_Levels Scenes/Story Levels/13_Level 3.unity
     guid: c5bd199bde977aa4f9fe8459bb80c35f
   - enabled: 1
     path: Assets/01_LEVEL/01_Scenes/01_Game Scenes/14_Wizzard Studio.unity
     guid: 3097eab4541515443a683fe0d7f9d4f0
+  - enabled: 1
+    path: Assets/01_LEVEL/01_Scenes/02_Levels Scenes/Story Levels/15_Level 4.unity
+    guid: f7d5789225ad0fd4faafc977936019b1
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
