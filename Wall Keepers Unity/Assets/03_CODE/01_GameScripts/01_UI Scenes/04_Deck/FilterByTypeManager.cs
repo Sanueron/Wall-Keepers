@@ -7,7 +7,7 @@ public class FilterByTypeManager : MonoBehaviour
 {
     [Header("Spells Types Lists")]
     [SerializeField] private List<SpellSlot> listOf_FusionSpells = new List<SpellSlot>();
-    private List<SpellSlot> listOf_NotObtainedSpells = new List<SpellSlot>();
+    [SerializeField] private List<SpellSlot> listOf_NotObtainedSpells = new List<SpellSlot>();
     [SerializeField] private List<SpellSlot> listOf_FireSpells = new List<SpellSlot>();
     [SerializeField] private List<SpellSlot> listOf_WaterSpells = new List<SpellSlot>();
     [SerializeField] private List<SpellSlot> listOf_EarthSpells = new List<SpellSlot>();
@@ -134,10 +134,6 @@ public class FilterByTypeManager : MonoBehaviour
                 {
                     listOf_WaterSpells[i].gameObject.SetActive(true); // Activate
                 }
-                else
-                {
-                    listOf_NotObtainedSpells.Add(listOf_WaterSpells[i]);
-                }
             }
         }
         // Earth Spells
@@ -149,10 +145,6 @@ public class FilterByTypeManager : MonoBehaviour
                 if (PlayerData.b_spellCardObtained[i_spellId]) // Check if obtained
                 {
                     listOf_EarthSpells[i].gameObject.SetActive(true); // Activate
-                }
-                else
-                {
-                    listOf_NotObtainedSpells.Add(listOf_WaterSpells[i]);
                 }
             }
         }
@@ -166,10 +158,6 @@ public class FilterByTypeManager : MonoBehaviour
                 {
                     listOf_WindSpells[i].gameObject.SetActive(true); // Activate
                 }
-                else
-                {
-                    listOf_NotObtainedSpells.Add(listOf_WaterSpells[i]);
-                }
             }
         }
         // Lighting Spells
@@ -181,81 +169,18 @@ public class FilterByTypeManager : MonoBehaviour
                 if (PlayerData.b_spellCardObtained[i_spellId]) // Check if obtained
                 {
                     listOf_LightingSpells[i].gameObject.SetActive(true); // Activate
-                }
-                else
-                {
-                    listOf_NotObtainedSpells.Add(listOf_WaterSpells[i]);
                 }
             }
         }
     }
     public void ShowNotObtainedSpells()
     {
-        print("Show Not Obtained Spells");
         HideAllSpells();
 
-        // Show only those spells not obtained
-        // Fire Spells
-        for (int i = 0; i < listOf_FireSpells.Count; i++)
+        for (int i = 0; i < listOf_NotObtainedSpells.Count; i++)
         {
-            if (listOf_FireSpells[i] != null) // Chek if null
-            {
-                int i_spellId = listOf_FireSpells[i].GetSlotSpellInfo().i_id;
-                if (!PlayerData.b_spellCardObtained[i_spellId]) // Check if obtained
-                {
-                    listOf_FireSpells[i].gameObject.SetActive(true); // Activate
-                }
-            }
+            listOf_NotObtainedSpells[i].gameObject.SetActive(true);
         }
-        // Water Spells
-        for (int i = 0; i < listOf_WaterSpells.Count; i++)
-        {
-            if (listOf_WaterSpells[i] != null) // Chek if null
-            {
-                int i_spellId = listOf_WaterSpells[i].GetSlotSpellInfo().i_id;
-                if (!PlayerData.b_spellCardObtained[i_spellId]) // Check if obtained
-                {
-                    listOf_WaterSpells[i].gameObject.SetActive(true); // Activate
-                }
-            }
-        }
-        // Earth Spells
-        for (int i = 0; i < listOf_EarthSpells.Count; i++)
-        {
-            if (listOf_EarthSpells[i] != null) // Chek if null
-            {
-                int i_spellId = listOf_EarthSpells[i].GetSlotSpellInfo().i_id;
-                if (!PlayerData.b_spellCardObtained[i_spellId]) // Check if obtained
-                {
-                    listOf_EarthSpells[i].gameObject.SetActive(true); // Activate
-                }
-            }
-        }
-        // Wind Spells
-        for (int i = 0; i < listOf_WindSpells.Count; i++)
-        {
-            if (listOf_WindSpells[i] != null) // Chek if null
-            {
-                int i_spellId = listOf_WindSpells[i].GetSlotSpellInfo().i_id;
-                if (!PlayerData.b_spellCardObtained[i_spellId]) // Check if obtained
-                {
-                    listOf_WindSpells[i].gameObject.SetActive(true); // Activate
-                }
-            }
-        }
-        // Lighting Spells
-        for (int i = 0; i < listOf_LightingSpells.Count; i++)
-        {
-            if (listOf_LightingSpells[i] != null) // Chek if null
-            {
-                int i_spellId = listOf_LightingSpells[i].GetSlotSpellInfo().i_id;
-                if (!PlayerData.b_spellCardObtained[i_spellId]) // Check if obtained
-                {
-                    listOf_LightingSpells[i].gameObject.SetActive(true); // Activate
-                }
-            }
-        }
-
     }
     public void ShowFusionSpells()
     {

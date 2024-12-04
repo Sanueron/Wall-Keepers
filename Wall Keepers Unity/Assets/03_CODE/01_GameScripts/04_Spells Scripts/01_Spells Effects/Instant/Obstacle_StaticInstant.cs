@@ -46,6 +46,8 @@ public class Obstacle_StaticInstant : BaseSpellsEffects
     {
         foreach (Enemy enemy in enemiesScripts_List)
         {
+            if (enemy.f_speed <= 0) { return; } // Don't push enemies trapped
+
             enemy.rb_Enemy.AddForce(transform.up * f_flinchForce, ForceMode2D.Impulse);
             StartCoroutine(StopEnemyAfterDelay(enemy, f_stopEnemyDelay));
         }

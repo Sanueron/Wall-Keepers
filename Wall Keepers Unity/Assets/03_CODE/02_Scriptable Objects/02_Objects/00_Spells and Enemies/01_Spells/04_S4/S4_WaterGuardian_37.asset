@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: S4_WaterGuardian_37
   m_EditorClassIdentifier: 
   i_id: 37
-  Description: Casts a lighting in the target area that deals impact damage to enemies
-    in area.
+  Description: Summons a Water golem that blocks enemies and attacks them.
   e_spellType: 0
   i_spellStarsTier: 4
   i_mana_cost: 4
@@ -25,7 +24,7 @@ MonoBehaviour:
   requiredElementalRune: {fileID: 11400000, guid: fed4aaf3e278ee447868e6cf2800cc52, type: 2}
   _card_Sprite: {fileID: 6522069078818580233, guid: cc22a289c16860c4bb32da1b59ae5992, type: 3}
   _onField_Sprite: {fileID: 0}
-  spellPrefab: {fileID: 7719444508412569677, guid: a7d28c15866c7004d98c96c6521b186b, type: 3}
+  spellPrefab: {fileID: 1137687516017496937, guid: 3114cfef6744f1f418e4d45277e8de55, type: 3}
   castClip: {fileID: 8300000, guid: 42cc79a4862bb9a46923d599104e367e, type: 3}
   impactClip: {fileID: 8300000, guid: 42cc79a4862bb9a46923d599104e367e, type: 3}
   i_starLevel: 4

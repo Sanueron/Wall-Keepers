@@ -143,7 +143,6 @@ public class DeckManager : MonoBehaviour
                 PlayerData.go_spellsIndeck[i] = spellPrefab;
                 // ---
                 PlayerData.i_spellInDeckByID[i] = spellData.i_id; // Store spell in deck using its ID
-                print(PlayerData.go_spellsIndeck[i].name);
                 break;
             }
         }
@@ -421,7 +420,6 @@ public class DeckManager : MonoBehaviour
             go_levelUpItems.SetActive(false);
             go_fusionSpellsSpecialItems.SetActive(false);
         }
-        print("Pasa por Deck Manager");
 
         animator_SpellInfoPanel.SetTrigger(i_animatorTriggerVar);
     }
