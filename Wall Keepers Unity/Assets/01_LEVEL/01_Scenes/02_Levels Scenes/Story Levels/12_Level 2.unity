@@ -7183,7 +7183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52a686102c12ecf40ab4afa573464fd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  i_levelMaxRound: 10
+  i_levelMaxRound: 7
   listOf_enemies_Rank_1:
   - {fileID: 1796840773}
   - {fileID: 2146501022}

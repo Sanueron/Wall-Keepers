@@ -22,6 +22,8 @@ public class LimitedWavesResultsPanels : MonoBehaviour
     [SerializeField] private int i_runeID, i_runesAmount;
     [SerializeField] private bool b_manaKeysRewarded;
     [SerializeField] private int i_manaKeysObtained;
+    [SerializeField] private bool b_manaEnergyReward;
+    [SerializeField] private int i_manaEnergyObtained;
     #endregion
 
     #region Bug Control variables
@@ -111,6 +113,10 @@ public class LimitedWavesResultsPanels : MonoBehaviour
             if (b_manaKeysRewarded)
             {
                 PlayerData.i_keys += i_manaKeysObtained;
+            }
+            if (b_manaEnergyReward)
+            {
+                PlayerData.i_mana += i_manaEnergyObtained;
             }
         }
 

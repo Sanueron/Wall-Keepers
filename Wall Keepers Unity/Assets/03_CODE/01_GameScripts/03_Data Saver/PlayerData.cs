@@ -68,6 +68,7 @@ public static class PlayerData
     internal static bool b_premiumPassPurchased;
     internal static int i_magicPassManaExp = 0, i_magicPassLevel = 0;
     internal static bool[] b_magicPassRewardClaimed = new bool[51];
+    internal static bool b_seasonPosterShown;
     #endregion
 
     #region Wizzard Studio Data

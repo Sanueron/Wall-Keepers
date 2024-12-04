@@ -8,9 +8,10 @@ public class MainMenuManager : MonoBehaviour
     [Header("Use List to reassign saved spells in deck prefabs and data when opening game")]
     [SerializeField] List<ScripteableCard> listOfSpellsData = new List<ScripteableCard>();
 
-    [Header("Current Season Number")]
+    [Header("Current Season variables")]
     public string s_seasonName;
     [SerializeField] private int i_seasonID;
+    [SerializeField] private GameObject go_seasonPoster;
 
     [Header("Player Currencies")]
     [SerializeField] private TextMeshProUGUI tmp_playerMana;
@@ -84,7 +85,26 @@ public class MainMenuManager : MonoBehaviour
                 PlayerData.b_magicPassRewardClaimed[i] = false;
             }
 
+            // Set New Event Poster to be shown
+            PlayerData.b_seasonPosterShown = false;
+
             SaveData.instance.AssignDataAndSave();
+        }
+
+        // Show Poster of New Season
+        if (!PlayerData.b_seasonPosterShown)
+        {
+            ShowNewSeasonPoster();
+            SaveData.instance.AssignDataAndSave();
+        }
+    }
+    private void ShowNewSeasonPoster() {
+        
+        // Show only if tutorial already Played
+        if (PlayerData.b_tutorialComplete[1])
+        {
+            PlayerData.b_seasonPosterShown = true;
+            go_seasonPoster.SetActive(true);
         }
     }
     #region Manage Player Currencies Methods

@@ -132,6 +132,7 @@ public class SaveData : MonoBehaviour
           {"b_magicPassRewardClaimed", PlayerData.b_magicPassRewardClaimed},
           {"b_premiumPassPurchased", PlayerData.b_premiumPassPurchased},
           {"i_lastSeasonPlayedID", PlayerData.i_lastSeasonPlayedID},
+          {"b_seasonPosterShown", PlayerData.b_seasonPosterShown},
           #region Wizzard Studio Attributes
           {"i_wallUpgradeStage_TotalUpgrades", PlayerData.i_wallUpgradeStage_TotalUpgrades},
           {"i_wallHPIncreased", PlayerData.i_wallHPIncreased},
@@ -158,7 +159,7 @@ public class SaveData : MonoBehaviour
           "runesLeftInShop", "removeAdsState", "currentWizzardPassBought", "seasonPassBoughtID", "lastDayLogInShop", "lastDayLogInMainMenu",
           "i_magicPassManaExp","i_magicPassLevel","b_magicPassRewardClaimed","b_premiumPassPurchased","shopBuyableSpells","i_wallUpgradeStage_TotalUpgrades",
           "i_wallHPIncreased","i_wallHPRecoveryPerSecond","i_magicUpgradeLevel","i_magicDamageAttributeUpgradeAmount","i_magicResistanceAttributeUpgradeAmount",
-          "f_magicDurationAttributeUpgradedAmount","f_magicSpeedAttributeUpgradedAmount","i_lastSeasonPlayedID",
+          "f_magicDurationAttributeUpgradedAmount","f_magicSpeedAttributeUpgradedAmount","i_lastSeasonPlayedID","b_seasonPosterShown",
         });
 
         // Mana Energy (Int)
@@ -373,6 +374,10 @@ public class SaveData : MonoBehaviour
         if (playerData.TryGetValue("i_lastSeasonPlayedID", out var i_lastSeasonPlayedID))
         {
             PlayerData.i_lastSeasonPlayedID = i_lastSeasonPlayedID.Value.GetAs<int>();
+        }
+        if (playerData.TryGetValue("b_seasonPosterShown", out var b_seasonPosterShown))
+        {
+            PlayerData.b_seasonPosterShown = b_seasonPosterShown.Value.GetAs<bool>();
         }
         #endregion
 
