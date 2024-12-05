@@ -19,6 +19,7 @@ public class SeasonPassManager : MonoBehaviour
 
     [Header("Scene UI variables")]
     [SerializeField] private RectTransform rewardsContentPanel;
+    [SerializeField] private float[] f_arrayOf_rewardsContentPanelPositionsByLevel = new float[51];
     [SerializeField] Image img_fillBar;
     [SerializeField] TextMeshProUGUI tmp_manaLeftToNextLevel, tmp_currentMagicPassLevel,
         tmp_playerManaEnergy, tmp_playerManaKeys;
@@ -97,19 +98,26 @@ public class SeasonPassManager : MonoBehaviour
         tmp_manaLeftToNextLevel.text = PlayerData.i_magicPassManaExp + "/" + i_manaToUseToReachNextLevel;
 
         // Move Content panel to current level
+        /*
         int i_playerPassLevelToMoveAdjusted = 0;
         #region Adjust move Difference according to level
         if (PlayerData.i_magicPassLevel <= 46)
         {
             i_playerPassLevelToMoveAdjusted = PlayerData.i_magicPassLevel-1;
         }
-
         #endregion
         float contentPanelYPos = rewardsContentPanel.transform.position.y - (f_moveDifferenceBetwenLevels *
            i_playerPassLevelToMoveAdjusted);
+        
         rewardsContentPanel.transform.position = new Vector3(rewardsContentPanel.transform.position.x,
             contentPanelYPos,
             rewardsContentPanel.transform.position.z);
+        */
+        float f_parentCorrection = 369.449f;
+        rewardsContentPanel.transform.position = new Vector3(rewardsContentPanel.transform.position.x,
+            f_arrayOf_rewardsContentPanelPositionsByLevel[PlayerData.i_magicPassLevel]- f_parentCorrection,
+            rewardsContentPanel.transform.position.z);
+        print("Move panel to new position " + rewardsContentPanel.transform.position.y);
     }
     IEnumerator UpdateCurrentPassLevelAndExp()
     {

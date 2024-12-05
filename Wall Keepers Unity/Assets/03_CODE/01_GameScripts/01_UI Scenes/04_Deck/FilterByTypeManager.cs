@@ -101,6 +101,7 @@ public class FilterByTypeManager : MonoBehaviour
     public void ShowAllObtainedSpells()
     {
         // Fusion Spells
+        /*
         for (int i = 0; i < listOf_FusionSpells.Count; i++)
         {
             if (listOf_FusionSpells[i] != null) // Chek if null
@@ -112,6 +113,8 @@ public class FilterByTypeManager : MonoBehaviour
                 }
             }
         } 
+        */
+
         // Fire Spells
         for (int i = 0; i < listOf_FireSpells.Count; i++)
         {

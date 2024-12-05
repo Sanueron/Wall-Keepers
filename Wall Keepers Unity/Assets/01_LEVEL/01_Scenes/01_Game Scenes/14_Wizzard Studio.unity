@@ -130,7 +130,7 @@ PrefabInstance:
     - target: {fileID: 232148979405911620, guid: 9c95c0e841a475241af0b7e2c06c12a3, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -68877684984654053, guid: 2756e21c13f4e624e87c8cabdbe4d0c5, type: 3}
+      objectReference: {fileID: -8541019347448623970, guid: 0243928858a8fd440aa9392f22d9f4e8, type: 3}
     - target: {fileID: 5553475087100929914, guid: 9c95c0e841a475241af0b7e2c06c12a3, type: 3}
       propertyPath: i_stageId
       value: 3
@@ -270,6 +270,14 @@ PrefabInstance:
     - target: {fileID: 8271185448741496445, guid: 9c95c0e841a475241af0b7e2c06c12a3, type: 3}
       propertyPath: m_Name
       value: Wall Recovery Icon
+      objectReference: {fileID: 0}
+    - target: {fileID: 8778067306173710033, guid: 9c95c0e841a475241af0b7e2c06c12a3, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8778067306173710033, guid: 9c95c0e841a475241af0b7e2c06c12a3, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2439,7 +2447,7 @@ PrefabInstance:
     - target: {fileID: 232148979405911620, guid: 9c95c0e841a475241af0b7e2c06c12a3, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -68877684984654053, guid: 2756e21c13f4e624e87c8cabdbe4d0c5, type: 3}
+      objectReference: {fileID: -8541019347448623970, guid: 0243928858a8fd440aa9392f22d9f4e8, type: 3}
     - target: {fileID: 5553475087100929914, guid: 9c95c0e841a475241af0b7e2c06c12a3, type: 3}
       propertyPath: i_stageId
       value: 5
@@ -2579,6 +2587,14 @@ PrefabInstance:
     - target: {fileID: 8271185448741496445, guid: 9c95c0e841a475241af0b7e2c06c12a3, type: 3}
       propertyPath: m_Name
       value: Wall Recovery Icon
+      objectReference: {fileID: 0}
+    - target: {fileID: 8778067306173710033, guid: 9c95c0e841a475241af0b7e2c06c12a3, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8778067306173710033, guid: 9c95c0e841a475241af0b7e2c06c12a3, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7623,7 +7639,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.4, y: 0.000030518}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 78.5084, y: 78.5084}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &905388829
@@ -7646,7 +7662,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 479896894060e1d4894142c7774d34cb, type: 3}
+  m_Sprite: {fileID: 3681141674002465362, guid: 1ea591dd596f97640877652e659600b3, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -8664,7 +8680,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -5, y: 246}
+  m_AnchoredPosition: {x: 0, y: 246}
   m_SizeDelta: {x: 240.493, y: 240.493}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &958484032
@@ -8687,7 +8703,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 479896894060e1d4894142c7774d34cb, type: 3}
+  m_Sprite: {fileID: 3681141674002465362, guid: 1ea591dd596f97640877652e659600b3, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -16539,7 +16555,7 @@ PrefabInstance:
     - target: {fileID: 232148979405911620, guid: 9c95c0e841a475241af0b7e2c06c12a3, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -68877684984654053, guid: 2756e21c13f4e624e87c8cabdbe4d0c5, type: 3}
+      objectReference: {fileID: -8541019347448623970, guid: 0243928858a8fd440aa9392f22d9f4e8, type: 3}
     - target: {fileID: 5553475087100929914, guid: 9c95c0e841a475241af0b7e2c06c12a3, type: 3}
       propertyPath: i_stageId
       value: 1
@@ -16679,6 +16695,14 @@ PrefabInstance:
     - target: {fileID: 8271185448741496445, guid: 9c95c0e841a475241af0b7e2c06c12a3, type: 3}
       propertyPath: m_Name
       value: Wall Recovery Icon
+      objectReference: {fileID: 0}
+    - target: {fileID: 8778067306173710033, guid: 9c95c0e841a475241af0b7e2c06c12a3, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8778067306173710033, guid: 9c95c0e841a475241af0b7e2c06c12a3, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -18640,7 +18664,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -8541019347448623970, guid: 0243928858a8fd440aa9392f22d9f4e8, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -19156,7 +19180,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7cb63ef3b2721ad4d961f2be4430f271, type: 3}
+  m_Sprite: {fileID: -8541019347448623970, guid: 0243928858a8fd440aa9392f22d9f4e8, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
