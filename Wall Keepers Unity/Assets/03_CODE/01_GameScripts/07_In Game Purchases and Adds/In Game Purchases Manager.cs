@@ -97,6 +97,7 @@ public class InGamePurchasesManager : MonoBehaviour, IDetailedStoreListener
     public ConsumableItem consumableItem_5000Mana;
     public ConsumableItem consumableItem_30000Mana;
     public NonConsumableItem nonConsumableItem_BuyPassLevels;
+    public NonConsumableItem nonConsumableItem_unlockPassPremiumRewards;
     public SubscriptionItem subscriptionItem_seasonWizzardPass; // elite pass
     #endregion
 
@@ -203,6 +204,10 @@ public class InGamePurchasesManager : MonoBehaviour, IDetailedStoreListener
     public void TryPurchase_Buy5000Mana()
     {
         m_StoreController.InitiatePurchase(consumableItem_5000Mana.s_Id);
+    }
+    public void TryBuySeasonPass()
+    {
+
     }
     public void BuyPremiumPass() // Price 4,99€
     {
@@ -399,6 +404,10 @@ public class InGamePurchasesManager : MonoBehaviour, IDetailedStoreListener
             Buy10PassLevels();
         }
         else if(product.definition.id == subscriptionItem_seasonWizzardPass.s_Id)
+        {
+            BuyPremiumPass();
+        }
+        else if(product.definition.id == nonConsumableItem_unlockPassPremiumRewards.s_Id)
         {
             BuyPremiumPass();
         }

@@ -363,7 +363,7 @@ public class SaveData : MonoBehaviour
         }
         if (playerData.TryGetValue("b_gameTermsAccepted", out var b_gameTermsAccepted))
         {
-            PlayerData.b_gameTermsAccepted = b_dailyFreeClaimed.Value.GetAs<bool>();
+            PlayerData.b_gameTermsAccepted = b_gameTermsAccepted.Value.GetAs<bool>();
         }
         #region Magic Pass Data
         if (playerData.TryGetValue("i_magicPassManaExp", out var i_magicPassManaExp))

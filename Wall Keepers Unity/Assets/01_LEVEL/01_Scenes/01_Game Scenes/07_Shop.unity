@@ -4541,6 +4541,11 @@ MonoBehaviour:
     s_Id: buy_ten_pass_levels_wallkeepers
     s_Desc: Instantly increase 10 season pass levels!
     f_Price: 0.99
+  nonConsumableItem_unlockPassPremiumRewards:
+    s_Name: Magic Pass Premium Rewards
+    s_Id: magic_pass_premium_rewards
+    s_Desc: Unlock magic pass premium rewards
+    f_Price: 4.99
   subscriptionItem_seasonWizzardPass:
     s_Name: Premium Pass
     s_Id: 'premiumseasonpass_wallkeepers '
@@ -10431,6 +10436,14 @@ PrefabInstance:
       value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 4015820684811737467, guid: e4da5ca1c58fb98429440ddad45d0c66, type: 3}
+      propertyPath: productId
+      value: magic_pass_premium_rewards
+      objectReference: {fileID: 0}
+    - target: {fileID: 4015820684811737467, guid: e4da5ca1c58fb98429440ddad45d0c66, type: 3}
+      propertyPath: consumePurchase
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4015820684811737467, guid: e4da5ca1c58fb98429440ddad45d0c66, type: 3}
       propertyPath: onPurchaseComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1192661712}
@@ -10549,6 +10562,10 @@ PrefabInstance:
     - target: {fileID: 5108402918385556355, guid: e4da5ca1c58fb98429440ddad45d0c66, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5561924676469784712, guid: e4da5ca1c58fb98429440ddad45d0c66, type: 3}
+      propertyPath: consumePurchase
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5561924676469784712, guid: e4da5ca1c58fb98429440ddad45d0c66, type: 3}
       propertyPath: onPurchaseComplete.m_PersistentCalls.m_Calls.Array.data[0].m_Target

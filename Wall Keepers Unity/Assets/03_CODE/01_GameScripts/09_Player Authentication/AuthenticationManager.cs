@@ -3,6 +3,7 @@ using Unity.Services.Authentication.PlayerAccounts;
 using TMPro;
 using UnityEngine;
 using Unity.Services.Authentication.PlayerAccounts.Samples;
+using System.Collections;
 
 public class AuthenticationManager : MonoBehaviour
 {
@@ -71,11 +72,17 @@ public class AuthenticationManager : MonoBehaviour
             // Check if Privacy Policies and Refund Policies has been Accepted, if not show panel
             if (!PlayerData.b_gameTermsAccepted)
             {
-                ShowGameTermsPanel();
+                StartCoroutine(ShowAcceptGameTermsPanel());
             }
             go_startButton.SetActive(true);
         }
 
+    }
+    IEnumerator ShowAcceptGameTermsPanel()
+    {
+        yield return new WaitForSeconds(1);
+
+        ShowGameTermsPanel();
     }
     public void AcceptTerms()
     {
