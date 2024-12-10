@@ -119,6 +119,7 @@ public class SeasonPassManager : MonoBehaviour
             // Calculate current level and current mana used and mana to use
             i_manaToUseToReachNextLevel = i_baseManaToReachNextLvl + PlayerData.i_magicPassLevel * 10;
             i_manaUsed -= i_manaToUseToReachNextLevel; // reduce mana used according to mana required to next lvl
+            if(i_manaUsed < 0) { i_manaUsed = 0; }
             PlayerData.i_magicPassLevel++;
         }
 

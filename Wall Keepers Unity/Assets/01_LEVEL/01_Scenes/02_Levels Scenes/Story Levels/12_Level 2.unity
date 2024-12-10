@@ -14317,6 +14317,10 @@ PrefabInstance:
       propertyPath: tmp_nextWaveText_PauseMenu
       value: 
       objectReference: {fileID: 654725350}
+    - target: {fileID: 6656515284880973615, guid: 34852cda1027a8c4f8c453718426386c, type: 3}
+      propertyPath: m_text
+      value: DAY 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

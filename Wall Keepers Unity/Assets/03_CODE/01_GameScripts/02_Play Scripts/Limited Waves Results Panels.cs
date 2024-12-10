@@ -40,6 +40,11 @@ public class LimitedWavesResultsPanels : MonoBehaviour
         WallManager.e_OnWallDestroyed += WallManager_e_OnWallDestroyed;
         RoundsManager.ev_OnLevelComplete += RoundsManager_ev_OnLevelComplete;
     }
+    private void OnDestroy()
+    {
+        WallManager.e_OnWallDestroyed -= WallManager_e_OnWallDestroyed;
+        RoundsManager.ev_OnLevelComplete -= RoundsManager_ev_OnLevelComplete;
+    }
     #endregion
 
 
