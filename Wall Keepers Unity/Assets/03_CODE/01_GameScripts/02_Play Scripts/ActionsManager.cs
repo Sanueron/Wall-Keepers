@@ -162,7 +162,6 @@ public class ActionsManager : MonoBehaviour
             }
             else
             {
-                Debug.Log("Return to hand - Show message - Not enough Mana");
                 StartCoroutine(ReturnToHandPosition(selectedSpell));
             }
         }
@@ -170,7 +169,6 @@ public class ActionsManager : MonoBehaviour
         {
             // Return card to initial position
             //selectedCard.transform.position = cardInitialPosition;
-            Debug.Log("Return to hand - Show message - Can't cast in here");
             StartCoroutine(ReturnToHandPosition(selectedSpell));
         }
         SetCardSortingOrder(i_defaultSortingOrder, selectedSpell);

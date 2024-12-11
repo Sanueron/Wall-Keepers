@@ -52,7 +52,10 @@ public class RoundsManager : MonoBehaviour
         // Reset list of Enemies at Start
         listOfEnemiesInRound.Clear();
     }
-
+    private void OnDestroy()
+    {
+        Enemy.onEnemyDefeated -= Enemy_onEnemyDefeated;
+    }
     private void Enemy_onEnemyDefeated(object sender, System.EventArgs e)
     {
         // Check if still spawning enemies
