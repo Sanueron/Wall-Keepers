@@ -76,6 +76,14 @@ public class EnemyProjectile : MonoBehaviour
     }
     internal void DoDamage()
     {
+        if (go_targetObject.GetComponent<WallManager>() != null)
+        {
+            if(go_targetObject.GetComponent<WallManager>().f_wallLife <= 0)
+            {
+                return;
+            }
+        }
+        
         if (!b_damageAlreadyDealth)
         {
             b_damageAlreadyDealth = true;

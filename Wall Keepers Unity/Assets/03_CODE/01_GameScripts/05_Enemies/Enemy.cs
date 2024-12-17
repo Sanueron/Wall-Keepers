@@ -115,6 +115,15 @@ public class Enemy : MonoBehaviour
             }
         }
 
+        // Add check to stop when wall defeated
+        if(go_wall != null)
+        {
+            if(go_wall.GetComponent<WallManager>().f_wallLife <= 0)
+            {
+                return;
+            }
+        }
+
         if (b_moveToTarget) // No obstacle, moves towards wall
         {
             MoveToTarget();
@@ -135,6 +144,14 @@ public class Enemy : MonoBehaviour
         if (LevelsGnralManager.b_stopLevel)
         {
             return;
+        }
+        // Add check to stop when wall defeated
+        if (go_wall != null)
+        {
+            if (go_wall.GetComponent<WallManager>().f_wallLife <= 0)
+            {
+                return;
+            }
         }
 
         DetectObstacle();

@@ -21,6 +21,10 @@ public class PlayModesManager : MonoBehaviour
     [SerializeField] Animator animator_endlessWaves;
     int i_animatorBool_Show = Animator.StringToHash("Show");
     [SerializeField] private TMP_Text tmp_wavesRecord;
+
+    [Header("Boss Rush")]
+    [SerializeField] Animator animator_bossRush;
+    // Use same animator bool as Endless Waves
     #endregion
 
     #region Unity Life Cycle
@@ -102,6 +106,17 @@ public class PlayModesManager : MonoBehaviour
     public void GetWavesRecord()
     {
         tmp_wavesRecord.text = "Record: "+PlayerData.i_maxRound.ToString();
+    }
+    #endregion
+
+    #region Boss Rush Methods
+    public void ShowBossRushLevelsViewPort()
+    {
+        animator_bossRush.SetBool(i_animatorBool_Show, true);
+    }
+    public void CloseBossRushLevelsViewPort()
+    {
+        animator_bossRush.SetBool(i_animatorBool_Show, false);
     }
     #endregion
 

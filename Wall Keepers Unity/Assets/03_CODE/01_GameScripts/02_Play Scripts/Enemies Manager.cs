@@ -29,10 +29,14 @@ public class EnemiesManager : MonoBehaviour
     [Header("Spawn Points")]
     [SerializeField] private List<Transform> listOf_spawnPoints = new List<Transform>();
     private bool[] arrayOf_spawnPointsBlocked = new bool[10]; // Used to avoid spawning more than 1 enemy on the same spawn point at the same time.
+    float f_spawnRate = 1.0f;
+    float f_spawnTimer = 0.0f;
     #endregion
 
     #region Spawn Rules
     [SerializeField] private bool b_spawnEnemies;
+    [SerializeField] private bool b_spawnBoss;
+    [SerializeField] private GameObject go_bossEnemy;
     // Start with 5 enemies of rank 1, every round get +1 enemy of current rank and +1 enemy of next rank if previous rank already has 10 enemies
     int i_countForNextRankEnemies = 10, i_rank_1_Enemies = 5, i_rank_2_Enemies = 0, i_rank_3_Enemies = 0,
         i_rank_4_Enemies = 0, i_rank_5_Enemies = 0;
@@ -52,7 +56,13 @@ public class EnemiesManager : MonoBehaviour
 
         // Spawn enemies
         // While this round total enemies have not been spawn all, keep spawning.
-        SpawnEnemies(); // Spawns enemies according to the round counters
+        // Use Spawn Timer to avoid spawning enemies too close
+        f_spawnTimer += Time.deltaTime;
+        if (f_spawnTimer >= f_spawnRate)
+        {
+            f_spawnTimer = 0;
+            SpawnEnemies(); // Spawns enemies according to the round counters
+        }
 
         // Check if all enemies spawned for this round
         if (AllEnemiesSpawned())
@@ -75,6 +85,14 @@ public class EnemiesManager : MonoBehaviour
             if (!IsSpawnPointValid(i_spawnPoint)) // Spawn Point blocked
             {
                 return;
+            }
+
+            // Do special Check for Boss Rush Play Mode
+            if (b_spawnBoss)
+            {
+                b_spawnBoss = false;
+                if(go_bossEnemy != null)
+                    go_bossEnemy.SetActive(true);
             }
 
             // Get random enemy of current rank

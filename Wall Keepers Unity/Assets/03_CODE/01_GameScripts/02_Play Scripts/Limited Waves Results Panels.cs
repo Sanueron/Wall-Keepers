@@ -7,6 +7,7 @@ public class LimitedWavesResultsPanels : MonoBehaviour
 {
     #region Complete or Fail Variables
     [SerializeField] private int i_levelID;
+    [SerializeField] private bool b_isBossRushLevel;
     [SerializeField] Animator animator_lmtWavesResultsPanel;
     private int i_animatorVariables = Animator.StringToHash("Show");
     [SerializeField] GameObject go_levelCompleteMenu;
@@ -94,6 +95,17 @@ public class LimitedWavesResultsPanels : MonoBehaviour
         // Show level complete Panel
         if(animator_lmtWavesResultsPanel != null)
             animator_lmtWavesResultsPanel.SetTrigger(i_animatorVariables);
+
+        // Check for Boss Rush Levels. If Boss Rush don't do logic from levels checks
+        if (b_isBossRushLevel)
+        {
+            // Give Boss Rush Level Reward
+            if (b_elementalRunesRewarded) // Get runes reward
+            {
+                PlayerData.i_elementalRunesInStock[i_runeID] += i_runesAmount;
+            }
+            return;
+        }
 
         // Check if this level was already complete
         if(PlayerData.b_levelComplete[i_levelID]) // If already completed then dont give rewards

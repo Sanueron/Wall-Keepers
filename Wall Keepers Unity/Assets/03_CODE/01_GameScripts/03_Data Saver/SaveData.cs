@@ -294,6 +294,7 @@ public class SaveData : MonoBehaviour
             //Debug.Log($"levelsCompleteStatus value: {levelsCompleteStatus.Value.GetAs<int>()}");
             PlayerData.b_levelComplete = levelsCompleteStatus.Value.GetAs<bool[]>();
         }
+
         // Tutorials Completion status (array of bool)
         if (playerData.TryGetValue("tutorialsCompleteStatus", out var tutorialsCompleteStatus))
         {

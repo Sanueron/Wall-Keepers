@@ -4,22 +4,17 @@ using UnityEngine;
 
 public class NormalMeleeAttack : BaseEnemyAction
 {
-
     #region Action
     internal override void TakeAction(GameObject obstacle, GameObject wall)
     {
         if(obstacle != null)
         {
-
-
             Obstacle_StaticInstant obstacleStats = obstacle.GetComponent<Obstacle_StaticInstant>();
             if (obstacleStats != null)
             {
                 AttackObstacle(obstacleStats);
                 return;
             }
-
-
         }
 
         if(wall != null)
@@ -30,9 +25,7 @@ public class NormalMeleeAttack : BaseEnemyAction
 
                 AttackWall(wallStats);
             }
-
         }
-      
     }
 
     internal void AttackObstacle(Obstacle_StaticInstant obstacleStats)

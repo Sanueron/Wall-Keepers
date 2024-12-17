@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 05_Newt Basic
   m_EditorClassIdentifier: 
   sprite_bestiary: {fileID: 4530609098385475206, guid: 7c7ee1e7f696d7846b336b07c100b750, type: 3}
-  i_id: 0
+  i_id: 5
   i_hp: 250
   i_dmg: 400
   f_speed: 1.3
