@@ -48,6 +48,7 @@ public class EnemyProjectile : MonoBehaviour
         f_lerpSpeed = speed;
         i_damage = damage;
         go_targetObject = targetObject;
+        ProjectileLookAtTarget();
     }
     public void ProjectailMovement()
     {
@@ -62,6 +63,14 @@ public class EnemyProjectile : MonoBehaviour
     {
         animator_projectile.SetTrigger(i_LoopHash);
         b_startProjectileMovement = true;
+        // Make projectile look at target
+    }
+    private void ProjectileLookAtTarget()
+    {
+        Vector3 diff = go_targetObject.transform.position - transform.position; 
+        diff.Normalize(); 
+        float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg; 
+        transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
     }
     internal void ResetProjectile()
     {

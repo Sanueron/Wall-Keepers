@@ -36,6 +36,7 @@ public class ThrowProjectile : BaseEnemyAction
                 //Set Projectile stats 
                 listofProjectiles[i].GetComponent<EnemyProjectile>().SetStats(gameObject.transform.position, target, f_projectailSpeed, i_damage);
                 listofProjectiles[i].SetActive(true);
+                break;
             }
             else
             {

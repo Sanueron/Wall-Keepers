@@ -17,7 +17,7 @@ MonoBehaviour:
   i_hp: 400
   i_dmg: 75
   f_speed: 0.8
-  f_RageOfAction: 8
+  f_RageOfAction: 6
   f_projectailSpeed: 1.5
   i_manaEnergyReleased: 7
   Description: 'A shaman of the Chaos clan. Loves to set all in fire and shoots small
