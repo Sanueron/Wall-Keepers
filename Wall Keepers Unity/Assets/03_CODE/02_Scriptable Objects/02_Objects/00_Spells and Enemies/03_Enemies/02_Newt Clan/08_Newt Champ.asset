@@ -20,11 +20,10 @@ MonoBehaviour:
   f_RageOfAction: 1
   f_projectailSpeed: 0
   i_manaEnergyReleased: 10
-  Description: 'The Newt clan lives in swampsand is commonly known from consuming
-    underwater life.
+  Description: 'Skilled warriors who fight using a trident.
 
 
-    Size: Small'
+    Size: Medium'
   deathClip: {fileID: 8300000, guid: bac43774b5334744b810d65e60122b2c, type: 3}
   e_Clan: 2
   e_ElementalType: 3

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 095fe339d410b2b4fb3ae82e354c45cc, type: 3}
   m_Name: 06_Newt Shooter
   m_EditorClassIdentifier: 
-  sprite_bestiary: {fileID: 4530609098385475206, guid: 7c7ee1e7f696d7846b336b07c100b750, type: 3}
+  sprite_bestiary: {fileID: -932333025533969428, guid: 128e30d5fc208f24b91cfaf3cab9ca88, type: 3}
   i_id: 6
   i_hp: 250
   i_dmg: 250
@@ -20,11 +20,11 @@ MonoBehaviour:
   f_RageOfAction: 6
   f_projectailSpeed: 1.5
   i_manaEnergyReleased: 3
-  Description: 'The Newt clan lives in swampsand is commonly known from consuming
-    underwater life.
+  Description: 'The Newt explorers use spines as spears to attack from the distance.
 
 
-    Size: Small'
+    Size:
+    Small'
   deathClip: {fileID: 0}
   e_Clan: 2
   e_ElementalType: 3

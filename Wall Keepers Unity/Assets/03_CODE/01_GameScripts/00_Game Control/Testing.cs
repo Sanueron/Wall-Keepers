@@ -17,7 +17,4 @@ public class Testing : MonoBehaviour
         //PlayerData.i_mana = 1000;
 
     }
-    private void Start()
-    {
-    }
 }
