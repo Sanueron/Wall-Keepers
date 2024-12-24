@@ -51,8 +51,20 @@ public class EnemiesManager : MonoBehaviour
     }
     private void LateUpdate()
     {
+        // Check if game paused
+        if (LevelsGnralManager.b_stopLevel)
+        {
+            return;
+        }
+
         // Check if must spawn enemies
         if (!b_spawnEnemies) { return; } // Stop
+
+        // Check max limit of enemies in screen to avoid lag
+        if(RoundsManager.listOfEnemiesInRound.Count > 50)
+        {
+            return;
+        }
 
         // Spawn enemies
         // While this round total enemies have not been spawn all, keep spawning.

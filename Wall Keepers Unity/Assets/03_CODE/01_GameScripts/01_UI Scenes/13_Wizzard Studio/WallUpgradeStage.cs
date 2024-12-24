@@ -33,6 +33,10 @@ public class WallUpgradeStage : MonoBehaviour
 
     private void AssignUIVariablesValues()
     {
+        if(PlayerData.i_wallUpgradeStage_TotalUpgrades[i_stageId] > i_maxUpgrades)
+        {
+            PlayerData.i_wallUpgradeStage_TotalUpgrades[i_stageId] = i_maxUpgrades;
+        }
         int i_totalUpgradesOfThisStage = PlayerData.i_wallUpgradeStage_TotalUpgrades[i_stageId];
         tmp_manaCost.text = i_manaCost.ToString();
         tmp_upgradeAmount.text = "+" + i_upgradeAmount.ToString();
@@ -101,6 +105,15 @@ public class WallUpgradeStage : MonoBehaviour
     internal void UnblockThisStage()
     {
         go_lockedIcon.SetActive(false);
-        _button_Upgrade.interactable = true;
+        // Check if current stage also max upgraded
+        if (PlayerData.i_wallUpgradeStage_TotalUpgrades[i_stageId] >= i_maxUpgrades)
+        {
+            // Max upgrades reach, block this stage and unblock next stage
+            _button_Upgrade.interactable = false;
+        }
+        else
+        {
+            _button_Upgrade.interactable = true;
+        }
     }
 }

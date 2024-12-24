@@ -180,6 +180,10 @@ public class ResultsManager : MonoBehaviour
     }
     internal void ShowSumUpTotalManaEnergy(float f_newTotalManaAmount, float f_manaObtained)
     {
+        // Stop coroutines to avoid weird effects
+        StopCoroutine(SumUpTotalMana(f_newTotalManaAmount));
+        StopCoroutine(ReduceManaObtained(f_manaObtained));
+        // Start coroutines to show mana obtained effect
         StartCoroutine(SumUpTotalMana(f_newTotalManaAmount));
         StartCoroutine(ReduceManaObtained(f_manaObtained));
     }
