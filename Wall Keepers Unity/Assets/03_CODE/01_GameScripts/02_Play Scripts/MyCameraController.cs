@@ -17,7 +17,6 @@ public class MyCameraController : MonoBehaviour
             t_mainCamera.rotation = q_returnRot;
             //t_mainCamera.localPosition = Vector3.MoveTowards(transform.position, v3_returnPos, f_timeToReturnToPos);
             t_mainCamera.localPosition = v3_returnPos;
-            print("Return camera to pos");
         }
     }
 }
