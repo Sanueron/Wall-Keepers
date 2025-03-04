@@ -7185,10 +7185,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   i_levelMaxRound: 100
   listOf_enemies_Rank_1:
-  - {fileID: 8576113851049880323}
-  - {fileID: 8576113851049880323}
-  - {fileID: 8576113851049880323}
-  - {fileID: 8576113851049880323}
+  - {fileID: 145654615417001053}
+  - {fileID: 145654615417001053}
+  - {fileID: 145654615417001053}
+  - {fileID: 145654615417001053}
   - {fileID: 8576113851049880323}
   - {fileID: 145135039}
   - {fileID: 995321052}
@@ -13051,6 +13051,78 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3675581681120849863, guid: cc411d89aceb4634d8099f5b31704942, type: 3}
   m_PrefabInstance: {fileID: 2146501014}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &145654615417001052
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 175075904383144423, guid: c1829497fbef954428ed0c8c5112a8b5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 175075904383144423, guid: c1829497fbef954428ed0c8c5112a8b5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 175075904383144423, guid: c1829497fbef954428ed0c8c5112a8b5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 175075904383144423, guid: c1829497fbef954428ed0c8c5112a8b5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 175075904383144423, guid: c1829497fbef954428ed0c8c5112a8b5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 175075904383144423, guid: c1829497fbef954428ed0c8c5112a8b5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 175075904383144423, guid: c1829497fbef954428ed0c8c5112a8b5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 175075904383144423, guid: c1829497fbef954428ed0c8c5112a8b5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 175075904383144423, guid: c1829497fbef954428ed0c8c5112a8b5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 175075904383144423, guid: c1829497fbef954428ed0c8c5112a8b5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2097062949187655937, guid: c1829497fbef954428ed0c8c5112a8b5, type: 3}
+      propertyPath: m_Name
+      value: 00_Common Fang Demonito
+      objectReference: {fileID: 0}
+    - target: {fileID: 2097062949187655937, guid: c1829497fbef954428ed0c8c5112a8b5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c1829497fbef954428ed0c8c5112a8b5, type: 3}
+--- !u!114 &145654615417001053 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8470215942672218491, guid: c1829497fbef954428ed0c8c5112a8b5, type: 3}
+  m_PrefabInstance: {fileID: 145654615417001052}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2144e8573c025df4eaeb1692eb7d62e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &366696399043525250
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14099,3 +14171,4 @@ SceneRoots:
   - {fileID: 508888500}
   - {fileID: 8576113851049880321}
   - {fileID: 210905220}
+  - {fileID: 145654615417001052}

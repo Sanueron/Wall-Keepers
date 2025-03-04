@@ -182,7 +182,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Punto_Mejorable_Rayo_0: -1168958155514579421
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

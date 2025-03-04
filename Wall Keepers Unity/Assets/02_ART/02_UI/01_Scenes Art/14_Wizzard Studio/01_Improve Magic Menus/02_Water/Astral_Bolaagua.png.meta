@@ -182,7 +182,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Astral_Bolaagua_0: -5683341318470356563
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -182,7 +182,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Punto_Mejorable_Earth_0: -7978176633462504913
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

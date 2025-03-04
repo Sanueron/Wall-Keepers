@@ -182,7 +182,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Punto_Bloqueado_Earth_0: 5024827820417518866
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

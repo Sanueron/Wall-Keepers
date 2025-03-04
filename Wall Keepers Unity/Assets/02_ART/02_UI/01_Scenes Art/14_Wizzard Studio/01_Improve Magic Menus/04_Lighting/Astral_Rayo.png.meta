@@ -182,7 +182,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Astral_Rayo_0: -1712180064314871821
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

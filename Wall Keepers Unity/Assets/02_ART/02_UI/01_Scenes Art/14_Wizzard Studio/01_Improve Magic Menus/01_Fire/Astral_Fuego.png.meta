@@ -182,7 +182,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Astral_Fuego_0: 4254182039339710829
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

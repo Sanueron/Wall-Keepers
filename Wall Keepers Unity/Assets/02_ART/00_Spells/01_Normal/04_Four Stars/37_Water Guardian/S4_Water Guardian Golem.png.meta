@@ -182,7 +182,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      S4_Water Guardian Golem_0: 6522069078818580233
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

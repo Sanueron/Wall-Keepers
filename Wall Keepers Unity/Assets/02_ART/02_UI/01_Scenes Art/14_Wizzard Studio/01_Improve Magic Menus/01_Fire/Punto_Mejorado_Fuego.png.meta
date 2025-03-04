@@ -182,7 +182,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Punto_Mejorado_Fuego_0: 2008562565591943120
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
