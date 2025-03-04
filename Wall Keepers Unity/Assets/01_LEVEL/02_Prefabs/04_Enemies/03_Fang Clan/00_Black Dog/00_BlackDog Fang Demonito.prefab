@@ -54,12 +54,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3650482070449739290, guid: 987eb037603a07e40ae333665b139928, type: 3}
       propertyPath: m_Name
-      value: 00_Common Fang Demonito Variant
+      value: 00_BlackDog Fang Demonito
       objectReference: {fileID: 0}
     - target: {fileID: 5690274150969169209, guid: 987eb037603a07e40ae333665b139928, type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 22100000, guid: 054cb1796a31c4049aa58fb170e2aec5, type: 2}
+    - target: {fileID: 6502948530216482400, guid: 987eb037603a07e40ae333665b139928, type: 3}
+      propertyPath: baseStats
+      value: 
+      objectReference: {fileID: 11400000, guid: 248f576f7b3c2d547994331093e68d63, type: 2}
+    - target: {fileID: 6502948530216482400, guid: 987eb037603a07e40ae333665b139928, type: 3}
+      propertyPath: aC_enemyDefeated
+      value: 
+      objectReference: {fileID: 8300000, guid: bea2940dc444c3a43af0bbd4ef4fe0a3, type: 3}
     - target: {fileID: 7809240886798016510, guid: 987eb037603a07e40ae333665b139928, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 2.8799999

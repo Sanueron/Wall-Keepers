@@ -16,6 +16,7 @@ public class DemonitosBookManager : MonoBehaviour
     [Header("Demonitos Boxes for Filtering")]
     [SerializeField] private List<GameObject> listOf_go_demonitosOfClan_Chaos;
     [SerializeField] private List<GameObject> listOf_go_demonitosOfClan_Newt;
+    [SerializeField] private List<GameObject> listOf_go_demonitosOfClan_Fang;
 
     #endregion
 
@@ -101,6 +102,11 @@ public class DemonitosBookManager : MonoBehaviour
             if (demonitoBox.activeSelf)
                 demonitoBox.SetActive(false);
         }
+        foreach (GameObject demonitoBox in listOf_go_demonitosOfClan_Fang)
+        {
+            if (demonitoBox.activeSelf)
+                demonitoBox.SetActive(false);
+        }
     }
     public void ShowChaosClanDemonitos()
     {
@@ -113,6 +119,14 @@ public class DemonitosBookManager : MonoBehaviour
     public void ShowNewtClanDemonitos()
     {
         foreach (GameObject demonitoBox in listOf_go_demonitosOfClan_Newt)
+        {
+            if (!demonitoBox.activeSelf)
+                demonitoBox.SetActive(true);
+        }
+    }
+    public void ShowFangClanDemonitos()
+    {
+        foreach (GameObject demonitoBox in listOf_go_demonitosOfClan_Fang)
         {
             if (!demonitoBox.activeSelf)
                 demonitoBox.SetActive(true);

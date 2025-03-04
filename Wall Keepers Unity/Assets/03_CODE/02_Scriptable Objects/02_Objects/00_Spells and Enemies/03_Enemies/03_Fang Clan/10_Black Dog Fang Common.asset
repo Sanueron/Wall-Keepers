@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 095fe339d410b2b4fb3ae82e354c45cc, type: 3}
-  m_Name: 10_Fang Common
+  m_Name: 10_Black Dog Fang Common
   m_EditorClassIdentifier: 
-  sprite_bestiary: {fileID: 289988425, guid: 47b537a3f66378245947c21dd456d2e0, type: 3}
+  sprite_bestiary: {fileID: 4223902928154368751, guid: d6f704bcbb26bd2479f016d689aabde9, type: 3}
   i_id: 10
-  i_hp: 350
-  i_dmg: 300
-  f_speed: 1
+  i_hp: 200
+  i_dmg: 150
+  f_speed: 3
   f_RageOfAction: 1
   f_projectailSpeed: 0
   i_manaEnergyReleased: 2
