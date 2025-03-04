@@ -3634,7 +3634,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d1fb47f9605859c4aaf33544c930c4d6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: df3100b5fd0f6164cafe1312b9fe3256, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6017,7 +6017,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d1fb47f9605859c4aaf33544c930c4d6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: df3100b5fd0f6164cafe1312b9fe3256, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -10904,7 +10904,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Unleash the power of the seas
+  m_text: Become and earth master
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 306a5220a4239d947a1ac5d5ea7ef53a, type: 2}
   m_sharedMaterial: {fileID: 8838370511125401581, guid: 306a5220a4239d947a1ac5d5ea7ef53a, type: 2}
@@ -17052,7 +17052,7 @@ PrefabInstance:
     - target: {fileID: 5821664586327007907, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: d1fb47f9605859c4aaf33544c930c4d6, type: 3}
+      objectReference: {fileID: 21300000, guid: df3100b5fd0f6164cafe1312b9fe3256, type: 3}
     - target: {fileID: 5821664586327007907, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
       propertyPath: m_PreserveAspect
       value: 1
@@ -17067,7 +17067,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
       propertyPath: i_rewardAmount
-      value: 18
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 6414274503638830553, guid: 5c93322b6f2736e458f4634fe6b2c3b1, type: 3}
       propertyPath: script_seasonPassManager

@@ -8525,7 +8525,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 4745470894495809767, guid: dccd384b3ecb23b44b9085cc6ce1be09, type: 3}
+  m_Sprite: {fileID: -9223215208825557501, guid: 09dfcc83dfe81344d8b4a9a5d7619e87, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -10545,19 +10545,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4653418802512692797, guid: e4da5ca1c58fb98429440ddad45d0c66, type: 3}
       propertyPath: m_text
-      value: Control the power of water!
+      value: Become an Earth master
       objectReference: {fileID: 0}
     - target: {fileID: 4653418802512692797, guid: e4da5ca1c58fb98429440ddad45d0c66, type: 3}
       propertyPath: m_fontSize
-      value: 24
+      value: 41.75
       objectReference: {fileID: 0}
     - target: {fileID: 4653418802512692797, guid: e4da5ca1c58fb98429440ddad45d0c66, type: 3}
       propertyPath: m_margin.z
       value: 1.6983337
       objectReference: {fileID: 0}
     - target: {fileID: 4653418802512692797, guid: e4da5ca1c58fb98429440ddad45d0c66, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4653418802512692797, guid: e4da5ca1c58fb98429440ddad45d0c66, type: 3}
       propertyPath: m_fontSizeBase
-      value: 24
+      value: 41.75
       objectReference: {fileID: 0}
     - target: {fileID: 5108402918385556355, guid: e4da5ca1c58fb98429440ddad45d0c66, type: 3}
       propertyPath: m_IsActive
@@ -10596,12 +10600,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8619619944309630726, guid: e4da5ca1c58fb98429440ddad45d0c66, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 8619619944309630726, guid: e4da5ca1c58fb98429440ddad45d0c66, type: 3}
       propertyPath: m_LocalPosition.z
       value: 71
       objectReference: {fileID: 0}
     - target: {fileID: 8619619944309630726, guid: e4da5ca1c58fb98429440ddad45d0c66, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9240245
+      value: 0.9880396
       objectReference: {fileID: 0}
     - target: {fileID: 8619619944309630726, guid: e4da5ca1c58fb98429440ddad45d0c66, type: 3}
       propertyPath: m_LocalRotation.x
@@ -10613,15 +10621,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8619619944309630726, guid: e4da5ca1c58fb98429440ddad45d0c66, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.3823333
+      value: 0.15420054
       objectReference: {fileID: 0}
     - target: {fileID: 8619619944309630726, guid: e4da5ca1c58fb98429440ddad45d0c66, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 614
+      value: 348
       objectReference: {fileID: 0}
     - target: {fileID: 8619619944309630726, guid: e4da5ca1c58fb98429440ddad45d0c66, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -196
+      value: -185
       objectReference: {fileID: 0}
     - target: {fileID: 8619619944309630726, guid: e4da5ca1c58fb98429440ddad45d0c66, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -10633,7 +10641,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8619619944309630726, guid: e4da5ca1c58fb98429440ddad45d0c66, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 44.957
+      value: 17.741
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

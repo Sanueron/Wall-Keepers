@@ -63,7 +63,6 @@ public class EnemyProjectile : MonoBehaviour
     {
         animator_projectile.SetTrigger(i_LoopHash);
         b_startProjectileMovement = true;
-        // Make projectile look at target
     }
     private void ProjectileLookAtTarget()
     {
