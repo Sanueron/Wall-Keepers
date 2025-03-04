@@ -37,6 +37,7 @@ public class EnemiesManager : MonoBehaviour
     [SerializeField] private bool b_spawnEnemies;
     [SerializeField] private bool b_spawnBoss;
     [SerializeField] private GameObject go_bossEnemy;
+    [SerializeField] private Transform t_bossEnemySpwanPoint;
     // Start with 5 enemies of rank 1, every round get +1 enemy of current rank and +1 enemy of next rank if previous rank already has 10 enemies
     int i_countForNextRankEnemies = 10, i_rank_1_Enemies = 5, i_rank_2_Enemies = 0, i_rank_3_Enemies = 0,
         i_rank_4_Enemies = 0, i_rank_5_Enemies = 0;
@@ -104,7 +105,16 @@ public class EnemiesManager : MonoBehaviour
             {
                 b_spawnBoss = false;
                 if(go_bossEnemy != null)
-                    go_bossEnemy.SetActive(true);
+                {
+                    GameObject go_newEnemy = Instantiate(go_bossEnemy, t_bossEnemySpwanPoint.position, Quaternion.identity);
+
+                    // Add new enemy to list
+                    //Enemy newEnemy = go_newEnemy.GetComponent<Enemy>();
+                    //RoundsManager.listOfEnemiesInRound.Add(newEnemy);
+
+                    // Activate enemy
+                    go_newEnemy.SetActive(true);
+                }
             }
 
             // Get random enemy of current rank

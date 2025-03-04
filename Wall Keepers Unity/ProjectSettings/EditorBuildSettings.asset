@@ -73,5 +73,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/01_LEVEL/01_Scenes/02_Levels Scenes/01_Story Levels/21_Level 9.unity
     guid: 5930f69a73ae30545a0877617206945d
+  - enabled: 1
+    path: Assets/01_LEVEL/01_Scenes/02_Levels Scenes/03_Boss Rush levels/22_Boss
+      Rush_King Krab.unity
+    guid: ecb99b38c93947f4bad9a38de38839ca
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

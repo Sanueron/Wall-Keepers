@@ -390,6 +390,8 @@ public class Enemy : MonoBehaviour
         {
             SwitchState(EnemyState.Defeated);
             RoundsManager.listOfEnemiesInRound.Remove(this);
+            onEnemyDefeated?.Invoke(this, EventArgs.Empty);
+            print("Enemies left: " + RoundsManager.listOfEnemiesInRound.Count);
             if (!b_eventCalled)
             {
                 onEnemyDefeated?.Invoke(this, EventArgs.Empty);
